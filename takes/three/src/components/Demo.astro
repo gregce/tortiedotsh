@@ -1,0 +1,137 @@
+---
+// The value demonstration on a full width stage. One HyperFrames
+// composition, seekable in the page. The page works without JavaScript:
+// the poster and caption render as plain HTML, and the player replaces
+// them only when script runs. prefers-reduced-motion gets the rendered
+// MP4 with native controls instead of the live composition.
+---
+
+<section class="demo band" id="demo">
+  <div class="container">
+    <div class="demo-head narrow">
+      <h2 class="section-title">Durable agent sessions</h2>
+      <p class="demo-lede">
+        This is the reason Tortie exists. Sessions run on a private background
+        server, and the app is a window onto them. Quit the app and the agents
+        keep working. Reboot your Mac and Tortie restores every session with
+        its scrollback.
+      </p>
+    </div>
+
+    <figure class="demo-stage" id="demo-stage" data-src="/demos/durable-session/index.html"
+      data-mp4="/demos/durable-session/durable-session.mp4"
+      data-poster="/demos/durable-session/poster.webp">
+      <img
+        id="demo-poster"
+        src="/demos/durable-session/poster.webp"
+        alt="A Tortie window. The session api-refactor is running a coding agent, and its status dot shows it is working."
+        width="1280"
+        height="800"
+        loading="lazy"
+      />
+      <figcaption class="demo-caption">
+        The window quits. The session keeps working. The window reopens on the
+        same conversation.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<script src="/vendor/hyperframes-player.global.js" defer is:inline></script>
+<script is:inline>
+  (function () {
+    var stage = document.getElementById("demo-stage");
+    var poster = document.getElementById("demo-poster");
+    if (!stage || !poster) return;
+
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var mounted = false;
+
+    function mount() {
+      if (mounted) return;
+      mounted = true;
+
+      var el;
+      if (reduced) {
+        // The rendered MP4 with native controls. No autoplay.
+        el = document.createElement("video");
+        el.controls = true;
+        el.preload = "none";
+        el.playsInline = true;
+        el.poster = stage.dataset.poster;
+        el.src = stage.dataset.mp4;
+        el.setAttribute(
+          "aria-label",
+          "Demo video. A Tortie window closes while its session keeps running, then reopens on the same conversation."
+        );
+      } else {
+        // The live composition, seekable through the player. No poster
+        // attribute: the composition is same origin and paints its first
+        // frame at once, and the player's internal poster crops.
+        el = document.createElement("hyperframes-player");
+        el.setAttribute("src", stage.dataset.src);
+        el.setAttribute("width", "1280");
+        el.setAttribute("height", "800");
+        el.setAttribute("controls", "");
+      }
+      el.className = "demo-live";
+      poster.replaceWith(el);
+    }
+
+    // Mount when the stage comes near the viewport, so first paint never
+    // pays for the demo.
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(
+        function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (entries[i].isIntersecting) {
+              io.disconnect();
+              mount();
+              return;
+            }
+          }
+        },
+        { rootMargin: "600px 0px" }
+      );
+      io.observe(stage);
+    } else {
+      mount();
+    }
+  })();
+</script>
+
+<style>
+  .demo {
+    padding: clamp(48px, 8vh, 88px) 0;
+  }
+
+  .demo-lede {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .demo-stage {
+    margin: var(--space-9) 0 0;
+  }
+
+  .demo-stage img,
+  .demo-stage :global(.demo-live) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1280 / 800;
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    background: var(--bg-canvas);
+    overflow: hidden;
+  }
+
+  .demo-caption {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: var(--space-5);
+    text-align: center;
+  }
+</style>

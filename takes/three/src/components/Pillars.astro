@@ -1,0 +1,108 @@
+---
+// The four pillars in a strict typographic grid. No cards, no icons.
+// Hairlines and type carry the structure.
+---
+
+<section class="pillars">
+  <div class="container">
+    <div class="pillar-grid">
+      <article class="pillar">
+        <h2>One window for your projects</h2>
+        <p>
+          Every project is a tab in one window. Switch with <kbd>⌘1</kbd>
+          through <kbd>⌘9</kbd>. Everything on screen scopes to the project
+          you are looking at. You never search a window switcher for the agent
+          you left working.
+        </p>
+      </article>
+
+      <article class="pillar">
+        <h2>Durable agent sessions</h2>
+        <p>
+          Sessions outlive the app, and conversations resume where they
+          stopped. Quit the app and the agents keep working. Reboot your Mac
+          and Tortie restores every session with its scrollback. It also arms
+          each agent's own resume command, so one keypress continues the
+          conversation where it stopped.
+        </p>
+      </article>
+
+      <article class="pillar">
+        <h2>Intuitive multiplexing</h2>
+        <p>
+          Sessions have names, and the window is the whole interface. Drag one
+          session onto another to split the view. Drop an image from the file
+          tree into an agent. See which session needs your input, and jump to
+          it with <kbd>⌘J</kbd>. There are no prefix keys and no configuration
+          files.
+        </p>
+      </article>
+
+      <article class="pillar">
+        <h2>Feels like VS Code</h2>
+        <p>
+          Tortie keeps the layout you know from VS Code, so there is almost
+          nothing to learn.
+        </p>
+        <ul>
+          <li>A git sidebar that stages changes and shows the history.</li>
+          <li>A file tree with git status colors and the icons you are used to.</li>
+          <li>Click a file to edit it with Monaco, or diff it against HEAD.</li>
+          <li>
+            Project search runs on ripgrep and reaches every open project in
+            the window.
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pillars {
+    padding: clamp(48px, 8vh, 88px) 0;
+  }
+
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 64px) clamp(40px, 6vw, 88px);
+  }
+
+  .pillar h2 {
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-5);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border);
+  }
+
+  .pillar p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .pillar ul {
+    margin: var(--space-5) 0 0;
+    padding-left: 1.2em;
+    color: var(--text-secondary);
+  }
+
+  .pillar li {
+    margin-bottom: var(--space-3);
+  }
+
+  .pillar li::marker {
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 760px) {
+    .pillar-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

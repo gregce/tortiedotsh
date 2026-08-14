@@ -1,0 +1,105 @@
+---
+// The first screen is the design: the TORTIE.sh lockup at display scale
+// under the wordmark law, the hero sentence, and the two CTAs. All three
+// visitor goals sit inside this viewport.
+---
+
+<section class="hero">
+  <div class="container">
+    <h1 class="lockup hero-lockup" aria-label="Tortie.sh">
+      <img src="/brand/tortie-mark-560.webp" alt="" width="560" height="560" />
+      <span class="wordmark" aria-hidden="true"
+        ><span class="wm-name">TORTIE</span><span class="wm-suffix">.sh</span></span
+      >
+    </h1>
+
+    <div class="hero-copy">
+      <p class="hero-claim">The sessions were never interrupted.</p>
+      <p class="hero-sub">
+        Tortie is a macOS shell for coding agents. Sessions run on a private
+        background server that outlives the window, so quitting the app never
+        stops the work.
+      </p>
+
+      <div class="hero-ctas">
+        <a
+          class="btn btn-primary"
+          href="https://github.com/gregce/tortie/releases/latest"
+          >Download for macOS</a
+        >
+        <a class="btn btn-outline" href="https://github.com/gregce/tortie"
+          >View on GitHub</a
+        >
+      </div>
+      <p class="hero-fine">Apple silicon. Free under the Apache 2.0 license.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: clamp(48px, 9vh, 96px) 0 clamp(48px, 8vh, 88px);
+  }
+
+  /*
+   * The wordmark law in ratios. The mark is 1.9 times the cap height.
+   * SF caps measure about 0.72 em, so the mark is 1.37 em and the gap is
+   * one third of the mark's width, 0.46 em.
+   */
+  .hero-lockup {
+    font-size: clamp(40px, 12.5vw, 142px);
+    gap: 0.46em;
+    margin: 0;
+  }
+
+  .hero-lockup img {
+    width: 1.37em;
+    height: 1.37em;
+    display: block;
+  }
+
+  .hero-lockup .wordmark {
+    font-size: 1em;
+  }
+
+  .hero-copy {
+    max-width: 640px;
+    margin-top: clamp(28px, 5vh, 56px);
+  }
+
+  .hero-claim {
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.25;
+    font-weight: var(--weight-semibold);
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: var(--space-6) 0 0;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: var(--space-5);
+    margin-top: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .hero-fine {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: var(--space-5) 0 0;
+  }
+
+  @media (max-width: 480px) {
+    .hero-ctas {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+</style>

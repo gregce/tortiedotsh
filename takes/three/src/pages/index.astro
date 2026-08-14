@@ -1,0 +1,51 @@
+---
+import "../../../../assets/gmux-tokens.css";
+import "../styles/site.css";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import Demo from "../components/Demo.astro";
+import Pillars from "../components/Pillars.astro";
+import Download from "../components/Download.astro";
+import Refusals from "../components/Refusals.astro";
+import Footer from "../components/Footer.astro";
+
+const description =
+  "Tortie is a macOS shell for coding agents. Sessions run on a private background server that outlives the window, so quitting the app never stops the work.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tortie</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href="https://tortie.sh/" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon-180.png" />
+    <meta name="theme-color" content="#131417" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tortie.sh/" />
+    <meta property="og:title" content="Tortie" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://tortie.sh/og/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tortie" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://tortie.sh/og/og-image.jpg" />
+  </head>
+  <body>
+    <Nav />
+    <main>
+      <Hero />
+      <Demo />
+      <Pillars />
+      <Download />
+      <Refusals />
+    </main>
+    <Footer />
+  </body>
+</html>

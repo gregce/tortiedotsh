@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1280, height=800" />
+    <link rel="stylesheet" href="./tokens.css" />
+    <script src="./gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1280px;
+        height: 800px;
+        overflow: hidden;
+        background: var(--bg-canvas);
+        font-family: var(--font-ui);
+      }
+      /* The desktop behind the app window. Scrim over canvas, tokens only. */
+      #desktop {
+        position: absolute;
+        inset: 0;
+        background: var(--bg-scrim);
+      }
+
+      /* ── The Tortie window ─────────────────────────────────────────── */
+      #window {
+        position: absolute;
+        left: 160px;
+        top: 56px;
+        width: 960px;
+        height: 580px;
+        background: var(--bg-canvas);
+        border: 1px solid var(--border);
+        border-radius: var(--r-lg);
+        box-shadow: var(--shadow-3);
+        overflow: hidden;
+        transform-origin: 50% 60%;
+      }
+      #titlebar {
+        height: 36px;
+        background: var(--bg-sidebar);
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        padding: 0 var(--space-5);
+        position: relative;
+      }
+      .light {
+        width: 12px; height: 12px;
+        border-radius: 50%;
+        background: var(--text-disabled);
+        margin-right: var(--space-4);
+      }
+      #title {
+        position: absolute;
+        left: 0; right: 0;
+        text-align: center;
+        font-size: var(--text-base);
+        color: var(--text-secondary);
+        font-weight: var(--weight-medium);
+        pointer-events: none;
+      }
+      #body { display: flex; height: calc(100% - 36px); }
+      #sidebar {
+        width: 216px;
+        background: var(--bg-sidebar);
+        border-right: 1px solid var(--border);
+        padding: var(--space-5) 0;
+        flex: none;
+      }
+      .side-label {
+        font-size: var(--text-xs);
+        line-height: var(--lh-xs);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        padding: 0 var(--space-5);
+        margin-bottom: var(--space-2);
+      }
+      .session-row {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+        height: 28px;
+        padding: 0 var(--space-5);
+        font-size: var(--text-base);
+        color: var(--text-secondary);
+      }
+      .session-row.active {
+        background: var(--bg-active);
+        color: var(--text-primary);
+      }
+      .dot {
+        width: 8px; height: 8px;
+        border-radius: 50%;
+        flex: none;
+      }
+      .dot.working { background: var(--status-working); }
+      .dot.idle { background: var(--status-idle); }
+
+      #term {
+        flex: 1;
+        padding: var(--space-6) var(--space-7);
+        font-family: var(--font-terminal);
+        font-size: 13px;
+        line-height: 20px;
+        color: var(--text-primary);
+      }
+      .t-line { min-height: 20px; white-space: pre; }
+      .t-dim { color: var(--text-muted); }
+      .t-mid { color: var(--text-secondary); }
+      .t-ok { color: var(--success); }
+      .t-prompt { color: var(--accent-text); }
+      .t-gap { height: 10px; }
+      #cursor {
+        display: inline-block;
+        width: 7px; height: 15px;
+        background: var(--text-primary);
+        vertical-align: -2px;
+      }
+
+      /* ── Captions under the window ─────────────────────────────────── */
+      .caption {
+        position: absolute;
+        left: 0; right: 0;
+        top: 688px;
+        text-align: center;
+        font-family: var(--font-ui);
+      }
+      #cap-running {
+        font-size: 24px;
+        color: var(--text-secondary);
+        font-weight: var(--weight-regular);
+      }
+      #cap-final {
+        font-size: 30px;
+        color: var(--text-primary);
+        font-weight: var(--weight-semibold);
+        letter-spacing: 0.01em;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="14.5"
+      data-width="1280"
+      data-height="800"
+    >
+      <div id="desktop"></div>
+
+      <div id="window">
+        <div id="titlebar">
+          <span class="light"></span><span class="light"></span><span class="light"></span>
+          <span id="title">Tortie</span>
+        </div>
+        <div id="body">
+          <div id="sidebar">
+            <div class="side-label">Sessions</div>
+            <div class="session-row active">
+              <span class="dot working" id="dot-api"></span>api-refactor
+            </div>
+            <div class="session-row">
+              <span class="dot idle"></span>tests
+            </div>
+          </div>
+          <div id="term">
+            <div class="t-line t-dim">❯ claude</div>
+            <div class="t-line t-gap"></div>
+            <div class="t-line t-dim">&gt; Add idempotency keys to the charge endpoint.</div>
+            <div class="t-line t-gap"></div>
+            <div class="t-line t-dim">● Added the keys and a replay test. 8 tests passed.</div>
+            <div class="t-line t-gap"></div>
+            <div class="t-line t-mid">&gt; Move the retry logic into worker.ts and add a backoff test.</div>
+            <div class="t-line t-gap"></div>
+            <div class="t-line">● I will move the retry loop, then write the test.</div>
+            <div class="t-line t-dim" id="l-read">  · reading src/worker.ts</div>
+            <div class="t-line t-dim" id="l-edit">  · editing src/worker.ts</div>
+            <div class="t-line t-dim" id="l-test">  · running npm test</div>
+            <div class="t-line t-ok" id="l-pass">  ✓ 12 tests passed</div>
+            <div class="t-line" id="l-done">● Done. The retry loop now backs off up to 3 times.</div>
+            <div class="t-line t-gap" id="l-gap-resume"></div>
+            <div class="t-line" id="l-resume"><span class="t-prompt">❯</span> claude --continue<span id="cursor"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="caption" id="cap-running">The session is still running.</div>
+      <div class="caption" id="cap-final">The sessions were never interrupted.</div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Start state, immediate and outside the timeline so frame 0 renders
+      // it. The window is open, the agent is mid conversation.
+      gsap.set(["#l-edit", "#l-test", "#l-pass", "#l-done", "#l-gap-resume", "#l-resume"], { autoAlpha: 0 });
+      gsap.set(["#cap-running", "#cap-final"], { autoAlpha: 0 });
+
+      // 1. The agent works. Output lines land one by one.
+      tl.to("#l-edit", { autoAlpha: 1, duration: 0.2 }, 1.0);
+      tl.to("#l-test", { autoAlpha: 1, duration: 0.2 }, 2.6);
+
+      // 2. The whole app quits.
+      tl.to("#window", { autoAlpha: 0, scale: 0.97, duration: 0.5, ease: "power2.in" }, 4.2);
+
+      // 3. Only the desktop. The caption states the fact.
+      tl.to("#cap-running", { autoAlpha: 1, y: -6, duration: 0.4 }, 5.0);
+      tl.to("#cap-running", { autoAlpha: 0, duration: 0.35 }, 7.2);
+
+      // While the window is gone the session kept going. Its new output is
+      // already in the scrollback when the window returns.
+      tl.set(["#l-pass", "#l-done"], { autoAlpha: 1 }, 7.6);
+
+      // 4. The window reopens on the same session, resume typed and waiting.
+      tl.to("#window", { autoAlpha: 1, scale: 1, duration: 0.55, ease: "power2.out" }, 7.9);
+      // The agent finished while the window was closed, so the session sits
+      // idle at the prompt now.
+      tl.set("#dot-api", { className: "dot idle" }, 8.4);
+      tl.to(["#l-gap-resume", "#l-resume"], { autoAlpha: 1, duration: 0.25 }, 8.7);
+      tl.to("#cursor", { opacity: 0, duration: 0.5, repeat: 9, yoyo: true, ease: "steps(1)" }, 9.0);
+
+      // 5. The closing caption is the hero line.
+      tl.to("#cap-final", { autoAlpha: 1, y: -6, duration: 0.5 }, 9.8);
+
+      // Hold the final frame.
+      tl.set("#root", { autoAlpha: 1 }, 14.5);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

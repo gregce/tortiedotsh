@@ -1,0 +1,13 @@
+# Dependencies and build output.
+node_modules/
+dist/
+.astro/
+
+# Files the sync script copies in before every dev and build run.
+# The sources of truth live in the repo's assets/ and in node_modules.
+public/demos/durable-session/tokens.css
+public/demos/durable-session/gsap.min.js
+public/vendor/
+public/brand/favicon-16.png
+public/brand/favicon-32.png
+public/brand/apple-touch-icon-180.png

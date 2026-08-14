@@ -1,0 +1,76 @@
+---
+// The nav is the app's band. One bar on --bg-sidebar, one 1px hairline
+// under it, both CTAs repeated small.
+---
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="lockup nav-lockup" href="/" aria-label="Tortie.sh, home">
+      <img src="/brand/tortie-mark-560.webp" alt="" width="26" height="26" />
+      <span class="wordmark" aria-hidden="true"
+        ><span class="wm-name">TORTIE</span><span class="wm-suffix">.sh</span></span
+      >
+    </a>
+    <nav class="nav-actions" aria-label="Primary">
+      <a
+        class="btn btn-outline btn-small"
+        href="https://github.com/gregce/tortie"
+        >View on GitHub</a
+      >
+      <a
+        class="btn btn-primary btn-small"
+        href="https://github.com/gregce/tortie/releases/latest"
+        >Download for macOS</a
+      >
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-titlebar);
+    background: var(--bg-sidebar);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+
+  .nav-lockup {
+    gap: 9px;
+  }
+
+  .nav-lockup .wordmark {
+    font-size: 16px;
+  }
+
+  .nav-lockup img {
+    display: block;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  /* Both CTAs stay in the nav at every width. Below 640px the wordmark
+     text yields; the mark keeps the identity and the hero lockup sits
+     directly underneath. */
+  @media (max-width: 640px) {
+    .nav-lockup .wordmark {
+      display: none;
+    }
+
+    .nav-actions .btn-small {
+      padding: 0 10px;
+      font-size: 12px;
+    }
+  }
+</style>
