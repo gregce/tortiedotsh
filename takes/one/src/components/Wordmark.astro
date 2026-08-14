@@ -1,0 +1,53 @@
+---
+/**
+ * The Tortie.sh lockup, under the wordmark law (research 35 §1.6/§1.12).
+ * TORTIE caps, weight 600, tracking 0.06em, --text-primary.
+ * .sh lowercase, weight 400, tracking 0.02em, --text-secondary.
+ * Same font size on both halves so the h ascender meets the cap line.
+ * The cat mark sits 2 cap heights tall with a gap of a third of its width.
+ * The lockup is never animated.
+ */
+interface Props {
+  /** Font size of both halves, any CSS length. */
+  size?: string;
+  /** Render as the page's single h1. Exactly one caller passes true. */
+  heading?: boolean;
+  /** Show the cat mark beside the wordmark. */
+  mark?: boolean;
+}
+const { size = "15px", heading = false, mark = false } = Astro.props;
+const Tag = heading ? "h1" : "span";
+---
+
+<Tag class="lockup" aria-label="Tortie.sh" style={`font-size:${size}`}>
+  {mark && <img class="lockup-mark" src="/brand/tortie-dock-256.png" alt="" />}
+  <span class="lockup-name" aria-hidden="true">TORTIE</span><span
+    class="lockup-suffix"
+    aria-hidden="true">.sh</span
+  >
+</Tag>
+
+<style>
+  .lockup {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.14;
+    white-space: nowrap;
+  }
+  .lockup-mark {
+    /* cap height ≈ 0.7em; mark = 2 cap heights; gap = mark width / 3 */
+    height: 1.4em;
+    width: auto;
+    margin-right: 0.47em;
+  }
+  .lockup-name {
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.06em;
+    color: var(--text-primary);
+  }
+  .lockup-suffix {
+    font-weight: var(--weight-regular);
+    letter-spacing: 0.02em;
+    color: var(--text-secondary);
+  }
+</style>
