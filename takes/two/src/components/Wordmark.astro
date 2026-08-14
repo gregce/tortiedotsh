@@ -1,0 +1,14 @@
+---
+// The wordmark law: TORTIE caps at weight 600, tracking 0.06em, text-primary.
+// .sh lowercase at weight 400, tracking 0.02em, text-secondary. Same size,
+// so the h ascender meets the cap line. One object, one line.
+interface Props {
+  /** Render as the page's single h1. Only the hero may set this. */
+  heading?: boolean;
+}
+const { heading = false } = Astro.props;
+const Tag = heading ? "h1" : "span";
+---
+<Tag class="wordmark" aria-label="Tortie.sh" style={heading ? "margin:0" : undefined}>
+  <span class="name" aria-hidden="true">TORTIE</span><span class="suffix" aria-hidden="true">.sh</span>
+</Tag>

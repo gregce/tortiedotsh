@@ -1,0 +1,155 @@
+---
+import Wordmark from "../components/Wordmark.astro";
+import SessionStrip from "../components/SessionStrip.astro";
+import Demo from "../components/Demo.astro";
+import "../styles/site.css";
+
+const DOWNLOAD = "https://github.com/gregce/tortie/releases/latest";
+const GITHUB = "https://github.com/gregce/tortie";
+const DESCRIPTION =
+  "Tortie is a macOS shell for coding agents. Sessions run on a private background server that outlives the window, so quitting the app never stops the work.";
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tortie, a macOS shell for coding agents</title>
+    <meta name="description" content={DESCRIPTION} />
+    <link rel="stylesheet" href="/tokens.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon-180.png" />
+    <meta property="og:title" content="Tortie" />
+    <meta property="og:description" content={DESCRIPTION} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tortie.sh/" />
+    <meta property="og:image" content="https://tortie.sh/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <!-- The page wears the app's own chrome. Titlebar row, then the band.
+         Both are direct children of body so the band can stick to the top. -->
+    <header style="display: contents">
+      <div class="titlebar">
+        <div class="lights" aria-hidden="true">
+          <span class="light"></span><span class="light"></span><span class="light"></span>
+        </div>
+        <div class="project-tab">
+          <span class="dot dot-working" aria-hidden="true"></span>tortie.sh
+        </div>
+      </div>
+      <nav class="band" aria-label="Site">
+        <a href="#top" class="lockup" style="gap: 8px" aria-label="Tortie.sh, back to top">
+          <img src="/brand/tortie-mark-64.png" alt="" width="20" height="20" />
+          <Wordmark />
+        </a>
+        <span class="band-spacer"></span>
+        <a class="btn btn-secondary btn-sm" href={GITHUB}>View on GitHub</a>
+        <a class="btn btn-primary btn-sm" href={DOWNLOAD}>Download for macOS</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- Hero: the first screen holds the claim and both CTAs. -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="lockup">
+            <img src="/brand/tortie-mark-256.png" alt="" width="84" height="84" />
+            <Wordmark heading />
+          </div>
+          <p class="hero-line">The sessions were never interrupted.</p>
+          <p class="hero-sub">{DESCRIPTION}</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href={DOWNLOAD}>Download for macOS</a>
+            <a class="btn btn-secondary" href={GITHUB}>View on GitHub</a>
+          </div>
+          <p class="cta-note">Apple silicon. Free under the Apache 2.0 license.</p>
+        </div>
+      </section>
+
+      <!-- The proof, directly after the claim. -->
+      <Demo />
+
+      <!-- The four pillars, each drawn as a named session. -->
+      <SessionStrip name="One window for your projects" id="pillars" />
+      <div class="col pillar-body">
+        <p>
+          Every project is a tab in one window. Switch with <span class="keycap">&#8984;1</span> through
+          <span class="keycap">&#8984;9</span>. Everything on screen scopes to the project you are looking
+          at. You never search a window switcher for the agent you left working.
+        </p>
+      </div>
+
+      <SessionStrip name="Durable agent sessions" />
+      <div class="col pillar-body">
+        <p>
+          This is the reason Tortie exists. Sessions run on a private background server, and the app is a
+          window onto them. Quit the app and the agents keep working. Reboot your Mac and Tortie restores
+          every session with its scrollback. It also arms each agent's own resume command, so one keypress
+          continues the conversation where it stopped.
+        </p>
+      </div>
+
+      <SessionStrip name="Intuitive multiplexing" />
+      <div class="col pillar-body">
+        <p>
+          Sessions have names, and the window is the whole interface. Drag one session onto another to
+          split the view. Drop an image from the file tree into an agent. See which session needs your
+          input, and jump to it with <span class="keycap">&#8984;J</span>. There are no prefix keys and no
+          configuration files.
+        </p>
+      </div>
+
+      <SessionStrip name="Feels like VS Code" />
+      <div class="col pillar-body">
+        <p>Tortie keeps the layout you know from VS Code, so there is almost nothing to learn.</p>
+        <ul>
+          <li>A git sidebar that stages changes and shows the history.</li>
+          <li>A file tree with git status colors and the icons you are used to.</li>
+          <li>Click a file to edit it with Monaco, or diff it against HEAD.</li>
+          <li>Project search runs on ripgrep and reaches every open project in the window.</li>
+        </ul>
+      </div>
+
+      <!-- Download -->
+      <SessionStrip name="Download" id="download" />
+      <div class="col">
+        <div class="cta-row">
+          <a class="btn btn-primary" href={DOWNLOAD}>Download for macOS</a>
+          <a class="btn btn-secondary" href={GITHUB}>View on GitHub</a>
+        </div>
+        <p class="cta-note">Apple silicon. Free under the Apache 2.0 license.</p>
+        <p class="install-line">
+          Drag Tortie into Applications and point it at a project folder. Any folder works. A git
+          repository gets the full sidebar.
+        </p>
+      </div>
+
+      <!-- Refusals -->
+      <SessionStrip name="What Tortie refuses to do" id="refusals" />
+      <div class="col">
+        <ul class="refusals">
+          <li>It never touches your own tmux server or your <span class="mono">~/.tmux.conf</span>.</li>
+          <li>It never adopts a terminal session it did not create.</li>
+          <li>It never previews a key file or anything that looks like a secret.</li>
+          <li>It never asks you to watch an agent work.</li>
+          <li>It shows no counters and no activity feeds.</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="col">
+        <span class="lockup" style="gap: 6px">
+          <img src="/brand/tortie-mark-64.png" alt="" width="16" height="16" />
+          <Wordmark />
+        </span>
+        <p>Free under the Apache 2.0 license.</p>
+        <a href={GITHUB}>View on GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>
