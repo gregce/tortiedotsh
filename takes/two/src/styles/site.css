@@ -289,7 +289,10 @@ hyperframes-player {
 
 /* ── Small screens ──────────────────────────────────────────────── */
 @media (max-width: 560px) {
-  .band .btn-secondary { display: none; }
+  /* Both CTAs stay in the band. The wordmark text yields instead, and the
+     cat mark keeps the identity. */
+  .band .wordmark { display: none; }
+  .band { gap: 10px; padding: 0 10px; }
   .demo-scroll.enhanced { height: calc(100vh + 1200px); }
   .hero .lockup { gap: 16px; margin-bottom: 28px; }
   .hero .lockup img { width: 52px; height: 52px; }

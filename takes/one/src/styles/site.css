@@ -241,6 +241,9 @@ code {
   width: 100%;
   height: 100%;
 }
+.demo-play[hidden] {
+  display: none;
+}
 .demo-play {
   position: absolute;
   inset: 0;

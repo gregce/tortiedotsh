@@ -145,7 +145,9 @@
     color: var(--text-secondary);
   }
   #cap-final {
-    top: 272px;
+    /* Sits below the last scrollback row, so the closing line never
+       crosses the terminal text. */
+    top: 336px;
     font-size: var(--text-lg);
     line-height: var(--lh-lg);
     font-weight: var(--weight-semibold);
@@ -224,8 +226,9 @@
     }, 8.7);
     tl.to("#cursor", { opacity: 0.25, duration: 0.5, repeat: 4, yoyo: true, ease: "steps(1)" }, 9.6);
 
-    // Scene 5, 10.6s to 13s. The closing line.
-    tl.to("#win", { opacity: 0.3, duration: 0.5 }, 10.6);
+    // Scene 5, 10.6s to 13s. The closing line. The window drops to 0.1
+    // opacity so the caption never collides with the scrollback text.
+    tl.to("#win", { opacity: 0.1, duration: 0.5 }, 10.6);
     tl.to("#cap-final", { opacity: 1, duration: 0.5 }, 10.9);
     tl.set({}, {}, 13.0); // pin total duration
 

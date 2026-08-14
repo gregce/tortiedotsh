@@ -130,6 +130,9 @@ kbd {
 .wordmark {
   line-height: 1.14;
   white-space: nowrap;
+  /* The wrapper sets a neutral weight so nothing inherits the h1 bold.
+     The two inner spans carry the law's 600 and 400. */
+  font-weight: var(--weight-regular);
 }
 
 .wordmark .wm-name {
