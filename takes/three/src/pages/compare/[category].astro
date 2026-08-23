@@ -1,0 +1,15 @@
+---
+import ComparisonPage from "../../components/ComparisonPage.astro";
+import { comparisonCategories, type CategoryId } from "../../data/comparison-catalog";
+
+export function getStaticPaths() {
+  return comparisonCategories.map((category) => ({
+      params: { category: category.route.split("/").filter(Boolean).at(-1) },
+      props: { categoryId: category.id },
+    }));
+}
+
+const { categoryId } = Astro.props as { categoryId: CategoryId };
+---
+
+<ComparisonPage categoryId={categoryId} />

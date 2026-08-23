@@ -1,0 +1,2790 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-23T19:44:45.889Z",
+  "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
+  "projects": [
+    {
+      "id": "vscode",
+      "name": "Visual Studio Code",
+      "category": "code-editors",
+      "owner": "microsoft",
+      "repo": "vscode",
+      "githubUrl": "https://github.com/microsoft/vscode",
+      "apiUrl": "https://api.github.com/repos/microsoft/vscode",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:12:31.862Z",
+      "stars": 189338,
+      "contributors": 3201,
+      "repositorySizeKb": 1373629,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T17:56:05Z",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 154735966,
+          "percent": 95.97
+        },
+        {
+          "name": "CSS",
+          "bytes": 2574619,
+          "percent": 1.6
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 1025020,
+          "percent": 0.64
+        },
+        {
+          "name": "Rust",
+          "bytes": 911188,
+          "percent": 0.57
+        },
+        {
+          "name": "HTML",
+          "bytes": 712630,
+          "percent": 0.44
+        },
+        {
+          "name": "Inno Setup",
+          "bytes": 336154,
+          "percent": 0.21
+        },
+        {
+          "name": "Jupyter Notebook",
+          "bytes": 233695,
+          "percent": 0.14
+        },
+        {
+          "name": "Scilab",
+          "bytes": 202892,
+          "percent": 0.13
+        },
+        {
+          "name": "Shell",
+          "bytes": 164186,
+          "percent": 0.1
+        },
+        {
+          "name": "C++",
+          "bytes": 126673,
+          "percent": 0.08
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 78264,
+          "percent": 0.05
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 32372,
+          "percent": 0.02
+        },
+        {
+          "name": "Python",
+          "bytes": 31909,
+          "percent": 0.02
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 14260,
+          "percent": 0.01
+        },
+        {
+          "name": "C#",
+          "bytes": 9850,
+          "percent": 0.01
+        },
+        {
+          "name": "SCSS",
+          "bytes": 6732,
+          "percent": 0
+        },
+        {
+          "name": "Ruby",
+          "bytes": 5554,
+          "percent": 0
+        },
+        {
+          "name": "Java",
+          "bytes": 5338,
+          "percent": 0
+        },
+        {
+          "name": "Groovy",
+          "bytes": 3928,
+          "percent": 0
+        },
+        {
+          "name": "Cuda",
+          "bytes": 3634,
+          "percent": 0
+        },
+        {
+          "name": "Go",
+          "bytes": 2501,
+          "percent": 0
+        },
+        {
+          "name": "Makefile",
+          "bytes": 2307,
+          "percent": 0
+        },
+        {
+          "name": "Perl",
+          "bytes": 1922,
+          "percent": 0
+        },
+        {
+          "name": "TeX",
+          "bytes": 1602,
+          "percent": 0
+        },
+        {
+          "name": "Objective-C",
+          "bytes": 1387,
+          "percent": 0
+        },
+        {
+          "name": "Objective-C++",
+          "bytes": 1387,
+          "percent": 0
+        },
+        {
+          "name": "Clojure",
+          "bytes": 1206,
+          "percent": 0
+        },
+        {
+          "name": "Handlebars",
+          "bytes": 1064,
+          "percent": 0
+        },
+        {
+          "name": "Mermaid",
+          "bytes": 1053,
+          "percent": 0
+        },
+        {
+          "name": "Less",
+          "bytes": 1029,
+          "percent": 0
+        },
+        {
+          "name": "PHP",
+          "bytes": 998,
+          "percent": 0
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 960,
+          "percent": 0
+        },
+        {
+          "name": "Julia",
+          "bytes": 940,
+          "percent": 0
+        },
+        {
+          "name": "Visual Basic .NET",
+          "bytes": 893,
+          "percent": 0
+        },
+        {
+          "name": "C",
+          "bytes": 818,
+          "percent": 0
+        },
+        {
+          "name": "Raku",
+          "bytes": 761,
+          "percent": 0
+        },
+        {
+          "name": "Pug",
+          "bytes": 654,
+          "percent": 0
+        },
+        {
+          "name": "F#",
+          "bytes": 634,
+          "percent": 0
+        },
+        {
+          "name": "CoffeeScript",
+          "bytes": 590,
+          "percent": 0
+        },
+        {
+          "name": "R",
+          "bytes": 362,
+          "percent": 0
+        },
+        {
+          "name": "Roff",
+          "bytes": 351,
+          "percent": 0
+        },
+        {
+          "name": "ShaderLab",
+          "bytes": 330,
+          "percent": 0
+        },
+        {
+          "name": "Dart",
+          "bytes": 324,
+          "percent": 0
+        },
+        {
+          "name": "Swift",
+          "bytes": 284,
+          "percent": 0
+        },
+        {
+          "name": "Lua",
+          "bytes": 252,
+          "percent": 0
+        },
+        {
+          "name": "HLSL",
+          "bytes": 184,
+          "percent": 0
+        },
+        {
+          "name": "Hack",
+          "bytes": 16,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "1.134.0",
+        "name": "1.134.0",
+        "publishedAt": "2026-08-19T09:08:11Z",
+        "url": "https://github.com/microsoft/vscode/releases/tag/1.134.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "1.134.0",
+      "releaseDate": "2026-08-19T09:08:11Z",
+      "loc": {
+        "status": "disabled",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": "Large mature editor; GitHub language bytes remain available"
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/microsoft/vscode",
+          "fetchedAt": "2026-08-23T18:12:31.630Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/microsoft/vscode/languages",
+          "fetchedAt": "2026-08-23T18:12:31.727Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/microsoft/vscode/releases/latest",
+          "fetchedAt": "2026-08-23T18:12:31.773Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/microsoft/vscode/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:12:31.862Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "category": "code-editors",
+      "owner": "zed-industries",
+      "repo": "zed",
+      "githubUrl": "https://github.com/zed-industries/zed",
+      "apiUrl": "https://api.github.com/repos/zed-industries/zed",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:12:31.811Z",
+      "stars": 89097,
+      "contributors": 2184,
+      "repositorySizeKb": 507122,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T17:21:52Z",
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 56166870,
+          "percent": 97.42
+        },
+        {
+          "name": "Python",
+          "bytes": 512497,
+          "percent": 0.89
+        },
+        {
+          "name": "Inno Setup",
+          "bytes": 209553,
+          "percent": 0.36
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 183846,
+          "percent": 0.32
+        },
+        {
+          "name": "Shell",
+          "bytes": 165315,
+          "percent": 0.29
+        },
+        {
+          "name": "WGSL",
+          "bytes": 61592,
+          "percent": 0.11
+        },
+        {
+          "name": "Nix",
+          "bytes": 58935,
+          "percent": 0.1
+        },
+        {
+          "name": "Rich Text Format",
+          "bytes": 50994,
+          "percent": 0.09
+        },
+        {
+          "name": "Metal",
+          "bytes": 50218,
+          "percent": 0.09
+        },
+        {
+          "name": "HLSL",
+          "bytes": 50213,
+          "percent": 0.09
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 49048,
+          "percent": 0.09
+        },
+        {
+          "name": "Handlebars",
+          "bytes": 43687,
+          "percent": 0.08
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 41229,
+          "percent": 0.07
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 4669,
+          "percent": 0.01
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2037,
+          "percent": 0
+        },
+        {
+          "name": "Julia",
+          "bytes": 1356,
+          "percent": 0
+        },
+        {
+          "name": "HTML",
+          "bytes": 935,
+          "percent": 0
+        },
+        {
+          "name": "Objective-C",
+          "bytes": 203,
+          "percent": 0
+        },
+        {
+          "name": "Procfile",
+          "bytes": 174,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.16.1",
+        "name": "v1.16.1",
+        "publishedAt": "2026-08-19T16:11:34Z",
+        "url": "https://github.com/zed-industries/zed/releases/tag/v1.16.1",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v1.16.1",
+      "releaseDate": "2026-08-19T16:11:34Z",
+      "loc": {
+        "status": "disabled",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": "Large mature editor; GitHub language bytes remain available"
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/zed-industries/zed",
+          "fetchedAt": "2026-08-23T18:12:31.581Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/zed-industries/zed/languages",
+          "fetchedAt": "2026-08-23T18:12:31.687Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/zed-industries/zed/releases/latest",
+          "fetchedAt": "2026-08-23T18:12:31.724Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/zed-industries/zed/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:12:31.811Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "lapce",
+      "name": "Lapce",
+      "category": "code-editors",
+      "owner": "lapce",
+      "repo": "lapce",
+      "githubUrl": "https://github.com/lapce/lapce",
+      "apiUrl": "https://api.github.com/repos/lapce/lapce",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:12:31.846Z",
+      "stars": 38765,
+      "contributors": 190,
+      "repositorySizeKb": 28651,
+      "defaultBranch": "master",
+      "pushedAt": "2026-07-15T11:27:37Z",
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 2371536,
+          "percent": 98.68
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 17967,
+          "percent": 0.75
+        },
+        {
+          "name": "HCL",
+          "bytes": 6444,
+          "percent": 0.27
+        },
+        {
+          "name": "Makefile",
+          "bytes": 3480,
+          "percent": 0.14
+        },
+        {
+          "name": "Shell",
+          "bytes": 2625,
+          "percent": 0.11
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 1232,
+          "percent": 0.05
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.4.6",
+        "name": "v0.4.6",
+        "publishedAt": "2026-01-21T21:44:37Z",
+        "url": "https://github.com/lapce/lapce/releases/tag/v0.4.6",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.4.6",
+      "releaseDate": "2026-01-21T21:44:37Z",
+      "loc": {
+        "status": "disabled",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": "Large mature editor; GitHub language bytes remain available"
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/lapce/lapce",
+          "fetchedAt": "2026-08-23T18:12:31.607Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/lapce/lapce/languages",
+          "fetchedAt": "2026-08-23T18:12:31.702Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/lapce/lapce/releases/latest",
+          "fetchedAt": "2026-08-23T18:12:31.755Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/lapce/lapce/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:12:31.846Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "helix",
+      "name": "Helix",
+      "category": "code-editors",
+      "owner": "helix-editor",
+      "repo": "helix",
+      "githubUrl": "https://github.com/helix-editor/helix",
+      "apiUrl": "https://api.github.com/repos/helix-editor/helix",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:12:32.152Z",
+      "stars": 45918,
+      "contributors": 1417,
+      "repositorySizeKb": 89865,
+      "defaultBranch": "master",
+      "pushedAt": "2026-08-18T23:23:16Z",
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 3661582,
+          "percent": 76.43
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 1084843,
+          "percent": 22.64
+        },
+        {
+          "name": "Handlebars",
+          "bytes": 16739,
+          "percent": 0.35
+        },
+        {
+          "name": "Nix",
+          "bytes": 9939,
+          "percent": 0.21
+        },
+        {
+          "name": "CSS",
+          "bytes": 6873,
+          "percent": 0.14
+        },
+        {
+          "name": "Shell",
+          "bytes": 3839,
+          "percent": 0.08
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 3029,
+          "percent": 0.06
+        },
+        {
+          "name": "Elvish",
+          "bytes": 2138,
+          "percent": 0.04
+        },
+        {
+          "name": "Nushell",
+          "bytes": 1946,
+          "percent": 0.04
+        }
+      ],
+      "latestRelease": {
+        "tagName": "25.07.1",
+        "name": "25.07.1",
+        "publishedAt": "2025-07-18T15:13:19Z",
+        "url": "https://github.com/helix-editor/helix/releases/tag/25.07.1",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "25.07.1",
+      "releaseDate": "2025-07-18T15:13:19Z",
+      "loc": {
+        "status": "disabled",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": "Large mature editor; GitHub language bytes remain available"
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/helix-editor/helix",
+          "fetchedAt": "2026-08-23T18:12:31.953Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/helix-editor/helix/languages",
+          "fetchedAt": "2026-08-23T18:12:32.041Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/helix-editor/helix/releases/latest",
+          "fetchedAt": "2026-08-23T18:12:32.061Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/helix-editor/helix/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:12:32.152Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "void",
+      "name": "Void",
+      "category": "code-editors",
+      "owner": "voideditor",
+      "repo": "void",
+      "githubUrl": "https://github.com/voideditor/void",
+      "apiUrl": "https://api.github.com/repos/voideditor/void",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "tortie",
+      "name": "Tortie",
+      "category": "agent-workbenches",
+      "owner": "gregce",
+      "repo": "tortie",
+      "githubUrl": "https://github.com/gregce/tortie",
+      "apiUrl": "https://api.github.com/repos/gregce/tortie",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:16:37.776Z",
+      "stars": 4,
+      "contributors": 1,
+      "repositorySizeKb": 50430,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T16:28:03Z",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 15490276,
+          "percent": 81.54
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 3026563,
+          "percent": 15.93
+        },
+        {
+          "name": "CSS",
+          "bytes": 477123,
+          "percent": 2.51
+        },
+        {
+          "name": "HTML",
+          "bytes": 2882,
+          "percent": 0.02
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.68.7",
+        "name": "Tortie 0.68.7",
+        "publishedAt": "2026-08-23T05:46:33Z",
+        "url": "https://github.com/gregce/tortie/releases/tag/v0.68.7",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.68.7",
+      "releaseDate": "2026-08-23T05:46:33Z",
+      "loc": {
+        "status": "measured",
+        "code": 336452,
+        "comments": 119269,
+        "blank": 47780,
+        "files": 1648,
+        "measuredAt": "2026-08-23T18:16:37.704Z",
+        "measuredRef": "v0.68.7",
+        "refType": "stable-release-tag",
+        "commitSha": "91ea9a03bf321dbe3b5fd57529cd9655960bf976",
+        "tool": "cloc 2.06",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/gregce/tortie",
+          "fetchedAt": "2026-08-23T18:16:34.408Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/gregce/tortie/languages",
+          "fetchedAt": "2026-08-23T18:16:34.500Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/gregce/tortie/releases/latest",
+          "fetchedAt": "2026-08-23T18:16:34.540Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/gregce/tortie/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:16:34.596Z"
+        },
+        {
+          "type": "loc-checkout",
+          "url": "https://github.com/gregce/tortie/tree/v0.68.7",
+          "fetchedAt": "2026-08-23T18:16:37.704Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "continue",
+      "name": "Continue",
+      "category": "ide-extensions",
+      "owner": "continuedev",
+      "repo": "continue",
+      "githubUrl": "https://github.com/continuedev/continue",
+      "apiUrl": "https://api.github.com/repos/continuedev/continue",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:12:32.212Z",
+      "stars": 35603,
+      "contributors": 507,
+      "repositorySizeKb": 872279,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-22T15:17:38Z",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 8887578,
+          "percent": 83.64
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 821369,
+          "percent": 7.73
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 407414,
+          "percent": 3.83
+        },
+        {
+          "name": "Python",
+          "bytes": 249328,
+          "percent": 2.35
+        },
+        {
+          "name": "Rust",
+          "bytes": 76465,
+          "percent": 0.72
+        },
+        {
+          "name": "CSS",
+          "bytes": 59775,
+          "percent": 0.56
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 57082,
+          "percent": 0.54
+        },
+        {
+          "name": "Shell",
+          "bytes": 36934,
+          "percent": 0.35
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 17001,
+          "percent": 0.16
+        },
+        {
+          "name": "Java",
+          "bytes": 4898,
+          "percent": 0.05
+        },
+        {
+          "name": "HTML",
+          "bytes": 3606,
+          "percent": 0.03
+        },
+        {
+          "name": "PHP",
+          "bytes": 1460,
+          "percent": 0.01
+        },
+        {
+          "name": "C#",
+          "bytes": 673,
+          "percent": 0.01
+        },
+        {
+          "name": "Jupyter Notebook",
+          "bytes": 541,
+          "percent": 0.01
+        },
+        {
+          "name": "Scheme",
+          "bytes": 441,
+          "percent": 0
+        },
+        {
+          "name": "Ruby",
+          "bytes": 363,
+          "percent": 0
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 347,
+          "percent": 0
+        },
+        {
+          "name": "Go",
+          "bytes": 166,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v2.0.0-vscode",
+        "name": "v2.0.0-vscode",
+        "publishedAt": "2026-06-19T00:24:01Z",
+        "url": "https://github.com/continuedev/continue/releases/tag/v2.0.0-vscode",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v2.0.0-vscode",
+      "releaseDate": "2026-06-19T00:24:01Z",
+      "loc": {
+        "status": "disabled",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": "Large monorepo; GitHub language bytes remain available"
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/continuedev/continue",
+          "fetchedAt": "2026-08-23T18:12:32.026Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/continuedev/continue/releases/latest",
+          "fetchedAt": "2026-08-23T18:12:32.112Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/continuedev/continue/languages",
+          "fetchedAt": "2026-08-23T18:12:32.121Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/continuedev/continue/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:12:32.212Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "cline",
+      "name": "Cline",
+      "category": "ide-extensions",
+      "owner": "cline",
+      "repo": "cline",
+      "githubUrl": "https://github.com/cline/cline",
+      "apiUrl": "https://api.github.com/repos/cline/cline",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:12:32.203Z",
+      "stars": 66718,
+      "contributors": 321,
+      "repositorySizeKb": 558292,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T18:04:02Z",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 23992722,
+          "percent": 97.31
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 393571,
+          "percent": 1.6
+        },
+        {
+          "name": "CSS",
+          "bytes": 117502,
+          "percent": 0.48
+        },
+        {
+          "name": "Rust",
+          "bytes": 84363,
+          "percent": 0.34
+        },
+        {
+          "name": "HTML",
+          "bytes": 35842,
+          "percent": 0.15
+        },
+        {
+          "name": "Shell",
+          "bytes": 20605,
+          "percent": 0.08
+        },
+        {
+          "name": "Python",
+          "bytes": 7735,
+          "percent": 0.03
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 3436,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v4.1.14",
+        "name": "v4.1.14",
+        "publishedAt": "2026-08-23T10:11:14Z",
+        "url": "https://github.com/cline/cline/releases/tag/v4.1.14",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v4.1.14",
+      "releaseDate": "2026-08-23T10:11:14Z",
+      "loc": {
+        "status": "disabled",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": "Large monorepo; GitHub language bytes remain available"
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/cline/cline",
+          "fetchedAt": "2026-08-23T18:12:32.026Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/cline/cline/languages",
+          "fetchedAt": "2026-08-23T18:12:32.119Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/cline/cline/releases/latest",
+          "fetchedAt": "2026-08-23T18:12:32.130Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/cline/cline/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:12:32.203Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "kilo-code",
+      "name": "Kilo Code",
+      "category": "ide-extensions",
+      "owner": "Kilo-Org",
+      "repo": "kilocode",
+      "githubUrl": "https://github.com/Kilo-Org/kilocode",
+      "apiUrl": "https://api.github.com/repos/Kilo-Org/kilocode",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "roo-code",
+      "name": "Roo Code",
+      "category": "ide-extensions",
+      "owner": "RooCodeInc",
+      "repo": "Roo-Code",
+      "githubUrl": "https://github.com/RooCodeInc/Roo-Code",
+      "apiUrl": "https://api.github.com/repos/RooCodeInc/Roo-Code",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:12:32.438Z",
+      "stars": 24326,
+      "contributors": 303,
+      "repositorySizeKb": 368021,
+      "defaultBranch": "main",
+      "pushedAt": "2026-05-15T18:08:47Z",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 10942825,
+          "percent": 90.61
+        },
+        {
+          "name": "MDX",
+          "bytes": 940691,
+          "percent": 7.79
+        },
+        {
+          "name": "CSS",
+          "bytes": 116751,
+          "percent": 0.97
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 56550,
+          "percent": 0.47
+        },
+        {
+          "name": "Shell",
+          "bytes": 20071,
+          "percent": 0.17
+        },
+        {
+          "name": "HTML",
+          "bytes": 282,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v3.54.0",
+        "name": "Release v3.54.0",
+        "publishedAt": "2026-05-15T17:52:24Z",
+        "url": "https://github.com/RooCodeInc/Roo-Code/releases/tag/v3.54.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v3.54.0",
+      "releaseDate": "2026-05-15T17:52:24Z",
+      "loc": {
+        "status": "disabled",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": "Large monorepo; GitHub language bytes remain available"
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/RooCodeInc/Roo-Code",
+          "fetchedAt": "2026-08-23T18:12:32.281Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/releases/latest",
+          "fetchedAt": "2026-08-23T18:12:32.368Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/languages",
+          "fetchedAt": "2026-08-23T18:12:32.380Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:12:32.438Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "orca",
+      "name": "Orca",
+      "category": "agent-orchestrators",
+      "owner": "stablyai",
+      "repo": "orca",
+      "githubUrl": "https://github.com/stablyai/orca",
+      "apiUrl": "https://api.github.com/repos/stablyai/orca",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:16:59.026Z",
+      "stars": 51701,
+      "contributors": 339,
+      "repositorySizeKb": 597949,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T18:13:33Z",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 110650729,
+          "percent": 96.73
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 2877588,
+          "percent": 2.52
+        },
+        {
+          "name": "Swift",
+          "bytes": 290842,
+          "percent": 0.25
+        },
+        {
+          "name": "CSS",
+          "bytes": 234600,
+          "percent": 0.21
+        },
+        {
+          "name": "HTML",
+          "bytes": 106049,
+          "percent": 0.09
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 71420,
+          "percent": 0.06
+        },
+        {
+          "name": "Python",
+          "bytes": 51383,
+          "percent": 0.04
+        },
+        {
+          "name": "Shell",
+          "bytes": 44278,
+          "percent": 0.04
+        },
+        {
+          "name": "Ruby",
+          "bytes": 26271,
+          "percent": 0.02
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 22918,
+          "percent": 0.02
+        },
+        {
+          "name": "C#",
+          "bytes": 8386,
+          "percent": 0.01
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2354,
+          "percent": 0
+        },
+        {
+          "name": "NSIS",
+          "bytes": 1123,
+          "percent": 0
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 737,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.4.188",
+        "name": "v1.4.188",
+        "publishedAt": "2026-08-22T06:12:27Z",
+        "url": "https://github.com/stablyai/orca/releases/tag/v1.4.188",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v1.4.188",
+      "releaseDate": "2026-08-22T06:12:27Z",
+      "loc": {
+        "status": "measured",
+        "code": 2966416,
+        "comments": 133335,
+        "blank": 276542,
+        "files": 16397,
+        "measuredAt": "2026-08-23T18:16:58.402Z",
+        "measuredRef": "v1.4.188",
+        "refType": "stable-release-tag",
+        "commitSha": "f32ce859047a85a3ea4f507f633604dfbf596a0e",
+        "tool": "cloc 2.06",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/stablyai/orca",
+          "fetchedAt": "2026-08-23T18:16:34.433Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/stablyai/orca/languages",
+          "fetchedAt": "2026-08-23T18:16:34.523Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/stablyai/orca/releases/latest",
+          "fetchedAt": "2026-08-23T18:16:34.572Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/stablyai/orca/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:16:34.723Z"
+        },
+        {
+          "type": "loc-checkout",
+          "url": "https://github.com/stablyai/orca/tree/v1.4.188",
+          "fetchedAt": "2026-08-23T18:16:58.402Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "superset",
+      "name": "Superset",
+      "category": "agent-orchestrators",
+      "owner": "superset-sh",
+      "repo": "superset",
+      "githubUrl": "https://github.com/superset-sh/superset",
+      "apiUrl": "https://api.github.com/repos/superset-sh/superset",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "coder-mux",
+      "name": "Coder Mux",
+      "category": "agent-orchestrators",
+      "owner": "coder",
+      "repo": "cmux",
+      "githubUrl": "https://github.com/coder/cmux",
+      "apiUrl": "https://api.github.com/repos/coder/cmux",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "nimbalyst",
+      "name": "Nimbalyst",
+      "category": "agent-orchestrators",
+      "owner": "nimbalyst",
+      "repo": "nimbalyst",
+      "githubUrl": "https://github.com/nimbalyst/nimbalyst",
+      "apiUrl": "https://api.github.com/repos/nimbalyst/nimbalyst",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "sculptor",
+      "name": "Sculptor",
+      "category": "agent-orchestrators",
+      "owner": "imbue-ai",
+      "repo": "sculptor",
+      "githubUrl": "https://github.com/imbue-ai/sculptor",
+      "apiUrl": "https://api.github.com/repos/imbue-ai/sculptor",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "claude-squad",
+      "name": "claude-squad",
+      "category": "agent-orchestrators",
+      "owner": "smtg-ai",
+      "repo": "claude-squad",
+      "githubUrl": "https://github.com/smtg-ai/claude-squad",
+      "apiUrl": "https://api.github.com/repos/smtg-ai/claude-squad",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "agent-deck",
+      "name": "agent-deck",
+      "category": "agent-orchestrators",
+      "owner": "asheshgoplani",
+      "repo": "agent-deck",
+      "githubUrl": "https://github.com/asheshgoplani/agent-deck",
+      "apiUrl": "https://api.github.com/repos/asheshgoplani/agent-deck",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "vibe-kanban",
+      "name": "Vibe Kanban",
+      "category": "agent-orchestrators",
+      "owner": "BloopAI",
+      "repo": "vibe-kanban",
+      "githubUrl": "https://github.com/BloopAI/vibe-kanban",
+      "apiUrl": "https://api.github.com/repos/BloopAI/vibe-kanban",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "cmux",
+      "name": "cmux",
+      "category": "agent-workbenches",
+      "owner": "manaflow-ai",
+      "repo": "cmux",
+      "githubUrl": "https://github.com/manaflow-ai/cmux",
+      "apiUrl": "https://api.github.com/repos/manaflow-ai/cmux",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:16:54.607Z",
+      "stars": 26375,
+      "contributors": 154,
+      "repositorySizeKb": 1427409,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T17:57:49Z",
+      "languages": [
+        {
+          "name": "Swift",
+          "bytes": 68644015,
+          "percent": 64.24
+        },
+        {
+          "name": "Rust",
+          "bytes": 15653570,
+          "percent": 14.65
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 7492938,
+          "percent": 7.01
+        },
+        {
+          "name": "Python",
+          "bytes": 5584047,
+          "percent": 5.23
+        },
+        {
+          "name": "Java",
+          "bytes": 1893672,
+          "percent": 1.77
+        },
+        {
+          "name": "C++",
+          "bytes": 1878259,
+          "percent": 1.76
+        },
+        {
+          "name": "Shell",
+          "bytes": 1723592,
+          "percent": 1.61
+        },
+        {
+          "name": "Go",
+          "bytes": 1425805,
+          "percent": 1.33
+        },
+        {
+          "name": "Zig",
+          "bytes": 1151441,
+          "percent": 1.08
+        },
+        {
+          "name": "HTML",
+          "bytes": 785907,
+          "percent": 0.74
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 348250,
+          "percent": 0.33
+        },
+        {
+          "name": "CSS",
+          "bytes": 160375,
+          "percent": 0.15
+        },
+        {
+          "name": "C",
+          "bytes": 50030,
+          "percent": 0.05
+        },
+        {
+          "name": "Objective-C",
+          "bytes": 23601,
+          "percent": 0.02
+        },
+        {
+          "name": "Nushell",
+          "bytes": 14676,
+          "percent": 0.01
+        },
+        {
+          "name": "CMake",
+          "bytes": 8691,
+          "percent": 0.01
+        },
+        {
+          "name": "Ruby",
+          "bytes": 5899,
+          "percent": 0.01
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 2541,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.64.22",
+        "name": "v0.64.22",
+        "publishedAt": "2026-08-03T08:06:36Z",
+        "url": "https://github.com/manaflow-ai/cmux/releases/tag/v0.64.22",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.64.22",
+      "releaseDate": "2026-08-03T08:06:36Z",
+      "loc": {
+        "status": "measured",
+        "code": 2313497,
+        "comments": 141016,
+        "blank": 213903,
+        "files": 11639,
+        "measuredAt": "2026-08-23T18:16:53.975Z",
+        "measuredRef": "v0.64.22",
+        "refType": "stable-release-tag",
+        "commitSha": "ddd4a01bc5d8ebac19643930f5fd7d40e85f1534",
+        "tool": "cloc 2.06",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/manaflow-ai/cmux",
+          "fetchedAt": "2026-08-23T18:16:34.429Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/manaflow-ai/cmux/languages",
+          "fetchedAt": "2026-08-23T18:16:34.518Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/manaflow-ai/cmux/releases/latest",
+          "fetchedAt": "2026-08-23T18:16:34.584Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/manaflow-ai/cmux/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:16:34.634Z"
+        },
+        {
+          "type": "loc-checkout",
+          "url": "https://github.com/manaflow-ai/cmux/tree/v0.64.22",
+          "fetchedAt": "2026-08-23T18:16:53.975Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "wmux",
+      "name": "wmux",
+      "category": "agent-workbenches",
+      "owner": "openwong2kim",
+      "repo": "wmux",
+      "githubUrl": "https://github.com/openwong2kim/wmux",
+      "apiUrl": "https://api.github.com/repos/openwong2kim/wmux",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "openhands",
+      "name": "OpenHands",
+      "category": "cloud-agents",
+      "owner": "OpenHands",
+      "repo": "OpenHands",
+      "githubUrl": "https://github.com/OpenHands/OpenHands",
+      "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:14:00.499Z",
+      "stars": 84856,
+      "contributors": 532,
+      "repositorySizeKb": 405199,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T17:13:21Z",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 8648827,
+          "percent": 94.18
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 439054,
+          "percent": 4.78
+        },
+        {
+          "name": "Shell",
+          "bytes": 27130,
+          "percent": 0.3
+        },
+        {
+          "name": "Python",
+          "bytes": 23887,
+          "percent": 0.26
+        },
+        {
+          "name": "CSS",
+          "bytes": 21524,
+          "percent": 0.23
+        },
+        {
+          "name": "HTML",
+          "bytes": 11619,
+          "percent": 0.13
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 8437,
+          "percent": 0.09
+        },
+        {
+          "name": "Go Template",
+          "bytes": 3195,
+          "percent": 0.03
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.15.0",
+        "name": "v1.15.0",
+        "publishedAt": "2026-08-21T14:01:34Z",
+        "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.15.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v1.15.0",
+      "releaseDate": "2026-08-21T14:01:34Z",
+      "loc": {
+        "status": "disabled",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": "Large monorepo; GitHub language bytes remain available"
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands",
+          "fetchedAt": "2026-08-23T18:14:00.314Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands/languages",
+          "fetchedAt": "2026-08-23T18:14:00.390Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:14:00.486Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands/releases/latest",
+          "fetchedAt": "2026-08-23T18:14:00.499Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "codex-cli",
+      "name": "Codex CLI",
+      "category": "coding-agent-harnesses",
+      "owner": "openai",
+      "repo": "codex",
+      "githubUrl": "https://github.com/openai/codex",
+      "apiUrl": "https://api.github.com/repos/openai/codex",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:16:47.994Z",
+      "stars": 115009,
+      "contributors": 573,
+      "repositorySizeKb": 566976,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T17:04:41Z",
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 51670155,
+          "percent": 96.29
+        },
+        {
+          "name": "Python",
+          "bytes": 1534825,
+          "percent": 2.86
+        },
+        {
+          "name": "Starlark",
+          "bytes": 107351,
+          "percent": 0.2
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 100186,
+          "percent": 0.19
+        },
+        {
+          "name": "Shell",
+          "bytes": 73017,
+          "percent": 0.14
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 56162,
+          "percent": 0.1
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 30869,
+          "percent": 0.06
+        },
+        {
+          "name": "HTML",
+          "bytes": 26288,
+          "percent": 0.05
+        },
+        {
+          "name": "Jupyter Notebook",
+          "bytes": 20702,
+          "percent": 0.04
+        },
+        {
+          "name": "CSS",
+          "bytes": 20134,
+          "percent": 0.04
+        },
+        {
+          "name": "Smarty",
+          "bytes": 7627,
+          "percent": 0.01
+        },
+        {
+          "name": "Just",
+          "bytes": 7512,
+          "percent": 0.01
+        },
+        {
+          "name": "Nix",
+          "bytes": 4349,
+          "percent": 0.01
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 883,
+          "percent": 0
+        },
+        {
+          "name": "C",
+          "bytes": 52,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "rust-v0.149.0",
+        "name": "0.149.0",
+        "publishedAt": "2026-08-20T21:04:55Z",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.149.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "rust-v0.149.0",
+      "releaseDate": "2026-08-20T21:04:55Z",
+      "loc": {
+        "status": "measured",
+        "code": 1526663,
+        "comments": 49130,
+        "blank": 132236,
+        "files": 5523,
+        "measuredAt": "2026-08-23T18:16:47.500Z",
+        "measuredRef": "rust-v0.149.0",
+        "refType": "stable-release-tag",
+        "commitSha": "758ef40f50c1a458425c7cfbf1eb12cbc07af0b0",
+        "tool": "cloc 2.06",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/openai/codex",
+          "fetchedAt": "2026-08-23T18:16:37.906Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/openai/codex/languages",
+          "fetchedAt": "2026-08-23T18:16:37.991Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/openai/codex/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:16:38.070Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/openai/codex/releases/latest",
+          "fetchedAt": "2026-08-23T18:16:38.084Z"
+        },
+        {
+          "type": "loc-checkout",
+          "url": "https://github.com/openai/codex/tree/rust-v0.149.0",
+          "fetchedAt": "2026-08-23T18:16:47.500Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "gemini-cli",
+      "name": "Gemini CLI",
+      "category": "coding-agent-harnesses",
+      "owner": "google-gemini",
+      "repo": "gemini-cli",
+      "githubUrl": "https://github.com/google-gemini/gemini-cli",
+      "apiUrl": "https://api.github.com/repos/google-gemini/gemini-cli",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:16:59.554Z",
+      "stars": 106633,
+      "contributors": 692,
+      "repositorySizeKb": 102363,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T01:15:05Z",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 20498143,
+          "percent": 96.94
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 356701,
+          "percent": 1.69
+        },
+        {
+          "name": "Python",
+          "bytes": 221907,
+          "percent": 1.05
+        },
+        {
+          "name": "Shell",
+          "bytes": 31159,
+          "percent": 0.15
+        },
+        {
+          "name": "C#",
+          "bytes": 24798,
+          "percent": 0.12
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 6489,
+          "percent": 0.03
+        },
+        {
+          "name": "HTML",
+          "bytes": 5474,
+          "percent": 0.03
+        },
+        {
+          "name": "Makefile",
+          "bytes": 1336,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.56.0",
+        "name": "Release v0.56.0",
+        "publishedAt": "2026-08-19T19:29:38Z",
+        "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.56.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.56.0",
+      "releaseDate": "2026-08-19T19:29:38Z",
+      "loc": {
+        "status": "measured",
+        "code": 1455071,
+        "comments": 52367,
+        "blank": 86439,
+        "files": 2727,
+        "measuredAt": "2026-08-23T18:16:59.419Z",
+        "measuredRef": "v0.56.0",
+        "refType": "stable-release-tag",
+        "commitSha": "b6e23a7dc29eb15fede4bbe646d91869e948b45a",
+        "tool": "cloc 2.06",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/google-gemini/gemini-cli",
+          "fetchedAt": "2026-08-23T18:16:48.303Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/google-gemini/gemini-cli/languages",
+          "fetchedAt": "2026-08-23T18:16:48.390Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/google-gemini/gemini-cli/releases/latest",
+          "fetchedAt": "2026-08-23T18:16:48.502Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/google-gemini/gemini-cli/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:16:48.553Z"
+        },
+        {
+          "type": "loc-checkout",
+          "url": "https://github.com/google-gemini/gemini-cli/tree/v0.56.0",
+          "fetchedAt": "2026-08-23T18:16:59.419Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "codewhale",
+      "name": "CodeWhale",
+      "category": "coding-agent-harnesses",
+      "owner": "Hmbown",
+      "repo": "CodeWhale",
+      "githubUrl": "https://github.com/Hmbown/CodeWhale",
+      "apiUrl": "https://api.github.com/repos/Hmbown/CodeWhale",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "qwen-code",
+      "name": "Qwen Code",
+      "category": "coding-agent-harnesses",
+      "owner": "QwenLM",
+      "repo": "qwen-code",
+      "githubUrl": "https://github.com/QwenLM/qwen-code",
+      "apiUrl": "https://api.github.com/repos/QwenLM/qwen-code",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "grok-build",
+      "name": "Grok Build",
+      "category": "coding-agent-harnesses",
+      "owner": "xai-org",
+      "repo": "grok-build",
+      "githubUrl": "https://github.com/xai-org/grok-build",
+      "apiUrl": "https://api.github.com/repos/xai-org/grok-build",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "category": "coding-agent-harnesses",
+      "owner": "anomalyco",
+      "repo": "opencode",
+      "githubUrl": "https://github.com/anomalyco/opencode",
+      "apiUrl": "https://api.github.com/repos/anomalyco/opencode",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:17:11.650Z",
+      "stars": 200600,
+      "contributors": 1002,
+      "repositorySizeKb": 474646,
+      "defaultBranch": "dev",
+      "pushedAt": "2026-08-23T18:11:27Z",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 26785524,
+          "percent": 75.42
+        },
+        {
+          "name": "MDX",
+          "bytes": 7543126,
+          "percent": 21.24
+        },
+        {
+          "name": "CSS",
+          "bytes": 1029910,
+          "percent": 2.9
+        },
+        {
+          "name": "HTML",
+          "bytes": 48548,
+          "percent": 0.14
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 35523,
+          "percent": 0.1
+        },
+        {
+          "name": "Astro",
+          "bytes": 32509,
+          "percent": 0.09
+        },
+        {
+          "name": "Shell",
+          "bytes": 22559,
+          "percent": 0.06
+        },
+        {
+          "name": "Nix",
+          "bytes": 10955,
+          "percent": 0.03
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 3696,
+          "percent": 0.01
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 2301,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.18.21",
+        "name": "v1.18.21",
+        "publishedAt": "2026-08-21T14:51:11Z",
+        "url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.21",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v1.18.21",
+      "releaseDate": "2026-08-21T14:51:11Z",
+      "loc": {
+        "status": "measured",
+        "code": 1254680,
+        "comments": 21967,
+        "blank": 124116,
+        "files": 5958,
+        "measuredAt": "2026-08-23T18:17:11.349Z",
+        "measuredRef": "v1.18.21",
+        "refType": "stable-release-tag",
+        "commitSha": "826d9ad46a22bef0294998e08daa3c4904fea28f",
+        "tool": "cloc 2.06",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/anomalyco/opencode",
+          "fetchedAt": "2026-08-23T18:16:54.798Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/anomalyco/opencode/releases/latest",
+          "fetchedAt": "2026-08-23T18:16:54.868Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/anomalyco/opencode/languages",
+          "fetchedAt": "2026-08-23T18:16:54.900Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/anomalyco/opencode/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:16:55.039Z"
+        },
+        {
+          "type": "loc-checkout",
+          "url": "https://github.com/anomalyco/opencode/tree/v1.18.21",
+          "fetchedAt": "2026-08-23T18:17:11.349Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "pi",
+      "name": "Pi",
+      "category": "coding-agent-harnesses",
+      "owner": "earendil-works",
+      "repo": "pi",
+      "githubUrl": "https://github.com/earendil-works/pi",
+      "apiUrl": "https://api.github.com/repos/earendil-works/pi",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:17:03.478Z",
+      "stars": 95847,
+      "contributors": 282,
+      "repositorySizeKb": 65426,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T10:44:20Z",
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 8539287,
+          "percent": 93.88
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 490036,
+          "percent": 5.39
+        },
+        {
+          "name": "Shell",
+          "bytes": 29879,
+          "percent": 0.33
+        },
+        {
+          "name": "CSS",
+          "bytes": 22724,
+          "percent": 0.25
+        },
+        {
+          "name": "C",
+          "bytes": 10086,
+          "percent": 0.11
+        },
+        {
+          "name": "HTML",
+          "bytes": 2225,
+          "percent": 0.02
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 1670,
+          "percent": 0.02
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 338,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.84.2",
+        "name": "v0.84.2",
+        "publishedAt": "2026-08-14T10:14:32Z",
+        "url": "https://github.com/earendil-works/pi/releases/tag/v0.84.2",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.84.2",
+      "releaseDate": "2026-08-14T10:14:32Z",
+      "loc": {
+        "status": "measured",
+        "code": 258768,
+        "comments": 17537,
+        "blank": 40369,
+        "files": 1337,
+        "measuredAt": "2026-08-23T18:17:03.414Z",
+        "measuredRef": "v0.84.2",
+        "refType": "stable-release-tag",
+        "commitSha": "914cf1472e715297caa30db4b9535d534a9eb718",
+        "tool": "cloc 2.06",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/earendil-works/pi",
+          "fetchedAt": "2026-08-23T18:16:59.261Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/earendil-works/pi/languages",
+          "fetchedAt": "2026-08-23T18:16:59.341Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/earendil-works/pi/releases/latest",
+          "fetchedAt": "2026-08-23T18:16:59.349Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/earendil-works/pi/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:16:59.675Z"
+        },
+        {
+          "type": "loc-checkout",
+          "url": "https://github.com/earendil-works/pi/tree/v0.84.2",
+          "fetchedAt": "2026-08-23T18:17:03.414Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "category": "coding-agent-harnesses",
+      "owner": "Aider-AI",
+      "repo": "aider",
+      "githubUrl": "https://github.com/Aider-AI/aider",
+      "apiUrl": "https://api.github.com/repos/Aider-AI/aider",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:17:02.056Z",
+      "stars": 48428,
+      "contributors": 182,
+      "repositorySizeKb": 140356,
+      "defaultBranch": "main",
+      "pushedAt": "2026-05-22T14:02:20Z",
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 1333453,
+          "percent": 80.11
+        },
+        {
+          "name": "CSS",
+          "bytes": 67532,
+          "percent": 4.06
+        },
+        {
+          "name": "Shell",
+          "bytes": 66537,
+          "percent": 4
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 64845,
+          "percent": 3.9
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 60909,
+          "percent": 3.66
+        },
+        {
+          "name": "HTML",
+          "bytes": 44976,
+          "percent": 2.7
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 19648,
+          "percent": 1.18
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 4405,
+          "percent": 0.26
+        },
+        {
+          "name": "SCSS",
+          "bytes": 1957,
+          "percent": 0.12
+        },
+        {
+          "name": "Ruby",
+          "bytes": 196,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.86.0",
+        "name": "Aider v0.86.0",
+        "publishedAt": "2025-08-09T17:42:19Z",
+        "url": "https://github.com/Aider-AI/aider/releases/tag/v0.86.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.86.0",
+      "releaseDate": "2025-08-09T17:42:19Z",
+      "loc": {
+        "status": "measured",
+        "code": 158604,
+        "comments": 50296,
+        "blank": 33020,
+        "files": 480,
+        "measuredAt": "2026-08-23T18:17:02.017Z",
+        "measuredRef": "v0.86.0",
+        "refType": "stable-release-tag",
+        "commitSha": "a4be6ccd87ebaa59b361f3f028d116ce1761b626",
+        "tool": "cloc 2.06",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/Aider-AI/aider",
+          "fetchedAt": "2026-08-23T18:16:59.706Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/Aider-AI/aider/languages",
+          "fetchedAt": "2026-08-23T18:16:59.792Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/Aider-AI/aider/releases/latest",
+          "fetchedAt": "2026-08-23T18:16:59.805Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/Aider-AI/aider/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:16:59.855Z"
+        },
+        {
+          "type": "loc-checkout",
+          "url": "https://github.com/Aider-AI/aider/tree/v0.86.0",
+          "fetchedAt": "2026-08-23T18:17:02.017Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "goose",
+      "name": "Goose",
+      "category": "coding-agent-harnesses",
+      "owner": "aaif-goose",
+      "repo": "goose",
+      "githubUrl": "https://github.com/aaif-goose/goose",
+      "apiUrl": "https://api.github.com/repos/aaif-goose/goose",
+      "status": "current",
+      "refreshedAt": "2026-08-23T18:17:10.678Z",
+      "stars": 53314,
+      "contributors": 615,
+      "repositorySizeKb": 964465,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-22T00:11:06Z",
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 9380018,
+          "percent": 71.28
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 3133769,
+          "percent": 23.82
+        },
+        {
+          "name": "Shell",
+          "bytes": 188567,
+          "percent": 1.43
+        },
+        {
+          "name": "Python",
+          "bytes": 176814,
+          "percent": 1.34
+        },
+        {
+          "name": "HTML",
+          "bytes": 101611,
+          "percent": 0.77
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 83688,
+          "percent": 0.64
+        },
+        {
+          "name": "CSS",
+          "bytes": 34878,
+          "percent": 0.27
+        },
+        {
+          "name": "Just",
+          "bytes": 23952,
+          "percent": 0.18
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 13192,
+          "percent": 0.1
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 6647,
+          "percent": 0.05
+        },
+        {
+          "name": "Nix",
+          "bytes": 5332,
+          "percent": 0.04
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 5134,
+          "percent": 0.04
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 5050,
+          "percent": 0.04
+        },
+        {
+          "name": "HCL",
+          "bytes": 42,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.47.0",
+        "name": "v1.47.0",
+        "publishedAt": "2026-08-21T18:14:59Z",
+        "url": "https://github.com/aaif-goose/goose/releases/tag/v1.47.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v1.47.0",
+      "releaseDate": "2026-08-21T18:14:59Z",
+      "loc": {
+        "status": "measured",
+        "code": 822530,
+        "comments": 15306,
+        "blank": 61582,
+        "files": 1906,
+        "measuredAt": "2026-08-23T18:17:10.515Z",
+        "measuredRef": "v1.47.0",
+        "refType": "stable-release-tag",
+        "commitSha": "f9c7aaccde4834810dfd13d5efa8f0d39ba28a20",
+        "tool": "cloc 2.06",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/aaif-goose/goose",
+          "fetchedAt": "2026-08-23T18:17:02.201Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/aaif-goose/goose/languages",
+          "fetchedAt": "2026-08-23T18:17:02.281Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/aaif-goose/goose/releases/latest",
+          "fetchedAt": "2026-08-23T18:17:02.403Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/aaif-goose/goose/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T18:17:02.419Z"
+        },
+        {
+          "type": "loc-checkout",
+          "url": "https://github.com/aaif-goose/goose/tree/v1.47.0",
+          "fetchedAt": "2026-08-23T18:17:10.515Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "happy",
+      "name": "Happy",
+      "category": "remote-companions",
+      "owner": "slopus",
+      "repo": "happy",
+      "githubUrl": "https://github.com/slopus/happy",
+      "apiUrl": "https://api.github.com/repos/slopus/happy",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
+      "id": "vibetunnel",
+      "name": "VibeTunnel",
+      "category": "remote-companions",
+      "owner": "amantus-ai",
+      "repo": "vibetunnel",
+      "githubUrl": "https://github.com/amantus-ai/vibetunnel",
+      "apiUrl": "https://api.github.com/repos/amantus-ai/vibetunnel",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <!-- Black background -->
+  <rect width="256" height="256" fill="#000000"/>
+
+  <!-- Eye: > (big, left side) -->
+  <path d="
+    M 30 40
+    L 120 128
+    L 30 216
+  " fill="none" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Mouth: w (small, bottom right) -->
+  <path d="
+    M 138 152
+    L 160 208
+    L 184 168
+    L 208 208
+    L 230 152
+  " fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

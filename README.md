@@ -52,6 +52,33 @@ The research was done before any take was built and it lives in `docs/research/`
 - `01-exemplars.md` measures ten landing pages for developer tools and states the winning shape. cmux.com, pi.dev, opencode.ai and cursor.com are among the ten.
 - `02-framework-and-graphics.md` picks Astro 7 in static output mode and explains how HyperFrames plays one composition both as a live seekable timeline in the page and as a rendered MP4 fallback.
 - `03-design-brief.md` is the brief all three takes build from. Sections 1 through 8 bind every take. Section 10 names the three directions.
+- `04-comparison-taxonomy.md` defines the seven AI developer-tool categories, the 50-product launch catalog, evidence rules and the open-source freshness model.
+- `05-matrix-ux-spec.md` specifies the dedicated comparison workspace, native table behavior, filters, accessibility and responsive rules.
+- `06-comparison-evidence-audit.md` records the adversarial evidence review, launch blockers, and the remediation guardrails applied afterward.
+- `07a-core-matrix-evidence.md` and `07b-agent-matrix-evidence.md` add the deeper row model and first-party claim ledger used by the expanded matrices.
+- `07c-harness-closure-ledger.md` records the second-pass harness closures and the two adjacent workbench corrections.
+
+## The comparison workspace
+
+Take three includes a category-aware comparison at `/compare/`. It keeps editors, agent workbenches, orchestrators, coding-agent harnesses, IDE extensions, cloud agents and remote companions in separate matrices so unlike products are not forced into one scorecard.
+
+The static product and evidence catalog lives in `takes/three/src/data/comparison-catalog.ts`. Volatile repository facts live in `open-source-metrics.json` and can be refreshed without changing the UI:
+
+```sh
+cd takes/three
+npm run validate:data
+npm run audit:freshness
+npm run refresh:metrics
+npm run refresh:assets
+```
+
+Run `npm run refresh:metrics -- --loc` to measure source lines for repositories that opt in. The scheduled GitHub workflow refreshes the committed fallback weekly. Builds never call GitHub, so the comparison continues to render when the API is unavailable.
+
+Vendor and platform identity assets are committed locally with first-party provenance in `comparison-assets.json`; `refresh:assets` rebuilds that bundle without introducing runtime image requests.
+
+The weekly metrics workflow also runs the freshness audit. It requires repository data no older than 14 days, first-party capability evidence no older than 120 days, and reviewed identity assets no older than 180 days. Automated metrics keep moving independently; a stale capability source fails the maintenance check rather than silently changing a product score.
+
+The operator acceptance script is in `docs/acceptance/comparison-workspace.md`.
 
 ## Shared assets
 

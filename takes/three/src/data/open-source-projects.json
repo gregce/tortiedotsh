@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-23T00:00:00.000Z",
+  "source": "Curated from each project's official GitHub repository",
+  "projects": [
+    {
+      "id": "vscode",
+      "name": "Visual Studio Code",
+      "category": "code-editors",
+      "owner": "microsoft",
+      "repo": "vscode",
+      "githubUrl": "https://github.com/microsoft/vscode",
+      "apiUrl": "https://api.github.com/repos/microsoft/vscode",
+      "loc": { "enabled": false, "reason": "Large mature editor; GitHub language bytes remain available" }
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "category": "code-editors",
+      "owner": "zed-industries",
+      "repo": "zed",
+      "githubUrl": "https://github.com/zed-industries/zed",
+      "apiUrl": "https://api.github.com/repos/zed-industries/zed",
+      "loc": { "enabled": false, "reason": "Large mature editor; GitHub language bytes remain available" }
+    },
+    {
+      "id": "lapce",
+      "name": "Lapce",
+      "category": "code-editors",
+      "owner": "lapce",
+      "repo": "lapce",
+      "githubUrl": "https://github.com/lapce/lapce",
+      "apiUrl": "https://api.github.com/repos/lapce/lapce",
+      "loc": { "enabled": false, "reason": "Large mature editor; GitHub language bytes remain available" }
+    },
+    {
+      "id": "helix",
+      "name": "Helix",
+      "category": "code-editors",
+      "owner": "helix-editor",
+      "repo": "helix",
+      "githubUrl": "https://github.com/helix-editor/helix",
+      "apiUrl": "https://api.github.com/repos/helix-editor/helix",
+      "loc": { "enabled": false, "reason": "Large mature editor; GitHub language bytes remain available" }
+    },
+    {
+      "id": "void",
+      "name": "Void",
+      "category": "code-editors",
+      "owner": "voideditor",
+      "repo": "void",
+      "githubUrl": "https://github.com/voideditor/void",
+      "apiUrl": "https://api.github.com/repos/voideditor/void",
+      "loc": { "enabled": false, "reason": "Archived project; API history remains available" }
+    },
+    {
+      "id": "tortie",
+      "name": "Tortie",
+      "category": "agent-workbenches",
+      "owner": "gregce",
+      "repo": "tortie",
+      "githubUrl": "https://github.com/gregce/tortie",
+      "apiUrl": "https://api.github.com/repos/gregce/tortie",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "continue",
+      "name": "Continue",
+      "category": "ide-extensions",
+      "owner": "continuedev",
+      "repo": "continue",
+      "githubUrl": "https://github.com/continuedev/continue",
+      "apiUrl": "https://api.github.com/repos/continuedev/continue",
+      "loc": { "enabled": false, "reason": "Large monorepo; GitHub language bytes remain available" }
+    },
+    {
+      "id": "cline",
+      "name": "Cline",
+      "category": "ide-extensions",
+      "owner": "cline",
+      "repo": "cline",
+      "githubUrl": "https://github.com/cline/cline",
+      "apiUrl": "https://api.github.com/repos/cline/cline",
+      "loc": { "enabled": false, "reason": "Large monorepo; GitHub language bytes remain available" }
+    },
+    {
+      "id": "kilo-code",
+      "name": "Kilo Code",
+      "category": "ide-extensions",
+      "owner": "Kilo-Org",
+      "repo": "kilocode",
+      "githubUrl": "https://github.com/Kilo-Org/kilocode",
+      "apiUrl": "https://api.github.com/repos/Kilo-Org/kilocode",
+      "loc": { "enabled": false, "reason": "Large monorepo; GitHub language bytes remain available" }
+    },
+    {
+      "id": "roo-code",
+      "name": "Roo Code",
+      "category": "ide-extensions",
+      "owner": "RooCodeInc",
+      "repo": "Roo-Code",
+      "githubUrl": "https://github.com/RooCodeInc/Roo-Code",
+      "apiUrl": "https://api.github.com/repos/RooCodeInc/Roo-Code",
+      "loc": { "enabled": false, "reason": "Large monorepo; GitHub language bytes remain available" }
+    },
+    {
+      "id": "orca",
+      "name": "Orca",
+      "category": "agent-orchestrators",
+      "owner": "stablyai",
+      "repo": "orca",
+      "githubUrl": "https://github.com/stablyai/orca",
+      "apiUrl": "https://api.github.com/repos/stablyai/orca",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "superset",
+      "name": "Superset",
+      "category": "agent-orchestrators",
+      "owner": "superset-sh",
+      "repo": "superset",
+      "githubUrl": "https://github.com/superset-sh/superset",
+      "apiUrl": "https://api.github.com/repos/superset-sh/superset",
+      "loc": { "enabled": false, "reason": "Large repository; GitHub language bytes remain available" }
+    },
+    {
+      "id": "coder-mux",
+      "name": "Coder Mux",
+      "category": "agent-orchestrators",
+      "owner": "coder",
+      "repo": "cmux",
+      "githubUrl": "https://github.com/coder/cmux",
+      "apiUrl": "https://api.github.com/repos/coder/cmux",
+      "loc": { "enabled": false, "reason": "API metrics first; LOC has not been scheduled for this catalog addition" }
+    },
+    {
+      "id": "nimbalyst",
+      "name": "Nimbalyst",
+      "category": "agent-orchestrators",
+      "owner": "nimbalyst",
+      "repo": "nimbalyst",
+      "githubUrl": "https://github.com/nimbalyst/nimbalyst",
+      "apiUrl": "https://api.github.com/repos/nimbalyst/nimbalyst",
+      "loc": { "enabled": false, "reason": "API metrics first; LOC has not been scheduled for this catalog addition" }
+    },
+    {
+      "id": "sculptor",
+      "name": "Sculptor",
+      "category": "agent-orchestrators",
+      "owner": "imbue-ai",
+      "repo": "sculptor",
+      "githubUrl": "https://github.com/imbue-ai/sculptor",
+      "apiUrl": "https://api.github.com/repos/imbue-ai/sculptor",
+      "loc": { "enabled": false, "reason": "API metrics first; LOC has not been scheduled for this catalog addition" }
+    },
+    {
+      "id": "claude-squad",
+      "name": "claude-squad",
+      "category": "agent-orchestrators",
+      "owner": "smtg-ai",
+      "repo": "claude-squad",
+      "githubUrl": "https://github.com/smtg-ai/claude-squad",
+      "apiUrl": "https://api.github.com/repos/smtg-ai/claude-squad",
+      "loc": { "enabled": false, "reason": "API metrics first; LOC has not been scheduled for this catalog addition" }
+    },
+    {
+      "id": "agent-deck",
+      "name": "agent-deck",
+      "category": "agent-orchestrators",
+      "owner": "asheshgoplani",
+      "repo": "agent-deck",
+      "githubUrl": "https://github.com/asheshgoplani/agent-deck",
+      "apiUrl": "https://api.github.com/repos/asheshgoplani/agent-deck",
+      "loc": { "enabled": false, "reason": "API metrics first; LOC has not been scheduled for this catalog addition" }
+    },
+    {
+      "id": "vibe-kanban",
+      "name": "Vibe Kanban",
+      "category": "agent-orchestrators",
+      "owner": "BloopAI",
+      "repo": "vibe-kanban",
+      "githubUrl": "https://github.com/BloopAI/vibe-kanban",
+      "apiUrl": "https://api.github.com/repos/BloopAI/vibe-kanban",
+      "loc": { "enabled": false, "reason": "Sunsetting project; API history remains available" }
+    },
+    {
+      "id": "cmux",
+      "name": "cmux",
+      "category": "agent-workbenches",
+      "owner": "manaflow-ai",
+      "repo": "cmux",
+      "githubUrl": "https://github.com/manaflow-ai/cmux",
+      "apiUrl": "https://api.github.com/repos/manaflow-ai/cmux",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "wmux",
+      "name": "wmux",
+      "category": "agent-workbenches",
+      "owner": "openwong2kim",
+      "repo": "wmux",
+      "githubUrl": "https://github.com/openwong2kim/wmux",
+      "apiUrl": "https://api.github.com/repos/openwong2kim/wmux",
+      "loc": { "enabled": false, "reason": "API metrics first; LOC has not been scheduled for this catalog addition" }
+    },
+    {
+      "id": "openhands",
+      "name": "OpenHands",
+      "category": "cloud-agents",
+      "owner": "OpenHands",
+      "repo": "OpenHands",
+      "githubUrl": "https://github.com/OpenHands/OpenHands",
+      "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands",
+      "loc": { "enabled": false, "reason": "Large monorepo; GitHub language bytes remain available" }
+    },
+    {
+      "id": "codex-cli",
+      "name": "Codex CLI",
+      "category": "coding-agent-harnesses",
+      "owner": "openai",
+      "repo": "codex",
+      "githubUrl": "https://github.com/openai/codex",
+      "apiUrl": "https://api.github.com/repos/openai/codex",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "gemini-cli",
+      "name": "Gemini CLI",
+      "category": "coding-agent-harnesses",
+      "owner": "google-gemini",
+      "repo": "gemini-cli",
+      "githubUrl": "https://github.com/google-gemini/gemini-cli",
+      "apiUrl": "https://api.github.com/repos/google-gemini/gemini-cli",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "codewhale",
+      "name": "CodeWhale",
+      "category": "coding-agent-harnesses",
+      "owner": "Hmbown",
+      "repo": "CodeWhale",
+      "githubUrl": "https://github.com/Hmbown/CodeWhale",
+      "apiUrl": "https://api.github.com/repos/Hmbown/CodeWhale",
+      "loc": { "enabled": false, "reason": "API metrics first; LOC has not been scheduled for this catalog addition" }
+    },
+    {
+      "id": "qwen-code",
+      "name": "Qwen Code",
+      "category": "coding-agent-harnesses",
+      "owner": "QwenLM",
+      "repo": "qwen-code",
+      "githubUrl": "https://github.com/QwenLM/qwen-code",
+      "apiUrl": "https://api.github.com/repos/QwenLM/qwen-code",
+      "loc": { "enabled": false, "reason": "Large repository; GitHub language bytes remain available" }
+    },
+    {
+      "id": "grok-build",
+      "name": "Grok Build",
+      "category": "coding-agent-harnesses",
+      "owner": "xai-org",
+      "repo": "grok-build",
+      "githubUrl": "https://github.com/xai-org/grok-build",
+      "apiUrl": "https://api.github.com/repos/xai-org/grok-build",
+      "loc": { "enabled": false, "reason": "API metrics first; LOC has not been scheduled for this catalog addition" }
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "category": "coding-agent-harnesses",
+      "owner": "anomalyco",
+      "repo": "opencode",
+      "githubUrl": "https://github.com/anomalyco/opencode",
+      "apiUrl": "https://api.github.com/repos/anomalyco/opencode",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "pi",
+      "name": "Pi",
+      "category": "coding-agent-harnesses",
+      "owner": "earendil-works",
+      "repo": "pi",
+      "githubUrl": "https://github.com/earendil-works/pi",
+      "apiUrl": "https://api.github.com/repos/earendil-works/pi",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "category": "coding-agent-harnesses",
+      "owner": "Aider-AI",
+      "repo": "aider",
+      "githubUrl": "https://github.com/Aider-AI/aider",
+      "apiUrl": "https://api.github.com/repos/Aider-AI/aider",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "goose",
+      "name": "Goose",
+      "category": "coding-agent-harnesses",
+      "owner": "aaif-goose",
+      "repo": "goose",
+      "githubUrl": "https://github.com/aaif-goose/goose",
+      "apiUrl": "https://api.github.com/repos/aaif-goose/goose",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "happy",
+      "name": "Happy",
+      "category": "remote-companions",
+      "owner": "slopus",
+      "repo": "happy",
+      "githubUrl": "https://github.com/slopus/happy",
+      "apiUrl": "https://api.github.com/repos/slopus/happy",
+      "loc": { "enabled": false, "reason": "Large monorepo; GitHub language bytes remain available" }
+    },
+    {
+      "id": "vibetunnel",
+      "name": "VibeTunnel",
+      "category": "remote-companions",
+      "owner": "amantus-ai",
+      "repo": "vibetunnel",
+      "githubUrl": "https://github.com/amantus-ai/vibetunnel",
+      "apiUrl": "https://api.github.com/repos/amantus-ai/vibetunnel",
+      "loc": { "enabled": false, "reason": "API metrics first; LOC has not been scheduled for this catalog addition" }
+    }
+  ]
+}

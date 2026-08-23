@@ -1,0 +1,543 @@
+---
+/**
+ * THESIS: Evidence is the interface. Refuse the universal scorecard and compare like with like.
+ * OWN-WORLD: Cool graphite fields, 1px hairlines, system type, tight radii, and one blue action accent.
+ * STORY: Choose a category, scan the frozen matrix, narrow products, then follow the source behind a claim.
+ * FIRST VIEWPORT: Compact Tortie bar, route-backed categories, a narrow utility rail, and the evidence matrix itself.
+ * FORM: The fifth grounded structure, an evidence ledger staged as a native two-axis table. Seed dea4d13a.
+ */
+import "../../../../assets/gmux-tokens.css";
+import "../styles/site.css";
+import "../styles/comparison.css";
+import Nav from "./Nav.astro";
+import {
+  COMPARISON_SNAPSHOT,
+  comparisonCategories,
+  comparisonProducts,
+  getComparisonClaim,
+  type CategoryId,
+  type ComparisonClaim,
+  type ComparisonProduct,
+  type ComparisonRow,
+  type EvidenceSource,
+} from "../data/comparison-catalog";
+import metricSnapshot from "../data/open-source-metrics.json";
+import comparisonAssets from "../data/comparison-assets.json";
+
+interface Props {
+  categoryId: CategoryId;
+}
+
+interface MetricRecord {
+  id: string;
+  status: string;
+  refreshedAt: string | null;
+  stars: number | null;
+  contributors: number | null;
+  repositorySizeKb: number | null;
+  pushedAt: string | null;
+  version: string | null;
+  releaseDate: string | null;
+  githubUrl: string;
+  latestRelease?: { tagName: string | null; publishedAt: string | null } | null;
+  sources?: Array<{ type: string; url: string; fetchedAt: string }>;
+  languages: Array<{ name: string; percent: number }>;
+  loc: {
+    status: string;
+    code: number | null;
+    measuredAt: string | null;
+    measuredRef?: string | null;
+    refType?: string | null;
+  };
+}
+
+interface MetricRow extends ComparisonRow {
+  metricKey:
+    | "version"
+    | "releaseDate"
+    | "stars"
+    | "contributors"
+    | "loc"
+    | "language"
+    | "refreshedAt";
+}
+
+interface ComparisonAsset {
+  name: string;
+  alt: string;
+  src: string;
+  sourceUrl: string;
+  sourceType: string;
+  checkedAt: string;
+}
+
+const { categoryId } = Astro.props;
+const currentCategory = comparisonCategories.find((category) => category.id === categoryId);
+if (!currentCategory) throw new Error(`Unknown comparison category: ${categoryId}`);
+
+const evidenceBacklog = new Set(["mosaic-terminal", "airport", "muse-code", "omnara"]);
+const products = comparisonProducts
+  .filter((product) => product.categoryId === categoryId && !evidenceBacklog.has(product.id))
+  .sort((left, right) => left.editorialOrder - right.editorialOrder);
+
+const metrics = new Map(
+  (metricSnapshot.projects as MetricRecord[]).map((record) => [record.id, record]),
+);
+const productAssets = comparisonAssets.products as Record<string, ComparisonAsset>;
+const platformAssets = comparisonAssets.platforms as Record<string, ComparisonAsset>;
+const hasMetrics = products.some((product) => product.repoMetricId && metrics.has(product.repoMetricId));
+const metricRows: MetricRow[] = hasMetrics
+  ? [
+      { id: "metric-version", label: "Latest verified stable release", group: "Open-source project", metricKey: "version" },
+      { id: "metric-release-date", label: "Release date", group: "Open-source project", metricKey: "releaseDate" },
+      { id: "metric-stars", label: "GitHub stars", group: "Open-source project", metricKey: "stars" },
+      { id: "metric-contributors", label: "GitHub contributor entries", group: "Open-source project", metricKey: "contributors" },
+      {
+        id: "metric-loc",
+        label: "Source lines at measured ref",
+        group: "Open-source project",
+        description: "Version-pinned when the collector can measure the stable release.",
+        metricKey: "loc",
+      },
+      { id: "metric-language", label: "Primary language", group: "Open-source project", metricKey: "language" },
+      { id: "metric-refreshed", label: "Repository data refreshed", group: "Open-source project", metricKey: "refreshedAt" },
+    ]
+  : [];
+
+const matrixRows = currentCategory.rows.filter((row) => !row.platform);
+const allRows: Array<ComparisonRow | MetricRow> = [...matrixRows, ...metricRows];
+const groupedRows = Array.from(
+  allRows.reduce((groups, row) => {
+    const existing = groups.get(row.group) ?? [];
+    existing.push(row);
+    groups.set(row.group, existing);
+    return groups;
+  }, new Map<string, Array<ComparisonRow | MetricRow>>()),
+);
+
+const metricGeneratedDate = metricSnapshot.generatedAt?.slice(0, 10) ?? COMPARISON_SNAPSHOT;
+const description = `Compare ${currentCategory.label.toLowerCase()} across platforms, source model, execution boundary, workflow, and current open-source project data.`;
+
+const formatNumber = (value: number): string =>
+  new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 }).format(value);
+
+const formatDate = (value: string | null): string => value?.slice(0, 10) ?? "Unknown";
+
+const profilePlatforms = (product: ComparisonProduct): string =>
+  product.profile.platform.state === "known" ? product.profile.platform.value.join("|") : "";
+
+const productPlatforms = (product: ComparisonProduct): readonly string[] =>
+  product.profile.platform.state === "known" ? product.profile.platform.value : [];
+
+const metricEvidence = (
+  record: MetricRecord,
+  title: string,
+  preferredType = "repository",
+): EvidenceSource[] => {
+  const source = record.sources?.find((item) => item.type === preferredType);
+  return [
+    {
+      title,
+      url: source?.url ?? record.githubUrl,
+      basis: "repository-derived",
+      checkedAt: source?.fetchedAt?.slice(0, 10) ?? record.refreshedAt?.slice(0, 10) ?? COMPARISON_SNAPSHOT,
+    },
+  ];
+};
+
+const metricClaim = (product: ComparisonProduct, row: MetricRow): ComparisonClaim => {
+  const record = product.repoMetricId ? metrics.get(product.repoMetricId) : undefined;
+  if (!record) {
+    if (product.repoMetricId) {
+      return {
+        state: "unknown",
+        displayValue: "Awaiting refresh",
+        note: "The public repository is in the collector manifest but has not completed its first metrics refresh.",
+        evidence: product.repository
+          ? [{ title: `${product.name} repository`, url: product.repository.url, basis: "repository-derived", checkedAt: COMPARISON_SNAPSHOT }]
+          : [],
+      };
+    }
+    return {
+      state: "not-applicable",
+      displayValue: "Not tracked",
+      note: "No public product repository is connected to the automated metrics collector.",
+      evidence: [],
+    };
+  }
+
+  const unknown = (note: string, sourceType = "repository"): ComparisonClaim => ({
+    state: "unknown",
+    displayValue: "Unknown",
+    note,
+    evidence: metricEvidence(record, `${product.name} repository`, sourceType),
+  });
+  const fact = (displayValue: string, note?: string, sourceType = "repository"): ComparisonClaim => ({
+    state: "fact",
+    displayValue,
+    ...(note ? { note } : {}),
+    evidence: metricEvidence(record, `${product.name} repository metrics`, sourceType),
+  });
+
+  if (row.metricKey === "version") {
+    return record.latestRelease?.tagName
+      ? fact(record.latestRelease.tagName, undefined, "latest-release")
+      : unknown("No stable GitHub release was verified; repository tags are not treated as stable releases.", "latest-tag");
+  }
+  if (row.metricKey === "releaseDate") {
+    return record.latestRelease?.publishedAt
+      ? fact(formatDate(record.latestRelease.publishedAt), undefined, "latest-release")
+      : unknown("No verified stable GitHub release publication date is available.", "latest-tag");
+  }
+  if (row.metricKey === "stars") {
+    return record.stars === null
+      ? unknown("The latest repository refresh did not return a star count.")
+      : fact(formatNumber(record.stars), `${record.stars.toLocaleString("en-US")} stars exactly.`, "repository");
+  }
+  if (row.metricKey === "contributors") {
+    return record.contributors === null
+      ? unknown("The contributors endpoint did not return a count.")
+      : fact(
+          formatNumber(record.contributors),
+          `${record.contributors.toLocaleString("en-US")} entries from GitHub's current repository-history contributor endpoint, including anonymous entries.`,
+          "contributors",
+        );
+  }
+  if (row.metricKey === "loc") {
+    return record.loc?.code === null || record.loc?.code === undefined
+      ? unknown("LOC has not been measured for this repository.")
+      : fact(
+          formatNumber(record.loc.code),
+          `${record.loc.code.toLocaleString("en-US")} source lines at ${record.loc.measuredRef ?? "the recorded repository ref"}.`,
+          "loc-checkout",
+        );
+  }
+  if (row.metricKey === "language") {
+    return record.languages?.[0]
+      ? fact(`${record.languages[0].name} ${record.languages[0].percent}%`, undefined, "languages")
+      : unknown("GitHub did not return a language breakdown.");
+  }
+  return record.refreshedAt
+    ? fact(formatDate(record.refreshedAt), record.status === "current" ? undefined : `Collector status: ${record.status}.`)
+    : unknown("This repository has not completed a successful refresh.");
+};
+
+const claimFor = (product: ComparisonProduct, row: ComparisonRow | MetricRow): ComparisonClaim =>
+  "metricKey" in row ? metricClaim(product, row) : getComparisonClaim(product, row);
+
+const normalizedValue = (claim: ComparisonClaim): string =>
+  `${claim.state}:${claim.displayValue}`.toLowerCase().replaceAll(/\s+/g, " ").trim();
+
+const productMetric = (product: ComparisonProduct): MetricRecord | undefined =>
+  product.repoMetricId ? metrics.get(product.repoMetricId) : undefined;
+
+const basisLabel = (source: EvidenceSource): string => {
+  const labels: Record<EvidenceSource["basis"], string> = {
+    reproduced: "Reproduced",
+    "source-inspected": "Source inspected",
+    "vendor-documented": "Vendor docs",
+    "repository-derived": "Repository",
+    "community-reported": "Community report",
+    unverified: "Unverified source",
+  };
+  return labels[source.basis];
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{currentCategory.label} comparison · Tortie</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={`https://tortie.sh${currentCategory.route}`} />
+    <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon-180.png" />
+    <meta name="theme-color" content="#131417" />
+    <script is:inline>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <Nav current="compare" />
+    <main class="compare-page" data-comparison-root>
+      <div class="category-shell">
+        <div class="comparison-width">
+          <nav class="category-nav" aria-label="Comparison categories">
+            <ul>
+              {
+                comparisonCategories.map((category) => (
+                  <li>
+                    <a
+                      href={category.route}
+                      aria-current={category.id === categoryId ? "page" : undefined}
+                    >
+                      {category.shortLabel}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <section class="matrix-workspace comparison-width" aria-labelledby="matrix-title">
+        <header class="matrix-context">
+          <div>
+            <p class="compare-kicker">AI coding tool index</p>
+            <h1 id="matrix-title">{currentCategory.label}</h1>
+            <p>{currentCategory.description}</p>
+          </div>
+          <div class="matrix-meta">
+            <span>{products.length} products</span>
+            <span>{allRows.length} criteria</span>
+            <time datetime={COMPARISON_SNAPSHOT}>Updated {COMPARISON_SNAPSHOT}</time>
+            <a class="method-link" href="https://github.com/gregce/tortie/tree/main/docs/research">
+              Method
+            </a>
+          </div>
+        </header>
+
+        <div class="matrix-layout">
+          <aside class="matrix-rail" aria-label="Comparison view controls">
+            <button
+              class="rail-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="comparison-view-controls"
+              data-filter-toggle
+            >
+              View controls
+            </button>
+            <div class="matrix-toolbar" id="comparison-view-controls" data-filter-controls>
+              <div class="rail-heading">
+                <span>View</span>
+                <p class="result-summary" aria-live="polite" data-result-summary>
+                  {allRows.length} criteria · {products.length} products
+                </p>
+              </div>
+              <div class="control control-search">
+                <label for="comparison-search">Find</label>
+                <input
+                  id="comparison-search"
+                  type="search"
+                  placeholder="Product or criterion"
+                  autocomplete="off"
+                  data-filter-search
+                />
+              </div>
+              <div class="control">
+                <span class="control-label">Products</span>
+                <details class="product-picker" data-product-picker>
+                  <summary data-picker-summary>Focus products</summary>
+                  <div class="picker-panel">
+                    <p class="picker-copy" data-picker-copy>
+                      All products are shown. Choose 2 to 4 for a focused comparison.
+                    </p>
+                    {
+                      products.map((product) => (
+                        <label class="picker-option">
+                          <input type="checkbox" value={product.id} data-product-check />
+                          <span>{product.name}</span>
+                        </label>
+                      ))
+                    }
+                    <div class="picker-actions">
+                      <button class="toolbar-button" type="button" data-picker-clear>Show all</button>
+                      <button class="toolbar-button toolbar-button-primary" type="button" data-picker-apply>
+                        Compare
+                      </button>
+                    </div>
+                  </div>
+                </details>
+              </div>
+              <div class="control">
+                <label for="comparison-show">Criteria</label>
+                <select id="comparison-show" data-filter-show>
+                  <option value="all">All criteria</option>
+                  <option value="differences">Differences only</option>
+                  <option value="unknowns">Research gaps</option>
+                </select>
+              </div>
+              <div class="control">
+                <label for="comparison-os">Platform</label>
+                <select id="comparison-os" data-filter-os>
+                  <option value="all">All platforms</option>
+                  <option value="macos">macOS</option>
+                  <option value="windows">Windows</option>
+                  <option value="linux">Linux</option>
+                  <option value="web">Web</option>
+                </select>
+              </div>
+              <div class="control">
+                <label for="comparison-sort">Order</label>
+                <select id="comparison-sort" data-sort-products>
+                  <option value="editorial">Field guide</option>
+                  <option value="name">Name</option>
+                  <option value="stars">GitHub stars</option>
+                  <option value="updated">Repository activity</option>
+                </select>
+              </div>
+              <button class="toolbar-button rail-reset" type="button" data-reset-view>Reset view</button>
+              <div class="rail-key" aria-label="Comparison key">
+                <span><i data-key="known"></i> Documented</span>
+                <span><i data-key="limited"></i> Limited</span>
+                <span><i data-key="unknown"></i> Unknown</span>
+              </div>
+            </div>
+          </aside>
+
+          <div class="matrix-main">
+            <noscript>
+              <p class="noscript-note">
+                The full comparison is shown. View controls require JavaScript.
+              </p>
+            </noscript>
+            <div class="matrix-status">
+              <p><strong>Unknown</strong> means the evidence does not support a conclusion yet.</p>
+              <p data-scroll-hint>Scroll sideways to compare</p>
+              {hasMetrics && <span>Repo snapshot {metricGeneratedDate}</span>}
+            </div>
+            <div class="matrix-frame">
+              <div
+                class="matrix-scroll"
+                role="region"
+                aria-label={`${currentCategory.label} comparison. Scroll sideways to compare products.`}
+                tabindex="0"
+                data-matrix-scroll
+              >
+            <table class="comparison-table" data-comparison-table>
+              <caption>{description}</caption>
+              <thead>
+                <tr>
+                  <th class="feature-heading" scope="col">Criterion</th>
+                  {
+                    products.map((product) => {
+                      const metric = productMetric(product);
+                      const brand = productAssets[product.id];
+                      const supportedPlatforms = productPlatforms(product);
+                      return (
+                        <th
+                          scope="col"
+                          data-product-id={product.id}
+                          data-product-name={product.name}
+                          data-platforms={profilePlatforms(product)}
+                          data-stars={metric?.stars ?? ""}
+                          data-updated={metric?.pushedAt ?? ""}
+                        >
+                          {product.officialUrl || product.repository?.url ? (
+                            <a class="product-lockup" href={product.officialUrl ?? product.repository?.url}>
+                              {brand && (
+                                <span class="product-logo-frame" title={`${brand.name} · ${brand.sourceType.replaceAll("-", " ")}`}>
+                                  <img class="product-logo" src={brand.src} alt="" width="30" height="30" loading="lazy" />
+                                </span>
+                              )}
+                              <span class="product-copy">
+                                <span class="product-name">{product.name}</span>
+                                {metric?.latestRelease?.tagName && (
+                                  <span class="product-meta product-version">{metric.latestRelease.tagName}</span>
+                                )}
+                              </span>
+                            </a>
+                          ) : (
+                            <span class="product-lockup">
+                              {brand && (
+                                <span class="product-logo-frame">
+                                  <img class="product-logo" src={brand.src} alt="" width="30" height="30" loading="lazy" />
+                                </span>
+                              )}
+                              <span class="product-name">{product.name}</span>
+                            </span>
+                          )}
+                          <span
+                            class="platform-list"
+                            aria-label={supportedPlatforms.length > 0
+                              ? `Supported platforms: ${supportedPlatforms.map((id) => platformAssets[id]?.name ?? id).join(", ")}`
+                              : "Supported platforms are not yet verified"}
+                          >
+                            {supportedPlatforms.length > 0
+                              ? supportedPlatforms.map((id) => {
+                                  const platform = platformAssets[id];
+                                  return platform ? (
+                                    <span class="platform-mark" title={platform.name}>
+                                      <img src={platform.src} alt="" width="14" height="14" loading="lazy" />
+                                    </span>
+                                  ) : null;
+                                })
+                              : <span class="platform-unknown" title="Platform support not yet verified">?</span>}
+                          </span>
+                        </th>
+                      );
+                    })
+                  }
+                </tr>
+              </thead>
+              {
+                groupedRows.map(([group, rows]) => (
+                  <tbody data-group={group}>
+                    <tr class="group-row" data-group-row={group}>
+                      <th class="group-heading" scope="rowgroup">{group}</th>
+                      {products.map((product) => (
+                        <td class="group-fill" data-product-id={product.id} aria-hidden="true" />
+                      ))}
+                    </tr>
+                    {rows.map((row) => (
+                      <tr
+                        data-row-id={row.id}
+                        data-group={group}
+                        data-search={`${row.label} ${row.description ?? ""}`.toLowerCase()}
+                      >
+                        <th class="criterion-heading" scope="row">
+                          {row.label}
+                          {row.description && <span class="row-description">{row.description}</span>}
+                        </th>
+                        {products.map((product) => {
+                          const claim = claimFor(product, row);
+                          const source = claim.evidence[0];
+                          return (
+                            <td
+                              data-product-id={product.id}
+                              data-state={claim.state}
+                              data-normalized={normalizedValue(claim)}
+                              title={claim.note}
+                            >
+                              <span
+                                class="cell-value"
+                                data-state={claim.state}
+                                aria-label={claim.note ? `${claim.displayValue}. ${claim.note}` : undefined}
+                              >
+                                {claim.displayValue}
+                              </span>
+                              {source && (
+                                <a
+                                  class="evidence-link"
+                                  href={source.url}
+                                  aria-label={`Evidence for ${product.name}, ${row.label}: ${basisLabel(source)}`}
+                                  title={`${source.title}. ${source.basis.replaceAll("-", " ")}. Checked ${source.checkedAt}.`}
+                                >
+                                  ↗
+                                </a>
+                              )}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </tbody>
+                ))
+              }
+            </table>
+            <div class="matrix-empty" data-matrix-empty>
+              <p>No comparison rows match this view.</p>
+              <button class="toolbar-button" type="button" data-reset-view>Reset view</button>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="../scripts/comparison.ts"></script>
+  </body>
+</html>

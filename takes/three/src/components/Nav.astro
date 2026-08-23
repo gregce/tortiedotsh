@@ -1,6 +1,11 @@
 ---
 // The nav is the app's band. One bar on --bg-sidebar, one 1px hairline
 // under it, both CTAs repeated small.
+interface Props {
+  current?: "compare";
+}
+
+const { current } = Astro.props;
 ---
 
 <header class="nav">
@@ -12,6 +17,11 @@
       >
     </a>
     <nav class="nav-actions" aria-label="Primary">
+      <a
+        class="nav-link"
+        href="/compare/"
+        aria-current={current === "compare" ? "page" : undefined}
+      >Compare tools</a>
       <a
         class="btn btn-outline btn-small"
         href="https://github.com/gregce/tortie"
@@ -60,6 +70,21 @@
     gap: var(--space-4);
   }
 
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 var(--space-3);
+    color: var(--text-secondary);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .nav-link:hover,
+  .nav-link[aria-current="page"] {
+    color: var(--text-primary);
+  }
+
   /* Both CTAs stay in the nav at every width. Below 640px the wordmark
      text yields; the mark keeps the identity and the hero lockup sits
      directly underneath. */
@@ -71,6 +96,10 @@
     .nav-actions .btn-small {
       padding: 0 10px;
       font-size: 12px;
+    }
+
+    .nav-link {
+      display: none;
     }
   }
 </style>

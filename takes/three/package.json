@@ -8,7 +8,12 @@
     "sync": "node scripts/sync-assets.mjs",
     "dev": "npm run sync && astro dev",
     "build": "npm run sync && astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "validate:data": "node --experimental-strip-types scripts/validate-comparison-data.mjs",
+    "audit:freshness": "node --experimental-strip-types scripts/validate-comparison-data.mjs --freshness",
+    "refresh:metrics": "node scripts/refresh-open-source-metrics.mjs",
+    "refresh:assets": "node scripts/fetch-comparison-assets.mjs",
+    "verify": "npm run validate:data && npm run build"
   },
   "dependencies": {
     "@hyperframes/player": "0.7.108",

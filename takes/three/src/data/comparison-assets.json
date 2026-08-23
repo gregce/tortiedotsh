@@ -1,0 +1,423 @@
+{
+  "checkedAt": "2026-08-23",
+  "products": {
+    "visual-studio-code": {
+      "name": "Visual Studio Code",
+      "alt": "Visual Studio Code logo",
+      "src": "/compare/logos/visual-studio-code.png",
+      "sourceUrl": "https://code.visualstudio.com/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "cursor-ide": {
+      "name": "Cursor IDE",
+      "alt": "Cursor IDE logo",
+      "src": "/compare/logos/cursor-ide.svg",
+      "sourceUrl": "https://cursor.com/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "windsurf": {
+      "name": "Devin Desktop",
+      "alt": "Devin Desktop logo",
+      "src": "/compare/logos/windsurf.jpg",
+      "sourceUrl": "https://github.com/cognition-ai",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "zed": {
+      "name": "Zed",
+      "alt": "Zed logo",
+      "src": "/compare/logos/zed.png",
+      "sourceUrl": "https://github.com/zed-industries/zed/blob/HEAD/crates/zed/resources/app-icon%402x.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "kiro": {
+      "name": "Kiro",
+      "alt": "Kiro logo",
+      "src": "/compare/logos/kiro.svg",
+      "sourceUrl": "https://kiro.dev/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "void": {
+      "name": "Void",
+      "alt": "Void logo",
+      "src": "/compare/logos/void.png",
+      "sourceUrl": "https://github.com/voideditor/void/blob/HEAD/void_icons/slice_of_void.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "tortie": {
+      "name": "Tortie",
+      "alt": "Tortie logo",
+      "src": "/compare/logos/tortie.png",
+      "sourceUrl": "https://github.com/gregce/tortie/blob/HEAD/docs/brand/tortie/macos/Tortie.iconset/icon_512x512%402x.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "cmux": {
+      "name": "cmux",
+      "alt": "cmux logo",
+      "src": "/compare/logos/cmux.png",
+      "sourceUrl": "https://github.com/manaflow-ai/cmux/blob/HEAD/web/public/brand/app-icon-dark.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "wmux": {
+      "name": "wmux",
+      "alt": "wmux logo",
+      "src": "/compare/logos/wmux.svg",
+      "sourceUrl": "https://github.com/openwong2kim/wmux/blob/HEAD/assets/icon.svg",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "warp": {
+      "name": "Warp",
+      "alt": "Warp logo",
+      "src": "/compare/logos/warp.png",
+      "sourceUrl": "https://www.warp.dev/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "wave-terminal": {
+      "name": "Wave Terminal",
+      "alt": "Wave Terminal logo",
+      "src": "/compare/logos/wave-terminal.png",
+      "sourceUrl": "https://github.com/wavetermdev",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "orca": {
+      "name": "Orca",
+      "alt": "Orca logo",
+      "src": "/compare/logos/orca.png",
+      "sourceUrl": "https://github.com/stablyai/orca/blob/HEAD/resources/icon.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "conductor": {
+      "name": "Conductor",
+      "alt": "Conductor logo",
+      "src": "/compare/logos/conductor.png",
+      "sourceUrl": "https://www.conductor.build/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "superset": {
+      "name": "Superset",
+      "alt": "Superset logo",
+      "src": "/compare/logos/superset.png",
+      "sourceUrl": "https://github.com/superset-sh",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "coder-mux": {
+      "name": "Coder Mux",
+      "alt": "Coder Mux logo",
+      "src": "/compare/logos/coder-mux.png",
+      "sourceUrl": "https://github.com/coder/cmux/blob/HEAD/public/icon-512.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "nimbalyst": {
+      "name": "Nimbalyst",
+      "alt": "Nimbalyst logo",
+      "src": "/compare/logos/nimbalyst.png",
+      "sourceUrl": "https://github.com/nimbalyst/nimbalyst/blob/HEAD/packages/electron/icon.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "t3-code": {
+      "name": "T3 Code",
+      "alt": "T3 Code logo",
+      "src": "/compare/logos/t3-code.png",
+      "sourceUrl": "https://t3.codes/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "vibe-kanban": {
+      "name": "Vibe Kanban",
+      "alt": "Vibe Kanban logo",
+      "src": "/compare/logos/vibe-kanban.svg",
+      "sourceUrl": "https://github.com/BloopAI/vibe-kanban/blob/HEAD/packages/public/favicon-vk-light.svg",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "sculptor": {
+      "name": "Sculptor",
+      "alt": "Sculptor logo",
+      "src": "/compare/logos/sculptor.svg",
+      "sourceUrl": "https://github.com/imbue-ai/sculptor/blob/HEAD/sculptor/frontend/public/favicon.svg",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "humanlayer": {
+      "name": "HumanLayer",
+      "alt": "HumanLayer logo",
+      "src": "/compare/logos/humanlayer.png",
+      "sourceUrl": "https://humanlayer.com/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "claude-squad": {
+      "name": "claude-squad",
+      "alt": "claude-squad logo",
+      "src": "/compare/logos/claude-squad.png",
+      "sourceUrl": "https://github.com/smtg-ai",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "agent-deck": {
+      "name": "agent-deck",
+      "alt": "agent-deck logo",
+      "src": "/compare/logos/agent-deck.svg",
+      "sourceUrl": "https://github.com/asheshgoplani/agent-deck/blob/HEAD/site/logo.svg",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "claude-code": {
+      "name": "Claude Code",
+      "alt": "Claude Code logo",
+      "src": "/compare/logos/claude-code.png",
+      "sourceUrl": "https://github.com/anthropics",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "codex-cli": {
+      "name": "Codex CLI",
+      "alt": "Codex CLI logo",
+      "src": "/compare/logos/codex-cli.png",
+      "sourceUrl": "https://github.com/openai",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "cursor-cli": {
+      "name": "Cursor CLI",
+      "alt": "Cursor CLI logo",
+      "src": "/compare/logos/cursor-cli.svg",
+      "sourceUrl": "https://cursor.com/cli",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "gemini-cli": {
+      "name": "Gemini CLI",
+      "alt": "Gemini CLI logo",
+      "src": "/compare/logos/gemini-cli.jpg",
+      "sourceUrl": "https://github.com/google-gemini",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "factory-droid-cli": {
+      "name": "Factory Droid CLI",
+      "alt": "Factory Droid CLI logo",
+      "src": "/compare/logos/factory-droid-cli.svg",
+      "sourceUrl": "https://docs.factory.ai/cli/getting-started/quickstart",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "codewhale": {
+      "name": "CodeWhale",
+      "alt": "CodeWhale logo",
+      "src": "/compare/logos/codewhale.svg",
+      "sourceUrl": "https://github.com/Hmbown/CodeWhale/blob/HEAD/web/app/icon.svg",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "antigravity-cli": {
+      "name": "Antigravity CLI",
+      "alt": "Antigravity CLI logo",
+      "src": "/compare/logos/antigravity-cli.png",
+      "sourceUrl": "https://github.com/google",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "qwen-code": {
+      "name": "Qwen Code",
+      "alt": "Qwen Code logo",
+      "src": "/compare/logos/qwen-code.png",
+      "sourceUrl": "https://github.com/QwenLM/qwen-code/blob/HEAD/packages/chrome-extension/public/icons/icon-source.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "pi-coding-agent": {
+      "name": "Pi coding agent",
+      "alt": "Pi coding agent logo",
+      "src": "/compare/logos/pi-coding-agent.jpg",
+      "sourceUrl": "https://github.com/earendil-works",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "opencode": {
+      "name": "OpenCode CLI",
+      "alt": "OpenCode CLI logo",
+      "src": "/compare/logos/opencode.png",
+      "sourceUrl": "https://github.com/anomalyco",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "github-copilot-cli": {
+      "name": "GitHub Copilot CLI",
+      "alt": "GitHub Copilot CLI logo",
+      "src": "/compare/logos/github-copilot-cli.png",
+      "sourceUrl": "https://github.com/github",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "goose": {
+      "name": "Goose CLI",
+      "alt": "Goose CLI logo",
+      "src": "/compare/logos/goose.svg",
+      "sourceUrl": "https://github.com/aaif-goose/goose/blob/HEAD/ui/desktop/src/images/icon.svg",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "aider": {
+      "name": "Aider",
+      "alt": "Aider logo",
+      "src": "/compare/logos/aider.svg",
+      "sourceUrl": "https://github.com/Aider-AI/aider/blob/HEAD/aider/website/assets/logo.svg",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "grok-build": {
+      "name": "Grok Build",
+      "alt": "Grok Build logo",
+      "src": "/compare/logos/grok-build.png",
+      "sourceUrl": "https://github.com/xai-org",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "github-copilot-vscode": {
+      "name": "GitHub Copilot for VS Code",
+      "alt": "GitHub Copilot for VS Code logo",
+      "src": "/compare/logos/github-copilot-vscode.png",
+      "sourceUrl": "https://github.com/github",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "cline": {
+      "name": "Cline extension",
+      "alt": "Cline extension logo",
+      "src": "/compare/logos/cline.png",
+      "sourceUrl": "https://github.com/cline",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "continue": {
+      "name": "Continue extension",
+      "alt": "Continue extension logo",
+      "src": "/compare/logos/continue.png",
+      "sourceUrl": "https://github.com/continuedev/continue/blob/HEAD/extensions/vscode/media/icon.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "kilo-code": {
+      "name": "Kilo Code extension",
+      "alt": "Kilo Code extension logo",
+      "src": "/compare/logos/kilo-code.png",
+      "sourceUrl": "https://github.com/Kilo-Org/kilocode/blob/HEAD/packages/kilo-vscode/assets/icons/kilo-dark.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "openai-codex-cloud": {
+      "name": "OpenAI Codex cloud",
+      "alt": "OpenAI Codex cloud logo",
+      "src": "/compare/logos/openai-codex-cloud.png",
+      "sourceUrl": "https://github.com/openai",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "github-copilot-coding-agent": {
+      "name": "GitHub Copilot coding agent",
+      "alt": "GitHub Copilot coding agent logo",
+      "src": "/compare/logos/github-copilot-coding-agent.png",
+      "sourceUrl": "https://github.com/github",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "devin": {
+      "name": "Devin",
+      "alt": "Devin logo",
+      "src": "/compare/logos/devin.jpg",
+      "sourceUrl": "https://github.com/cognition-ai",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "happy": {
+      "name": "Happy",
+      "alt": "Happy logo",
+      "src": "/compare/logos/happy.png",
+      "sourceUrl": "https://github.com/slopus/happy/blob/HEAD/logo.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "vibetunnel": {
+      "name": "VibeTunnel",
+      "alt": "VibeTunnel logo",
+      "src": "/compare/logos/vibetunnel.png",
+      "sourceUrl": "https://github.com/amantus-ai/vibetunnel/blob/HEAD/mac/VibeTunnel/Assets.xcassets/AppIcon.appiconset/icon_512x512.png",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "shunt": {
+      "name": "Shunt",
+      "alt": "Shunt logo",
+      "src": "/compare/logos/shunt.png",
+      "sourceUrl": "https://shunt.app/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-08-23"
+    }
+  },
+  "platforms": {
+    "macos": {
+      "name": "macOS",
+      "alt": "macOS logo",
+      "src": "/compare/platforms/macos.png",
+      "sourceUrl": "https://www.apple.com/macos/",
+      "sourceType": "official-vendor-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "windows": {
+      "name": "Windows",
+      "alt": "Windows logo",
+      "src": "/compare/platforms/windows.ico",
+      "sourceUrl": "https://www.microsoft.com/windows/",
+      "sourceType": "official-vendor-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "linux": {
+      "name": "Linux",
+      "alt": "Linux logo",
+      "src": "/compare/platforms/linux.png",
+      "sourceUrl": "https://www.linuxfoundation.org/",
+      "sourceType": "official-foundation-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "web": {
+      "name": "Web",
+      "alt": "Web logo",
+      "src": "/compare/platforms/web.png",
+      "sourceUrl": "https://www.w3.org/",
+      "sourceType": "official-standards-body-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "ios": {
+      "name": "iOS",
+      "alt": "iOS logo",
+      "src": "/compare/platforms/ios.png",
+      "sourceUrl": "https://www.apple.com/ios/",
+      "sourceType": "official-vendor-icon",
+      "checkedAt": "2026-08-23"
+    },
+    "android": {
+      "name": "Android",
+      "alt": "Android logo",
+      "src": "/compare/platforms/android.svg",
+      "sourceUrl": "https://developer.android.com/distribute/marketing-tools/brand-guidelines",
+      "sourceType": "official-vendor-asset",
+      "checkedAt": "2026-08-23"
+    }
+  }
+}
