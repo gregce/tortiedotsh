@@ -65,6 +65,7 @@ repository:
 | `release.reason` | string? | Required explanation for a release-policy exception. |
 | `release.checkedAt` | date? | Human review date for the exceptional release policy; recheck within 120 days. |
 | `release.rejectedCandidate` | object? | Exact GitHub artifact that demonstrated why automatic release inference was unsafe. |
+| `license` | object? | Dated, source-linked SPDX override when GitHub reports `NOASSERTION` for a license established by the canonical repository. |
 
 The script validates IDs, categories, duplicate repositories, and both URLs
 before making requests.
@@ -94,6 +95,10 @@ maintenance signal, not permission to guess a new value: re-open the linked
 first-party source, update the claim and its `checkedAt` date, or leave the cell
 `Unknown`. Asset refreshes remain a reviewed operation because vendor sites
 can return unrelated or malformed images even when a request succeeds.
+Content-hash changes always block publication until reviewed. Sources that
+reject automated clients may remain `unreachable` only while their explicit
+human review is within the same 120-day window; this keeps bot-protected vendor
+documentation honest without pretending the scheduled job can bypass it.
 
 ## Shipping and continuous operation
 

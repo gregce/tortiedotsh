@@ -16,6 +16,7 @@ export type CategoryId =
   | "coding-agent-harnesses"
   | "ide-extensions"
   | "cloud-agents"
+  | "general-purpose-agents"
   | "remote-companions"
   | "agent-traces";
 
@@ -51,6 +52,7 @@ export type PrimaryObject =
   | "agent-conversation"
   | "host-ide-panel"
   | "remote-job"
+  | "general-agent"
   | "remote-session"
   | "agent-trace";
 
@@ -344,6 +346,24 @@ const categoryRows: Record<CategoryId, readonly ComparisonRow[]> = {
     { id: "cloud-triggered-automation", label: "Event, schedule, or API automation", group: "Automation" },
     { id: "cloud-result-type", label: "Durable result type", group: "Result" },
   ],
+  "general-purpose-agents": [
+    { id: "general-durable-identity", label: "Durable agent identity or session", group: "Continuity" },
+    { id: "general-long-term-memory", label: "Long-term memory and recall", group: "Continuity" },
+    { id: "general-browser-control", label: "Interactive browser control", group: "Computer" },
+    { id: "general-terminal-files", label: "Terminal and file tools", group: "Computer" },
+    { id: "general-computer-use", label: "Desktop or GUI computer use", group: "Computer" },
+    { id: "general-communications", label: "Communications channels", group: "Reach" },
+    { id: "general-operator-surfaces", label: "Operator surfaces", group: "Reach" },
+    { id: "general-scheduled-automation", label: "Scheduled/background automation", group: "Automation" },
+    { id: "general-event-triggers", label: "Event or webhook triggers", group: "Automation" },
+    { id: "general-skills-integrations", label: "Skills, plugins, connectors, or MCP", group: "Extensibility" },
+    { id: "general-multi-agent", label: "Multi-agent delegation or handoff", group: "Coordination" },
+    { id: "general-human-approvals", label: "Human action approvals", group: "Safety" },
+    { id: "general-execution-owner", label: "Execution owner", group: "Execution" },
+    { id: "general-self-hosting", label: "Self-hosting", group: "Deployment" },
+    { id: "general-isolation", label: "Isolation and security boundary", group: "Safety" },
+    { id: "general-model-freedom", label: "Model/provider freedom", group: "Models" },
+  ],
   "remote-companions": [
     { id: "remote-client-reach", label: "Web or mobile client", group: "Client" },
     { id: "remote-existing-session", label: "Connects to an existing session", group: "Session ownership" },
@@ -407,7 +427,8 @@ export const comparisonCategories: readonly ComparisonCategory[] = [
   category("coding-agent-harnesses", "Coding-agent harnesses", "Harnesses", "/compare/harnesses/", 5, "Processes that own one model conversation and its tool loop."),
   category("agent-traces", "Agent Traces", "Agent Traces", "/compare/agent-traces/", 6, "Durable provenance and observability records of coding-agent work."),
   category("cloud-agents", "Cloud and background agents", "Cloud agents", "/compare/cloud-agents/", 7, "Remote jobs that return durable patches, branches, pull requests, or results."),
-  category("remote-companions", "Remote companions and relays", "Remote", "/compare/remote/", 8, "Clients that observe or steer a session owned by another machine or product."),
+  category("general-purpose-agents", "General Purpose Agents", "General agents", "/compare/general-purpose-agents/", 8, "Persistent agents and agent workspaces for broad work across computers, communications, tools, memory, and automation."),
+  category("remote-companions", "Remote companions and relays", "Remote", "/compare/remote/", 9, "Clients that observe or steer a session owned by another machine or product."),
 ];
 
 const objectForCategory: Record<CategoryId, PrimaryObject> = {
@@ -417,6 +438,7 @@ const objectForCategory: Record<CategoryId, PrimaryObject> = {
   "coding-agent-harnesses": "agent-conversation",
   "ide-extensions": "host-ide-panel",
   "cloud-agents": "remote-job",
+  "general-purpose-agents": "general-agent",
   "remote-companions": "remote-session",
   "agent-traces": "agent-trace",
 };
@@ -1424,7 +1446,221 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "cloud-result-type": factClaim("Repository changes or pull request", "https://github.com/OpenHands/OpenHands", "OpenHands repository", undefined, "repository-derived"),
   } }),
 
-  // 7. Remote companions and relays
+  // 7. General purpose agents
+  product({
+    id: "openclaw", name: "OpenClaw", categoryId: "general-purpose-agents", editorialOrder: 1,
+    officialUrl: "https://openclaw.ai/", repository: repo("openclaw/openclaw"), repoMetricId: "openclaw",
+    tags: ["personal-agent", "gateway", "memory", "browser", "computer-use", "messaging", "automation", "mcp", "oss"],
+    platform: ["macos", "windows", "linux", "web", "ios", "android"],
+    platformNote: "The Gateway is supported on macOS, Windows, and Linux and exposes a Web Control UI. macOS and Windows have companion apps; iOS and Android are paired nodes rather than desktop hosts.",
+    platformSource: { url: "https://docs.openclaw.ai/platforms", title: "OpenClaw platforms" },
+    source: "open-source", execution: ["local-process", "local-daemon", "container", "user-cloud", "paired-machine"], status: "active",
+    claims: {
+      ...builtInClaims("https://docs.openclaw.ai/", "OpenClaw overview", ["general-durable-identity", "general-long-term-memory", "general-communications", "general-self-hosting", "general-model-freedom"]),
+      ...builtInClaims("https://docs.openclaw.ai/browser", "OpenClaw managed browser", ["general-browser-control"]),
+      ...builtInClaims("https://docs.openclaw.ai/tools", "OpenClaw tools overview", ["general-terminal-files", "general-skills-integrations", "general-multi-agent"]),
+      ...builtInClaims("https://docs.openclaw.ai/nodes/computer-use", "OpenClaw computer use", ["general-computer-use"]),
+      ...builtInClaims("https://github.com/openclaw/openclaw/blob/main/docs/automation/cron-jobs.md", "OpenClaw automations", ["general-scheduled-automation", "general-event-triggers"], undefined, "source-inspected"),
+      "general-operator-surfaces": factClaim("Control UI, CLI, TUI, desktop companions, and mobile nodes", "https://docs.openclaw.ai/platforms", "OpenClaw platforms"),
+      "general-human-approvals": capability("built-in", "https://docs.openclaw.ai/nodes", "OpenClaw nodes", "Pairing, command allowlists, and exec approvals gate host actions; enabled computer control is a durable grant rather than a per-action prompt."),
+      "general-execution-owner": factClaim("Operator Gateway plus optional paired nodes", "https://docs.openclaw.ai/", "OpenClaw overview"),
+      "general-isolation": capability("limited", "https://github.com/openclaw/openclaw/blob/main/docs/gateway/sandboxing.md", "OpenClaw sandboxing", "Tool execution can use Docker, SSH, or OpenShell isolation, but sandboxing is off by default and the Gateway remains on the host.", "source-inspected"),
+    },
+  }),
+  product({
+    id: "hermes-agent", name: "Hermes Agent", categoryId: "general-purpose-agents", editorialOrder: 2,
+    officialUrl: "https://hermes-agent.nousresearch.com/docs/", repository: repo("NousResearch/hermes-agent"), repoMetricId: "hermes-agent",
+    tags: ["personal-agent", "memory", "browser", "terminal", "messaging", "cron", "subagents", "mcp", "byok", "local-models", "oss"],
+    platform: ["macos", "windows", "linux", "web", "android"],
+    platformNote: "Native desktop is documented for macOS, Windows, and Linux; the CLI also has a tested Android/Termux path. Web and messaging are remote operator surfaces, not native mobile clients.",
+    platformSource: { url: "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/README.md", title: "Hermes Agent repository" },
+    source: "open-source", execution: ["local-process", "local-daemon", "container", "ssh-host", "user-cloud"], status: "active",
+    claims: {
+      ...builtInClaims("https://raw.githubusercontent.com/NousResearch/hermes-agent/main/README.md", "Hermes Agent repository", ["general-durable-identity", "general-long-term-memory", "general-communications", "general-self-hosting", "general-model-freedom"], undefined, "repository-derived"),
+      ...builtInClaims("https://hermes-agent.nousresearch.com/docs/user-guide/features/browser/", "Hermes browser automation", ["general-browser-control"]),
+      ...builtInClaims("https://hermes-agent.nousresearch.com/docs/user-guide/features/tools/", "Hermes tools", ["general-terminal-files", "general-skills-integrations"]),
+      ...builtInClaims("https://hermes-agent.nousresearch.com/docs/user-guide/features/cron/", "Hermes cron", ["general-scheduled-automation"]),
+      ...builtInClaims("https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation/", "Hermes subagent delegation", ["general-multi-agent"]),
+      "general-event-triggers": capability("limited", "https://hermes-agent.nousresearch.com/docs/user-guide/messaging", "Hermes messaging gateway", "The Gateway includes a webhook adapter with full tools; a broader typed event-routing system is not established."),
+      "general-operator-surfaces": factClaim("Native desktop, CLI/TUI, web dashboard, and messaging gateway", "https://github.com/NousResearch/hermes-agent/blob/main/apps/desktop/README.md", "Hermes Desktop repository", undefined, "repository-derived"),
+      "general-human-approvals": capability("built-in", "https://hermes-agent.nousresearch.com/docs/user-guide/configuration", "Hermes configuration", "Smart and manual modes gate potentially dangerous commands; hard deny rules remain enforceable."),
+      "general-execution-owner": factClaim("Local, Docker/Singularity, SSH, Modal, Daytona, or Vercel Sandbox", "https://hermes-agent.nousresearch.com/docs/user-guide/configuration", "Hermes configuration"),
+      "general-isolation": capability("limited", "https://hermes-agent.nousresearch.com/docs/user-guide/configuration", "Hermes configuration", "Container and cloud backends provide isolation; the default local backend provides none."),
+    },
+  }),
+  product({
+    id: "grok-bot", name: "Grok Bot", categoryId: "general-purpose-agents", editorialOrder: 3,
+    officialUrl: "https://x.ai/bot", tags: ["named-agents", "cloud-computer", "browser", "desktop-tools", "connectors", "routines", "approvals", "multi-agent"],
+    platform: ["macos", "windows", "ios"],
+    platformNote: "The exact Grok Bot SKU has native macOS and Windows desktop clients plus an iOS companion. Its FAQ explicitly says Linux, Android, and iPad are unsupported at initial launch.",
+    platformSource: { url: "https://docs.x.ai/grok-bot/faq", title: "Grok Bot FAQ" },
+    source: "hosted-service", execution: ["vendor-cloud", "paired-machine"], status: "active",
+    claims: {
+      ...builtInClaims("https://docs.x.ai/grok-bot/overview", "Grok Bot overview", ["general-durable-identity", "general-skills-integrations", "general-multi-agent"]),
+      ...builtInClaims("https://docs.x.ai/grok-bot/faq", "Grok Bot FAQ", ["general-long-term-memory"]),
+      ...builtInClaims("https://docs.x.ai/grok-bot/computer-and-apps", "Grok Bot computer and apps", ["general-browser-control", "general-terminal-files", "general-computer-use"]),
+      "general-communications": capability("limited", "https://docs.x.ai/grok-bot/chat-and-collaboration", "Grok Bot collaboration", "Direct conversations, groups, threads, and Bot-to-Bot messages are built in; external chat-channel ingress is not established."),
+      "general-operator-surfaces": factClaim("macOS and Windows desktop plus iOS companion", "https://docs.x.ai/grok-bot/faq", "Grok Bot FAQ"),
+      ...builtInClaims("https://docs.x.ai/grok-bot/skills-routines-and-automations", "Grok Bot skills and routines", ["general-scheduled-automation", "general-event-triggers"]),
+      "general-human-approvals": capability("built-in", "https://docs.x.ai/grok-bot/approvals-security-and-privacy", "Grok Bot approvals", "Actions can stop for one-time approval or denial; Auto-review supports narrow Require Approval rules."),
+      "general-execution-owner": factClaim("Persistent vendor-managed Linux cloud VM plus permissioned local actions", "https://docs.x.ai/grok-bot/faq", "Grok Bot FAQ"),
+      "general-isolation": factClaim("One cloud computer per user account; Bots share it", "https://docs.x.ai/grok-bot/computer-and-apps", "Grok Bot computer and apps", "Bots are separate work surfaces, not separate security boundaries."),
+      "general-self-hosting": unknownClaim("The managed cloud computer is documented; the exact SKU does not establish or explicitly deny a self-hosted edition."),
+      "general-model-freedom": unknownClaim("Current exact-SKU documentation does not establish operator-selectable third-party or local models."),
+    },
+  }),
+  product({
+    id: "perplexity-computer", name: "Perplexity Computer", categoryId: "general-purpose-agents", editorialOrder: 4,
+    officialUrl: "https://www.perplexity.ai/products/computer", tags: ["digital-worker", "cloud-sandbox", "memory", "browser", "connectors", "scheduled-tasks", "subagents"],
+    platform: ["web", "ios", "android"], platformSource: { url: "https://www.perplexity.ai/products/computer", title: "What is Perplexity Computer" },
+    source: "hosted-service", execution: ["vendor-cloud"], status: "active",
+    claims: {
+      ...builtInClaims("https://www.perplexity.ai/products/computer", "What is Perplexity Computer", ["general-durable-identity", "general-long-term-memory", "general-browser-control", "general-terminal-files", "general-communications", "general-skills-integrations", "general-multi-agent"]),
+      "general-computer-use": capability("limited", "https://www.perplexity.ai/products/computer", "What is Perplexity Computer", "Browser automation, code, and artifacts are documented; native desktop-application control is not established."),
+      "general-operator-surfaces": factClaim("Web desktop, iOS, Android, Slack, Microsoft 365, and email", "https://www.perplexity.ai/products/computer", "What is Perplexity Computer"),
+      ...builtInClaims("https://www.perplexity.ai/products/computer", "Perplexity tasks", ["general-scheduled-automation", "general-event-triggers"]),
+      "general-execution-owner": factClaim("Perplexity cloud", "https://www.perplexity.ai/products/computer", "Perplexity Computer product page"),
+      "general-isolation": capability("built-in", "https://www.perplexity.ai/products/computer", "What is Perplexity Computer", "Each user receives a secure isolated personal cloud sandbox."),
+      "general-self-hosting": unknownClaim("Current exact-SKU documentation does not establish a self-hosted deployment."),
+      "general-model-freedom": unknownClaim("Current exact-SKU documentation does not establish operator-selectable third-party or local models."),
+    },
+  }),
+  product({
+    id: "manus", name: "Manus", categoryId: "general-purpose-agents", editorialOrder: 5,
+    officialUrl: "https://manus.im/", tags: ["cloud-computer", "desktop", "browser", "terminal", "files", "skills", "scheduled-tasks", "approvals"],
+    platform: ["macos", "windows", "web"], platformSource: { url: "https://manus.im/docs/features/desktop", title: "Manus Desktop documentation" },
+    source: "proprietary", execution: ["vendor-cloud", "local-process", "paired-machine"], status: "active",
+    claims: {
+      ...builtInClaims("https://help.manus.im/en/articles/15392111-what-is-the-cloud-computer", "Manus Cloud Computer", ["general-durable-identity", "general-browser-control", "general-terminal-files", "general-computer-use"]),
+      "general-long-term-memory": capability("limited", "https://help.manus.im/en/articles/15392111-what-is-the-cloud-computer", "Manus Cloud Computer", "Projects, files, tools, and processes persist across sessions; a distinct semantic-memory contract is not established."),
+      "general-operator-surfaces": factClaim("Web plus macOS and Windows Desktop", "https://manus.im/docs/features/desktop", "Manus Desktop documentation"),
+      ...builtInClaims("https://manus.im/features/agent-skills", "Manus Agent Skills", ["general-skills-integrations"]),
+      ...builtInClaims("https://manus.im/features/agent-skills", "Manus Agent Skills", ["general-scheduled-automation"]),
+      "general-human-approvals": capability("built-in", "https://manus.im/docs/features/desktop", "Manus Desktop documentation", "Local folders require explicit authorization and commands use scoped approval prompts."),
+      "general-execution-owner": factClaim("Persistent Manus cloud VM or user-authorized local desktop", "https://help.manus.im/en/articles/15392111-what-is-the-cloud-computer", "Manus Cloud Computer"),
+      "general-isolation": factClaim("Isolated Ubuntu cloud VM plus folder-scoped local authorization", "https://help.manus.im/en/articles/15392111-what-is-the-cloud-computer", "Manus Cloud Computer"),
+      "general-self-hosting": unknownClaim("Current exact-SKU documentation does not establish a self-hosted deployment."),
+      "general-model-freedom": unknownClaim("Current exact-SKU documentation does not establish operator-selectable third-party or local models."),
+    },
+  }),
+  product({
+    id: "genspark-super-agent", name: "Genspark Super Agent", categoryId: "general-purpose-agents", editorialOrder: 6,
+    officialUrl: "https://www.genspark.ai/helpcenter/super-agent", tags: ["super-agent", "cloud-sandbox", "browser", "files", "secondbrain", "skills", "parallel-agents", "background"],
+    platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "active",
+    claims: {
+      ...builtInClaims("https://www.genspark.ai/helpcenter/super-agent", "Genspark Super Agent help", ["general-durable-identity", "general-browser-control", "general-terminal-files", "general-skills-integrations", "general-multi-agent"]),
+      ...builtInClaims("https://www.genspark.ai/helpcenter/secondbrain", "Genspark SecondBrain", ["general-long-term-memory"]),
+      "general-computer-use": capability("limited", "https://www.genspark.ai/helpcenter/super-agent", "Genspark Super Agent help", "A real browser and execution sandbox are documented; native desktop-application control is not established."),
+      "general-communications": capability("limited", "https://www.genspark.ai/helpcenter/secondbrain", "Genspark SecondBrain", "Connected email, calendar, chat, meetings, and apps provide context and selected actions rather than a general external messaging gateway."),
+      "general-operator-surfaces": factClaim("Browser application", "https://www.genspark.ai/helpcenter/super-agent", "Genspark Super Agent help"),
+      "general-execution-owner": factClaim("Genspark cloud", "https://www.genspark.ai/helpcenter/super-agent", "Genspark Super Agent help"),
+      "general-isolation": capability("built-in", "https://www.genspark.ai/helpcenter/super-agent", "Genspark Super Agent help", "Each task uses a dedicated browser, filesystem, and execution sandbox."),
+      "general-self-hosting": unknownClaim("Current exact-SKU documentation does not establish a self-hosted deployment."),
+      "general-model-freedom": unknownClaim("Current exact-SKU documentation does not establish operator-selectable third-party or local models."),
+    },
+  }),
+  product({
+    id: "nanobot", name: "nanobot", categoryId: "general-purpose-agents", editorialOrder: 7,
+    officialUrl: "https://github.com/HKUDS/nanobot", repository: repo("HKUDS/nanobot"), repoMetricId: "nanobot",
+    tags: ["personal-agent", "gateway", "webui", "tui", "memory", "messaging", "automation", "mcp", "subagents", "oss"],
+    platform: ["macos", "windows", "linux", "web"], source: "open-source", execution: ["local-process", "local-daemon", "container", "user-cloud"], status: "active",
+    claims: {
+      ...builtInClaims("https://raw.githubusercontent.com/HKUDS/nanobot/main/README.md", "nanobot repository", ["general-durable-identity", "general-long-term-memory", "general-terminal-files", "general-communications", "general-skills-integrations", "general-multi-agent", "general-self-hosting", "general-model-freedom"], undefined, "repository-derived"),
+      "general-browser-control": capability("limited", "https://github.com/HKUDS/nanobot/blob/main/docs/configuration.md", "nanobot configuration", "Web search and fetch are built in; click/type browser automation is not established.", "source-inspected"),
+      "general-operator-surfaces": factClaim("WebUI, terminal client, API, and chat apps", "https://raw.githubusercontent.com/HKUDS/nanobot/main/README.md", "nanobot repository", undefined, "repository-derived"),
+      ...builtInClaims("https://github.com/HKUDS/nanobot/blob/main/docs/automations.md", "nanobot automations", ["general-scheduled-automation"], undefined, "source-inspected"),
+      "general-event-triggers": capability("limited", "https://github.com/HKUDS/nanobot/blob/main/docs/automations.md", "nanobot automations", "Durable local triggers accept CI or webhook-adapter messages, but nanobot has no built-in public webhook receiver.", "source-inspected"),
+      "general-execution-owner": factClaim("Operator-controlled local or server Gateway", "https://raw.githubusercontent.com/HKUDS/nanobot/main/README.md", "nanobot repository", undefined, "repository-derived"),
+      "general-isolation": capability("limited", "https://github.com/HKUDS/nanobot/blob/main/docs/configuration.md", "nanobot configuration", "Linux bubblewrap and Docker isolation are available, but workspace restriction and shell sandboxing are off by default.", "source-inspected"),
+    },
+  }),
+  product({
+    id: "agent-zero", name: "Agent Zero", categoryId: "general-purpose-agents", editorialOrder: 8,
+    officialUrl: "https://www.agent-zero.ai/", repository: repo("agent0ai/agent-zero"), repoMetricId: "agent-zero",
+    tags: ["agent-workbench", "linux-desktop", "browser", "documents", "projects", "memory", "plugins", "scheduler", "subagents", "oss"],
+    platform: ["macos", "windows", "linux", "web"], source: "open-source", execution: ["container", "local-daemon", "user-cloud", "paired-machine"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/agent0ai/agent-zero", "Agent Zero repository", ["general-durable-identity", "general-long-term-memory", "general-browser-control", "general-terminal-files", "general-computer-use", "general-skills-integrations", "general-multi-agent", "general-self-hosting", "general-model-freedom"], undefined, "repository-derived"),
+      "general-operator-surfaces": factClaim("Browser Web UI, A0 Launcher, and A0 CLI", "https://github.com/agent0ai/agent-zero", "Agent Zero repository", undefined, "repository-derived"),
+      ...builtInClaims("https://www.agent-zero.ai/p/docs/task-scheduler/", "Agent Zero Task Scheduler", ["general-scheduled-automation"]),
+      "general-human-approvals": capability("limited", "https://www.agent-zero.ai/p/docs/a0-cli-connector/", "Agent Zero A0 CLI", "Tool, MCP, and Skill permissions plus explicit host-computer enablement are documented; a general per-action approval workflow is not established."),
+      "general-execution-owner": factClaim("Operator Docker container with optional host bridge", "https://github.com/agent0ai/agent-zero", "Agent Zero repository", undefined, "repository-derived"),
+      "general-isolation": capability("built-in", "https://github.com/agent0ai/agent-zero", "Agent Zero repository", "The default work environment is a Dockerized Linux desktop; host access is a separate explicit bridge.", "repository-derived"),
+    },
+  }),
+  product({
+    id: "zeroclaw", name: "ZeroClaw", categoryId: "general-purpose-agents", editorialOrder: 9,
+    officialUrl: "https://github.com/zeroclaw-labs/zeroclaw", repository: repo("zeroclaw-labs/zeroclaw"), repoMetricId: "zeroclaw",
+    tags: ["personal-agent", "rust", "single-binary", "browser", "shell", "messaging", "mcp", "self-hosted", "oss"],
+    platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process", "local-daemon", "container", "user-cloud"], status: "active",
+    claims: {
+      ...builtInClaims("https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", ["general-durable-identity", "general-long-term-memory", "general-browser-control", "general-terminal-files", "general-communications", "general-skills-integrations", "general-self-hosting"], undefined, "repository-derived"),
+      "general-operator-surfaces": factClaim("CLI and 30+ messaging adapters", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", undefined, "repository-derived"),
+      "general-event-triggers": capability("limited", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", "Webhook adapters are documented; a broader durable event-automation contract is not established.", "repository-derived"),
+      "general-human-approvals": capability("limited", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", "Autonomy, sandboxing, and tool-receipt controls are documented; the exact default and per-action policy require the security guide.", "repository-derived"),
+      "general-execution-owner": factClaim("Operator machine, container, or server", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", undefined, "repository-derived"),
+      "general-isolation": capability("limited", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", "Sandbox controls are configurable; the reviewed first-party summary does not establish the exact default policy.", "repository-derived"),
+    },
+  }),
+  product({
+    id: "ironclaw", name: "IronClaw", categoryId: "general-purpose-agents", editorialOrder: 10,
+    officialUrl: "https://github.com/nearai/ironclaw", repository: repo("nearai/ironclaw"), repoMetricId: "ironclaw",
+    tags: ["personal-agent", "agent-os", "encrypted-memory", "webui", "repl", "webhooks", "wasm", "mcp", "automation", "oss"],
+    platform: ["macos", "windows", "linux", "web"], platformNote: "Windows support is documented through WSL; the WebUI is served by the operator-run background service.",
+    source: "open-source", execution: ["local-daemon", "container", "user-cloud"], status: "active",
+    claims: {
+      ...builtInClaims("https://raw.githubusercontent.com/nearai/ironclaw/main/README.md", "IronClaw repository", ["general-durable-identity", "general-long-term-memory", "general-terminal-files", "general-communications", "general-scheduled-automation", "general-event-triggers", "general-skills-integrations", "general-self-hosting"], undefined, "repository-derived"),
+      "general-operator-surfaces": factClaim("Background service, browser WebUI, and terminal REPL", "https://raw.githubusercontent.com/nearai/ironclaw/main/README.md", "IronClaw repository", undefined, "repository-derived"),
+      "general-multi-agent": capability("limited", "https://raw.githubusercontent.com/nearai/ironclaw/main/README.md", "IronClaw repository", "Parallel isolated jobs are documented; arbitrary peer-agent handoff is not established.", "repository-derived"),
+      "general-execution-owner": factClaim("Operator-run local or server service", "https://raw.githubusercontent.com/nearai/ironclaw/main/README.md", "IronClaw repository", undefined, "repository-derived"),
+      "general-isolation": capability("built-in", "https://raw.githubusercontent.com/nearai/ironclaw/main/README.md", "IronClaw repository", "Untrusted tools run in capability-limited WASM; container jobs use per-job tokens and secrets cross the host boundary explicitly.", "repository-derived"),
+    },
+  }),
+  product({
+    id: "picoclaw", name: "PicoClaw", categoryId: "general-purpose-agents", editorialOrder: 11,
+    officialUrl: "https://github.com/sipeed/picoclaw", repository: repo("sipeed/picoclaw"), repoMetricId: "picoclaw",
+    tags: ["personal-agent", "edge", "webui", "android", "messaging", "mcp", "cron", "subagents", "model-routing", "oss"],
+    platform: ["macos", "windows", "linux", "web", "android"], platformNote: "Android is documented through an APK and Termux; desktop/server binaries span x86, ARM, MIPS, and RISC-V.",
+    source: "open-source", execution: ["local-process", "local-daemon", "container", "user-cloud"], status: "active",
+    claims: {
+      ...builtInClaims("https://raw.githubusercontent.com/sipeed/picoclaw/main/README.md", "PicoClaw repository", ["general-durable-identity", "general-long-term-memory", "general-communications", "general-scheduled-automation", "general-skills-integrations", "general-multi-agent", "general-self-hosting", "general-model-freedom"], undefined, "repository-derived"),
+      "general-browser-control": capability("limited", "https://raw.githubusercontent.com/sipeed/picoclaw/main/README.md", "PicoClaw repository", "Web search is documented; interactive click/type browser control is not established.", "repository-derived"),
+      "general-operator-surfaces": factClaim("Browser WebUI, terminal/gateway, Android, and 19+ chat channels", "https://raw.githubusercontent.com/sipeed/picoclaw/main/README.md", "PicoClaw repository", undefined, "repository-derived"),
+      "general-event-triggers": capability("limited", "https://raw.githubusercontent.com/sipeed/picoclaw/main/README.md", "PicoClaw repository", "Hooks are documented in current guides and releases; a general public webhook contract is not established.", "repository-derived"),
+      "general-execution-owner": factClaim("Operator local host, Docker, VM, Android, or edge device", "https://raw.githubusercontent.com/sipeed/picoclaw/main/README.md", "PicoClaw repository", undefined, "repository-derived"),
+    },
+  }),
+  product({
+    id: "openfang", name: "OpenFang", categoryId: "general-purpose-agents", editorialOrder: 12,
+    officialUrl: "https://github.com/RightNow-AI/openfang", repository: repo("RightNow-AI/openfang"), repoMetricId: "openfang",
+    tags: ["agent-os", "scheduled-hands", "browser", "messaging", "mcp", "a2a", "wasm", "approvals", "oss"],
+    platform: ["macos", "windows", "linux", "web"], platformNote: "The exact product documents macOS/Linux shell and Windows PowerShell installs, a local dashboard, CLI/TUI, and a Tauri desktop app.",
+    source: "open-source", execution: ["local-process", "local-daemon", "user-cloud"], status: "active",
+    claims: {
+      ...builtInClaims("https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", ["general-durable-identity", "general-long-term-memory", "general-browser-control", "general-communications", "general-scheduled-automation", "general-event-triggers", "general-skills-integrations", "general-self-hosting"], undefined, "repository-derived"),
+      "general-computer-use": capability("limited", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", "Persistent browser workflows are documented; general native-desktop control is not established.", "repository-derived"),
+      "general-operator-surfaces": factClaim("Local dashboard, CLI/TUI, Tauri desktop, and 40 channel adapters", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", undefined, "repository-derived"),
+      "general-multi-agent": capability("limited", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", "Scheduled Hands are autonomous capability packages; arbitrary peer-agent collaboration is not established.", "repository-derived"),
+      "general-human-approvals": capability("built-in", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", "The Browser Hand gates purchases and the Twitter Hand has a publication approval queue.", "repository-derived"),
+      "general-execution-owner": factClaim("Operator-run Agent OS", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", undefined, "repository-derived"),
+      "general-isolation": capability("built-in", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", "WASM tool sandboxing, capability gates, signed manifests, audit trails, injection checks, and approval gates are documented.", "repository-derived"),
+    },
+  }),
+  product({
+    id: "agent-tars", name: "Agent TARS", categoryId: "general-purpose-agents", editorialOrder: 13,
+    officialUrl: "https://github.com/bytedance/UI-TARS-desktop", repository: repo("bytedance/UI-TARS-desktop"), repoMetricId: "agent-tars",
+    tags: ["multimodal-agent", "browser", "gui", "vision", "mcp", "cli", "webui", "sandbox", "oss"],
+    platform: ["web"], platformNote: "Agent TARS documents a WebUI, CLI, and headless server. The shared repository's native macOS/Windows claims belong to the separate UI-TARS Desktop SKU and are not applied here.",
+    source: "open-source", execution: ["local-process", "container"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/bytedance/UI-TARS-desktop", "Agent TARS repository", ["general-browser-control", "general-terminal-files", "general-computer-use", "general-skills-integrations", "general-self-hosting"], undefined, "repository-derived"),
+      "general-operator-surfaces": factClaim("CLI, WebUI, and headless server", "https://github.com/bytedance/UI-TARS-desktop", "Agent TARS repository", undefined, "repository-derived"),
+      "general-execution-owner": factClaim("Operator-run process or isolated AIO sandbox", "https://github.com/bytedance/UI-TARS-desktop", "Agent TARS repository", undefined, "repository-derived"),
+      "general-isolation": capability("built-in", "https://github.com/bytedance/UI-TARS-desktop", "Agent TARS repository", "The exact Agent TARS material documents an isolated all-in-one agent sandbox.", "repository-derived"),
+    },
+  }),
+
+  // 8. Remote companions and relays
   product({ id: "happy", name: "Happy", categoryId: "remote-companions", editorialOrder: 1, officialUrl: "https://github.com/slopus/happy", repository: repo("slopus/happy"), repoMetricId: "happy", tags: ["mobile", "web", "e2e-encryption", "claude", "codex", "oss"], platform: ["web", "ios", "android"], source: "open-source", execution: ["paired-machine", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://github.com/slopus/happy", "Happy repository", ["remote-client-reach", "remote-existing-session", "remote-approvals"], undefined, "repository-derived"),
     "remote-encryption": capability("limited", "https://github.com/slopus/happy/blob/main/docs/README.md", "Happy architecture documentation", "End-to-end encryption is documented for session content; do not generalize the claim to every stored credential.", "source-inspected"),
@@ -1553,7 +1789,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-session-durability": factClaim("Host command must remain running", "https://github.com/tsl0922/ttyd", "ttyd repository", undefined, "repository-derived"),
   } }),
 
-  // 8. Agent traces
+  // 9. Agent traces
   product({ id: "specstory", name: "SpecStory", categoryId: "agent-traces", editorialOrder: 1, officialUrl: "https://docs.specstory.com/", repository: repo("specstoryai/getspecstory", "source-tree"), repoMetricId: "specstory", tags: ["local-first", "markdown", "cloud-search", "cross-agent-resume", "redaction", "oss-cli", "specstory"], platform: ["macos", "windows", "linux", "web"], platformNote: "The SpecStory CLI and extensions run on macOS, Windows, and Linux; SpecStory Cloud is a browser service.", platformSource: { url: "https://docs.specstory.com/faqs", title: "SpecStory FAQs and platform paths" }, source: "split-source", execution: ["local-process", "host-ide-process", "vendor-cloud"], status: "active", claims: {
     "trace-capture-coverage": factClaim("CLI and IDE capture across Claude, Codex, Cursor, Droid, Antigravity, DeepSeek, and Copilot", "https://docs.specstory.com/integrations/terminal-coding-agents/usage", "SpecStory CLI usage"),
     "trace-storage-boundary": factClaim("Local Markdown by default; optional SpecStory Cloud sync", "https://docs.specstory.com/integrations/terminal-coding-agents/usage", "SpecStory CLI usage"),

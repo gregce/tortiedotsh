@@ -69,7 +69,7 @@ const publicProductIds = comparisonProducts
   .filter((product) => !evidenceBacklog.has(product.id))
   .map((product) => product.id);
 
-check(comparisonCategories.length === 8, "The catalog must contain exactly eight comparison categories.");
+check(comparisonCategories.length === 9, "The catalog must contain exactly nine comparison categories.");
 check(comparisonProducts.length >= 50, "The research catalog may not shrink below its 50-product launch baseline.");
 check(unique(categoryIds), "Category IDs must be unique.");
 check(unique(productIds), "Product IDs must be unique.");
@@ -216,6 +216,14 @@ if (auditFreshness) {
     dateAgeDays(evidenceStatus.generatedAt) <= MAX_METRICS_AGE_DAYS,
     `Evidence monitoring data is older than ${MAX_METRICS_AGE_DAYS} days; run refresh:evidence.`,
   );
+  const unresolvedEvidence = evidenceStatus.sources.filter((source) =>
+    source.status === "changed" ||
+    (source.status !== "current" && dateAgeDays(source.latestReviewAt) > MAX_EVIDENCE_AGE_DAYS),
+  );
+  check(
+    unresolvedEvidence.length === 0,
+    `Evidence monitor has ${unresolvedEvidence.length} changed or review-expired source(s): ${unresolvedEvidence.slice(0, 12).map((source) => `${source.status} ${source.url}`).join("; ")}${unresolvedEvidence.length > 12 ? "; …" : ""}`,
+  );
 
   for (const record of metrics.projects) {
     const project = manifestById.get(record.id);
@@ -246,7 +254,7 @@ if (auditFreshness) {
     requireField(sourceTypes.has("latest-release") || sourceTypes.has("latest-tag") || sourceTypes.has("release-policy"), "release/tag policy provenance");
     for (const source of record.sources || []) {
       requireField(/^https:\/\//.test(source.url), `${source.type} HTTPS provenance`);
-      const maximumAge = source.type === "release-policy" ? MAX_EVIDENCE_AGE_DAYS : MAX_METRICS_AGE_DAYS;
+      const maximumAge = source.type === "release-policy" || source.type === "license-override" ? MAX_EVIDENCE_AGE_DAYS : MAX_METRICS_AGE_DAYS;
       requireField(dateAgeDays(source.fetchedAt) <= maximumAge, `fresh ${source.type} provenance`);
     }
 

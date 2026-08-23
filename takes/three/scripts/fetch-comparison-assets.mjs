@@ -32,6 +32,7 @@ Options:
 const raw = (repo, path) =>
   `https://raw.githubusercontent.com/${repo}/HEAD/${path.split("/").map(encodeURIComponent).join("/")}`;
 const avatar = (owner) => `https://github.com/${owner}.png?size=512`;
+const appleArtwork = (id, expectedNameIncludes) => ({ appleId: id, expectedNameIncludes });
 
 const products = {
   "visual-studio-code": ["Visual Studio Code", "https://code.visualstudio.com/assets/apple-touch-icon.png", "https://code.visualstudio.com/", "official-site-icon"],
@@ -148,6 +149,19 @@ const products = {
   "claude-code-history-viewer": ["Claude Code History Viewer", avatar("jhlee0409"), "https://github.com/jhlee0409/claude-code-history-viewer", "official-project-owner-avatar"],
   "agent-sessions": ["Agent Sessions", avatar("jazzyalex"), "https://github.com/jazzyalex/agent-sessions", "official-project-owner-avatar"],
   dmux: ["dmux", avatar("standardagents"), "https://github.com/standardagents/dmux", "official-organization-avatar"],
+  openclaw: ["OpenClaw", raw("openclaw/openclaw", "apps/ios/Sources/Assets.xcassets/AppIcon.appiconset/1024.png"), "https://github.com/openclaw/openclaw/tree/main/apps/ios/Sources/Assets.xcassets/AppIcon.appiconset", "official-repository-asset"],
+  "hermes-agent": ["Hermes Agent", raw("NousResearch/hermes-agent", "apps/desktop/assets/icon.png"), "https://github.com/NousResearch/hermes-agent/tree/main/apps/desktop", "official-repository-asset"],
+  "grok-bot": ["Grok Bot", appleArtwork(6794501026, "Grok Bot"), "https://apps.apple.com/us/app/grok-bot/id6794501026", "official-app-store-artwork"],
+  "perplexity-computer": ["Perplexity Computer", appleArtwork(1668000334, "Perplexity"), "https://www.perplexity.ai/products/computer", "official-vendor-app-artwork"],
+  manus: ["Manus", appleArtwork(6740909540, "Manus"), "https://manus.im/", "official-app-store-artwork"],
+  "genspark-super-agent": ["Genspark Super Agent", appleArtwork(6739554054, "Genspark"), "https://www.genspark.ai/helpcenter/super-agent", "official-vendor-app-artwork"],
+  nanobot: ["nanobot", raw("HKUDS/nanobot", "images/nanobot_mark.svg"), "https://github.com/HKUDS/nanobot/tree/main/images", "official-repository-asset"],
+  "agent-zero": ["Agent Zero", raw("agent0ai/agent-zero", "webui/public/favicon.svg"), "https://github.com/agent0ai/agent-zero", "official-repository-asset"],
+  zeroclaw: ["ZeroClaw", raw("zeroclaw-labs/zeroclaw", "zeroclaw.png"), "https://github.com/zeroclaw-labs/zeroclaw/issues/1346", "official-repository-asset"],
+  ironclaw: ["IronClaw", avatar("nearai"), "https://github.com/nearai/ironclaw", "official-vendor-avatar-fallback"],
+  picoclaw: ["PicoClaw", avatar("sipeed"), "https://github.com/sipeed/picoclaw", "official-vendor-avatar-fallback"],
+  openfang: ["OpenFang", avatar("RightNow-AI"), "https://github.com/RightNow-AI/openfang", "official-vendor-avatar-fallback"],
+  "agent-tars": ["Agent TARS", avatar("bytedance"), "https://github.com/bytedance/UI-TARS-desktop", "official-vendor-avatar-fallback"],
 };
 
 const platforms = {
@@ -207,6 +221,7 @@ const productFallbacks = {
   tapes: [avatar("papercomputeco"), "https://github.com/papercomputeco", "official-organization-avatar"],
   "traces-com": [avatar("traces-sh"), "https://github.com/traces-sh", "official-organization-avatar"],
   agentsview: [avatar("kenn-io"), "https://github.com/kenn-io", "official-project-owner-avatar"],
+  zeroclaw: [avatar("zeroclaw-labs"), "https://github.com/zeroclaw-labs/zeroclaw", "official-vendor-avatar-fallback"],
 };
 
 const extensionFor = (assetUrl, contentType = "") => {
@@ -219,12 +234,33 @@ const extensionFor = (assetUrl, contentType = "") => {
   return [".svg", ".png", ".webp", ".jpg", ".jpeg", ".ico"].includes(extension) ? extension : ".png";
 };
 
+const resolveAssetReference = async (assetReference) => {
+  if (typeof assetReference === "string") return { assetUrl: assetReference, dynamic: false };
+  if (!assetReference?.appleId || !assetReference.expectedNameIncludes) throw new Error("unsupported dynamic asset reference");
+  const lookupUrl = `https://itunes.apple.com/lookup?id=${assetReference.appleId}`;
+  const response = await fetch(lookupUrl, {
+    signal: AbortSignal.timeout(15_000),
+    headers: { "user-agent": "tortie.sh comparison asset collector" },
+  });
+  if (!response.ok) throw new Error(`Apple lookup returned ${response.status} ${response.statusText}`);
+  const payload = await response.json();
+  if (payload.resultCount !== 1 || payload.results?.length !== 1) throw new Error(`Apple lookup returned ${payload.resultCount ?? "an unknown number of"} results`);
+  const result = payload.results[0];
+  if (Number(result.trackId) !== assetReference.appleId) throw new Error(`Apple lookup returned unexpected track ${result.trackId}`);
+  if (typeof result.trackName !== "string" || !result.trackName.toLowerCase().includes(assetReference.expectedNameIncludes.toLowerCase())) {
+    throw new Error(`Apple lookup returned unexpected product ${result.trackName || "<unnamed>"}`);
+  }
+  if (typeof result.artworkUrl512 !== "string" || !result.artworkUrl512.startsWith("https://")) throw new Error("Apple lookup did not return HTTPS 512px artwork");
+  return { assetUrl: result.artworkUrl512, dynamic: true };
+};
+
 const fetchAsset = async (id, candidates) => {
   const errors = [];
   for (const candidate of candidates) {
     if (!candidate) continue;
-    const [assetUrl, sourceUrl, sourceType] = candidate;
+    const [assetReference, sourceUrl, sourceType] = candidate;
     try {
+      const { assetUrl, dynamic } = await resolveAssetReference(assetReference);
       const response = await fetch(assetUrl, {
         redirect: "follow",
         signal: AbortSignal.timeout(15_000),
@@ -233,9 +269,10 @@ const fetchAsset = async (id, candidates) => {
       if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
       const bytes = new Uint8Array(await response.arrayBuffer());
       if (bytes.length < 100) throw new Error(`unexpectedly small (${bytes.length} bytes)`);
-      return { bytes, assetUrl, sourceUrl, sourceType, contentType: response.headers.get("content-type") || "" };
+      return { bytes, assetUrl, sourceUrl, sourceType, dynamic, contentType: response.headers.get("content-type") || "" };
     } catch (error) {
-      errors.push(`${assetUrl}: ${error.message}`);
+      const referenceLabel = typeof assetReference === "string" ? assetReference : `Apple app ${assetReference?.appleId ?? "<unknown>"}`;
+      errors.push(`${referenceLabel}: ${error.message}`);
     }
   }
   throw new Error(`${id}: every first-party asset candidate failed: ${errors.join("; ")}`);
@@ -262,6 +299,7 @@ const downloadGroup = async (group, directory, prefix, previous = {}, fallbacks 
       src: `/compare/${directory}/${filename}`,
       sourceUrl: fetched.sourceUrl,
       sourceType: fetched.sourceType,
+      ...(fetched.dynamic ? { resolvedAssetUrl: fetched.assetUrl } : {}),
       checkedAt,
     };
     process.stdout.write(`${prefix} ${id} (${fetched.bytes.length.toLocaleString()} bytes)\n`);

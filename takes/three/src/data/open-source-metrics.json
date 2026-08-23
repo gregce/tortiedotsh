@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-23T22:42:48.538Z",
-  "manifestSyncedAt": "2026-08-23T22:44:12.269Z",
+  "generatedAt": "2026-08-23T23:10:49.301Z",
+  "manifestSyncedAt": "2026-08-23T23:11:57.477Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -6569,6 +6569,1233 @@
           "type": "loc-measurement",
           "url": "https://github.com/jazzyalex/agent-sessions/tree/v5.0.2",
           "fetchedAt": "2026-08-23T22:37:34.282Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "category": "general-purpose-agents",
+      "owner": "openclaw",
+      "repo": "openclaw",
+      "githubUrl": "https://github.com/openclaw/openclaw",
+      "apiUrl": "https://api.github.com/repos/openclaw/openclaw",
+      "status": "current",
+      "refreshedAt": "2026-08-23T23:10:49.301Z",
+      "stars": 387265,
+      "forks": 81328,
+      "openIssues": 5996,
+      "contributors": 3127,
+      "repositorySizeKb": 2853553,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T23:08:54Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://github.com/openclaw/openclaw/blob/main/LICENSE"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 278308504,
+          "percent": 89.93
+        },
+        {
+          "name": "Swift",
+          "bytes": 15095796,
+          "percent": 4.88
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 5683353,
+          "percent": 1.84
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 5307675,
+          "percent": 1.72
+        },
+        {
+          "name": "Shell",
+          "bytes": 1951979,
+          "percent": 0.63
+        },
+        {
+          "name": "CSS",
+          "bytes": 1252922,
+          "percent": 0.4
+        },
+        {
+          "name": "Python",
+          "bytes": 902372,
+          "percent": 0.29
+        },
+        {
+          "name": "Rust",
+          "bytes": 350703,
+          "percent": 0.11
+        },
+        {
+          "name": "Go",
+          "bytes": 345455,
+          "percent": 0.11
+        },
+        {
+          "name": "Ruby",
+          "bytes": 99916,
+          "percent": 0.03
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 83327,
+          "percent": 0.03
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 37469,
+          "percent": 0.01
+        },
+        {
+          "name": "HTML",
+          "bytes": 31253,
+          "percent": 0.01
+        },
+        {
+          "name": "Objective-C",
+          "bytes": 13596,
+          "percent": 0
+        },
+        {
+          "name": "C",
+          "bytes": 774,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v2026.7.1-2",
+        "name": "openclaw 2026.7.1-2",
+        "publishedAt": "2026-08-04T00:41:26Z",
+        "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.7.1-2",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v2026.7.1-2",
+      "releaseDate": "2026-08-04T00:41:26Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 4961380,
+        "comments": 218609,
+        "blank": 438841,
+        "files": 19340,
+        "measuredAt": "2026-08-23T23:10:48.109Z",
+        "verifiedAt": "2026-08-23T23:10:48.109Z",
+        "measuredRef": "v2026.7.1-2",
+        "refType": "stable-release-tag",
+        "commitSha": "0790d9f593ad30c940ed93b5872a8cf6d6f3cf8c",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/openclaw/openclaw",
+          "fetchedAt": "2026-08-23T23:09:06.719Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/openclaw/openclaw/languages",
+          "fetchedAt": "2026-08-23T23:09:06.829Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/openclaw/openclaw/releases/latest",
+          "fetchedAt": "2026-08-23T23:09:07.026Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/openclaw/openclaw/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T23:09:07.038Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/openclaw/openclaw/tree/v2026.7.1-2",
+          "fetchedAt": "2026-08-23T23:10:48.109Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/openclaw/openclaw/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "hermes-agent",
+      "name": "Hermes Agent",
+      "category": "general-purpose-agents",
+      "owner": "NousResearch",
+      "repo": "hermes-agent",
+      "githubUrl": "https://github.com/NousResearch/hermes-agent",
+      "apiUrl": "https://api.github.com/repos/NousResearch/hermes-agent",
+      "status": "current",
+      "refreshedAt": "2026-08-23T23:09:22.288Z",
+      "stars": 234946,
+      "forks": 47330,
+      "openIssues": 35177,
+      "contributors": 2980,
+      "repositorySizeKb": 769819,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T23:07:45Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 72726523,
+          "percent": 75.06
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 20331935,
+          "percent": 20.98
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 1708600,
+          "percent": 1.76
+        },
+        {
+          "name": "TeX",
+          "bytes": 434546,
+          "percent": 0.45
+        },
+        {
+          "name": "Shell",
+          "bytes": 429337,
+          "percent": 0.44
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 346575,
+          "percent": 0.36
+        },
+        {
+          "name": "Nix",
+          "bytes": 212932,
+          "percent": 0.22
+        },
+        {
+          "name": "CSS",
+          "bytes": 193772,
+          "percent": 0.2
+        },
+        {
+          "name": "Rust",
+          "bytes": 185289,
+          "percent": 0.19
+        },
+        {
+          "name": "BibTeX Style",
+          "bytes": 156486,
+          "percent": 0.16
+        },
+        {
+          "name": "HTML",
+          "bytes": 100020,
+          "percent": 0.1
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 25687,
+          "percent": 0.03
+        },
+        {
+          "name": "MDX",
+          "bytes": 19195,
+          "percent": 0.02
+        },
+        {
+          "name": "DIGITAL Command Language",
+          "bytes": 11565,
+          "percent": 0.01
+        },
+        {
+          "name": "C",
+          "bytes": 9634,
+          "percent": 0.01
+        },
+        {
+          "name": "Go Template",
+          "bytes": 2740,
+          "percent": 0
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 1145,
+          "percent": 0
+        },
+        {
+          "name": "Makefile",
+          "bytes": 1054,
+          "percent": 0
+        },
+        {
+          "name": "Roff",
+          "bytes": 228,
+          "percent": 0
+        },
+        {
+          "name": "BitBake",
+          "bytes": 95,
+          "percent": 0
+        },
+        {
+          "name": "Raku",
+          "bytes": 79,
+          "percent": 0
+        },
+        {
+          "name": "Io",
+          "bytes": 48,
+          "percent": 0
+        },
+        {
+          "name": "Charity",
+          "bytes": 19,
+          "percent": 0
+        },
+        {
+          "name": "RenderScript",
+          "bytes": 14,
+          "percent": 0
+        },
+        {
+          "name": "C++",
+          "bytes": 10,
+          "percent": 0
+        },
+        {
+          "name": "IL Assembly",
+          "bytes": 9,
+          "percent": 0
+        },
+        {
+          "name": "LOLCODE",
+          "bytes": 8,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v2026.8.19",
+        "name": "Hermes Agent v0.20.5 (v2026.8.19)",
+        "publishedAt": "2026-08-21T12:16:39Z",
+        "url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.19",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v2026.8.19",
+      "releaseDate": "2026-08-21T12:16:39Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 1634421,
+        "comments": 419812,
+        "blank": 371384,
+        "files": 7225,
+        "measuredAt": "2026-08-23T23:09:21.688Z",
+        "verifiedAt": "2026-08-23T23:09:21.688Z",
+        "measuredRef": "v2026.8.19",
+        "refType": "stable-release-tag",
+        "commitSha": "fcbd1076a93841fa88855acce810e342a5b78101",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/NousResearch/hermes-agent",
+          "fetchedAt": "2026-08-23T23:09:06.710Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/NousResearch/hermes-agent/languages",
+          "fetchedAt": "2026-08-23T23:09:06.829Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/NousResearch/hermes-agent/releases/latest",
+          "fetchedAt": "2026-08-23T23:09:06.930Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/NousResearch/hermes-agent/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T23:09:07.073Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/NousResearch/hermes-agent/tree/v2026.8.19",
+          "fetchedAt": "2026-08-23T23:09:21.688Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "nanobot",
+      "name": "nanobot",
+      "category": "general-purpose-agents",
+      "owner": "HKUDS",
+      "repo": "nanobot",
+      "githubUrl": "https://github.com/HKUDS/nanobot",
+      "apiUrl": "https://api.github.com/repos/HKUDS/nanobot",
+      "status": "current",
+      "refreshedAt": "2026-08-23T23:09:09.936Z",
+      "stars": 47310,
+      "forks": 8353,
+      "openIssues": 724,
+      "contributors": 426,
+      "repositorySizeKb": 59555,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T18:17:59Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 9409995,
+          "percent": 71.65
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 3647656,
+          "percent": 27.77
+        },
+        {
+          "name": "CSS",
+          "bytes": 21879,
+          "percent": 0.17
+        },
+        {
+          "name": "Shell",
+          "bytes": 20706,
+          "percent": 0.16
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 11581,
+          "percent": 0.09
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 11464,
+          "percent": 0.09
+        },
+        {
+          "name": "HTML",
+          "bytes": 7317,
+          "percent": 0.06
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 3275,
+          "percent": 0.02
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.3.0",
+        "name": "v0.3.0",
+        "publishedAt": "2026-07-25T08:08:47Z",
+        "url": "https://github.com/HKUDS/nanobot/releases/tag/v0.3.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.3.0",
+      "releaseDate": "2026-07-25T08:08:47Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 226022,
+        "comments": 10936,
+        "blank": 40055,
+        "files": 799,
+        "measuredAt": "2026-08-23T23:09:09.889Z",
+        "verifiedAt": "2026-08-23T23:09:09.889Z",
+        "measuredRef": "v0.3.0",
+        "refType": "stable-release-tag",
+        "commitSha": "3f602fbc8c104b5af27aa4d3520e7dcef2fa70ec",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/HKUDS/nanobot",
+          "fetchedAt": "2026-08-23T23:09:06.830Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/HKUDS/nanobot/languages",
+          "fetchedAt": "2026-08-23T23:09:06.930Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/HKUDS/nanobot/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T23:09:07.025Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/HKUDS/nanobot/releases/latest",
+          "fetchedAt": "2026-08-23T23:09:07.026Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/HKUDS/nanobot/tree/v0.3.0",
+          "fetchedAt": "2026-08-23T23:09:09.889Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "agent-zero",
+      "name": "Agent Zero",
+      "category": "general-purpose-agents",
+      "owner": "agent0ai",
+      "repo": "agent-zero",
+      "githubUrl": "https://github.com/agent0ai/agent-zero",
+      "apiUrl": "https://api.github.com/repos/agent0ai/agent-zero",
+      "status": "current",
+      "refreshedAt": "2026-08-23T23:09:13.844Z",
+      "stars": 18946,
+      "forks": 3757,
+      "openIssues": 162,
+      "contributors": 62,
+      "repositorySizeKb": 62442,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T15:01:09Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://github.com/agent0ai/agent-zero/blob/main/LICENSE"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 5449318,
+          "percent": 60.22
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 1845528,
+          "percent": 20.39
+        },
+        {
+          "name": "HTML",
+          "bytes": 1560616,
+          "percent": 17.25
+        },
+        {
+          "name": "CSS",
+          "bytes": 164726,
+          "percent": 1.82
+        },
+        {
+          "name": "Shell",
+          "bytes": 26951,
+          "percent": 0.3
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2212,
+          "percent": 0.02
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v2.10",
+        "name": "v2.10",
+        "publishedAt": "2026-08-19T12:30:34Z",
+        "url": "https://github.com/agent0ai/agent-zero/releases/tag/v2.10",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v2.10",
+      "releaseDate": "2026-08-19T12:30:34Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 218772,
+        "comments": 10127,
+        "blank": 36725,
+        "files": 1208,
+        "measuredAt": "2026-08-23T23:09:13.679Z",
+        "verifiedAt": "2026-08-23T23:09:13.679Z",
+        "measuredRef": "v2.10",
+        "refType": "stable-release-tag",
+        "commitSha": "b22a144bf59f15b1516084c9e7b88133ba92c8a9",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/agent0ai/agent-zero",
+          "fetchedAt": "2026-08-23T23:09:10.187Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/agent0ai/agent-zero/languages",
+          "fetchedAt": "2026-08-23T23:09:10.295Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/agent0ai/agent-zero/releases/latest",
+          "fetchedAt": "2026-08-23T23:09:10.304Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/agent0ai/agent-zero/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T23:09:10.344Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/agent0ai/agent-zero/tree/v2.10",
+          "fetchedAt": "2026-08-23T23:09:13.679Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/agent0ai/agent-zero/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "zeroclaw",
+      "name": "ZeroClaw",
+      "category": "general-purpose-agents",
+      "owner": "zeroclaw-labs",
+      "repo": "zeroclaw",
+      "githubUrl": "https://github.com/zeroclaw-labs/zeroclaw",
+      "apiUrl": "https://api.github.com/repos/zeroclaw-labs/zeroclaw",
+      "status": "current",
+      "refreshedAt": "2026-08-23T23:09:26.574Z",
+      "stars": 32636,
+      "forks": 4909,
+      "openIssues": 784,
+      "contributors": 417,
+      "repositorySizeKb": 173470,
+      "defaultBranch": "master",
+      "pushedAt": "2026-08-23T20:34:55Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 31813609,
+          "percent": 100
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.8.4",
+        "name": "v0.8.4",
+        "publishedAt": "2026-08-02T21:00:00Z",
+        "url": "https://github.com/zeroclaw-labs/zeroclaw/releases/tag/v0.8.4",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.8.4",
+      "releaseDate": "2026-08-02T21:00:00Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 697862,
+        "comments": 65551,
+        "blank": 73556,
+        "files": 1318,
+        "measuredAt": "2026-08-23T23:09:26.449Z",
+        "verifiedAt": "2026-08-23T23:09:26.449Z",
+        "measuredRef": "v0.8.4",
+        "refType": "stable-release-tag",
+        "commitSha": "a56c345d51dd8ab562e9351e0d4ab83f6a741db9",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/zeroclaw-labs/zeroclaw",
+          "fetchedAt": "2026-08-23T23:09:14.001Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/zeroclaw-labs/zeroclaw/languages",
+          "fetchedAt": "2026-08-23T23:09:14.166Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/zeroclaw-labs/zeroclaw/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T23:09:14.168Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/zeroclaw-labs/zeroclaw/releases/latest",
+          "fetchedAt": "2026-08-23T23:09:14.168Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/zeroclaw-labs/zeroclaw/tree/v0.8.4",
+          "fetchedAt": "2026-08-23T23:09:26.449Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "ironclaw",
+      "name": "IronClaw",
+      "category": "general-purpose-agents",
+      "owner": "nearai",
+      "repo": "ironclaw",
+      "githubUrl": "https://github.com/nearai/ironclaw",
+      "apiUrl": "https://api.github.com/repos/nearai/ironclaw",
+      "status": "current",
+      "refreshedAt": "2026-08-23T23:09:44.463Z",
+      "stars": 12602,
+      "forks": 1488,
+      "openIssues": 1536,
+      "contributors": 119,
+      "repositorySizeKb": 870570,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T22:59:12Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 54850649,
+          "percent": 83.09
+        },
+        {
+          "name": "Python",
+          "bytes": 5384748,
+          "percent": 8.16
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 4763745,
+          "percent": 7.22
+        },
+        {
+          "name": "Shell",
+          "bytes": 937862,
+          "percent": 1.42
+        },
+        {
+          "name": "CSS",
+          "bytes": 22370,
+          "percent": 0.03
+        },
+        {
+          "name": "C",
+          "bytes": 18771,
+          "percent": 0.03
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": 17110,
+          "percent": 0.03
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 8444,
+          "percent": 0.01
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 3489,
+          "percent": 0.01
+        },
+        {
+          "name": "HTML",
+          "bytes": 3193,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "ironclaw-v1.3.0",
+        "name": "1.3.0 - 2026-08-19",
+        "publishedAt": "2026-08-19T23:17:37Z",
+        "url": "https://github.com/nearai/ironclaw/releases/tag/ironclaw-v1.3.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "ironclaw-v1.3.0",
+      "releaseDate": "2026-08-19T23:17:37Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 1395976,
+        "comments": 175498,
+        "blank": 127055,
+        "files": 3135,
+        "measuredAt": "2026-08-23T23:09:44.180Z",
+        "verifiedAt": "2026-08-23T23:09:44.180Z",
+        "measuredRef": "ironclaw-v1.3.0",
+        "refType": "stable-release-tag",
+        "commitSha": "70795c16ed0cec21eb8cba16d2dcf851d25dc83d",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/nearai/ironclaw",
+          "fetchedAt": "2026-08-23T23:09:22.460Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/nearai/ironclaw/languages",
+          "fetchedAt": "2026-08-23T23:09:22.556Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/nearai/ironclaw/releases/latest",
+          "fetchedAt": "2026-08-23T23:09:22.754Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/nearai/ironclaw/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T23:09:22.847Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/nearai/ironclaw/tree/ironclaw-v1.3.0",
+          "fetchedAt": "2026-08-23T23:09:44.180Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "picoclaw",
+      "name": "PicoClaw",
+      "category": "general-purpose-agents",
+      "owner": "sipeed",
+      "repo": "picoclaw",
+      "githubUrl": "https://github.com/sipeed/picoclaw",
+      "apiUrl": "https://api.github.com/repos/sipeed/picoclaw",
+      "status": "current",
+      "refreshedAt": "2026-08-23T23:09:29.889Z",
+      "stars": 29910,
+      "forks": 4450,
+      "openIssues": 41,
+      "contributors": 239,
+      "repositorySizeKb": 41549,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-19T09:17:33Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Go",
+          "bytes": 7734472,
+          "percent": 89.57
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 838394,
+          "percent": 9.71
+        },
+        {
+          "name": "Makefile",
+          "bytes": 28777,
+          "percent": 0.33
+        },
+        {
+          "name": "Shell",
+          "bytes": 21148,
+          "percent": 0.24
+        },
+        {
+          "name": "CSS",
+          "bytes": 5248,
+          "percent": 0.06
+        },
+        {
+          "name": "Inno Setup",
+          "bytes": 2647,
+          "percent": 0.03
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 1931,
+          "percent": 0.02
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 1492,
+          "percent": 0.02
+        },
+        {
+          "name": "HTML",
+          "bytes": 629,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.3.1",
+        "name": "v0.3.1",
+        "publishedAt": "2026-07-03T07:37:06Z",
+        "url": "https://github.com/sipeed/picoclaw/releases/tag/v0.3.1",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.3.1",
+      "releaseDate": "2026-07-03T07:37:06Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 248100,
+        "comments": 11702,
+        "blank": 33595,
+        "files": 1060,
+        "measuredAt": "2026-08-23T23:09:29.835Z",
+        "verifiedAt": "2026-08-23T23:09:29.835Z",
+        "measuredRef": "v0.3.1",
+        "refType": "stable-release-tag",
+        "commitSha": "2cf030d2fd3b871d7ec17e3be34c24688aac76da",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/sipeed/picoclaw",
+          "fetchedAt": "2026-08-23T23:09:26.853Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/sipeed/picoclaw/languages",
+          "fetchedAt": "2026-08-23T23:09:26.935Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/sipeed/picoclaw/releases/latest",
+          "fetchedAt": "2026-08-23T23:09:27.081Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/sipeed/picoclaw/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T23:09:27.099Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/sipeed/picoclaw/tree/v0.3.1",
+          "fetchedAt": "2026-08-23T23:09:29.835Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "openfang",
+      "name": "OpenFang",
+      "category": "general-purpose-agents",
+      "owner": "RightNow-AI",
+      "repo": "openfang",
+      "githubUrl": "https://github.com/RightNow-AI/openfang",
+      "apiUrl": "https://api.github.com/repos/RightNow-AI/openfang",
+      "status": "current",
+      "refreshedAt": "2026-08-23T23:09:39.299Z",
+      "stars": 18130,
+      "forks": 2285,
+      "openIssues": 116,
+      "contributors": 76,
+      "repositorySizeKb": 9982,
+      "defaultBranch": "main",
+      "pushedAt": "2026-07-02T08:13:12Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 7189272,
+          "percent": 88.57
+        },
+        {
+          "name": "HTML",
+          "bytes": 385107,
+          "percent": 4.74
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 381872,
+          "percent": 4.7
+        },
+        {
+          "name": "CSS",
+          "bytes": 100043,
+          "percent": 1.23
+        },
+        {
+          "name": "Python",
+          "bytes": 39720,
+          "percent": 0.49
+        },
+        {
+          "name": "Shell",
+          "bytes": 8929,
+          "percent": 0.11
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 6955,
+          "percent": 0.09
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2920,
+          "percent": 0.04
+        },
+        {
+          "name": "Nix",
+          "bytes": 2167,
+          "percent": 0.03
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 480,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.6.9",
+        "name": "v0.6.9 — security patches",
+        "publishedAt": "2026-05-12T18:42:42Z",
+        "url": "https://github.com/RightNow-AI/openfang/releases/tag/v0.6.9",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.6.9",
+      "releaseDate": "2026-05-12T18:42:42Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 179810,
+        "comments": 21038,
+        "blank": 19989,
+        "files": 311,
+        "measuredAt": "2026-08-23T23:09:39.269Z",
+        "verifiedAt": "2026-08-23T23:09:39.269Z",
+        "measuredRef": "v0.6.9",
+        "refType": "stable-release-tag",
+        "commitSha": "acf2587e46be174c10200489c9a2d23a39a98aeb",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/RightNow-AI/openfang",
+          "fetchedAt": "2026-08-23T23:09:30.039Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/RightNow-AI/openfang/languages",
+          "fetchedAt": "2026-08-23T23:09:30.119Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/RightNow-AI/openfang/releases/latest",
+          "fetchedAt": "2026-08-23T23:09:30.166Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/RightNow-AI/openfang/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T23:09:30.187Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/RightNow-AI/openfang/tree/v0.6.9",
+          "fetchedAt": "2026-08-23T23:09:39.269Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "agent-tars",
+      "name": "Agent TARS",
+      "category": "general-purpose-agents",
+      "owner": "bytedance",
+      "repo": "UI-TARS-desktop",
+      "githubUrl": "https://github.com/bytedance/UI-TARS-desktop",
+      "apiUrl": "https://api.github.com/repos/bytedance/UI-TARS-desktop",
+      "status": "current",
+      "refreshedAt": "2026-08-23T23:09:42.924Z",
+      "stars": 38697,
+      "forks": 3907,
+      "openIssues": 424,
+      "contributors": 49,
+      "repositorySizeKb": 192886,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-05T02:48:59Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 5778694,
+          "percent": 89.04
+        },
+        {
+          "name": "MDX",
+          "bytes": 540163,
+          "percent": 8.32
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 71576,
+          "percent": 1.1
+        },
+        {
+          "name": "CSS",
+          "bytes": 69693,
+          "percent": 1.07
+        },
+        {
+          "name": "Less",
+          "bytes": 13887,
+          "percent": 0.21
+        },
+        {
+          "name": "HTML",
+          "bytes": 9720,
+          "percent": 0.15
+        },
+        {
+          "name": "Shell",
+          "bytes": 3500,
+          "percent": 0.05
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2636,
+          "percent": 0.04
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.3.0",
+        "name": "v0.3.0",
+        "publishedAt": "2025-11-04T16:10:39Z",
+        "url": "https://github.com/bytedance/UI-TARS-desktop/releases/tag/v0.3.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.3.0",
+      "releaseDate": "2025-11-04T16:10:39Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 162342,
+        "comments": 23985,
+        "blank": 22044,
+        "files": 1638,
+        "measuredAt": "2026-08-23T23:09:42.701Z",
+        "verifiedAt": "2026-08-23T23:09:42.701Z",
+        "measuredRef": "v0.3.0",
+        "refType": "stable-release-tag",
+        "commitSha": "54dc6f3179869eaaf6e1472b89b6455aa288caff",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/bytedance/UI-TARS-desktop",
+          "fetchedAt": "2026-08-23T23:09:39.468Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/bytedance/UI-TARS-desktop/languages",
+          "fetchedAt": "2026-08-23T23:09:39.580Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/bytedance/UI-TARS-desktop/releases/latest",
+          "fetchedAt": "2026-08-23T23:09:39.606Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/bytedance/UI-TARS-desktop/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T23:09:39.663Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/bytedance/UI-TARS-desktop/tree/v0.3.0",
+          "fetchedAt": "2026-08-23T23:09:42.701Z"
         }
       ],
       "errors": []

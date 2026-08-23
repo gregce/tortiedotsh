@@ -742,6 +742,108 @@
       "githubUrl": "https://github.com/jazzyalex/agent-sessions",
       "apiUrl": "https://api.github.com/repos/jazzyalex/agent-sessions",
       "loc": { "enabled": true }
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "category": "general-purpose-agents",
+      "owner": "openclaw",
+      "repo": "openclaw",
+      "githubUrl": "https://github.com/openclaw/openclaw",
+      "apiUrl": "https://api.github.com/repos/openclaw/openclaw",
+      "license": {
+        "spdxId": "MIT",
+        "name": "MIT License",
+        "sourceUrl": "https://github.com/openclaw/openclaw/blob/main/LICENSE",
+        "checkedAt": "2026-08-23"
+      },
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "hermes-agent",
+      "name": "Hermes Agent",
+      "category": "general-purpose-agents",
+      "owner": "NousResearch",
+      "repo": "hermes-agent",
+      "githubUrl": "https://github.com/NousResearch/hermes-agent",
+      "apiUrl": "https://api.github.com/repos/NousResearch/hermes-agent",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "nanobot",
+      "name": "nanobot",
+      "category": "general-purpose-agents",
+      "owner": "HKUDS",
+      "repo": "nanobot",
+      "githubUrl": "https://github.com/HKUDS/nanobot",
+      "apiUrl": "https://api.github.com/repos/HKUDS/nanobot",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "agent-zero",
+      "name": "Agent Zero",
+      "category": "general-purpose-agents",
+      "owner": "agent0ai",
+      "repo": "agent-zero",
+      "githubUrl": "https://github.com/agent0ai/agent-zero",
+      "apiUrl": "https://api.github.com/repos/agent0ai/agent-zero",
+      "license": {
+        "spdxId": "MIT",
+        "name": "MIT License",
+        "sourceUrl": "https://github.com/agent0ai/agent-zero/blob/main/LICENSE",
+        "checkedAt": "2026-08-23"
+      },
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "zeroclaw",
+      "name": "ZeroClaw",
+      "category": "general-purpose-agents",
+      "owner": "zeroclaw-labs",
+      "repo": "zeroclaw",
+      "githubUrl": "https://github.com/zeroclaw-labs/zeroclaw",
+      "apiUrl": "https://api.github.com/repos/zeroclaw-labs/zeroclaw",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "ironclaw",
+      "name": "IronClaw",
+      "category": "general-purpose-agents",
+      "owner": "nearai",
+      "repo": "ironclaw",
+      "githubUrl": "https://github.com/nearai/ironclaw",
+      "apiUrl": "https://api.github.com/repos/nearai/ironclaw",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "picoclaw",
+      "name": "PicoClaw",
+      "category": "general-purpose-agents",
+      "owner": "sipeed",
+      "repo": "picoclaw",
+      "githubUrl": "https://github.com/sipeed/picoclaw",
+      "apiUrl": "https://api.github.com/repos/sipeed/picoclaw",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "openfang",
+      "name": "OpenFang",
+      "category": "general-purpose-agents",
+      "owner": "RightNow-AI",
+      "repo": "openfang",
+      "githubUrl": "https://github.com/RightNow-AI/openfang",
+      "apiUrl": "https://api.github.com/repos/RightNow-AI/openfang",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "agent-tars",
+      "name": "Agent TARS",
+      "category": "general-purpose-agents",
+      "owner": "bytedance",
+      "repo": "UI-TARS-desktop",
+      "githubUrl": "https://github.com/bytedance/UI-TARS-desktop",
+      "apiUrl": "https://api.github.com/repos/bytedance/UI-TARS-desktop",
+      "loc": { "enabled": true }
     }
   ]
 }

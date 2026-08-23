@@ -912,6 +912,114 @@
       "sourceUrl": "https://github.com/standardagents/dmux",
       "sourceType": "official-organization-avatar",
       "checkedAt": "2026-08-23"
+    },
+    "openclaw": {
+      "name": "OpenClaw",
+      "alt": "OpenClaw logo",
+      "src": "/compare/logos/openclaw.png",
+      "sourceUrl": "https://github.com/openclaw/openclaw/tree/main/apps/ios/Sources/Assets.xcassets/AppIcon.appiconset",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "hermes-agent": {
+      "name": "Hermes Agent",
+      "alt": "Hermes Agent logo",
+      "src": "/compare/logos/hermes-agent.png",
+      "sourceUrl": "https://github.com/NousResearch/hermes-agent/tree/main/apps/desktop",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "grok-bot": {
+      "name": "Grok Bot",
+      "alt": "Grok Bot logo",
+      "src": "/compare/logos/grok-bot.jpg",
+      "sourceUrl": "https://apps.apple.com/us/app/grok-bot/id6794501026",
+      "sourceType": "official-app-store-artwork",
+      "resolvedAssetUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ec/4b/bd/ec4bbdd2-666d-17d0-65e1-70b7031438df/app-0-0-1x_U007ephone-0-1-P3-85-220.png/512x512bb.jpg",
+      "checkedAt": "2026-08-23"
+    },
+    "perplexity-computer": {
+      "name": "Perplexity Computer",
+      "alt": "Perplexity Computer logo",
+      "src": "/compare/logos/perplexity-computer.jpg",
+      "sourceUrl": "https://www.perplexity.ai/products/computer",
+      "sourceType": "official-vendor-app-artwork",
+      "resolvedAssetUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/73/06/33/730633cd-04d8-6da8-f5e9-d40923a0d1eb/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
+      "checkedAt": "2026-08-23"
+    },
+    "manus": {
+      "name": "Manus",
+      "alt": "Manus logo",
+      "src": "/compare/logos/manus.jpg",
+      "sourceUrl": "https://manus.im/",
+      "sourceType": "official-app-store-artwork",
+      "resolvedAssetUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bd/df/ad/bddfadc1-2f11-f92c-8b1a-dfd309bdbdf8/IconManus-0-0-1x_U007epad-0-1-0-P3-85-220.png/512x512bb.jpg",
+      "checkedAt": "2026-08-23"
+    },
+    "genspark-super-agent": {
+      "name": "Genspark Super Agent",
+      "alt": "Genspark Super Agent logo",
+      "src": "/compare/logos/genspark-super-agent.jpg",
+      "sourceUrl": "https://www.genspark.ai/helpcenter/super-agent",
+      "sourceType": "official-vendor-app-artwork",
+      "resolvedAssetUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c2/b3/54/c2b3540c-6294-aabc-dcc9-9c3b478eeb67/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+      "checkedAt": "2026-08-23"
+    },
+    "nanobot": {
+      "name": "nanobot",
+      "alt": "nanobot logo",
+      "src": "/compare/logos/nanobot.svg",
+      "sourceUrl": "https://github.com/HKUDS/nanobot/tree/main/images",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "agent-zero": {
+      "name": "Agent Zero",
+      "alt": "Agent Zero logo",
+      "src": "/compare/logos/agent-zero.svg",
+      "sourceUrl": "https://github.com/agent0ai/agent-zero",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "zeroclaw": {
+      "name": "ZeroClaw",
+      "alt": "ZeroClaw logo",
+      "src": "/compare/logos/zeroclaw.jpg",
+      "sourceUrl": "https://github.com/zeroclaw-labs/zeroclaw",
+      "sourceType": "official-vendor-avatar-fallback",
+      "checkedAt": "2026-08-23"
+    },
+    "ironclaw": {
+      "name": "IronClaw",
+      "alt": "IronClaw logo",
+      "src": "/compare/logos/ironclaw.png",
+      "sourceUrl": "https://github.com/nearai/ironclaw",
+      "sourceType": "official-vendor-avatar-fallback",
+      "checkedAt": "2026-08-23"
+    },
+    "picoclaw": {
+      "name": "PicoClaw",
+      "alt": "PicoClaw logo",
+      "src": "/compare/logos/picoclaw.png",
+      "sourceUrl": "https://github.com/sipeed/picoclaw",
+      "sourceType": "official-vendor-avatar-fallback",
+      "checkedAt": "2026-08-23"
+    },
+    "openfang": {
+      "name": "OpenFang",
+      "alt": "OpenFang logo",
+      "src": "/compare/logos/openfang.png",
+      "sourceUrl": "https://github.com/RightNow-AI/openfang",
+      "sourceType": "official-vendor-avatar-fallback",
+      "checkedAt": "2026-08-23"
+    },
+    "agent-tars": {
+      "name": "Agent TARS",
+      "alt": "Agent TARS logo",
+      "src": "/compare/logos/agent-tars.png",
+      "sourceUrl": "https://github.com/bytedance/UI-TARS-desktop",
+      "sourceType": "official-vendor-avatar-fallback",
+      "checkedAt": "2026-08-23"
     }
   },
   "platforms": {

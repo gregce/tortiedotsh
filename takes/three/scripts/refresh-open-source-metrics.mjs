@@ -133,6 +133,16 @@ function validateManifest(manifest) {
     if (project.release && project.release.mode !== "default-branch") {
       throw new Error(`${project.id} has an unsupported release.mode`);
     }
+    if (project.license) {
+      for (const field of ["spdxId", "name", "sourceUrl", "checkedAt"]) {
+        if (typeof project.license[field] !== "string" || project.license[field].trim() === "") {
+          throw new Error(`${project.id} license override needs a non-empty ${field}`);
+        }
+      }
+      if (!project.license.sourceUrl.startsWith("https://") || !Number.isFinite(Date.parse(project.license.checkedAt))) {
+        throw new Error(`${project.id} license override needs HTTPS provenance and a valid check date`);
+      }
+    }
   }
 }
 
@@ -445,6 +455,20 @@ function baseRecord(project, previous) {
       fetchedAt: `${project.release.checkedAt}T00:00:00.000Z`,
     });
   }
+  if (project.license) {
+    record.license = {
+      key: "manifest-verified",
+      name: project.license.name,
+      spdxId: project.license.spdxId,
+      url: project.license.sourceUrl,
+    };
+    record.sources = (record.sources || []).filter((item) => item.type !== "license-override");
+    record.sources.push({
+      type: "license-override",
+      url: project.license.sourceUrl,
+      fetchedAt: `${project.license.checkedAt}T00:00:00.000Z`,
+    });
+  }
   return record;
 }
 
@@ -464,16 +488,30 @@ async function refreshProject(project, previous, includeLoc) {
     record.defaultBranch = repository.data.default_branch || null;
     record.pushedAt = repository.data.pushed_at || null;
     record.archived = typeof repository.data.archived === "boolean" ? repository.data.archived : null;
-    record.license = repository.data.license
+    record.license = project.license
       ? {
-          key: repository.data.license.key || null,
-          name: repository.data.license.name || null,
-          spdxId: repository.data.license.spdx_id || null,
-          url: repository.data.license.html_url || repository.data.license.url || null,
+          key: "manifest-verified",
+          name: project.license.name,
+          spdxId: project.license.spdxId,
+          url: project.license.sourceUrl,
         }
-      : null;
+      : repository.data.license
+        ? {
+            key: repository.data.license.key || null,
+            name: repository.data.license.name || null,
+            spdxId: repository.data.license.spdx_id || null,
+            url: repository.data.license.html_url || repository.data.license.url || null,
+          }
+        : null;
     record.githubUrl = repository.data.html_url || project.githubUrl;
     currentSources.push(source("repository", repository));
+    if (project.license) {
+      currentSources.push({
+        type: "license-override",
+        url: project.license.sourceUrl,
+        fetchedAt: `${project.license.checkedAt}T00:00:00.000Z`,
+      });
+    }
   } catch (error) {
     record.errors.push({ section: "repository", message: error.message });
   }

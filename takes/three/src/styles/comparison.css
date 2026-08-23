@@ -583,7 +583,7 @@
   min-width: 0;
   grid-template-columns: 32px minmax(0, 1fr);
   align-items: center;
-  gap: var(--space-4);
+  gap: 6px;
   color: var(--text-primary);
 }
 
@@ -655,7 +655,7 @@ th[data-product-id="windsurf"] .product-logo-frame {
   height: 18px;
   min-height: 18px;
   align-items: center;
-  gap: var(--space-2);
+  gap: 2px;
   margin-top: var(--space-3);
 }
 
@@ -678,9 +678,14 @@ th[data-product-id="windsurf"] .product-logo-frame {
 }
 
 .platform-mark[data-platform="linux"] img {
-  width: 28px;
+  width: 22px;
   height: 14px;
   max-width: none;
+}
+
+.platform-mark[data-platform="linux"] {
+  width: 26px;
+  flex: 0 0 26px;
 }
 
 .platform-mark[data-platform="web"] img {
