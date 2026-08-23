@@ -16,6 +16,18 @@ The build syncs shared assets first, then writes static output to `dist/`.
 Deploy `dist/` to Vercel with no adapter. `npm run dev` serves the same site
 locally.
 
+For a production comparison-data gate, run:
+
+```bash
+npm run audit:freshness
+npm run build
+```
+
+The audit checks each open-source project and each monitored first-party source,
+not only their snapshot timestamps. See
+`src/data/OPEN_SOURCE_METRICS.md` and `src/data/EVIDENCE_MONITOR.md` for the
+scheduled refresh and human-review process.
+
 ## What is in here
 
 - `src/pages/index.astro` is the one page. Components live in

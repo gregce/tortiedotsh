@@ -12,22 +12,24 @@ From `takes/three`:
 node scripts/refresh-open-source-metrics.mjs
 ```
 
-That fetches repository metadata, languages, the latest stable GitHub release,
-a separately labelled repository-tag fallback, and contributor count from
-GitHub's official REST API. Anonymous
+That fetches repository metadata (stars, forks, open issues, size, activity,
+archive state, and detected license), languages, the latest stable GitHub
+release, a separately labelled repository-tag fallback, and contributor count
+from GitHub's official REST API. Anonymous
 requests work but are subject to GitHub's low public rate limit. Set
 `GITHUB_TOKEN` to raise that limit. The scheduled workflow uses its built-in,
 read-only-for-API GitHub token and commits only the generated data file.
 
-LOC is intentionally opt-in because it requires a shallow clone and can be
-expensive for large repositories:
+LOC requires a shallow clone and can be expensive for large repositories, so
+it runs in the scheduled refresh rather than during a page build:
 
 ```sh
 node scripts/refresh-open-source-metrics.mjs --loc
 ```
 
-The `--loc` mode requires `git` and `cloc`. It runs only for manifest entries
-whose `loc.enabled` is `true`. Without `--loc`, the refresh retains previously
+The `--loc` mode requires `git` and `cloc`. Every currently tracked public-source
+repository has `loc.enabled: true`; a future exception must be explicit and
+justified in the manifest. Without `--loc`, the refresh retains previously
 measured LOC; a first refresh records LOC as unknown. Use `--dry-run` to validate
 and fetch without writing, `--project <id>` to limit a run, and `--help` for the
 complete command summary.
@@ -41,6 +43,8 @@ node scripts/refresh-open-source-metrics.mjs --sync-only
 
 Existing last-known-good values are retained. New entries are emitted with
 `status: "stale"` and unknown (`null`) metrics until a later API refresh.
+This operation records `manifestSyncedAt` but deliberately preserves
+`generatedAt`: reconciling IDs is not a successful data refresh.
 
 ## Manifest schema
 
@@ -55,8 +59,12 @@ repository:
 | `owner`, `repo` | string | GitHub repository coordinates. |
 | `githubUrl` | URL | Raw human-facing official repository URL. |
 | `apiUrl` | URL | Raw official GitHub REST repository URL. |
-| `loc.enabled` | boolean | Whether scheduled shallow-clone LOC is practical. |
-| `loc.reason` | string? | Why LOC is disabled, for maintainers and UI notes. |
+| `loc.enabled` | boolean | Whether scheduled shallow-clone LOC runs; this is `true` for every current public-source repository. |
+| `loc.reason` | string? | Exceptional justification when LOC cannot be measured. |
+| `release.mode` | `default-branch`? | Reviewed exception for repositories whose GitHub Releases feed contains non-product artifacts. |
+| `release.reason` | string? | Required explanation for a release-policy exception. |
+| `release.checkedAt` | date? | Human review date for the exceptional release policy; recheck within 120 days. |
+| `release.rejectedCandidate` | object? | Exact GitHub artifact that demonstrated why automatic release inference was unsafe. |
 
 The script validates IDs, categories, duplicate repositories, and both URLs
 before making requests.
@@ -70,13 +78,45 @@ the generated fallback and claim-source fingerprints when they change, and then 
 npm run audit:freshness
 ```
 
-The audit fails when repository metrics are older than 14 days, first-party
-capability evidence is older than 120 days, or identity assets have not been
-reviewed for 180 days. A failure is a maintenance signal, not permission to
-guess a new value: re-open the linked first-party source, update the claim and
-its `checkedAt` date, or leave the cell `Unknown`. Asset refreshes remain a
-reviewed operation because vendor sites can return unrelated or malformed
-images even when a request succeeds.
+The audit does not trust the file-level timestamp alone. It fails unless every
+manifest repository has a generated record with `status: "current"`, no
+section errors, a per-project refresh within 14 days, validated repository,
+language, contributor, and release/tag provenance, and all required numeric
+and identity fields. Every tracked public-source project must also have a
+version-pinned source-only measurement, exact ref and commit SHA, declared
+exclusion methodology, and verification from the same 14-day window. An
+exceptional LOC opt-out must carry a reason in the manifest and a matching
+`disabled` result.
+
+The same audit fails when first-party capability evidence is older than 120
+days or identity assets have not been reviewed for 180 days. A failure is a
+maintenance signal, not permission to guess a new value: re-open the linked
+first-party source, update the claim and its `checkedAt` date, or leave the cell
+`Unknown`. Asset refreshes remain a reviewed operation because vendor sites
+can return unrelated or malformed images even when a request succeeds.
+
+## Shipping and continuous operation
+
+The repository includes `.github/workflows/refresh-open-source-metrics.yml`.
+Once this checkout is pushed to GitHub, run **Refresh comparison data** once
+from the Actions tab before the first production deploy. The workflow then runs
+every Monday at 07:17 UTC and:
+
+1. refreshes every manifest repository through GitHub's API;
+2. measures source-only LOC for every public-source project at its resolved release/tag ref;
+3. fingerprints every first-party capability source;
+4. runs the strict per-project freshness audit; and
+5. commits the two generated snapshots only when the entire audit passes.
+
+The workflow token needs `contents: write` so the bot can commit the snapshots.
+The comparison build remains deterministic and network-free: production reads
+only the reviewed files in Git. Configure the hosting provider to run
+`npm run audit:freshness` before `npm run build`, or make the refresh workflow a
+required check, so stale or incomplete data cannot silently ship.
+
+The current local checkout has no Git remote and its `gh` credential is invalid.
+Those are deployment configuration tasks, not data-model gaps: configure the
+remote/credential, push the repository, then run the first manual workflow.
 
 Catalog products join through `comparison-catalog.ts` `repoMetricId`. Multiple
 catalog products may deliberately share one repository metric. A public
@@ -96,14 +136,20 @@ Every generated project has the manifest identity fields plus:
 | `status` | `current`, `partial`, or `stale` | Overall refresh result. |
 | `refreshedAt` | ISO timestamp or `null` | Last successful repository refresh. |
 | `stars` | integer or `null` | GitHub `stargazers_count`. |
+| `forks` | integer or `null` | GitHub `forks_count`. |
+| `openIssues` | integer or `null` | GitHub `open_issues_count`, which includes pull requests. |
 | `contributors` | integer or `null` | Count inferred from GitHub's paginated contributors API, including anonymous contributors. |
 | `repositorySizeKb` | integer or `null` | GitHub's repository `size` value; not a checkout's disk usage. |
+| `pushedAt` | ISO timestamp or `null` | Repository `pushed_at` value. |
+| `archived` | boolean or `null` | Current repository archive state. |
+| `license` | object or `null` | GitHub's detected license key, name, SPDX ID, and URL; `null` is a verified no-license-detected result after a current repository refresh. |
 | `languages` | array | GitHub Linguist language bytes and calculated percentage. |
 | `latestRelease` | object or `null` | Latest non-draft, non-prerelease GitHub release. |
 | `latestTag` | object or `null` | Latest tag and its commit date, used when no release exists. |
 | `version` | string or `null` | Compatibility field containing the release tag, otherwise latest repository tag. The UI does not present a fallback tag as a verified stable release. |
 | `releaseDate` | ISO timestamp or `null` | Published date of `latestRelease`; remains unknown for tag-only projects. |
-| `loc` | object | `code`, `comments`, `blank`, `files`, `measuredAt`, `measuredRef`, `refType`, `commitSha`, tool, and status; unavailable values are `null`, never zero. |
+| `releasePolicy` | object or `null` | Reviewed exception and rejected GitHub candidate when a repository's Releases feed does not represent product releases. |
+| `loc` | object | `code`, `comments`, `blank`, `files`, `measuredAt`, `verifiedAt`, `measuredRef`, `refType`, `commitSha`, tool, methodology and exact exclusions, and status; unavailable values are `null`, never zero. |
 | `sources` | array | Exact GitHub API/repository URL and fetch timestamp for each metric source. |
 | `errors` | array | Per-section errors that explain partial or stale data. |
 
@@ -122,10 +168,20 @@ records the failure instead of silently replacing a known value with zero.
   official commit record.
 - Contributor count comes from the pagination metadata on
   `GET /repos/{owner}/{repo}/contributors?anon=true`.
-- LOC is a point-in-time `cloc` count over a shallow clone. The script checks out
-  the latest stable release tag when one exists, then the latest tag, and only
-  falls back to the default branch when no current tag is available. The output
-  records the exact ref, ref type, and commit SHA. LOC is not comparable to
+- LOC is a point-in-time `cloc` count over a shallow clone. It excludes Markdown,
+  JSON, YAML, TOML, XML, delimited/text/lock files, dependency trees, build
+  output, coverage output, and common generated-code directories so the public
+  number describes source code rather than repository documentation or data.
+  The exact extension and directory exclusion lists are stored with every
+  measurement. The script checks out the latest stable release tag when one
+  exists and otherwise measures the current default branch at an exact commit;
+  it never treats an arbitrary repository tag as a release. The output records
+  the exact ref, ref type, and commit SHA. LOC is not comparable to
   GitHub language bytes, which measure bytes rather than lines.
+- Before repeating an unchanged LOC measurement, the collector resolves the
+  remote release/tag/branch ref with `git ls-remote`. If its exact commit SHA
+  still matches *and the methodology version is unchanged*, it advances
+  `verifiedAt` without relabelling the original `measuredAt`; if the ref or
+  methodology changed, it reclones and reruns `cloc`.
 
 GitHub API documentation: <https://docs.github.com/en/rest>

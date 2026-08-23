@@ -36,7 +36,7 @@ const avatar = (owner) => `https://github.com/${owner}.png?size=512`;
 const products = {
   "visual-studio-code": ["Visual Studio Code", "https://code.visualstudio.com/assets/apple-touch-icon.png", "https://code.visualstudio.com/", "official-site-icon"],
   "cursor-ide": ["Cursor IDE", "https://cursor.com/marketing-static/favicon-light.svg", "https://cursor.com/", "official-site-icon"],
-  windsurf: ["Devin Desktop", avatar("cognition-ai"), "https://github.com/cognition-ai", "official-organization-avatar"],
+  windsurf: ["Devin Desktop", "https://mintcdn.com/cognitionai/Hhrl_8XUBqA4VQ6v/logo/favicon.svg?fit=max&auto=format&n=Hhrl_8XUBqA4VQ6v&q=85&s=ab641f30c01bf5374b90b62209db569e", "https://docs.devin.ai/", "official-product-asset"],
   zed: ["Zed", raw("zed-industries/zed", "crates/zed/resources/app-icon@2x.png"), "https://github.com/zed-industries/zed/blob/HEAD/crates/zed/resources/app-icon%402x.png", "official-repository-asset"],
   kiro: ["Kiro", "https://kiro.dev/icon.svg", "https://kiro.dev/", "official-site-icon"],
   void: ["Void", raw("voideditor/void", "void_icons/slice_of_void.png"), "https://github.com/voideditor/void/blob/HEAD/void_icons/slice_of_void.png", "official-repository-asset"],
@@ -76,13 +76,14 @@ const products = {
   "agent-deck": ["agent-deck", raw("asheshgoplani/agent-deck", "site/logo.svg"), "https://github.com/asheshgoplani/agent-deck/blob/HEAD/site/logo.svg", "official-repository-asset"],
   "claude-code": ["Claude Code", avatar("anthropics"), "https://github.com/anthropics", "official-organization-avatar"],
   "codex-cli": ["Codex CLI", avatar("openai"), "https://github.com/openai", "official-organization-avatar"],
+  "chatgpt-desktop": ["ChatGPT desktop", avatar("openai"), "https://github.com/openai", "official-organization-avatar"],
   "cursor-cli": ["Cursor CLI", "https://cursor.com/marketing-static/favicon-light.svg", "https://cursor.com/cli", "official-site-icon"],
   "gemini-cli": ["Gemini CLI", avatar("google-gemini"), "https://github.com/google-gemini", "official-organization-avatar"],
   "factory-droid-cli": ["Factory Droid CLI", "https://docs.factory.ai/favicon.svg", "https://docs.factory.ai/cli/getting-started/quickstart", "official-site-icon"],
   codewhale: ["CodeWhale", raw("Hmbown/CodeWhale", "web/app/icon.svg"), "https://github.com/Hmbown/CodeWhale/blob/HEAD/web/app/icon.svg", "official-repository-asset"],
   "antigravity-cli": ["Antigravity CLI", avatar("google"), "https://github.com/google", "official-organization-avatar"],
   "qwen-code": ["Qwen Code", raw("QwenLM/qwen-code", "packages/chrome-extension/public/icons/icon-source.png"), "https://github.com/QwenLM/qwen-code/blob/HEAD/packages/chrome-extension/public/icons/icon-source.png", "official-repository-asset"],
-  "pi-coding-agent": ["Pi coding agent", avatar("earendil-works"), "https://github.com/earendil-works", "official-organization-avatar"],
+  "pi-coding-agent": ["Pi coding agent", "https://pi.dev/favicon.svg", "https://pi.dev/press-kit", "official-product-asset"],
   opencode: ["OpenCode CLI", raw("anomalyco/opencode", "packages/app/public/favicon-96x96-v3.png"), "https://github.com/anomalyco/opencode/blob/HEAD/packages/app/public/favicon-96x96-v3.png", "official-repository-asset"],
   "github-copilot-cli": ["GitHub Copilot CLI", avatar("github"), "https://github.com/github", "official-organization-avatar"],
   goose: ["Goose CLI", raw("aaif-goose/goose", "ui/desktop/src/images/icon.svg"), "https://github.com/aaif-goose/goose/blob/HEAD/ui/desktop/src/images/icon.svg", "official-repository-asset"],
@@ -118,8 +119,8 @@ const products = {
   "refact-ide-plugins": ["Refact IDE plugins", raw("smallcloudai/refact", "plugins/vscode/images/logo-small.png"), "https://github.com/smallcloudai/refact/blob/HEAD/plugins/vscode/images/logo-small.png", "official-repository-asset"],
   "openai-codex-cloud": ["OpenAI Codex cloud", avatar("openai"), "https://github.com/openai", "official-organization-avatar"],
   "github-copilot-coding-agent": ["GitHub Copilot coding agent", avatar("github"), "https://github.com/github", "official-organization-avatar"],
-  devin: ["Devin", avatar("cognition-ai"), "https://github.com/cognition-ai", "official-organization-avatar"],
-  jules: ["Jules", avatar("google"), "https://github.com/google", "official-organization-avatar"],
+  devin: ["Devin", "https://mintcdn.com/cognitionai/Hhrl_8XUBqA4VQ6v/logo/favicon.svg?fit=max&auto=format&n=Hhrl_8XUBqA4VQ6v&q=85&s=ab641f30c01bf5374b90b62209db569e", "https://docs.devin.ai/", "official-product-asset"],
+  jules: ["Jules", "https://www.gstatic.com/labs-code/code-app/favicon-48x48.png", "https://jules.google.com/", "official-product-icon"],
   "claude-code-web": ["Claude Code on the web", avatar("anthropics"), "https://github.com/anthropics", "official-organization-avatar"],
   "cursor-cloud-agents": ["Cursor Cloud Agents", "https://cursor.com/marketing-static/favicon-light.svg", "https://cursor.com/docs/cloud-agent", "official-site-icon"],
   "factory-cloud-sessions": ["Factory Droid Computers / cloud sessions", "https://docs.factory.ai/favicon.svg", "https://docs.factory.ai/", "official-site-icon"],
@@ -144,13 +145,15 @@ const products = {
   tapes: ["Tapes", avatar("papercomputeco"), "https://github.com/papercomputeco", "official-organization-avatar"],
   "traces-com": ["Traces", avatar("traces-sh"), "https://github.com/traces-sh", "official-organization-avatar"],
   agentsview: ["AgentsView", avatar("kenn-io"), "https://github.com/kenn-io/agentsview", "official-project-owner-avatar"],
+  "claude-code-history-viewer": ["Claude Code History Viewer", avatar("jhlee0409"), "https://github.com/jhlee0409/claude-code-history-viewer", "official-project-owner-avatar"],
+  "agent-sessions": ["Agent Sessions", avatar("jazzyalex"), "https://github.com/jazzyalex/agent-sessions", "official-project-owner-avatar"],
+  dmux: ["dmux", avatar("standardagents"), "https://github.com/standardagents/dmux", "official-organization-avatar"],
 };
 
 const platforms = {
   macos: ["macOS", "https://www.apple.com/apple-touch-icon.png", "https://www.apple.com/macos/", "official-vendor-icon"],
   windows: ["Windows", "https://www.microsoft.com/favicon.ico", "https://www.microsoft.com/windows/", "official-vendor-icon"],
   linux: ["Linux", "https://www.linuxfoundation.org/hubfs/Tux-flat-version.png", "https://www.linuxfoundation.org/", "official-foundation-asset"],
-  web: ["Web", "https://www.w3.org/assets/logos/w3c-2025/favicons/favicon-180.png", "https://www.w3.org/", "official-standards-body-asset"],
   ios: ["iOS", "https://www.apple.com/apple-touch-icon.png", "https://www.apple.com/ios/", "official-vendor-icon"],
   android: ["Android", "https://developer.android.com/static/images/brand/android-head_3D.svg", "https://developer.android.com/distribute/marketing-tools/brand-guidelines", "official-vendor-asset"],
 };
@@ -284,7 +287,7 @@ const productManifest = await downloadGroup(
   productFallbacks,
   selectedProducts,
 );
-const platformManifest = await downloadGroup(
+const downloadedPlatformManifest = await downloadGroup(
   platforms,
   "platforms",
   "platform",
@@ -292,6 +295,17 @@ const platformManifest = await downloadGroup(
   {},
   options.productIds.size > 0 ? new Set() : null,
 );
+const platformManifest = {
+  ...downloadedPlatformManifest,
+  web: {
+    name: "Web",
+    alt: "Web globe",
+    src: "/compare/platforms/web.svg",
+    sourceUrl: "https://www.w3.org/standards/",
+    sourceType: "original-interface-glyph",
+    checkedAt,
+  },
+};
 await writeFile(
   manifestPath,
   `${JSON.stringify({ checkedAt, products: productManifest, platforms: platformManifest }, null, 2)}\n`,

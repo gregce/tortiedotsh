@@ -8,6 +8,9 @@ import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
+const LOC_METHODOLOGY = "source-code-v2";
+const LOC_EXCLUDED_EXTENSIONS = "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock";
+const LOC_EXCLUDED_DIRECTORIES = ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool";
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const takeRoot = resolve(scriptDirectory, "..");
 const defaultManifest = resolve(takeRoot, "src/data/open-source-projects.json");
@@ -118,6 +121,18 @@ function validateManifest(manifest) {
     if (typeof project.loc?.enabled !== "boolean") {
       throw new Error(`${project.id} must declare loc.enabled`);
     }
+    if (!project.loc.enabled && (typeof project.loc.reason !== "string" || project.loc.reason.trim() === "")) {
+      throw new Error(`${project.id} must explain why LOC measurement is disabled`);
+    }
+    if (project.release?.mode === "default-branch" && (typeof project.release.reason !== "string" || project.release.reason.trim() === "")) {
+      throw new Error(`${project.id} must explain its default-branch release policy`);
+    }
+    if (project.release?.mode === "default-branch" && !Number.isFinite(Date.parse(project.release.checkedAt))) {
+      throw new Error(`${project.id} must date its default-branch release policy`);
+    }
+    if (project.release && project.release.mode !== "default-branch") {
+      throw new Error(`${project.id} has an unsupported release.mode`);
+    }
   }
 }
 
@@ -199,16 +214,56 @@ function nullLoc(status = "not-measured", reason = null) {
     blank: null,
     files: null,
     measuredAt: null,
+    verifiedAt: null,
     measuredRef: null,
     refType: null,
     commitSha: null,
     tool: null,
+    methodology: LOC_METHODOLOGY,
+    excludedExtensions: LOC_EXCLUDED_EXTENSIONS,
+    excludedDirectories: LOC_EXCLUDED_DIRECTORIES,
     reason,
   };
 }
 
-async function measureLoc(project, measuredRef, refType) {
+async function resolveRemoteRefSha(project, measuredRef, refType) {
+  const patterns = refType === "default-branch"
+    ? [`refs/heads/${measuredRef}`]
+    : [`refs/tags/${measuredRef}`, `refs/tags/${measuredRef}^{}`];
+  const { stdout } = await execFileAsync("git", ["ls-remote", project.githubUrl, ...patterns], {
+    timeout: 60_000,
+    maxBuffer: 1024 * 1024,
+  });
+  const refs = stdout.trim().split("\n").filter(Boolean).map((line) => {
+    const [sha, ref] = line.split(/\s+/, 2);
+    return { sha, ref };
+  });
+  return refs.find((item) => item.ref?.endsWith("^{}"))?.sha || refs[0]?.sha || null;
+}
+
+async function measureLoc(project, measuredRef, refType, previousLoc = null) {
   if (!project.loc.enabled) return nullLoc("disabled", project.loc.reason || "Disabled in manifest");
+
+  try {
+    const currentCommitSha = await resolveRemoteRefSha(project, measuredRef, refType);
+    if (
+      currentCommitSha &&
+      previousLoc?.status === "measured" &&
+      previousLoc.measuredRef === measuredRef &&
+      previousLoc.refType === refType &&
+      previousLoc.commitSha === currentCommitSha &&
+      previousLoc.methodology === LOC_METHODOLOGY
+    ) {
+      return {
+        ...previousLoc,
+        verifiedAt: new Date().toISOString(),
+        reason: null,
+      };
+    }
+  } catch {
+    // Ref verification is an optimization. A fresh checkout remains the
+    // authoritative fallback when ls-remote is unavailable.
+  }
 
   const tempRoot = await mkdtemp(resolve(tmpdir(), `tortie-loc-${project.id}-`));
   const checkout = resolve(tempRoot, "repo");
@@ -226,7 +281,8 @@ async function measureLoc(project, measuredRef, refType) {
     const { stdout } = await execFileAsync("cloc", [
       "--json",
       "--quiet",
-      "--exclude-dir=.git,node_modules,vendor,dist,build,.build,target",
+      `--exclude-ext=${LOC_EXCLUDED_EXTENSIONS}`,
+      `--exclude-dir=${LOC_EXCLUDED_DIRECTORIES}`,
       checkout,
     ], { timeout: 10 * 60_000, maxBuffer: 32 * 1024 * 1024 });
     const jsonStart = stdout.indexOf("{");
@@ -239,17 +295,22 @@ async function measureLoc(project, measuredRef, refType) {
       timeout: 30_000,
       maxBuffer: 1024 * 1024,
     });
+    const measuredAt = new Date().toISOString();
     return {
       status: "measured",
       code: sum.code ?? null,
       comments: sum.comment ?? null,
       blank: sum.blank ?? null,
       files: sum.nFiles ?? null,
-      measuredAt: new Date().toISOString(),
+      measuredAt,
+      verifiedAt: measuredAt,
       measuredRef,
       refType,
       commitSha: commitSha.trim(),
       tool: `cloc ${result.header?.cloc_version || "unknown"}`,
+      methodology: LOC_METHODOLOGY,
+      excludedExtensions: LOC_EXCLUDED_EXTENSIONS,
+      excludedDirectories: LOC_EXCLUDED_DIRECTORIES,
       reason: null,
     };
   } finally {
@@ -257,7 +318,27 @@ async function measureLoc(project, measuredRef, refType) {
   }
 }
 
-async function latestVersion(owner, repo) {
+async function latestVersion(project) {
+  const { owner, repo } = project;
+  if (project.release?.mode === "default-branch") {
+    return {
+      latestRelease: null,
+      latestTag: null,
+      version: null,
+      releaseDate: null,
+      releasePolicy: {
+        mode: "default-branch",
+        reason: project.release.reason,
+        checkedAt: project.release.checkedAt,
+        rejectedCandidate: project.release.rejectedCandidate || null,
+      },
+      sources: [{
+        type: "release-policy",
+        url: `${project.githubUrl}/releases`,
+        fetchedAt: `${project.release.checkedAt}T00:00:00.000Z`,
+      }],
+    };
+  }
   const release = await githubRequest(`/repos/${owner}/${repo}/releases/latest`, { allow404: true });
   if (release) {
     return {
@@ -271,6 +352,7 @@ async function latestVersion(owner, repo) {
       latestTag: null,
       version: release.data.tag_name || null,
       releaseDate: release.data.published_at || null,
+      releasePolicy: null,
       sources: [source("latest-release", release)],
     };
   }
@@ -283,6 +365,7 @@ async function latestVersion(owner, repo) {
       latestTag: null,
       version: null,
       releaseDate: null,
+      releasePolicy: null,
       sources: [source("latest-tag", tags)],
     };
   }
@@ -298,6 +381,7 @@ async function latestVersion(owner, repo) {
     },
     version: tag.name,
     releaseDate: null,
+    releasePolicy: null,
     sources: [source("latest-tag", tags), source("tag-commit", commit)],
   };
 }
@@ -308,7 +392,9 @@ function baseRecord(project, previous) {
     previous?.repo?.toLowerCase() === project.repo.toLowerCase()
       ? previous
       : null;
-  return {
+  const priorErrors = prior?.errors || [];
+  const policyResolvesVersionError = project.release?.mode === "default-branch" && priorErrors.every((error) => error.section === "version");
+  const record = {
     id: project.id,
     name: project.name,
     category: project.category,
@@ -316,22 +402,50 @@ function baseRecord(project, previous) {
     repo: project.repo,
     githubUrl: project.githubUrl,
     apiUrl: project.apiUrl,
-    status: prior?.status || "stale",
+    status: policyResolvesVersionError ? "current" : prior?.status || "stale",
     refreshedAt: prior?.refreshedAt || null,
     stars: prior?.stars ?? null,
+    forks: prior?.forks ?? null,
+    openIssues: prior?.openIssues ?? null,
     contributors: prior?.contributors ?? null,
     repositorySizeKb: prior?.repositorySizeKb ?? null,
     defaultBranch: prior?.defaultBranch ?? null,
     pushedAt: prior?.pushedAt ?? null,
+    archived: prior?.archived ?? null,
+    license: prior?.license ?? null,
     languages: prior?.languages || [],
     latestRelease: prior?.latestRelease ?? null,
     latestTag: prior?.latestTag ?? null,
     version: prior?.version ?? null,
     releaseDate: prior?.releaseDate ?? null,
-    loc: prior?.loc ? { ...nullLoc(), ...prior.loc } : nullLoc(),
+    releasePolicy: prior?.releasePolicy ?? null,
+    loc: !project.loc.enabled
+      ? nullLoc("disabled", project.loc.reason || "Disabled in manifest")
+      : prior?.loc
+        ? { ...nullLoc(), ...prior.loc }
+        : nullLoc(),
     sources: prior?.sources || [],
-    errors: prior?.errors || [],
+    errors: policyResolvesVersionError ? [] : priorErrors,
   };
+  if (project.release?.mode === "default-branch") {
+    record.latestRelease = null;
+    record.latestTag = null;
+    record.version = null;
+    record.releaseDate = null;
+    record.releasePolicy = {
+      mode: "default-branch",
+      reason: project.release.reason,
+      checkedAt: project.release.checkedAt,
+      rejectedCandidate: project.release.rejectedCandidate || null,
+    };
+    record.sources = (record.sources || []).filter((item) => !["latest-release", "latest-tag", "tag-commit", "release-policy"].includes(item.type));
+    record.sources.push({
+      type: "release-policy",
+      url: `${project.githubUrl}/releases`,
+      fetchedAt: `${project.release.checkedAt}T00:00:00.000Z`,
+    });
+  }
+  return record;
 }
 
 async function refreshProject(project, previous, includeLoc) {
@@ -344,9 +458,20 @@ async function refreshProject(project, previous, includeLoc) {
     const repository = await githubRequest(`/repos/${project.owner}/${project.repo}`);
     repositoryCurrent = true;
     record.stars = repository.data.stargazers_count ?? null;
+    record.forks = repository.data.forks_count ?? null;
+    record.openIssues = repository.data.open_issues_count ?? null;
     record.repositorySizeKb = repository.data.size ?? null;
     record.defaultBranch = repository.data.default_branch || null;
     record.pushedAt = repository.data.pushed_at || null;
+    record.archived = typeof repository.data.archived === "boolean" ? repository.data.archived : null;
+    record.license = repository.data.license
+      ? {
+          key: repository.data.license.key || null,
+          name: repository.data.license.name || null,
+          spdxId: repository.data.license.spdx_id || null,
+          url: repository.data.license.html_url || repository.data.license.url || null,
+        }
+      : null;
     record.githubUrl = repository.data.html_url || project.githubUrl;
     currentSources.push(source("repository", repository));
   } catch (error) {
@@ -367,12 +492,13 @@ async function refreshProject(project, previous, includeLoc) {
         currentSources.push(source("contributors", contributors));
       })(),
       (async () => {
-        const version = await latestVersion(project.owner, project.repo);
+        const version = await latestVersion(project);
         Object.assign(record, {
           latestRelease: version.latestRelease,
           latestTag: version.latestTag,
           version: version.version,
           releaseDate: version.releaseDate,
+          releasePolicy: version.releasePolicy,
         });
         versionCurrent = true;
         currentSources.push(...version.sources);
@@ -390,19 +516,17 @@ async function refreshProject(project, previous, includeLoc) {
     if (includeLoc) {
       try {
         const measuredRef = versionCurrent
-          ? record.latestRelease?.tagName || record.latestTag?.name || record.defaultBranch
+          ? record.latestRelease?.tagName || record.defaultBranch
           : record.defaultBranch;
         const refType = versionCurrent && record.latestRelease?.tagName
           ? "stable-release-tag"
-          : versionCurrent && record.latestTag?.name
-            ? "latest-tag"
-            : "default-branch";
-        record.loc = await measureLoc(project, measuredRef, refType);
+          : "default-branch";
+        record.loc = await measureLoc(project, measuredRef, refType, previous?.loc);
         if (record.loc.status === "measured") {
           currentSources.push({
-            type: "loc-checkout",
+            type: "loc-measurement",
             url: `${project.githubUrl}/tree/${encodeURIComponent(record.loc.measuredRef)}`,
-            fetchedAt: record.loc.measuredAt,
+            fetchedAt: record.loc.verifiedAt || record.loc.measuredAt,
           });
         }
       } catch (error) {
@@ -420,6 +544,10 @@ async function refreshProject(project, previous, includeLoc) {
       replacedTypes.add("latest-release");
       replacedTypes.add("latest-tag");
       replacedTypes.add("tag-commit");
+    }
+    if (replacedTypes.has("loc-measurement")) {
+      replacedTypes.add("loc-checkout");
+      replacedTypes.add("loc-ref-verification");
     }
     const retainedSources = (previous?.sources || []).filter((item) => !replacedTypes.has(item.type));
     record.sources = [...retainedSources, ...currentSources];
@@ -460,7 +588,11 @@ async function main() {
   if (options.syncOnly) {
     const output = {
       schemaVersion: 1,
-      generatedAt: new Date().toISOString(),
+      // A manifest reconciliation is not a metrics refresh. Preserve the last
+      // successful network-refresh timestamp so freshness checks cannot be
+      // satisfied by adding empty records offline.
+      generatedAt: previousOutput.generatedAt || null,
+      manifestSyncedAt: new Date().toISOString(),
       generator: "takes/three/scripts/refresh-open-source-metrics.mjs",
       projects: manifest.projects.map((project) => baseRecord(project, previousById.get(project.id))),
     };
@@ -498,6 +630,7 @@ async function main() {
   const output = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
+    manifestSyncedAt: new Date().toISOString(),
     generator: "takes/three/scripts/refresh-open-source-metrics.mjs",
     projects,
   };

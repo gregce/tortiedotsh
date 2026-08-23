@@ -402,7 +402,7 @@ const category = (
 export const comparisonCategories: readonly ComparisonCategory[] = [
   category("code-editors", "Code IDEs", "Code IDEs", "/compare/editors/", 1, "Products organized around files, projects, and an editor window."),
   category("ide-extensions", "IDE extensions", "Extensions", "/compare/extensions/", 2, "Agent and assistance surfaces that depend on a host editor."),
-  category("agent-workbenches", "Agent IDEs", "Agent IDEs", "/compare/agent-ides/", 3, "Products organized around named, recurring sessions inside projects."),
+  category("agent-workbenches", "Agent Multiplexers", "Agent Multiplexers", "/compare/agent-ides/", 3, "Operator surfaces for multiplexing concurrent coding agents and workspaces, routing attention, isolating changes, and reviewing results."),
   category("agent-orchestrators", "Agent orchestrators", "Agent Orchestrators", "/compare/orchestrators/", 4, "Products organized around delegated tasks in isolated workspaces."),
   category("coding-agent-harnesses", "Coding-agent harnesses", "Harnesses", "/compare/harnesses/", 5, "Processes that own one model conversation and its tool loop."),
   category("agent-traces", "Agent Traces", "Agent Traces", "/compare/agent-traces/", 6, "Durable provenance and observability records of coding-agent work."),
@@ -607,6 +607,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   }),
   product({
     id: "intellij-idea", name: "IntelliJ IDEA", categoryId: "code-editors", editorialOrder: 6, officialUrl: "https://www.jetbrains.com/help/idea/intellij-idea-single-distribution.html",
+    repository: repo("JetBrains/intellij-community", "source-tree"), repoMetricId: "intellij-community",
     tags: ["jetbrains", "jetbrains-ide-family", "java", "kotlin", "jvm", "agent-panel", "external-agents", "mcp", "worktrees", "remote-development", "split-source"],
     platform: ["macos", "windows", "linux"], platformNote: "This column is the unified IntelliJ IDEA product, not an aggregate of every JetBrains IDE.",
     source: "split-source", execution: ["local-process", "ssh-host", "container"], status: "active",
@@ -663,69 +664,115 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   product({
     id: "visual-studio-code", name: "Visual Studio Code", categoryId: "code-editors", editorialOrder: 9,
     officialUrl: "https://code.visualstudio.com/docs/agents/overview", repository: repo("microsoft/vscode", "source-tree"), repoMetricId: "vscode",
-    tags: ["agent-sessions", "extensions", "background-agent-client", "remote-development"], platform: ["macos", "windows", "linux", "web"], source: "split-source", execution: ["local-process", "vendor-cloud", "ssh-host"],
+    tags: ["agent-sessions", "extensions", "background-agent-client", "remote-development"], platform: ["macos", "windows", "linux", "web"], source: "split-source", execution: ["local-process", "vendor-cloud", "ssh-host"], status: "active",
     claims: {
       ...builtInClaims("https://code.visualstudio.com/docs/agents/run/agents-window", "Visual Studio Code Agents window", ["editor-project-tree", "editor-terminal", "editor-agent-mode", "editor-background-jobs", "editor-parallel-sessions", "editor-change-review"]),
       ...builtInClaims("https://code.visualstudio.com/docs/agents/run/tools", "Visual Studio Code agent tools", ["editor-agent-shell-tools", "editor-mcp"]),
       ...builtInClaims("https://code.visualstudio.com/docs/agents/concepts/agent-harnesses", "Visual Studio Code agent harnesses", ["editor-worktree-isolation"]),
       ...builtInClaims("https://code.visualstudio.com/docs/agents/overview", "Visual Studio Code agents overview", ["editor-remote-workspaces"]),
       "editor-inline-prediction": capability("via-extension", "https://code.visualstudio.com/docs/editing/ai-powered-suggestions", "Visual Studio Code inline suggestions", "GitHub Copilot provides inline and next-edit suggestions in VS Code."),
+      "editor-model-access": factClaim("Built-in providers, extension providers, and BYOK", "https://code.visualstudio.com/docs/agent-customization/language-models", "VS Code language models"),
+      "editor-agent-permissions": factClaim("Session autonomy, per-tool approval, URL approval, and terminal policies", "https://code.visualstudio.com/docs/agents/run/approvals", "VS Code approvals and permissions"),
+      "editor-agent-sandbox": factClaim("Optional filesystem and network sandbox on macOS and Linux/WSL", "https://code.visualstudio.com/docs/agents/run/approvals", "VS Code approvals and permissions"),
+      "editor-browser-tools": factClaim("Integrated browser with built-in agent browser tools", "https://code.visualstudio.com/docs/agents/run/browser-tools", "VS Code browser tools"),
+      "editor-verification-loop": factClaim("Terminal, diagnostics, tests, and interactive browser verification", "https://code.visualstudio.com/docs/agents/run/browser-tools", "VS Code browser tools"),
+      "editor-specialization": factClaim("General software development", "https://code.visualstudio.com/docs/", "Visual Studio Code documentation"),
+      "editor-ai-feature-boundary": factClaim("Core agent host plus first-party and third-party harness extensions", "https://code.visualstudio.com/docs/agents/run/agent-harnesses", "VS Code agent harnesses"),
+      "editor-release-channel": factClaim("Monthly stable and continuously published Insiders", "https://code.visualstudio.com/updates/archive", "VS Code release archive"),
     },
   }),
   product({
     id: "cursor-ide", name: "Cursor IDE", categoryId: "code-editors", editorialOrder: 10, officialUrl: "https://docs.cursor.com/en/get-started/quickstart",
-    tags: ["agent-panel", "background-agent-client", "vscode-derived"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"],
+    tags: ["agent-panel", "background-agent-client", "vscode-derived"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active",
     claims: {
       ...builtInClaims("https://docs.cursor.com/en/get-started/quickstart", "Cursor quickstart", ["editor-project-tree", "editor-agent-mode", "editor-inline-prediction"]),
       ...builtInClaims("https://docs.cursor.com/en/agent/terminal", "Cursor terminal documentation", ["editor-terminal", "editor-agent-shell-tools"]),
       ...builtInClaims("https://docs.cursor.com/context/model-context-protocol", "Cursor MCP documentation", ["editor-mcp"]),
       ...builtInClaims("https://docs.cursor.com/background-agent", "Cursor Background Agents", ["editor-background-jobs", "editor-parallel-sessions", "editor-remote-workspaces"]),
+      ...builtInClaims("https://cursor.com/docs/agent/agents-window", "Cursor Agents Window", ["editor-worktree-isolation", "editor-change-review"]),
+      "editor-model-access": factClaim("Cursor models and third-party frontier models", "https://cursor.com/docs/models-and-pricing", "Cursor models and pricing"),
+      "editor-agent-permissions": factClaim("Auto-review, allowlists, per-tool approval, and unrestricted run modes", "https://cursor.com/docs/agent/security/run-modes", "Cursor run modes"),
+      "editor-agent-sandbox": factClaim("Workspace filesystem and configurable network sandbox for terminal commands", "https://cursor.com/docs/agent/security/run-modes", "Cursor run modes"),
+      "editor-browser-tools": factClaim("Integrated browser pane with first-party agent tools", "https://cursor.com/docs/agent/tools/browser", "Cursor browser tools"),
+      "editor-verification-loop": factClaim("Review diffs and run checks inside Cursor", "https://cursor.com/docs", "Cursor documentation"),
+      "editor-specialization": factClaim("General software development", "https://cursor.com/docs", "Cursor documentation"),
+      "editor-ai-feature-boundary": factClaim("Built into Cursor; plugins, skills, MCP, and rules extend it", "https://cursor.com/docs/customize-cursor", "Cursor customization documentation"),
+      "editor-release-channel": factClaim("Active desktop release", "https://cursor.com/changelog", "Cursor changelog"),
     },
   }),
   product({
     id: "windsurf", name: "Devin Desktop", categoryId: "code-editors", editorialOrder: 11, officialUrl: "https://docs.devin.ai/desktop/getting-started",
-    tags: ["agent-panel", "vscode-derived", "formerly-windsurf", "local-agent"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"],
+    tags: ["agent-panel", "vscode-derived", "formerly-windsurf", "local-agent"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active",
     claims: {
       ...builtInClaims("https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started", ["editor-project-tree", "editor-agent-mode"]),
       ...builtInClaims("https://docs.devin.ai/desktop/terminal", "Devin Desktop terminal", ["editor-terminal", "editor-agent-shell-tools"]),
       ...builtInClaims("https://docs.devin.ai/desktop/tab/overview", "Devin Desktop Tab", ["editor-inline-prediction"]),
       ...builtInClaims("https://docs.devin.ai/desktop/cascade/mcp", "Devin Desktop MCP documentation", ["editor-mcp"]),
+      ...builtInClaims("https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started", ["editor-remote-workspaces"]),
+      "editor-change-review": capability("built-in", "https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started", "Quick Review is a documented first-party editor surface."),
+      "editor-model-access": factClaim("Devin-managed selectable editor models", "https://docs.devin.ai/desktop/editor/models", "Devin Desktop models"),
+      "editor-browser-tools": factClaim("Browser previews", "https://docs.devin.ai/desktop/editor/browser-previews", "Devin Desktop browser previews"),
+      "editor-verification-loop": factClaim("Local agent code execution, terminal, Quick Review, and browser previews", "https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started"),
+      "editor-specialization": factClaim("General software development", "https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started"),
+      "editor-ai-feature-boundary": factClaim("Built-in Devin Local harness shared with Devin CLI", "https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started"),
+      "editor-release-channel": factClaim("Stable desktop plus Devin Desktop Next prerelease", "https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started"),
     },
   }),
   product({
     id: "zed", name: "Zed", categoryId: "code-editors", editorialOrder: 12, officialUrl: "https://zed.dev/docs/ai/overview", repository: repo("zed-industries/zed"), repoMetricId: "zed",
-    tags: ["agent-panel", "terminal", "scm", "worktrees", "parallel-agents", "oss"], platform: ["macos", "linux"], source: "open-source", execution: ["local-process"],
+    tags: ["agent-panel", "terminal", "scm", "worktrees", "parallel-agents", "oss"], platform: ["macos", "windows", "linux"], platformSource: { url: "https://zed.dev/docs/installation", title: "Zed installation and platform support" }, source: "open-source", execution: ["local-process"], status: "active",
     claims: {
       ...builtInClaims("https://zed.dev/docs/ai/zed-agent", "Zed Agent documentation", ["editor-project-tree", "editor-terminal", "editor-agent-mode", "editor-agent-shell-tools", "editor-change-review"]),
       ...builtInClaims("https://zed.dev/docs/ai/parallel-agents", "Zed Parallel Agents", ["editor-background-jobs", "editor-parallel-sessions", "editor-worktree-isolation"]),
       ...builtInClaims("https://zed.dev/docs/ai/edit-prediction", "Zed Edit Prediction", ["editor-inline-prediction"]),
       ...builtInClaims("https://zed.dev/docs/ai/agent-panel", "Zed Agent Panel", ["editor-mcp"]),
+      "editor-model-access": factClaim("Zed-hosted and configured external providers", "https://zed.dev/docs/ai/zed-agent", "Zed Agent documentation"),
+      "editor-agent-permissions": factClaim("Per-tool allow, deny, or confirmation rules", "https://zed.dev/docs/ai/agent-profiles", "Zed Agent Profiles"),
+      "editor-agent-sandbox": factClaim("Optional terminal and fetch sandbox on macOS, Linux, and Windows/WSL", "https://zed.dev/docs/ai/sandboxing", "Zed agent sandboxing"),
+      "editor-verification-loop": factClaim("Terminal commands, project diagnostics, and change review", "https://zed.dev/docs/ai/tools", "Zed agent tools"),
+      "editor-specialization": factClaim("General software development", "https://zed.dev/docs/", "Zed getting started"),
+      "editor-ai-feature-boundary": factClaim("Built-in Zed Agent plus ACP external agents and terminal threads", "https://zed.dev/docs/ai/agents", "AI agents in Zed"),
+      "editor-release-channel": factClaim("Weekly stable and preview channels", "https://zed.dev/docs/installation", "Zed installation and channels"),
     },
   }),
   product({
     id: "kiro", name: "Kiro", categoryId: "code-editors", editorialOrder: 13, officialUrl: "https://kiro.dev/docs/ide/",
-    tags: ["agent-panel", "spec-driven", "parallel-agents", "cloud-sessions"], platform: ["macos", "windows", "linux"], source: "unknown", execution: ["local-process", "vendor-cloud"],
+    tags: ["agent-panel", "spec-driven", "parallel-agents", "cloud-sessions"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active",
     claims: {
       ...builtInClaims("https://kiro.dev/docs/ide/", "Kiro IDE documentation", ["editor-project-tree", "editor-agent-mode", "editor-mcp"]),
       ...builtInClaims("https://kiro.dev/docs/chat/dev-servers/", "Kiro dev servers", ["editor-terminal", "editor-agent-shell-tools"]),
       ...builtInClaims("https://kiro.dev/docs/ide/experimental/focus-mode", "Kiro Agent Focus", ["editor-background-jobs", "editor-parallel-sessions", "editor-change-review"]),
       ...builtInClaims("https://kiro.dev/ide/", "Kiro IDE product documentation", ["editor-remote-workspaces"]),
+      "editor-model-access": factClaim("Kiro model catalog and Auto routing", "https://kiro.dev/docs/how-kiro-works", "How Kiro works"),
+      "editor-agent-permissions": factClaim("Capability rules with deny, ask, and allow plus IDE autonomy mode", "https://kiro.dev/docs/cli/chat/permissions/", "Kiro permissions"),
+      "editor-browser-tools": factClaim("Built-in web search and fetch tools", "https://kiro.dev/docs/cli/reference/built-in-tools/", "Kiro built-in tools"),
+      "editor-verification-loop": factClaim("Shell, diagnostics, editor-native code analysis, checkpoints, and rewind", "https://kiro.dev/docs/how-kiro-works", "How Kiro works"),
+      "editor-specialization": factClaim("General software development with spec-driven workflows", "https://kiro.dev/docs/ide/", "Kiro IDE documentation"),
+      "editor-ai-feature-boundary": factClaim("Built-in IDE client for Kiro's shared ACP harness", "https://kiro.dev/docs/how-kiro-works", "How Kiro works"),
+      "editor-release-channel": factClaim("Active IDE 1.x stable channel", "https://kiro.dev/changelog/ide/page/2/", "Kiro IDE changelog"),
     },
   }),
   product({
     id: "void", name: "Void", categoryId: "code-editors", editorialOrder: 14, officialUrl: "https://github.com/voideditor/void", repository: repo("voideditor/void"), repoMetricId: "void",
-    tags: ["agent-panel", "vscode-derived", "oss", "historical"], source: "open-source", execution: ["local-process"], status: "archived",
+    tags: ["agent-panel", "vscode-derived", "oss", "historical"], platform: ["macos", "windows", "linux"], platformSource: { url: "https://github.com/voideditor/binaries/releases", title: "Void first-party binary releases" }, source: "open-source", execution: ["local-process"], status: "archived",
     claims: {
       ...builtInClaims("https://github.com/voideditor/void", "Void repository", ["editor-project-tree", "editor-terminal", "editor-agent-mode", "editor-change-review"], undefined, "repository-derived"),
       ...builtInClaims("https://github.com/voideditor/void/releases", "Void releases", ["editor-inline-prediction"], undefined, "repository-derived"),
+      "editor-model-access": factClaim("Direct provider access, BYOK, and local models", "https://github.com/voideditor/void", "Void repository", undefined, "repository-derived"),
+      "editor-specialization": factClaim("General software development", "https://github.com/voideditor/void", "Void repository", undefined, "repository-derived"),
+      "editor-ai-feature-boundary": factClaim("Built into the archived open-source desktop app", "https://github.com/voideditor/void", "Void repository", undefined, "repository-derived"),
+      "editor-release-channel": factClaim("Archived; historical binaries retained", "https://github.com/voideditor/void", "Void repository", undefined, "repository-derived"),
     },
   }),
 
   // 2. Agent workbenches
   product({
     id: "tortie", name: "Tortie", categoryId: "agent-workbenches", editorialOrder: 1, officialUrl: "https://github.com/gregce/tortie", repository: repo("gregce/tortie"), repoMetricId: "tortie",
-    tags: ["terminal", "editor", "scm", "session-durability", "multi-project", "remote-ssh", "oss"], platform: ["macos"], platformNote: "The current supported desktop build is macOS on Apple silicon.", source: "open-source", execution: ["local-process", "local-daemon", "ssh-host"],
-    claims: builtInClaims("https://github.com/gregce/tortie#readme", "Tortie repository README", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-pty-survives-ui", "workbench-cross-project-attention", "workbench-editor", "workbench-file-tree", "workbench-scm", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery", "workbench-remote-host"], undefined, "repository-derived"),
+    tags: ["terminal", "editor", "scm", "session-durability", "multi-project", "remote-ssh", "oss"], platform: ["macos"], platformNote: "The current supported desktop build is macOS on Apple silicon.", source: "open-source", execution: ["local-process", "local-daemon", "ssh-host"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/gregce/tortie#readme", "Tortie repository README", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-pty-survives-ui", "workbench-cross-project-attention", "workbench-editor", "workbench-file-tree", "workbench-scm", "workbench-change-review", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery", "workbench-remote-host"], undefined, "repository-derived"),
+      ...limitedClaims("https://github.com/gregce/tortie#readme", "Tortie repository README", ["workbench-browser"], "Markdown and sandboxed HTML previews are built in, but a general interactive browser is not documented.", "repository-derived"),
+    },
   }),
   product({
     id: "cate", name: "Cate", categoryId: "agent-workbenches", editorialOrder: 2, officialUrl: "https://github.com/0-AI-UG/cate", repository: repo("0-AI-UG/cate"), repoMetricId: "cate",
@@ -747,7 +794,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   }),
   product({
     id: "cmux", name: "cmux", categoryId: "agent-workbenches", editorialOrder: 4, officialUrl: "https://github.com/manaflow-ai/cmux", repository: repo("manaflow-ai/cmux"), repoMetricId: "cmux",
-    tags: ["terminal", "session-restore", "browser", "notifications", "remote-ssh", "oss"], platform: ["macos"], platformNote: "iOS is a companion surface, not the evaluated desktop host.", source: "open-source", execution: ["local-process", "ssh-host"],
+    tags: ["terminal", "session-restore", "browser", "notifications", "remote-ssh", "oss"], platform: ["macos"], platformNote: "iOS is a companion surface, not the evaluated desktop host.", source: "open-source", execution: ["local-process", "ssh-host"], status: "active",
     claims: {
       ...builtInClaims("https://github.com/manaflow-ai/cmux/blob/main/README.md", "cmux repository README", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-cross-project-attention", "workbench-splits", "workbench-attention-signals", "workbench-browser", "workbench-remote-host", "workbench-programmable-control"], undefined, "repository-derived"),
       ...limitedClaims("https://github.com/manaflow-ai/cmux#session-restore", "cmux session restore", ["workbench-pty-survives-ui", "workbench-session-recovery"], "Restores layouts, working directories, scrollback, and supported agent conversations through native resume IDs; arbitrary process state is not checkpointed.", "repository-derived"),
@@ -761,11 +808,12 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   product({ id: "airport", name: "Airport", categoryId: "agent-workbenches", editorialOrder: 6, officialUrl: "https://get-airport.com/", tags: ["terminal", "attention", "multi-project"], source: "unknown", execution: ["local-process"], claims: builtInClaims("https://get-airport.com/", "Airport product", ["workbench-named-sessions", "workbench-cross-project-attention"]) }),
   product({
     id: "wmux", name: "wmux", categoryId: "agent-workbenches", editorialOrder: 7, officialUrl: "https://github.com/openwong2kim/wmux", repository: repo("openwong2kim/wmux"), repoMetricId: "wmux",
-    tags: ["terminal", "daemon-pty", "worktrees", "browser", "notifications", "scm", "oss"], platform: ["macos", "windows"], source: "open-source", execution: ["local-daemon", "ssh-host"],
+    tags: ["terminal", "daemon-pty", "worktrees", "browser", "notifications", "scm", "oss"], platform: ["macos", "windows", "linux", "web"], platformNote: "Linux desktop packages are experimental; the browser/PWA client is read-only and loopback-only by default.", source: "open-source", execution: ["local-daemon", "ssh-host"], status: "active",
     claims: {
       ...builtInClaims("https://github.com/openwong2kim/wmux/blob/main/README.md", "wmux repository README", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-pty-survives-ui", "workbench-cross-project-attention", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery", "workbench-browser", "workbench-remote-host", "workbench-programmable-control", "workbench-worktrees"], undefined, "repository-derived"),
       ...limitedClaims("https://github.com/openwong2kim/wmux/blob/main/README.md", "wmux repository README", ["workbench-scm"], "A Git tab covers worktrees and pull requests; this is not a full VS Code-style SCM surface.", "repository-derived"),
       ...limitedClaims("https://github.com/openwong2kim/wmux/blob/main/README.md", "wmux repository README", ["workbench-file-tree"], "The task-harvest diff surface has a file tree and per-hunk selection; it is not a project-wide editor tree.", "repository-derived"),
+      "workbench-change-review": capability("built-in", "https://github.com/openwong2kim/wmux/blob/main/README.md", "wmux repository README", "Workspace diffs and task-harvest views provide file trees, unified diffs, per-hunk selection, and atomic adoption.", "repository-derived"),
     },
   }),
   product({
@@ -790,6 +838,15 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       ...limitedClaims("https://github.com/wavetermdev/waveterm", "Wave Terminal repository", ["workbench-session-recovery"], "Durable SSH sessions reconnect after network changes and Wave restarts; this does not establish local-process survival.", "repository-derived"),
     },
   }),
+  product({
+    id: "dmux", name: "dmux", categoryId: "agent-workbenches", editorialOrder: 10, officialUrl: "https://github.com/standardagents/dmux", repository: repo("standardagents/dmux"), repoMetricId: "dmux",
+    tags: ["tui", "tmux", "multi-agent", "multi-project", "worktrees", "diff-review", "notifications", "oss"], source: "open-source", execution: ["local-process"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/standardagents/dmux", "dmux repository README", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-cross-project-attention", "workbench-scm", "workbench-change-review", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery", "workbench-worktrees"], undefined, "repository-derived"),
+      ...limitedClaims("https://github.com/standardagents/dmux", "dmux repository README", ["workbench-pty-survives-ui"], "dmux recreates durable terminal panes and resumes supported agent conversations; it does not claim that every live process survives UI exit.", "repository-derived"),
+      ...limitedClaims("https://github.com/standardagents/dmux", "dmux repository README", ["workbench-file-tree"], "The built-in file browser searches and previews worktree files and diffs; it is not a project editor.", "repository-derived"),
+    },
+  }),
 
   // 3. Agent orchestrators
   product({
@@ -800,35 +857,50 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       "orchestrator-multi-harness": capability("not-available", "https://code.claude.com/docs/en/desktop", "Claude Code on desktop", "The Code tab runs the Claude Code engine; its documentation does not expose other coding harnesses and reserves agent teams for CLI and SDK surfaces."),
     },
   }),
-  product({ id: "orca", name: "Orca", categoryId: "agent-orchestrators", editorialOrder: 2, officialUrl: "https://onorca.dev/", repository: repo("stablyai/orca"), repoMetricId: "orca", tags: ["agent-ide", "worktrees", "terminal", "editor", "scm", "remote-ssh", "mobile", "oss"], platform: ["macos", "windows", "linux", "web"], platformNote: "Mobile apps are companion clients; these values describe the desktop and web operator surfaces.", source: "open-source", execution: ["local-process", "ssh-host", "user-cloud"], claims: {
+  product({
+    id: "chatgpt-desktop", name: "ChatGPT desktop", categoryId: "agent-orchestrators", editorialOrder: 2, officialUrl: "https://learn.chatgpt.com/docs/app",
+    tags: ["desktop", "chatgpt", "codex", "parallel-projects", "long-running-work", "review"], platform: ["macos", "windows", "linux"], platformNote: "This is the current ChatGPT desktop app, which includes ChatGPT and Codex modes. Codex CLI, the IDE extension, and Codex cloud remain separate SKUs.", source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active",
+    claims: {
+      "orchestrator-parallel-workers": capability("built-in", "https://learn.chatgpt.com/docs/app", "ChatGPT desktop app", "The app explicitly supports running projects in parallel and keeping long-running work moving."),
+      "orchestrator-multi-harness": capability("built-in", "https://learn.chatgpt.com/docs/app", "ChatGPT desktop app", "The desktop composer explicitly lets the operator choose ChatGPT or Codex; this does not imply support for third-party harnesses."),
+      "orchestrator-review-delivery": capability("built-in", "https://learn.chatgpt.com/", "ChatGPT product overview", "The Codex workflow documents running checks, reviewing the diff, and preparing changes to ship."),
+    },
+  }),
+  product({ id: "orca", name: "Orca", categoryId: "agent-orchestrators", editorialOrder: 3, officialUrl: "https://onorca.dev/", repository: repo("stablyai/orca"), repoMetricId: "orca", tags: ["agent-ide", "worktrees", "terminal", "editor", "scm", "remote-ssh", "mobile", "oss"], platform: ["macos", "windows", "linux", "web"], platformNote: "Mobile apps are companion clients; these values describe the desktop and web operator surfaces.", source: "open-source", execution: ["local-process", "ssh-host", "user-cloud"], claims: {
     ...builtInClaims("https://github.com/stablyai/orca#readme", "Orca repository README", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-inline-review", "orchestrator-remote-execution"], undefined, "repository-derived"),
     ...builtInClaims("https://github.com/stablyai/orca/blob/main/skill-guides/orca-cli.md", "Orca CLI guide", ["orchestrator-worktrees", "orchestrator-programmable"], undefined, "repository-derived"),
+    ...builtInClaims("https://github.com/stablyai/orca#readme", "Orca repository README", ["orchestrator-task-board", "orchestrator-pr-lifecycle", "orchestrator-attention-signals", "orchestrator-live-steering"], "Orca documents GitHub and Linear project boards, PR browsing, notifications and unread state, mobile follow-ups, and steering active agents.", "repository-derived"),
   } }),
-  product({ id: "conductor", name: "Conductor", categoryId: "agent-orchestrators", editorialOrder: 3, officialUrl: "https://www.conductor.build/docs/", tags: ["native-macos", "worktrees", "review", "multi-agent"], platform: ["macos"], source: "proprietary", execution: ["local-process"], claims: {
+  product({ id: "conductor", name: "Conductor", categoryId: "agent-orchestrators", editorialOrder: 4, officialUrl: "https://www.conductor.build/docs/", tags: ["native-macos", "worktrees", "review", "multi-agent"], platform: ["macos"], source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://www.conductor.build/docs/", "Conductor documentation", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-review-delivery"]),
     ...builtInClaims("https://www.conductor.build/docs/concepts/git-worktrees", "Conductor Git worktrees", ["orchestrator-worktrees"]),
     ...builtInClaims("https://www.conductor.build/docs/concepts/workflow", "Conductor workflow", ["orchestrator-inline-review", "orchestrator-pr-lifecycle"]),
+    "orchestrator-multi-harness": capability("built-in", "https://www.conductor.build/docs/reference/harnesses", "Conductor harness overview", "Conductor documents Claude Code, Codex, Cursor, and OpenCode as selectable harnesses."),
+    "orchestrator-remote-execution": capability("built-in", "https://www.conductor.build/docs/api", "Conductor API", "The API creates and supervises isolated cloud workspaces."),
+    "orchestrator-live-steering": capability("built-in", "https://www.conductor.build/docs/api", "Conductor API", "The API documents sending follow-up messages to active sessions when work stalls or drifts."),
+    "orchestrator-programmable": capability("built-in", "https://www.conductor.build/docs/api", "Conductor API", "A documented HTTP and OpenAPI control plane manages projects, cloud workspaces, prompts, status, and transcripts."),
   } }),
   product({
-    id: "poolside-desktop-assistant", name: "Poolside Desktop Assistant", categoryId: "agent-orchestrators", editorialOrder: 4, officialUrl: "https://poolside.ai/blog/introducing-poolside-desktop-assistant",
+    id: "poolside-desktop-assistant", name: "Poolside Desktop Assistant", categoryId: "agent-orchestrators", editorialOrder: 5, officialUrl: "https://poolside.ai/blog/introducing-poolside-desktop-assistant",
     tags: ["agent-orchestration", "acp", "multi-harness", "worktrees", "diff-review", "cross-harness-handoff"], platform: ["macos"], platformNote: "The announced desktop product currently documents macOS; the separate pool CLI and editor extensions are not this SKU.", source: "proprietary", execution: ["local-process"], status: "active",
     claims: builtInClaims("https://poolside.ai/blog/introducing-poolside-desktop-assistant", "Poolside Desktop Assistant announcement", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-agent-handoff", "orchestrator-review-delivery", "orchestrator-worktrees"]),
   }),
   product({
-    id: "bb", name: "bb", categoryId: "agent-orchestrators", editorialOrder: 5, officialUrl: "https://github.com/get-bb/bb", repository: repo("get-bb/bb"), repoMetricId: "bb",
+    id: "bb", name: "bb", categoryId: "agent-orchestrators", editorialOrder: 6, officialUrl: "https://github.com/get-bb/bb", repository: repo("get-bb/bb"), repoMetricId: "bb",
     tags: ["agent-ide", "threads", "multi-harness", "worktrees", "multi-machine", "api", "oss"], platform: ["macos", "linux", "web"], platformNote: "Apple-silicon macOS desktop, alpha Linux AppImage, and local browser UI are documented. Windows is supported through WSL2, not as a native client.", source: "open-source", execution: ["local-daemon", "local-process", "paired-machine"], status: "active",
     claims: {
       ...builtInClaims("https://github.com/get-bb/bb", "bb repository README", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-worktrees", "orchestrator-remote-execution", "orchestrator-attention-signals", "orchestrator-programmable", "orchestrator-live-steering", "orchestrator-agent-handoff"], undefined, "repository-derived"),
+      ...builtInClaims("https://github.com/get-bb/bb", "bb repository README", ["orchestrator-task-board", "orchestrator-inline-review"], "The current first-party product screenshot and description explicitly identify a task board and code-review thread.", "repository-derived"),
       ...limitedClaims("https://github.com/get-bb/bb/blob/main/docs/worktrees.md", "bb worktree documentation", ["orchestrator-review-delivery"], "Quick-open and a built-in diff surface support review, while commit, push, and pull-request creation remain agent or shell operations.", "repository-derived"),
     },
   }),
   product({
-    id: "omnigent", name: "Omnigent", categoryId: "agent-orchestrators", editorialOrder: 6, officialUrl: "https://github.com/omnigent-ai/omnigent", repository: repo("omnigent-ai/omnigent"), repoMetricId: "omnigent",
+    id: "omnigent", name: "Omnigent", categoryId: "agent-orchestrators", editorialOrder: 7, officialUrl: "https://github.com/omnigent-ai/omnigent", repository: repo("omnigent-ai/omnigent"), repoMetricId: "omnigent",
     tags: ["meta-harness", "multi-harness", "worktrees", "sandboxes", "cross-vendor-review", "oss"], platform: ["macos", "windows", "linux", "web"], platformNote: "Native Windows mode is documented with degraded isolation; macOS also has a wrapper app and all desktop hosts can use the browser UI.", source: "open-source", execution: ["local-process", "local-daemon", "container", "user-cloud"], status: "active",
     claims: builtInClaims("https://github.com/omnigent-ai/omnigent", "Omnigent repository README", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-containers", "orchestrator-remote-execution", "orchestrator-attention-signals", "orchestrator-programmable", "orchestrator-live-steering"], undefined, "repository-derived"),
   }),
   product({
-    id: "agent-orchestrator", name: "Agent Orchestrator", categoryId: "agent-orchestrators", editorialOrder: 7, officialUrl: "https://github.com/Untrivial-ai/agent-orchestrator", repository: repo("Untrivial-ai/agent-orchestrator"), repoMetricId: "agent-orchestrator",
+    id: "agent-orchestrator", name: "Agent Orchestrator", categoryId: "agent-orchestrators", editorialOrder: 8, officialUrl: "https://github.com/Untrivial-ai/agent-orchestrator", repository: repo("Untrivial-ai/agent-orchestrator"), repoMetricId: "agent-orchestrator",
     tags: ["desktop", "multi-harness", "worktrees", "kanban", "pr-lifecycle", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-daemon", "local-process"], status: "active",
     claims: {
       ...builtInClaims("https://github.com/Untrivial-ai/agent-orchestrator", "Agent Orchestrator repository README", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-task-board", "orchestrator-pr-lifecycle", "orchestrator-attention-signals", "orchestrator-live-steering"], undefined, "repository-derived"),
@@ -836,17 +908,17 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     },
   }),
   product({
-    id: "emdash", name: "Emdash", categoryId: "agent-orchestrators", editorialOrder: 8, officialUrl: "https://emdash.com/docs", repository: repo("generalaction/emdash"), repoMetricId: "emdash",
+    id: "emdash", name: "Emdash", categoryId: "agent-orchestrators", editorialOrder: 9, officialUrl: "https://emdash.com/docs", repository: repo("generalaction/emdash"), repoMetricId: "emdash",
     tags: ["agentic-development-environment", "multi-harness", "worktrees", "diff-review", "remote-ssh", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process", "ssh-host", "user-cloud"], status: "active",
     claims: builtInClaims("https://emdash.com/docs", "Emdash documentation", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-pr-lifecycle", "orchestrator-remote-execution", "orchestrator-attention-signals"]),
   }),
   product({
-    id: "kandev", name: "Kandev", categoryId: "agent-orchestrators", editorialOrder: 9, officialUrl: "https://kandev.ai/docs/", repository: repo("kdlbs/kandev"), repoMetricId: "kandev",
+    id: "kandev", name: "Kandev", categoryId: "agent-orchestrators", editorialOrder: 10, officialUrl: "https://kandev.ai/docs/", repository: repo("kdlbs/kandev"), repoMetricId: "kandev",
     tags: ["kanban", "multi-harness", "worktrees", "containers", "remote-execution", "mcp", "oss"], platform: ["macos", "windows", "linux", "web"], source: "open-source", execution: ["local-process", "container", "ssh-host", "user-cloud"], status: "active",
     claims: builtInClaims("https://github.com/kdlbs/kandev/blob/main/docs/features.md", "Kandev feature contract", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-agent-handoff", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-containers", "orchestrator-task-board", "orchestrator-pr-lifecycle", "orchestrator-remote-execution", "orchestrator-attention-signals", "orchestrator-live-steering", "orchestrator-programmable"], undefined, "repository-derived"),
   }),
   product({
-    id: "paseo", name: "Paseo", categoryId: "agent-orchestrators", editorialOrder: 10, officialUrl: "https://github.com/getpaseo/paseo", repository: repo("getpaseo/paseo"), repoMetricId: "paseo",
+    id: "paseo", name: "Paseo", categoryId: "agent-orchestrators", editorialOrder: 11, officialUrl: "https://github.com/getpaseo/paseo", repository: repo("getpaseo/paseo"), repoMetricId: "paseo",
     tags: ["multi-harness", "worktrees", "subagents", "cross-provider-handoff", "mobile", "self-hosted", "oss"], platform: ["macos", "windows", "linux", "web", "ios", "android"], platformNote: "Desktop, browser, and mobile clients connect to a self-hosted Paseo daemon.", source: "open-source", execution: ["local-daemon", "local-process", "container", "paired-machine"], status: "active",
     claims: {
       ...builtInClaims("https://github.com/getpaseo/paseo/blob/main/public-docs/orchestration.md", "Paseo orchestration documentation", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-agent-handoff", "orchestrator-worktrees", "orchestrator-live-steering"], undefined, "repository-derived"),
@@ -855,38 +927,51 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       ...limitedClaims("https://github.com/getpaseo/paseo", "Paseo repository README", ["orchestrator-containers"], "An official Docker daemon and web deployment are documented, but the sources do not establish a separate container or VM for each delegated task.", "repository-derived"),
     },
   }),
-  product({ id: "superset", name: "Superset", categoryId: "agent-orchestrators", editorialOrder: 11, officialUrl: "https://github.com/superset-sh/superset", repository: repo("superset-sh/superset"), repoMetricId: "superset", tags: ["worktrees", "terminal", "diff-review", "remote-hosts", "source-available"], platform: ["macos", "linux"], platformNote: "macOS is primary; Linux support was documented as experimental in the research snapshot.", source: "source-available", execution: ["local-process", "ssh-host"], claims: builtInClaims("https://github.com/superset-sh/superset", "Superset repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-inline-review", "orchestrator-remote-execution", "orchestrator-attention-signals"], undefined, "repository-derived") }),
-  product({ id: "coder-mux", name: "Coder Mux", categoryId: "agent-orchestrators", editorialOrder: 12, officialUrl: "https://mux.coder.com", repository: repo("coder/cmux"), repoMetricId: "coder-mux", tags: ["chat-control-plane", "worktrees", "ssh", "review", "oss"], platform: ["macos", "linux", "web"], source: "open-source", execution: ["local-process", "ssh-host"], claims: builtInClaims("https://github.com/coder/cmux", "Coder Mux repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-inline-review", "orchestrator-remote-execution", "orchestrator-attention-signals"], undefined, "repository-derived") }),
-  product({ id: "nimbalyst", name: "Nimbalyst", categoryId: "agent-orchestrators", editorialOrder: 13, officialUrl: "https://github.com/nimbalyst/nimbalyst", repository: repo("nimbalyst/nimbalyst"), repoMetricId: "nimbalyst", tags: ["agent-ide", "worktrees", "kanban", "editor", "visual-docs", "oss"], platform: ["macos", "windows", "linux"], platformNote: "Mobile companion reach is not counted as a desktop host platform.", source: "open-source", execution: ["local-process"], claims: {
+  product({ id: "superset", name: "Superset", categoryId: "agent-orchestrators", editorialOrder: 12, officialUrl: "https://github.com/superset-sh/superset", repository: repo("superset-sh/superset"), repoMetricId: "superset", tags: ["worktrees", "terminal", "diff-review", "remote-hosts", "source-available"], platform: ["macos", "linux"], platformNote: "macOS is primary; Linux support is documented as experimental and Windows is explicitly not yet available.", source: "source-available", execution: ["local-process", "ssh-host"], status: "active", claims: {
+    ...builtInClaims("https://github.com/superset-sh/superset", "Superset repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-inline-review", "orchestrator-pr-lifecycle", "orchestrator-remote-execution", "orchestrator-attention-signals", "orchestrator-live-steering", "orchestrator-programmable"], undefined, "repository-derived"),
+  } }),
+  product({ id: "coder-mux", name: "Coder Mux", categoryId: "agent-orchestrators", editorialOrder: 13, officialUrl: "https://mux.coder.com", repository: repo("coder/cmux"), repoMetricId: "coder-mux", tags: ["chat-control-plane", "worktrees", "ssh", "review", "oss"], platform: ["macos", "linux", "web"], source: "open-source", execution: ["local-process", "ssh-host"], claims: builtInClaims("https://github.com/coder/cmux", "Coder Mux repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-inline-review", "orchestrator-remote-execution", "orchestrator-attention-signals"], undefined, "repository-derived") }),
+  product({ id: "nimbalyst", name: "Nimbalyst", categoryId: "agent-orchestrators", editorialOrder: 14, officialUrl: "https://github.com/nimbalyst/nimbalyst", repository: repo("nimbalyst/nimbalyst"), repoMetricId: "nimbalyst", tags: ["agent-ide", "worktrees", "kanban", "editor", "visual-docs", "oss"], platform: ["macos", "windows", "linux"], platformNote: "Mobile companion reach is not counted as a desktop host platform.", source: "open-source", execution: ["local-process"], status: "active", claims: {
     ...builtInClaims("https://github.com/nimbalyst/nimbalyst#readme", "Nimbalyst repository README", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-task-board", "orchestrator-inline-review", "orchestrator-attention-signals"], undefined, "repository-derived"),
     ...builtInClaims("https://github.com/nimbalyst/nimbalyst/blob/main/docs/WORKTREES.md", "Nimbalyst worktree documentation", ["orchestrator-worktrees"], undefined, "repository-derived"),
+    "orchestrator-live-steering": capability("built-in", "https://github.com/nimbalyst/nimbalyst", "Nimbalyst repository README", "The dashboard supports replying to agent questions by text or voice and resumes the agent immediately.", "repository-derived"),
   } }),
-  product({ id: "t3-code", name: "T3 Code", categoryId: "agent-orchestrators", editorialOrder: 14, officialUrl: "https://t3.codes/", tags: ["chat-control-plane", "branches", "pr-flow"], source: "unknown", execution: ["local-process"] }),
-  product({ id: "vibe-kanban", name: "Vibe Kanban", categoryId: "agent-orchestrators", editorialOrder: 15, officialUrl: "https://github.com/BloopAI/vibe-kanban", repository: repo("BloopAI/vibe-kanban"), repoMetricId: "vibe-kanban", tags: ["kanban", "worktrees", "approvals", "oss", "sunsetting"], source: "open-source", execution: ["local-process"], status: "sunsetting", claims: {
+  product({ id: "t3-code", name: "T3 Code", categoryId: "agent-orchestrators", editorialOrder: 15, officialUrl: "https://t3.codes/", tags: ["chat-control-plane", "branches", "pr-flow", "multi-harness", "oss"], platform: ["macos", "windows", "linux"], platformNote: "The product page provides a macOS download and a first-party Windows/Linux download path; iOS and Android are companion apps.", source: "open-source", execution: ["local-process"], status: "active", claims: {
+    ...builtInClaims("https://t3.codes/", "T3 Code product page", ["orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-agent-handoff", "orchestrator-review-delivery", "orchestrator-inline-review", "orchestrator-pr-lifecycle"], "T3 Code documents multiple agent threads, five named harnesses, mid-thread model switching, inline diff review, and a commit/push/pull-request workflow."),
+  } }),
+  product({ id: "vibe-kanban", name: "Vibe Kanban", categoryId: "agent-orchestrators", editorialOrder: 16, officialUrl: "https://github.com/BloopAI/vibe-kanban", repository: repo("BloopAI/vibe-kanban"), repoMetricId: "vibe-kanban", tags: ["kanban", "worktrees", "approvals", "oss", "sunsetting"], platform: ["macos", "web"], platformNote: "The repository documents a macOS source build and a browser UI. Windows-specific configuration does not establish a native Windows client; Linux client support is not asserted.", source: "open-source", execution: ["local-process"], status: "sunsetting", claims: {
     ...builtInClaims("https://www.vibekanban.com/docs/core-features/monitoring-task-execution", "Vibe Kanban task execution documentation", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees"]),
     ...builtInClaims("https://www.vibekanban.com/docs/core-features/creating-tasks", "Vibe Kanban task documentation", ["orchestrator-task-board"]),
     ...builtInClaims("https://www.vibekanban.com/docs/core-features/reviewing-code-changes", "Vibe Kanban code review", ["orchestrator-inline-review"]),
     ...builtInClaims("https://www.vibekanban.com/docs/reviewing-code", "Vibe Kanban review workflow", ["orchestrator-pr-lifecycle"]),
+    "orchestrator-remote-execution": capability("limited", "https://github.com/BloopAI/vibe-kanban", "Vibe Kanban repository README", "The project documents remote-server and self-hosted Docker deployments; this does not establish a vendor-managed execution plane.", "repository-derived"),
   } }),
-  product({ id: "sculptor", name: "Sculptor", categoryId: "agent-orchestrators", editorialOrder: 16, officialUrl: "https://github.com/imbue-ai/sculptor", repository: repo("imbue-ai/sculptor"), repoMetricId: "sculptor", tags: ["containers", "worktrees", "ide-pairing", "oss"], platform: ["macos", "linux"], source: "open-source", execution: ["container"], status: "beta", claims: {
+  product({ id: "sculptor", name: "Sculptor", categoryId: "agent-orchestrators", editorialOrder: 17, officialUrl: "https://github.com/imbue-ai/sculptor", repository: repo("imbue-ai/sculptor"), repoMetricId: "sculptor", tags: ["containers", "worktrees", "ide-pairing", "oss"], platform: ["macos", "linux"], source: "open-source", execution: ["container"], status: "beta", claims: {
     ...builtInClaims("https://github.com/imbue-ai/sculptor", "Sculptor repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-pr-lifecycle"], undefined, "repository-derived"),
     ...limitedClaims("https://github.com/imbue-ai/sculptor", "Sculptor repository", ["orchestrator-containers"], "Docker and remote container backends are documented as experimental.", "repository-derived"),
+    "orchestrator-remote-execution": capability("limited", "https://github.com/imbue-ai/sculptor/blob/main/docs/help/experimental/container_backend.md", "Sculptor experimental container backend", "A remote container backend is documented as experimental.", "repository-derived"),
   } }),
-  product({ id: "humanlayer", name: "HumanLayer", categoryId: "agent-orchestrators", editorialOrder: 17, officialUrl: "https://humanlayer.com/", repository: repo("humanlayer/humanlayer", "deprecated-predecessor"), tags: ["worktrees", "kanban", "local-daemon", "cloud-daemon", "review"], source: "proprietary", execution: ["local-daemon", "vendor-cloud"], claims: {
+  product({ id: "humanlayer", name: "HumanLayer", categoryId: "agent-orchestrators", editorialOrder: 18, officialUrl: "https://humanlayer.com/", repository: repo("humanlayer/humanlayer", "deprecated-predecessor"), tags: ["worktrees", "kanban", "local-daemon", "cloud-daemon", "review"], platform: ["macos", "windows", "linux", "web"], platformNote: "The current product page links macOS plus Linux/Windows installs and documents the same UI on web, desktop, and phone.", source: "proprietary", execution: ["local-daemon", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://humanlayer.com/", "HumanLayer product", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-task-board"]),
     ...builtInClaims("https://docs.humanlayer.com/guide/workspaces", "HumanLayer workspace setup", ["orchestrator-worktrees"]),
     ...limitedClaims("https://docs.humanlayer.com/release-notes", "HumanLayer release notes", ["orchestrator-inline-review"], "Keyboard diff navigation and inline comments are currently an experimental alpha."),
     ...builtInClaims("https://docs.humanlayer.com/reference/skills-workflows", "HumanLayer workflows reference", ["orchestrator-pr-lifecycle"]),
     ...builtInClaims("https://docs.humanlayer.com/tutorials/remote-daemon", "HumanLayer remote daemon", ["orchestrator-remote-execution"]),
+    "orchestrator-attention-signals": capability("built-in", "https://humanlayer.com/", "HumanLayer product page", "The task view surfaces running, idle, done, and draft session states across many parallel sessions."),
+    "orchestrator-live-steering": capability("built-in", "https://humanlayer.com/", "HumanLayer product page", "The current UI documents real-time human-agent collaboration and a Send to agent action."),
+    "orchestrator-programmable": capability("built-in", "https://humanlayer.com/", "HumanLayer product page", "The current execution topology explicitly exposes the HumanLayer API between clients and local or cloud daemons."),
   } }),
-  product({ id: "claude-squad", name: "claude-squad", categoryId: "agent-orchestrators", editorialOrder: 18, officialUrl: "https://github.com/smtg-ai/claude-squad", repository: repo("smtg-ai/claude-squad"), repoMetricId: "claude-squad", tags: ["tui", "tmux", "worktrees", "oss"], source: "open-source", execution: ["local-process"], claims: {
+  product({ id: "claude-squad", name: "claude-squad", categoryId: "agent-orchestrators", editorialOrder: 19, officialUrl: "https://github.com/smtg-ai/claude-squad", repository: repo("smtg-ai/claude-squad"), repoMetricId: "claude-squad", tags: ["tui", "tmux", "worktrees", "oss"], platform: ["macos", "linux"], platformNote: "The canonical installer has explicit macOS and Linux dependency/install paths. Windows requires a separate tmux environment and is not asserted as a native client.", source: "open-source", execution: ["local-process"], claims: {
     ...builtInClaims("https://github.com/smtg-ai/claude-squad", "claude-squad repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees"], undefined, "repository-derived"),
     ...limitedClaims("https://github.com/smtg-ai/claude-squad", "claude-squad repository", ["orchestrator-inline-review"], "TUI supports reviewing changes before applying or checking them out; line-comment feedback is not documented.", "repository-derived"),
+    "orchestrator-live-steering": capability("built-in", "https://github.com/smtg-ai/claude-squad", "claude-squad repository", "Each worker is an interactive tmux-backed agent session that the operator can enter and continue.", "repository-derived"),
   } }),
-  product({ id: "agent-deck", name: "agent-deck", categoryId: "agent-orchestrators", editorialOrder: 19, officialUrl: "https://github.com/asheshgoplani/agent-deck", repository: repo("asheshgoplani/agent-deck"), repoMetricId: "agent-deck", tags: ["tui", "tmux", "worktrees", "remote-ssh", "oss"], source: "open-source", execution: ["local-process", "ssh-host"], claims: builtInClaims("https://github.com/asheshgoplani/agent-deck", "agent-deck repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-worktrees", "orchestrator-remote-execution", "orchestrator-attention-signals", "orchestrator-programmable"], undefined, "repository-derived") }),
+  product({ id: "agent-deck", name: "agent-deck", categoryId: "agent-orchestrators", editorialOrder: 20, officialUrl: "https://github.com/asheshgoplani/agent-deck", repository: repo("asheshgoplani/agent-deck"), repoMetricId: "agent-deck", tags: ["tui", "tmux", "worktrees", "remote-ssh", "oss"], platform: ["macos", "linux", "web"], platformNote: "macOS and Linux are documented directly; Windows is supported through WSL rather than as a native client. The local daemon exposes an official browser UI.", source: "open-source", execution: ["local-process", "ssh-host", "container"], status: "active", claims: {
+    ...builtInClaims("https://github.com/asheshgoplani/agent-deck", "agent-deck repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-worktrees", "orchestrator-containers", "orchestrator-remote-execution", "orchestrator-attention-signals", "orchestrator-live-steering", "orchestrator-programmable"], undefined, "repository-derived"),
+  } }),
 
   // 4. Coding-agent harnesses
-  product({ id: "claude-code", name: "Claude Code", categoryId: "coding-agent-harnesses", editorialOrder: 1, officialUrl: "https://code.claude.com/docs/en/getting-started", tags: ["cli", "vendor-model", "resume", "subagents"], platform: ["macos", "windows", "linux"], platformNote: "Current requirements list native Windows and named Linux distributions.", source: "proprietary", execution: ["local-process"], claims: {
+  product({ id: "claude-code", name: "Claude Code", categoryId: "coding-agent-harnesses", editorialOrder: 1, officialUrl: "https://code.claude.com/docs/en/getting-started", tags: ["cli", "vendor-model", "resume", "subagents"], platform: ["macos", "windows", "linux"], platformNote: "Current requirements list native Windows and named Linux distributions.", source: "proprietary", execution: ["local-process"], status: "active", claims: {
     ...builtInClaims("https://docs.anthropic.com/en/docs/claude-code/overview", "Claude Code documentation", ["harness-interactive-cli", "harness-headless", "harness-session-resume", "harness-extension-protocol"]),
     "harness-project-instructions": capability("built-in", "https://code.claude.com/docs/en/memory", "Claude Code memory documentation", "CLAUDE.md project and user instructions are loaded as memory."),
     "harness-permission-controls": capability("built-in", "https://code.claude.com/docs/en/permissions", "Claude Code permissions documentation", "Tool allow and deny rules and permission modes; interactive approvals remain visible."),
@@ -896,13 +981,18 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "harness-structured-output": capability("built-in", "https://docs.anthropic.com/en/docs/claude-code/cli-usage", "Claude Code CLI usage", "Print mode supports text, JSON, and stream-JSON output."),
     "harness-git-workflow": capability("built-in", "https://code.claude.com/docs/en/common-workflows", "Claude Code common workflows", "First-party workflows document Git operations, commits, and pull-request creation."),
     "harness-multimodal-input": capability("built-in", "https://code.claude.com/docs/en/tutorials", "Claude Code tutorials", "First-party tutorials document adding image inputs to a coding session."),
+    "harness-multi-provider": capability("built-in", "https://code.claude.com/docs/en/model-config", "Claude Code model configuration", "Anthropic, Amazon Bedrock, Google Vertex AI, and Microsoft Foundry deployment paths are documented; this is provider routing for Claude models, not arbitrary-model BYOK."),
   } }),
-  product({ id: "codex-cli", name: "Codex CLI", categoryId: "coding-agent-harnesses", editorialOrder: 2, officialUrl: "https://learn.chatgpt.com/docs/codex/cli", repository: repo("openai/codex"), repoMetricId: "codex-cli", tags: ["cli", "multi-agent-runtime", "resume", "oss"], platform: ["macos", "windows", "linux"], platformNote: "Official install guidance provides macOS, Linux, and Windows paths.", source: "open-source", execution: ["local-process"], claims: {
+  product({ id: "codex-cli", name: "Codex CLI", categoryId: "coding-agent-harnesses", editorialOrder: 2, officialUrl: "https://learn.chatgpt.com/docs/codex/cli", repository: repo("openai/codex"), repoMetricId: "codex-cli", tags: ["cli", "multi-agent-runtime", "resume", "oss"], platform: ["macos", "windows", "linux"], platformNote: "Official install guidance provides macOS, Linux, and Windows paths.", source: "open-source", execution: ["local-process"], status: "active", claims: {
     ...builtInClaims("https://github.com/openai/codex", "Codex CLI repository", ["harness-interactive-cli", "harness-headless", "harness-session-resume", "harness-extension-protocol"]),
     "harness-project-instructions": capability("built-in", "https://learn.chatgpt.com/docs/agent-configuration/agents-md", "Codex AGENTS.md documentation", "Hierarchical AGENTS.md and AGENTS.override.md instructions load before work."),
     "harness-permission-controls": capability("built-in", "https://learn.chatgpt.com/docs/codex/cli", "Codex CLI documentation", "User-selectable permissions govern what Codex may do."),
     "harness-sandbox": capability("built-in", "https://learn.chatgpt.com/docs/sandboxing", "Codex sandboxing documentation", "Codex documents sandbox modes and operating-system enforcement."),
     "harness-subagents": capability("built-in", "https://learn.chatgpt.com/docs/agent-configuration/subagents", "Codex subagents documentation", "First-party subagent configuration and delegation."),
+    "harness-multi-provider": capability("built-in", "https://learn.chatgpt.com/docs/config-advanced", "Codex advanced configuration", "The CLI exposes a documented model-provider configuration contract for OpenAI-compatible and local endpoints."),
+    "harness-structured-output": capability("built-in", "https://learn.chatgpt.com/docs/codex/noninteractive", "Codex non-interactive mode", "Codex exec can emit JSONL events and a schema-constrained final result."),
+    "harness-git-workflow": capability("built-in", "https://learn.chatgpt.com/docs/codex/cli", "Codex CLI documentation", "The CLI documentation includes repository-aware review and Git workflows."),
+    "harness-multimodal-input": capability("built-in", "https://learn.chatgpt.com/docs/codex/cli", "Codex CLI documentation", "The CLI accepts image inputs as session context."),
   } }),
   product({ id: "github-copilot-cli", name: "GitHub Copilot CLI", categoryId: "coding-agent-harnesses", editorialOrder: 3, officialUrl: "https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-cli", repository: repo("github/copilot-cli", "metadata-only"), tags: ["cli", "github-cli", "copilot", "vendor-service", "resume"], platform: ["macos", "windows", "linux"], platformNote: "The separate copilot executable supports macOS, Linux, Windows PowerShell, and WSL; gh is a launcher and task client, not this harness.", source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "beta", claims: {
     ...builtInClaims("https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-cli", "GitHub Copilot CLI documentation", ["harness-interactive-cli", "harness-headless", "harness-session-resume"]),
@@ -913,7 +1003,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "harness-structured-output": capability("built-in", "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference", "GitHub Copilot CLI reference", "The CLI reference documents machine-readable command output."),
     "harness-git-workflow": capability("built-in", "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli", "About GitHub Copilot CLI", "Git and pull-request workflows are first-party product capabilities."),
   } }),
-  product({ id: "gemini-cli", name: "Gemini CLI", categoryId: "coding-agent-harnesses", editorialOrder: 4, officialUrl: "https://geminicli.com/docs/get-started/installation/", repository: repo("google-gemini/gemini-cli"), repoMetricId: "gemini-cli", tags: ["cli", "vendor-model", "resume", "oss"], platform: ["macos", "windows", "linux"], platformNote: "macOS 15+, Windows 11 24H2+, and Ubuntu 20.04+ are documented.", source: "open-source", execution: ["local-process"], claims: {
+  product({ id: "gemini-cli", name: "Gemini CLI", categoryId: "coding-agent-harnesses", editorialOrder: 4, officialUrl: "https://geminicli.com/docs/get-started/installation/", repository: repo("google-gemini/gemini-cli"), repoMetricId: "gemini-cli", tags: ["cli", "vendor-model", "resume", "oss"], platform: ["macos", "windows", "linux"], platformNote: "macOS 15+, Windows 11 24H2+, and Ubuntu 20.04+ are documented.", source: "open-source", execution: ["local-process"], status: "active", claims: {
     ...builtInClaims("https://github.com/google-gemini/gemini-cli", "Gemini CLI repository", ["harness-interactive-cli", "harness-headless", "harness-session-resume", "harness-extension-protocol"]),
     "harness-project-instructions": capability("built-in", "https://geminicli.com/docs/cli/tutorials/memory-management/", "Gemini CLI memory management", "Hierarchical GEMINI.md project context and persistent memory."),
     "harness-permission-controls": capability("built-in", "https://geminicli.com/docs/reference/policy-engine/", "Gemini CLI policy engine", "The policy engine evaluates tool calls against configurable allow, deny, and confirmation rules."),
@@ -921,6 +1011,8 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "harness-checkpoints": capability("built-in", "https://geminicli.com/docs/cli/checkpointing/", "Gemini CLI checkpointing documentation", "Optional checkpoints restore files, conversation history, and the pending tool call."),
     "harness-structured-output": capability("built-in", "https://github.com/google-gemini/gemini-cli", "Gemini CLI repository", "Headless mode supports JSON and newline-delimited stream JSON.", "repository-derived"),
     "harness-subagents": capability("built-in", "https://geminicli.com/docs/core/subagents/", "Gemini CLI subagents", "First-party documentation defines specialized subagents with separate prompts and tool access."),
+    "harness-git-workflow": capability("built-in", "https://github.com/google-gemini/gemini-cli", "Gemini CLI repository", "The first-party GitHub integration documents pull-request review and issue workflows.", "repository-derived"),
+    "harness-multimodal-input": capability("built-in", "https://github.com/google-gemini/gemini-cli", "Gemini CLI repository", "The current README explicitly documents generating applications from PDFs, images, or sketches through multimodal input.", "repository-derived"),
   } }),
   product({ id: "amp", name: "Amp", categoryId: "coding-agent-harnesses", editorialOrder: 5, officialUrl: "https://ampcode.com/manual", tags: ["cli", "headless", "threads", "plugins", "subagents"], platform: ["macos", "windows", "linux"], platformNote: "The manual documents macOS, Linux, WSL, and native Windows PowerShell installs.", source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://ampcode.com/manual", "Amp manual", ["harness-interactive-cli", "harness-headless", "harness-multi-provider", "harness-session-resume", "harness-extension-protocol", "harness-project-instructions", "harness-subagents", "harness-structured-output", "harness-multimodal-input"]),
@@ -934,7 +1026,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "harness-sandbox": capability("not-available", "https://github.com/PrimeIntellect-ai/prime-agent/blob/main/README.md", "Prime Agent README", "The project explicitly says commands run with the user's permissions and are not sandboxed.", "source-inspected"),
     "harness-checkpoints": capability("limited", "https://github.com/PrimeIntellect-ai/prime-agent/blob/main/packages/coding-agent/docs/usage.md", "Prime Agent usage", "Refine can restore harness state, but workspace mutation rollback is not established.", "repository-derived"),
   } }),
-  product({ id: "deepseek-harness", name: "DeepSeek Harness", categoryId: "coding-agent-harnesses", editorialOrder: 7, officialUrl: "https://deepseek.com/harness/en/", repository: repo("deepseek-ai/deepseek-harness"), repoMetricId: "deepseek-harness", tags: ["cli", "headless", "web", "plugin-runtime", "subagents", "oss"], source: "open-source", execution: ["local-process"], status: "beta", claims: {
+  product({ id: "deepseek-harness", name: "DeepSeek Harness", categoryId: "coding-agent-harnesses", editorialOrder: 7, officialUrl: "https://deepseek.com/harness/en/", repository: repo("deepseek-ai/deepseek-harness"), repoMetricId: "deepseek-harness", tags: ["cli", "headless", "web", "plugin-runtime", "subagents", "oss"], platform: ["web"], platformNote: "The base repository explicitly documents a locally served browser UI. Host operating-system support is not asserted by the current first-party install contract.", source: "open-source", execution: ["local-process"], status: "beta", claims: {
     "harness-interactive-cli": capability("via-extension", "https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/README.md", "DeepSeek Harness CLI", "The base CLI ships web and headless profiles; the first-party TUI is an optional installed profile.", "repository-derived"),
     "harness-headless": capability("built-in", "https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/README.md", "DeepSeek Harness CLI", "The headless profile runs a persisted one-shot task.", "repository-derived"),
     ...builtInClaims("https://deepseek.com/harness/en/", "DeepSeek Harness product", ["harness-multi-provider", "harness-session-resume", "harness-extension-protocol", "harness-subagents"]),
@@ -1201,7 +1293,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   } }),
 
   // 6. Cloud and background agents
-  product({ id: "openai-codex-cloud", name: "OpenAI Codex cloud", categoryId: "cloud-agents", editorialOrder: 1, officialUrl: "https://openai.com/codex/", tags: ["issue-to-pr", "sandbox", "github", "vendor-service"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], claims: {
+  product({ id: "openai-codex-cloud", name: "OpenAI Codex cloud", categoryId: "cloud-agents", editorialOrder: 1, officialUrl: "https://openai.com/codex/", tags: ["issue-to-pr", "sandbox", "github", "vendor-service"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "active", claims: {
     "cloud-repo-intake": capability("built-in", "https://learn.chatgpt.com/docs/cloud", "Codex cloud documentation", "Connect a GitHub repository or GitLab Beta project and start from several first-party surfaces."),
     "cloud-sandbox": capability("built-in", "https://learn.chatgpt.com/docs/environments/cloud-environment", "Codex cloud environment documentation", "Every task checks out the selected ref in its own container."),
     "cloud-live-observability": capability("built-in", "https://learn.chatgpt.com/docs/cloud", "Codex cloud documentation", "Live task logs, summary, and diff."),
@@ -1219,7 +1311,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "cloud-triggered-automation": capability("built-in", "https://learn.chatgpt.com/docs/cloud", "Codex cloud documentation", "Tasks can start from GitHub, GitLab, Linear, Slack, and first-party automation surfaces."),
     "cloud-result-type": factClaim("Patch, branch, or pull request", "https://learn.chatgpt.com/docs/cloud", "Codex cloud documentation"),
   } }),
-  product({ id: "github-copilot-coding-agent", name: "GitHub Copilot coding agent", categoryId: "cloud-agents", editorialOrder: 2, officialUrl: "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent", tags: ["issue-to-pr", "github", "background", "vendor-service"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], claims: {
+  product({ id: "github-copilot-coding-agent", name: "GitHub Copilot coding agent", categoryId: "cloud-agents", editorialOrder: 2, officialUrl: "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent", tags: ["issue-to-pr", "github", "background", "vendor-service"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent", "GitHub Copilot coding agent documentation", ["cloud-repo-intake", "cloud-sandbox", "cloud-live-observability", "cloud-durable-result"]),
     "cloud-intake-surfaces": capability("built-in", "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation", "GitHub agents panel, issues, VS Code, PR comments, API, schedules, and event automations."),
     "cloud-code-hosts": capability("built-in", "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation", "GitHub repositories only. Treat this positive scope as a fact, not a negative score."),
@@ -1238,7 +1330,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       evidence: [evidence("https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation")],
     },
   } }),
-  product({ id: "devin", name: "Devin", categoryId: "cloud-agents", editorialOrder: 3, officialUrl: "https://devin.ai/", tags: ["cloud-sandbox", "issue-to-pr", "cli-client", "vendor-service"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], claims: {
+  product({ id: "devin", name: "Devin", categoryId: "cloud-agents", editorialOrder: 3, officialUrl: "https://devin.ai/", tags: ["cloud-sandbox", "issue-to-pr", "cli-client", "vendor-service"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "active", claims: {
     "cloud-repo-intake": capability("built-in", "https://docs.devin.ai/integrations/gh", "Devin GitHub integration", "Repositories can be mentioned in web prompts and sessions can be created through the API."),
     "cloud-sandbox": capability("built-in", "https://docs.devin.ai/onboard-devin/environment/blueprints", "Devin environment blueprints", "Each session boots a fresh copy of the configured snapshot."),
     "cloud-live-observability": capability("built-in", "https://docs.devin.ai/work-with-devin/devin-session-tools", "Devin session tools", "Progress view plus live Shell, IDE, Browser, and diff inspection."),
@@ -1269,6 +1361,9 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "cloud-execution-owner": factClaim("Anthropic cloud", "https://code.claude.com/docs/en/claude-code-on-the-web", "Claude Code on the web documentation"),
     "cloud-isolation-unit": factClaim("Fresh isolated VM per session", "https://code.claude.com/docs/en/claude-code-on-the-web", "Claude Code on the web documentation"),
     "cloud-human-takeover": capability("built-in", "https://code.claude.com/docs/en/claude-code-on-the-web", "Claude Code on the web documentation", "A cloud session can be teleported to the local Claude Code CLI."),
+    "cloud-environment-config": capability("built-in", "https://code.claude.com/docs/en/claude-code-on-the-web", "Claude Code on the web documentation", "Saved cloud environments configure network access, environment variables, and setup scripts."),
+    "cloud-network-policy": capability("built-in", "https://code.claude.com/docs/en/claude-code-on-the-web", "Claude Code on the web documentation", "Anthropic-hosted environments limit network access by default and can disable it; self-hosted deployments own their egress policy."),
+    "cloud-triggered-automation": capability("built-in", "https://code.claude.com/docs/en/claude-code-on-the-web", "Claude Code on the web documentation", "Routines support schedules, API calls, and GitHub events; auto-fix reacts to CI failures and review comments."),
     "cloud-result-type": factClaim("Branch, pull request, or local CLI handoff", "https://code.claude.com/docs/en/claude-code-on-the-web", "Claude Code on the web documentation"),
   } }),
   product({ id: "cursor-cloud-agents", name: "Cursor Cloud Agents", categoryId: "cloud-agents", editorialOrder: 6, officialUrl: "https://cursor.com/docs/cloud-agent", tags: ["github", "cloud-vm", "self-hosted-option", "branch-handoff"], platform: ["web", "macos", "windows", "linux"], source: "hosted-service", execution: ["vendor-cloud", "user-cloud"], status: "active", claims: {
@@ -1276,6 +1371,8 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "cloud-execution-owner": factClaim("Cursor cloud or self-hosted", "https://cursor.com/docs/cloud-agent", "Cursor Cloud Agents documentation"),
     "cloud-isolation-unit": factClaim("Isolated VM", "https://cursor.com/docs/cloud-agent/builds", "Cursor Cloud Agent builds"),
     "cloud-human-takeover": capability("built-in", "https://cursor.com/docs/cloud-agent", "Cursor Cloud Agents documentation", "Operators can follow runs and hand branches back to the desktop IDE."),
+    "cloud-network-policy": capability("built-in", "https://cursor.com/docs/cloud-agent", "Cursor Cloud Agents documentation", "Teams can restrict outbound domains and connect private networks."),
+    "cloud-project-instructions": capability("built-in", "https://cursor.com/docs/rules", "Cursor Rules documentation", "Version-controlled project rules and AGENTS.md provide repository-scoped instructions."),
     "cloud-triggered-automation": capability("built-in", "https://docs.cursor.com/background-agent/api/overview", "Cursor Cloud Agent API", "First-party API starts and monitors cloud agent runs."),
     "cloud-result-type": factClaim("Pushed branch or pull request", "https://cursor.com/docs/cloud-agent", "Cursor Cloud Agents documentation"),
   } }),
@@ -1328,7 +1425,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   } }),
 
   // 7. Remote companions and relays
-  product({ id: "happy", name: "Happy", categoryId: "remote-companions", editorialOrder: 1, officialUrl: "https://github.com/slopus/happy", repository: repo("slopus/happy"), repoMetricId: "happy", tags: ["mobile", "web", "e2e-encryption", "claude", "codex", "oss"], platform: ["web", "ios", "android"], source: "open-source", execution: ["paired-machine", "vendor-cloud"], claims: {
+  product({ id: "happy", name: "Happy", categoryId: "remote-companions", editorialOrder: 1, officialUrl: "https://github.com/slopus/happy", repository: repo("slopus/happy"), repoMetricId: "happy", tags: ["mobile", "web", "e2e-encryption", "claude", "codex", "oss"], platform: ["web", "ios", "android"], source: "open-source", execution: ["paired-machine", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://github.com/slopus/happy", "Happy repository", ["remote-client-reach", "remote-existing-session", "remote-approvals"], undefined, "repository-derived"),
     "remote-encryption": capability("limited", "https://github.com/slopus/happy/blob/main/docs/README.md", "Happy architecture documentation", "End-to-end encryption is documented for session content; do not generalize the claim to every stored credential.", "source-inspected"),
     "remote-native-ios": capability("built-in", "https://github.com/slopus/happy", "Happy repository", "First-party iOS app.", "repository-derived"),
@@ -1345,7 +1442,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-transport-security": factClaim("End-to-end encrypted session content", "https://github.com/slopus/happy-server", "Happy Server security model", undefined, "source-inspected"),
     "remote-session-durability": factClaim("Survives client disconnect while host session runs", "https://github.com/slopus/happy", "Happy repository", undefined, "repository-derived"),
   } }),
-  product({ id: "vibetunnel", name: "VibeTunnel", categoryId: "remote-companions", editorialOrder: 2, officialUrl: "https://github.com/amantus-ai/vibetunnel", repository: repo("amantus-ai/vibetunnel"), repoMetricId: "vibetunnel", tags: ["browser-terminal", "mobile-web", "server-owned-pty", "oss"], platform: ["macos", "web"], source: "open-source", execution: ["local-daemon", "paired-machine"], claims: {
+  product({ id: "vibetunnel", name: "VibeTunnel", categoryId: "remote-companions", editorialOrder: 2, officialUrl: "https://github.com/amantus-ai/vibetunnel", repository: repo("amantus-ai/vibetunnel"), repoMetricId: "vibetunnel", tags: ["browser-terminal", "mobile-web", "server-owned-pty", "oss"], platform: ["macos", "web"], source: "open-source", execution: ["local-daemon", "paired-machine"], status: "active", claims: {
     ...builtInClaims("https://github.com/amantus-ai/vibetunnel", "VibeTunnel repository", ["remote-client-reach", "remote-existing-session"], undefined, "repository-derived"),
     "remote-native-ios": capability("limited", "https://github.com/amantus-ai/vibetunnel", "VibeTunnel repository", "Native iOS app is work in progress and not recommended for production.", "repository-derived"),
     "remote-browser-pwa": capability("built-in", "https://github.com/amantus-ai/vibetunnel", "VibeTunnel repository", "Responsive browser interface works from phones and tablets.", "repository-derived"),
@@ -1361,7 +1458,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-session-durability": factClaim("Browser reconnect + recorded PTY; host process must remain", "https://github.com/amantus-ai/vibetunnel", "VibeTunnel repository", undefined, "repository-derived"),
   } }),
   product({ id: "omnara", name: "Omnara", categoryId: "remote-companions", editorialOrder: 3, officialUrl: "https://github.com/omnara-ai/omnara", repository: repo("omnara-ai/omnara", "deprecated-predecessor"), tags: ["web", "mobile", "durable-agent-api", "pivoted", "oss"], source: "open-source", execution: ["vendor-cloud"], status: "pivoted" }),
-  product({ id: "shunt", name: "Shunt", categoryId: "remote-companions", editorialOrder: 4, officialUrl: "https://shunt.app/", tags: ["remote-tmux", "permissions", "mobile"], platform: ["macos", "linux", "web", "ios"], platformNote: "macOS and Linux daemon; embedded web/PWA client; native iOS client is preview/TestFlight.", source: "unknown", execution: ["paired-machine"], claims: {
+  product({ id: "shunt", name: "Shunt", categoryId: "remote-companions", editorialOrder: 4, officialUrl: "https://shunt.app/", tags: ["remote-tmux", "permissions", "mobile"], platform: ["macos", "linux", "web", "ios"], platformNote: "macOS and Linux daemon; embedded web/PWA client; native iOS client is preview/TestFlight.", source: "unknown", execution: ["paired-machine"], status: "active", claims: {
     ...builtInClaims("https://shunt.app/", "Shunt product documentation", ["remote-client-reach", "remote-existing-session", "remote-approvals"]),
     "remote-native-ios": capability("limited", "https://shunt.app/", "Shunt product documentation", "Native SwiftUI client is distributed through TestFlight in the documented initial release."),
     "remote-browser-pwa": capability("built-in", "https://shunt.app/", "Shunt product documentation", "Embedded web client plus standalone mobile and iPad PWA support."),
@@ -1527,6 +1624,36 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "trace-sharing": capability("built-in", "https://github.com/kenn-io/agentsview/blob/main/docs/usage.md", "AgentsView usage guide", "Sessions can be published to public or secret GitHub Gists.", "source-inspected"),
     "trace-ci-analytics": capability("limited", "https://github.com/kenn-io/agentsview/blob/main/docs/usage.md", "AgentsView usage guide", "Rich local usage, cost, performance, health, agent, and project analytics are built in; dedicated CI reporting is not established.", "source-inspected"),
     "trace-self-hosting": capability("built-in", "https://github.com/kenn-io/agentsview", "AgentsView repository", "The binary, local daemon, browser UI, Docker image, and optional shared backends are operator-deployed.", "repository-derived"),
+  } }),
+  product({ id: "claude-code-history-viewer", name: "Claude Code History Viewer", categoryId: "agent-traces", editorialOrder: 6, officialUrl: "https://jhlee0409.github.io/claude-code-history-viewer/", repository: repo("jhlee0409/claude-code-history-viewer"), repoMetricId: "claude-code-history-viewer", tags: ["local-first", "desktop", "web-ui", "multi-agent", "analytics", "export", "oss"], platform: ["macos", "windows", "linux", "web"], platformNote: "Desktop releases cover macOS, Windows, and Linux; the headless server exposes a browser UI.", platformSource: { url: "https://github.com/jhlee0409/claude-code-history-viewer", title: "Claude Code History Viewer repository" }, source: "open-source", execution: ["local-process", "local-daemon", "user-cloud"], status: "active", claims: {
+    "trace-capture-coverage": factClaim("Read-only discovery of 29 documented coding-assistant session stores", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", undefined, "repository-derived"),
+    "trace-storage-boundary": factClaim("Local source files and local application indexes; optional operator-hosted WebUI", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", undefined, "repository-derived"),
+    "trace-git-linkage": capability("limited", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "Projects and worktrees are grouped, but automatic commit-to-session linkage is not established.", "repository-derived"),
+    "trace-replay-resume": capability("built-in", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "The viewer reconstructs split and subagent histories and provides native resume commands for supported providers.", "repository-derived"),
+    "trace-search-timeline": capability("built-in", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "Global and in-session search, activity timelines, and live file watching are documented.", "repository-derived"),
+    "trace-multi-harness": capability("built-in", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "The current support table names 29 coding-assistant sources.", "repository-derived"),
+    "trace-transcript-coverage": capability("built-in", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "Conversation, thinking, subagent, and compacted-history structures are rendered where present.", "repository-derived"),
+    "trace-tool-call-coverage": capability("built-in", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "Provider readers expose tool calls and results where their source formats retain them.", "repository-derived"),
+    "trace-artifact-coverage": capability("limited", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "Recent edits and image-bearing session content are inspectable for supported sources; a uniform cross-provider artifact model is not established.", "repository-derived"),
+    "trace-export-api": capability("built-in", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "Headless HTML and JSON session export are documented.", "repository-derived"),
+    "trace-redaction-privacy": capability("limited", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "Desktop use is offline and reads local files; automatic content redaction is not established.", "repository-derived"),
+    "trace-sharing": capability("limited", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "The self-hosted WebUI supports deep links, but a product collaboration workflow is not established.", "repository-derived"),
+    "trace-ci-analytics": capability("limited", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "Local token, cost, provider, skill, and subagent analytics are built in; CI or team reporting is not established.", "repository-derived"),
+    "trace-self-hosting": capability("built-in", "https://github.com/jhlee0409/claude-code-history-viewer", "Claude Code History Viewer repository", "The complete desktop product and authenticated headless server, including Docker deployment, are operator-run.", "repository-derived"),
+  } }),
+  product({ id: "agent-sessions", name: "Agent Sessions", categoryId: "agent-traces", editorialOrder: 7, officialUrl: "https://jazzyalex.github.io/agent-sessions/", repository: repo("jazzyalex/agent-sessions"), repoMetricId: "agent-sessions", tags: ["local-first", "macos", "multi-agent", "resume", "analytics", "oss"], platform: ["macos"], platformNote: "The native desktop application requires macOS 14 or later.", platformSource: { url: "https://github.com/jazzyalex/agent-sessions", title: "Agent Sessions repository" }, source: "open-source", execution: ["local-process"], status: "active", claims: {
+    "trace-capture-coverage": factClaim("Read-only adapters for 15 documented local coding-agent histories", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", undefined, "repository-derived"),
+    "trace-storage-boundary": factClaim("Local source histories and local-only indexes on macOS", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", undefined, "repository-derived"),
+    "trace-git-linkage": capability("limited", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", "Project context is retained, but commit, branch, or worktree binding is not established.", "repository-derived"),
+    "trace-replay-resume": capability("built-in", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", "The app restores saved histories and emits or launches exact resume commands for supported CLIs.", "repository-derived"),
+    "trace-search-timeline": capability("built-in", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", "Unified cross-session search, in-session find, filters, and transcript navigation are documented.", "repository-derived"),
+    "trace-multi-harness": capability("built-in", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", "Fifteen local coding-agent sources share one adapter-driven archive.", "repository-derived"),
+    "trace-transcript-coverage": capability("built-in", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", "Agent replies, reasoning, compactions, and source-specific nested structures are rendered where documented.", "repository-derived"),
+    "trace-tool-call-coverage": capability("built-in", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", "Readable tool calls, inputs, outputs, and errors are first-class transcript navigation targets.", "repository-derived"),
+    "trace-artifact-coverage": capability("limited", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", "The image browser extracts session images where supported; general workspace artifacts and diffs are not established.", "repository-derived"),
+    "trace-redaction-privacy": capability("limited", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", "The app is local-only, read-only over source histories, and has no telemetry; automatic content redaction is not established.", "repository-derived"),
+    "trace-ci-analytics": capability("limited", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", "Per-session quota, token, model, and cost analytics are built in; CI or shared-team reporting is not established.", "repository-derived"),
+    "trace-self-hosting": capability("built-in", "https://github.com/jazzyalex/agent-sessions", "Agent Sessions repository", "The complete application and index run locally with no hosted service dependency.", "repository-derived"),
   } }),
 ];
 

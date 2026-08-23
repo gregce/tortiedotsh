@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-23T21:58:05.776Z",
+  "generatedAt": "2026-08-23T22:42:48.538Z",
+  "manifestSyncedAt": "2026-08-23T22:44:12.269Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -14,10 +15,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:12:31.862Z",
       "stars": 189338,
+      "forks": null,
+      "openIssues": null,
       "contributors": 3201,
       "repositorySizeKb": 1373629,
       "defaultBranch": "main",
       "pushedAt": "2026-08-23T17:56:05Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -265,6 +270,7 @@
       "latestTag": null,
       "version": "1.134.0",
       "releaseDate": "2026-08-19T09:08:11Z",
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -272,10 +278,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large mature editor; GitHub language bytes remain available"
       },
       "sources": [
@@ -313,10 +323,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T21:26:36.646Z",
       "stars": 604,
+      "forks": null,
+      "openIssues": null,
       "contributors": 40,
       "repositorySizeKb": 9889,
       "defaultBranch": "master",
       "pushedAt": "2026-08-21T10:01:39Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -358,6 +372,7 @@
       },
       "version": "v1.74.100",
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -365,10 +380,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
@@ -401,6 +420,51 @@
       "errors": []
     },
     {
+      "id": "intellij-community",
+      "name": "IntelliJ Platform source tree",
+      "category": "code-editors",
+      "owner": "JetBrains",
+      "repo": "intellij-community",
+      "githubUrl": "https://github.com/JetBrains/intellij-community",
+      "apiUrl": "https://api.github.com/repos/JetBrains/intellij-community",
+      "status": "stale",
+      "refreshedAt": null,
+      "stars": null,
+      "forks": null,
+      "openIssues": null,
+      "contributors": null,
+      "repositorySizeKb": null,
+      "defaultBranch": null,
+      "pushedAt": null,
+      "archived": null,
+      "license": null,
+      "languages": [],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "releasePolicy": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "verifiedAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [],
+      "errors": []
+    },
+    {
       "id": "positron",
       "name": "Positron",
       "category": "code-editors",
@@ -411,10 +475,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T21:26:36.028Z",
       "stars": 4233,
+      "forks": null,
+      "openIssues": null,
       "contributors": 60,
       "repositorySizeKb": 301775,
       "defaultBranch": "main",
       "pushedAt": "2026-08-22T22:57:44Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -682,6 +750,7 @@
       "latestTag": null,
       "version": "2026.08.2-4",
       "releaseDate": "2026-08-21T14:51:35Z",
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -689,10 +758,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large Code OSS-derived source-available repository; GitHub language bytes remain available"
       },
       "sources": [
@@ -730,10 +803,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T21:26:40.098Z",
       "stars": 26546,
+      "forks": null,
+      "openIssues": null,
       "contributors": 108,
       "repositorySizeKb": 83016,
       "defaultBranch": "main",
       "pushedAt": "2026-07-22T02:07:29Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -776,6 +853,7 @@
       "latestTag": null,
       "version": "v0.2.32",
       "releaseDate": "2025-07-17T18:36:21Z",
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -783,10 +861,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large monorepo; GitHub language bytes remain available"
       },
       "sources": [
@@ -824,10 +906,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:12:31.811Z",
       "stars": 89097,
+      "forks": null,
+      "openIssues": null,
       "contributors": 2184,
       "repositorySizeKb": 507122,
       "defaultBranch": "main",
       "pushedAt": "2026-08-23T17:21:52Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "Rust",
@@ -935,6 +1021,7 @@
       "latestTag": null,
       "version": "v1.16.1",
       "releaseDate": "2026-08-19T16:11:34Z",
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -942,10 +1029,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large mature editor; GitHub language bytes remain available"
       },
       "sources": [
@@ -983,10 +1074,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:12:31.846Z",
       "stars": 38765,
+      "forks": null,
+      "openIssues": null,
       "contributors": 190,
       "repositorySizeKb": 28651,
       "defaultBranch": "master",
       "pushedAt": "2026-07-15T11:27:37Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "Rust",
@@ -1029,6 +1124,7 @@
       "latestTag": null,
       "version": "v0.4.6",
       "releaseDate": "2026-01-21T21:44:37Z",
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -1036,10 +1132,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large mature editor; GitHub language bytes remain available"
       },
       "sources": [
@@ -1077,10 +1177,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:12:32.152Z",
       "stars": 45918,
+      "forks": null,
+      "openIssues": null,
       "contributors": 1417,
       "repositorySizeKb": 89865,
       "defaultBranch": "master",
       "pushedAt": "2026-08-18T23:23:16Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "Rust",
@@ -1138,6 +1242,7 @@
       "latestTag": null,
       "version": "25.07.1",
       "releaseDate": "2025-07-18T15:13:19Z",
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -1145,10 +1250,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large mature editor; GitHub language bytes remain available"
       },
       "sources": [
@@ -1186,15 +1295,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -1202,10 +1316,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -1220,27 +1338,36 @@
       "githubUrl": "https://github.com/gregce/tortie",
       "apiUrl": "https://api.github.com/repos/gregce/tortie",
       "status": "current",
-      "refreshedAt": "2026-08-23T18:16:37.776Z",
+      "refreshedAt": "2026-08-23T22:39:41.012Z",
       "stars": 4,
+      "forks": 0,
+      "openIssues": 6,
       "contributors": 1,
-      "repositorySizeKb": 50430,
+      "repositorySizeKb": 51197,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T16:28:03Z",
+      "pushedAt": "2026-08-23T22:35:37Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
       "languages": [
         {
           "name": "TypeScript",
-          "bytes": 15490276,
-          "percent": 81.54
+          "bytes": 15529053,
+          "percent": 81.29
         },
         {
           "name": "JavaScript",
-          "bytes": 3026563,
-          "percent": 15.93
+          "bytes": 3091009,
+          "percent": 16.18
         },
         {
           "name": "CSS",
-          "bytes": 477123,
-          "percent": 2.51
+          "bytes": 480500,
+          "percent": 2.52
         },
         {
           "name": "HTML",
@@ -1258,6 +1385,7 @@
       "latestTag": null,
       "version": "v0.68.7",
       "releaseDate": "2026-08-23T05:46:33Z",
+      "releasePolicy": null,
       "loc": {
         "status": "measured",
         "code": 336452,
@@ -1265,37 +1393,41 @@
         "blank": 47780,
         "files": 1648,
         "measuredAt": "2026-08-23T18:16:37.704Z",
+        "verifiedAt": "2026-08-23T22:39:41.012Z",
         "measuredRef": "v0.68.7",
         "refType": "stable-release-tag",
         "commitSha": "91ea9a03bf321dbe3b5fd57529cd9655960bf976",
         "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/gregce/tortie",
-          "fetchedAt": "2026-08-23T18:16:34.408Z"
-        },
-        {
-          "type": "languages",
-          "url": "https://api.github.com/repos/gregce/tortie/languages",
-          "fetchedAt": "2026-08-23T18:16:34.500Z"
+          "fetchedAt": "2026-08-23T22:39:40.598Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/gregce/tortie/releases/latest",
-          "fetchedAt": "2026-08-23T18:16:34.540Z"
+          "fetchedAt": "2026-08-23T22:39:40.729Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/gregce/tortie/languages",
+          "fetchedAt": "2026-08-23T22:39:40.750Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/gregce/tortie/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:16:34.596Z"
+          "fetchedAt": "2026-08-23T22:39:40.791Z"
         },
         {
-          "type": "loc-checkout",
+          "type": "loc-measurement",
           "url": "https://github.com/gregce/tortie/tree/v0.68.7",
-          "fetchedAt": "2026-08-23T18:16:37.704Z"
+          "fetchedAt": "2026-08-23T22:39:41.012Z"
         }
       ],
       "errors": []
@@ -1308,32 +1440,109 @@
       "repo": "cate",
       "githubUrl": "https://github.com/0-AI-UG/cate",
       "apiUrl": "https://api.github.com/repos/0-AI-UG/cate",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:39:44.481Z",
+      "stars": 2088,
+      "forks": 133,
+      "openIssues": 11,
+      "contributors": 21,
+      "repositorySizeKb": 69360,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T07:05:26Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 7081593,
+          "percent": 98.52
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 76370,
+          "percent": 1.06
+        },
+        {
+          "name": "CSS",
+          "bytes": 19909,
+          "percent": 0.28
+        },
+        {
+          "name": "Shell",
+          "bytes": 7192,
+          "percent": 0.1
+        },
+        {
+          "name": "HTML",
+          "bytes": 2306,
+          "percent": 0.03
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 299,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.6.0",
+        "name": "v1.6.0",
+        "publishedAt": "2026-08-07T09:47:01Z",
+        "url": "https://github.com/0-AI-UG/cate/releases/tag/v1.6.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v1.6.0",
+      "releaseDate": "2026-08-07T09:47:01Z",
+      "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 131916,
+        "comments": 28526,
+        "blank": 17542,
+        "files": 1003,
+        "measuredAt": "2026-08-23T22:39:44.329Z",
+        "verifiedAt": "2026-08-23T22:39:44.329Z",
+        "measuredRef": "v1.6.0",
+        "refType": "stable-release-tag",
+        "commitSha": "f09e71e91f969ef199b763c53e229429d3afc0ed",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/0-AI-UG/cate",
+          "fetchedAt": "2026-08-23T22:39:40.545Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/0-AI-UG/cate/languages",
+          "fetchedAt": "2026-08-23T22:39:40.635Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/0-AI-UG/cate/releases/latest",
+          "fetchedAt": "2026-08-23T22:39:40.702Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/0-AI-UG/cate/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:39:40.809Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/0-AI-UG/cate/tree/v1.6.0",
+          "fetchedAt": "2026-08-23T22:39:44.329Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -1344,32 +1553,124 @@
       "repo": "cdesktop",
       "githubUrl": "https://github.com/cdesktop-ai/cdesktop",
       "apiUrl": "https://api.github.com/repos/cdesktop-ai/cdesktop",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:39:44.480Z",
+      "stars": 98,
+      "forks": 21,
+      "openIssues": 6,
+      "contributors": 64,
+      "repositorySizeKb": 95067,
+      "defaultBranch": "main",
+      "pushedAt": "2026-05-19T09:07:35Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 3976394,
+          "percent": 49.22
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 3829215,
+          "percent": 47.4
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 110365,
+          "percent": 1.37
+        },
+        {
+          "name": "CSS",
+          "bytes": 65615,
+          "percent": 0.81
+        },
+        {
+          "name": "HTML",
+          "bytes": 38488,
+          "percent": 0.48
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": 25019,
+          "percent": 0.31
+        },
+        {
+          "name": "Shell",
+          "bytes": 19384,
+          "percent": 0.24
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 13297,
+          "percent": 0.16
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 1064,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.2.3-20260519022845",
+        "name": "v0.2.3",
+        "publishedAt": "2026-05-19T03:00:55Z",
+        "url": "https://github.com/cdesktop-ai/cdesktop/releases/tag/v0.2.3-20260519022845",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.2.3-20260519022845",
+      "releaseDate": "2026-05-19T03:00:55Z",
+      "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 213200,
+        "comments": 12831,
+        "blank": 24790,
+        "files": 1410,
+        "measuredAt": "2026-08-23T22:39:44.276Z",
+        "verifiedAt": "2026-08-23T22:39:44.276Z",
+        "measuredRef": "v0.2.3-20260519022845",
+        "refType": "stable-release-tag",
+        "commitSha": "1c9b0b909a0a3f19c9e1648c07655d87301b1b8c",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/cdesktop-ai/cdesktop",
+          "fetchedAt": "2026-08-23T22:39:40.539Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/cdesktop-ai/cdesktop/languages",
+          "fetchedAt": "2026-08-23T22:39:40.611Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/cdesktop-ai/cdesktop/releases/latest",
+          "fetchedAt": "2026-08-23T22:39:40.687Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/cdesktop-ai/cdesktop/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:39:40.857Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/cdesktop-ai/cdesktop/tree/v0.2.3-20260519022845",
+          "fetchedAt": "2026-08-23T22:39:44.276Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -1383,10 +1684,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:12:32.212Z",
       "stars": 35603,
+      "forks": null,
+      "openIssues": null,
       "contributors": 507,
       "repositorySizeKb": 872279,
       "defaultBranch": "main",
       "pushedAt": "2026-08-22T15:17:38Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -1489,6 +1794,7 @@
       "latestTag": null,
       "version": "v2.0.0-vscode",
       "releaseDate": "2026-06-19T00:24:01Z",
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -1496,10 +1802,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large monorepo; GitHub language bytes remain available"
       },
       "sources": [
@@ -1537,10 +1847,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:12:32.203Z",
       "stars": 66718,
+      "forks": null,
+      "openIssues": null,
       "contributors": 321,
       "repositorySizeKb": 558292,
       "defaultBranch": "main",
       "pushedAt": "2026-08-23T18:04:02Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -1593,6 +1907,7 @@
       "latestTag": null,
       "version": "v4.1.14",
       "releaseDate": "2026-08-23T10:11:14Z",
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -1600,10 +1915,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large monorepo; GitHub language bytes remain available"
       },
       "sources": [
@@ -1641,15 +1960,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -1657,10 +1981,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -1677,10 +2005,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:12:32.438Z",
       "stars": 24326,
+      "forks": null,
+      "openIssues": null,
       "contributors": 303,
       "repositorySizeKb": 368021,
       "defaultBranch": "main",
       "pushedAt": "2026-05-15T18:08:47Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -1723,6 +2055,7 @@
       "latestTag": null,
       "version": "v3.54.0",
       "releaseDate": "2026-05-15T17:52:24Z",
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -1730,10 +2063,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large monorepo; GitHub language bytes remain available"
       },
       "sources": [
@@ -1771,10 +2108,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:16:59.026Z",
       "stars": 51701,
+      "forks": null,
+      "openIssues": null,
       "contributors": 339,
       "repositorySizeKb": 597949,
       "defaultBranch": "main",
       "pushedAt": "2026-08-23T18:13:33Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -1857,6 +2198,7 @@
       "latestTag": null,
       "version": "v1.4.188",
       "releaseDate": "2026-08-22T06:12:27Z",
+      "releasePolicy": null,
       "loc": {
         "status": "measured",
         "code": 2966416,
@@ -1864,10 +2206,14 @@
         "blank": 276542,
         "files": 16397,
         "measuredAt": "2026-08-23T18:16:58.402Z",
+        "verifiedAt": null,
         "measuredRef": "v1.4.188",
         "refType": "stable-release-tag",
         "commitSha": "f32ce859047a85a3ea4f507f633604dfbf596a0e",
         "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
@@ -1910,10 +2256,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T21:26:44.937Z",
       "stars": 2575,
+      "forks": null,
+      "openIssues": null,
       "contributors": 49,
       "repositorySizeKb": 166111,
       "defaultBranch": "main",
       "pushedAt": "2026-08-23T15:51:37Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -1951,6 +2301,7 @@
       "latestTag": null,
       "version": "desktop-v0.39.0",
       "releaseDate": "2026-08-19T01:36:42Z",
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -1958,10 +2309,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
@@ -1999,10 +2354,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T21:26:50.680Z",
       "stars": 9198,
+      "forks": null,
+      "openIssues": null,
       "contributors": 210,
       "repositorySizeKb": 124896,
       "defaultBranch": "main",
       "pushedAt": "2026-08-23T09:07:00Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "Python",
@@ -2085,6 +2444,7 @@
       "latestTag": null,
       "version": "v0.10.0",
       "releaseDate": "2026-08-19T04:34:41Z",
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2092,10 +2452,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
@@ -2133,15 +2497,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2149,10 +2518,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -2169,15 +2542,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2185,10 +2563,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -2205,15 +2587,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2221,10 +2608,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -2241,15 +2632,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2257,10 +2653,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -2277,15 +2677,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2293,10 +2698,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -2313,15 +2722,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2329,10 +2743,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -2349,15 +2767,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2365,10 +2788,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -2385,15 +2812,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2401,10 +2833,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -2421,15 +2857,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2437,10 +2878,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -2457,15 +2902,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2473,10 +2923,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -2493,15 +2947,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -2509,10 +2968,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -2527,17 +2990,26 @@
       "githubUrl": "https://github.com/manaflow-ai/cmux",
       "apiUrl": "https://api.github.com/repos/manaflow-ai/cmux",
       "status": "current",
-      "refreshedAt": "2026-08-23T18:16:54.607Z",
-      "stars": 26375,
+      "refreshedAt": "2026-08-23T22:39:41.599Z",
+      "stars": 26378,
+      "forks": 2250,
+      "openIssues": 4419,
       "contributors": 154,
-      "repositorySizeKb": 1427409,
+      "repositorySizeKb": 1444138,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T17:57:49Z",
+      "pushedAt": "2026-08-23T22:37:39Z",
+      "archived": false,
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdxId": "NOASSERTION",
+        "url": null
+      },
       "languages": [
         {
           "name": "Swift",
-          "bytes": 68644015,
-          "percent": 64.24
+          "bytes": 68659888,
+          "percent": 64.25
         },
         {
           "name": "Rust",
@@ -2635,6 +3107,7 @@
       "latestTag": null,
       "version": "v0.64.22",
       "releaseDate": "2026-08-03T08:06:36Z",
+      "releasePolicy": null,
       "loc": {
         "status": "measured",
         "code": 2313497,
@@ -2642,37 +3115,41 @@
         "blank": 213903,
         "files": 11639,
         "measuredAt": "2026-08-23T18:16:53.975Z",
+        "verifiedAt": "2026-08-23T22:39:41.599Z",
         "measuredRef": "v0.64.22",
         "refType": "stable-release-tag",
         "commitSha": "ddd4a01bc5d8ebac19643930f5fd7d40e85f1534",
         "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/manaflow-ai/cmux",
-          "fetchedAt": "2026-08-23T18:16:34.429Z"
-        },
-        {
-          "type": "languages",
-          "url": "https://api.github.com/repos/manaflow-ai/cmux/languages",
-          "fetchedAt": "2026-08-23T18:16:34.518Z"
+          "fetchedAt": "2026-08-23T22:39:41.175Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/manaflow-ai/cmux/releases/latest",
-          "fetchedAt": "2026-08-23T18:16:34.584Z"
+          "fetchedAt": "2026-08-23T22:39:41.273Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/manaflow-ai/cmux/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:16:34.634Z"
+          "fetchedAt": "2026-08-23T22:39:41.297Z"
         },
         {
-          "type": "loc-checkout",
+          "type": "languages",
+          "url": "https://api.github.com/repos/manaflow-ai/cmux/languages",
+          "fetchedAt": "2026-08-23T22:39:41.302Z"
+        },
+        {
+          "type": "loc-measurement",
           "url": "https://github.com/manaflow-ai/cmux/tree/v0.64.22",
-          "fetchedAt": "2026-08-23T18:16:53.975Z"
+          "fetchedAt": "2026-08-23T22:39:41.599Z"
         }
       ],
       "errors": []
@@ -2685,32 +3162,114 @@
       "repo": "wmux",
       "githubUrl": "https://github.com/openwong2kim/wmux",
       "apiUrl": "https://api.github.com/repos/openwong2kim/wmux",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:39:45.579Z",
+      "stars": 350,
+      "forks": 60,
+      "openIssues": 15,
+      "contributors": 21,
+      "repositorySizeKb": 28739,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T15:54:42Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 18394300,
+          "percent": 89.24
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 1961349,
+          "percent": 9.52
+        },
+        {
+          "name": "HTML",
+          "bytes": 132820,
+          "percent": 0.64
+        },
+        {
+          "name": "CSS",
+          "bytes": 69206,
+          "percent": 0.34
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 28914,
+          "percent": 0.14
+        },
+        {
+          "name": "Rust",
+          "bytes": 16913,
+          "percent": 0.08
+        },
+        {
+          "name": "Shell",
+          "bytes": 7651,
+          "percent": 0.04
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v3.46.0",
+        "name": "v3.46.0",
+        "publishedAt": "2026-08-22T14:14:41Z",
+        "url": "https://github.com/openwong2kim/wmux/releases/tag/v3.46.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v3.46.0",
+      "releaseDate": "2026-08-22T14:14:41Z",
+      "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 337013,
+        "comments": 105665,
+        "blank": 41316,
+        "files": 1782,
+        "measuredAt": "2026-08-23T22:39:45.479Z",
+        "verifiedAt": "2026-08-23T22:39:45.479Z",
+        "measuredRef": "v3.46.0",
+        "refType": "stable-release-tag",
+        "commitSha": "6681a9a8f44fd6fb435fdb7e8c8537d750fbcad2",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/openwong2kim/wmux",
+          "fetchedAt": "2026-08-23T22:39:41.797Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/openwong2kim/wmux/releases/latest",
+          "fetchedAt": "2026-08-23T22:39:41.880Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/openwong2kim/wmux/languages",
+          "fetchedAt": "2026-08-23T22:39:41.906Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/openwong2kim/wmux/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:39:41.920Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/openwong2kim/wmux/tree/v3.46.0",
+          "fetchedAt": "2026-08-23T22:39:45.479Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -2721,32 +3280,237 @@
       "repo": "waveterm",
       "githubUrl": "https://github.com/wavetermdev/waveterm",
       "apiUrl": "https://api.github.com/repos/wavetermdev/waveterm",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:39:46.977Z",
+      "stars": 22091,
+      "forks": 1106,
+      "openIssues": 557,
+      "contributors": 46,
+      "repositorySizeKb": 59959,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-11T18:53:52Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Go",
+          "bytes": 2489295,
+          "percent": 48.43
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 2228621,
+          "percent": 43.36
+        },
+        {
+          "name": "CSS",
+          "bytes": 283229,
+          "percent": 5.51
+        },
+        {
+          "name": "SCSS",
+          "bytes": 80897,
+          "percent": 1.57
+        },
+        {
+          "name": "Shell",
+          "bytes": 43402,
+          "percent": 0.84
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 11644,
+          "percent": 0.23
+        },
+        {
+          "name": "HTML",
+          "bytes": 2246,
+          "percent": 0.04
+        },
+        {
+          "name": "Go Template",
+          "bytes": 955,
+          "percent": 0.02
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.14.5",
+        "name": "Wave Terminal v0.14.5 Release",
+        "publishedAt": "2026-04-16T16:01:54Z",
+        "url": "https://github.com/wavetermdev/waveterm/releases/tag/v0.14.5",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.14.5",
+      "releaseDate": "2026-04-16T16:01:54Z",
+      "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 141047,
+        "comments": 7118,
+        "blank": 16389,
+        "files": 834,
+        "measuredAt": "2026-08-23T22:39:46.928Z",
+        "verifiedAt": "2026-08-23T22:39:46.928Z",
+        "measuredRef": "v0.14.5",
+        "refType": "stable-release-tag",
+        "commitSha": "97e560027f494d20fed347b2d6b72b6bcb3e50e0",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/wavetermdev/waveterm",
+          "fetchedAt": "2026-08-23T22:39:44.677Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/wavetermdev/waveterm/languages",
+          "fetchedAt": "2026-08-23T22:39:44.792Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/wavetermdev/waveterm/releases/latest",
+          "fetchedAt": "2026-08-23T22:39:44.799Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/wavetermdev/waveterm/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:39:44.825Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/wavetermdev/waveterm/tree/v0.14.5",
+          "fetchedAt": "2026-08-23T22:39:46.928Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "dmux",
+      "name": "dmux",
+      "category": "agent-workbenches",
+      "owner": "standardagents",
+      "repo": "dmux",
+      "githubUrl": "https://github.com/standardagents/dmux",
+      "apiUrl": "https://api.github.com/repos/standardagents/dmux",
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:39:47.970Z",
+      "stars": 1750,
+      "forks": 138,
+      "openIssues": 30,
+      "contributors": 17,
+      "repositorySizeKb": 64881,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-16T17:09:22Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "HTML",
+          "bytes": 4984914,
+          "percent": 64.16
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 2272252,
+          "percent": 29.25
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 366429,
+          "percent": 4.72
+        },
+        {
+          "name": "Vue",
+          "bytes": 63820,
+          "percent": 0.82
+        },
+        {
+          "name": "CSS",
+          "bytes": 42940,
+          "percent": 0.55
+        },
+        {
+          "name": "Swift",
+          "bytes": 28026,
+          "percent": 0.36
+        },
+        {
+          "name": "Shell",
+          "bytes": 10615,
+          "percent": 0.14
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v5.11.1",
+        "name": "v5.11.1",
+        "publishedAt": "2026-08-16T17:10:51Z",
+        "url": "https://github.com/standardagents/dmux/releases/tag/v5.11.1",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v5.11.1",
+      "releaseDate": "2026-08-16T17:10:51Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 70034,
+        "comments": 6682,
+        "blank": 10528,
+        "files": 437,
+        "measuredAt": "2026-08-23T22:39:47.935Z",
+        "verifiedAt": "2026-08-23T22:39:47.935Z",
+        "measuredRef": "v5.11.1",
+        "refType": "stable-release-tag",
+        "commitSha": "8cb3d926631a9349ab67f7ece41d218427ac7e24",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/standardagents/dmux",
+          "fetchedAt": "2026-08-23T22:39:44.604Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/standardagents/dmux/languages",
+          "fetchedAt": "2026-08-23T22:39:44.685Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/standardagents/dmux/releases/latest",
+          "fetchedAt": "2026-08-23T22:39:44.721Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/standardagents/dmux/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:39:44.755Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/standardagents/dmux/tree/v5.11.1",
+          "fetchedAt": "2026-08-23T22:39:47.935Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -2757,32 +3521,172 @@
       "repo": "warp",
       "githubUrl": "https://github.com/warpdotdev/warp",
       "apiUrl": "https://api.github.com/repos/warpdotdev/warp",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "languages": [],
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:42:48.538Z",
+      "stars": 64472,
+      "forks": 5455,
+      "openIssues": 5100,
+      "contributors": 161,
+      "repositorySizeKb": 348692,
+      "defaultBranch": "master",
+      "pushedAt": "2026-08-23T22:39:24Z",
+      "archived": false,
+      "license": {
+        "key": "agpl-3.0",
+        "name": "GNU Affero General Public License v3.0",
+        "spdxId": "AGPL-3.0",
+        "url": "https://api.github.com/licenses/agpl-3.0"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 63590714,
+          "percent": 98.14
+        },
+        {
+          "name": "Shell",
+          "bytes": 438217,
+          "percent": 0.68
+        },
+        {
+          "name": "Python",
+          "bytes": 308362,
+          "percent": 0.48
+        },
+        {
+          "name": "Objective-C",
+          "bytes": 145744,
+          "percent": 0.22
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 99139,
+          "percent": 0.15
+        },
+        {
+          "name": "HTML",
+          "bytes": 52633,
+          "percent": 0.08
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 35236,
+          "percent": 0.05
+        },
+        {
+          "name": "Inno Setup",
+          "bytes": 27041,
+          "percent": 0.04
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 24819,
+          "percent": 0.04
+        },
+        {
+          "name": "WGSL",
+          "bytes": 23290,
+          "percent": 0.04
+        },
+        {
+          "name": "Metal",
+          "bytes": 17100,
+          "percent": 0.03
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 12205,
+          "percent": 0.02
+        },
+        {
+          "name": "Nix",
+          "bytes": 10920,
+          "percent": 0.02
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 5657,
+          "percent": 0.01
+        },
+        {
+          "name": "C",
+          "bytes": 1193,
+          "percent": 0
+        },
+        {
+          "name": "Makefile",
+          "bytes": 711,
+          "percent": 0
+        },
+        {
+          "name": "Handlebars",
+          "bytes": 410,
+          "percent": 0
+        },
+        {
+          "name": "RenderScript",
+          "bytes": 45,
+          "percent": 0
+        }
+      ],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": {
+        "mode": "default-branch",
+        "reason": "The repository's GitHub Releases feed contains temporary internal artifacts rather than stable Warp product releases.",
+        "checkedAt": "2026-08-23",
+        "rejectedCandidate": {
+          "tagName": "tui-screenshots-app5029",
+          "name": "TUI Screenshots APP-5029 (delete after PR review)",
+          "url": "https://github.com/warpdotdev/warp/releases/tag/tui-screenshots-app5029"
+        }
+      },
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 1428401,
+        "comments": 161998,
+        "blank": 161233,
+        "files": 4880,
+        "measuredAt": "2026-08-23T22:42:48.163Z",
+        "verifiedAt": "2026-08-23T22:42:48.163Z",
+        "measuredRef": "master",
+        "refType": "default-branch",
+        "commitSha": "748b635cd8e890f81c117735aca3cd793b5ce779",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/warpdotdev/warp",
+          "fetchedAt": "2026-08-23T22:42:34.221Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/warpdotdev/warp/languages",
+          "fetchedAt": "2026-08-23T22:42:34.354Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/warpdotdev/warp/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:42:34.434Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/warpdotdev/warp/tree/master",
+          "fetchedAt": "2026-08-23T22:42:48.163Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/warpdotdev/warp/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -2796,10 +3700,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:14:00.499Z",
       "stars": 84856,
+      "forks": null,
+      "openIssues": null,
       "contributors": 532,
       "repositorySizeKb": 405199,
       "defaultBranch": "main",
       "pushedAt": "2026-08-23T17:13:21Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -2852,6 +3760,7 @@
       "latestTag": null,
       "version": "v1.15.0",
       "releaseDate": "2026-08-21T14:01:34Z",
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -2859,10 +3768,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large monorepo; GitHub language bytes remain available"
       },
       "sources": [
@@ -2900,10 +3813,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:16:47.994Z",
       "stars": 115009,
+      "forks": null,
+      "openIssues": null,
       "contributors": 573,
       "repositorySizeKb": 566976,
       "defaultBranch": "main",
       "pushedAt": "2026-08-23T17:04:41Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "Rust",
@@ -2991,6 +3908,7 @@
       "latestTag": null,
       "version": "rust-v0.149.0",
       "releaseDate": "2026-08-20T21:04:55Z",
+      "releasePolicy": null,
       "loc": {
         "status": "measured",
         "code": 1526663,
@@ -2998,10 +3916,14 @@
         "blank": 132236,
         "files": 5523,
         "measuredAt": "2026-08-23T18:16:47.500Z",
+        "verifiedAt": null,
         "measuredRef": "rust-v0.149.0",
         "refType": "stable-release-tag",
         "commitSha": "758ef40f50c1a458425c7cfbf1eb12cbc07af0b0",
         "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
@@ -3044,10 +3966,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:16:59.554Z",
       "stars": 106633,
+      "forks": null,
+      "openIssues": null,
       "contributors": 692,
       "repositorySizeKb": 102363,
       "defaultBranch": "main",
       "pushedAt": "2026-08-23T01:15:05Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -3100,6 +4026,7 @@
       "latestTag": null,
       "version": "v0.56.0",
       "releaseDate": "2026-08-19T19:29:38Z",
+      "releasePolicy": null,
       "loc": {
         "status": "measured",
         "code": 1455071,
@@ -3107,10 +4034,14 @@
         "blank": 86439,
         "files": 2727,
         "measuredAt": "2026-08-23T18:16:59.419Z",
+        "verifiedAt": null,
         "measuredRef": "v0.56.0",
         "refType": "stable-release-tag",
         "commitSha": "b6e23a7dc29eb15fede4bbe646d91869e948b45a",
         "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
@@ -3153,15 +4084,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -3169,10 +4105,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -3189,15 +4129,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -3205,10 +4150,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -3225,15 +4174,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -3241,10 +4195,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -3261,10 +4219,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:17:11.650Z",
       "stars": 200600,
+      "forks": null,
+      "openIssues": null,
       "contributors": 1002,
       "repositorySizeKb": 474646,
       "defaultBranch": "dev",
       "pushedAt": "2026-08-23T18:11:27Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -3327,6 +4289,7 @@
       "latestTag": null,
       "version": "v1.18.21",
       "releaseDate": "2026-08-21T14:51:11Z",
+      "releasePolicy": null,
       "loc": {
         "status": "measured",
         "code": 1254680,
@@ -3334,10 +4297,14 @@
         "blank": 124116,
         "files": 5958,
         "measuredAt": "2026-08-23T18:17:11.349Z",
+        "verifiedAt": null,
         "measuredRef": "v1.18.21",
         "refType": "stable-release-tag",
         "commitSha": "826d9ad46a22bef0294998e08daa3c4904fea28f",
         "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
@@ -3380,10 +4347,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:17:03.478Z",
       "stars": 95847,
+      "forks": null,
+      "openIssues": null,
       "contributors": 282,
       "repositorySizeKb": 65426,
       "defaultBranch": "main",
       "pushedAt": "2026-08-23T10:44:20Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -3436,6 +4407,7 @@
       "latestTag": null,
       "version": "v0.84.2",
       "releaseDate": "2026-08-14T10:14:32Z",
+      "releasePolicy": null,
       "loc": {
         "status": "measured",
         "code": 258768,
@@ -3443,10 +4415,14 @@
         "blank": 40369,
         "files": 1337,
         "measuredAt": "2026-08-23T18:17:03.414Z",
+        "verifiedAt": null,
         "measuredRef": "v0.84.2",
         "refType": "stable-release-tag",
         "commitSha": "914cf1472e715297caa30db4b9535d534a9eb718",
         "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
@@ -3489,10 +4465,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:17:02.056Z",
       "stars": 48428,
+      "forks": null,
+      "openIssues": null,
       "contributors": 182,
       "repositorySizeKb": 140356,
       "defaultBranch": "main",
       "pushedAt": "2026-05-22T14:02:20Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "Python",
@@ -3555,6 +4535,7 @@
       "latestTag": null,
       "version": "v0.86.0",
       "releaseDate": "2025-08-09T17:42:19Z",
+      "releasePolicy": null,
       "loc": {
         "status": "measured",
         "code": 158604,
@@ -3562,10 +4543,14 @@
         "blank": 33020,
         "files": 480,
         "measuredAt": "2026-08-23T18:17:02.017Z",
+        "verifiedAt": null,
         "measuredRef": "v0.86.0",
         "refType": "stable-release-tag",
         "commitSha": "a4be6ccd87ebaa59b361f3f028d116ce1761b626",
         "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
@@ -3608,10 +4593,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T18:17:10.678Z",
       "stars": 53314,
+      "forks": null,
+      "openIssues": null,
       "contributors": 615,
       "repositorySizeKb": 964465,
       "defaultBranch": "main",
       "pushedAt": "2026-08-22T00:11:06Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "Rust",
@@ -3694,6 +4683,7 @@
       "latestTag": null,
       "version": "v1.47.0",
       "releaseDate": "2026-08-21T18:14:59Z",
+      "releasePolicy": null,
       "loc": {
         "status": "measured",
         "code": 822530,
@@ -3701,10 +4691,14 @@
         "blank": 61582,
         "files": 1906,
         "measuredAt": "2026-08-23T18:17:10.515Z",
+        "verifiedAt": null,
         "measuredRef": "v1.47.0",
         "refType": "stable-release-tag",
         "commitSha": "f9c7aaccde4834810dfd13d5efa8f0d39ba28a20",
         "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
@@ -3747,10 +4741,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T21:26:54.164Z",
       "stars": 187783,
+      "forks": null,
+      "openIssues": null,
       "contributors": 38,
       "repositorySizeKb": 108918,
       "defaultBranch": "master",
       "pushedAt": "2026-08-21T12:35:08Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -3807,6 +4805,7 @@
       },
       "version": "dsh-v0.1.1-rc.2",
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -3814,10 +4813,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large monorepo; GitHub language bytes remain available"
       },
       "sources": [
@@ -3860,10 +4863,14 @@
       "status": "current",
       "refreshedAt": "2026-08-23T21:26:54.490Z",
       "stars": 18014,
+      "forks": null,
+      "openIssues": null,
       "contributors": 222,
       "repositorySizeKb": 51314,
       "defaultBranch": "main",
       "pushedAt": "2026-08-23T21:21:13Z",
+      "archived": null,
+      "license": null,
       "languages": [
         {
           "name": "TypeScript",
@@ -3911,6 +4918,7 @@
       "latestTag": null,
       "version": "v0.8.0",
       "releaseDate": "2026-08-21T21:18:10Z",
+      "releasePolicy": null,
       "loc": {
         "status": "disabled",
         "code": null,
@@ -3918,10 +4926,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": "Large monorepo; GitHub language bytes remain available"
       },
       "sources": [
@@ -3959,15 +4971,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -3975,10 +4992,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -3995,15 +5016,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4011,10 +5037,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4031,15 +5061,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4047,10 +5082,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4067,15 +5106,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4083,10 +5127,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4103,15 +5151,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4119,10 +5172,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4139,15 +5196,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4155,10 +5217,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4175,15 +5241,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4191,10 +5262,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4211,15 +5286,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4227,10 +5307,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4247,15 +5331,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4263,10 +5352,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4283,15 +5376,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4299,10 +5397,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4319,15 +5421,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4335,10 +5442,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4355,15 +5466,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4371,10 +5487,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4391,15 +5511,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4407,10 +5532,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4427,15 +5556,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4443,10 +5577,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4463,15 +5601,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4479,10 +5622,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4499,15 +5646,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4515,10 +5667,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4535,15 +5691,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4551,10 +5712,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4571,15 +5736,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4587,10 +5757,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4607,15 +5781,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4623,10 +5802,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4643,15 +5826,20 @@
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
+      "forks": null,
+      "openIssues": null,
       "contributors": null,
       "repositorySizeKb": null,
       "defaultBranch": null,
       "pushedAt": null,
+      "archived": null,
+      "license": null,
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
+      "releasePolicy": null,
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -4659,10 +5847,14 @@
         "blank": null,
         "files": null,
         "measuredAt": null,
+        "verifiedAt": null,
         "measuredRef": null,
         "refType": null,
         "commitSha": null,
         "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [],
@@ -4676,32 +5868,99 @@
       "repo": "getspecstory",
       "githubUrl": "https://github.com/specstoryai/getspecstory",
       "apiUrl": "https://api.github.com/repos/specstoryai/getspecstory",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:37:31.636Z",
+      "stars": 1310,
+      "forks": 85,
+      "openIssues": 54,
+      "contributors": 17,
+      "repositorySizeKb": 44275,
+      "defaultBranch": "dev",
+      "pushedAt": "2026-08-17T22:14:25Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Go",
+          "bytes": 3102913,
+          "percent": 92.68
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 236743,
+          "percent": 7.07
+        },
+        {
+          "name": "Shell",
+          "bytes": 5888,
+          "percent": 0.18
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 2309,
+          "percent": 0.07
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v2.10.0",
+        "name": "v2.10.0",
+        "publishedAt": "2026-08-17T22:14:25Z",
+        "url": "https://github.com/specstoryai/getspecstory/releases/tag/v2.10.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v2.10.0",
+      "releaseDate": "2026-08-17T22:14:25Z",
+      "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 75513,
+        "comments": 12534,
+        "blank": 9646,
+        "files": 306,
+        "measuredAt": "2026-08-23T22:37:31.576Z",
+        "verifiedAt": "2026-08-23T22:37:31.576Z",
+        "measuredRef": "v2.10.0",
+        "refType": "stable-release-tag",
+        "commitSha": "ec9c70fe5f7bb752d5e5080f0515f6f43d9dc9cb",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/specstoryai/getspecstory",
+          "fetchedAt": "2026-08-23T22:37:26.422Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/specstoryai/getspecstory/languages",
+          "fetchedAt": "2026-08-23T22:37:26.508Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/specstoryai/getspecstory/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:37:26.557Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/specstoryai/getspecstory/releases/latest",
+          "fetchedAt": "2026-08-23T22:37:26.583Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/specstoryai/getspecstory/tree/v2.10.0",
+          "fetchedAt": "2026-08-23T22:37:31.576Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -4712,32 +5971,99 @@
       "repo": "cli",
       "githubUrl": "https://github.com/entireio/cli",
       "apiUrl": "https://api.github.com/repos/entireio/cli",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:37:31.613Z",
+      "stars": 4999,
+      "forks": 392,
+      "openIssues": 203,
+      "contributors": 61,
+      "repositorySizeKb": 716730,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T16:43:18Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Go",
+          "bytes": 14810717,
+          "percent": 99.04
+        },
+        {
+          "name": "Shell",
+          "bytes": 111245,
+          "percent": 0.74
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 31898,
+          "percent": 0.21
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 676,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.10.2",
+        "name": "v0.10.2",
+        "publishedAt": "2026-08-19T20:18:45Z",
+        "url": "https://github.com/entireio/cli/releases/tag/v0.10.2",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.10.2",
+      "releaseDate": "2026-08-19T20:18:45Z",
+      "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 357829,
+        "comments": 60065,
+        "blank": 51358,
+        "files": 1313,
+        "measuredAt": "2026-08-23T22:37:31.546Z",
+        "verifiedAt": "2026-08-23T22:37:31.546Z",
+        "measuredRef": "v0.10.2",
+        "refType": "stable-release-tag",
+        "commitSha": "bc990baa5bd37a6cb9d1becb02fe0bd83afdb3de",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/entireio/cli",
+          "fetchedAt": "2026-08-23T22:37:26.428Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/entireio/cli/languages",
+          "fetchedAt": "2026-08-23T22:37:26.523Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/entireio/cli/releases/latest",
+          "fetchedAt": "2026-08-23T22:37:26.585Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/entireio/cli/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:37:26.616Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/entireio/cli/tree/v0.10.2",
+          "fetchedAt": "2026-08-23T22:37:31.546Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -4748,32 +6074,119 @@
       "repo": "tapes",
       "githubUrl": "https://github.com/papercomputeco/tapes",
       "apiUrl": "https://api.github.com/repos/papercomputeco/tapes",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:37:29.583Z",
+      "stars": 315,
+      "forks": 26,
+      "openIssues": 10,
+      "contributors": 11,
+      "repositorySizeKb": 45961,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T16:48:35Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Go",
+          "bytes": 3069987,
+          "percent": 98.37
+        },
+        {
+          "name": "Hurl",
+          "bytes": 16808,
+          "percent": 0.54
+        },
+        {
+          "name": "HTML",
+          "bytes": 10766,
+          "percent": 0.34
+        },
+        {
+          "name": "Makefile",
+          "bytes": 9193,
+          "percent": 0.29
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": 8774,
+          "percent": 0.28
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2603,
+          "percent": 0.08
+        },
+        {
+          "name": "Nix",
+          "bytes": 1437,
+          "percent": 0.05
+        },
+        {
+          "name": "Shell",
+          "bytes": 1152,
+          "percent": 0.04
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.37.0",
+        "name": "v0.37.0",
+        "publishedAt": "2026-08-23T16:48:36Z",
+        "url": "https://github.com/papercomputeco/tapes/releases/tag/v0.37.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.37.0",
+      "releaseDate": "2026-08-23T16:48:36Z",
+      "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 68523,
+        "comments": 15497,
+        "blank": 11114,
+        "files": 557,
+        "measuredAt": "2026-08-23T22:37:29.544Z",
+        "verifiedAt": "2026-08-23T22:37:29.544Z",
+        "measuredRef": "v0.37.0",
+        "refType": "stable-release-tag",
+        "commitSha": "f09b6168678aab9f6dbce15db38811dfa1f42b0d",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/papercomputeco/tapes",
+          "fetchedAt": "2026-08-23T22:37:26.425Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/papercomputeco/tapes/releases/latest",
+          "fetchedAt": "2026-08-23T22:37:26.577Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/papercomputeco/tapes/languages",
+          "fetchedAt": "2026-08-23T22:37:26.589Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/papercomputeco/tapes/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:37:26.605Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/papercomputeco/tapes/tree/v0.37.0",
+          "fetchedAt": "2026-08-23T22:37:29.544Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -4784,32 +6197,380 @@
       "repo": "agentsview",
       "githubUrl": "https://github.com/kenn-io/agentsview",
       "apiUrl": "https://api.github.com/repos/kenn-io/agentsview",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:37:34.242Z",
+      "stars": 5227,
+      "forks": 608,
+      "openIssues": 87,
+      "contributors": 130,
+      "repositorySizeKb": 30010,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T19:25:41Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Go",
+          "bytes": 26338144,
+          "percent": 87.3
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 2339546,
+          "percent": 7.75
+        },
+        {
+          "name": "Svelte",
+          "bytes": 1115677,
+          "percent": 3.7
+        },
+        {
+          "name": "Rust",
+          "bytes": 170435,
+          "percent": 0.56
+        },
+        {
+          "name": "Shell",
+          "bytes": 72702,
+          "percent": 0.24
+        },
+        {
+          "name": "Python",
+          "bytes": 40494,
+          "percent": 0.13
+        },
+        {
+          "name": "Makefile",
+          "bytes": 27878,
+          "percent": 0.09
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 17755,
+          "percent": 0.06
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 14663,
+          "percent": 0.05
+        },
+        {
+          "name": "CSS",
+          "bytes": 11392,
+          "percent": 0.04
+        },
+        {
+          "name": "HTML",
+          "bytes": 9931,
+          "percent": 0.03
+        },
+        {
+          "name": "Go Template",
+          "bytes": 4795,
+          "percent": 0.02
+        },
+        {
+          "name": "C",
+          "bytes": 4255,
+          "percent": 0.01
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2329,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.41.1",
+        "name": "v0.41.1",
+        "publishedAt": "2026-08-18T13:44:16Z",
+        "url": "https://github.com/kenn-io/agentsview/releases/tag/v0.41.1",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.41.1",
+      "releaseDate": "2026-08-18T13:44:16Z",
+      "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 764516,
+        "comments": 59097,
+        "blank": 76269,
+        "files": 1934,
+        "measuredAt": "2026-08-23T22:37:34.126Z",
+        "verifiedAt": "2026-08-23T22:37:34.126Z",
+        "measuredRef": "v0.41.1",
+        "refType": "stable-release-tag",
+        "commitSha": "a902515a2f8256ffb95716a2ca860c1887d35da5",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/kenn-io/agentsview",
+          "fetchedAt": "2026-08-23T22:37:29.737Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/kenn-io/agentsview/languages",
+          "fetchedAt": "2026-08-23T22:37:29.826Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/kenn-io/agentsview/releases/latest",
+          "fetchedAt": "2026-08-23T22:37:29.827Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/kenn-io/agentsview/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:37:29.883Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/kenn-io/agentsview/tree/v0.41.1",
+          "fetchedAt": "2026-08-23T22:37:34.126Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "claude-code-history-viewer",
+      "name": "Claude Code History Viewer",
+      "category": "agent-traces",
+      "owner": "jhlee0409",
+      "repo": "claude-code-history-viewer",
+      "githubUrl": "https://github.com/jhlee0409/claude-code-history-viewer",
+      "apiUrl": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer",
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:37:33.682Z",
+      "stars": 2089,
+      "forks": 207,
+      "openIssues": 17,
+      "contributors": 53,
+      "repositorySizeKb": 9279,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-19T10:31:23Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 3420311,
+          "percent": 55.38
+        },
+        {
+          "name": "Rust",
+          "bytes": 2641042,
+          "percent": 42.76
+        },
+        {
+          "name": "CSS",
+          "bytes": 55274,
+          "percent": 0.9
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 45451,
+          "percent": 0.74
+        },
+        {
+          "name": "Shell",
+          "bytes": 5501,
+          "percent": 0.09
+        },
+        {
+          "name": "Just",
+          "bytes": 4672,
+          "percent": 0.08
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2292,
+          "percent": 0.04
+        },
+        {
+          "name": "HTML",
+          "bytes": 1249,
+          "percent": 0.02
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.25.0",
+        "name": "v1.25.0",
+        "publishedAt": "2026-08-18T19:52:49Z",
+        "url": "https://github.com/jhlee0409/claude-code-history-viewer/releases/tag/v1.25.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v1.25.0",
+      "releaseDate": "2026-08-18T19:52:49Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 146187,
+        "comments": 14732,
+        "blank": 17716,
+        "files": 646,
+        "measuredAt": "2026-08-23T22:37:33.613Z",
+        "verifiedAt": "2026-08-23T22:37:33.613Z",
+        "measuredRef": "v1.25.0",
+        "refType": "stable-release-tag",
+        "commitSha": "8b3a64a32b20bb3df3a2426830f9e29b3958c41b",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer",
+          "fetchedAt": "2026-08-23T22:37:31.732Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer/languages",
+          "fetchedAt": "2026-08-23T22:37:31.817Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:37:31.895Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer/releases/latest",
+          "fetchedAt": "2026-08-23T22:37:31.920Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/jhlee0409/claude-code-history-viewer/tree/v1.25.0",
+          "fetchedAt": "2026-08-23T22:37:33.613Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "agent-sessions",
+      "name": "Agent Sessions",
+      "category": "agent-traces",
+      "owner": "jazzyalex",
+      "repo": "agent-sessions",
+      "githubUrl": "https://github.com/jazzyalex/agent-sessions",
+      "apiUrl": "https://api.github.com/repos/jazzyalex/agent-sessions",
+      "status": "current",
+      "refreshedAt": "2026-08-23T22:37:34.338Z",
+      "stars": 811,
+      "forks": 52,
+      "openIssues": 3,
+      "contributors": 8,
+      "repositorySizeKb": 248828,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T21:03:21Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Swift",
+          "bytes": 8302241,
+          "percent": 88.93
+        },
+        {
+          "name": "Python",
+          "bytes": 677055,
+          "percent": 7.25
+        },
+        {
+          "name": "Shell",
+          "bytes": 323651,
+          "percent": 3.47
+        },
+        {
+          "name": "HTML",
+          "bytes": 25964,
+          "percent": 0.28
+        },
+        {
+          "name": "Ruby",
+          "bytes": 6416,
+          "percent": 0.07
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v5.0.2",
+        "name": "Agent Sessions 5.0.2",
+        "publishedAt": "2026-08-22T21:22:28Z",
+        "url": "https://github.com/jazzyalex/agent-sessions/releases/tag/v5.0.2",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v5.0.2",
+      "releaseDate": "2026-08-22T21:22:28Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 164090,
+        "comments": 20925,
+        "blank": 22744,
+        "files": 742,
+        "measuredAt": "2026-08-23T22:37:34.282Z",
+        "verifiedAt": "2026-08-23T22:37:34.282Z",
+        "measuredRef": "v5.0.2",
+        "refType": "stable-release-tag",
+        "commitSha": "829d68d6d26e407ba7685f1f1a52276d7bc34981",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/jazzyalex/agent-sessions",
+          "fetchedAt": "2026-08-23T22:37:31.768Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/jazzyalex/agent-sessions/languages",
+          "fetchedAt": "2026-08-23T22:37:31.858Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/jazzyalex/agent-sessions/releases/latest",
+          "fetchedAt": "2026-08-23T22:37:31.920Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/jazzyalex/agent-sessions/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-23T22:37:31.947Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/jazzyalex/agent-sessions/tree/v5.0.2",
+          "fetchedAt": "2026-08-23T22:37:34.282Z"
+        }
+      ],
       "errors": []
     }
   ]

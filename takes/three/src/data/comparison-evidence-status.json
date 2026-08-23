@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-23T21:58:05.932Z",
+  "generatedAt": "2026-08-23T22:37:19.848Z",
   "sources": [
     {
       "id": "2fa78aa7f0249c97fb15",
@@ -661,6 +661,11 @@
         },
         {
           "productId": "claude-code-web",
+          "field": "cloud-environment-config",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-web",
           "field": "cloud-execution-owner",
           "checkedAt": "2026-08-23"
         },
@@ -691,6 +696,11 @@
         },
         {
           "productId": "claude-code-web",
+          "field": "cloud-network-policy",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-web",
           "field": "cloud-parallel-tasks",
           "checkedAt": "2026-08-23"
         },
@@ -712,6 +722,11 @@
         {
           "productId": "claude-code-web",
           "field": "cloud-sandbox",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-web",
+          "field": "cloud-triggered-automation",
           "checkedAt": "2026-08-23"
         },
         {
@@ -910,6 +925,11 @@
           "productId": "claude-code",
           "field": "profile.source",
           "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
@@ -1037,6 +1057,35 @@
       "contentLength": 624006,
       "contentHash": "4573c246a27239494033033956f856dc95460bd398beaa9c66eb568373de1301",
       "reviewedHash": "4573c246a27239494033033956f856dc95460bd398beaa9c66eb568373de1301",
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "26606ff148410b2687d3",
+      "url": "https://code.claude.com/docs/en/model-config",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "claude-code",
+          "field": "harness-multi-provider",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://code.claude.com/docs/en/model-config",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
       "etag": null,
       "lastModified": null,
       "error": null
@@ -1386,6 +1435,35 @@
       "error": null
     },
     {
+      "id": "4a409b8cad3f29f98f0a",
+      "url": "https://code.visualstudio.com/docs/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "visual-studio-code",
+          "field": "editor-specialization",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://code.visualstudio.com/docs/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "87e1b03a820c6019e9e4",
       "url": "https://code.visualstudio.com/docs/agent-customization/custom-instructions",
       "bases": [
@@ -1411,6 +1489,35 @@
       "contentHash": "0365196a15f61b1bf8dfe8cf005d9c865e7ed51d0962333cd868b4b2f3862790",
       "reviewedHash": "0365196a15f61b1bf8dfe8cf005d9c865e7ed51d0962333cd868b4b2f3862790",
       "etag": "W/\"2245b-PrgygKQKMrxwmQsosJQQnsyImgY\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "688015df4f6279d6bdf7",
+      "url": "https://code.visualstudio.com/docs/agent-customization/language-models",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "visual-studio-code",
+          "field": "editor-model-access",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://code.visualstudio.com/docs/agent-customization/language-models",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
@@ -1447,6 +1554,7 @@
       "id": "8e13c2a7047c6671d953",
       "url": "https://code.visualstudio.com/docs/agents/overview",
       "bases": [
+        "repository-derived",
         "source-inspected",
         "vendor-documented"
       ],
@@ -1475,6 +1583,11 @@
           "productId": "visual-studio-code",
           "field": "profile.source",
           "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "visual-studio-code",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
@@ -1490,6 +1603,35 @@
       "contentHash": "689bc2e51f39750fc7d3cd18f9d7eff36d081296513227c4f5c80f1314bfd83b",
       "reviewedHash": "689bc2e51f39750fc7d3cd18f9d7eff36d081296513227c4f5c80f1314bfd83b",
       "etag": "W/\"157de-BNhKQWIODeEvp6FN+d1kBsApwMc\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "75ea2a30c3dafae74fd9",
+      "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "visual-studio-code",
+          "field": "editor-ai-feature-boundary",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
@@ -1544,6 +1686,74 @@
       "contentHash": "b382b21c50c59117ffede4fdd2aa6fc73ed7a22164a8c40ba26a1da816955ada",
       "reviewedHash": "b382b21c50c59117ffede4fdd2aa6fc73ed7a22164a8c40ba26a1da816955ada",
       "etag": "W/\"1c568-w3/S+/9ig1BpQ9fCpyXG4ynFl+Q\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "9077633df00a920c1122",
+      "url": "https://code.visualstudio.com/docs/agents/run/approvals",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "visual-studio-code",
+          "field": "editor-agent-permissions",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "visual-studio-code",
+          "field": "editor-agent-sandbox",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://code.visualstudio.com/docs/agents/run/approvals",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "717aee0dc00520ac5ae8",
+      "url": "https://code.visualstudio.com/docs/agents/run/browser-tools",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "visual-studio-code",
+          "field": "editor-browser-tools",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "visual-studio-code",
+          "field": "editor-verification-loop",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://code.visualstudio.com/docs/agents/run/browser-tools",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
@@ -1734,6 +1944,35 @@
       "error": null
     },
     {
+      "id": "5677e2a4e49bda9043ec",
+      "url": "https://code.visualstudio.com/updates/archive",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "visual-studio-code",
+          "field": "editor-release-channel",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://code.visualstudio.com/updates/archive",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "d64da1fef2e7050daed4",
       "url": "https://coder.com/docs/ai-coder/agents",
       "bases": [
@@ -1845,6 +2084,35 @@
       "error": null
     },
     {
+      "id": "b28194f531afc39052f8",
+      "url": "https://cursor.com/changelog",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "cursor-ide",
+          "field": "editor-release-channel",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://cursor.com/changelog",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "395652a8bd2ce0adea6a",
       "url": "https://cursor.com/cli",
       "bases": [
@@ -1899,6 +2167,137 @@
       "error": null
     },
     {
+      "id": "a3997ca0242e5d97176f",
+      "url": "https://cursor.com/docs",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "cursor-ide",
+          "field": "editor-specialization",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "cursor-ide",
+          "field": "editor-verification-loop",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://cursor.com/docs",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "78fd8cffa0ff7914fb4b",
+      "url": "https://cursor.com/docs/agent/agents-window",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "cursor-ide",
+          "field": "editor-change-review",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "cursor-ide",
+          "field": "editor-worktree-isolation",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://cursor.com/docs/agent/agents-window",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "22d70d8b7794e682dcf1",
+      "url": "https://cursor.com/docs/agent/security/run-modes",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "cursor-ide",
+          "field": "editor-agent-permissions",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "cursor-ide",
+          "field": "editor-agent-sandbox",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://cursor.com/docs/agent/security/run-modes",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "bd5100afac4f82aec58f",
+      "url": "https://cursor.com/docs/agent/tools/browser",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "cursor-ide",
+          "field": "editor-browser-tools",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://cursor.com/docs/agent/tools/browser",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "fa42e42f5ea26e54f261",
       "url": "https://cursor.com/docs/cloud-agent",
       "bases": [
@@ -1943,6 +2342,11 @@
         {
           "productId": "cursor-cloud-agents",
           "field": "cloud-live-steering",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "cursor-cloud-agents",
+          "field": "cloud-network-policy",
           "checkedAt": "2026-08-23"
         },
         {
@@ -2037,6 +2441,93 @@
       "error": null
     },
     {
+      "id": "62d19c49d412fd5937f6",
+      "url": "https://cursor.com/docs/customize-cursor",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "cursor-ide",
+          "field": "editor-ai-feature-boundary",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://cursor.com/docs/customize-cursor",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "0e54800854424e8e2e4b",
+      "url": "https://cursor.com/docs/models-and-pricing",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "cursor-ide",
+          "field": "editor-model-access",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://cursor.com/docs/models-and-pricing",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "bb89d36bb0449f5cd8ae",
+      "url": "https://cursor.com/docs/rules",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "cursor-cloud-agents",
+          "field": "cloud-project-instructions",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://cursor.com/docs/rules",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "cf91a2161fadae57f587",
       "url": "https://deepseek.com/harness/en/",
       "bases": [
@@ -2073,6 +2564,11 @@
         {
           "productId": "deepseek-harness",
           "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "deepseek-harness",
+          "field": "profile.platform",
           "checkedAt": "2026-08-23"
         },
         {
@@ -2542,6 +3038,11 @@
         {
           "productId": "devin",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "devin",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -3875,6 +4376,11 @@
           "productId": "cursor-ide",
           "field": "profile.source",
           "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "cursor-ide",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
@@ -3957,6 +4463,64 @@
       "error": null
     },
     {
+      "id": "094452bb62c05989abd4",
+      "url": "https://docs.devin.ai/desktop/editor/browser-previews",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "windsurf",
+          "field": "editor-browser-tools",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.devin.ai/desktop/editor/browser-previews",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "dd328eb0a887322e7fd3",
+      "url": "https://docs.devin.ai/desktop/editor/models",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "windsurf",
+          "field": "editor-model-access",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.devin.ai/desktop/editor/models",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "2ba547ac45e44c5fdabb",
       "url": "https://docs.devin.ai/desktop/getting-started",
       "bases": [
@@ -3970,7 +4534,37 @@
         },
         {
           "productId": "windsurf",
+          "field": "editor-ai-feature-boundary",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "windsurf",
+          "field": "editor-change-review",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "windsurf",
           "field": "editor-project-tree",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "windsurf",
+          "field": "editor-release-channel",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "windsurf",
+          "field": "editor-remote-workspaces",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "windsurf",
+          "field": "editor-specialization",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "windsurf",
+          "field": "editor-verification-loop",
           "checkedAt": "2026-08-23"
         },
         {
@@ -3991,6 +4585,11 @@
         {
           "productId": "windsurf",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "windsurf",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -4695,6 +5294,11 @@
         {
           "productId": "github-copilot-coding-agent",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "github-copilot-coding-agent",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         },
         {
@@ -6543,6 +7147,7 @@
       "id": "d08f663f2dafcd42e507",
       "url": "https://geminicli.com/docs/get-started/installation/",
       "bases": [
+        "repository-derived",
         "source-inspected",
         "vendor-documented"
       ],
@@ -6565,6 +7170,11 @@
         {
           "productId": "gemini-cli",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-cli",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -6993,6 +7603,11 @@
         },
         {
           "productId": "vibetunnel",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "vibetunnel",
           "field": "remote-agent-aware",
           "checkedAt": "2026-08-23"
         },
@@ -7123,7 +7738,17 @@
         },
         {
           "productId": "agent-deck",
+          "field": "orchestrator-containers",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-deck",
           "field": "orchestrator-isolated-workspaces",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-deck",
+          "field": "orchestrator-live-steering",
           "checkedAt": "2026-08-23"
         },
         {
@@ -7158,12 +7783,22 @@
         },
         {
           "productId": "agent-deck",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-deck",
           "field": "profile.primaryObject",
           "checkedAt": "2026-08-23"
         },
         {
           "productId": "agent-deck",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-deck",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -7194,7 +7829,17 @@
       "usedBy": [
         {
           "productId": "vibe-kanban",
+          "field": "orchestrator-remote-execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "vibe-kanban",
           "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "vibe-kanban",
+          "field": "profile.platform",
           "checkedAt": "2026-08-23"
         },
         {
@@ -8237,6 +8882,11 @@
         },
         {
           "productId": "bb",
+          "field": "orchestrator-inline-review",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "bb",
           "field": "orchestrator-isolated-workspaces",
           "checkedAt": "2026-08-23"
         },
@@ -8263,6 +8913,11 @@
         {
           "productId": "bb",
           "field": "orchestrator-remote-execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "bb",
+          "field": "orchestrator-task-board",
           "checkedAt": "2026-08-23"
         },
         {
@@ -8626,12 +9281,22 @@
         },
         {
           "productId": "gemini-cli",
+          "field": "harness-git-workflow",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-cli",
           "field": "harness-headless",
           "checkedAt": "2026-08-23"
         },
         {
           "productId": "gemini-cli",
           "field": "harness-interactive-cli",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-cli",
+          "field": "harness-multimodal-input",
           "checkedAt": "2026-08-23"
         },
         {
@@ -8771,6 +9436,7 @@
       "id": "a3ba3852ba7a147847a3",
       "url": "https://github.com/gregce/tortie",
       "bases": [
+        "repository-derived",
         "source-inspected",
         "vendor-documented"
       ],
@@ -8793,6 +9459,11 @@
         {
           "productId": "tortie",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "tortie",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -8827,6 +9498,16 @@
         {
           "productId": "tortie",
           "field": "workbench-attention-signals",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "tortie",
+          "field": "workbench-browser",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "tortie",
+          "field": "workbench-change-review",
           "checkedAt": "2026-08-23"
         },
         {
@@ -9098,6 +9779,223 @@
       "error": null
     },
     {
+      "id": "9d2c39406bf34ef45805",
+      "url": "https://github.com/imbue-ai/sculptor/blob/main/docs/help/experimental/container_backend.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "sculptor",
+          "field": "orchestrator-remote-execution",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/imbue-ai/sculptor/main/docs/help/experimental/container_backend.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "a561e77b9c3486ff49aa",
+      "url": "https://github.com/jazzyalex/agent-sessions",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "agent-sessions",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-artifact-coverage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-capture-coverage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-ci-analytics",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-git-linkage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-multi-harness",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-redaction-privacy",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-replay-resume",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-search-timeline",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-self-hosting",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-storage-boundary",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-tool-call-coverage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "trace-transcript-coverage",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/jazzyalex/agent-sessions/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "2dbed305c9600201ceca",
+      "url": "https://github.com/jhlee0409/claude-code-history-viewer",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-artifact-coverage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-capture-coverage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-ci-analytics",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-export-api",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-git-linkage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-multi-harness",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-redaction-privacy",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-replay-resume",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-search-timeline",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-self-hosting",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-sharing",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-storage-boundary",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-tool-call-coverage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "trace-transcript-coverage",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "6df3a07a1585b18a922d",
       "url": "https://github.com/kdlbs/kandev/blob/main/docs/features.md",
       "bases": [
@@ -9313,6 +10211,7 @@
       "id": "23f7c2aa61547c8e5717",
       "url": "https://github.com/manaflow-ai/cmux",
       "bases": [
+        "repository-derived",
         "source-inspected",
         "vendor-documented"
       ],
@@ -9335,6 +10234,11 @@
         {
           "productId": "cmux",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "cmux",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -9756,10 +10660,16 @@
       "id": "c391578b5c19fdab2cd5",
       "url": "https://github.com/nimbalyst/nimbalyst",
       "bases": [
+        "repository-derived",
         "source-inspected",
         "vendor-documented"
       ],
       "usedBy": [
+        {
+          "productId": "nimbalyst",
+          "field": "orchestrator-live-steering",
+          "checkedAt": "2026-08-23"
+        },
         {
           "productId": "nimbalyst",
           "field": "profile.execution",
@@ -9778,6 +10688,11 @@
         {
           "productId": "nimbalyst",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "nimbalyst",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -10439,6 +11354,7 @@
       "id": "228e45b4ed9fa5b57c33",
       "url": "https://github.com/openwong2kim/wmux",
       "bases": [
+        "repository-derived",
         "source-inspected",
         "vendor-documented"
       ],
@@ -10461,6 +11377,11 @@
         {
           "productId": "wmux",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "wmux",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -10500,6 +11421,11 @@
         {
           "productId": "wmux",
           "field": "workbench-browser",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "wmux",
+          "field": "workbench-change-review",
           "checkedAt": "2026-08-23"
         },
         {
@@ -11133,6 +12059,11 @@
         },
         {
           "productId": "happy",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "happy",
           "field": "remote-agent-aware",
           "checkedAt": "2026-08-23"
         },
@@ -11433,6 +12364,11 @@
         },
         {
           "productId": "claude-squad",
+          "field": "orchestrator-live-steering",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
           "field": "orchestrator-multi-harness",
           "checkedAt": "2026-08-23"
         },
@@ -11454,6 +12390,11 @@
         {
           "productId": "claude-squad",
           "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
+          "field": "profile.platform",
           "checkedAt": "2026-08-23"
         },
         {
@@ -11526,12 +12467,22 @@
       "usedBy": [
         {
           "productId": "orca",
+          "field": "orchestrator-attention-signals",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "orca",
           "field": "orchestrator-inline-review",
           "checkedAt": "2026-08-23"
         },
         {
           "productId": "orca",
           "field": "orchestrator-isolated-workspaces",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "orca",
+          "field": "orchestrator-live-steering",
           "checkedAt": "2026-08-23"
         },
         {
@@ -11546,12 +12497,22 @@
         },
         {
           "productId": "orca",
+          "field": "orchestrator-pr-lifecycle",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "orca",
           "field": "orchestrator-remote-execution",
           "checkedAt": "2026-08-23"
         },
         {
           "productId": "orca",
           "field": "orchestrator-review-delivery",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "orca",
+          "field": "orchestrator-task-board",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -11570,6 +12531,107 @@
       "etag": null,
       "lastModified": null,
       "error": "HTTP 403"
+    },
+    {
+      "id": "c82d57140cd268ff57a0",
+      "url": "https://github.com/standardagents/dmux",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "dmux",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "workbench-arbitrary-cli",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "workbench-attention-signals",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "workbench-change-review",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "workbench-cross-project-attention",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "workbench-file-tree",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "workbench-named-sessions",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "workbench-pty-survives-ui",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "workbench-scm",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "workbench-session-recovery",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "workbench-splits",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "dmux",
+          "field": "workbench-worktrees",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/standardagents/dmux/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
     },
     {
       "id": "476695a4bb39f6258df6",
@@ -11597,12 +12659,27 @@
         },
         {
           "productId": "superset",
+          "field": "orchestrator-live-steering",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "superset",
           "field": "orchestrator-multi-harness",
           "checkedAt": "2026-08-23"
         },
         {
           "productId": "superset",
           "field": "orchestrator-parallel-workers",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "superset",
+          "field": "orchestrator-pr-lifecycle",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "superset",
+          "field": "orchestrator-programmable",
           "checkedAt": "2026-08-23"
         },
         {
@@ -11638,6 +12715,11 @@
         {
           "productId": "superset",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "superset",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -12241,6 +13323,35 @@
       "error": "HTTP 403"
     },
     {
+      "id": "1e33548a017327ebd826",
+      "url": "https://github.com/voideditor/binaries/releases",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "void",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://github.com/voideditor/binaries/releases",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "7df67a840ad62fa0502e",
       "url": "https://github.com/voideditor/void",
       "bases": [
@@ -12256,12 +13367,32 @@
         },
         {
           "productId": "void",
+          "field": "editor-ai-feature-boundary",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "void",
           "field": "editor-change-review",
           "checkedAt": "2026-08-23"
         },
         {
           "productId": "void",
+          "field": "editor-model-access",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "void",
           "field": "editor-project-tree",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "void",
+          "field": "editor-release-channel",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "void",
+          "field": "editor-specialization",
           "checkedAt": "2026-08-23"
         },
         {
@@ -12829,13 +13960,24 @@
       "id": "1716704de2f493ad6bf7",
       "url": "https://humanlayer.com/",
       "bases": [
+        "repository-derived",
         "source-inspected",
         "vendor-documented"
       ],
       "usedBy": [
         {
           "productId": "humanlayer",
+          "field": "orchestrator-attention-signals",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "humanlayer",
           "field": "orchestrator-isolated-workspaces",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "humanlayer",
+          "field": "orchestrator-live-steering",
           "checkedAt": "2026-08-23"
         },
         {
@@ -12846,6 +13988,11 @@
         {
           "productId": "humanlayer",
           "field": "orchestrator-parallel-workers",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "humanlayer",
+          "field": "orchestrator-programmable",
           "checkedAt": "2026-08-23"
         },
         {
@@ -12865,12 +14012,22 @@
         },
         {
           "productId": "humanlayer",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "humanlayer",
           "field": "profile.primaryObject",
           "checkedAt": "2026-08-23"
         },
         {
           "productId": "humanlayer",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "humanlayer",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -12887,6 +14044,98 @@
       "contentHash": "26636f3de53605f5cebb1722d6abc585e3a80ed7a439b2fd1a89ff476727d687",
       "reviewedHash": "26636f3de53605f5cebb1722d6abc585e3a80ed7a439b2fd1a89ff476727d687",
       "etag": "W/\"405de9e07995a43e6408ee860f5d7a8f\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "01b47f5630870af57f05",
+      "url": "https://jazzyalex.github.io/agent-sessions/",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "agent-sessions",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "agent-sessions",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://jazzyalex.github.io/agent-sessions/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "07a99cee1114a6ae0de3",
+      "url": "https://jhlee0409.github.io/claude-code-history-viewer/",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://jhlee0409.github.io/claude-code-history-viewer/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
@@ -13502,6 +14751,35 @@
       "error": null
     },
     {
+      "id": "4672f580ed2d7d0671a6",
+      "url": "https://kiro.dev/changelog/ide/page/2/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "kiro",
+          "field": "editor-release-channel",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://kiro.dev/changelog/ide/page/2/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "7f026f179f61e12f8147",
       "url": "https://kiro.dev/docs/",
       "bases": [
@@ -13633,6 +14911,35 @@
       "error": null
     },
     {
+      "id": "c968fa0c2fbefe72af8d",
+      "url": "https://kiro.dev/docs/cli/chat/permissions/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "kiro",
+          "field": "editor-agent-permissions",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://kiro.dev/docs/cli/chat/permissions/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "d917250a9c1191fc2d71",
       "url": "https://kiro.dev/docs/cli/installation/",
       "bases": [
@@ -13682,6 +14989,35 @@
       "error": null
     },
     {
+      "id": "ceffb6385d44269d3483",
+      "url": "https://kiro.dev/docs/cli/reference/built-in-tools/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "kiro",
+          "field": "editor-browser-tools",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://kiro.dev/docs/cli/reference/built-in-tools/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "fa95e769de19ef286fb6",
       "url": "https://kiro.dev/docs/how-kiro-works",
       "bases": [
@@ -13721,6 +15057,21 @@
         {
           "productId": "kiro-cli",
           "field": "harness-session-resume",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "kiro",
+          "field": "editor-ai-feature-boundary",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "kiro",
+          "field": "editor-model-access",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "kiro",
+          "field": "editor-verification-loop",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -13764,6 +15115,11 @@
         },
         {
           "productId": "kiro",
+          "field": "editor-specialization",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "kiro",
           "field": "profile.execution",
           "checkedAt": "2026-08-23"
         },
@@ -13775,6 +15131,16 @@
         {
           "productId": "kiro",
           "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "kiro",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "kiro",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -13863,6 +15229,35 @@
       "error": null
     },
     {
+      "id": "8c0b230c212d4aa03dbf",
+      "url": "https://learn.chatgpt.com/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "chatgpt-desktop",
+          "field": "orchestrator-review-delivery",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://learn.chatgpt.com/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "780d4cde47dabbdc6d11",
       "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
       "bases": [
@@ -13918,6 +15313,65 @@
       "reviewedHash": "cbaa5779bc1f58e0592c42f081d626c223bd9b721137d51193eb7c6318c1db4d",
       "etag": "W/\"fd8bc5f3bef45fa18bb8786b35c200c6\"",
       "lastModified": "Sun, 23 Aug 2026 06:17:09 GMT",
+      "error": null
+    },
+    {
+      "id": "9e2c32300d9efee6e310",
+      "url": "https://learn.chatgpt.com/docs/app",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "chatgpt-desktop",
+          "field": "orchestrator-multi-harness",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "chatgpt-desktop",
+          "field": "orchestrator-parallel-workers",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "chatgpt-desktop",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "chatgpt-desktop",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "chatgpt-desktop",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "chatgpt-desktop",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "chatgpt-desktop",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://learn.chatgpt.com/docs/app",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -14027,10 +15481,21 @@
       "id": "f4af708c206a08cf46e0",
       "url": "https://learn.chatgpt.com/docs/codex/cli",
       "bases": [
+        "repository-derived",
         "source-inspected",
         "vendor-documented"
       ],
       "usedBy": [
+        {
+          "productId": "codex-cli",
+          "field": "harness-git-workflow",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "codex-cli",
+          "field": "harness-multimodal-input",
+          "checkedAt": "2026-08-23"
+        },
         {
           "productId": "codex-cli",
           "field": "harness-permission-controls",
@@ -14055,6 +15520,11 @@
           "productId": "codex-cli",
           "field": "profile.source",
           "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "codex-cli",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
@@ -14071,6 +15541,64 @@
       "reviewedHash": "fd65577454f4000aaf002d87247c0fd1482ead274b119bcab8819ffe0afa01ff",
       "etag": "W/\"b9166dfdf282f6a3adfad3b9a32c6020\"",
       "lastModified": "Sat, 22 Aug 2026 12:31:35 GMT",
+      "error": null
+    },
+    {
+      "id": "528e278e88b55da91bca",
+      "url": "https://learn.chatgpt.com/docs/codex/noninteractive",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "codex-cli",
+          "field": "harness-structured-output",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://learn.chatgpt.com/docs/codex/noninteractive",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "95aa838ee2d7d5db6b0d",
+      "url": "https://learn.chatgpt.com/docs/config-advanced",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "codex-cli",
+          "field": "harness-multi-provider",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://learn.chatgpt.com/docs/config-advanced",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -14468,6 +15996,11 @@
         {
           "productId": "openai-codex-cloud",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "openai-codex-cloud",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -15032,6 +16565,11 @@
         },
         {
           "productId": "shunt",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "shunt",
           "field": "remote-agent-aware",
           "checkedAt": "2026-08-23"
         },
@@ -15121,12 +16659,57 @@
       "usedBy": [
         {
           "productId": "t3-code",
+          "field": "orchestrator-agent-handoff",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "t3-code",
+          "field": "orchestrator-inline-review",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "t3-code",
+          "field": "orchestrator-multi-harness",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "t3-code",
+          "field": "orchestrator-parallel-workers",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "t3-code",
+          "field": "orchestrator-pr-lifecycle",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "t3-code",
+          "field": "orchestrator-review-delivery",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "t3-code",
           "field": "profile.execution",
           "checkedAt": "2026-08-23"
         },
         {
           "productId": "t3-code",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "t3-code",
           "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "t3-code",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "t3-code",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -16011,6 +17594,11 @@
           "productId": "conductor",
           "field": "profile.source",
           "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "conductor",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
@@ -16026,6 +17614,45 @@
       "contentHash": "c73a51a1e818e667298fd6f7bbd18d04583ab1ad2a0e3bac0b44f83841c96296",
       "reviewedHash": "c73a51a1e818e667298fd6f7bbd18d04583ab1ad2a0e3bac0b44f83841c96296",
       "etag": "W/\"db0f8a751508df32cc7255c495eb6cf3\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "14331cae7d940571d2b5",
+      "url": "https://www.conductor.build/docs/api",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "conductor",
+          "field": "orchestrator-live-steering",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "conductor",
+          "field": "orchestrator-programmable",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "conductor",
+          "field": "orchestrator-remote-execution",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://www.conductor.build/docs/api",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
@@ -16089,6 +17716,35 @@
       "contentHash": "d221ab932fc6b676574bed41dfe1eb395d2705ac6c8579798dc96e0f53831b09",
       "reviewedHash": "d221ab932fc6b676574bed41dfe1eb395d2705ac6c8579798dc96e0f53831b09",
       "etag": "W/\"88f40f2dbe6db33d67fda556249db990\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "8fe6ed2dd8deea1ec8e9",
+      "url": "https://www.conductor.build/docs/reference/harnesses",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "conductor",
+          "field": "orchestrator-multi-harness",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://www.conductor.build/docs/reference/harnesses",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
@@ -16302,6 +17958,8 @@
       "id": "789c6188b3ef2503bf1e",
       "url": "https://www.jetbrains.com/help/idea/intellij-idea-single-distribution.html",
       "bases": [
+        "repository-derived",
+        "source-inspected",
         "vendor-documented"
       ],
       "usedBy": [
@@ -16958,6 +18616,35 @@
       "error": null
     },
     {
+      "id": "8d734bde4f85b6bd7026",
+      "url": "https://zed.dev/docs/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "zed",
+          "field": "editor-specialization",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://zed.dev/docs/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "3b1f98c77efbae86b591",
       "url": "https://zed.dev/docs/ai/agent-panel",
       "bases": [
@@ -16982,6 +18669,64 @@
       "contentLength": 58807,
       "contentHash": "0d1331c41440340bfcf80c698f89c0fdd16e87edcec1c266c2d7d2ccfa5c9f20",
       "reviewedHash": "0d1331c41440340bfcf80c698f89c0fdd16e87edcec1c266c2d7d2ccfa5c9f20",
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "70f052944f2a49da2ddd",
+      "url": "https://zed.dev/docs/ai/agent-profiles",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "zed",
+          "field": "editor-agent-permissions",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://zed.dev/docs/ai/agent-profiles",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "4d143b195e169e3acac3",
+      "url": "https://zed.dev/docs/ai/agents",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "zed",
+          "field": "editor-ai-feature-boundary",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://zed.dev/docs/ai/agents",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
       "etag": null,
       "lastModified": null,
       "error": null
@@ -17019,6 +18764,7 @@
       "id": "e6a0809b7bdacf3de3b3",
       "url": "https://zed.dev/docs/ai/overview",
       "bases": [
+        "repository-derived",
         "source-inspected",
         "vendor-documented"
       ],
@@ -17030,17 +18776,17 @@
         },
         {
           "productId": "zed",
-          "field": "profile.platform",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "zed",
           "field": "profile.primaryObject",
           "checkedAt": "2026-08-23"
         },
         {
           "productId": "zed",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "zed",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -17100,6 +18846,64 @@
       "error": null
     },
     {
+      "id": "f0efaca675014959d2f5",
+      "url": "https://zed.dev/docs/ai/sandboxing",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "zed",
+          "field": "editor-agent-sandbox",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://zed.dev/docs/ai/sandboxing",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "194012eee317ca53749c",
+      "url": "https://zed.dev/docs/ai/tools",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "zed",
+          "field": "editor-verification-loop",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://zed.dev/docs/ai/tools",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "acb7691bf1f7f70f70a2",
       "url": "https://zed.dev/docs/ai/zed-agent",
       "bases": [
@@ -17119,6 +18923,11 @@
         {
           "productId": "zed",
           "field": "editor-change-review",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "zed",
+          "field": "editor-model-access",
           "checkedAt": "2026-08-23"
         },
         {
@@ -17144,6 +18953,40 @@
       "contentLength": 43379,
       "contentHash": "7905024ad08b9f79c2f8e07d468744ddc0b9e6cba3540667e91e89b21fef81fa",
       "reviewedHash": "7905024ad08b9f79c2f8e07d468744ddc0b9e6cba3540667e91e89b21fef81fa",
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "6a5330f8cfb3623c0dc9",
+      "url": "https://zed.dev/docs/installation",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "zed",
+          "field": "editor-release-channel",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "zed",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://zed.dev/docs/installation",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
       "etag": null,
       "lastModified": null,
       "error": null

@@ -604,6 +604,11 @@ a.product-lockup:hover {
   border-radius: var(--r-md);
 }
 
+th[data-product-id="devin"] .product-logo-frame,
+th[data-product-id="windsurf"] .product-logo-frame {
+  background: var(--text-primary);
+}
+
 .product-logo {
   width: 26px;
   height: 26px;
@@ -660,6 +665,7 @@ a.product-lockup:hover {
   height: 18px;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
@@ -669,6 +675,17 @@ a.product-lockup:hover {
   width: 13px;
   height: 13px;
   object-fit: contain;
+}
+
+.platform-mark[data-platform="linux"] img {
+  width: 28px;
+  height: 14px;
+  max-width: none;
+}
+
+.platform-mark[data-platform="web"] img {
+  width: 14px;
+  height: 14px;
 }
 
 .platform-unknown {

@@ -79,6 +79,20 @@ check(
   metricIds.every((id) => manifestIdSet.has(id)),
   "Generated metrics may not contain IDs absent from the manifest.",
 );
+check(
+  manifestIds.every((id) => metricIds.includes(id)),
+  "Every metrics manifest entry must have a generated record.",
+);
+
+for (const project of manifest.projects) {
+  check(typeof project.loc?.enabled === "boolean", `${project.id} must declare whether LOC is enabled.`);
+  if (project.loc?.enabled === false) {
+    check(
+      typeof project.loc.reason === "string" && project.loc.reason.trim().length > 0,
+      `${project.id} must explain why LOC measurement is disabled.`,
+    );
+  }
+}
 
 for (const category of comparisonCategories) {
   const products = comparisonProducts.filter((product) => product.categoryId === category.id);
@@ -202,14 +216,63 @@ if (auditFreshness) {
     dateAgeDays(evidenceStatus.generatedAt) <= MAX_METRICS_AGE_DAYS,
     `Evidence monitoring data is older than ${MAX_METRICS_AGE_DAYS} days; run refresh:evidence.`,
   );
+
+  for (const record of metrics.projects) {
+    const project = manifestById.get(record.id);
+    if (!project) continue;
+    const owner = `Open-source metrics for ${record.id}`;
+    const sourceTypes = new Set((record.sources || []).map((item) => item.type));
+    const gaps = [];
+    const requireField = (condition, label) => {
+      if (!condition) gaps.push(label);
+    };
+
+    requireField(record.status === "current", `status=${record.status || "missing"}`);
+    requireField(Array.isArray(record.errors) && record.errors.length === 0, "refresh errors");
+    requireField(dateAgeDays(record.refreshedAt) <= MAX_METRICS_AGE_DAYS, "fresh per-project timestamp");
+    requireField(Number.isInteger(record.stars) && record.stars >= 0, "stars");
+    requireField(Number.isInteger(record.forks) && record.forks >= 0, "forks");
+    requireField(Number.isInteger(record.openIssues) && record.openIssues >= 0, "open issues");
+    requireField(Number.isInteger(record.contributors) && record.contributors >= 0, "contributors");
+    requireField(Number.isInteger(record.repositorySizeKb) && record.repositorySizeKb >= 0, "repository size");
+    requireField(typeof record.defaultBranch === "string" && record.defaultBranch.length > 0, "default branch");
+    requireField(Number.isFinite(Date.parse(record.pushedAt)), "last push");
+    requireField(typeof record.archived === "boolean", "archive status");
+    requireField(Object.hasOwn(record, "license"), "license resolution");
+    requireField(Array.isArray(record.languages), "languages");
+    requireField(sourceTypes.has("repository"), "repository provenance");
+    requireField(sourceTypes.has("languages"), "language provenance");
+    requireField(sourceTypes.has("contributors"), "contributor provenance");
+    requireField(sourceTypes.has("latest-release") || sourceTypes.has("latest-tag") || sourceTypes.has("release-policy"), "release/tag policy provenance");
+    for (const source of record.sources || []) {
+      requireField(/^https:\/\//.test(source.url), `${source.type} HTTPS provenance`);
+      const maximumAge = source.type === "release-policy" ? MAX_EVIDENCE_AGE_DAYS : MAX_METRICS_AGE_DAYS;
+      requireField(dateAgeDays(source.fetchedAt) <= maximumAge, `fresh ${source.type} provenance`);
+    }
+
+    if (project.loc.enabled) {
+      requireField(record.loc?.status === "measured", "version-pinned LOC status");
+      requireField(Number.isInteger(record.loc?.code) && record.loc.code >= 0, "LOC count");
+      requireField(typeof record.loc?.measuredRef === "string" && record.loc.measuredRef.length > 0, "LOC ref");
+      requireField(typeof record.loc?.commitSha === "string" && record.loc.commitSha.length >= 7, "LOC commit");
+      requireField(record.loc?.methodology === "source-code-v2", "source-only LOC methodology");
+      requireField(typeof record.loc?.excludedExtensions === "string" && record.loc.excludedExtensions.includes("md") && record.loc.excludedExtensions.includes("json"), "LOC document/data exclusions");
+      requireField(dateAgeDays(record.loc?.verifiedAt || record.loc?.measuredAt) <= MAX_METRICS_AGE_DAYS, "fresh LOC verification");
+    } else {
+      requireField(record.loc?.status === "disabled", "recorded LOC opt-out");
+    }
+    check(gaps.length === 0, `${owner} are incomplete: ${[...new Set(gaps)].join(", ")}.`);
+  }
 }
 
+const platformAssetSet = new Set(Object.values(assets.platforms));
 await Promise.all(
   [...Object.values(assets.products), ...Object.values(assets.platforms)].map(async (asset) => {
     check(asset.sourceUrl.startsWith("https://"), `${asset.src} needs an HTTPS provenance URL.`);
     check(
-      asset.sourceType.startsWith("official-"),
-      `${asset.src} must be sourced from a first-party vendor, project, or standards body.`,
+      asset.sourceType.startsWith("official-") ||
+        (platformAssetSet.has(asset) && asset.sourceType === "original-interface-glyph"),
+      `${asset.src} must be sourced from a first party or be an original universal platform glyph.`,
     );
     check(/^\d{4}-\d{2}-\d{2}$/.test(asset.checkedAt), `${asset.src} needs a YYYY-MM-DD checkedAt date.`);
     if (auditFreshness) {

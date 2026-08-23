@@ -34,21 +34,30 @@ interface MetricRecord {
   status: string;
   refreshedAt: string | null;
   stars: number | null;
+  forks: number | null;
+  openIssues: number | null;
   contributors: number | null;
   repositorySizeKb: number | null;
   pushedAt: string | null;
+  archived: boolean | null;
+  license: { key: string | null; name: string | null; spdxId: string | null; url: string | null } | null;
   version: string | null;
   releaseDate: string | null;
   githubUrl: string;
   latestRelease?: { tagName: string | null; publishedAt: string | null } | null;
+  releasePolicy?: { mode: string; reason: string } | null;
   sources?: Array<{ type: string; url: string; fetchedAt: string }>;
   languages: Array<{ name: string; percent: number }>;
   loc: {
     status: string;
     code: number | null;
     measuredAt: string | null;
+    verifiedAt?: string | null;
     measuredRef?: string | null;
     refType?: string | null;
+    methodology?: string | null;
+    excludedExtensions?: string | null;
+    reason?: string | null;
   };
 }
 
@@ -57,7 +66,13 @@ interface MetricRow extends ComparisonRow {
     | "version"
     | "releaseDate"
     | "stars"
+    | "forks"
+    | "openIssues"
     | "contributors"
+    | "repositorySize"
+    | "pushedAt"
+    | "archived"
+    | "license"
     | "loc"
     | "language"
     | "refreshedAt";
@@ -109,7 +124,10 @@ const metricRows: MetricRow[] = hasMetrics
   ? [
       { id: "metric-version", label: "Latest verified stable release", group: "Open-source project", metricKey: "version" },
       { id: "metric-release-date", label: "Release date", group: "Open-source project", metricKey: "releaseDate" },
+      { id: "metric-license", label: "Repository license", group: "Open-source project", metricKey: "license" },
       { id: "metric-stars", label: "GitHub stars", group: "Open-source project", metricKey: "stars" },
+      { id: "metric-forks", label: "GitHub forks", group: "Open-source project", metricKey: "forks" },
+      { id: "metric-open-issues", label: "Open GitHub issues", group: "Open-source project", metricKey: "openIssues" },
       { id: "metric-contributors", label: "GitHub contributor entries", group: "Open-source project", metricKey: "contributors" },
       {
         id: "metric-loc",
@@ -119,6 +137,9 @@ const metricRows: MetricRow[] = hasMetrics
         metricKey: "loc",
       },
       { id: "metric-language", label: "Primary language", group: "Open-source project", metricKey: "language" },
+      { id: "metric-repository-size", label: "GitHub repository size", group: "Open-source project", metricKey: "repositorySize" },
+      { id: "metric-last-push", label: "Repository last push", group: "Open-source project", metricKey: "pushedAt" },
+      { id: "metric-archive-status", label: "Repository status", group: "Open-source project", metricKey: "archived" },
       { id: "metric-refreshed", label: "Repository data refreshed", group: "Open-source project", metricKey: "refreshedAt" },
     ]
   : [];
@@ -141,6 +162,12 @@ const formatNumber = (value: number): string =>
   new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 }).format(value);
 
 const formatDate = (value: string | null): string => value?.slice(0, 10) ?? "Unknown";
+
+const formatKilobytes = (value: number): string => {
+  if (value >= 1_048_576) return `${(value / 1_048_576).toFixed(1)} GB`;
+  if (value >= 1_024) return `${(value / 1_024).toFixed(1)} MB`;
+  return `${value.toLocaleString("en-US")} KB`;
+};
 
 const profilePlatforms = (product: ComparisonProduct): string =>
   product.profile.platform.state === "known" ? product.profile.platform.value.join("|") : "";
@@ -198,20 +225,41 @@ const metricClaim = (product: ComparisonProduct, row: MetricRow): ComparisonClai
     evidence: metricEvidence(record, `${product.name} repository metrics`, sourceType),
   });
 
+  if (!record.refreshedAt) {
+    return unknown("This repository is registered but has not completed its first API refresh.");
+  }
+
   if (row.metricKey === "version") {
     return record.latestRelease?.tagName
       ? fact(record.latestRelease.tagName, undefined, "latest-release")
-      : unknown("No stable GitHub release was verified; repository tags are not treated as stable releases.", "latest-tag");
+      : fact("None published", record.releasePolicy?.reason || "The collector verified that no stable GitHub release is published; repository tags are not promoted to releases.", record.releasePolicy ? "release-policy" : "latest-tag");
   }
   if (row.metricKey === "releaseDate") {
     return record.latestRelease?.publishedAt
       ? fact(formatDate(record.latestRelease.publishedAt), undefined, "latest-release")
-      : unknown("No verified stable GitHub release publication date is available.", "latest-tag");
+      : fact("Not applicable", record.releasePolicy?.reason || "No stable GitHub release is published, so there is no release publication date.", record.releasePolicy ? "release-policy" : "latest-tag");
+  }
+  if (row.metricKey === "license") {
+    return record.license === undefined
+      ? unknown("The latest repository refresh predates license collection.")
+      : record.license
+      ? fact(record.license.spdxId || record.license.name || "Detected", record.license.name || undefined)
+      : fact("None detected", "GitHub's repository API did not identify a repository license.");
   }
   if (row.metricKey === "stars") {
     return record.stars === null
       ? unknown("The latest repository refresh did not return a star count.")
       : fact(formatNumber(record.stars), `${record.stars.toLocaleString("en-US")} stars exactly.`, "repository");
+  }
+  if (row.metricKey === "forks") {
+    return record.forks == null
+      ? unknown("The latest repository refresh did not return a fork count.")
+      : fact(formatNumber(record.forks), `${record.forks.toLocaleString("en-US")} forks exactly.`);
+  }
+  if (row.metricKey === "openIssues") {
+    return record.openIssues == null
+      ? unknown("The latest repository refresh did not return an open-issue count.")
+      : fact(formatNumber(record.openIssues), `${record.openIssues.toLocaleString("en-US")} open issues and pull requests exactly.`);
   }
   if (row.metricKey === "contributors") {
     return record.contributors === null
@@ -223,18 +271,35 @@ const metricClaim = (product: ComparisonProduct, row: MetricRow): ComparisonClai
         );
   }
   if (row.metricKey === "loc") {
-    return record.loc?.code === null || record.loc?.code === undefined
-      ? unknown("LOC has not been measured for this repository.")
+    return record.loc?.status === "disabled"
+      ? fact("Not measured", record.loc.reason || "LOC measurement is intentionally disabled for this repository.")
+      : record.loc?.code === null || record.loc?.code === undefined
+        ? unknown("LOC has not completed its first measurement for this repository.")
       : fact(
           formatNumber(record.loc.code),
-          `${record.loc.code.toLocaleString("en-US")} source lines at ${record.loc.measuredRef ?? "the recorded repository ref"}.`,
-          "loc-checkout",
+          `${record.loc.code.toLocaleString("en-US")} source-code lines at ${record.loc.measuredRef ?? "the recorded repository ref"}; documentation and structured-data files such as Markdown and JSON are excluded.`,
+          "loc-measurement",
         );
   }
   if (row.metricKey === "language") {
     return record.languages?.[0]
       ? fact(`${record.languages[0].name} ${record.languages[0].percent}%`, undefined, "languages")
-      : unknown("GitHub did not return a language breakdown.");
+      : fact("None detected", "GitHub returned an empty language breakdown.", "languages");
+  }
+  if (row.metricKey === "repositorySize") {
+    return record.repositorySizeKb == null
+      ? unknown("The latest repository refresh did not return GitHub's repository-size estimate.")
+      : fact(formatKilobytes(record.repositorySizeKb), `${record.repositorySizeKb.toLocaleString("en-US")} KB exactly.`);
+  }
+  if (row.metricKey === "pushedAt") {
+    return record.pushedAt
+      ? fact(formatDate(record.pushedAt))
+      : unknown("The latest repository refresh did not return a last-push timestamp.");
+  }
+  if (row.metricKey === "archived") {
+    return record.archived == null
+      ? unknown("The latest repository refresh did not return archive status.")
+      : fact(record.archived ? "Archived" : "Active repository");
   }
   return record.refreshedAt
     ? fact(formatDate(record.refreshedAt), record.status === "current" ? undefined : `Collector status: ${record.status}.`)
@@ -498,7 +563,7 @@ const basisLabel = (source: EvidenceSource): string => {
                                 ? supportedPlatforms.map((id) => {
                                     const platform = platformAssets[id];
                                     return platform ? (
-                                      <span class="platform-mark" title={platform.name}>
+                                      <span class="platform-mark" data-platform={id} title={platform.name}>
                                         <img src={platform.src} alt="" width="14" height="14" loading="lazy" />
                                       </span>
                                     ) : null;

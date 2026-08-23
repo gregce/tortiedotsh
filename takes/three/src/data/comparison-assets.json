@@ -20,9 +20,9 @@
     "windsurf": {
       "name": "Devin Desktop",
       "alt": "Devin Desktop logo",
-      "src": "/compare/logos/windsurf.jpg",
-      "sourceUrl": "https://github.com/cognition-ai",
-      "sourceType": "official-organization-avatar",
+      "src": "/compare/logos/windsurf.svg",
+      "sourceUrl": "https://docs.devin.ai/",
+      "sourceType": "official-product-asset",
       "checkedAt": "2026-08-23"
     },
     "zed": {
@@ -244,9 +244,9 @@
     "pi-coding-agent": {
       "name": "Pi coding agent",
       "alt": "Pi coding agent logo",
-      "src": "/compare/logos/pi-coding-agent.jpg",
-      "sourceUrl": "https://github.com/earendil-works",
-      "sourceType": "official-organization-avatar",
+      "src": "/compare/logos/pi-coding-agent.svg",
+      "sourceUrl": "https://pi.dev/press-kit",
+      "sourceType": "official-product-asset",
       "checkedAt": "2026-08-23"
     },
     "opencode": {
@@ -340,9 +340,9 @@
     "devin": {
       "name": "Devin",
       "alt": "Devin logo",
-      "src": "/compare/logos/devin.jpg",
-      "sourceUrl": "https://github.com/cognition-ai",
-      "sourceType": "official-organization-avatar",
+      "src": "/compare/logos/devin.svg",
+      "sourceUrl": "https://docs.devin.ai/",
+      "sourceType": "official-product-asset",
       "checkedAt": "2026-08-23"
     },
     "happy": {
@@ -453,8 +453,8 @@
       "name": "Jules",
       "alt": "Jules logo",
       "src": "/compare/logos/jules.png",
-      "sourceUrl": "https://github.com/google",
-      "sourceType": "official-organization-avatar",
+      "sourceUrl": "https://jules.google.com/",
+      "sourceType": "official-product-icon",
       "checkedAt": "2026-08-23"
     },
     "claude-code-web": {
@@ -880,6 +880,38 @@
       "sourceUrl": "https://github.com/kenn-io/agentsview",
       "sourceType": "official-project-owner-avatar",
       "checkedAt": "2026-08-23"
+    },
+    "chatgpt-desktop": {
+      "name": "ChatGPT desktop",
+      "alt": "ChatGPT desktop logo",
+      "src": "/compare/logos/chatgpt-desktop.png",
+      "sourceUrl": "https://github.com/openai",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "claude-code-history-viewer": {
+      "name": "Claude Code History Viewer",
+      "alt": "Claude Code History Viewer logo",
+      "src": "/compare/logos/claude-code-history-viewer.png",
+      "sourceUrl": "https://github.com/jhlee0409/claude-code-history-viewer",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "agent-sessions": {
+      "name": "Agent Sessions",
+      "alt": "Agent Sessions logo",
+      "src": "/compare/logos/agent-sessions.png",
+      "sourceUrl": "https://github.com/jazzyalex/agent-sessions",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "dmux": {
+      "name": "dmux",
+      "alt": "dmux logo",
+      "src": "/compare/logos/dmux.png",
+      "sourceUrl": "https://github.com/standardagents/dmux",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-23"
     }
   },
   "platforms": {
@@ -907,14 +939,6 @@
       "sourceType": "official-foundation-asset",
       "checkedAt": "2026-08-23"
     },
-    "web": {
-      "name": "Web",
-      "alt": "Web logo",
-      "src": "/compare/platforms/web.png",
-      "sourceUrl": "https://www.w3.org/",
-      "sourceType": "official-standards-body-asset",
-      "checkedAt": "2026-08-23"
-    },
     "ios": {
       "name": "iOS",
       "alt": "iOS logo",
@@ -929,6 +953,14 @@
       "src": "/compare/platforms/android.svg",
       "sourceUrl": "https://developer.android.com/distribute/marketing-tools/brand-guidelines",
       "sourceType": "official-vendor-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "web": {
+      "name": "Web",
+      "alt": "Web globe",
+      "src": "/compare/platforms/web.svg",
+      "sourceUrl": "https://www.w3.org/standards/",
+      "sourceType": "original-interface-glyph",
       "checkedAt": "2026-08-23"
     }
   }
