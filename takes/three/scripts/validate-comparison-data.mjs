@@ -28,8 +28,12 @@ const metrics = JSON.parse(
 const assets = JSON.parse(
   await readFile(resolve(takeRoot, "src/data/comparison-assets.json"), "utf8"),
 );
+const evidenceStatus = JSON.parse(
+  await readFile(resolve(takeRoot, "src/data/comparison-evidence-status.json"), "utf8"),
+);
 
 const failures = [];
+const catalogEvidenceUrls = new Set();
 const check = (condition, message) => {
   if (!condition) failures.push(message);
 };
@@ -41,6 +45,7 @@ const dateAgeDays = (value) => {
 
 const checkEvidence = (evidence, owner) => {
   for (const item of evidence) {
+    catalogEvidenceUrls.add(item.url);
     check(/^https:\/\//.test(item.url), `${owner} evidence needs an HTTPS source URL.`);
     check(/^\d{4}-\d{2}-\d{2}$/.test(item.checkedAt), `${owner} evidence needs a YYYY-MM-DD checkedAt date.`);
     if (auditFreshness) {
@@ -64,8 +69,8 @@ const publicProductIds = comparisonProducts
   .filter((product) => !evidenceBacklog.has(product.id))
   .map((product) => product.id);
 
-check(comparisonCategories.length === 7, "The catalog must contain exactly seven launch categories.");
-check(comparisonProducts.length === 50, "The research catalog must contain exactly 50 products.");
+check(comparisonCategories.length === 8, "The catalog must contain exactly eight comparison categories.");
+check(comparisonProducts.length >= 50, "The research catalog may not shrink below its 50-product launch baseline.");
 check(unique(categoryIds), "Category IDs must be unique.");
 check(unique(productIds), "Product IDs must be unique.");
 check(unique(manifestIds), "Metrics manifest IDs must be unique.");
@@ -143,6 +148,24 @@ for (const product of comparisonProducts) {
   }
 }
 
+const evidenceStatusUrls = evidenceStatus.sources.map((source) => source.url);
+check(evidenceStatus.schemaVersion === 1, "Evidence status must use schemaVersion 1.");
+check(unique(evidenceStatusUrls), "Evidence status URLs must be unique.");
+check(unique(evidenceStatus.sources.map((source) => source.id)), "Evidence status IDs must be unique.");
+check(
+  evidenceStatusUrls.every((url) => catalogEvidenceUrls.has(url)) &&
+    [...catalogEvidenceUrls].every((url) => evidenceStatusUrls.includes(url)),
+  "Evidence status must exactly cover every catalog evidence URL.",
+);
+for (const source of evidenceStatus.sources) {
+  check(/^https:\/\//.test(source.url), `${source.id} evidence monitor URL must use HTTPS.`);
+  check(
+    ["awaiting-refresh", "current", "changed", "unreachable"].includes(source.status),
+    `${source.id} has an invalid evidence monitor status.`,
+  );
+  check(Array.isArray(source.usedBy) && source.usedBy.length > 0, `${source.id} must name its catalog consumers.`);
+}
+
 for (const record of metrics.projects) {
   const project = manifestById.get(record.id);
   if (!project) continue;
@@ -174,6 +197,10 @@ if (auditFreshness) {
   check(
     dateAgeDays(metrics.generatedAt) <= MAX_METRICS_AGE_DAYS,
     `Open-source metrics are older than ${MAX_METRICS_AGE_DAYS} days; run refresh:metrics.`,
+  );
+  check(
+    dateAgeDays(evidenceStatus.generatedAt) <= MAX_METRICS_AGE_DAYS,
+    `Evidence monitoring data is older than ${MAX_METRICS_AGE_DAYS} days; run refresh:evidence.`,
   );
 }
 

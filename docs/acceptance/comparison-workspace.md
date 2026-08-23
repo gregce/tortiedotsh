@@ -10,10 +10,10 @@ Working directory: `/Users/gdc/tortiedotsh/takes/three`
 npm run verify
 ```
 
-Confirm that the command prints both of these signals:
+Confirm that the command prints both of these signals (the exact product and repository counts may grow as the catalog expands):
 
-- `Comparison data is valid: 50 products, 7 categories, 32 metrics repositories.`
-- `9 page(s) built` followed by `Complete!`
+- `Comparison data is valid:` followed by `8 categories`
+- the Astro build completes successfully and includes the eight category routes plus `/compare/`
 
 ## 2. Open the comparison
 
@@ -23,11 +23,11 @@ From the same directory, run:
 npm run dev
 ```
 
-Open the local URL printed by Astro, then visit `/compare/`. Confirm that it opens the Editors matrix and that the site header contains “Compare tools”.
+Open the local URL printed by Astro, then visit `/compare/`. Confirm that it opens the Code IDEs matrix and that the site header contains “Compare tools”.
 
 ## 3. Exercise category navigation
 
-Open each category link: Editors, Agent IDEs, Orchestrators, Harnesses, Extensions, Cloud agents, and Remote.
+Open each category link in order: Code IDEs, Extensions, Agent IDEs, Agent Orchestrators, Harnesses, Agent Traces, Cloud agents, and Remote.
 
 Confirm that:
 
@@ -36,9 +36,11 @@ Confirm that:
 - the matrix title, products, and category-specific criteria change;
 - each product header shows its first-party vendor identity and compact documented-platform icons; an outlined `?` appears instead of guessed icons when platform support is not yet verified.
 
+On Agent Traces, confirm that SpecStory is the first product, followed by Entire, Tapes, Traces, and AgentsView. Confirm that the criteria distinguish capture coverage, storage boundary, Git linkage, reconstruction, transcript/tool/artifact coverage, export, privacy, collaboration, analytics, and self-hosting; evidence gaps must render as `Unknown` rather than an inferred negative.
+
 ## 4. Exercise the matrix
 
-On Orchestrators, confirm that the matrix begins in the first viewport and the controls sit in a narrow rail to its left. Scroll down and sideways inside the matrix. Confirm that the product headers remain pinned at the top and the Criterion column remains pinned at the left.
+On Agent Orchestrators, confirm that the matrix begins in the first viewport and uses the full available width. Open View controls and confirm the utility panel appears without permanently narrowing the matrix; close it with Escape and confirm focus returns to the disclosure. Scroll down and sideways inside the matrix. Confirm that the product headers remain pinned at the top and the Criterion column remains pinned at the left.
 
 Then:
 
@@ -66,7 +68,7 @@ Confirm these distinctions remain visible:
 
 ## 6. Check narrow screens and no-JavaScript behavior
 
-At 320px wide, confirm that View controls collapses behind one button and that one criterion column plus at least one product column remain usable, with sideways scrolling inside the matrix rather than across the whole page.
+At 320px wide, confirm that View controls expands inline beneath its button and that one criterion column plus at least one product column remain usable, with sideways scrolling inside the matrix rather than across the whole page.
 
 Disable JavaScript and reload. Confirm that the full native table remains readable and the page explains that filters and saved compare views require JavaScript.
 

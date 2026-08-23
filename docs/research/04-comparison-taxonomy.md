@@ -7,7 +7,7 @@
 
 ## The answer
 
-The comparison should launch with 7 category tabs, not one universal feature table:
+The comparison launched from 7 category tabs and now has an eighth, not one universal feature table:
 
 1. Code editors and IDEs
 2. Agent workbenches, also called agent IDEs
@@ -16,6 +16,7 @@ The comparison should launch with 7 category tabs, not one universal feature tab
 5. IDE extensions
 6. Cloud and background agents
 7. Remote companions and relays
+8. Agent Traces
 
 Every product has one primary category, determined by the object around which its normal workflow is organized. It may also have cross-category tags. This is the only stable way to keep products such as VS Code, Cursor, Tortie, cmux, Orca, and Warp comparable without pretending their largest feature overlap is their identity.
 
@@ -36,6 +37,7 @@ Ask one question first:
 | A host-IDE chat or agent panel | IDE extension | Install into an editor | Changes remain in the host workspace |
 | A remotely executed job | Cloud or background agent | Send an issue or prompt to remote compute | Receive a patch, PR, or result |
 | A session owned by another machine or product | Remote companion or relay | Pair, wrap, or connect to an existing session | Continue monitoring or steering it elsewhere |
+| A durable provenance record of agent work | Agent Trace | Capture, import, or instrument a coding-agent session | Search, inspect, share, resume, or analyze the recorded work |
 
 ### Tie-breakers
 
@@ -56,7 +58,7 @@ Use these in order when a product spans several rows:
 | Tortie | Agent workbench | A project contains durable named terminal sessions. Editing and Git are supporting furniture, and worktrees are optional rather than the ontology. | `terminal`, `editor`, `scm`, `session-durability`, `multi-project`, `remote-ssh`, `oss` |
 | cmux | Agent workbench | Named workspaces, panes, and agent-aware terminal continuity are the main object. It is not a task-to-merge system. | `terminal`, `session-restore`, `browser`, `multi-project`, `oss` |
 | Orca | Agent orchestrator | Its default promise is prompt or task to isolated worktrees, compare/review, then merge. Durable PTYs and editing are substantial but support that loop. | `agent-ide`, `terminal`, `editor`, `scm`, `worktrees`, `remote-ssh`, `mobile`, `oss` |
-| Warp | Agent workbench | The persistent terminal workspace and sessions are the user's recurring object. Cloud agents are a secondary execution mode. | `terminal`, `cloud-agent`, `blocks`, `proprietary` |
+| Warp | Agent workbench | The persistent terminal workspace and sessions are the user's recurring object. Cloud agents are a secondary execution mode. | `terminal`, `cloud-agent`, `blocks`, `open-source` |
 | Cline | IDE extension | The VS Code-hosted agent panel is the established primary surface. Its CLI is a cross-category surface until it is independently versioned and documented as a product. | `harness`, `cli`, `vscode`, `oss` |
 | OpenCode | Coding-agent harness | The terminal agent loop is the primary product, even though a desktop client and editor integrations exist. | `desktop-client`, `extensions`, `multi-model`, `oss` |
 
@@ -173,6 +175,23 @@ Exclude:
 - cloud agents that own execution;
 - mobile clients that are inseparable features of a primary desktop product. Those remain tags on the parent product unless they have independent identity and releases.
 
+### 2.8 Agent Traces
+
+An Agent Trace product makes the durable record of coding-agent work the object users return to. It may capture local harness files, instrument provider traffic, bind sessions to Git history, or normalize records into a hosted timeline.
+
+Include:
+
+- local-first session archives and viewers;
+- Git-native checkpoints that bind transcripts to commits;
+- hosted trace-sharing and team-observability products;
+- self-hosted agent telemetry systems whose primary object is the recorded run.
+
+Exclude:
+
+- observability embedded only inside a harness, IDE, or orchestrator;
+- generic LLM application tracing without a documented coding-agent workflow;
+- terminal recording that does not understand agent sessions or their structured events.
+
 ## 3. The initial 50-product catalog
 
 `Primary source` is the source to establish identity and current status. A repository link does not itself imply open source. License is a separate field and must be read from the repository or distributed package.
@@ -197,7 +216,7 @@ Exclude:
 | Mosaic Terminal | [Product](https://mosaicterminal.dev/) | Source status must be verified | `terminal`, `session-restore`, `attention`, `multi-project` |
 | Airport | [Product](https://get-airport.com/) | Product claims open source; canonical repository must be established before automation | `terminal`, `attention`, `multi-project` |
 | wmux | [Repository](https://github.com/openwong2kim/wmux) | Repository is the primary product source | `terminal`, `daemon-pty`, `worktrees`, `scm`, `oss` |
-| Warp | [Product](https://www.warp.dev/) | Proprietary shipped product; its public repository is metadata/supporting material, not product-source evidence | `terminal`, `cloud-agent`, `blocks`, `hybrid:workbench-cloud` |
+| Warp | [Product](https://www.warp.dev/) · [source](https://github.com/warpdotdev/warp) | Open-source client under AGPL-3.0, with MIT-licensed UI framework crates | `terminal`, `cloud-agent`, `blocks`, `hybrid:workbench-cloud`, `oss` |
 | Wave Terminal | [Product](https://www.waveterm.dev/) | Canonical repository must be attached during ingestion | `terminal`, `workspace-blocks`, `editor-blocks`, `remote-ssh` |
 
 ### 3.3 Agent orchestrators, 11
@@ -471,6 +490,19 @@ Only score capabilities the extension supplies. Do not inherit the host editor's
 | State | Session list; working/idle/needs-input; unread; notifications; scrollback; transcript; resume |
 | Project context | Files; diff; Git; editor; PR; terminal only |
 | Dependencies | Supported harnesses; required desktop host; required account; required daemon or tmux |
+
+### 6.8 Agent Traces
+
+| Axis group | Rows |
+| --- | --- |
+| Capture | Named harnesses and IDE clients; lifecycle hooks; local-log import; proxy or OpenTelemetry ingestion; multi-harness normalization |
+| Storage | Local Markdown or database; Git refs; hosted namespace; operator database; retention and data boundary |
+| Git provenance | Commit, branch, worktree, checkpoint, patch, and pull-request linkage |
+| Captured record | Prompts; responses; thinking; tool calls and results; files; artifacts; diffs; subagents |
+| Inspection | Search; timeline; replay; rewind; resume; cross-agent handoff; analytics |
+| Interoperability | Markdown, JSON, JSONL, CSV, HTTP API, MCP, OpenTelemetry, CI ingestion |
+| Privacy and teams | Secret redaction; explicit sync; visibility; sharing; organizations; team analytics |
+| Deployment | Local-only; hosted service; self-hosted server; customer VPC or on-premises |
 
 ## 7. Cell semantics and evidence
 

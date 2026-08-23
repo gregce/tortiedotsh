@@ -64,7 +64,7 @@ before making requests.
 ## Freshness guard
 
 The weekly workflow refreshes repository data every Monday at 07:17 UTC, commits
-the generated fallback when it changes, and then runs:
+the generated fallback and claim-source fingerprints when they change, and then runs:
 
 ```sh
 npm run audit:freshness
@@ -79,12 +79,13 @@ reviewed operation because vendor sites can return unrelated or malformed
 images even when a request succeeds.
 
 Catalog products join through `comparison-catalog.ts` `repoMetricId`. Multiple
-catalog products may deliberately share one repository metric (for example,
-VS Code and its Copilot surface). A public repository is not automatically
-eligible: Warp's public repository is not the shipped product source, and the
-pivoted Omnara repository no longer represents the current companion SKU, so
-neither has a metrics join. Vibe Kanban remains joined to its canonical
-sunsetting repository so its last-known repository history stays explicit.
+catalog products may deliberately share one repository metric. A public
+repository is not automatically eligible: the pivoted Omnara repository no
+longer represents the current companion SKU, so it has no metrics join. Warp is
+now joined to `warpdotdev/warp` because the project explicitly identifies that
+repository as the open-source client codebase under AGPL-3.0 and MIT terms.
+Vibe Kanban remains joined to its canonical sunsetting repository so its
+last-known repository history stays explicit.
 
 ## Generated schema
 

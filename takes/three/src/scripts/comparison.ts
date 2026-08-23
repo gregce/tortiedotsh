@@ -18,6 +18,7 @@ if (root) {
   const pickerSummary = root.querySelector<HTMLElement>("[data-picker-summary]");
   const rail = root.querySelector<HTMLElement>(".matrix-rail");
   const railToggle = root.querySelector<HTMLButtonElement>("[data-filter-toggle]");
+  const railToggleLabel = root.querySelector<HTMLElement>("[data-filter-toggle-label]");
   const productChecks = Array.from(
     root.querySelectorAll<HTMLInputElement>("[data-product-check]"),
   );
@@ -122,7 +123,7 @@ if (root) {
     const headers = productHeaders();
     const productNameMatches = query
       ? headers.filter((header) =>
-          (header.dataset.productName || "").toLowerCase().includes(query),
+          (header.dataset.productSearch || header.dataset.productName || "").includes(query),
         )
       : [];
     const compareSet = new Set(appliedProducts);
@@ -255,9 +256,28 @@ if (root) {
     applyFilters();
   });
 
+  function setRailOpen(isOpen: boolean, returnFocus = false) {
+    rail?.classList.toggle("is-open", isOpen);
+    railToggle?.setAttribute("aria-expanded", String(isOpen));
+    if (railToggleLabel) railToggleLabel.textContent = isOpen ? "Hide controls" : "View controls";
+    if (returnFocus) railToggle?.focus();
+  }
+
   railToggle?.addEventListener("click", () => {
-    const isOpen = rail?.classList.toggle("is-open") ?? false;
-    railToggle.setAttribute("aria-expanded", String(isOpen));
+    setRailOpen(!(rail?.classList.contains("is-open") ?? false));
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (rail?.classList.contains("is-open") && !rail.contains(event.target as Node)) {
+      setRailOpen(false);
+    }
+  });
+
+  rail?.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && rail.classList.contains("is-open")) {
+      event.preventDefault();
+      setRailOpen(false, true);
+    }
   });
 
   table?.addEventListener("focusin", (event) => {

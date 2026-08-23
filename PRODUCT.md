@@ -30,6 +30,7 @@ The comparison is category-aware. It does not flatten editors, agent IDEs, workt
 - Products are organized into mutually understandable primary categories, with cross-category tags for genuine overlap.
 - Products run across the top of each category matrix. Feature axes run down the left; documented platforms collapse into compact icons in each product header.
 - Category selection is URL-addressable and works without JavaScript.
+- Filtering and shortlist controls default closed behind one keyboard-operable disclosure so the evidence matrix keeps the full viewport width.
 - Every capability value distinguishes confirmed support, confirmed absence, partial support, unknown, and not applicable.
 - Claims link to primary evidence and carry a review date.
 - Open-source records can refresh latest release, release date, repository activity, contributors, language mix, size, and estimated source lines where the source allows it.

@@ -14,6 +14,36 @@
       "loc": { "enabled": false, "reason": "Large mature editor; GitHub language bytes remain available" }
     },
     {
+      "id": "eclipse-theia-ide",
+      "name": "Eclipse Theia IDE",
+      "category": "code-editors",
+      "owner": "eclipse-theia",
+      "repo": "theia-ide",
+      "githubUrl": "https://github.com/eclipse-theia/theia-ide",
+      "apiUrl": "https://api.github.com/repos/eclipse-theia/theia-ide",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "positron",
+      "name": "Positron",
+      "category": "code-editors",
+      "owner": "posit-dev",
+      "repo": "positron",
+      "githubUrl": "https://github.com/posit-dev/positron",
+      "apiUrl": "https://api.github.com/repos/posit-dev/positron",
+      "loc": { "enabled": false, "reason": "Large Code OSS-derived source-available repository; GitHub language bytes remain available" }
+    },
+    {
+      "id": "onlook",
+      "name": "Onlook",
+      "category": "code-editors",
+      "owner": "onlook-dev",
+      "repo": "onlook",
+      "githubUrl": "https://github.com/onlook-dev/onlook",
+      "apiUrl": "https://api.github.com/repos/onlook-dev/onlook",
+      "loc": { "enabled": false, "reason": "Large monorepo; GitHub language bytes remain available" }
+    },
+    {
       "id": "zed",
       "name": "Zed",
       "category": "code-editors",
@@ -64,6 +94,26 @@
       "loc": { "enabled": true }
     },
     {
+      "id": "cate",
+      "name": "Cate",
+      "category": "agent-workbenches",
+      "owner": "0-AI-UG",
+      "repo": "cate",
+      "githubUrl": "https://github.com/0-AI-UG/cate",
+      "apiUrl": "https://api.github.com/repos/0-AI-UG/cate",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "cdesktop",
+      "name": "cdesktop",
+      "category": "agent-workbenches",
+      "owner": "cdesktop-ai",
+      "repo": "cdesktop",
+      "githubUrl": "https://github.com/cdesktop-ai/cdesktop",
+      "apiUrl": "https://api.github.com/repos/cdesktop-ai/cdesktop",
+      "loc": { "enabled": true }
+    },
+    {
       "id": "continue",
       "name": "Continue",
       "category": "ide-extensions",
@@ -111,6 +161,66 @@
       "repo": "orca",
       "githubUrl": "https://github.com/stablyai/orca",
       "apiUrl": "https://api.github.com/repos/stablyai/orca",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "bb",
+      "name": "bb",
+      "category": "agent-orchestrators",
+      "owner": "get-bb",
+      "repo": "bb",
+      "githubUrl": "https://github.com/get-bb/bb",
+      "apiUrl": "https://api.github.com/repos/get-bb/bb",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "omnigent",
+      "name": "Omnigent",
+      "category": "agent-orchestrators",
+      "owner": "omnigent-ai",
+      "repo": "omnigent",
+      "githubUrl": "https://github.com/omnigent-ai/omnigent",
+      "apiUrl": "https://api.github.com/repos/omnigent-ai/omnigent",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "agent-orchestrator",
+      "name": "Agent Orchestrator",
+      "category": "agent-orchestrators",
+      "owner": "Untrivial-ai",
+      "repo": "agent-orchestrator",
+      "githubUrl": "https://github.com/Untrivial-ai/agent-orchestrator",
+      "apiUrl": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "emdash",
+      "name": "Emdash",
+      "category": "agent-orchestrators",
+      "owner": "generalaction",
+      "repo": "emdash",
+      "githubUrl": "https://github.com/generalaction/emdash",
+      "apiUrl": "https://api.github.com/repos/generalaction/emdash",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "kandev",
+      "name": "Kandev",
+      "category": "agent-orchestrators",
+      "owner": "kdlbs",
+      "repo": "kandev",
+      "githubUrl": "https://github.com/kdlbs/kandev",
+      "apiUrl": "https://api.github.com/repos/kdlbs/kandev",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "paseo",
+      "name": "Paseo",
+      "category": "agent-orchestrators",
+      "owner": "getpaseo",
+      "repo": "paseo",
+      "githubUrl": "https://github.com/getpaseo/paseo",
+      "apiUrl": "https://api.github.com/repos/getpaseo/paseo",
       "loc": { "enabled": true }
     },
     {
@@ -202,6 +312,26 @@
       "githubUrl": "https://github.com/openwong2kim/wmux",
       "apiUrl": "https://api.github.com/repos/openwong2kim/wmux",
       "loc": { "enabled": false, "reason": "API metrics first; LOC has not been scheduled for this catalog addition" }
+    },
+    {
+      "id": "wave-terminal",
+      "name": "Wave Terminal",
+      "category": "agent-workbenches",
+      "owner": "wavetermdev",
+      "repo": "waveterm",
+      "githubUrl": "https://github.com/wavetermdev/waveterm",
+      "apiUrl": "https://api.github.com/repos/wavetermdev/waveterm",
+      "loc": { "enabled": false, "reason": "Large repository; GitHub language bytes remain available" }
+    },
+    {
+      "id": "warp",
+      "name": "Warp",
+      "category": "agent-workbenches",
+      "owner": "warpdotdev",
+      "repo": "warp",
+      "githubUrl": "https://github.com/warpdotdev/warp",
+      "apiUrl": "https://api.github.com/repos/warpdotdev/warp",
+      "loc": { "enabled": false, "reason": "Large client repository; GitHub language bytes remain available" }
     },
     {
       "id": "openhands",
@@ -304,6 +434,66 @@
       "loc": { "enabled": true }
     },
     {
+      "id": "deepseek-harness",
+      "name": "DeepSeek Harness",
+      "category": "coding-agent-harnesses",
+      "owner": "deepseek-ai",
+      "repo": "deepseek-harness",
+      "githubUrl": "https://github.com/deepseek-ai/deepseek-harness",
+      "apiUrl": "https://api.github.com/repos/deepseek-ai/deepseek-harness",
+      "loc": { "enabled": false, "reason": "Large monorepo; GitHub language bytes remain available" }
+    },
+    {
+      "id": "prime-agent",
+      "name": "Prime Agent",
+      "category": "coding-agent-harnesses",
+      "owner": "PrimeIntellect-ai",
+      "repo": "prime-agent",
+      "githubUrl": "https://github.com/PrimeIntellect-ai/prime-agent",
+      "apiUrl": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent",
+      "loc": { "enabled": false, "reason": "Large monorepo; GitHub language bytes remain available" }
+    },
+    {
+      "id": "kimi-code-cli",
+      "name": "Kimi Code CLI",
+      "category": "coding-agent-harnesses",
+      "owner": "MoonshotAI",
+      "repo": "kimi-code",
+      "githubUrl": "https://github.com/MoonshotAI/kimi-code",
+      "apiUrl": "https://api.github.com/repos/MoonshotAI/kimi-code",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "mistral-vibe",
+      "name": "Mistral Vibe",
+      "category": "coding-agent-harnesses",
+      "owner": "mistralai",
+      "repo": "mistral-vibe",
+      "githubUrl": "https://github.com/mistralai/mistral-vibe",
+      "apiUrl": "https://api.github.com/repos/mistralai/mistral-vibe",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "amplifier-agent",
+      "name": "Amplifier Agent",
+      "category": "coding-agent-harnesses",
+      "owner": "microsoft",
+      "repo": "amplifier-agent",
+      "githubUrl": "https://github.com/microsoft/amplifier-agent",
+      "apiUrl": "https://api.github.com/repos/microsoft/amplifier-agent",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "gptme",
+      "name": "gptme",
+      "category": "coding-agent-harnesses",
+      "owner": "gptme",
+      "repo": "gptme",
+      "githubUrl": "https://github.com/gptme/gptme",
+      "apiUrl": "https://api.github.com/repos/gptme/gptme",
+      "loc": { "enabled": true }
+    },
+    {
       "id": "happy",
       "name": "Happy",
       "category": "remote-companions",
@@ -322,6 +512,186 @@
       "githubUrl": "https://github.com/amantus-ai/vibetunnel",
       "apiUrl": "https://api.github.com/repos/amantus-ai/vibetunnel",
       "loc": { "enabled": false, "reason": "API metrics first; LOC has not been scheduled for this catalog addition" }
+    },
+    {
+      "id": "pochi",
+      "name": "Pochi VS Code extension",
+      "category": "ide-extensions",
+      "owner": "TabbyML",
+      "repo": "pochi",
+      "githubUrl": "https://github.com/TabbyML/pochi",
+      "apiUrl": "https://api.github.com/repos/TabbyML/pochi",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "tabby",
+      "name": "Tabby IDE extensions",
+      "category": "ide-extensions",
+      "owner": "TabbyML",
+      "repo": "tabby",
+      "githubUrl": "https://github.com/TabbyML/tabby",
+      "apiUrl": "https://api.github.com/repos/TabbyML/tabby",
+      "loc": { "enabled": false, "reason": "Large monorepo; GitHub language bytes remain available" }
+    },
+    {
+      "id": "codecompanion-nvim",
+      "name": "CodeCompanion.nvim",
+      "category": "ide-extensions",
+      "owner": "olimorris",
+      "repo": "codecompanion.nvim",
+      "githubUrl": "https://github.com/olimorris/codecompanion.nvim",
+      "apiUrl": "https://api.github.com/repos/olimorris/codecompanion.nvim",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "avante-nvim",
+      "name": "avante.nvim",
+      "category": "ide-extensions",
+      "owner": "yetone",
+      "repo": "avante.nvim",
+      "githubUrl": "https://github.com/yetone/avante.nvim",
+      "apiUrl": "https://api.github.com/repos/yetone/avante.nvim",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "refact",
+      "name": "Refact IDE plugins",
+      "category": "ide-extensions",
+      "owner": "smallcloudai",
+      "repo": "refact",
+      "githubUrl": "https://github.com/smallcloudai/refact",
+      "apiUrl": "https://api.github.com/repos/smallcloudai/refact",
+      "loc": { "enabled": false, "reason": "Large monorepo; GitHub language bytes remain available" }
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab Duo Developer Flow",
+      "category": "cloud-agents",
+      "owner": "gitlab-org",
+      "repo": "gitlab",
+      "githubUrl": "https://github.com/gitlab-org/gitlab",
+      "apiUrl": "https://api.github.com/repos/gitlab-org/gitlab",
+      "loc": { "enabled": false, "reason": "Very large open-core monorepo; GitHub language bytes remain available" }
+    },
+    {
+      "id": "coder",
+      "name": "Coder Agents",
+      "category": "cloud-agents",
+      "owner": "coder",
+      "repo": "coder",
+      "githubUrl": "https://github.com/coder/coder",
+      "apiUrl": "https://api.github.com/repos/coder/coder",
+      "loc": { "enabled": false, "reason": "Large open-core repository; GitHub language bytes remain available" }
+    },
+    {
+      "id": "openhands-cloud",
+      "name": "OpenHands Cloud",
+      "category": "cloud-agents",
+      "owner": "OpenHands",
+      "repo": "OpenHands-Cloud",
+      "githubUrl": "https://github.com/OpenHands/OpenHands-Cloud",
+      "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands-Cloud",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "code-server",
+      "name": "code-server",
+      "category": "remote-companions",
+      "owner": "coder",
+      "repo": "code-server",
+      "githubUrl": "https://github.com/coder/code-server",
+      "apiUrl": "https://api.github.com/repos/coder/code-server",
+      "loc": { "enabled": false, "reason": "Large repository; GitHub language bytes remain available" }
+    },
+    {
+      "id": "openvscode-server",
+      "name": "OpenVSCode Server",
+      "category": "remote-companions",
+      "owner": "gitpod-io",
+      "repo": "openvscode-server",
+      "githubUrl": "https://github.com/gitpod-io/openvscode-server",
+      "apiUrl": "https://api.github.com/repos/gitpod-io/openvscode-server",
+      "loc": { "enabled": false, "reason": "Large Code OSS source tree; GitHub language bytes remain available" }
+    },
+    {
+      "id": "sshx",
+      "name": "sshx",
+      "category": "remote-companions",
+      "owner": "ekzhang",
+      "repo": "sshx",
+      "githubUrl": "https://github.com/ekzhang/sshx",
+      "apiUrl": "https://api.github.com/repos/ekzhang/sshx",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "upterm",
+      "name": "Upterm",
+      "category": "remote-companions",
+      "owner": "owenthereal",
+      "repo": "upterm",
+      "githubUrl": "https://github.com/owenthereal/upterm",
+      "apiUrl": "https://api.github.com/repos/owenthereal/upterm",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "termix",
+      "name": "Termix",
+      "category": "remote-companions",
+      "owner": "Termix-SSH",
+      "repo": "Termix",
+      "githubUrl": "https://github.com/Termix-SSH/Termix",
+      "apiUrl": "https://api.github.com/repos/Termix-SSH/Termix",
+      "loc": { "enabled": false, "reason": "Large multi-client repository; GitHub language bytes remain available" }
+    },
+    {
+      "id": "ttyd",
+      "name": "ttyd",
+      "category": "remote-companions",
+      "owner": "tsl0922",
+      "repo": "ttyd",
+      "githubUrl": "https://github.com/tsl0922/ttyd",
+      "apiUrl": "https://api.github.com/repos/tsl0922/ttyd",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "specstory",
+      "name": "SpecStory",
+      "category": "agent-traces",
+      "owner": "specstoryai",
+      "repo": "getspecstory",
+      "githubUrl": "https://github.com/specstoryai/getspecstory",
+      "apiUrl": "https://api.github.com/repos/specstoryai/getspecstory",
+      "loc": { "enabled": false, "reason": "Multi-product repository; GitHub language bytes remain available" }
+    },
+    {
+      "id": "entire",
+      "name": "Entire",
+      "category": "agent-traces",
+      "owner": "entireio",
+      "repo": "cli",
+      "githubUrl": "https://github.com/entireio/cli",
+      "apiUrl": "https://api.github.com/repos/entireio/cli",
+      "loc": { "enabled": false, "reason": "Large active CLI repository; GitHub language bytes remain available" }
+    },
+    {
+      "id": "tapes",
+      "name": "Tapes",
+      "category": "agent-traces",
+      "owner": "papercomputeco",
+      "repo": "tapes",
+      "githubUrl": "https://github.com/papercomputeco/tapes",
+      "apiUrl": "https://api.github.com/repos/papercomputeco/tapes",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "agentsview",
+      "name": "AgentsView",
+      "category": "agent-traces",
+      "owner": "kenn-io",
+      "repo": "agentsview",
+      "githubUrl": "https://github.com/kenn-io/agentsview",
+      "apiUrl": "https://api.github.com/repos/kenn-io/agentsview",
+      "loc": { "enabled": false, "reason": "Multi-client application repository; GitHub language bytes remain available" }
     }
   ]
 }

@@ -1,5 +1,10 @@
 # 06. Comparison evidence audit
 
+> Revision, 2026-08-23: the Warp source-model blocker below is superseded. Warp
+> now states that `warpdotdev/warp` contains its open-source client codebase,
+> licensed under AGPL-3.0 with MIT-licensed UI framework crates. The current
+> catalog and metrics manifest use that newer first-party evidence.
+
 **Audit date:** 2026-08-23
 
 **Initial publish decision:** Blocked pending the P0 items below.

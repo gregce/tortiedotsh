@@ -23,6 +23,7 @@ import {
 } from "../data/comparison-catalog";
 import metricSnapshot from "../data/open-source-metrics.json";
 import comparisonAssets from "../data/comparison-assets.json";
+import evidenceSnapshot from "../data/comparison-evidence-status.json";
 
 interface Props {
   categoryId: CategoryId;
@@ -71,6 +72,15 @@ interface ComparisonAsset {
   checkedAt: string;
 }
 
+interface EvidenceMonitorRecord {
+  url: string;
+  status: "awaiting-refresh" | "current" | "changed" | "unreachable";
+  lastCheckedAt: string | null;
+  changeDetectedAt: string | null;
+  error: string | null;
+  usedBy: Array<{ productId: string; field: string; checkedAt: string }>;
+}
+
 const { categoryId } = Astro.props;
 const currentCategory = comparisonCategories.find((category) => category.id === categoryId);
 if (!currentCategory) throw new Error(`Unknown comparison category: ${categoryId}`);
@@ -85,6 +95,15 @@ const metrics = new Map(
 );
 const productAssets = comparisonAssets.products as Record<string, ComparisonAsset>;
 const platformAssets = comparisonAssets.platforms as Record<string, ComparisonAsset>;
+const evidenceMonitor = new Map(
+  (evidenceSnapshot.sources as EvidenceMonitorRecord[]).map((record) => [record.url, record]),
+);
+const currentProductIds = new Set(products.map((product) => product.id));
+const monitoredSourceWarnings = (evidenceSnapshot.sources as EvidenceMonitorRecord[]).filter(
+  (record) =>
+    ["changed", "unreachable"].includes(record.status) &&
+    record.usedBy.some((use) => currentProductIds.has(use.productId)),
+).length;
 const hasMetrics = products.some((product) => product.repoMetricId && metrics.has(product.repoMetricId));
 const metricRows: MetricRow[] = hasMetrics
   ? [
@@ -308,7 +327,8 @@ const basisLabel = (source: EvidenceSource): string => {
               aria-controls="comparison-view-controls"
               data-filter-toggle
             >
-              View controls
+              <span data-filter-toggle-label>View controls</span>
+              <span class="rail-toggle-mark" aria-hidden="true"></span>
             </button>
             <div class="matrix-toolbar" id="comparison-view-controls" data-filter-controls>
               <div class="rail-heading">
@@ -398,6 +418,9 @@ const basisLabel = (source: EvidenceSource): string => {
               <p><strong>Unknown</strong> means the evidence does not support a conclusion yet.</p>
               <p data-scroll-hint>Scroll sideways to compare</p>
               {hasMetrics && <span>Repo snapshot {metricGeneratedDate}</span>}
+              {monitoredSourceWarnings > 0 && (
+                <span class="source-alert">{monitoredSourceWarnings} sources need review</span>
+              )}
             </div>
             <div class="matrix-frame">
               <div
@@ -417,55 +440,71 @@ const basisLabel = (source: EvidenceSource): string => {
                       const metric = productMetric(product);
                       const brand = productAssets[product.id];
                       const supportedPlatforms = productPlatforms(product);
+                      const productInitials = product.name
+                        .split(/\s+/)
+                        .slice(0, 2)
+                        .map((word) => word[0])
+                        .join("")
+                        .toUpperCase();
                       return (
                         <th
                           scope="col"
                           data-product-id={product.id}
                           data-product-name={product.name}
+                          data-product-search={`${product.name} ${product.tags.join(" ").replaceAll("-", " ")}`.toLowerCase()}
                           data-platforms={profilePlatforms(product)}
                           data-stars={metric?.stars ?? ""}
                           data-updated={metric?.pushedAt ?? ""}
                         >
-                          {product.officialUrl || product.repository?.url ? (
-                            <a class="product-lockup" href={product.officialUrl ?? product.repository?.url}>
-                              {brand && (
-                                <span class="product-logo-frame" title={`${brand.name} · ${brand.sourceType.replaceAll("-", " ")}`}>
-                                  <img class="product-logo" src={brand.src} alt="" width="30" height="30" loading="lazy" />
+                          <span class="product-header-stack">
+                            {product.officialUrl || product.repository?.url ? (
+                              <a class="product-lockup" href={product.officialUrl ?? product.repository?.url}>
+                                <span
+                                  class="product-logo-frame"
+                                  title={brand
+                                    ? `${brand.name} · ${brand.sourceType.replaceAll("-", " ")}`
+                                    : "First-party identity asset awaiting refresh"}
+                                >
+                                  {brand
+                                    ? <img class="product-logo" src={brand.src} alt="" width="30" height="30" loading="lazy" />
+                                    : <span class="product-logo-fallback" aria-hidden="true">{productInitials}</span>}
                                 </span>
-                              )}
-                              <span class="product-copy">
-                                <span class="product-name">{product.name}</span>
-                                {metric?.latestRelease?.tagName && (
-                                  <span class="product-meta product-version">{metric.latestRelease.tagName}</span>
-                                )}
-                              </span>
-                            </a>
-                          ) : (
-                            <span class="product-lockup">
-                              {brand && (
+                                <span class="product-copy">
+                                  <span class="product-name">{product.name}</span>
+                                  {metric?.latestRelease?.tagName && (
+                                    <span class="product-meta product-version">{metric.latestRelease.tagName}</span>
+                                  )}
+                                </span>
+                              </a>
+                            ) : (
+                              <span class="product-lockup">
                                 <span class="product-logo-frame">
-                                  <img class="product-logo" src={brand.src} alt="" width="30" height="30" loading="lazy" />
+                                  {brand
+                                    ? <img class="product-logo" src={brand.src} alt="" width="30" height="30" loading="lazy" />
+                                    : <span class="product-logo-fallback" aria-hidden="true">{productInitials}</span>}
                                 </span>
-                              )}
-                              <span class="product-name">{product.name}</span>
+                                <span class="product-copy">
+                                  <span class="product-name">{product.name}</span>
+                                </span>
+                              </span>
+                            )}
+                            <span
+                              class="platform-list"
+                              aria-label={supportedPlatforms.length > 0
+                                ? `Supported platforms: ${supportedPlatforms.map((id) => platformAssets[id]?.name ?? id).join(", ")}`
+                                : "Supported platforms are not yet verified"}
+                            >
+                              {supportedPlatforms.length > 0
+                                ? supportedPlatforms.map((id) => {
+                                    const platform = platformAssets[id];
+                                    return platform ? (
+                                      <span class="platform-mark" title={platform.name}>
+                                        <img src={platform.src} alt="" width="14" height="14" loading="lazy" />
+                                      </span>
+                                    ) : null;
+                                  })
+                                : <span class="platform-unknown" title="Platform support not yet verified">?</span>}
                             </span>
-                          )}
-                          <span
-                            class="platform-list"
-                            aria-label={supportedPlatforms.length > 0
-                              ? `Supported platforms: ${supportedPlatforms.map((id) => platformAssets[id]?.name ?? id).join(", ")}`
-                              : "Supported platforms are not yet verified"}
-                          >
-                            {supportedPlatforms.length > 0
-                              ? supportedPlatforms.map((id) => {
-                                  const platform = platformAssets[id];
-                                  return platform ? (
-                                    <span class="platform-mark" title={platform.name}>
-                                      <img src={platform.src} alt="" width="14" height="14" loading="lazy" />
-                                    </span>
-                                  ) : null;
-                                })
-                              : <span class="platform-unknown" title="Platform support not yet verified">?</span>}
                           </span>
                         </th>
                       );
@@ -495,6 +534,7 @@ const basisLabel = (source: EvidenceSource): string => {
                         {products.map((product) => {
                           const claim = claimFor(product, row);
                           const source = claim.evidence[0];
+                          const monitor = source ? evidenceMonitor.get(source.url) : undefined;
                           return (
                             <td
                               data-product-id={product.id}
@@ -512,9 +552,10 @@ const basisLabel = (source: EvidenceSource): string => {
                               {source && (
                                 <a
                                   class="evidence-link"
+                                  data-source-status={monitor?.status}
                                   href={source.url}
                                   aria-label={`Evidence for ${product.name}, ${row.label}: ${basisLabel(source)}`}
-                                  title={`${source.title}. ${source.basis.replaceAll("-", " ")}. Checked ${source.checkedAt}.`}
+                                  title={`${source.title}. ${source.basis.replaceAll("-", " ")}. Reviewed ${source.checkedAt}.${monitor?.lastCheckedAt ? ` Source monitor checked ${monitor.lastCheckedAt.slice(0, 10)}: ${monitor.status}.` : source.basis === "repository-derived" ? " Refreshed by the repository metrics collector." : " Awaiting the first automated source check."}`}
                                 >
                                   ↗
                                 </a>

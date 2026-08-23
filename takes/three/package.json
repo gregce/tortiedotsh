@@ -12,6 +12,7 @@
     "validate:data": "node --experimental-strip-types scripts/validate-comparison-data.mjs",
     "audit:freshness": "node --experimental-strip-types scripts/validate-comparison-data.mjs --freshness",
     "refresh:metrics": "node scripts/refresh-open-source-metrics.mjs",
+    "refresh:evidence": "node --experimental-strip-types scripts/refresh-comparison-evidence.mjs",
     "refresh:assets": "node scripts/fetch-comparison-assets.mjs",
     "verify": "npm run validate:data && npm run build"
   },

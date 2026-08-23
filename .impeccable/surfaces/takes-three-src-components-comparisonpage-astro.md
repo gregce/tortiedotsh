@@ -13,6 +13,6 @@ Task and content: route-backed category navigation; products across columns; com
 
 Constraints: inherit Take Three's graphite token world, system type, blue action accent, wordmark, tight radii, and 1px hairlines. No aggregate score. Amber is reserved for the semantic Limited state. Native table semantics and the full matrix work without JavaScript. The page body never owns the wide overflow.
 
-Direction: a full-bleed evidence ledger inside Tortie's compact shell. The matrix, not its controls, owns the first viewport. A narrow utility rail holds view controls while compact vendor-and-platform product headers and tighter rows maximize the visible field. Frozen product and criterion headers maintain orientation while source links make uncertainty inspectable.
+Direction: a full-bleed evidence ledger inside Tortie's compact shell. The matrix, not its controls, owns the first viewport. View controls default closed behind one compact disclosure and open as a transient utility panel, while compact vendor-and-platform product headers and tighter rows maximize the visible field. Frozen product and criterion headers maintain orientation while source links make uncertainty inspectable.
 
 Unresolved: hands-on usability findings remain separate from source-based claims. Product capability review is manual; repository facts refresh automatically.

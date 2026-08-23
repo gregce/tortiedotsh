@@ -1,6 +1,6 @@
 # 05. Comparison matrix UX specification
 
-> Implementation revision, 2026-08-23: operator feedback moved the matrix ahead of the controls. The desktop implementation now uses a narrow left utility rail, a nearly full-viewport matrix, compact vendor identity headers, and platform icons inside each product header instead of four repetitive platform rows. At narrow widths the rail collapses behind “View controls”. The native table, explicit evidence states, URL-backed category navigation, and no-JavaScript table remain unchanged.
+> Implementation revision, 2026-08-23: operator feedback moved the matrix ahead of the controls. View controls now default closed behind one compact disclosure on every viewport, opening as a transient desktop panel or an inline narrow-screen panel so the matrix keeps the full available width. Compact vendor identity headers and platform icons replace repetitive platform rows. The native table, explicit evidence states, URL-backed category navigation, and no-JavaScript table remain unchanged.
 
 ## Decision
 
@@ -27,9 +27,9 @@ The current landing-page scale cannot simply be reused. Its 1120px container, di
 
 Use URL-addressable category tabs. The initial set is expected to include:
 
-- Code editors and IDEs
+- Code IDEs
 - Agent IDEs
-- Orchestrators
+- Agent Orchestrators
 - Agent harnesses
 
 The research taxonomy may add a category, but it must not add another interaction pattern. A product may appear in more than one category when its role genuinely crosses boundaries. It has one canonical product record and category-specific claims, so changing a release date does not require updating several copies.

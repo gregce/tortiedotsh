@@ -1,4 +1,4 @@
-name: Refresh open-source metrics
+name: Refresh comparison data
 
 on:
   workflow_dispatch:
@@ -33,17 +33,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node takes/three/scripts/refresh-open-source-metrics.mjs --loc
 
+      - name: Refresh first-party evidence fingerprints
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node --experimental-strip-types takes/three/scripts/refresh-comparison-evidence.mjs
+
+      - name: Validate refreshed comparison data
+        run: npm --prefix takes/three run audit:freshness
+
       - name: Commit changed fallback data
         run: |
-          if git diff --quiet -- takes/three/src/data/open-source-metrics.json; then
-            echo "Metrics are already current."
+          if git diff --quiet -- takes/three/src/data/open-source-metrics.json takes/three/src/data/comparison-evidence-status.json; then
+            echo "Metrics and source fingerprints are already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add takes/three/src/data/open-source-metrics.json
-          git commit -m "chore(data): refresh open-source project metrics"
+          git add takes/three/src/data/open-source-metrics.json takes/three/src/data/comparison-evidence-status.json
+          git commit -m "chore(data): refresh comparison evidence"
           git push
-
-      - name: Audit first-party evidence freshness
-        run: npm --prefix takes/three run audit:freshness
