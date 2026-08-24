@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T04:32:48.854Z",
-  "manifestSyncedAt": "2026-08-24T04:32:48.854Z",
+  "generatedAt": "2026-08-24T04:33:12.962Z",
+  "manifestSyncedAt": "2026-08-24T04:33:12.962Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -7714,17 +7714,73 @@
       "apiUrl": "https://api.github.com/repos/slopus/happy",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
+      "refreshedAt": "2026-08-24T04:33:12.777Z",
+      "stars": 23483,
+      "forks": 1982,
+      "openIssues": 967,
+      "contributors": 77,
+      "repositorySizeKb": 207766,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T02:51:42Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 8014900,
+          "percent": 95.67
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 217848,
+          "percent": 2.6
+        },
+        {
+          "name": "CSS",
+          "bytes": 81831,
+          "percent": 0.98
+        },
+        {
+          "name": "Python",
+          "bytes": 30541,
+          "percent": 0.36
+        },
+        {
+          "name": "Shell",
+          "bytes": 19753,
+          "percent": 0.24
+        },
+        {
+          "name": "HTML",
+          "bytes": 9075,
+          "percent": 0.11
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2147,
+          "percent": 0.03
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": 747,
+          "percent": 0.01
+        },
+        {
+          "name": "Rust",
+          "bytes": 711,
+          "percent": 0.01
+        },
+        {
+          "name": "Go",
+          "bytes": 71,
+          "percent": 0
+        }
+      ],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
@@ -7740,17 +7796,17 @@
         }
       },
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 184947,
+        "comments": 17911,
+        "blank": 22454,
+        "files": 1285,
+        "measuredAt": "2026-08-24T04:33:12.647Z",
+        "verifiedAt": "2026-08-24T04:33:12.647Z",
+        "measuredRef": "main",
+        "refType": "default-branch",
+        "commitSha": "acc2289c3280e6fd4a27b15c95ce1d582b305d82",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
@@ -7758,9 +7814,29 @@
       },
       "sources": [
         {
+          "type": "repository",
+          "url": "https://api.github.com/repos/slopus/happy",
+          "fetchedAt": "2026-08-24T04:33:08.454Z"
+        },
+        {
           "type": "release-policy",
           "url": "https://github.com/slopus/happy/releases",
           "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/slopus/happy/languages",
+          "fetchedAt": "2026-08-24T04:33:08.538Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/slopus/happy/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T04:33:08.668Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/slopus/happy/tree/main",
+          "fetchedAt": "2026-08-24T04:33:12.647Z"
         }
       ],
       "errors": []
@@ -7777,41 +7853,134 @@
       "githubUrl": "https://github.com/amantus-ai/vibetunnel",
       "apiUrl": "https://api.github.com/repos/amantus-ai/vibetunnel",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T04:33:12.962Z",
+      "stars": 4635,
+      "forks": 331,
+      "openIssues": 0,
+      "contributors": 60,
+      "repositorySizeKb": 1032411,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-05T19:25:41Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 4099510,
+          "percent": 50.14
+        },
+        {
+          "name": "Swift",
+          "bytes": 2662827,
+          "percent": 32.57
+        },
+        {
+          "name": "HTML",
+          "bytes": 518503,
+          "percent": 6.34
+        },
+        {
+          "name": "Shell",
+          "bytes": 407507,
+          "percent": 4.98
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 215922,
+          "percent": 2.64
+        },
+        {
+          "name": "Rust",
+          "bytes": 128496,
+          "percent": 1.57
+        },
+        {
+          "name": "CSS",
+          "bytes": 66165,
+          "percent": 0.81
+        },
+        {
+          "name": "C++",
+          "bytes": 56280,
+          "percent": 0.69
+        },
+        {
+          "name": "Python",
+          "bytes": 16403,
+          "percent": 0.2
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2868,
+          "percent": 0.04
+        },
+        {
+          "name": "C",
+          "bytes": 1727,
+          "percent": 0.02
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.0.0-beta.18",
+        "name": "VibeTunnel 1.0.0 Beta 18",
+        "publishedAt": "2026-07-11T08:28:33Z",
+        "url": "https://github.com/amantus-ai/vibetunnel/releases/tag/v1.0.0-beta.18",
+        "prerelease": true
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v1.0.0-beta.18",
+      "releaseDate": "2026-07-11T08:28:33Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 169816,
+        "comments": 26179,
+        "blank": 31327,
+        "files": 935,
+        "measuredAt": "2026-08-24T04:33:12.896Z",
+        "verifiedAt": "2026-08-24T04:33:12.896Z",
+        "measuredRef": "v1.0.0-beta.18",
+        "refType": "prerelease-tag",
+        "commitSha": "a0744c467de86368ab5604316af7d46cafbb69d2",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/amantus-ai/vibetunnel",
+          "fetchedAt": "2026-08-24T04:33:08.391Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/amantus-ai/vibetunnel/languages",
+          "fetchedAt": "2026-08-24T04:33:08.477Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/amantus-ai/vibetunnel/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:33:08.657Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/amantus-ai/vibetunnel/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T04:33:08.665Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/amantus-ai/vibetunnel/tree/v1.0.0-beta.18",
+          "fetchedAt": "2026-08-24T04:33:12.896Z"
+        }
+      ],
       "errors": []
     },
     {
