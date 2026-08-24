@@ -435,6 +435,7 @@
   overflow: auto;
   overscroll-behavior: contain;
   scrollbar-gutter: stable;
+  touch-action: pan-x pan-y;
   outline-offset: -3px;
 }
 
@@ -478,11 +479,12 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  height: 100px;
-  vertical-align: bottom;
+  height: 84px;
+  vertical-align: middle;
   background: var(--bg-sidebar);
   color: var(--text-primary);
   box-shadow: 0 1px 0 var(--border-strong);
+  backface-visibility: hidden;
 }
 
 .comparison-table .feature-heading,
@@ -535,18 +537,17 @@
 
 .product-header-stack {
   display: flex;
-  min-height: 72px;
-  flex-direction: column;
-  justify-content: flex-end;
+  min-height: 52px;
+  align-items: center;
 }
 
 .product-lockup {
   display: grid;
-  min-height: 48px;
+  min-height: 52px;
   min-width: 0;
   grid-template-columns: 32px minmax(0, 1fr);
   align-items: center;
-  gap: 6px;
+  gap: var(--space-3);
   color: var(--text-primary);
 }
 
@@ -588,10 +589,11 @@ th[data-product-id="jules"] .product-logo-frame {
 
 .product-copy {
   display: flex;
-  min-height: 40px;
+  min-height: 44px;
   min-width: 0;
   flex-direction: column;
   justify-content: center;
+  gap: var(--space-3);
 }
 
 .product-name {
@@ -603,24 +605,36 @@ th[data-product-id="jules"] .product-logo-frame {
 
 .product-meta {
   display: block;
-  margin-top: var(--space-2);
   color: var(--text-muted);
   font-size: 9px;
   font-weight: var(--weight-regular);
-  line-height: 12px;
+  line-height: 18px;
 }
 
 .product-version {
+  min-width: 0;
+  overflow: hidden;
   font-family: var(--font-mono);
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-support-row {
+  display: flex;
+  min-width: 0;
+  min-height: 18px;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .platform-list {
   display: flex;
   height: 18px;
   min-height: 18px;
+  flex: 0 0 auto;
   align-items: center;
   gap: 2px;
-  margin-top: var(--space-3);
 }
 
 .platform-mark {

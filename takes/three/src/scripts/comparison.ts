@@ -25,6 +25,48 @@ function initializeComparison(root: HTMLElement) {
     root.querySelectorAll<HTMLInputElement>("[data-product-check]"),
   );
 
+  let wheelAxis: "x" | "y" | null = null;
+  let lastWheelAt = 0;
+  const wheelGestureGap = 160;
+
+  matrixScroll?.addEventListener("wheel", (event) => {
+    if (event.ctrlKey) return;
+
+    const lineHeight = 16;
+    const pageSize = matrixScroll.clientHeight;
+    const scale = event.deltaMode === WheelEvent.DOM_DELTA_LINE
+      ? lineHeight
+      : event.deltaMode === WheelEvent.DOM_DELTA_PAGE
+        ? pageSize
+        : 1;
+    let deltaX = event.deltaX * scale;
+    let deltaY = event.deltaY * scale;
+
+    if (event.shiftKey && Math.abs(deltaX) < 0.5) {
+      deltaX = deltaY;
+      deltaY = 0;
+    }
+
+    const now = performance.now();
+    if (now - lastWheelAt > wheelGestureGap) wheelAxis = null;
+
+    const horizontal = Math.abs(deltaX);
+    const vertical = Math.abs(deltaY);
+    if (!wheelAxis) {
+      if (horizontal > vertical * 1.2) wheelAxis = "x";
+      else if (vertical > horizontal * 1.2) wheelAxis = "y";
+      else return;
+    }
+
+    lastWheelAt = now;
+    event.preventDefault();
+    matrixScroll.scrollBy({
+      left: wheelAxis === "x" ? deltaX : 0,
+      top: wheelAxis === "y" ? deltaY : 0,
+      behavior: "auto",
+    });
+  }, { passive: false, signal: controller.signal });
+
   let appliedProducts: string[] = [];
   let fallbackFullscreen = new URLSearchParams(window.location.search).get("fullscreen") === "1";
   const defaultOrder = Array.from(

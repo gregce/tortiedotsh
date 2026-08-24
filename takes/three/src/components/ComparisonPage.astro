@@ -608,9 +608,30 @@ const basisLabel = (source: EvidenceSource): string => {
                                 </span>
                                 <span class="product-copy">
                                   <span class="product-name">{product.name}</span>
-                                  {metric?.latestRelease?.tagName && (
-                                    <span class="product-meta product-version">{metric.latestRelease.tagName}</span>
-                                  )}
+                                  <span class="product-support-row">
+                                    <span
+                                      class="platform-list"
+                                      aria-label={supportedPlatforms.length > 0
+                                        ? `Supported platforms: ${supportedPlatforms.map((id) => platformAssets[id]?.name ?? id).join(", ")}`
+                                        : "Supported platforms are not yet verified"}
+                                    >
+                                      {supportedPlatforms.length > 0
+                                        ? supportedPlatforms.map((id) => {
+                                            const platform = platformAssets[id];
+                                            return platform ? (
+                                              <span class="platform-mark" data-platform={id} title={platform.name}>
+                                                <img src={platform.src} alt="" width="14" height="14" loading="lazy" />
+                                              </span>
+                                            ) : null;
+                                          })
+                                        : <span class="platform-unknown" title="Platform support not yet verified">?</span>}
+                                    </span>
+                                    {metric?.latestRelease?.tagName && (
+                                      <span class="product-meta product-version" title={`Latest measured release: ${metric.latestRelease.tagName}`}>
+                                        {metric.latestRelease.tagName}
+                                      </span>
+                                    )}
+                                  </span>
                                 </span>
                               </a>
                             ) : (
@@ -622,26 +643,33 @@ const basisLabel = (source: EvidenceSource): string => {
                                 </span>
                                 <span class="product-copy">
                                   <span class="product-name">{product.name}</span>
+                                  <span class="product-support-row">
+                                    <span
+                                      class="platform-list"
+                                      aria-label={supportedPlatforms.length > 0
+                                        ? `Supported platforms: ${supportedPlatforms.map((id) => platformAssets[id]?.name ?? id).join(", ")}`
+                                        : "Supported platforms are not yet verified"}
+                                    >
+                                      {supportedPlatforms.length > 0
+                                        ? supportedPlatforms.map((id) => {
+                                            const platform = platformAssets[id];
+                                            return platform ? (
+                                              <span class="platform-mark" data-platform={id} title={platform.name}>
+                                                <img src={platform.src} alt="" width="14" height="14" loading="lazy" />
+                                              </span>
+                                            ) : null;
+                                          })
+                                        : <span class="platform-unknown" title="Platform support not yet verified">?</span>}
+                                    </span>
+                                    {metric?.latestRelease?.tagName && (
+                                      <span class="product-meta product-version" title={`Latest measured release: ${metric.latestRelease.tagName}`}>
+                                        {metric.latestRelease.tagName}
+                                      </span>
+                                    )}
+                                  </span>
                                 </span>
                               </span>
                             )}
-                            <span
-                              class="platform-list"
-                              aria-label={supportedPlatforms.length > 0
-                                ? `Supported platforms: ${supportedPlatforms.map((id) => platformAssets[id]?.name ?? id).join(", ")}`
-                                : "Supported platforms are not yet verified"}
-                            >
-                              {supportedPlatforms.length > 0
-                                ? supportedPlatforms.map((id) => {
-                                    const platform = platformAssets[id];
-                                    return platform ? (
-                                      <span class="platform-mark" data-platform={id} title={platform.name}>
-                                        <img src={platform.src} alt="" width="14" height="14" loading="lazy" />
-                                      </span>
-                                    ) : null;
-                                  })
-                                : <span class="platform-unknown" title="Platform support not yet verified">?</span>}
-                            </span>
                           </span>
                         </th>
                       );
