@@ -4,6 +4,7 @@ import "../../styles/site.css";
 import "../../styles/docs.css";
 import DocsShell from "../../components/DocsShell.astro";
 import DocsArticle from "../../components/DocsArticle.astro";
+import SiteRouter from "../../components/SiteRouter.astro";
 import { docsPageByPath } from "../../data/docs";
 
 const page = docsPageByPath.get("/docs/");
@@ -11,7 +12,7 @@ if (!page) throw new Error("Getting started documentation is missing.");
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,6 +23,7 @@ if (!page) throw new Error("Getting started documentation is missing.");
     <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon-180.png" />
     <meta name="theme-color" content="#000000" />
+    <SiteRouter />
   </head>
   <body class="docs-body">
     <DocsShell currentPath={page.path}>

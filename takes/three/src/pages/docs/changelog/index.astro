@@ -4,6 +4,7 @@ import "../../../styles/site.css";
 import "../../../styles/docs.css";
 import DocsShell from "../../../components/DocsShell.astro";
 import InlineReleaseText from "../../../components/InlineReleaseText.astro";
+import SiteRouter from "../../../components/SiteRouter.astro";
 import changelog from "../../../data/changelog.json";
 
 const description = "Every Tortie release, synchronized from the public repository.";
@@ -16,7 +17,7 @@ const formatDate = (date: string) => new Intl.DateTimeFormat("en-US", {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,6 +28,7 @@ const formatDate = (date: string) => new Intl.DateTimeFormat("en-US", {
     <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon-180.png" />
     <meta name="theme-color" content="#000000" />
+    <SiteRouter />
   </head>
   <body class="docs-body">
     <DocsShell currentPath="/docs/changelog/" current="changelog">
@@ -54,7 +56,19 @@ const formatDate = (date: string) => new Intl.DateTimeFormat("en-US", {
                       {section.items.map((item) => (
                         <li class="release-item">
                           <span><InlineReleaseText text={item.text} /></span>
-                          {item.commits.length > 0 && <span class="release-commits">{item.commits.map((commit) => <a href={commit.url} aria-label={`View commit ${commit.hash}`}>#{commit.hash}</a>)}</span>}
+                          {item.commits.length > 0 && (
+                            <span class="release-commits" aria-label="Related commits">
+                              {item.commits.map((commit) => (
+                                <a href={commit.url} aria-label={`View commit ${commit.hash}`} title={`View commit ${commit.hash} on GitHub`}>
+                                  <svg class="release-commit-mark" viewBox="0 0 16 16" aria-hidden="true">
+                                    <path d="M1.5 8h4M10.5 8h4"></path>
+                                    <circle cx="8" cy="8" r="2.5"></circle>
+                                  </svg>
+                                  <span>{commit.hash}</span>
+                                </a>
+                              ))}
+                            </span>
+                          )}
                         </li>
                       ))}
                     </ul>

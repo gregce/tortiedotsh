@@ -24,7 +24,7 @@ const { current, overlay = false, sectionLabel } = Astro.props;
     <nav class="nav-actions nav-actions-desktop" aria-label="Primary">
       <a
         class="nav-link"
-        href="/compare/"
+        href="/compare/agent-multiplexers/"
         aria-current={current === "compare" ? "page" : undefined}
       >Compare</a>
       <a class="nav-link" href="/docs/" aria-current={current === "docs" ? "page" : undefined}>Docs</a>
@@ -41,7 +41,7 @@ const { current, overlay = false, sectionLabel } = Astro.props;
       <details class="nav-menu">
         <summary aria-label="Navigation"><span></span><span></span><span></span></summary>
         <nav aria-label="Mobile primary">
-          <a href="/compare/" aria-current={current === "compare" ? "page" : undefined}>Compare</a>
+          <a href="/compare/agent-multiplexers/" aria-current={current === "compare" ? "page" : undefined}>Compare</a>
           <a href="/docs/" aria-current={current === "docs" ? "page" : undefined}>Docs</a>
           <a href="/docs/changelog/" aria-current={current === "changelog" ? "page" : undefined}>Changelog</a>
           <a href="https://github.com/gregce/tortie">GitHub</a>

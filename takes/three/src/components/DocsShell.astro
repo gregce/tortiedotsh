@@ -104,6 +104,12 @@ const { currentPath, current = "docs" } = Astro.props;
       || !(resultsMessage instanceof HTMLElement)
     ) return;
 
+    const controller = new AbortController();
+    document.addEventListener("astro:before-swap", () => controller.abort(), {
+      once: true,
+      signal: controller.signal,
+    });
+
     const fallbackIndex = links.flatMap((link) => {
       if (!(link instanceof HTMLAnchorElement)) return [];
       return [{
@@ -284,7 +290,7 @@ const { currentPath, current = "docs" } = Astro.props;
           ${result.excerptHtml ? `<span class="docs-search-result-excerpt">${result.excerptHtml}</span>` : ""}
           <span class="docs-search-result-path">${escapeHtml(result.href)}</span>
         `;
-        link.addEventListener("pointerenter", () => selectResult(index));
+        link.addEventListener("pointerenter", () => selectResult(index), { signal: controller.signal });
         resultsList.append(link);
       });
       setExpanded(true);
@@ -352,8 +358,9 @@ const { currentPath, current = "docs" } = Astro.props;
       debounceTimer = window.setTimeout(() => runSearch(query, currentRequest), 180);
     };
 
-    input.addEventListener("focus", () => { loadPagefind().catch(() => {}); });
-    input.addEventListener("input", queueSearch);
+    controller.signal.addEventListener("abort", () => window.clearTimeout(debounceTimer), { once: true });
+    input.addEventListener("focus", () => { loadPagefind().catch(() => {}); }, { signal: controller.signal });
+    input.addEventListener("input", queueSearch, { signal: controller.signal });
     input.addEventListener("keydown", (event) => {
       if (event.isComposing) return;
       if (event.key === "Escape") {
@@ -379,9 +386,10 @@ const { currentPath, current = "docs" } = Astro.props;
       }
       if (event.key === "Enter" && activeIndex >= 0) {
         event.preventDefault();
-        window.location.assign(renderedResults[activeIndex].href);
+        const activeResult = resultsList.querySelectorAll(".docs-search-result")[activeIndex];
+        if (activeResult instanceof HTMLAnchorElement) activeResult.click();
       }
-    });
+    }, { signal: controller.signal });
     document.addEventListener("keydown", (event) => {
       const target = event.target;
       const isTyping = target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || (target instanceof HTMLElement && target.isContentEditable);
@@ -389,6 +397,6 @@ const { currentPath, current = "docs" } = Astro.props;
         event.preventDefault();
         input.focus();
       }
-    });
+    }, { signal: controller.signal });
   })();
 </script>

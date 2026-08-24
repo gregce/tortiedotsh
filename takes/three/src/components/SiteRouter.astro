@@ -1,0 +1,10 @@
+---
+import { ClientRouter } from "astro:transitions";
+---
+
+<!--
+  Keep the current document painted while the next route is prepared, then
+  replace it without a crossfade. The site header is intentionally rendered
+  fresh so its active route and home-page overlay treatment stay accurate.
+-->
+<ClientRouter fallback="swap" />

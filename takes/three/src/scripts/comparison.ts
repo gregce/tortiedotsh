@@ -1,9 +1,13 @@
 const comparisonControllers = new WeakMap<HTMLElement, AbortController>();
+let activeComparisonController: AbortController | undefined;
 
 function initializeComparison(root: HTMLElement) {
+  activeComparisonController?.abort();
   comparisonControllers.get(root)?.abort();
   const controller = new AbortController();
+  activeComparisonController = controller;
   comparisonControllers.set(root, controller);
+  root.dataset.enhanced = "";
   const table = root.querySelector<HTMLTableElement>("[data-comparison-table]");
   const matrixScroll = root.querySelector<HTMLElement>("[data-matrix-scroll]");
   const search = root.querySelector<HTMLInputElement>("[data-filter-search]");
@@ -450,5 +454,11 @@ function initializeComparison(root: HTMLElement) {
   applyFilters();
 }
 
-const root = document.querySelector<HTMLElement>("[data-comparison-root]");
-if (root) initializeComparison(root);
+function initializeCurrentComparison() {
+  const root = document.querySelector<HTMLElement>("[data-comparison-root]");
+  if (root) initializeComparison(root);
+  else activeComparisonController?.abort();
+}
+
+document.addEventListener("astro:page-load", initializeCurrentComparison);
+initializeCurrentComparison();

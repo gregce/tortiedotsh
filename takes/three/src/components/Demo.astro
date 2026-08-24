@@ -20,6 +20,10 @@
     if (!stage || !poster) return;
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var mounted = false;
+    var io;
+    document.addEventListener("astro:before-swap", function () {
+      if (io) io.disconnect();
+    }, { once: true });
     function mount() {
       if (mounted) return;
       mounted = true;
@@ -35,7 +39,7 @@
       el.className = "feature-live"; poster.replaceWith(el);
     }
     if ("IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (entries) { if (entries.some(function (entry) { return entry.isIntersecting; })) { io.disconnect(); mount(); } }, { rootMargin: "600px 0px" });
+      io = new IntersectionObserver(function (entries) { if (entries.some(function (entry) { return entry.isIntersecting; })) { io.disconnect(); mount(); } }, { rootMargin: "600px 0px" });
       io.observe(stage);
     } else { mount(); }
   })();

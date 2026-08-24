@@ -9,6 +9,7 @@
 import "../../../../assets/gmux-tokens.css";
 import "../styles/site.css";
 import Nav from "../components/Nav.astro";
+import SiteRouter from "../components/SiteRouter.astro";
 import Hero from "../components/Hero.astro";
 import Demo from "../components/Demo.astro";
 import Pillars from "../components/Pillars.astro";
@@ -21,7 +22,7 @@ const description =
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -43,6 +44,7 @@ const description =
     <meta name="twitter:title" content="Tortie" />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://tortie.sh/og/og-image.jpg" />
+    <SiteRouter />
   </head>
   <body>
     <Nav overlay />

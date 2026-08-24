@@ -44,15 +44,38 @@ const siliconResults = await search("Apple silicon");
 const gettingStartedPage = assertPage(siliconResults, "/docs/", "Apple silicon");
 assertSection(gettingStartedPage, "#requirements", "Apple silicon");
 
+const macOSResults = await search("macOS 15.7.9");
+const requirementsPage = assertPage(macOSResults, "/docs/", "macOS 15.7.9");
+assertSection(requirementsPage, "#requirements", "macOS 15.7.9");
+
 const catchUpResults = await search("Catch Me Up");
 const attentionPage = assertPage(catchUpResults, "/docs/attention-and-catch-me-up/", "Catch Me Up");
 assertSection(attentionPage, "#catch-me-up", "Catch Me Up");
+
+const tmuxResults = await search("private tmux server");
+const durabilityPage = assertPage(tmuxResults, "/docs/durability-and-recovery/", "private tmux server");
+assertSection(durabilityPage, "#private-tmux-server", "private tmux server");
+
+const menuResults = await search("context menus");
+const sessionToolsPage = assertPage(menuResults, "/docs/session-tools-and-menus/", "context menus");
+assertSection(sessionToolsPage, "#menu-model", "context menus");
+
+const audienceResults = await search("who Tortie is for");
+const productPage = assertPage(audienceResults, "/docs/what-tortie-is/", "who Tortie is for");
+assertSection(productPage, "#who-it-is-for", "who Tortie is for");
 
 const changelogResults = await search("0.62.1");
 const changelogPage = assertPage(changelogResults, "/docs/changelog/", "0.62.1");
 assertSection(changelogPage, "#v0.62.1", "0.62.1");
 
-assert.equal((await search("walrusnotfound")).length, 0, "An impossible query returned results.");
+// Avoid a token ending in a single shortcut letter such as Q. Pagefind's
+// tokenizer can legitimately reduce that to the documented keycap.
+const impossibleResults = await search("zzzzzzzzzzzzzzzzzzzzzzzz");
+assert.equal(
+  impossibleResults.length,
+  0,
+  "An impossible query returned results.",
+);
 
 const [html, css] = await Promise.all([
   readFile(docsIndex, "utf8"),
@@ -66,4 +89,4 @@ assert.ok(
 );
 assert.match(css, /\.docs-search-result\[aria-selected="true"\]/, "Selected search results have no visible state.");
 
-console.log("Docs search verified: 10-page index, section anchors, excerpts, changelog, empty state, and inline rail semantics.");
+console.log("Docs search verified: 14-page index, product positioning, tmux architecture, context menus, section anchors, excerpts, changelog, empty state, and inline rail semantics.");

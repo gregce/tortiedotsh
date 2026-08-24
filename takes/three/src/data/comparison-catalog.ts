@@ -422,7 +422,7 @@ const category = (
 export const comparisonCategories: readonly ComparisonCategory[] = [
   category("code-editors", "Code IDEs", "Code IDEs", "/compare/editors/", 1, "Products organized around files, projects, and an editor window."),
   category("ide-extensions", "IDE extensions", "Extensions", "/compare/extensions/", 2, "Agent and assistance surfaces that depend on a host editor."),
-  category("agent-workbenches", "Agent Multiplexers", "Agent Multiplexers", "/compare/agent-ides/", 3, "Operator surfaces for multiplexing concurrent coding agents and workspaces, routing attention, isolating changes, and reviewing results."),
+  category("agent-workbenches", "Agent Multiplexers", "Agent Multiplexers", "/compare/agent-multiplexers/", 3, "Operator surfaces for multiplexing concurrent coding agents and workspaces, routing attention, isolating changes, and reviewing results."),
   category("agent-orchestrators", "Agent orchestrators", "Agent Orchestrators", "/compare/orchestrators/", 4, "Products organized around delegated tasks in isolated workspaces."),
   category("coding-agent-harnesses", "Coding-agent harnesses", "Harnesses", "/compare/harnesses/", 5, "Processes that own one model conversation and its tool loop."),
   category("agent-traces", "Agent Traces", "Agent Traces", "/compare/agent-traces/", 6, "Durable provenance and observability records of coding-agent work."),
@@ -905,7 +905,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   // 2. Agent workbenches
   product({
     id: "tortie", name: "Tortie", categoryId: "agent-workbenches", editorialOrder: 1, officialUrl: "https://github.com/gregce/tortie", repository: repo("gregce/tortie"), repoMetricId: "tortie",
-    tags: ["terminal", "editor", "scm", "session-durability", "multi-project", "remote-ssh", "oss"], platform: ["macos"], platformNote: "The current supported desktop build is macOS on Apple silicon.", source: "open-source", execution: ["local-process", "local-daemon", "ssh-host"], status: "active",
+    tags: ["terminal", "editor", "scm", "session-durability", "multi-project", "remote-ssh", "oss"], platform: ["macos"], platformNote: "The current supported desktop build requires macOS 15.7.9 or later on Apple silicon.", source: "open-source", execution: ["local-process", "local-daemon", "ssh-host"], status: "active",
     claims: {
       ...builtInClaims("https://github.com/gregce/tortie#readme", "Tortie repository README", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-pty-survives-ui", "workbench-cross-project-attention", "workbench-editor", "workbench-file-tree", "workbench-scm", "workbench-change-review", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery", "workbench-remote-host"], undefined, "repository-derived"),
       ...limitedClaims("https://github.com/gregce/tortie#readme", "Tortie repository README", ["workbench-browser"], "Markdown and sandboxed HTML previews are built in, but a general interactive browser is not documented.", "repository-derived"),

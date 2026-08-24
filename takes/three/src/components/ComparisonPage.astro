@@ -10,6 +10,7 @@ import "../../../../assets/gmux-tokens.css";
 import "../styles/site.css";
 import "../styles/comparison.css";
 import Nav from "./Nav.astro";
+import SiteRouter from "./SiteRouter.astro";
 import {
   COMPARISON_SNAPSHOT,
   comparisonCategories,
@@ -381,7 +382,7 @@ const basisLabel = (source: EvidenceSource): string => {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -393,6 +394,7 @@ const basisLabel = (source: EvidenceSource): string => {
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon-180.png" />
     <meta name="theme-color" content="#131417" />
     <script is:inline>document.documentElement.classList.add("js");</script>
+    <SiteRouter />
   </head>
   <body>
     <Nav current="compare" sectionLabel="compare" />

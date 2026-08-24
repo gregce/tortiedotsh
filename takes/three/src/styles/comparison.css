@@ -173,7 +173,7 @@
   cursor: pointer;
 }
 
-.js .workspace-action {
+[data-comparison-root][data-enhanced] .workspace-action {
   display: inline-flex;
 }
 
@@ -211,7 +211,7 @@
   display: none;
 }
 
-.js .matrix-toolbar {
+[data-comparison-root][data-enhanced] .matrix-toolbar {
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
@@ -226,7 +226,7 @@
   box-shadow: var(--shadow-2);
 }
 
-.js .matrix-rail.is-open .matrix-toolbar {
+[data-comparison-root][data-enhanced] .matrix-rail.is-open .matrix-toolbar {
   display: flex;
 }
 
@@ -924,7 +924,7 @@ body.matrix-fullscreen-fallback {
     position: relative;
   }
 
-  .js .matrix-rail.is-open .matrix-toolbar {
+  [data-comparison-root][data-enhanced] .matrix-rail.is-open .matrix-toolbar {
     position: absolute;
     top: calc(100% + 6px);
     right: 0;

@@ -569,6 +569,7 @@
 .release-label {
   display: inline-flex;
   align-items: center;
+  gap: 7px;
   min-height: 27px;
   padding: 4px 10px;
   border-radius: 7px;
@@ -578,19 +579,27 @@
   font-weight: var(--weight-medium);
 }
 
+.release-label::before {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+}
+
 .release-label-added {
+  background: rgba(107, 196, 109, 0.12);
+  color: #8ad98d;
+}
+
+.release-label-changed {
   background: rgba(77, 157, 232, 0.14);
   color: #8bc5ff;
 }
 
-.release-label-changed {
-  background: rgba(168, 173, 184, 0.11);
-  color: #c2c6ce;
-}
-
 .release-label-fixed {
-  background: rgba(168, 173, 184, 0.11);
-  color: #c7cbd2;
+  background: rgba(229, 101, 94, 0.12);
+  color: #f0a39d;
 }
 
 .release-sections ul {
@@ -613,17 +622,46 @@
 .release-commits {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-left: 8px;
+  gap: 5px;
+  margin-left: 10px;
+  vertical-align: baseline;
 }
 
 .release-commits a {
-  color: #c8cdd6;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 23px;
+  padding: 1px 7px;
+  border: 1px solid #30333a;
+  border-radius: 5px;
+  background: #111214;
+  color: #aeb5c0;
   font-family: var(--font-mono);
-  font-size: 12px;
-  text-decoration: underline;
-  text-decoration-color: #555a64;
-  text-underline-offset: 3px;
+  font-size: 11px;
+  line-height: 1;
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.release-commits a:hover {
+  border-color: #46505e;
+  background: #191b1f;
+  color: #dce9f8;
+}
+
+.release-commit-mark {
+  width: 12px;
+  height: 12px;
+  color: #758090;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.4;
+}
+
+.release-commits a:hover .release-commit-mark {
+  color: #82bfff;
 }
 
 @media (max-width: 900px) {
