@@ -453,7 +453,7 @@
       "name": "Jules",
       "alt": "Jules logo",
       "src": "/compare/logos/jules.svg",
-      "sourceUrl": "https://jules.google.com/",
+      "sourceUrl": "https://jules.google/",
       "sourceType": "official-product-asset",
       "checkedAt": "2026-08-23"
     },
@@ -1043,6 +1043,39 @@
       "src": "/compare/logos/roo-code.png",
       "sourceUrl": "https://github.com/RooCodeInc/Roo-Code/blob/HEAD/src/assets/icons/icon.png",
       "sourceType": "official-extension-package-product-artwork",
+      "checkedAt": "2026-08-23"
+    },
+    "muse-code": {
+      "name": "Muse Code",
+      "alt": "Muse Code logo",
+      "src": "/compare/logos/muse-code.png",
+      "sourceUrl": "https://github.com/meta-models",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "rovo-dev-cli": {
+      "name": "Rovo Dev CLI",
+      "alt": "Rovo Dev CLI logo",
+      "src": "/compare/logos/rovo-dev-cli.png",
+      "sourceUrl": "https://github.com/atlassian",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-08-23"
+    },
+    "sshhip": {
+      "name": "SSHHIP",
+      "alt": "SSHHIP logo",
+      "src": "/compare/logos/sshhip.jpg",
+      "sourceUrl": "https://apps.apple.com/us/app/sshhip/id6785186457",
+      "sourceType": "official-app-store-artwork",
+      "resolvedAssetUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/da/c0/89/dac08980-25b9-d295-4c49-a7e90705268f/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "checkedAt": "2026-08-23"
+    },
+    "git-ai": {
+      "name": "Git AI",
+      "alt": "Git AI logo",
+      "src": "/compare/logos/git-ai.png",
+      "sourceUrl": "https://github.com/git-ai-project/git-ai",
+      "sourceType": "official-organization-avatar",
       "checkedAt": "2026-08-23"
     }
   },

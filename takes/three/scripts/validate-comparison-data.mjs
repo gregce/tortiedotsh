@@ -77,7 +77,7 @@ const manifestIdSet = new Set(manifestIds);
 const manifestById = new Map(manifest.projects.map((project) => [project.id, project]));
 const manifestForge = (project) => project.forge || "github";
 const manifestRepositoryUrl = (project) => project.repositoryUrl || project.githubUrl;
-const evidenceBacklog = new Set(["mosaic-terminal", "airport", "muse-code", "omnara"]);
+const evidenceBacklog = new Set(["mosaic-terminal", "airport", "omnara"]);
 const publicProductIds = comparisonProducts
   .filter((product) => !evidenceBacklog.has(product.id))
   .map((product) => product.id);
@@ -233,13 +233,14 @@ for (const project of manifest.projects) {
 
 for (const category of comparisonCategories) {
   const products = comparisonProducts.filter((product) => product.categoryId === category.id);
+  const editorialOrders = products.map((product) => product.editorialOrder).sort((left, right) => left - right);
   check(products.length > 0, `${category.id} must contain at least one product.`);
   check(
     unique(category.rows.map((row) => row.id)),
     `${category.id} row IDs must be unique within the category.`,
   );
   check(
-    products.every((product, index) => product.editorialOrder === index + 1),
+    editorialOrders.every((order, index) => order === index + 1),
     `${category.id} editorial order must be sequential from one.`,
   );
 }

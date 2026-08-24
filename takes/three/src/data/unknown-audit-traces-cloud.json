@@ -17,7 +17,7 @@
     "platformRows": "Excluded from this ledger. Platform header facts and platform filter rows require a separate exact-SKU host audit; an omitted platform is not inferred to be unsupported."
   },
   "summary": {
-    "productsInScope": 19,
+    "productsInScope": 20,
     "productsWithUnknownCells": 15,
     "currentUnknownCells": 29,
     "agentTraceUnknownCells": 8,

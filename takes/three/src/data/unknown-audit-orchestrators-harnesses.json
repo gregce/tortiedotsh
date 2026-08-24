@@ -4,18 +4,18 @@
   "catalogSnapshot": "2026-08-23",
   "scope": {
     "categoryIds": ["agent-orchestrators", "coding-agent-harnesses"],
-    "excludedProductIds": ["mosaic-terminal", "airport", "muse-code", "omnara"],
+    "excludedProductIds": ["mosaic-terminal", "airport", "omnara"],
     "renderedRows": "Non-platform catalog rows resolved through getComparisonClaim(). Generated repository metrics are governed separately by the freshness gate.",
     "platformHeaders": "Products whose complete platform fact is Unknown are audited separately below. An omitted OS in a known platform list is not rendered as an Unknown table cell."
   },
   "summary": {
-    "products": 47,
-    "currentUnknownCells": 161,
-    "agentOrchestratorUnknownCells": 99,
-    "codingAgentHarnessUnknownCells": 62,
+    "products": 48,
+    "currentUnknownCells": 159,
+    "agentOrchestratorUnknownCells": 91,
+    "codingAgentHarnessUnknownCells": 68,
     "suggestedClosures": 0,
     "implementedClosures": 8,
-    "remainUnknown": 161
+    "remainUnknown": 159
   },
   "categories": [
     {
@@ -214,20 +214,6 @@
           "cells": [
             {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"HumanLayer's workspace and workflow docs do not establish context-preserving transfer of one task between harnesses."},
             {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"Local and remote daemon execution is documented without a per-task container or VM isolation guarantee."}
-          ]
-        },
-        {
-          "productId": "claude-squad",
-          "sourcesChecked": ["https://github.com/smtg-ai/claude-squad"],
-          "cells": [
-            {"rowId":"product-status","result":"remain-unknown","rationale":"The repository has current releases but does not assign claude-squad an explicit lifecycle label."},
-            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Running multiple tmux agents does not establish context-preserving transfer of one active task between harnesses."},
-            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"claude-squad documents tmux and worktrees, not a container or VM boundary."},
-            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"The TUI session list is not documented as a task or Kanban board."},
-            {"rowId":"orchestrator-pr-lifecycle","result":"remain-unknown","rationale":"The repository does not establish product-owned pull-request creation, update, checks, or merge."},
-            {"rowId":"orchestrator-remote-execution","result":"remain-unknown","rationale":"tmux prerequisites do not establish a supported remote-host execution contract."},
-            {"rowId":"orchestrator-attention-signals","result":"remain-unknown","rationale":"No explicit blocked, waiting, failed, or completed fleet attention states are documented."},
-            {"rowId":"orchestrator-programmable","result":"remain-unknown","rationale":"No stable API, webhook, or external automation surface is documented for claude-squad."}
           ]
         },
         {
@@ -445,6 +431,24 @@
           "cells":[
             {"rowId":"product-status","result":"remain-unknown","rationale":"The repository documents installing the released xAI CLI source snapshot but does not assign Grok Build a lifecycle label."},
             {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"The README and headless guide do not directly establish user-supplied image or web-page input for Grok Build."}
+          ]
+        },
+        {
+          "productId":"muse-code",
+          "sourcesChecked":["https://ai.meta.com/llama/","https://github.com/meta-models/meta-model-cookbook/tree/main/04_muse_code"],
+          "cells":[
+            {"rowId":"harness-headless","result":"remain-unknown","rationale":"Meta's Muse Code product page and cookbook establish an interactive terminal agent and replayable event log, but not a supported non-interactive or headless invocation contract."},
+            {"rowId":"harness-project-instructions","result":"remain-unknown","rationale":"Bundled and project skills are documented, but the checked exact Muse Code sources do not establish a distinct repository-instruction or memory-file contract."},
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"Crash-safe event-log resume is documented, but restoring workspace mutations to a prior checkpoint is not established."}
+          ]
+        },
+        {
+          "productId":"rovo-dev-cli",
+          "sourcesChecked":["https://support.atlassian.com/rovo/docs/use-rovo-dev-cli/","https://support.atlassian.com/rovo/docs/use-server-mode-in-rovo-dev-cli/","https://support.atlassian.com/rovo/docs/use-worktree-mode-in-rovo-dev-cli/"],
+          "cells":[
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"Worktree mode isolates Git checkouts, but the checked Atlassian sources do not establish process, filesystem, container, or network sandbox enforcement."},
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"Saved session resume and worktree isolation do not establish restoration of workspace mutations from a checkpoint."},
+            {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"The checked Rovo Dev CLI sources do not establish user-supplied image, document, or web-page input for the terminal agent."}
           ]
         }
       ]

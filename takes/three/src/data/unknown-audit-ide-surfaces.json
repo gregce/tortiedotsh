@@ -18,14 +18,14 @@
     "platformHeaders": "Platform-header support is outside this rendered-cell ledger. An omitted OS in a known platform list is not treated as Unknown."
   },
   "summary": {
-    "products": 40,
-    "currentUnknownCells": 200,
+    "products": 41,
+    "currentUnknownCells": 207,
     "codeEditorUnknownCells": 70,
     "ideExtensionUnknownCells": 97,
-    "agentMultiplexerUnknownCells": 33,
+    "agentMultiplexerUnknownCells": 40,
     "appliedClosures": 14,
     "changedSourceCorrections": 14,
-    "remainUnknown": 200
+    "remainUnknown": 207
   },
   "categories": [
     {
@@ -1512,6 +1512,21 @@
               "result": "remain-unknown",
               "rationale": "dmux's canonical README establishes its tmux panes, supported agent launchers, worktree isolation, file and diff browser, notifications, multi-project navigation, merge, and pull-request workflow. It does not establish a supported CLI, socket, API, or event contract for external workspace control."
             }
+          ]
+        },
+        {
+          "productId": "claude-squad",
+          "sourcesChecked": [
+            "https://github.com/smtg-ai/claude-squad"
+          ],
+          "cells": [
+            {"rowId":"product-status","result":"remain-unknown","rationale":"The canonical repository publishes releases but does not assign claude-squad an explicit lifecycle label."},
+            {"rowId":"workbench-agent-handoff","result":"remain-unknown","rationale":"Managing several agent sessions does not establish context-preserving transfer of one active task or conversation between harnesses."},
+            {"rowId":"workbench-editor","result":"remain-unknown","rationale":"The tmux TUI manages agent terminals and reviews changes but does not document an editable in-product code editor."},
+            {"rowId":"workbench-file-tree","result":"remain-unknown","rationale":"The checked repository does not establish a persistent project file-tree surface owned by claude-squad."},
+            {"rowId":"workbench-browser","result":"remain-unknown","rationale":"The checked repository does not document an embedded interactive browser."},
+            {"rowId":"workbench-remote-host","result":"remain-unknown","rationale":"tmux prerequisites do not establish a supported SSH or remote-host workflow owned by claude-squad."},
+            {"rowId":"workbench-programmable-control","result":"remain-unknown","rationale":"The checked repository does not expose a stable CLI, socket, API, or event contract for external workspace control."}
           ]
         }
       ]

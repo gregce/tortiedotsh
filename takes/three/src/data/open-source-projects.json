@@ -356,7 +356,7 @@
     {
       "id": "claude-squad",
       "name": "claude-squad",
-      "category": "agent-orchestrators",
+      "category": "agent-workbenches",
       "owner": "smtg-ai",
       "repo": "claude-squad",
       "githubUrl": "https://github.com/smtg-ai/claude-squad",
@@ -907,6 +907,17 @@
       "repo": "agent-sessions",
       "githubUrl": "https://github.com/jazzyalex/agent-sessions",
       "apiUrl": "https://api.github.com/repos/jazzyalex/agent-sessions",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "git-ai",
+      "name": "Git AI",
+      "category": "agent-traces",
+      "owner": "git-ai-project",
+      "repo": "git-ai",
+      "githubUrl": "https://github.com/git-ai-project/git-ai",
+      "apiUrl": "https://api.github.com/repos/git-ai-project/git-ai",
+      "metricScope": "Apache-licensed Git AI CLI and open attribution standard; the hosted Teams service is outside repository metrics.",
       "loc": { "enabled": true }
     },
     {

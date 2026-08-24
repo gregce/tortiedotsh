@@ -1,7 +1,66 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T05:08:01.787Z",
+  "generatedAt": "2026-08-24T06:10:46.411Z",
   "sources": [
+    {
+      "id": "69c685f410104791dcf5",
+      "url": "https://ai.meta.com/llama/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "muse-code",
+          "field": "harness-interactive-cli",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "muse-code",
+          "field": "harness-multi-provider",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "muse-code",
+          "field": "harness-multimodal-input",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "muse-code",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "muse-code",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "muse-code",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "muse-code",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://ai.meta.com/llama/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
     {
       "id": "2fa78aa7f0249c97fb15",
       "url": "https://aider.chat/docs/git.html",
@@ -573,6 +632,40 @@
       "reviewedHash": "9be0bc2c4f822179dffb43d0d3272af5ba8c375ccf2d39da87ac62e01e7b88d0",
       "reviews": [],
       "etag": "\"sfjcGw\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "96ab8339090d4ad335d5",
+      "url": "https://apps.apple.com/us/app/sshhip/id6785186457",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "sshhip",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "remote-native-ios",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://apps.apple.com/us/app/sshhip/id6785186457",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
@@ -11494,6 +11587,127 @@
       "error": null
     },
     {
+      "id": "bfbf301304c7cf65548a",
+      "url": "https://github.com/git-ai-project/git-ai",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "git-ai",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-artifact-coverage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-capture-coverage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-ci-analytics",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-export-api",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-git-linkage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-multi-harness",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-redaction-privacy",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-replay-resume",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-search-timeline",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-self-hosting",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-sharing",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-storage-boundary",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-tool-call-coverage",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "git-ai",
+          "field": "trace-transcript-coverage",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/git-ai-project/git-ai/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "b373bdb0eab978ef2a46",
       "url": "https://github.com/github/copilot-cli/blob/main/changelog.md",
       "bases": [
@@ -13126,6 +13340,185 @@
       "etag": "\"ee93a7899fcc82a34389d040ba76a58faffc2b96\"",
       "lastModified": "Sun, 23 Aug 2026 20:01:25 GMT",
       "error": "HTTP 403"
+    },
+    {
+      "id": "6e114efe525e3e45f020",
+      "url": "https://github.com/meta-models/meta-model-cookbook/blob/main/04_muse_code/03_staged_approvals/README.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "muse-code",
+          "field": "harness-permission-controls",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/meta-models/meta-model-cookbook/main/04_muse_code/03_staged_approvals/README.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "00a4224ecac02a2efb36",
+      "url": "https://github.com/meta-models/meta-model-cookbook/blob/main/04_muse_code/04_contained_execution/README.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "muse-code",
+          "field": "harness-sandbox",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/meta-models/meta-model-cookbook/main/04_muse_code/04_contained_execution/README.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "28bb490e2abd64983b65",
+      "url": "https://github.com/meta-models/meta-model-cookbook/blob/main/04_muse_code/06_subagent_fanout/README.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "muse-code",
+          "field": "harness-git-workflow",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "muse-code",
+          "field": "harness-subagents",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/meta-models/meta-model-cookbook/main/04_muse_code/06_subagent_fanout/README.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "f1a9d98aea594d885faf",
+      "url": "https://github.com/meta-models/meta-model-cookbook/blob/main/04_muse_code/08_bundled_skills/README.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "muse-code",
+          "field": "harness-extension-protocol",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/meta-models/meta-model-cookbook/main/04_muse_code/08_bundled_skills/README.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "451f7f53a1041ded4d37",
+      "url": "https://github.com/meta-models/meta-model-cookbook/blob/main/04_muse_code/README.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "muse-code",
+          "field": "harness-structured-output",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/meta-models/meta-model-cookbook/main/04_muse_code/README.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "f68a32e7dd0dfe311424",
+      "url": "https://github.com/meta-models/meta-model-cookbook/tree/main/04_muse_code/01_event_log_and_resume",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "muse-code",
+          "field": "harness-session-resume",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://github.com/meta-models/meta-model-cookbook/tree/main/04_muse_code/01_event_log_and_resume",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
     },
     {
       "id": "5f1586c618d619925723",
@@ -15911,41 +16304,6 @@
       "usedBy": [
         {
           "productId": "claude-squad",
-          "field": "orchestrator-inline-review",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "claude-squad",
-          "field": "orchestrator-isolated-workspaces",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "claude-squad",
-          "field": "orchestrator-live-steering",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "claude-squad",
-          "field": "orchestrator-multi-harness",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "claude-squad",
-          "field": "orchestrator-parallel-workers",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "claude-squad",
-          "field": "orchestrator-review-delivery",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "claude-squad",
-          "field": "orchestrator-worktrees",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "claude-squad",
           "field": "profile.execution",
           "checkedAt": "2026-08-23"
         },
@@ -15962,6 +16320,56 @@
         {
           "productId": "claude-squad",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
+          "field": "workbench-arbitrary-cli",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
+          "field": "workbench-attention-signals",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
+          "field": "workbench-change-review",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
+          "field": "workbench-cross-project-attention",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
+          "field": "workbench-named-sessions",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
+          "field": "workbench-pty-survives-ui",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
+          "field": "workbench-scm",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
+          "field": "workbench-session-recovery",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
+          "field": "workbench-splits",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "claude-squad",
+          "field": "workbench-worktrees",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -21356,6 +21764,497 @@
       "reviewedHash": "aa5c41871bd9a2f44b30a717e3765405ff0525fd08bb50a8032d08d6c9e6a45e",
       "etag": "\"0090ea45d321c15a7617cb4659aee71d1ea87c82344dce43692ad4fe8224c042\"",
       "lastModified": "Sun, 23 Aug 2026 05:55:21 GMT",
+      "error": null
+    },
+    {
+      "id": "a5554d23b193476afc09",
+      "url": "https://sshhip.com/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "sshhip",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "remote-client-reach",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "remote-encryption",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "remote-host-ownership",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "remote-hosting-boundary",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "remote-relay-deployment",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "remote-terminal-input",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "remote-transport-security",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://sshhip.com/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "82b87bf65064327c858a",
+      "url": "https://sshhip.com/guides/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "sshhip",
+          "field": "remote-supported-harnesses",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://sshhip.com/guides/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "812761e88b6a3c20b979",
+      "url": "https://sshhip.com/guides/claude-code-from-iphone/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "sshhip",
+          "field": "remote-input-model",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://sshhip.com/guides/claude-code-from-iphone/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "08658de443a548aa4228",
+      "url": "https://sshhip.com/guides/claude-code-remote-control-vs-ssh/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "sshhip",
+          "field": "remote-notifications",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://sshhip.com/guides/claude-code-remote-control-vs-ssh/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "162b5b53e659b9603757",
+      "url": "https://sshhip.com/tmux/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "sshhip",
+          "field": "remote-existing-session",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "sshhip",
+          "field": "remote-session-durability",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://sshhip.com/tmux/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "6d07904dc20cd06ef26e",
+      "url": "https://support.atlassian.com/rovo/docs/connect-to-an-mcp-server-in-rovo-dev-cli/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "rovo-dev-cli",
+          "field": "harness-extension-protocol",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://support.atlassian.com/rovo/docs/connect-to-an-mcp-server-in-rovo-dev-cli/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "4ead9e95918bfb61534f",
+      "url": "https://support.atlassian.com/rovo/docs/install-and-run-rovo-dev-cli-on-your-device/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "rovo-dev-cli",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://support.atlassian.com/rovo/docs/install-and-run-rovo-dev-cli-on-your-device/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "ad6e4db57e423ea17427",
+      "url": "https://support.atlassian.com/rovo/docs/manage-sessions-in-rovo-dev-cli/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "rovo-dev-cli",
+          "field": "harness-session-resume",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://support.atlassian.com/rovo/docs/manage-sessions-in-rovo-dev-cli/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "c2f654bec9eb729e39a0",
+      "url": "https://support.atlassian.com/rovo/docs/switch-between-large-language-models-in-rovo-dev-cli/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "rovo-dev-cli",
+          "field": "harness-multi-provider",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://support.atlassian.com/rovo/docs/switch-between-large-language-models-in-rovo-dev-cli/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "f879586909d1e7abab2d",
+      "url": "https://support.atlassian.com/rovo/docs/use-memory-in-rovo-dev-cli/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "rovo-dev-cli",
+          "field": "harness-project-instructions",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://support.atlassian.com/rovo/docs/use-memory-in-rovo-dev-cli/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "93112a79c916861b9946",
+      "url": "https://support.atlassian.com/rovo/docs/use-rovo-dev-cli/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "rovo-dev-cli",
+          "field": "harness-interactive-cli",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "rovo-dev-cli",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "rovo-dev-cli",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "rovo-dev-cli",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "rovo-dev-cli",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://support.atlassian.com/rovo/docs/use-rovo-dev-cli/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "3cf2a81d23357307fdc6",
+      "url": "https://support.atlassian.com/rovo/docs/use-server-mode-in-rovo-dev-cli/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "rovo-dev-cli",
+          "field": "harness-headless",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "rovo-dev-cli",
+          "field": "harness-permission-controls",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "rovo-dev-cli",
+          "field": "harness-structured-output",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://support.atlassian.com/rovo/docs/use-server-mode-in-rovo-dev-cli/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "63328e1c9c219a4009f9",
+      "url": "https://support.atlassian.com/rovo/docs/use-subagents-in-rovo-dev-cli/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "rovo-dev-cli",
+          "field": "harness-subagents",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://support.atlassian.com/rovo/docs/use-subagents-in-rovo-dev-cli/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "d6b056c1e3e145cbb174",
+      "url": "https://support.atlassian.com/rovo/docs/use-worktree-mode-in-rovo-dev-cli/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "rovo-dev-cli",
+          "field": "harness-git-workflow",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://support.atlassian.com/rovo/docs/use-worktree-mode-in-rovo-dev-cli/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {

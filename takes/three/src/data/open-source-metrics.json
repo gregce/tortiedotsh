@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T05:16:46.499Z",
-  "manifestSyncedAt": "2026-08-24T05:16:46.499Z",
+  "generatedAt": "2026-08-24T06:06:51.698Z",
+  "manifestSyncedAt": "2026-08-24T06:10:46.313Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -4598,7 +4598,7 @@
     {
       "id": "claude-squad",
       "name": "claude-squad",
-      "category": "agent-orchestrators",
+      "category": "agent-workbenches",
       "owner": "smtg-ai",
       "repo": "claude-squad",
       "forge": "github",
@@ -8876,11 +8876,6 @@
           "fetchedAt": "2026-08-24T05:16:42.272Z"
         },
         {
-          "type": "license-override",
-          "url": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/languages",
           "fetchedAt": "2026-08-24T05:16:42.631Z"
@@ -8899,6 +8894,11 @@
           "type": "loc-measurement",
           "url": "https://gitlab.com/gitlab-org/gitlab/-/tree/v19.3.0-ee",
           "fetchedAt": "2026-08-24T05:16:46.498Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -10931,6 +10931,139 @@
           "type": "loc-measurement",
           "url": "https://github.com/jazzyalex/agent-sessions/tree/v5.0.2",
           "fetchedAt": "2026-08-23T22:37:34.282Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "git-ai",
+      "name": "Git AI",
+      "category": "agent-traces",
+      "owner": "git-ai-project",
+      "repo": "git-ai",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/git-ai-project/git-ai",
+      "cloneUrl": "https://github.com/git-ai-project/git-ai.git",
+      "githubUrl": "https://github.com/git-ai-project/git-ai",
+      "apiUrl": "https://api.github.com/repos/git-ai-project/git-ai",
+      "metricScope": "Apache-licensed Git AI CLI and open attribution standard; the hosted Teams service is outside repository metrics.",
+      "status": "current",
+      "refreshedAt": "2026-08-24T06:06:51.698Z",
+      "stars": 2493,
+      "forks": 273,
+      "openIssues": 186,
+      "contributors": 64,
+      "repositorySizeKb": 137650,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T05:54:29Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 10232547,
+          "percent": 94.32
+        },
+        {
+          "name": "Python",
+          "bytes": 179537,
+          "percent": 1.65
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 161431,
+          "percent": 1.49
+        },
+        {
+          "name": "Shell",
+          "bytes": 75146,
+          "percent": 0.69
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 74619,
+          "percent": 0.69
+        },
+        {
+          "name": "C#",
+          "bytes": 57534,
+          "percent": 0.53
+        },
+        {
+          "name": "Nix",
+          "bytes": 42385,
+          "percent": 0.39
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 24407,
+          "percent": 0.22
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 746,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.6.24",
+        "name": "Release v1.6.24",
+        "publishedAt": "2026-08-23T16:35:21Z",
+        "url": "https://github.com/git-ai-project/git-ai/releases/tag/v1.6.24",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v1.6.24",
+      "releaseDate": "2026-08-23T16:35:21Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 244594,
+        "comments": 28392,
+        "blank": 36082,
+        "files": 529,
+        "measuredAt": "2026-08-24T06:06:51.640Z",
+        "verifiedAt": "2026-08-24T06:06:51.640Z",
+        "measuredRef": "v1.6.24",
+        "refType": "stable-release-tag",
+        "commitSha": "dc7dba750947e1fd169d9cd6b2fa60b14a61233e",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/git-ai-project/git-ai",
+          "fetchedAt": "2026-08-24T06:06:40.003Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/git-ai-project/git-ai/languages",
+          "fetchedAt": "2026-08-24T06:06:40.091Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/git-ai-project/git-ai/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T06:06:40.234Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/git-ai-project/git-ai/releases?per_page=100",
+          "fetchedAt": "2026-08-24T06:06:40.936Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/git-ai-project/git-ai/tree/v1.6.24",
+          "fetchedAt": "2026-08-24T06:06:51.640Z"
         }
       ],
       "errors": []

@@ -10,11 +10,11 @@
     "parityRule": "cells must exactly equal the current rendered non-platform Unknown keys. Implemented closures are recorded separately and are no longer Unknown catalog state."
   },
   "summary": {
-    "products": 11,
-    "currentUnknownCells": 53,
+    "products": 12,
+    "currentUnknownCells": 58,
     "suggestedClosures": 0,
     "implementedClosures": 7,
-    "remainUnknown": 53
+    "remainUnknown": 58
   },
   "categories": [
     {
@@ -167,6 +167,22 @@
             {"rowId":"remote-supported-harnesses","result":"remain-unknown","rationale":"Any command can run behind ttyd, but the product does not name supported coding-agent harnesses or understand their state."},
             {"rowId":"remote-notifications","result":"remain-unknown","rationale":"The repository does not document push or out-of-app operator attention notifications."},
             {"rowId":"remote-session-history","result":"remain-unknown","rationale":"A ttyd-hosted PTY lives while its host command runs, but no recording or browsable historical-session feature is established."}
+          ]
+        },
+        {
+          "productId": "sshhip",
+          "sourcesChecked": [
+            "https://sshhip.com/",
+            "https://sshhip.com/tmux/",
+            "https://sshhip.com/guides/claude-code-remote-control-vs-ssh/",
+            "https://apps.apple.com/us/app/sshhip/id6785186457"
+          ],
+          "cells": [
+            {"rowId":"remote-approvals","result":"remain-unknown","rationale":"SSHHIP forwards terminal input over SSH but does not define normalized coding-agent approval or follow-up actions."},
+            {"rowId":"remote-native-android","result":"remain-unknown","rationale":"The exact product is documented as a native iPhone and iPad client; no first-party Android application is established."},
+            {"rowId":"remote-browser-pwa","result":"remain-unknown","rationale":"SSHHIP is a native iOS SSH client and the checked sources do not document a browser or PWA client."},
+            {"rowId":"remote-session-history","result":"remain-unknown","rationale":"tmux or herdr can preserve a live host session, but SSHHIP does not document a recorded or browsable historical-session archive."},
+            {"rowId":"remote-agent-aware","result":"remain-unknown","rationale":"The product can operate arbitrary CLI and TUI programs over SSH but does not parse or normalize coding-agent state."}
           ]
         }
       ]
