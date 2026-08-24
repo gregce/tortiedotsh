@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T03:37:25.235Z",
-  "manifestSyncedAt": "2026-08-24T03:37:25.235Z",
+  "generatedAt": "2026-08-24T03:55:01.943Z",
+  "manifestSyncedAt": "2026-08-24T03:55:01.943Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -3921,14 +3921,14 @@
           "fetchedAt": "2026-08-24T03:37:08.313Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/getpaseo/paseo/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "loc-measurement",
           "url": "https://github.com/getpaseo/paseo/tree/main",
           "fetchedAt": "2026-08-24T03:37:14.723Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/getpaseo/paseo/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": [
@@ -7246,15 +7246,15 @@
       "githubUrl": "https://gitlab.com/gitlab-org/gitlab",
       "apiUrl": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab",
       "metricScope": "Whole GitLab monorepo; GitLab Duo Developer Flow is one feature within it.",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
+      "status": "partial",
+      "refreshedAt": "2026-08-24T03:55:01.942Z",
+      "stars": 6125,
+      "forks": 12364,
+      "openIssues": 0,
+      "contributors": 417,
       "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
+      "defaultBranch": "master",
+      "pushedAt": "2026-08-24T13:44:57.000+10:00",
       "archived": null,
       "license": {
         "key": "manifest-verified-mixed",
@@ -7283,24 +7283,50 @@
           }
         ]
       },
-      "languages": [],
+      "languages": [
+        {
+          "name": "Ruby",
+          "bytes": null,
+          "percent": 68.31
+        },
+        {
+          "name": "JavaScript",
+          "bytes": null,
+          "percent": 20.01
+        },
+        {
+          "name": "Vue",
+          "bytes": null,
+          "percent": 7.48
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": null,
+          "percent": 1.96
+        },
+        {
+          "name": "Haml",
+          "bytes": null,
+          "percent": 0.93
+        }
+      ],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 10536496,
+        "comments": 282043,
+        "blank": 3425258,
+        "files": 75226,
+        "measuredAt": "2026-08-24T03:54:53.917Z",
+        "verifiedAt": "2026-08-24T03:54:53.917Z",
+        "measuredRef": "master",
+        "refType": "default-branch",
+        "commitSha": "f427cabd494e2670e67e401a610709e842f223fd",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
@@ -7308,12 +7334,51 @@
       },
       "sources": [
         {
+          "type": "repository",
+          "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab?statistics=true&license=true",
+          "fetchedAt": "2026-08-24T03:52:24.428Z"
+        },
+        {
+          "type": "open-issues",
+          "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/issues?state=opened&per_page=1",
+          "fetchedAt": "2026-08-24T03:52:24.798Z"
+        },
+        {
+          "type": "last-commit",
+          "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/repository/commits?per_page=1",
+          "fetchedAt": "2026-08-24T03:52:24.682Z"
+        },
+        {
           "type": "license-override",
           "url": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE",
           "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/languages",
+          "fetchedAt": "2026-08-24T03:52:24.914Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/repository/contributors?per_page=1",
+          "fetchedAt": "2026-08-24T03:52:25.205Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://gitlab.com/gitlab-org/gitlab/-/tree/master",
+          "fetchedAt": "2026-08-24T03:54:53.917Z"
         }
       ],
-      "errors": []
+      "errors": [
+        {
+          "section": "repository-statistics",
+          "message": "GitLab omitted repository size and archive status; configure GITLAB_TOKEN with Reporter access and read_api scope"
+        },
+        {
+          "section": "version",
+          "message": "GitLab returned 403 for https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/releases?per_page=100"
+        }
+      ]
     },
     {
       "id": "coder",
