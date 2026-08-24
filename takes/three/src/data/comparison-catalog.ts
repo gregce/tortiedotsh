@@ -899,10 +899,29 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       "workbench-worktrees": capability("via-integration", "https://github.com/manaflow-ai/cmux-home/blob/main/docs/customization.md", "cmux customization examples", "The official customization collection includes a worktree starter; it is an ecosystem integration rather than a cmux core capability.", "repository-derived"),
     },
   }),
-  product({ id: "mosaic-terminal", name: "Mosaic Terminal", categoryId: "agent-workbenches", editorialOrder: 5, officialUrl: "https://mosaicterminal.dev/", tags: ["terminal", "session-restore", "attention", "multi-project"], source: "unknown", execution: ["local-process"], claims: { ...builtInClaims("https://mosaicterminal.dev/", "Mosaic Terminal product", ["workbench-named-sessions", "workbench-cross-project-attention"]), ...limitedClaims("https://mosaicterminal.dev/", "Mosaic Terminal product", ["workbench-pty-survives-ui"], "Continuity is documented as agent relaunch with provider resume flags.") } }),
-  product({ id: "airport", name: "Airport", categoryId: "agent-workbenches", editorialOrder: 6, officialUrl: "https://get-airport.com/", tags: ["terminal", "attention", "multi-project"], source: "unknown", execution: ["local-process"], claims: builtInClaims("https://get-airport.com/", "Airport product", ["workbench-named-sessions", "workbench-cross-project-attention"]) }),
   product({
-    id: "wmux", name: "wmux", categoryId: "agent-workbenches", editorialOrder: 7, officialUrl: "https://github.com/openwong2kim/wmux", repository: repo("openwong2kim/wmux"), repoMetricId: "wmux",
+    id: "herdr", name: "Herdr", categoryId: "agent-workbenches", editorialOrder: 5, officialUrl: "https://herdr.dev/", repository: repo("herdrdev/herdr"), repoMetricId: "herdr",
+    tags: ["tui", "terminal", "multi-agent", "multi-project", "daemon-pty", "session-restore", "attention", "remote-ssh", "socket-api", "worktrees", "plugins", "oss"],
+    platform: ["macos", "windows", "linux"],
+    platformSource: { url: "https://herdr.dev/docs/persistence-remote/", title: "Herdr persistence and remote access" },
+    source: "open-source",
+    sourceSource: { url: "https://github.com/herdrdev/herdr/blob/master/LICENSE", title: "Herdr Apache 2.0 license", basis: "repository-derived" },
+    execution: ["local-process", "local-daemon", "ssh-host"],
+    executionSource: { url: "https://herdr.dev/docs/persistence-remote/", title: "Herdr persistence and remote access" },
+    status: "active",
+    statusSource: { url: "https://github.com/herdrdev/herdr/releases/latest", title: "Herdr latest release", basis: "repository-derived" },
+    claims: {
+      ...builtInClaims("https://herdr.dev/docs/concepts/", "Herdr concepts", ["workbench-named-sessions", "workbench-pty-survives-ui", "workbench-splits"]),
+      ...builtInClaims("https://herdr.dev/docs/agents/", "Herdr agents", ["workbench-arbitrary-cli", "workbench-cross-project-attention", "workbench-attention-signals"]),
+      ...builtInClaims("https://herdr.dev/docs/session-state/", "Herdr session state and restore", ["workbench-session-recovery"]),
+      ...builtInClaims("https://herdr.dev/docs/persistence-remote/", "Herdr persistence and remote access", ["workbench-remote-host"]),
+      ...builtInClaims("https://herdr.dev/docs/socket-api/", "Herdr socket API", ["workbench-programmable-control", "workbench-worktrees"]),
+    },
+  }),
+  product({ id: "mosaic-terminal", name: "Mosaic Terminal", categoryId: "agent-workbenches", editorialOrder: 6, officialUrl: "https://mosaicterminal.dev/", tags: ["terminal", "session-restore", "attention", "multi-project"], source: "unknown", execution: ["local-process"], claims: { ...builtInClaims("https://mosaicterminal.dev/", "Mosaic Terminal product", ["workbench-named-sessions", "workbench-cross-project-attention"]), ...limitedClaims("https://mosaicterminal.dev/", "Mosaic Terminal product", ["workbench-pty-survives-ui"], "Continuity is documented as agent relaunch with provider resume flags.") } }),
+  product({ id: "airport", name: "Airport", categoryId: "agent-workbenches", editorialOrder: 7, officialUrl: "https://get-airport.com/", tags: ["terminal", "attention", "multi-project"], source: "unknown", execution: ["local-process"], claims: builtInClaims("https://get-airport.com/", "Airport product", ["workbench-named-sessions", "workbench-cross-project-attention"]) }),
+  product({
+    id: "wmux", name: "wmux", categoryId: "agent-workbenches", editorialOrder: 8, officialUrl: "https://github.com/openwong2kim/wmux", repository: repo("openwong2kim/wmux"), repoMetricId: "wmux",
     tags: ["terminal", "daemon-pty", "worktrees", "browser", "notifications", "scm", "oss"], platform: ["macos", "windows", "linux", "web"], platformNote: "Linux desktop packages are experimental; the browser/PWA client is read-only and loopback-only by default.", source: "open-source", execution: ["local-daemon", "ssh-host"], status: "active",
     claims: {
       ...builtInClaims("https://github.com/openwong2kim/wmux/blob/main/README.md", "wmux repository README", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-pty-survives-ui", "workbench-cross-project-attention", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery", "workbench-browser", "workbench-remote-host", "workbench-programmable-control", "workbench-worktrees"], undefined, "repository-derived"),
@@ -912,7 +931,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     },
   }),
   product({
-    id: "warp", name: "Warp", categoryId: "agent-workbenches", editorialOrder: 8, officialUrl: "https://www.warp.dev/", repository: repo("warpdotdev/warp"), repoMetricId: "warp",
+    id: "warp", name: "Warp", categoryId: "agent-workbenches", editorialOrder: 9, officialUrl: "https://www.warp.dev/", repository: repo("warpdotdev/warp"), repoMetricId: "warp",
     tags: ["terminal", "cloud-agent", "blocks", "code-editor", "hybrid:workbench-cloud", "oss", "agpl-3.0"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process", "vendor-cloud"], status: "active",
     claims: {
       ...builtInClaims("https://docs.warp.dev/code/code-editor", "Warp code editor", ["workbench-editor", "workbench-file-tree"]),
@@ -924,7 +943,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     },
   }),
   product({
-    id: "wave-terminal", name: "Wave Terminal", categoryId: "agent-workbenches", editorialOrder: 9, officialUrl: "https://github.com/wavetermdev/waveterm", repository: repo("wavetermdev/waveterm"), repoMetricId: "wave-terminal",
+    id: "wave-terminal", name: "Wave Terminal", categoryId: "agent-workbenches", editorialOrder: 10, officialUrl: "https://github.com/wavetermdev/waveterm", repository: repo("wavetermdev/waveterm"), repoMetricId: "wave-terminal",
     tags: ["terminal", "workspace-blocks", "editor-blocks", "browser", "remote-ssh", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process", "ssh-host"], status: "active",
     claims: {
       ...builtInClaims("https://github.com/wavetermdev/waveterm", "Wave Terminal repository", ["workbench-arbitrary-cli", "workbench-editor", "workbench-splits", "workbench-browser", "workbench-remote-host", "workbench-programmable-control"], undefined, "repository-derived"),
@@ -935,7 +954,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     },
   }),
   product({
-    id: "dmux", name: "dmux", categoryId: "agent-workbenches", editorialOrder: 10, officialUrl: "https://github.com/standardagents/dmux", repository: repo("standardagents/dmux"), repoMetricId: "dmux",
+    id: "dmux", name: "dmux", categoryId: "agent-workbenches", editorialOrder: 11, officialUrl: "https://github.com/standardagents/dmux", repository: repo("standardagents/dmux"), repoMetricId: "dmux",
     tags: ["tui", "tmux", "multi-agent", "multi-project", "worktrees", "diff-review", "notifications", "oss"], source: "open-source", execution: ["local-process"], status: "active",
     claims: {
       ...builtInClaims("https://github.com/standardagents/dmux", "dmux repository README", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-cross-project-attention", "workbench-scm", "workbench-change-review", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery", "workbench-worktrees"], undefined, "repository-derived"),
@@ -944,7 +963,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     },
   }),
   product({
-    id: "claude-squad", name: "claude-squad", categoryId: "agent-workbenches", editorialOrder: 11, officialUrl: "https://github.com/smtg-ai/claude-squad", repository: repo("smtg-ai/claude-squad"), repoMetricId: "claude-squad",
+    id: "claude-squad", name: "claude-squad", categoryId: "agent-workbenches", editorialOrder: 12, officialUrl: "https://github.com/smtg-ai/claude-squad", repository: repo("smtg-ai/claude-squad"), repoMetricId: "claude-squad",
     tags: ["tui", "tmux", "multi-agent", "worktrees", "diff-review", "oss"], platform: ["macos", "linux"], platformNote: "The canonical installer has explicit macOS and Linux dependency/install paths. Windows requires a separate tmux environment and is not asserted as a native client.", source: "open-source", execution: ["local-process"],
     claims: {
       ...builtInClaims("https://github.com/smtg-ai/claude-squad", "claude-squad repository", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-pty-survives-ui", "workbench-scm", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery", "workbench-worktrees"], undefined, "repository-derived"),

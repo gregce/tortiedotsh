@@ -394,6 +394,16 @@
       "loc": { "enabled": true }
     },
     {
+      "id": "herdr",
+      "name": "Herdr",
+      "category": "agent-workbenches",
+      "owner": "herdrdev",
+      "repo": "herdr",
+      "githubUrl": "https://github.com/herdrdev/herdr",
+      "apiUrl": "https://api.github.com/repos/herdrdev/herdr",
+      "loc": { "enabled": true }
+    },
+    {
       "id": "wmux",
       "name": "wmux",
       "category": "agent-workbenches",

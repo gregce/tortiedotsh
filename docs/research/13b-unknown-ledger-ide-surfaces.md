@@ -10,10 +10,10 @@ This ledger resolves every non-platform row through `getComparisonClaim()` for C
 | --- | ---: | ---: | ---: |
 | Code IDEs | 16 | 70 | 70 |
 | IDE extensions | 16 | 97 | 97 |
-| Agent Multiplexers | 8 | 33 | 33 |
-| **Total** | **40** | **200** | **200** |
+| Agent Multiplexers | 10 | 46 | 46 |
+| **Total** | **42** | **213** | **213** |
 
-The generated ledger has exact key parity with all 200 current rendered Unknown cells. Every cell has a product-and-row-specific rationale and every product has an exact-SKU first-party `sourcesChecked` list. The generator rejects missing, extra, or duplicate keys.
+The generated ledger has exact key parity with all 213 current rendered Unknown cells. Every cell has a product-and-row-specific rationale and every product has an exact-SKU first-party `sourcesChecked` list. The generator rejects missing, extra, or duplicate keys.
 
 ## Changed-source corrections preserved
 
@@ -63,18 +63,18 @@ These previously Unknown cells now resolve from the catalog to the audited state
 
 | Product ID | Current Unknowns | Must remain Unknown |
 | --- | ---: | ---: |
+| `visual-studio-code` | 0 | 0 |
+| `cursor-ide` | 0 | 0 |
+| `windsurf` | 5 | 5 |
+| `zed` | 1 | 1 |
+| `intellij-idea` | 4 | 4 |
 | `eclipse-theia-ide` | 5 | 5 |
 | `traecode` | 6 | 6 |
 | `qoder-ide` | 0 | 0 |
 | `antigravity-ide` | 2 | 2 |
 | `android-studio` | 4 | 4 |
-| `intellij-idea` | 4 | 4 |
 | `positron` | 3 | 3 |
 | `onlook` | 4 | 4 |
-| `visual-studio-code` | 0 | 0 |
-| `cursor-ide` | 0 | 0 |
-| `windsurf` | 5 | 5 |
-| `zed` | 1 | 1 |
 | `lapce` | 11 | 11 |
 | `helix` | 12 | 12 |
 | `kiro` | 3 | 3 |
@@ -109,10 +109,12 @@ These previously Unknown cells now resolve from the catalog to the audited state
 | `cate` | 1 | 1 |
 | `cdesktop` | 5 | 5 |
 | `cmux` | 2 | 2 |
+| `herdr` | 6 | 6 |
 | `wmux` | 2 | 2 |
 | `warp` | 9 | 9 |
 | `wave-terminal` | 6 | 6 |
 | `dmux` | 5 | 5 |
+| `claude-squad` | 7 | 7 |
 
 ## Evidence boundaries preserved
 

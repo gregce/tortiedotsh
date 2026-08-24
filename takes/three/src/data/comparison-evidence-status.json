@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T06:39:05.787Z",
+  "generatedAt": "2026-08-24T16:28:45.959Z",
   "sources": [
     {
       "id": "69c685f410104791dcf5",
@@ -12378,6 +12378,66 @@
       "error": null
     },
     {
+      "id": "2968af3a06b3be3f9b7a",
+      "url": "https://github.com/herdrdev/herdr/blob/master/LICENSE",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "herdr",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "current",
+      "fetchUrl": "https://raw.githubusercontent.com/herdrdev/herdr/master/LICENSE",
+      "resolvedUrl": "https://raw.githubusercontent.com/herdrdev/herdr/master/LICENSE",
+      "lastCheckedAt": "2026-08-24T16:28:45.142Z",
+      "firstObservedAt": "2026-08-24T16:28:45.142Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "contentLength": 11357,
+      "contentHash": "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
+      "reviewedHash": "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
+      "reviews": [],
+      "etag": "W/\"3148e5d3e58b8670d99aca09ea47e6fc2468d5756f3033131957eac37b558637\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "acbc10b61717bf4b2b94",
+      "url": "https://github.com/herdrdev/herdr/releases/latest",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "herdr",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "current",
+      "fetchUrl": "https://github.com/herdrdev/herdr/releases/latest",
+      "resolvedUrl": "https://github.com/herdrdev/herdr/releases/tag/v0.8.2",
+      "lastCheckedAt": "2026-08-24T16:28:45.168Z",
+      "firstObservedAt": "2026-08-24T16:28:45.168Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 275429,
+      "contentHash": "b27efb322cc7762454650c4a312af304f206dfb9b281b22303d9421bd51e8cae",
+      "reviewedHash": "b27efb322cc7762454650c4a312af304f206dfb9b281b22303d9421bd51e8cae",
+      "reviews": [],
+      "etag": "W/\"c19dbb962c0e5ed2f9e67f8688edc8bb\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "638846f7379e653869d7",
       "url": "https://github.com/HKUDS/nanobot",
       "bases": [
@@ -18199,6 +18259,221 @@
       "reviewedHash": "de6739dca374b54cb5401cebe8434c5fd5463e636598d779c5a1da95b2e7c23e",
       "reviews": [],
       "etag": "W/\"6b930670c0f3d61d19bdff213955394a\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "f5fffc082ae0b32cd256",
+      "url": "https://herdr.dev/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "herdr",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "current",
+      "fetchUrl": "https://herdr.dev/",
+      "resolvedUrl": "https://herdr.dev/",
+      "lastCheckedAt": "2026-08-24T16:28:45.169Z",
+      "firstObservedAt": "2026-08-24T16:28:45.169Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 50319,
+      "contentHash": "b3471900bde772bc541754fd9de225217997551c8eb13e3a7985e81b7fb689d6",
+      "reviewedHash": "b3471900bde772bc541754fd9de225217997551c8eb13e3a7985e81b7fb689d6",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "bf16d7040fc061830fb2",
+      "url": "https://herdr.dev/docs/agents/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "herdr",
+          "field": "workbench-arbitrary-cli",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "herdr",
+          "field": "workbench-attention-signals",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "herdr",
+          "field": "workbench-cross-project-attention",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "current",
+      "fetchUrl": "https://herdr.dev/docs/agents/",
+      "resolvedUrl": "https://herdr.dev/docs/agents/",
+      "lastCheckedAt": "2026-08-24T16:28:45.169Z",
+      "firstObservedAt": "2026-08-24T16:28:45.169Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 77972,
+      "contentHash": "a4c495ebec9986392d89b3b7eba263ffbfa38dc407a69ff1c965683c6755d87e",
+      "reviewedHash": "a4c495ebec9986392d89b3b7eba263ffbfa38dc407a69ff1c965683c6755d87e",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "fc27ee14b1184609af47",
+      "url": "https://herdr.dev/docs/concepts/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "herdr",
+          "field": "workbench-named-sessions",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "herdr",
+          "field": "workbench-pty-survives-ui",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "herdr",
+          "field": "workbench-splits",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "current",
+      "fetchUrl": "https://herdr.dev/docs/concepts/",
+      "resolvedUrl": "https://herdr.dev/docs/concepts/",
+      "lastCheckedAt": "2026-08-24T16:28:45.169Z",
+      "firstObservedAt": "2026-08-24T16:28:45.169Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 59946,
+      "contentHash": "d2c3264e091273223c0472efa3ac04540ab919e7a024cc3de7e92f6002a3fd1b",
+      "reviewedHash": "d2c3264e091273223c0472efa3ac04540ab919e7a024cc3de7e92f6002a3fd1b",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "a149f212d2208f8a5392",
+      "url": "https://herdr.dev/docs/persistence-remote/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "herdr",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "herdr",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "herdr",
+          "field": "workbench-remote-host",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "current",
+      "fetchUrl": "https://herdr.dev/docs/persistence-remote/",
+      "resolvedUrl": "https://herdr.dev/docs/persistence-remote/",
+      "lastCheckedAt": "2026-08-24T16:28:45.170Z",
+      "firstObservedAt": "2026-08-24T16:28:45.170Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 75820,
+      "contentHash": "318459da1f84920f1b9a15bd2003928f412bf1e6d36f85a19f9799dd9bf85845",
+      "reviewedHash": "318459da1f84920f1b9a15bd2003928f412bf1e6d36f85a19f9799dd9bf85845",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "209af94041028eafd0ba",
+      "url": "https://herdr.dev/docs/session-state/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "herdr",
+          "field": "workbench-session-recovery",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "current",
+      "fetchUrl": "https://herdr.dev/docs/session-state/",
+      "resolvedUrl": "https://herdr.dev/docs/session-state/",
+      "lastCheckedAt": "2026-08-24T16:28:45.372Z",
+      "firstObservedAt": "2026-08-24T16:28:45.372Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 62388,
+      "contentHash": "22ca63925d75562521520167fed24aa765820af230b60b93afe569aad1ff3632",
+      "reviewedHash": "22ca63925d75562521520167fed24aa765820af230b60b93afe569aad1ff3632",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "d9a077ec45f0e495c854",
+      "url": "https://herdr.dev/docs/socket-api/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "herdr",
+          "field": "workbench-programmable-control",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "herdr",
+          "field": "workbench-worktrees",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "current",
+      "fetchUrl": "https://herdr.dev/docs/socket-api/",
+      "resolvedUrl": "https://herdr.dev/docs/socket-api/",
+      "lastCheckedAt": "2026-08-24T16:28:45.373Z",
+      "firstObservedAt": "2026-08-24T16:28:45.373Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 282388,
+      "contentHash": "8a8981ccb5435487f6964812a3ad0eb8ceae8cdd479f7317d921d967338f0c0c",
+      "reviewedHash": "8a8981ccb5435487f6964812a3ad0eb8ceae8cdd479f7317d921d967338f0c0c",
+      "reviews": [],
+      "etag": null,
       "lastModified": null,
       "error": null
     },

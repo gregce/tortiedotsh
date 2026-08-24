@@ -3,7 +3,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
 
-const checkedAt = "2026-08-23";
+const checkedAt = "2026-08-24";
 const root = resolve(import.meta.dirname, "..");
 const publicRoot = resolve(root, "public/compare");
 const manifestPath = resolve(root, "src/data/comparison-assets.json");
@@ -55,6 +55,7 @@ const products = {
   cate: ["Cate", raw("0-AI-UG/cate", "assets/cate-logo.svg"), "https://github.com/0-AI-UG/cate/blob/HEAD/assets/cate-logo.svg", "official-repository-asset"],
   cdesktop: ["cdesktop", raw("cdesktop-ai/cdesktop", "crates/tauri-app/icons/icon.png"), "https://github.com/cdesktop-ai/cdesktop/blob/HEAD/crates/tauri-app/icons/icon.png", "official-repository-asset"],
   cmux: ["cmux", raw("manaflow-ai/cmux", "web/public/brand/app-icon-dark.png"), "https://github.com/manaflow-ai/cmux/blob/HEAD/web/public/brand/app-icon-dark.png", "official-repository-asset"],
+  herdr: ["Herdr", raw("herdrdev/herdr", "assets/logo.svg"), "https://github.com/herdrdev/herdr/blob/master/assets/logo.svg", "official-repository-asset"],
   wmux: ["wmux", raw("openwong2kim/wmux", "assets/icon.svg"), "https://github.com/openwong2kim/wmux/blob/HEAD/assets/icon.svg", "official-repository-asset"],
   warp: ["Warp", "https://www.warp.dev/favicon-196x196.png", "https://www.warp.dev/", "official-site-icon"],
   "wave-terminal": ["Wave Terminal", avatar("wavetermdev"), "https://github.com/wavetermdev", "official-organization-avatar"],

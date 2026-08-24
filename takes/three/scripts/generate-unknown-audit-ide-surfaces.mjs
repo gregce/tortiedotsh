@@ -60,10 +60,12 @@ const productNotes = {
   cate: "Cate's canonical repository and changelog establish its multi-agent canvas, terminal, editor, browser, SCM, remote SSH, programmable control, and worktree workflows.",
   cdesktop: "cdesktop's canonical repository establishes its current local web client, worktree-backed sessions, diff review, browser, and roadmap boundaries without promoting planned desktop installers to shipped behavior.",
   cmux: "cmux's canonical repository, changelog, Finder, home, and customization sources establish a macOS terminal workspace with durable session recovery, attention states, browser panes, remote access, and CLI control.",
+  herdr: "Herdr's canonical repository and exact product documentation establish its daemon-owned terminal panes, named sessions, multi-project agent attention, restore paths, remote SSH clients, socket automation, and worktree control without inheriting editor, SCM, diff-review, or browser capabilities from plugins or hosted tools.",
   wmux: "wmux's canonical README establishes its daemon-owned terminal sessions, splits, file and Git surfaces, diff review, remote access, and Linux/browser reach without treating agent delegation as session transfer.",
   warp: "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate.",
   "wave-terminal": "Wave Terminal's canonical repository and exact workspace documentation establish its saved workspaces, terminal blocks, graphical editor, browser, remote connections, durable SSH sessions, and wsh control surface.",
   dmux: "dmux's canonical README establishes its tmux panes, supported agent launchers, worktree isolation, file and diff browser, notifications, multi-project navigation, merge, and pull-request workflow.",
+  "claude-squad": "claude-squad's canonical repository establishes its tmux-managed coding-agent sessions, worktree isolation, Git workflow, attention states, session recovery, and change review without inheriting editor, browser, remote-host, or programmable-control capabilities.",
 };
 
 const rowBoundaries = {
@@ -102,6 +104,7 @@ const rowBoundaries = {
   "workbench-pty-survives-ui": "Persisted scrollback, layout, or conversation resume does not establish that the original live PTY process survives UI exit.",
   "workbench-cross-project-attention": "It does not establish one operator view that carries actionable state across multiple projects.",
   "workbench-editor": "File preview, a diff viewer, or launching an external editor does not establish an editable in-product code surface.",
+  "workbench-file-tree": "It does not establish a project-wide file tree or file browser owned by the workbench.",
   "workbench-scm": "It does not establish a first-party source-control workflow rather than terminal access to Git.",
   "workbench-change-review": "It does not establish in-product visual diff review as a first-class session surface.",
   "workbench-splits": "It does not establish multiple first-class panes or splits that keep distinct agent or terminal sessions visible together.",

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-23",
+  "checkedAt": "2026-08-24",
   "products": {
     "visual-studio-code": {
       "name": "Visual Studio Code",
@@ -1077,6 +1077,14 @@
       "sourceUrl": "https://github.com/git-ai-project/git-ai",
       "sourceType": "official-organization-avatar",
       "checkedAt": "2026-08-23"
+    },
+    "herdr": {
+      "name": "Herdr",
+      "alt": "Herdr logo",
+      "src": "/compare/logos/herdr.svg",
+      "sourceUrl": "https://github.com/herdrdev/herdr/blob/master/assets/logo.svg",
+      "sourceType": "official-repository-asset",
+      "checkedAt": "2026-08-24"
     }
   },
   "platforms": {
@@ -1118,7 +1126,7 @@
       "src": "/compare/platforms/ios.svg",
       "sourceUrl": "https://www.apple.com/ios/",
       "sourceType": "original-interface-glyph",
-      "checkedAt": "2026-08-23"
+      "checkedAt": "2026-08-24"
     },
     "web": {
       "name": "Web",
@@ -1126,7 +1134,7 @@
       "src": "/compare/platforms/web.svg",
       "sourceUrl": "https://www.w3.org/standards/",
       "sourceType": "original-interface-glyph",
-      "checkedAt": "2026-08-23"
+      "checkedAt": "2026-08-24"
     }
   }
 }

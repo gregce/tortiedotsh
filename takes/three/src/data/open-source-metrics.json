@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T06:06:51.698Z",
-  "manifestSyncedAt": "2026-08-24T06:10:46.313Z",
+  "generatedAt": "2026-08-24T16:28:07.052Z",
+  "manifestSyncedAt": "2026-08-24T16:28:07.052Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -5153,6 +5153,159 @@
           "type": "loc-measurement",
           "url": "https://github.com/manaflow-ai/cmux/tree/v0.64.22",
           "fetchedAt": "2026-08-23T22:39:41.599Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "herdr",
+      "name": "Herdr",
+      "category": "agent-workbenches",
+      "owner": "herdrdev",
+      "repo": "herdr",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/herdrdev/herdr",
+      "cloneUrl": "https://github.com/herdrdev/herdr.git",
+      "githubUrl": "https://github.com/herdrdev/herdr",
+      "apiUrl": "https://api.github.com/repos/herdrdev/herdr",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T16:28:07.051Z",
+      "stars": 32002,
+      "forks": 2297,
+      "openIssues": 229,
+      "contributors": 79,
+      "repositorySizeKb": 36892,
+      "repositorySizePolicy": null,
+      "defaultBranch": "master",
+      "pushedAt": "2026-08-24T01:52:38Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 8829412,
+          "percent": 90.7
+        },
+        {
+          "name": "Python",
+          "bytes": 206810,
+          "percent": 2.12
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 171521,
+          "percent": 1.76
+        },
+        {
+          "name": "CSS",
+          "bytes": 131932,
+          "percent": 1.36
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 101132,
+          "percent": 1.04
+        },
+        {
+          "name": "Astro",
+          "bytes": 97221,
+          "percent": 1
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 69577,
+          "percent": 0.71
+        },
+        {
+          "name": "HTML",
+          "bytes": 55815,
+          "percent": 0.57
+        },
+        {
+          "name": "Shell",
+          "bytes": 55094,
+          "percent": 0.57
+        },
+        {
+          "name": "Just",
+          "bytes": 9970,
+          "percent": 0.1
+        },
+        {
+          "name": "Nix",
+          "bytes": 4917,
+          "percent": 0.05
+        },
+        {
+          "name": "Perl",
+          "bytes": 801,
+          "percent": 0.01
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 729,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.8.2",
+        "name": "v0.8.2",
+        "publishedAt": "2026-08-19T18:00:03Z",
+        "url": "https://github.com/herdrdev/herdr/releases/tag/v0.8.2",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.8.2",
+      "releaseDate": "2026-08-19T18:00:03Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 239693,
+        "comments": 7190,
+        "blank": 25109,
+        "files": 407,
+        "measuredAt": "2026-08-24T16:28:06.909Z",
+        "verifiedAt": "2026-08-24T16:28:06.909Z",
+        "measuredRef": "v0.8.2",
+        "refType": "stable-release-tag",
+        "commitSha": "9eb521456ac0d19d3ab3d9d7cea3cca10baa8a4c",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/herdrdev/herdr",
+          "fetchedAt": "2026-08-24T16:28:00.536Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/herdrdev/herdr/languages",
+          "fetchedAt": "2026-08-24T16:28:00.703Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/herdrdev/herdr/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T16:28:00.733Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/herdrdev/herdr/releases?per_page=100",
+          "fetchedAt": "2026-08-24T16:28:01.053Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/herdrdev/herdr/tree/v0.8.2",
+          "fetchedAt": "2026-08-24T16:28:06.909Z"
         }
       ],
       "errors": []

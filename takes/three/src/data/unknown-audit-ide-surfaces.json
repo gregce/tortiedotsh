@@ -18,19 +18,154 @@
     "platformHeaders": "Platform-header support is outside this rendered-cell ledger. An omitted OS in a known platform list is not treated as Unknown."
   },
   "summary": {
-    "products": 41,
-    "currentUnknownCells": 207,
+    "products": 42,
+    "currentUnknownCells": 213,
     "codeEditorUnknownCells": 70,
     "ideExtensionUnknownCells": 97,
-    "agentMultiplexerUnknownCells": 40,
+    "agentMultiplexerUnknownCells": 46,
     "appliedClosures": 14,
     "changedSourceCorrections": 14,
-    "remainUnknown": 207
+    "remainUnknown": 213
   },
   "categories": [
     {
       "categoryId": "code-editors",
       "products": [
+        {
+          "productId": "visual-studio-code",
+          "sourcesChecked": [
+            "https://code.visualstudio.com/docs/agents/overview",
+            "https://github.com/microsoft/vscode",
+            "https://code.visualstudio.com/docs/agents/run/agents-window",
+            "https://code.visualstudio.com/docs/agents/run/tools",
+            "https://code.visualstudio.com/docs/agents/concepts/agent-harnesses",
+            "https://code.visualstudio.com/docs/editing/ai-powered-suggestions",
+            "https://code.visualstudio.com/docs/agent-customization/language-models",
+            "https://code.visualstudio.com/docs/agents/run/approvals",
+            "https://code.visualstudio.com/docs/agents/run/browser-tools",
+            "https://code.visualstudio.com/docs/",
+            "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+            "https://code.visualstudio.com/updates/archive"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "cursor-ide",
+          "sourcesChecked": [
+            "https://docs.cursor.com/en/get-started/quickstart",
+            "https://docs.cursor.com/en/agent/terminal",
+            "https://docs.cursor.com/context/model-context-protocol",
+            "https://docs.cursor.com/background-agent",
+            "https://cursor.com/docs/agent/agents-window",
+            "https://cursor.com/docs/models-and-pricing",
+            "https://cursor.com/docs/agent/security/run-modes",
+            "https://cursor.com/docs/agent/tools/browser",
+            "https://cursor.com/docs",
+            "https://cursor.com/docs/customize-cursor",
+            "https://cursor.com/changelog"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "windsurf",
+          "sourcesChecked": [
+            "https://docs.devin.ai/desktop/getting-started",
+            "https://docs.devin.ai/desktop/terminal",
+            "https://docs.devin.ai/desktop/tab/overview",
+            "https://docs.devin.ai/desktop/cascade/mcp",
+            "https://docs.devin.ai/desktop/models",
+            "https://docs.devin.ai/desktop/previews"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish an approval scope or allow, ask, and deny policy for the editor agent's tool calls."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            }
+          ]
+        },
+        {
+          "productId": "zed",
+          "sourcesChecked": [
+            "https://zed.dev/docs/ai/overview",
+            "https://github.com/zed-industries/zed",
+            "https://zed.dev/docs/ai/zed-agent",
+            "https://zed.dev/docs/ai/parallel-agents",
+            "https://zed.dev/docs/ai/edit-prediction",
+            "https://zed.dev/docs/ai/agent-panel",
+            "https://zed.dev/docs/remote-development",
+            "https://zed.dev/docs/ai/agent-profiles",
+            "https://zed.dev/docs/ai/sandboxing",
+            "https://zed.dev/docs/ai/tools",
+            "https://zed.dev/docs/",
+            "https://zed.dev/docs/ai/agents",
+            "https://zed.dev/docs/installation"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "Zed's exact editor documentation establishes its native agent, ACP, parallel worktrees, approvals, sandbox, terminal tools, and current desktop channels. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
+            }
+          ]
+        },
+        {
+          "productId": "intellij-idea",
+          "sourcesChecked": [
+            "https://www.jetbrains.com/help/idea/intellij-idea-single-distribution.html",
+            "https://github.com/JetBrains/intellij-community",
+            "https://www.jetbrains.com/help/idea/project-tool-window.html",
+            "https://www.jetbrains.com/help/idea/terminal-emulator.html",
+            "https://www.jetbrains.com/help/idea/mcp-server.html",
+            "https://www.jetbrains.com/help/idea/use-git-worktrees.html",
+            "https://www.jetbrains.com/help/idea/remote-development-starting-page.html",
+            "https://www.jetbrains.com/help/idea/ai-assistant-in-jetbrains-ides.html",
+            "https://www.jetbrains.com/help/ai-assistant/agents.html",
+            "https://www.jetbrains.com/idea/"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            },
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
+            }
+          ]
+        },
         {
           "productId": "eclipse-theia-ide",
           "sourcesChecked": [
@@ -181,43 +316,6 @@
           ]
         },
         {
-          "productId": "intellij-idea",
-          "sourcesChecked": [
-            "https://www.jetbrains.com/help/idea/intellij-idea-single-distribution.html",
-            "https://github.com/JetBrains/intellij-community",
-            "https://www.jetbrains.com/help/idea/project-tool-window.html",
-            "https://www.jetbrains.com/help/idea/terminal-emulator.html",
-            "https://www.jetbrains.com/help/idea/mcp-server.html",
-            "https://www.jetbrains.com/help/idea/use-git-worktrees.html",
-            "https://www.jetbrains.com/help/idea/remote-development-starting-page.html",
-            "https://www.jetbrains.com/help/idea/ai-assistant-in-jetbrains-ides.html",
-            "https://www.jetbrains.com/help/ai-assistant/agents.html",
-            "https://www.jetbrains.com/idea/"
-          ],
-          "cells": [
-            {
-              "rowId": "editor-background-jobs",
-              "result": "remain-unknown",
-              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
-            },
-            {
-              "rowId": "editor-parallel-sessions",
-              "result": "remain-unknown",
-              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
-            },
-            {
-              "rowId": "editor-agent-sandbox",
-              "result": "remain-unknown",
-              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
-            },
-            {
-              "rowId": "editor-browser-tools",
-              "result": "remain-unknown",
-              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
-            }
-          ]
-        },
-        {
           "productId": "positron",
           "sourcesChecked": [
             "https://positron.posit.co/",
@@ -270,104 +368,6 @@
               "rowId": "editor-agent-sandbox",
               "result": "remain-unknown",
               "rationale": "Onlook's current web editor, canonical repository, UI guide, and self-hosting pages establish its visual React workspace and sandbox-provider architecture without inheriting behavior from the retired desktop build. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
-            }
-          ]
-        },
-        {
-          "productId": "visual-studio-code",
-          "sourcesChecked": [
-            "https://code.visualstudio.com/docs/agents/overview",
-            "https://github.com/microsoft/vscode",
-            "https://code.visualstudio.com/docs/agents/run/agents-window",
-            "https://code.visualstudio.com/docs/agents/run/tools",
-            "https://code.visualstudio.com/docs/agents/concepts/agent-harnesses",
-            "https://code.visualstudio.com/docs/editing/ai-powered-suggestions",
-            "https://code.visualstudio.com/docs/agent-customization/language-models",
-            "https://code.visualstudio.com/docs/agents/run/approvals",
-            "https://code.visualstudio.com/docs/agents/run/browser-tools",
-            "https://code.visualstudio.com/docs/",
-            "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
-            "https://code.visualstudio.com/updates/archive"
-          ],
-          "cells": []
-        },
-        {
-          "productId": "cursor-ide",
-          "sourcesChecked": [
-            "https://docs.cursor.com/en/get-started/quickstart",
-            "https://docs.cursor.com/en/agent/terminal",
-            "https://docs.cursor.com/context/model-context-protocol",
-            "https://docs.cursor.com/background-agent",
-            "https://cursor.com/docs/agent/agents-window",
-            "https://cursor.com/docs/models-and-pricing",
-            "https://cursor.com/docs/agent/security/run-modes",
-            "https://cursor.com/docs/agent/tools/browser",
-            "https://cursor.com/docs",
-            "https://cursor.com/docs/customize-cursor",
-            "https://cursor.com/changelog"
-          ],
-          "cells": []
-        },
-        {
-          "productId": "windsurf",
-          "sourcesChecked": [
-            "https://docs.devin.ai/desktop/getting-started",
-            "https://docs.devin.ai/desktop/terminal",
-            "https://docs.devin.ai/desktop/tab/overview",
-            "https://docs.devin.ai/desktop/cascade/mcp",
-            "https://docs.devin.ai/desktop/models",
-            "https://docs.devin.ai/desktop/previews"
-          ],
-          "cells": [
-            {
-              "rowId": "editor-background-jobs",
-              "result": "remain-unknown",
-              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
-            },
-            {
-              "rowId": "editor-parallel-sessions",
-              "result": "remain-unknown",
-              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
-            },
-            {
-              "rowId": "editor-worktree-isolation",
-              "result": "remain-unknown",
-              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish product-managed Git worktrees that isolate agent changes."
-            },
-            {
-              "rowId": "editor-agent-permissions",
-              "result": "remain-unknown",
-              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish an approval scope or allow, ask, and deny policy for the editor agent's tool calls."
-            },
-            {
-              "rowId": "editor-agent-sandbox",
-              "result": "remain-unknown",
-              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
-            }
-          ]
-        },
-        {
-          "productId": "zed",
-          "sourcesChecked": [
-            "https://zed.dev/docs/ai/overview",
-            "https://github.com/zed-industries/zed",
-            "https://zed.dev/docs/ai/zed-agent",
-            "https://zed.dev/docs/ai/parallel-agents",
-            "https://zed.dev/docs/ai/edit-prediction",
-            "https://zed.dev/docs/ai/agent-panel",
-            "https://zed.dev/docs/remote-development",
-            "https://zed.dev/docs/ai/agent-profiles",
-            "https://zed.dev/docs/ai/sandboxing",
-            "https://zed.dev/docs/ai/tools",
-            "https://zed.dev/docs/",
-            "https://zed.dev/docs/ai/agents",
-            "https://zed.dev/docs/installation"
-          ],
-          "cells": [
-            {
-              "rowId": "editor-browser-tools",
-              "result": "remain-unknown",
-              "rationale": "Zed's exact editor documentation establishes its native agent, ACP, parallel worktrees, approvals, sandbox, terminal tools, and current desktop channels. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
             }
           ]
         },
@@ -1364,6 +1364,50 @@
           ]
         },
         {
+          "productId": "herdr",
+          "sourcesChecked": [
+            "https://herdr.dev/",
+            "https://github.com/herdrdev/herdr",
+            "https://herdr.dev/docs/concepts/",
+            "https://herdr.dev/docs/agents/",
+            "https://herdr.dev/docs/session-state/",
+            "https://herdr.dev/docs/persistence-remote/",
+            "https://herdr.dev/docs/socket-api/"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "Herdr's canonical repository and exact product documentation establish its daemon-owned terminal panes, named sessions, multi-project agent attention, restore paths, remote SSH clients, socket automation, and worktree control without inheriting editor, SCM, diff-review, or browser capabilities from plugins or hosted tools. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
+            },
+            {
+              "rowId": "workbench-editor",
+              "result": "remain-unknown",
+              "rationale": "Herdr's canonical repository and exact product documentation establish its daemon-owned terminal panes, named sessions, multi-project agent attention, restore paths, remote SSH clients, socket automation, and worktree control without inheriting editor, SCM, diff-review, or browser capabilities from plugins or hosted tools. File preview, a diff viewer, or launching an external editor does not establish an editable in-product code surface."
+            },
+            {
+              "rowId": "workbench-file-tree",
+              "result": "remain-unknown",
+              "rationale": "Herdr's canonical repository and exact product documentation establish its daemon-owned terminal panes, named sessions, multi-project agent attention, restore paths, remote SSH clients, socket automation, and worktree control without inheriting editor, SCM, diff-review, or browser capabilities from plugins or hosted tools. It does not establish a project-wide file tree or file browser owned by the workbench."
+            },
+            {
+              "rowId": "workbench-scm",
+              "result": "remain-unknown",
+              "rationale": "Herdr's canonical repository and exact product documentation establish its daemon-owned terminal panes, named sessions, multi-project agent attention, restore paths, remote SSH clients, socket automation, and worktree control without inheriting editor, SCM, diff-review, or browser capabilities from plugins or hosted tools. It does not establish a first-party source-control workflow rather than terminal access to Git."
+            },
+            {
+              "rowId": "workbench-change-review",
+              "result": "remain-unknown",
+              "rationale": "Herdr's canonical repository and exact product documentation establish its daemon-owned terminal panes, named sessions, multi-project agent attention, restore paths, remote SSH clients, socket automation, and worktree control without inheriting editor, SCM, diff-review, or browser capabilities from plugins or hosted tools. It does not establish in-product visual diff review as a first-class session surface."
+            },
+            {
+              "rowId": "workbench-browser",
+              "result": "remain-unknown",
+              "rationale": "Herdr's canonical repository and exact product documentation establish its daemon-owned terminal panes, named sessions, multi-project agent attention, restore paths, remote SSH clients, socket automation, and worktree control without inheriting editor, SCM, diff-review, or browser capabilities from plugins or hosted tools. It does not establish an embedded interactive browser owned by the workbench."
+            }
+          ]
+        },
+        {
           "productId": "wmux",
           "sourcesChecked": [
             "https://github.com/openwong2kim/wmux",
@@ -1520,13 +1564,41 @@
             "https://github.com/smtg-ai/claude-squad"
           ],
           "cells": [
-            {"rowId":"product-status","result":"remain-unknown","rationale":"The canonical repository publishes releases but does not assign claude-squad an explicit lifecycle label."},
-            {"rowId":"workbench-agent-handoff","result":"remain-unknown","rationale":"Managing several agent sessions does not establish context-preserving transfer of one active task or conversation between harnesses."},
-            {"rowId":"workbench-editor","result":"remain-unknown","rationale":"The tmux TUI manages agent terminals and reviews changes but does not document an editable in-product code editor."},
-            {"rowId":"workbench-file-tree","result":"remain-unknown","rationale":"The checked repository does not establish a persistent project file-tree surface owned by claude-squad."},
-            {"rowId":"workbench-browser","result":"remain-unknown","rationale":"The checked repository does not document an embedded interactive browser."},
-            {"rowId":"workbench-remote-host","result":"remain-unknown","rationale":"tmux prerequisites do not establish a supported SSH or remote-host workflow owned by claude-squad."},
-            {"rowId":"workbench-programmable-control","result":"remain-unknown","rationale":"The checked repository does not expose a stable CLI, socket, API, or event contract for external workspace control."}
+            {
+              "rowId": "product-status",
+              "result": "remain-unknown",
+              "rationale": "claude-squad's canonical repository establishes its tmux-managed coding-agent sessions, worktree isolation, Git workflow, attention states, session recovery, and change review without inheriting editor, browser, remote-host, or programmable-control capabilities. The checked first-party material does not assign an explicit lifecycle label that maps to the catalog's active, beta, community-maintained, sunsetting, archived, or pivoted states."
+            },
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "claude-squad's canonical repository establishes its tmux-managed coding-agent sessions, worktree isolation, Git workflow, attention states, session recovery, and change review without inheriting editor, browser, remote-host, or programmable-control capabilities. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
+            },
+            {
+              "rowId": "workbench-editor",
+              "result": "remain-unknown",
+              "rationale": "claude-squad's canonical repository establishes its tmux-managed coding-agent sessions, worktree isolation, Git workflow, attention states, session recovery, and change review without inheriting editor, browser, remote-host, or programmable-control capabilities. File preview, a diff viewer, or launching an external editor does not establish an editable in-product code surface."
+            },
+            {
+              "rowId": "workbench-file-tree",
+              "result": "remain-unknown",
+              "rationale": "claude-squad's canonical repository establishes its tmux-managed coding-agent sessions, worktree isolation, Git workflow, attention states, session recovery, and change review without inheriting editor, browser, remote-host, or programmable-control capabilities. It does not establish a project-wide file tree or file browser owned by the workbench."
+            },
+            {
+              "rowId": "workbench-browser",
+              "result": "remain-unknown",
+              "rationale": "claude-squad's canonical repository establishes its tmux-managed coding-agent sessions, worktree isolation, Git workflow, attention states, session recovery, and change review without inheriting editor, browser, remote-host, or programmable-control capabilities. It does not establish an embedded interactive browser owned by the workbench."
+            },
+            {
+              "rowId": "workbench-remote-host",
+              "result": "remain-unknown",
+              "rationale": "claude-squad's canonical repository establishes its tmux-managed coding-agent sessions, worktree isolation, Git workflow, attention states, session recovery, and change review without inheriting editor, browser, remote-host, or programmable-control capabilities. It does not establish a supported SSH or remote-host execution workflow for the workbench."
+            },
+            {
+              "rowId": "workbench-programmable-control",
+              "result": "remain-unknown",
+              "rationale": "claude-squad's canonical repository establishes its tmux-managed coding-agent sessions, worktree isolation, Git workflow, attention states, session recovery, and change review without inheriting editor, browser, remote-host, or programmable-control capabilities. It does not establish a supported CLI, socket, API, or event contract for external workspace control."
+            }
           ]
         }
       ]
