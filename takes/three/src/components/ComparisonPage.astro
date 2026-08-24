@@ -111,8 +111,15 @@ interface EvidenceMonitorRecord {
 const { categoryId } = Astro.props;
 const currentCategory = comparisonCategories.find((category) => category.id === categoryId);
 if (!currentCategory) throw new Error(`Unknown comparison category: ${categoryId}`);
+const currentCategoryIndex = comparisonCategories.findIndex((category) => category.id === categoryId);
+const previousCategory = comparisonCategories[
+  (currentCategoryIndex - 1 + comparisonCategories.length) % comparisonCategories.length
+];
+const nextCategory = comparisonCategories[
+  (currentCategoryIndex + 1) % comparisonCategories.length
+];
 
-const evidenceBacklog = new Set(["mosaic-terminal", "airport", "muse-code", "omnara"]);
+const evidenceBacklog = new Set(["mosaic-terminal", "airport", "omnara"]);
 const products = comparisonProducts
   .filter((product) => product.categoryId === categoryId && !evidenceBacklog.has(product.id))
   .sort((left, right) => left.editorialOrder - right.editorialOrder);
@@ -125,12 +132,6 @@ const platformAssets = comparisonAssets.platforms as Record<string, ComparisonAs
 const evidenceMonitor = new Map(
   (evidenceSnapshot.sources as EvidenceMonitorRecord[]).map((record) => [record.url, record]),
 );
-const currentProductIds = new Set(products.map((product) => product.id));
-const monitoredSourceWarnings = (evidenceSnapshot.sources as EvidenceMonitorRecord[]).filter(
-  (record) =>
-    ["changed", "unreachable"].includes(record.status) &&
-    record.usedBy.some((use) => currentProductIds.has(use.productId)),
-).length;
 const hasMetrics = products.some((product) => product.repoMetricId && metrics.has(product.repoMetricId));
 const metricRows: MetricRow[] = hasMetrics
   ? [
@@ -168,7 +169,6 @@ const groupedRows = Array.from(
   }, new Map<string, Array<ComparisonRow | MetricRow>>()),
 );
 
-const metricGeneratedDate = metricSnapshot.generatedAt?.slice(0, 10) ?? COMPARISON_SNAPSHOT;
 const description = `Compare ${currentCategory.label.toLowerCase()} across platforms, source model, execution boundary, workflow, and current open-source project data.`;
 
 const formatNumber = (value: number): string =>
@@ -418,42 +418,51 @@ const basisLabel = (source: EvidenceSource): string => {
         </div>
       </div>
 
-      <section class="matrix-workspace comparison-width" aria-labelledby="matrix-title">
-        <header class="matrix-context">
-          <div>
-            <p class="compare-kicker">AI coding tool index</p>
+      <section
+        class="matrix-workspace comparison-width"
+        aria-labelledby="matrix-title"
+        data-matrix-workspace
+      >
+        <header class="matrix-commandbar">
+          <div class="matrix-identity">
+            <nav class="fullscreen-category-nav" aria-label="Browse comparison categories">
+              <a
+                href={`${previousCategory.route}?fullscreen=1`}
+                aria-label={`Previous category: ${previousCategory.label}`}
+                title={previousCategory.shortLabel}
+              >
+                <svg aria-hidden="true" viewBox="0 0 16 16"><path d="m10 3-5 5 5 5"></path></svg>
+              </a>
+            </nav>
             <h1 id="matrix-title">{currentCategory.label}</h1>
+            <nav class="fullscreen-category-nav" aria-label="Next comparison category">
+              <a
+                href={`${nextCategory.route}?fullscreen=1`}
+                aria-label={`Next category: ${nextCategory.label}`}
+                title={nextCategory.shortLabel}
+              >
+                <svg aria-hidden="true" viewBox="0 0 16 16"><path d="m6 3 5 5-5 5"></path></svg>
+              </a>
+            </nav>
             <p>{currentCategory.description}</p>
           </div>
-          <div class="matrix-meta">
-            <span>{products.length} products</span>
-            <span>{allRows.length} criteria</span>
-            <time datetime={COMPARISON_SNAPSHOT}>Updated {COMPARISON_SNAPSHOT}</time>
-            <a class="method-link" href="https://github.com/gregce/tortie/tree/main/docs/research">
-              Method
-            </a>
-          </div>
-        </header>
-
-        <div class="matrix-layout">
-          <aside class="matrix-rail" aria-label="Comparison view controls">
+          <div class="workspace-actions">
+            <aside class="matrix-rail" aria-label="Comparison filters">
             <button
-              class="rail-toggle"
+              class="workspace-action rail-toggle"
               type="button"
               aria-expanded="false"
               aria-controls="comparison-view-controls"
+              aria-label="Open filters"
+              title="Filters"
               data-filter-toggle
             >
-              <span data-filter-toggle-label>View controls</span>
-              <span class="rail-toggle-mark" aria-hidden="true"></span>
+              <svg aria-hidden="true" viewBox="0 0 16 16">
+                <path d="M2 4h12M2 8h12M2 12h12"></path>
+                <path d="M5 2.5v3M11 6.5v3M7 10.5v3"></path>
+              </svg>
             </button>
             <div class="matrix-toolbar" id="comparison-view-controls" data-filter-controls>
-              <div class="rail-heading">
-                <span>View</span>
-                <p class="result-summary" aria-live="polite" data-result-summary>
-                  {allRows.length} criteria · {products.length} products
-                </p>
-              </div>
               <div class="control control-search">
                 <label for="comparison-search">Find</label>
                 <input
@@ -523,22 +532,33 @@ const basisLabel = (source: EvidenceSource): string => {
                 <span><i data-key="unknown"></i> Unknown</span>
               </div>
             </div>
-          </aside>
+            </aside>
+            <button
+              class="workspace-action fullscreen-toggle"
+              type="button"
+              aria-label="Enter full screen"
+              aria-pressed="false"
+              title="Full screen"
+              data-fullscreen-toggle
+            >
+              <svg class="fullscreen-enter" aria-hidden="true" viewBox="0 0 16 16">
+                <path d="M2.5 6V2.5H6M10 2.5h3.5V6M13.5 10v3.5H10M6 13.5H2.5V10"></path>
+              </svg>
+              <svg class="fullscreen-exit" aria-hidden="true" viewBox="0 0 16 16">
+                <path d="M6 2.5V6H2.5M13.5 6H10V2.5M10 13.5V10h3.5M2.5 10H6v3.5"></path>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <div class="matrix-layout">
 
           <div class="matrix-main">
             <noscript>
               <p class="noscript-note">
-                The full comparison is shown. View controls require JavaScript.
+                The full comparison is shown. Interactive filters require JavaScript.
               </p>
             </noscript>
-            <div class="matrix-status">
-              <p><strong>Unknown</strong> means the evidence does not support a conclusion yet.</p>
-              <p data-scroll-hint>Scroll sideways to compare</p>
-              {hasMetrics && <span>Repo snapshot {metricGeneratedDate}</span>}
-              {monitoredSourceWarnings > 0 && (
-                <span class="source-alert">{monitoredSourceWarnings} sources need review</span>
-              )}
-            </div>
             <div class="matrix-frame">
               <div
                 class="matrix-scroll"

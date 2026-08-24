@@ -2,15 +2,12 @@ const root = document.querySelector<HTMLElement>("[data-comparison-root]");
 
 if (root) {
   const table = root.querySelector<HTMLTableElement>("[data-comparison-table]");
-  const scroller = root.querySelector<HTMLElement>("[data-matrix-scroll]");
   const search = root.querySelector<HTMLInputElement>("[data-filter-search]");
   const show = root.querySelector<HTMLSelectElement>("[data-filter-show]");
   const os = root.querySelector<HTMLSelectElement>("[data-filter-os]");
   const sort = root.querySelector<HTMLSelectElement>("[data-sort-products]");
   const resetButtons = root.querySelectorAll<HTMLButtonElement>("[data-reset-view]");
-  const summary = root.querySelector<HTMLElement>("[data-result-summary]");
   const empty = root.querySelector<HTMLElement>("[data-matrix-empty]");
-  const hint = root.querySelector<HTMLElement>("[data-scroll-hint]");
   const picker = root.querySelector<HTMLDetailsElement>("[data-product-picker]");
   const pickerCopy = root.querySelector<HTMLElement>("[data-picker-copy]");
   const pickerApply = root.querySelector<HTMLButtonElement>("[data-picker-apply]");
@@ -18,13 +15,14 @@ if (root) {
   const pickerSummary = root.querySelector<HTMLElement>("[data-picker-summary]");
   const rail = root.querySelector<HTMLElement>(".matrix-rail");
   const railToggle = root.querySelector<HTMLButtonElement>("[data-filter-toggle]");
-  const railToggleLabel = root.querySelector<HTMLElement>("[data-filter-toggle-label]");
+  const workspace = root.querySelector<HTMLElement>("[data-matrix-workspace]");
+  const fullscreenToggle = root.querySelector<HTMLButtonElement>("[data-fullscreen-toggle]");
   const productChecks = Array.from(
     root.querySelectorAll<HTMLInputElement>("[data-product-check]"),
   );
 
   let appliedProducts: string[] = [];
-  let debounceId = 0;
+  let fallbackFullscreen = new URLSearchParams(window.location.search).get("fullscreen") === "1";
   const defaultOrder = Array.from(
     root.querySelectorAll<HTMLElement>("thead [data-product-id]"),
   ).map((element) => element.dataset.productId || "");
@@ -104,6 +102,7 @@ if (root) {
 
   function updateQuery() {
     const params = new URLSearchParams();
+    if (fallbackFullscreen) params.set("fullscreen", "1");
     if (search?.value.trim()) params.set("q", search.value.trim());
     if (show?.value && show.value !== "all") params.set("show", show.value);
     if (os?.value && os.value !== "all") params.set("os", os.value);
@@ -188,12 +187,6 @@ if (root) {
     }
 
     const productCount = visibleProducts.size;
-    if (summary) {
-      window.clearTimeout(debounceId);
-      debounceId = window.setTimeout(() => {
-        summary.textContent = `${visibleRows} ${visibleRows === 1 ? "criterion" : "criteria"} · ${productCount} ${productCount === 1 ? "product" : "products"}`;
-      }, 250);
-    }
     empty?.classList.toggle("is-visible", visibleRows === 0 || productCount === 0);
     table.classList.toggle("is-filtered", visibleRows === 0 || productCount === 0);
     if (pickerSummary) {
@@ -259,7 +252,7 @@ if (root) {
   function setRailOpen(isOpen: boolean, returnFocus = false) {
     rail?.classList.toggle("is-open", isOpen);
     railToggle?.setAttribute("aria-expanded", String(isOpen));
-    if (railToggleLabel) railToggleLabel.textContent = isOpen ? "Hide controls" : "View controls";
+    railToggle?.setAttribute("aria-label", isOpen ? "Close filters" : "Open filters");
     if (returnFocus) railToggle?.focus();
   }
 
@@ -300,13 +293,44 @@ if (root) {
     });
   });
 
-  scroller?.addEventListener(
-    "scroll",
-    () => {
-      if (hint && scroller.scrollLeft > 8) hint.hidden = true;
-    },
-    { passive: true },
-  );
+  function syncFullscreenState() {
+    const isFullscreen = document.fullscreenElement === workspace || fallbackFullscreen;
+    workspace?.classList.toggle("is-maximized", fallbackFullscreen);
+    fullscreenToggle?.setAttribute("aria-pressed", String(isFullscreen));
+    fullscreenToggle?.setAttribute("aria-label", isFullscreen ? "Exit full screen" : "Enter full screen");
+    document.body.classList.toggle("matrix-fullscreen-fallback", fallbackFullscreen);
+  }
+
+  async function toggleFullscreen() {
+    if (!workspace) return;
+    if (document.fullscreenElement === workspace) {
+      await document.exitFullscreen();
+      return;
+    }
+    if (fallbackFullscreen) {
+      fallbackFullscreen = false;
+      syncFullscreenState();
+      updateQuery();
+      return;
+    }
+    try {
+      await workspace.requestFullscreen();
+    } catch {
+      fallbackFullscreen = true;
+      syncFullscreenState();
+    }
+  }
+
+  fullscreenToggle?.addEventListener("click", toggleFullscreen);
+  document.addEventListener("fullscreenchange", syncFullscreenState);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && fallbackFullscreen) {
+      fallbackFullscreen = false;
+      syncFullscreenState();
+      updateQuery();
+      fullscreenToggle?.focus();
+    }
+  });
 
   document.querySelectorAll<HTMLElement>(".category-nav a").forEach((link) => {
     link.addEventListener("focus", () =>
@@ -315,6 +339,7 @@ if (root) {
   });
 
   syncPickerState();
+  syncFullscreenState();
   reorderProducts();
   applyFilters();
 }

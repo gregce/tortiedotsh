@@ -7,7 +7,7 @@
 .comparison-width {
   width: 100%;
   margin: 0 auto;
-  padding-inline: var(--space-6);
+  padding-inline: clamp(10px, 1.1vw, 18px);
 }
 
 .category-shell {
@@ -43,7 +43,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 42px;
   padding-inline: var(--space-7);
   color: var(--text-secondary);
   font-size: 13px;
@@ -71,61 +71,82 @@
 }
 
 .matrix-workspace {
-  padding-block: var(--space-5) var(--space-6);
+  padding-block: 7px 10px;
 }
 
-.matrix-context {
+.matrix-commandbar {
   display: flex;
-  min-height: 62px;
+  min-height: 42px;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-8);
-  padding-bottom: var(--space-5);
+  gap: var(--space-6);
+  padding-bottom: 7px;
 }
 
-.compare-kicker {
-  margin: 0 0 var(--space-1);
-  color: var(--text-muted);
-  font-size: 11px;
-  line-height: 16px;
+.matrix-identity {
+  display: flex;
+  min-width: 0;
+  align-items: baseline;
+  gap: var(--space-5);
 }
 
-.matrix-context h1 {
+.matrix-identity h1 {
+  flex: 0 0 auto;
   margin: 0;
   color: var(--text-primary);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: var(--weight-semibold);
   letter-spacing: -0.02em;
-  line-height: 28px;
+  line-height: 24px;
 }
 
-.matrix-context > div:first-child > p:last-child {
-  max-width: 74ch;
-  margin: var(--space-1) 0 0;
-  color: var(--text-secondary);
-  font-size: 12px;
-  line-height: 18px;
+.fullscreen-category-nav {
+  display: none;
 }
 
-.matrix-meta {
-  display: flex;
-  flex: 0 0 auto;
+.fullscreen-category-nav a {
+  width: 28px;
+  height: 28px;
   align-items: center;
-  gap: var(--space-5);
-  color: var(--text-muted);
+  justify-content: center;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-sm);
+}
+
+.fullscreen-category-nav a:hover {
+  background: var(--bg-raised);
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.fullscreen-category-nav svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.matrix-identity p {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-secondary);
   font-size: 11px;
   line-height: 16px;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.matrix-meta > * + *::before {
-  margin-right: var(--space-5);
-  color: var(--border-strong);
-  content: "·";
-}
-
-.method-link {
-  color: var(--accent-text);
+.workspace-actions {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .matrix-layout {
@@ -134,58 +155,56 @@
 }
 
 .matrix-rail {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   z-index: 70;
 }
 
-.rail-toggle {
+.workspace-action {
+  display: none;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+}
+
+.js .workspace-action {
+  display: inline-flex;
+}
+
+.workspace-action:hover,
+.workspace-action[aria-expanded="true"],
+.workspace-action[aria-pressed="true"] {
+  background: var(--bg-raised);
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.workspace-action svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.25;
+}
+
+.fullscreen-exit {
   display: none;
 }
 
-.js .rail-toggle {
-  display: inline-flex;
-  width: auto;
-  min-width: 112px;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
+.fullscreen-toggle[aria-pressed="true"] .fullscreen-enter {
+  display: none;
 }
 
-.rail-toggle-mark {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  flex: 0 0 auto;
-}
-
-.rail-toggle-mark::before,
-.rail-toggle-mark::after {
-  position: absolute;
-  left: 0;
-  width: 10px;
-  height: 1px;
-  background: currentColor;
-  content: "";
-}
-
-.rail-toggle-mark::before {
-  top: 3px;
-  box-shadow: 0 4px 0 currentColor;
-}
-
-.rail-toggle-mark::after {
-  top: 1px;
-  left: 2px;
-  width: 2px;
-  height: 5px;
-  background: var(--bg-surface);
-  border: 1px solid currentColor;
-}
-
-.matrix-rail.is-open .rail-toggle-mark {
-  transform: rotate(90deg);
+.fullscreen-toggle[aria-pressed="true"] .fullscreen-exit {
+  display: block;
 }
 
 .matrix-toolbar {
@@ -194,10 +213,10 @@
 
 .js .matrix-toolbar {
   position: absolute;
-  top: calc(100% + var(--space-3));
-  left: 0;
+  top: calc(100% + 6px);
+  right: 0;
   display: none;
-  width: 216px;
+  width: 232px;
   flex-direction: column;
   gap: var(--space-5);
   padding: var(--space-5);
@@ -209,30 +228,6 @@
 
 .js .matrix-rail.is-open .matrix-toolbar {
   display: flex;
-}
-
-.rail-heading {
-  display: flex;
-  min-height: 28px;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-4);
-  padding-bottom: var(--space-4);
-  border-bottom: 1px solid var(--border);
-}
-
-.rail-heading > span {
-  color: var(--text-primary);
-  font-size: 12px;
-  font-weight: var(--weight-semibold);
-}
-
-.result-summary {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: 10px;
-  line-height: 14px;
-  text-align: right;
 }
 
 .control {
@@ -252,8 +247,7 @@
 .control input,
 .control select,
 .toolbar-button,
-.product-picker > summary,
-.rail-toggle {
+.product-picker > summary {
   width: 100%;
   height: 32px;
   min-width: 0;
@@ -273,14 +267,12 @@
 .control input:hover,
 .control select:hover,
 .toolbar-button:hover,
-.product-picker > summary:hover,
-.rail-toggle:hover {
+.product-picker > summary:hover {
   background: var(--bg-raised);
   border-color: var(--text-muted);
 }
 
-.toolbar-button,
-.rail-toggle {
+.toolbar-button {
   cursor: pointer;
 }
 
@@ -337,7 +329,7 @@
 .picker-panel {
   position: absolute;
   top: 0;
-  left: calc(100% + var(--space-4));
+  right: calc(100% + var(--space-4));
   z-index: var(--z-editor-overlay);
   width: 300px;
   max-height: min(560px, 76vh);
@@ -420,35 +412,6 @@
   min-width: 0;
 }
 
-.matrix-status {
-  display: flex;
-  min-height: 28px;
-  align-items: flex-start;
-  gap: var(--space-5);
-  color: var(--text-muted);
-  font-size: 10px;
-  line-height: 16px;
-  padding-left: 128px;
-}
-
-.matrix-status p,
-.matrix-status span {
-  margin: 0;
-}
-
-.matrix-status p:first-child {
-  margin-right: auto;
-}
-
-.matrix-status strong {
-  color: var(--text-secondary);
-  font-weight: var(--weight-medium);
-}
-
-.source-alert {
-  color: var(--error);
-}
-
 .noscript-note {
   margin: 0 0 var(--space-4);
   color: var(--text-secondary);
@@ -467,8 +430,8 @@
 
 .matrix-scroll {
   width: 100%;
-  height: calc(100svh - 206px);
-  min-height: 440px;
+  height: calc(100svh - 151px);
+  min-height: 420px;
   overflow: auto;
   overscroll-behavior: contain;
   scrollbar-gutter: stable;
@@ -499,10 +462,10 @@
 
 .comparison-table th,
 .comparison-table td {
-  width: 158px;
-  min-width: 158px;
-  max-width: 158px;
-  padding: var(--space-4) var(--space-5);
+  width: 146px;
+  min-width: 146px;
+  max-width: 146px;
+  padding: var(--space-4);
   text-align: left;
   vertical-align: middle;
   background: var(--bg-canvas);
@@ -515,7 +478,7 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  height: 112px;
+  height: 100px;
   vertical-align: bottom;
   background: var(--bg-sidebar);
   color: var(--text-primary);
@@ -527,9 +490,9 @@
 .comparison-table .group-heading {
   position: sticky;
   left: 0;
-  width: 228px;
-  min-width: 228px;
-  max-width: 228px;
+  width: 204px;
+  min-width: 204px;
+  max-width: 204px;
 }
 
 .comparison-table .feature-heading {
@@ -572,7 +535,7 @@
 
 .product-header-stack {
   display: flex;
-  min-height: 82px;
+  min-height: 72px;
   flex-direction: column;
   justify-content: flex-end;
 }
@@ -827,25 +790,75 @@ th[data-product-id="jules"] .product-logo-frame {
   margin: 0 0 var(--space-5);
 }
 
+.matrix-workspace:fullscreen,
+.matrix-workspace.is-maximized {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  padding: 8px 10px 10px;
+  background: var(--bg-canvas);
+  display: flex;
+  flex-direction: column;
+}
+
+.matrix-workspace.is-maximized {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+body.matrix-fullscreen-fallback {
+  overflow: hidden;
+}
+
+.matrix-workspace:fullscreen .matrix-commandbar,
+.matrix-workspace.is-maximized .matrix-commandbar {
+  flex: 0 0 auto;
+}
+
+.matrix-workspace:fullscreen .fullscreen-category-nav,
+.matrix-workspace.is-maximized .fullscreen-category-nav {
+  display: flex;
+}
+
+.matrix-workspace:fullscreen .matrix-layout,
+.matrix-workspace.is-maximized .matrix-layout,
+.matrix-workspace:fullscreen .matrix-main,
+.matrix-workspace.is-maximized .matrix-main,
+.matrix-workspace:fullscreen .matrix-frame,
+.matrix-workspace.is-maximized .matrix-frame {
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.matrix-workspace:fullscreen .matrix-layout,
+.matrix-workspace.is-maximized .matrix-layout,
+.matrix-workspace:fullscreen .matrix-main,
+.matrix-workspace.is-maximized .matrix-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.matrix-workspace:fullscreen .matrix-scroll,
+.matrix-workspace.is-maximized .matrix-scroll {
+  height: 100%;
+  min-height: 0;
+}
+
 @media (max-width: 1120px) {
   .comparison-table th,
   .comparison-table td {
-    width: 150px;
-    min-width: 150px;
-    max-width: 150px;
+    width: 142px;
+    min-width: 142px;
+    max-width: 142px;
   }
 
   .comparison-table .feature-heading,
   .comparison-table .criterion-heading,
   .comparison-table .group-heading {
-    width: 204px;
-    min-width: 204px;
-    max-width: 204px;
-  }
-
-  .matrix-meta span:first-child,
-  .matrix-meta span:nth-child(2) {
-    display: none;
+    width: 190px;
+    min-width: 190px;
+    max-width: 190px;
   }
 }
 
@@ -854,20 +867,8 @@ th[data-product-id="jules"] .product-logo-frame {
     padding-inline: var(--space-4);
   }
 
-  .matrix-context {
-    min-height: 70px;
-    align-items: flex-start;
-    gap: var(--space-4);
-  }
-
-  .matrix-context > div:first-child > p:last-child,
-  .matrix-meta time,
-  .matrix-meta time + a::before {
+  .matrix-identity p {
     display: none;
-  }
-
-  .matrix-meta {
-    padding-top: var(--space-7);
   }
 
   .matrix-layout {
@@ -878,47 +879,33 @@ th[data-product-id="jules"] .product-logo-frame {
   .control select,
   .toolbar-button,
   .product-picker > summary,
-  .rail-toggle,
   .picker-option {
     min-height: 44px;
   }
 
   .matrix-rail {
     position: relative;
-    top: auto;
-    left: auto;
-    margin-bottom: var(--space-4);
-    padding: 0 0 var(--space-4);
-    border-bottom: 1px solid var(--border);
   }
 
   .js .matrix-rail.is-open .matrix-toolbar {
-    position: static;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
     display: grid;
-    width: auto;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(360px, calc(100vw - var(--space-8)));
+    grid-template-columns: 1fr;
     gap: var(--space-4);
-    margin-top: var(--space-4);
-    box-shadow: none;
-  }
-
-  .matrix-status {
-    padding-left: 0;
-  }
-
-  .rail-heading,
-  .rail-key {
-    grid-column: 1 / -1;
+    box-shadow: var(--shadow-2);
   }
 
   .picker-panel {
     top: calc(100% + var(--space-3));
-    left: 0;
+    right: 0;
     width: min(300px, calc(100vw - var(--space-8)));
   }
 
   .matrix-scroll {
-    height: calc(100svh - 214px);
+    height: calc(100svh - 149px);
   }
 
   .comparison-table th,
@@ -942,31 +929,12 @@ th[data-product-id="jules"] .product-logo-frame {
     padding-inline: var(--space-6);
   }
 
-  .matrix-context h1 {
-    font-size: 18px;
+  .matrix-identity h1 {
+    font-size: 17px;
   }
 
-  .matrix-meta {
-    display: none;
-  }
-
-  .js .matrix-rail.is-open .matrix-toolbar {
-    grid-template-columns: 1fr;
-  }
-
-  .rail-heading,
-  .rail-key {
-    grid-column: auto;
-  }
-
-  .matrix-status p:first-child,
-  .matrix-status span {
-    display: none;
-  }
-
-  .matrix-status p[data-scroll-hint] {
-    display: block;
-    margin-left: auto;
+  .matrix-commandbar {
+    min-height: 40px;
   }
 
   .comparison-table th,
