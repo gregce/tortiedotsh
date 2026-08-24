@@ -11,19 +11,19 @@ The result reconciles exactly with the current catalog:
 | Category | Products | Rendered catalog Unknowns | Suggested closures | Must remain Unknown |
 | --- | ---: | ---: | ---: | ---: |
 | Agent Orchestrators | 20 | 98 | 0 | 98 |
-| Coding-agent Harnesses | 27 | 69 | 8 | 61 |
-| Total | 47 | 167 | 8 | 159 |
+| Coding-agent Harnesses | 27 | 61 | 0 | 61 |
+| Total | 47 | 159 | 0 | 159 |
 
-Every one of the 167 cells has its own product/row record, checked first-party source set, and product-specific rationale in the JSON ledger. There are no category-wide placeholder rationales.
+Every one of the 159 remaining cells has its own product/row record, checked first-party source set, and product-specific rationale in the JSON ledger. There are no category-wide placeholder rationales. The eight closures below are retained separately as an implementation record.
 
 This count deliberately does not mix in two different kinds of presentation gap:
 
 - platform support is rendered in each product header, not as table rows; the 10 products whose whole platform fact is Unknown are audited separately below;
 - repository metric Unknowns are generated collector failures or not-yet-refreshed values. They must be closed by the `--loc` refresh and strict `audit:freshness` gate, not by hand-written capability research.
 
-## Suggested catalog closures
+## Implemented catalog closures
 
-These eight current Unknown cells now have direct exact-SKU first-party evidence. They are recommendations only; this lane did not edit the shared catalog while the Xum and evidence changes are being coordinated.
+These eight former Unknown cells have direct exact-SKU first-party evidence and are now implemented in the catalog.
 
 | Product | Row | Suggested state | Exact evidence | Why it closes |
 | --- | --- | --- | --- | --- |
@@ -71,47 +71,45 @@ The `coder-mux` source set now points to [Xum](https://github.com/coder/xum), th
 
 ## Coding-agent Harness ledger index
 
-“Suggested closure” rows are still current catalog Unknowns and remain counted in the 69-cell total until the catalog changes.
-
 | Product ID | Count | Suggested closures | Cells that remain Unknown |
 | --- | ---: | --- | --- |
 | `codex-cli` | 1 | — | `harness-checkpoints` |
-| `github-copilot-cli` | 2 | `harness-sandbox`, `harness-multimodal-input` | — |
+| `github-copilot-cli` | 0 | Implemented: `harness-sandbox`, `harness-multimodal-input` | — |
 | `gemini-cli` | 1 | — | `harness-multi-provider` |
 | `amp` | 1 | — | `harness-checkpoints` |
 | `prime-agent` | 1 | — | `harness-git-workflow` |
 | `deepseek-harness` | 1 | — | `harness-multimodal-input` |
 | `poolside-pool` | 1 | — | `harness-multimodal-input` |
-| `kimi-code-cli` | 3 | `harness-project-instructions` | `harness-sandbox`, `harness-git-workflow` |
+| `kimi-code-cli` | 2 | Implemented: `harness-project-instructions` | `harness-sandbox`, `harness-git-workflow` |
 | `kilo-code-cli` | 3 | — | `harness-sandbox`, `harness-checkpoints`, `harness-multimodal-input` |
-| `mistral-vibe` | 3 | `harness-multimodal-input` | `harness-sandbox`, `harness-checkpoints` |
+| `mistral-vibe` | 2 | Implemented: `harness-multimodal-input` | `harness-sandbox`, `harness-checkpoints` |
 | `continue-cli` | 4 | — | `harness-sandbox`, `harness-checkpoints`, `harness-subagents`, `harness-multimodal-input` |
 | `crush` | 5 | — | `harness-sandbox`, `harness-checkpoints`, `harness-subagents`, `harness-structured-output`, `harness-multimodal-input` |
 | `auggie-cli` | 3 | — | `harness-sandbox`, `harness-checkpoints`, `harness-git-workflow` |
 | `kiro-cli` | 1 | — | `harness-multimodal-input` |
 | `amplifier-agent` | 3 | — | `harness-sandbox`, `harness-checkpoints`, `harness-multimodal-input` |
-| `gptme` | 2 | `harness-git-workflow` | `harness-sandbox` |
+| `gptme` | 1 | Implemented: `harness-git-workflow` | `harness-sandbox` |
 | `cursor-cli` | 6 | — | `product-status`, `harness-multi-provider`, `harness-sandbox`, `harness-checkpoints`, `harness-subagents`, `harness-multimodal-input` |
 | `factory-droid-cli` | 5 | — | `product-status`, `harness-multi-provider`, `harness-checkpoints`, `harness-git-workflow`, `harness-multimodal-input` |
-| `codewhale` | 3 | `product-status` | `harness-git-workflow`, `harness-multimodal-input` |
+| `codewhale` | 2 | Implemented: `product-status` | `harness-git-workflow`, `harness-multimodal-input` |
 | `antigravity-cli` | 2 | — | `product-status`, `harness-multi-provider` |
-| `qwen-code` | 1 | `product-status` | — |
+| `qwen-code` | 0 | Implemented: `product-status` | — |
 | `pi-coding-agent` | 1 | — | `product-status` |
 | `opencode` | 3 | — | `product-status`, `harness-sandbox`, `harness-git-workflow` |
-| `goose` | 5 | `harness-structured-output` | `product-status`, `harness-checkpoints`, `harness-git-workflow`, `harness-multimodal-input` |
+| `goose` | 4 | Implemented: `harness-structured-output` | `product-status`, `harness-checkpoints`, `harness-git-workflow`, `harness-multimodal-input` |
 | `aider` | 6 | — | `product-status`, `harness-extension-protocol`, `harness-permission-controls`, `harness-sandbox`, `harness-subagents`, `harness-structured-output` |
 | `grok-build` | 2 | — | `product-status`, `harness-multimodal-input` |
 
 ## Platform-header audit
 
-All orchestrator products have a known platform fact. Ten harness products still render a `?` in the platform area because their entire platform fact is Unknown. This audit found four clean follow-up profiles and preserved six:
+All orchestrator products have a known platform fact. Four audited harness platform profiles are now implemented; six products still render a `?` because their complete platform fact remains Unknown:
 
 | Product | Result | Evidence boundary |
 | --- | --- | --- |
-| Amplifier Agent | Suggest macOS, Windows, Linux | [Canonical installer](https://github.com/microsoft/amplifier-agent) documents the Unix path and explicit Windows Git Bash path. |
-| OpenCode CLI | Suggest macOS, Windows, Linux | [Canonical README](https://github.com/anomalyco/opencode) lists packages for all three. |
-| Aider | Suggest macOS, Windows, Linux | [Installation guide](https://aider.chat/docs/install.html) supplies supported paths for all three. |
-| Grok Build | Suggest macOS, Windows, Linux | [Canonical README](https://github.com/xai-org/grok-build) explicitly names macOS, Linux, and Git Bash on Windows. |
+| Amplifier Agent | Implemented: macOS, Windows, Linux | [Canonical installer](https://github.com/microsoft/amplifier-agent) documents the Unix path and explicit Windows Git Bash path. |
+| OpenCode CLI | Implemented: macOS, Windows, Linux | [Canonical README](https://github.com/anomalyco/opencode) lists packages for all three. |
+| Aider | Implemented: macOS, Windows, Linux | [Installation guide](https://aider.chat/docs/install.html) supplies supported paths for all three. |
+| Grok Build | Implemented: macOS, Windows, Linux | [Canonical README](https://github.com/xai-org/grok-build) explicitly names macOS, Linux, and Git Bash on Windows. |
 | Cursor CLI | Remain Unknown | Exact native-host matrix was not established; editor platforms were not inherited. |
 | Factory Droid CLI | Remain Unknown | Cloud Droid Computers were not substituted for the local CLI host contract. |
 | CodeWhale | Remain Unknown | Release artifacts were not promoted without a current supported-host statement. |

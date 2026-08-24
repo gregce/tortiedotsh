@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T03:34:26.807Z",
+  "generatedAt": "2026-08-24T03:39:32.248Z",
   "sources": [
     {
       "id": "2fa78aa7f0249c97fb15",
@@ -29,6 +29,35 @@
       "reviewedHash": "0f71c626a81556a82156528798464c6222a281785e7289ee6a807a807dcb9889",
       "etag": "W/\"69ecefa3-7b73\"",
       "lastModified": "Sat, 25 Apr 2026 16:45:23 GMT",
+      "error": null
+    },
+    {
+      "id": "858d37ed291b03e16231",
+      "url": "https://aider.chat/docs/install.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "aider",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://aider.chat/docs/install.html",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -8233,6 +8262,35 @@
       "error": "HTTP 403"
     },
     {
+      "id": "d2c736bc63ec61fe81de",
+      "url": "https://github.com/aaif-goose/goose/blob/main/documentation/docs/guides/running-tasks.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "goose",
+          "field": "harness-structured-output",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/aaif-goose/goose/main/documentation/docs/guides/running-tasks.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "ee88644bdba07eaca169",
       "url": "https://github.com/aaif-goose/goose#readme",
       "bases": [
@@ -8551,6 +8609,35 @@
       "etag": "\"9a60c44b4f79a09bfe6bfce21c414090bb8f9772\"",
       "lastModified": "Wed, 05 Aug 2026 19:25:39 GMT",
       "error": "HTTP 403"
+    },
+    {
+      "id": "ffccace0ba14fd154d90",
+      "url": "https://github.com/anomalyco/opencode",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "opencode",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/anomalyco/opencode/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
     },
     {
       "id": "7f95cb69e93d657d1e43",
@@ -10224,6 +10311,40 @@
       "error": null
     },
     {
+      "id": "b373bdb0eab978ef2a46",
+      "url": "https://github.com/github/copilot-cli/blob/main/changelog.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "github-copilot-cli",
+          "field": "harness-multimodal-input",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "github-copilot-cli",
+          "field": "harness-sandbox",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/github/copilot-cli/main/changelog.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "1ab5b29760fa788008de",
       "url": "https://github.com/gitpod-io/openvscode-server",
       "bases": [
@@ -10494,6 +10615,35 @@
       "etag": "\"b7ef6b96fdce55e9862d3ac40d59c7305c656a23\"",
       "lastModified": "Sun, 23 Aug 2026 20:16:32 GMT",
       "error": "HTTP 403"
+    },
+    {
+      "id": "d99ab995519412b204c9",
+      "url": "https://github.com/gptme/gptme/blob/master/docs/features.rst",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "gptme",
+          "field": "harness-git-workflow",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/gptme/gptme/master/docs/features.rst",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
     },
     {
       "id": "a3ba3852ba7a147847a3",
@@ -10923,6 +11073,11 @@
         {
           "productId": "codewhale",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "codewhale",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -11807,6 +11962,11 @@
         },
         {
           "productId": "amplifier-agent",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "amplifier-agent",
           "field": "profile.primaryObject",
           "checkedAt": "2026-08-23"
         },
@@ -11989,6 +12149,35 @@
       "error": "HTTP 403"
     },
     {
+      "id": "5e5c7b2b2e7eb086f812",
+      "url": "https://github.com/mistralai/mistral-vibe#features",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "mistral-vibe",
+          "field": "harness-multimodal-input",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/mistralai/mistral-vibe/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "d015ca7e50bb8f4637f3",
       "url": "https://github.com/MoonshotAI/kimi-code",
       "bases": [
@@ -12031,6 +12220,35 @@
       "etag": null,
       "lastModified": null,
       "error": "HTTP 403"
+    },
+    {
+      "id": "ec5849af482856f33292",
+      "url": "https://github.com/MoonshotAI/kimi-code/blob/main/docs/en/customization/agents.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "kimi-code-cli",
+          "field": "harness-project-instructions",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/MoonshotAI/kimi-code/main/docs/en/customization/agents.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
     },
     {
       "id": "c1c7f9c9d8942c851641",
@@ -13489,6 +13707,11 @@
         {
           "productId": "qwen-code",
           "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "qwen-code",
+          "field": "profile.status",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -15500,6 +15723,11 @@
         {
           "productId": "grok-build",
           "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "grok-build",
+          "field": "profile.platform",
           "checkedAt": "2026-08-23"
         },
         {

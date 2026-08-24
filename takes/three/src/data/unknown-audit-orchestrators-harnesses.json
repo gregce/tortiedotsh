@@ -10,10 +10,11 @@
   },
   "summary": {
     "products": 47,
-    "currentUnknownCells": 167,
+    "currentUnknownCells": 159,
     "agentOrchestratorUnknownCells": 98,
-    "codingAgentHarnessUnknownCells": 69,
-    "suggestedClosures": 8,
+    "codingAgentHarnessUnknownCells": 61,
+    "suggestedClosures": 0,
+    "implementedClosures": 8,
     "remainUnknown": 159
   },
   "categories": [
@@ -252,10 +253,7 @@
         {
           "productId":"github-copilot-cli",
           "sourcesChecked":["https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli","https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference","https://github.com/github/copilot-cli/blob/main/changelog.md"],
-          "cells":[
-            {"rowId":"harness-sandbox","result":"suggested-closure","suggestedState":"built-in","rationale":"The first-party changelog documents the `/sandbox` policy UI, path and network enforcement, platform policies, bypass behavior, and sandboxed commands.","evidence":{"url":"https://github.com/github/copilot-cli/blob/main/changelog.md","title":"GitHub Copilot CLI changelog","basis":"repository-derived"}},
-            {"rowId":"harness-multimodal-input","result":"suggested-closure","suggestedState":"built-in","rationale":"The first-party changelog explicitly documents pasted and dragged images, attached images and PDFs, vision policy, and the non-interactive `--attachment` flag.","evidence":{"url":"https://github.com/github/copilot-cli/blob/main/changelog.md","title":"GitHub Copilot CLI changelog","basis":"repository-derived"}}
-          ]
+          "cells":[]
         },
         {
           "productId":"gemini-cli",
@@ -286,7 +284,6 @@
           "productId":"kimi-code-cli",
           "sourcesChecked":["https://github.com/MoonshotAI/kimi-code","https://github.com/MoonshotAI/kimi-code/blob/main/docs/en/customization/agents.md","https://moonshotai.github.io/kimi-code/en/guides/interaction"],
           "cells":[
-            {"rowId":"harness-project-instructions","result":"suggested-closure","suggestedState":"built-in","rationale":"Kimi's first-party agent customization guide explicitly documents global and project `AGENTS.md` locations and injects their content as workspace instructions.","evidence":{"url":"https://github.com/MoonshotAI/kimi-code/blob/main/docs/en/customization/agents.md","title":"Kimi Code agent customization","basis":"repository-derived"}},
             {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"Kimi documents approval and yolo/plan modes; its Nix development environment and configurable home directory do not establish a runtime sandbox boundary."},
             {"rowId":"harness-git-workflow","result":"remain-unknown","rationale":"Kimi runs inside a project and uses Git Bash on Windows, but the checked docs do not establish harness-owned commits, branches, worktrees, or pull requests."}
           ]
@@ -305,8 +302,7 @@
           "sourcesChecked":["https://github.com/mistralai/mistral-vibe"],
           "cells":[
             {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"Vibe documents tool execution approval, which controls authorization but does not establish an OS, filesystem, container, or network sandbox."},
-            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"Persistent history and Git-status context do not establish a workspace checkpoint and rollback feature."},
-            {"rowId":"harness-multimodal-input","result":"suggested-closure","suggestedState":"built-in","rationale":"The canonical README explicitly documents `@` image attachments for PNG, JPEG, GIF, and WebP files sent as native multimodal content.","evidence":{"url":"https://github.com/mistralai/mistral-vibe#features","title":"Mistral Vibe README","basis":"repository-derived"}}
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"Persistent history and Git-status context do not establish a workspace checkpoint and rollback feature."}
           ]
         },
         {
@@ -357,8 +353,7 @@
           "productId":"gptme",
           "sourcesChecked":["https://github.com/gptme/gptme", "https://github.com/gptme/gptme/blob/master/docs/features.rst"],
           "cells":[
-            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"gptme's guardrails and local-first execution do not establish a built-in OS, filesystem, container, or network sandbox."},
-            {"rowId":"harness-git-workflow","result":"suggested-closure","suggestedState":"built-in","rationale":"The canonical README and current feature documentation explicitly identify the built-in auto-commit tool and pre-commit integration.","evidence":{"url":"https://github.com/gptme/gptme/blob/master/docs/features.rst","title":"gptme features","basis":"repository-derived"}}
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"gptme's guardrails and local-first execution do not establish a built-in OS, filesystem, container, or network sandbox."}
           ]
         },
         {
@@ -388,7 +383,6 @@
           "productId":"codewhale",
           "sourcesChecked":["https://github.com/Hmbown/CodeWhale", "https://github.com/Hmbown/CodeWhale/blob/main/docs/CONFIGURATION.md"],
           "cells":[
-            {"rowId":"product-status","result":"suggested-closure","suggestedState":"active","rationale":"The current canonical README explicitly says CodeWhale is independently maintained, welcomes current contributions, and exposes a current CLI contract.","evidence":{"url":"https://github.com/Hmbown/CodeWhale","title":"CodeWhale README","basis":"repository-derived"}},
             {"rowId":"harness-git-workflow","result":"remain-unknown","rationale":"CodeWhale reads and edits a repository and can restore snapshots, but the checked docs do not establish harness-owned commits, branches, worktrees, or PR lifecycle."},
             {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"The README and configuration guide do not directly establish image or web-page prompt input."}
           ]
@@ -404,7 +398,7 @@
         {
           "productId":"qwen-code",
           "sourcesChecked":["https://github.com/QwenLM/qwen-code"],
-          "cells":[{"rowId":"product-status","result":"suggested-closure","suggestedState":"active","rationale":"The canonical README explicitly says Qwen Code is actively iterating on itself and links the current installation and release surfaces.","evidence":{"url":"https://github.com/QwenLM/qwen-code","title":"Qwen Code README","basis":"repository-derived"}}]
+          "cells":[]
         },
         {
           "productId":"pi-coding-agent",
@@ -426,7 +420,6 @@
           "cells":[
             {"rowId":"product-status","result":"remain-unknown","rationale":"Current releases and foundation governance show maintained software but the checked exact CLI sources do not assign a lifecycle label."},
             {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"Goose session resume does not establish restoration of workspace mutations from a checkpoint."},
-            {"rowId":"harness-structured-output","result":"suggested-closure","suggestedState":"built-in","rationale":"The first-party running-tasks guide explicitly documents `--output-format json` and `--output-format stream-json` for automation.","evidence":{"url":"https://github.com/aaif-goose/goose/blob/main/documentation/docs/guides/running-tasks.md","title":"Goose running tasks","basis":"repository-derived"}},
             {"rowId":"harness-git-workflow","result":"remain-unknown","rationale":"Goose can edit repositories through tools, but the checked CLI docs do not establish a harness-owned commit, branch, worktree, or PR workflow."},
             {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"Provider multimodality and internal image types do not establish user-facing image or web-page input in the Goose CLI contract."}
           ]
@@ -454,17 +447,27 @@
       ]
     }
   ],
+  "implementedClosures": [
+    {"productId":"github-copilot-cli","rowId":"harness-sandbox","state":"built-in","evidenceUrl":"https://github.com/github/copilot-cli/blob/main/changelog.md"},
+    {"productId":"github-copilot-cli","rowId":"harness-multimodal-input","state":"built-in","evidenceUrl":"https://github.com/github/copilot-cli/blob/main/changelog.md"},
+    {"productId":"kimi-code-cli","rowId":"harness-project-instructions","state":"built-in","evidenceUrl":"https://github.com/MoonshotAI/kimi-code/blob/main/docs/en/customization/agents.md"},
+    {"productId":"mistral-vibe","rowId":"harness-multimodal-input","state":"built-in","evidenceUrl":"https://github.com/mistralai/mistral-vibe#features"},
+    {"productId":"gptme","rowId":"harness-git-workflow","state":"built-in","evidenceUrl":"https://github.com/gptme/gptme/blob/master/docs/features.rst"},
+    {"productId":"codewhale","rowId":"product-status","state":"active","evidenceUrl":"https://github.com/Hmbown/CodeWhale"},
+    {"productId":"qwen-code","rowId":"product-status","state":"active","evidenceUrl":"https://github.com/QwenLM/qwen-code"},
+    {"productId":"goose","rowId":"harness-structured-output","state":"built-in","evidenceUrl":"https://github.com/aaif-goose/goose/blob/main/documentation/docs/guides/running-tasks.md"}
+  ],
   "platformHeaderAudit": [
-    {"productId":"amplifier-agent","result":"suggested-closure","suggestedPlatforms":["macos","windows","linux"],"rationale":"The canonical installer documents the Unix install path and an explicit Windows Git Bash path.","sourcesChecked":["https://github.com/microsoft/amplifier-agent"]},
+    {"productId":"amplifier-agent","result":"implemented","suggestedPlatforms":["macos","windows","linux"],"rationale":"The canonical installer documents the Unix install path and an explicit Windows Git Bash path.","sourcesChecked":["https://github.com/microsoft/amplifier-agent"]},
     {"productId":"cursor-cli","result":"remain-unknown","rationale":"The checked CLI pages did not yield one exact native host support matrix; do not inherit Cursor editor platforms.","sourcesChecked":["https://cursor.com/cli","https://docs.cursor.com/en/cli/using"]},
     {"productId":"factory-droid-cli","result":"remain-unknown","rationale":"The quickstart did not establish one exact native host matrix for Droid CLI; cloud Droid Computers are a different execution SKU.","sourcesChecked":["https://docs.factory.ai/cli/getting-started/quickstart"]},
     {"productId":"codewhale","result":"remain-unknown","rationale":"Package and release availability was not promoted to native OS support without an explicit current support matrix.","sourcesChecked":["https://github.com/Hmbown/CodeWhale"]},
     {"productId":"antigravity-cli","result":"remain-unknown","rationale":"The overview did not provide an exact native-host support matrix; adjacent Google IDE and cloud surfaces were excluded.","sourcesChecked":["https://antigravity.google/docs/cli-overview"]},
     {"productId":"pi-coding-agent","result":"remain-unknown","rationale":"Standalone build and package instructions do not themselves establish the supported native OS set.","sourcesChecked":["https://github.com/earendil-works/pi","https://github.com/earendil-works/pi/blob/main/packages/coding-agent/README.md"]},
-    {"productId":"opencode","result":"suggested-closure","suggestedPlatforms":["macos","windows","linux"],"rationale":"The canonical README's install table explicitly lists macOS, Windows, and Linux packages for OpenCode.","sourcesChecked":["https://github.com/anomalyco/opencode"]},
+    {"productId":"opencode","result":"implemented","suggestedPlatforms":["macos","windows","linux"],"rationale":"The canonical README's install table explicitly lists macOS, Windows, and Linux packages for OpenCode.","sourcesChecked":["https://github.com/anomalyco/opencode"]},
     {"productId":"goose","result":"remain-unknown","rationale":"The checked exact CLI sources did not establish a complete native host matrix; desktop support and WSL guidance were not inherited.","sourcesChecked":["https://github.com/aaif-goose/goose","https://block.github.io/goose/index.html"]},
-    {"productId":"aider","result":"suggested-closure","suggestedPlatforms":["macos","windows","linux"],"rationale":"Aider's first-party installation guide supplies supported installation paths for macOS, Windows, and Linux.","sourcesChecked":["https://aider.chat/docs/install.html"]},
-    {"productId":"grok-build","result":"suggested-closure","suggestedPlatforms":["macos","windows","linux"],"rationale":"The canonical README explicitly documents its installer for macOS, Linux, and Git Bash on Windows.","sourcesChecked":["https://github.com/xai-org/grok-build"]}
+    {"productId":"aider","result":"implemented","suggestedPlatforms":["macos","windows","linux"],"rationale":"Aider's first-party installation guide supplies supported installation paths for macOS, Windows, and Linux.","sourcesChecked":["https://aider.chat/docs/install.html"]},
+    {"productId":"grok-build","result":"implemented","suggestedPlatforms":["macos","windows","linux"],"rationale":"The canonical README explicitly documents its installer for macOS, Linux, and Git Bash on Windows.","sourcesChecked":["https://github.com/xai-org/grok-build"]}
   ],
   "generatedMetricUnknowns": {
     "result":"excluded-from-editorial-ledger",
