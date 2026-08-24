@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "checkedAt": "2026-08-24",
-  "catalogSnapshot": "2026-08-23",
+  "catalogSnapshot": "2026-08-24",
   "scope": {
     "categoryIds": [
       "code-editors",
@@ -18,14 +18,14 @@
     "platformHeaders": "Platform-header support is outside this rendered-cell ledger. An omitted OS in a known platform list is not treated as Unknown."
   },
   "summary": {
-    "products": 42,
-    "currentUnknownCells": 213,
-    "codeEditorUnknownCells": 70,
-    "ideExtensionUnknownCells": 97,
+    "products": 48,
+    "currentUnknownCells": 255,
+    "codeEditorUnknownCells": 92,
+    "ideExtensionUnknownCells": 117,
     "agentMultiplexerUnknownCells": 46,
     "appliedClosures": 14,
     "changedSourceCorrections": 14,
-    "remainUnknown": 213
+    "remainUnknown": 255
   },
   "categories": [
     {
@@ -599,6 +599,145 @@
               "rowId": "editor-verification-loop",
               "result": "remain-unknown",
               "rationale": "Void's archived repository and historical releases establish the final open-source desktop editor and experimental AI surface; no current product documentation exists beyond that retained record. It does not establish a documented agent loop that runs tests, builds, diagnostics, browser inspection, or device checks and consumes the result."
+            }
+          ]
+        },
+        {
+          "productId": "visual-studio",
+          "sourcesChecked": [
+            "https://visualstudio.microsoft.com/github-copilot/",
+            "https://visualstudio.microsoft.com/vs/"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "Visual Studio's exact product and GitHub Copilot documentation establish the Windows IDE, editor, terminal, debugging, source control, and agent integration without inheriting capabilities from VS Code or Visual Studio Code extensions. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
+            },
+            {
+              "rowId": "editor-mcp",
+              "result": "remain-unknown",
+              "rationale": "Visual Studio's exact product and GitHub Copilot documentation establish the Windows IDE, editor, terminal, debugging, source control, and agent integration without inheriting capabilities from VS Code or Visual Studio Code extensions. It does not establish an MCP client available to this exact editor's agent surface."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "Visual Studio's exact product and GitHub Copilot documentation establish the Windows IDE, editor, terminal, debugging, source control, and agent integration without inheriting capabilities from VS Code or Visual Studio Code extensions. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "Visual Studio's exact product and GitHub Copilot documentation establish the Windows IDE, editor, terminal, debugging, source control, and agent integration without inheriting capabilities from VS Code or Visual Studio Code extensions. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-remote-workspaces",
+              "result": "remain-unknown",
+              "rationale": "Visual Studio's exact product and GitHub Copilot documentation establish the Windows IDE, editor, terminal, debugging, source control, and agent integration without inheriting capabilities from VS Code or Visual Studio Code extensions. It does not establish that the editor runs the workspace, language services, terminal, or agent tools on a remote host."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "Visual Studio's exact product and GitHub Copilot documentation establish the Windows IDE, editor, terminal, debugging, source control, and agent integration without inheriting capabilities from VS Code or Visual Studio Code extensions. It does not establish an approval scope or allow, ask, and deny policy for the editor agent's tool calls."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Visual Studio's exact product and GitHub Copilot documentation establish the Windows IDE, editor, terminal, debugging, source control, and agent integration without inheriting capabilities from VS Code or Visual Studio Code extensions. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            },
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "Visual Studio's exact product and GitHub Copilot documentation establish the Windows IDE, editor, terminal, debugging, source control, and agent integration without inheriting capabilities from VS Code or Visual Studio Code extensions. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
+            },
+            {
+              "rowId": "editor-verification-loop",
+              "result": "remain-unknown",
+              "rationale": "Visual Studio's exact product and GitHub Copilot documentation establish the Windows IDE, editor, terminal, debugging, source control, and agent integration without inheriting capabilities from VS Code or Visual Studio Code extensions. It does not establish a documented agent loop that runs tests, builds, diagnostics, browser inspection, or device checks and consumes the result."
+            }
+          ]
+        },
+        {
+          "productId": "replit-project-editor",
+          "sourcesChecked": [
+            "https://docs.replit.com/learn/projects-and-artifacts/project-editor",
+            "https://docs.replit.com/core-concepts/agent/task-system",
+            "https://docs.replit.com/billing/ai-billing",
+            "https://docs.replit.com/updates"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-terminal",
+              "result": "remain-unknown",
+              "rationale": "Replit's exact workspace and Agent documentation establish the browser-hosted project editor, terminal, preview, deployment, and agent task surface without treating the broader Replit service as a conventional local desktop IDE. It does not establish an integrated interactive terminal owned by this exact editor surface."
+            },
+            {
+              "rowId": "editor-inline-prediction",
+              "result": "remain-unknown",
+              "rationale": "Replit's exact workspace and Agent documentation establish the browser-hosted project editor, terminal, preview, deployment, and agent task surface without treating the broader Replit service as a conventional local desktop IDE. It does not establish current inline or next-edit code prediction for this exact editor release."
+            },
+            {
+              "rowId": "editor-mcp",
+              "result": "remain-unknown",
+              "rationale": "Replit's exact workspace and Agent documentation establish the browser-hosted project editor, terminal, preview, deployment, and agent task surface without treating the broader Replit service as a conventional local desktop IDE. It does not establish an MCP client available to this exact editor's agent surface."
+            },
+            {
+              "rowId": "editor-remote-workspaces",
+              "result": "remain-unknown",
+              "rationale": "Replit's exact workspace and Agent documentation establish the browser-hosted project editor, terminal, preview, deployment, and agent task surface without treating the broader Replit service as a conventional local desktop IDE. It does not establish that the editor runs the workspace, language services, terminal, or agent tools on a remote host."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "Replit's exact workspace and Agent documentation establish the browser-hosted project editor, terminal, preview, deployment, and agent task surface without treating the broader Replit service as a conventional local desktop IDE. It does not establish an approval scope or allow, ask, and deny policy for the editor agent's tool calls."
+            }
+          ]
+        },
+        {
+          "productId": "stagewise",
+          "sourcesChecked": [
+            "https://github.com/stagewise-io/stagewise",
+            "https://github.com/stagewise-io/stagewise/releases"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "stagewise's canonical repository establishes the exact agentic IDE, browser and terminal tools, project context, approvals, and open-source distribution without inheriting optional host-editor extensions. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
+            },
+            {
+              "rowId": "editor-inline-prediction",
+              "result": "remain-unknown",
+              "rationale": "stagewise's canonical repository establishes the exact agentic IDE, browser and terminal tools, project context, approvals, and open-source distribution without inheriting optional host-editor extensions. It does not establish current inline or next-edit code prediction for this exact editor release."
+            },
+            {
+              "rowId": "editor-mcp",
+              "result": "remain-unknown",
+              "rationale": "stagewise's canonical repository establishes the exact agentic IDE, browser and terminal tools, project context, approvals, and open-source distribution without inheriting optional host-editor extensions. It does not establish an MCP client available to this exact editor's agent surface."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "stagewise's canonical repository establishes the exact agentic IDE, browser and terminal tools, project context, approvals, and open-source distribution without inheriting optional host-editor extensions. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "stagewise's canonical repository establishes the exact agentic IDE, browser and terminal tools, project context, approvals, and open-source distribution without inheriting optional host-editor extensions. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-remote-workspaces",
+              "result": "remain-unknown",
+              "rationale": "stagewise's canonical repository establishes the exact agentic IDE, browser and terminal tools, project context, approvals, and open-source distribution without inheriting optional host-editor extensions. It does not establish that the editor runs the workspace, language services, terminal, or agent tools on a remote host."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "stagewise's canonical repository establishes the exact agentic IDE, browser and terminal tools, project context, approvals, and open-source distribution without inheriting optional host-editor extensions. It does not establish an approval scope or allow, ask, and deny policy for the editor agent's tool calls."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "stagewise's canonical repository establishes the exact agentic IDE, browser and terminal tools, project context, approvals, and open-source distribution without inheriting optional host-editor extensions. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
             }
           ]
         }
@@ -1261,6 +1400,133 @@
               "rowId": "extension-remote-session-client",
               "result": "remain-unknown",
               "rationale": "Roo Code's archived repository and retained exact extension documentation establish the historical VS Code-family panel, providers, MCP, checkpoints, permissions, and indexing before shutdown. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "tabnine-agent",
+          "sourcesChecked": [
+            "https://docs.tabnine.com/main/getting-started/tabnine-agent",
+            "https://docs.tabnine.com/main/getting-started/install"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "Tabnine's exact Agent and installation documentation establishes its supported IDE hosts, inline assistance, codebase context, and operator checkpoints without inheriting capabilities from unrelated Tabnine deployment products. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-provider-choice",
+              "result": "remain-unknown",
+              "rationale": "Tabnine's exact Agent and installation documentation establishes its supported IDE hosts, inline assistance, codebase context, and operator checkpoints without inheriting capabilities from unrelated Tabnine deployment products. It does not establish an operator-facing provider or model selector for this exact extension surface."
+            },
+            {
+              "rowId": "extension-mcp",
+              "result": "remain-unknown",
+              "rationale": "Tabnine's exact Agent and installation documentation establishes its supported IDE hosts, inline assistance, codebase context, and operator checkpoints without inheriting capabilities from unrelated Tabnine deployment products. It does not establish an MCP client exposed by this exact extension rather than the host IDE or an optional third-party plugin."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Tabnine's exact Agent and installation documentation establishes its supported IDE hosts, inline assistance, codebase context, and operator checkpoints without inheriting capabilities from unrelated Tabnine deployment products. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Tabnine's exact Agent and installation documentation establishes its supported IDE hosts, inline assistance, codebase context, and operator checkpoints without inheriting capabilities from unrelated Tabnine deployment products. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-byok-local-model",
+              "result": "remain-unknown",
+              "rationale": "Tabnine's exact Agent and installation documentation establishes its supported IDE hosts, inline assistance, codebase context, and operator checkpoints without inheriting capabilities from unrelated Tabnine deployment products. It does not establish operator-supplied provider credentials, a local model, or a self-hosted inference endpoint for this exact extension."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Tabnine's exact Agent and installation documentation establishes its supported IDE hosts, inline assistance, codebase context, and operator checkpoints without inheriting capabilities from unrelated Tabnine deployment products. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "windsurf-plugins",
+          "sourcesChecked": [
+            "https://docs.devin.ai/windsurf/plugins/changelog",
+            "https://docs.devin.ai/windsurf/plugins/getting-started"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "The current Windsurf Plugins documentation establishes Cascade, completion, MCP, review, and the JetBrains-hosted execution boundary without treating Devin Desktop or the hosted Devin agent as the same SKU. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-host-vscode",
+              "result": "remain-unknown",
+              "rationale": "The current Windsurf Plugins documentation establishes Cascade, completion, MCP, review, and the JetBrains-hosted execution boundary without treating Devin Desktop or the hosted Devin agent as the same SKU. It does not establish a first-party VS Code or compatible-fork package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-provider-choice",
+              "result": "remain-unknown",
+              "rationale": "The current Windsurf Plugins documentation establishes Cascade, completion, MCP, review, and the JetBrains-hosted execution boundary without treating Devin Desktop or the hosted Devin agent as the same SKU. It does not establish an operator-facing provider or model selector for this exact extension surface."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "The current Windsurf Plugins documentation establishes Cascade, completion, MCP, review, and the JetBrains-hosted execution boundary without treating Devin Desktop or the hosted Devin agent as the same SKU. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "The current Windsurf Plugins documentation establishes Cascade, completion, MCP, review, and the JetBrains-hosted execution boundary without treating Devin Desktop or the hosted Devin agent as the same SKU. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-byok-local-model",
+              "result": "remain-unknown",
+              "rationale": "The current Windsurf Plugins documentation establishes Cascade, completion, MCP, review, and the JetBrains-hosted execution boundary without treating Devin Desktop or the hosted Devin agent as the same SKU. It does not establish operator-supplied provider credentials, a local model, or a self-hosted inference endpoint for this exact extension."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "The current Windsurf Plugins documentation establishes Cascade, completion, MCP, review, and the JetBrains-hosted execution boundary without treating Devin Desktop or the hosted Devin agent as the same SKU. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "sourcegraph-cody-enterprise",
+          "sourcesChecked": [
+            "https://sourcegraph.com/docs/cody",
+            "https://sourcegraph.com/docs/cody/enterprise/model-configuration"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "Sourcegraph's current Cody Enterprise documentation establishes the supported IDE clients, codebase context, model configuration, and enterprise service boundary after the consumer Cody product ended. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-mcp",
+              "result": "remain-unknown",
+              "rationale": "Sourcegraph's current Cody Enterprise documentation establishes the supported IDE clients, codebase context, model configuration, and enterprise service boundary after the consumer Cody product ended. It does not establish an MCP client exposed by this exact extension rather than the host IDE or an optional third-party plugin."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Sourcegraph's current Cody Enterprise documentation establishes the supported IDE clients, codebase context, model configuration, and enterprise service boundary after the consumer Cody product ended. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-permissions",
+              "result": "remain-unknown",
+              "rationale": "Sourcegraph's current Cody Enterprise documentation establishes the supported IDE clients, codebase context, model configuration, and enterprise service boundary after the consumer Cody product ended. It does not establish per-tool approval or allow, ask, and deny policies for this exact extension."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Sourcegraph's current Cody Enterprise documentation establishes the supported IDE clients, codebase context, model configuration, and enterprise service boundary after the consumer Cody product ended. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Sourcegraph's current Cody Enterprise documentation establishes the supported IDE clients, codebase context, model configuration, and enterprise service boundary after the consumer Cody product ended. It does not establish a client for observing or steering a separately owned cloud or background session."
             }
           ]
         }

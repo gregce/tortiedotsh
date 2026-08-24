@@ -1031,6 +1031,199 @@
       "githubUrl": "https://github.com/bytedance/UI-TARS-desktop",
       "apiUrl": "https://api.github.com/repos/bytedance/UI-TARS-desktop",
       "loc": { "enabled": true }
+    },
+    {
+      "id": "stagewise",
+      "name": "stagewise",
+      "category": "code-editors",
+      "owner": "stagewise-io",
+      "repo": "stagewise",
+      "githubUrl": "https://github.com/stagewise-io/stagewise",
+      "apiUrl": "https://api.github.com/repos/stagewise-io/stagewise",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "openai-symphony",
+      "name": "OpenAI Symphony",
+      "category": "agent-orchestrators",
+      "owner": "openai",
+      "repo": "symphony",
+      "githubUrl": "https://github.com/openai/symphony",
+      "apiUrl": "https://api.github.com/repos/openai/symphony",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "aionui",
+      "name": "AionUi",
+      "category": "agent-orchestrators",
+      "owner": "iOfficeAI",
+      "repo": "AionUi",
+      "githubUrl": "https://github.com/iOfficeAI/AionUi",
+      "apiUrl": "https://api.github.com/repos/iOfficeAI/AionUi",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "openhands-agent-canvas",
+      "name": "OpenHands Agent Canvas",
+      "category": "agent-orchestrators",
+      "owner": "OpenHands",
+      "repo": "OpenHands",
+      "githubUrl": "https://github.com/OpenHands/OpenHands",
+      "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands",
+      "metricScope": "Whole OpenHands repository; Agent Canvas is the current visual control surface inside the main product.",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "kortix",
+      "name": "Kortix",
+      "category": "agent-orchestrators",
+      "owner": "kortix-ai",
+      "repo": "suna",
+      "githubUrl": "https://github.com/kortix-ai/suna",
+      "apiUrl": "https://api.github.com/repos/kortix-ai/suna",
+      "license": {
+        "spdxId": "Elastic-2.0",
+        "name": "Elastic License 2.0",
+        "sourceUrl": "https://github.com/kortix-ai/suna/blob/main/LICENSE",
+        "checkedAt": "2026-08-24"
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "oh-my-openagent",
+      "name": "Oh My OpenAgent",
+      "category": "coding-agent-harnesses",
+      "owner": "code-yeongyu",
+      "repo": "oh-my-openagent",
+      "githubUrl": "https://github.com/code-yeongyu/oh-my-openagent",
+      "apiUrl": "https://api.github.com/repos/code-yeongyu/oh-my-openagent",
+      "license": {
+        "spdxId": "LicenseRef-Sustainable-Use-License-1.0",
+        "name": "Sustainable Use License 1.0",
+        "sourceUrl": "https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md",
+        "checkedAt": "2026-08-24"
+      },
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "oh-my-pi",
+      "name": "Oh My Pi",
+      "category": "coding-agent-harnesses",
+      "owner": "can1357",
+      "repo": "oh-my-pi",
+      "githubUrl": "https://github.com/can1357/oh-my-pi",
+      "apiUrl": "https://api.github.com/repos/can1357/oh-my-pi",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "open-interpreter",
+      "name": "Open Interpreter",
+      "category": "coding-agent-harnesses",
+      "owner": "openinterpreter",
+      "repo": "openinterpreter",
+      "githubUrl": "https://github.com/openinterpreter/openinterpreter",
+      "apiUrl": "https://api.github.com/repos/openinterpreter/openinterpreter",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "swe-agent",
+      "name": "SWE-agent",
+      "category": "coding-agent-harnesses",
+      "owner": "SWE-agent",
+      "repo": "SWE-agent",
+      "githubUrl": "https://github.com/SWE-agent/SWE-agent",
+      "apiUrl": "https://api.github.com/repos/SWE-agent/SWE-agent",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "open-swe",
+      "name": "Open SWE",
+      "category": "cloud-agents",
+      "owner": "langchain-ai",
+      "repo": "open-swe",
+      "githubUrl": "https://github.com/langchain-ai/open-swe",
+      "apiUrl": "https://api.github.com/repos/langchain-ai/open-swe",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "langfuse",
+      "name": "Langfuse",
+      "category": "agent-traces",
+      "owner": "langfuse",
+      "repo": "langfuse",
+      "githubUrl": "https://github.com/langfuse/langfuse",
+      "apiUrl": "https://api.github.com/repos/langfuse/langfuse",
+      "license": {
+        "summary": "Mixed: MIT core with separately licensed enterprise directories",
+        "checkedAt": "2026-08-24",
+        "components": [
+          {
+            "spdxId": "MIT",
+            "name": "MIT License",
+            "scope": "Core Langfuse source outside explicitly marked enterprise directories",
+            "sourceUrl": "https://github.com/langfuse/langfuse/blob/main/LICENSE"
+          },
+          {
+            "spdxId": "LicenseRef-Langfuse-Enterprise-License",
+            "name": "Langfuse Enterprise License",
+            "scope": "Explicitly marked enterprise directories",
+            "sourceUrl": "https://github.com/langfuse/langfuse/blob/main/LICENSE"
+          }
+        ]
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "arize-phoenix",
+      "name": "Arize Phoenix",
+      "category": "agent-traces",
+      "owner": "Arize-ai",
+      "repo": "phoenix",
+      "githubUrl": "https://github.com/Arize-ai/phoenix",
+      "apiUrl": "https://api.github.com/repos/Arize-ai/phoenix",
+      "release": {
+        "mode": "tag-prefix",
+        "tagPrefix": "arize-phoenix-v",
+        "reason": "The shared Phoenix repository publishes separate server, client, and eval packages; the comparison column represents the Phoenix product release rather than a client-library tag.",
+        "checkedAt": "2026-08-24"
+      },
+      "license": {
+        "spdxId": "Elastic-2.0",
+        "name": "Elastic License 2.0",
+        "sourceUrl": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
+        "checkedAt": "2026-08-24"
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "agentops",
+      "name": "AgentOps",
+      "category": "agent-traces",
+      "owner": "AgentOps-AI",
+      "repo": "agentops",
+      "githubUrl": "https://github.com/AgentOps-AI/agentops",
+      "apiUrl": "https://api.github.com/repos/AgentOps-AI/agentops",
+      "loc": { "enabled": true }
+    },
+    {
+      "id": "eigent",
+      "name": "Eigent",
+      "category": "general-purpose-agents",
+      "owner": "eigent-ai",
+      "repo": "eigent",
+      "githubUrl": "https://github.com/eigent-ai/eigent",
+      "apiUrl": "https://api.github.com/repos/eigent-ai/eigent",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "lobsterai",
+      "name": "LobsterAI",
+      "category": "general-purpose-agents",
+      "owner": "netease-youdao",
+      "repo": "LobsterAI",
+      "githubUrl": "https://github.com/netease-youdao/LobsterAI",
+      "apiUrl": "https://api.github.com/repos/netease-youdao/LobsterAI",
+      "loc": { "enabled": true }
     }
   ]
 }

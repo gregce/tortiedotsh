@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T16:28:07.052Z",
-  "manifestSyncedAt": "2026-08-24T16:28:07.052Z",
+  "generatedAt": "2026-08-24T17:15:23.292Z",
+  "manifestSyncedAt": "2026-08-24T17:15:23.292Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -12489,6 +12489,2190 @@
           "type": "loc-measurement",
           "url": "https://github.com/bytedance/UI-TARS-desktop/tree/v0.3.0",
           "fetchedAt": "2026-08-23T23:09:42.701Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "stagewise",
+      "name": "stagewise",
+      "category": "code-editors",
+      "owner": "stagewise-io",
+      "repo": "stagewise",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/stagewise-io/stagewise",
+      "cloneUrl": "https://github.com/stagewise-io/stagewise.git",
+      "githubUrl": "https://github.com/stagewise-io/stagewise",
+      "apiUrl": "https://api.github.com/repos/stagewise-io/stagewise",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:07:33.829Z",
+      "stars": 6787,
+      "forks": 508,
+      "openIssues": 17,
+      "contributors": 19,
+      "repositorySizeKb": 108005,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-17T19:00:31Z",
+      "archived": false,
+      "license": {
+        "key": "agpl-3.0",
+        "name": "GNU Affero General Public License v3.0",
+        "spdxId": "AGPL-3.0",
+        "url": "https://api.github.com/licenses/agpl-3.0"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 9748292,
+          "percent": 97.74
+        },
+        {
+          "name": "MDX",
+          "bytes": 105780,
+          "percent": 1.06
+        },
+        {
+          "name": "CSS",
+          "bytes": 87778,
+          "percent": 0.88
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 22924,
+          "percent": 0.23
+        },
+        {
+          "name": "HTML",
+          "bytes": 4793,
+          "percent": 0.05
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 2403,
+          "percent": 0.02
+        },
+        {
+          "name": "Shell",
+          "bytes": 1794,
+          "percent": 0.02
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 378,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "stagewise@1.29.0",
+        "name": "Stagewise 1.29.0",
+        "publishedAt": "2026-08-15T09:52:08Z",
+        "url": "https://github.com/stagewise-io/stagewise/releases/tag/stagewise%401.29.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "stagewise@1.29.0",
+      "releaseDate": "2026-08-15T09:52:08Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 250337,
+        "comments": 32278,
+        "blank": 28077,
+        "files": 1592,
+        "measuredAt": "2026-08-24T17:07:33.699Z",
+        "verifiedAt": "2026-08-24T17:07:33.699Z",
+        "measuredRef": "stagewise@1.29.0",
+        "refType": "stable-release-tag",
+        "commitSha": "18ac8a27b18c5de4e2d76d03b515cf10186631ca",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/stagewise-io/stagewise",
+          "fetchedAt": "2026-08-24T17:07:21.540Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/stagewise-io/stagewise/languages",
+          "fetchedAt": "2026-08-24T17:07:21.697Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/stagewise-io/stagewise/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:07:21.809Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/stagewise-io/stagewise/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:07:22.637Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/stagewise-io/stagewise/tree/stagewise%401.29.0",
+          "fetchedAt": "2026-08-24T17:07:33.699Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "openai-symphony",
+      "name": "OpenAI Symphony",
+      "category": "agent-orchestrators",
+      "owner": "openai",
+      "repo": "symphony",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/openai/symphony",
+      "cloneUrl": "https://github.com/openai/symphony.git",
+      "githubUrl": "https://github.com/openai/symphony",
+      "apiUrl": "https://api.github.com/repos/openai/symphony",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:07:27.656Z",
+      "stars": 26829,
+      "forks": 2749,
+      "openIssues": 8,
+      "contributors": 9,
+      "repositorySizeKb": 30609,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-19T23:24:27Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Elixir",
+          "bytes": 911957,
+          "percent": 96.84
+        },
+        {
+          "name": "Python",
+          "bytes": 19585,
+          "percent": 2.08
+        },
+        {
+          "name": "CSS",
+          "bytes": 8252,
+          "percent": 0.88
+        },
+        {
+          "name": "Shell",
+          "bytes": 657,
+          "percent": 0.07
+        },
+        {
+          "name": "Makefile",
+          "bytes": 650,
+          "percent": 0.07
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 600,
+          "percent": 0.06
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.0.2",
+        "name": "v0.0.2",
+        "publishedAt": "2026-07-24T15:01:31Z",
+        "url": "https://github.com/openai/symphony/releases/tag/v0.0.2",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.0.2",
+      "releaseDate": "2026-07-24T15:01:31Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 24379,
+        "comments": 253,
+        "blank": 4954,
+        "files": 87,
+        "measuredAt": "2026-08-24T17:07:27.646Z",
+        "verifiedAt": "2026-08-24T17:07:27.646Z",
+        "measuredRef": "v0.0.2",
+        "refType": "stable-release-tag",
+        "commitSha": "653f8b3cc476db03420479ba6f95b2ed7281c401",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/openai/symphony",
+          "fetchedAt": "2026-08-24T17:07:21.537Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/openai/symphony/languages",
+          "fetchedAt": "2026-08-24T17:07:21.635Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/openai/symphony/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:07:21.697Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/openai/symphony/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:07:21.813Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/openai/symphony/tree/v0.0.2",
+          "fetchedAt": "2026-08-24T17:07:27.646Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "aionui",
+      "name": "AionUi",
+      "category": "agent-orchestrators",
+      "owner": "iOfficeAI",
+      "repo": "AionUi",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/iOfficeAI/AionUi",
+      "cloneUrl": "https://github.com/iOfficeAI/AionUi.git",
+      "githubUrl": "https://github.com/iOfficeAI/AionUi",
+      "apiUrl": "https://api.github.com/repos/iOfficeAI/AionUi",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:08:01.642Z",
+      "stars": 32249,
+      "forks": 3311,
+      "openIssues": 851,
+      "contributors": 115,
+      "repositorySizeKb": 694651,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T12:11:16Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 10355149,
+          "percent": 94.83
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 189191,
+          "percent": 1.73
+        },
+        {
+          "name": "CSS",
+          "bytes": 148088,
+          "percent": 1.36
+        },
+        {
+          "name": "NSIS",
+          "bytes": 82969,
+          "percent": 0.76
+        },
+        {
+          "name": "Shell",
+          "bytes": 56371,
+          "percent": 0.52
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 56219,
+          "percent": 0.51
+        },
+        {
+          "name": "Just",
+          "bytes": 16290,
+          "percent": 0.15
+        },
+        {
+          "name": "HTML",
+          "bytes": 14504,
+          "percent": 0.13
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 1322,
+          "percent": 0.01
+        },
+        {
+          "name": "Makefile",
+          "bytes": 163,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v2.1.60",
+        "name": "v2.1.60",
+        "publishedAt": "2026-08-21T14:21:57Z",
+        "url": "https://github.com/iOfficeAI/AionUi/releases/tag/v2.1.60",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v2.1.60",
+      "releaseDate": "2026-08-21T14:21:57Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 233309,
+        "comments": 34688,
+        "blank": 33363,
+        "files": 1709,
+        "measuredAt": "2026-08-24T17:08:01.517Z",
+        "verifiedAt": "2026-08-24T17:08:01.517Z",
+        "measuredRef": "v2.1.60",
+        "refType": "stable-release-tag",
+        "commitSha": "b1dcdb8dbf59f58310ff720a79575745efd9dd12",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/iOfficeAI/AionUi",
+          "fetchedAt": "2026-08-24T17:07:21.439Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/iOfficeAI/AionUi/languages",
+          "fetchedAt": "2026-08-24T17:07:21.639Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/iOfficeAI/AionUi/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:07:21.734Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/iOfficeAI/AionUi/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:07:22.764Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/iOfficeAI/AionUi/tree/v2.1.60",
+          "fetchedAt": "2026-08-24T17:08:01.517Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "openhands-agent-canvas",
+      "name": "OpenHands Agent Canvas",
+      "category": "agent-orchestrators",
+      "owner": "OpenHands",
+      "repo": "OpenHands",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/OpenHands/OpenHands",
+      "cloneUrl": "https://github.com/OpenHands/OpenHands.git",
+      "githubUrl": "https://github.com/OpenHands/OpenHands",
+      "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands",
+      "metricScope": "Whole OpenHands repository; Agent Canvas is the current visual control surface inside the main product.",
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:07:31.206Z",
+      "stars": 84959,
+      "forks": 11090,
+      "openIssues": 533,
+      "contributors": 534,
+      "repositorySizeKb": 410436,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T17:03:05Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 8761011,
+          "percent": 94.24
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 439928,
+          "percent": 4.73
+        },
+        {
+          "name": "Shell",
+          "bytes": 27130,
+          "percent": 0.29
+        },
+        {
+          "name": "Python",
+          "bytes": 23887,
+          "percent": 0.26
+        },
+        {
+          "name": "CSS",
+          "bytes": 21524,
+          "percent": 0.23
+        },
+        {
+          "name": "HTML",
+          "bytes": 11619,
+          "percent": 0.12
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 8437,
+          "percent": 0.09
+        },
+        {
+          "name": "Go Template",
+          "bytes": 3195,
+          "percent": 0.03
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.15.0",
+        "name": "v1.15.0",
+        "publishedAt": "2026-08-21T14:01:34Z",
+        "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.15.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v1.15.0",
+      "releaseDate": "2026-08-21T14:01:34Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 222613,
+        "comments": 24917,
+        "blank": 29937,
+        "files": 2010,
+        "measuredAt": "2026-08-24T17:07:31.122Z",
+        "verifiedAt": "2026-08-24T17:07:31.122Z",
+        "measuredRef": "v1.15.0",
+        "refType": "stable-release-tag",
+        "commitSha": "ab23be62ad724fe83483036a0900bed7b7859166",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands",
+          "fetchedAt": "2026-08-24T17:07:27.836Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands/languages",
+          "fetchedAt": "2026-08-24T17:07:27.928Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:07:28.146Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:07:28.399Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/OpenHands/OpenHands/tree/v1.15.0",
+          "fetchedAt": "2026-08-24T17:07:31.122Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "kortix",
+      "name": "Kortix",
+      "category": "agent-orchestrators",
+      "owner": "kortix-ai",
+      "repo": "suna",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/kortix-ai/suna",
+      "cloneUrl": "https://github.com/kortix-ai/suna.git",
+      "githubUrl": "https://github.com/kortix-ai/suna",
+      "apiUrl": "https://api.github.com/repos/kortix-ai/suna",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:07:56.399Z",
+      "stars": 20136,
+      "forks": 3433,
+      "openIssues": 40,
+      "contributors": 86,
+      "repositorySizeKb": 431330,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T16:47:27Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified",
+        "name": "Elastic License 2.0",
+        "spdxId": "Elastic-2.0",
+        "url": "https://github.com/kortix-ai/suna/blob/main/LICENSE"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 50132669,
+          "percent": 94.58
+        },
+        {
+          "name": "MDX",
+          "bytes": 758702,
+          "percent": 1.43
+        },
+        {
+          "name": "Shell",
+          "bytes": 472175,
+          "percent": 0.89
+        },
+        {
+          "name": "HCL",
+          "bytes": 393755,
+          "percent": 0.74
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": 359589,
+          "percent": 0.68
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 339984,
+          "percent": 0.64
+        },
+        {
+          "name": "Python",
+          "bytes": 316896,
+          "percent": 0.6
+        },
+        {
+          "name": "CSS",
+          "bytes": 127095,
+          "percent": 0.24
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 41577,
+          "percent": 0.08
+        },
+        {
+          "name": "Go",
+          "bytes": 28770,
+          "percent": 0.05
+        },
+        {
+          "name": "HTML",
+          "bytes": 26471,
+          "percent": 0.05
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 4476,
+          "percent": 0.01
+        },
+        {
+          "name": "Ruby",
+          "bytes": 2521,
+          "percent": 0
+        },
+        {
+          "name": "Swift",
+          "bytes": 2275,
+          "percent": 0
+        },
+        {
+          "name": "Elixir",
+          "bytes": 1103,
+          "percent": 0
+        },
+        {
+          "name": "C",
+          "bytes": 102,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.13.5",
+        "name": "v0.13.5 — Faster sessions, resilient multimodal runs, and safer previews",
+        "publishedAt": "2026-08-24T10:19:03Z",
+        "url": "https://github.com/kortix-ai/suna/releases/tag/v0.13.5",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.13.5",
+      "releaseDate": "2026-08-24T10:19:03Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 1036351,
+        "comments": 208270,
+        "blank": 112613,
+        "files": 6610,
+        "measuredAt": "2026-08-24T17:07:55.938Z",
+        "verifiedAt": "2026-08-24T17:07:55.938Z",
+        "measuredRef": "v0.13.5",
+        "refType": "stable-release-tag",
+        "commitSha": "c197cabd5be397f3b5649f5221b0b506e9b561e5",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/kortix-ai/suna",
+          "fetchedAt": "2026-08-24T17:07:31.391Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/kortix-ai/suna/languages",
+          "fetchedAt": "2026-08-24T17:07:31.501Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/kortix-ai/suna/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:07:31.787Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/kortix-ai/suna/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:07:32.303Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/kortix-ai/suna/tree/v0.13.5",
+          "fetchedAt": "2026-08-24T17:07:55.938Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/kortix-ai/suna/blob/main/LICENSE",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "oh-my-openagent",
+      "name": "Oh My OpenAgent",
+      "category": "coding-agent-harnesses",
+      "owner": "code-yeongyu",
+      "repo": "oh-my-openagent",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/code-yeongyu/oh-my-openagent",
+      "cloneUrl": "https://github.com/code-yeongyu/oh-my-openagent.git",
+      "githubUrl": "https://github.com/code-yeongyu/oh-my-openagent",
+      "apiUrl": "https://api.github.com/repos/code-yeongyu/oh-my-openagent",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:15:23.291Z",
+      "stars": 68319,
+      "forks": 5586,
+      "openIssues": 836,
+      "contributors": 336,
+      "repositorySizeKb": 156680,
+      "repositorySizePolicy": null,
+      "defaultBranch": "dev",
+      "pushedAt": "2026-08-24T17:09:28Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified",
+        "name": "Sustainable Use License 1.0",
+        "spdxId": "LicenseRef-Sustainable-Use-License-1.0",
+        "url": "https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 26272125,
+          "percent": 82.2
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 2691744,
+          "percent": 8.42
+        },
+        {
+          "name": "HTML",
+          "bytes": 1936232,
+          "percent": 6.06
+        },
+        {
+          "name": "Shell",
+          "bytes": 599831,
+          "percent": 1.88
+        },
+        {
+          "name": "Python",
+          "bytes": 405955,
+          "percent": 1.27
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 41607,
+          "percent": 0.13
+        },
+        {
+          "name": "CSS",
+          "bytes": 10095,
+          "percent": 0.03
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 1731,
+          "percent": 0.01
+        },
+        {
+          "name": "Go Template",
+          "bytes": 1174,
+          "percent": 0
+        },
+        {
+          "name": "Go",
+          "bytes": 993,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v4.19.4",
+        "name": "v4.19.4",
+        "publishedAt": "2026-08-01T09:50:16Z",
+        "url": "https://github.com/code-yeongyu/oh-my-openagent/releases/tag/v4.19.4",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v4.19.4",
+      "releaseDate": "2026-08-01T09:50:16Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 536314,
+        "comments": 42876,
+        "blank": 85383,
+        "files": 5146,
+        "measuredAt": "2026-08-24T17:15:22.894Z",
+        "verifiedAt": "2026-08-24T17:15:22.894Z",
+        "measuredRef": "v4.19.4",
+        "refType": "stable-release-tag",
+        "commitSha": "b072d279110bdda2c6ac2525d0d24dc54d16148a",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent",
+          "fetchedAt": "2026-08-24T17:14:18.936Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent/languages",
+          "fetchedAt": "2026-08-24T17:14:19.094Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:14:19.228Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:14:19.630Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/code-yeongyu/oh-my-openagent/tree/v4.19.4",
+          "fetchedAt": "2026-08-24T17:15:22.894Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "oh-my-pi",
+      "name": "Oh My Pi",
+      "category": "coding-agent-harnesses",
+      "owner": "can1357",
+      "repo": "oh-my-pi",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/can1357/oh-my-pi",
+      "cloneUrl": "https://github.com/can1357/oh-my-pi.git",
+      "githubUrl": "https://github.com/can1357/oh-my-pi",
+      "apiUrl": "https://api.github.com/repos/can1357/oh-my-pi",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:08:26.975Z",
+      "stars": 27096,
+      "forks": 2648,
+      "openIssues": 1718,
+      "contributors": 522,
+      "repositorySizeKb": 556994,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T15:05:46Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 50451225,
+          "percent": 84.14
+        },
+        {
+          "name": "Rust",
+          "bytes": 5651237,
+          "percent": 9.42
+        },
+        {
+          "name": "Python",
+          "bytes": 3157096,
+          "percent": 5.27
+        },
+        {
+          "name": "Nix",
+          "bytes": 153050,
+          "percent": 0.26
+        },
+        {
+          "name": "CSS",
+          "bytes": 141854,
+          "percent": 0.24
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 124690,
+          "percent": 0.21
+        },
+        {
+          "name": "Shell",
+          "bytes": 67747,
+          "percent": 0.11
+        },
+        {
+          "name": "Starlark",
+          "bytes": 65715,
+          "percent": 0.11
+        },
+        {
+          "name": "Julia",
+          "bytes": 59381,
+          "percent": 0.1
+        },
+        {
+          "name": "Ruby",
+          "bytes": 36138,
+          "percent": 0.06
+        },
+        {
+          "name": "HTML",
+          "bytes": 23767,
+          "percent": 0.04
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 19940,
+          "percent": 0.03
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 9950,
+          "percent": 0.02
+        },
+        {
+          "name": "AppleScript",
+          "bytes": 1570,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v18.0.4",
+        "name": "v18.0.4",
+        "publishedAt": "2026-08-24T04:05:24Z",
+        "url": "https://github.com/can1357/oh-my-pi/releases/tag/v18.0.4",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v18.0.4",
+      "releaseDate": "2026-08-24T04:05:24Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 1381605,
+        "comments": 183130,
+        "blank": 159870,
+        "files": 5243,
+        "measuredAt": "2026-08-24T17:08:26.584Z",
+        "verifiedAt": "2026-08-24T17:08:26.584Z",
+        "measuredRef": "v18.0.4",
+        "refType": "stable-release-tag",
+        "commitSha": "4854db856c20e000a3760d793c56d78065dcf83f",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/can1357/oh-my-pi",
+          "fetchedAt": "2026-08-24T17:07:56.672Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/can1357/oh-my-pi/languages",
+          "fetchedAt": "2026-08-24T17:07:56.765Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/can1357/oh-my-pi/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:07:56.943Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/can1357/oh-my-pi/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:07:57.764Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/can1357/oh-my-pi/tree/v18.0.4",
+          "fetchedAt": "2026-08-24T17:08:26.584Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "open-interpreter",
+      "name": "Open Interpreter",
+      "category": "coding-agent-harnesses",
+      "owner": "openinterpreter",
+      "repo": "openinterpreter",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/openinterpreter/openinterpreter",
+      "cloneUrl": "https://github.com/openinterpreter/openinterpreter.git",
+      "githubUrl": "https://github.com/openinterpreter/openinterpreter",
+      "apiUrl": "https://api.github.com/repos/openinterpreter/openinterpreter",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:08:18.229Z",
+      "stars": 68132,
+      "forks": 5860,
+      "openIssues": 5,
+      "contributors": 566,
+      "repositorySizeKb": 250198,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-20T03:35:38Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 50874910,
+          "percent": 96.3
+        },
+        {
+          "name": "Python",
+          "bytes": 1482984,
+          "percent": 2.81
+        },
+        {
+          "name": "Starlark",
+          "bytes": 107241,
+          "percent": 0.2
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 91665,
+          "percent": 0.17
+        },
+        {
+          "name": "Shell",
+          "bytes": 76726,
+          "percent": 0.15
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 62532,
+          "percent": 0.12
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 38370,
+          "percent": 0.07
+        },
+        {
+          "name": "HTML",
+          "bytes": 26288,
+          "percent": 0.05
+        },
+        {
+          "name": "CSS",
+          "bytes": 22665,
+          "percent": 0.04
+        },
+        {
+          "name": "Jupyter Notebook",
+          "bytes": 20702,
+          "percent": 0.04
+        },
+        {
+          "name": "Just",
+          "bytes": 8182,
+          "percent": 0.02
+        },
+        {
+          "name": "Smarty",
+          "bytes": 7627,
+          "percent": 0.01
+        },
+        {
+          "name": "MDX",
+          "bytes": 5154,
+          "percent": 0.01
+        },
+        {
+          "name": "Nix",
+          "bytes": 4349,
+          "percent": 0.01
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 883,
+          "percent": 0
+        },
+        {
+          "name": "C",
+          "bytes": 52,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "rust-v0.0.40",
+        "name": "Open Interpreter 0.0.40",
+        "publishedAt": "2026-08-20T03:35:39Z",
+        "url": "https://github.com/openinterpreter/openinterpreter/releases/tag/rust-v0.0.40",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "rust-v0.0.40",
+      "releaseDate": "2026-08-20T03:35:39Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 1339537,
+        "comments": 47792,
+        "blank": 123694,
+        "files": 4354,
+        "measuredAt": "2026-08-24T17:08:17.929Z",
+        "verifiedAt": "2026-08-24T17:08:17.929Z",
+        "measuredRef": "rust-v0.0.40",
+        "refType": "stable-release-tag",
+        "commitSha": "5b07159c477920c159d8892d112b480e7307f257",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/openinterpreter/openinterpreter",
+          "fetchedAt": "2026-08-24T17:08:01.810Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/openinterpreter/openinterpreter/languages",
+          "fetchedAt": "2026-08-24T17:08:01.991Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/openinterpreter/openinterpreter/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:08:02.427Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/openinterpreter/openinterpreter/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:08:02.475Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/openinterpreter/openinterpreter/tree/rust-v0.0.40",
+          "fetchedAt": "2026-08-24T17:08:17.929Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "swe-agent",
+      "name": "SWE-agent",
+      "category": "coding-agent-harnesses",
+      "owner": "SWE-agent",
+      "repo": "SWE-agent",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/SWE-agent/SWE-agent",
+      "cloneUrl": "https://github.com/SWE-agent/SWE-agent.git",
+      "githubUrl": "https://github.com/SWE-agent/SWE-agent",
+      "apiUrl": "https://api.github.com/repos/SWE-agent/SWE-agent",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:08:09.097Z",
+      "stars": 20120,
+      "forks": 2205,
+      "openIssues": 80,
+      "contributors": 101,
+      "repositorySizeKb": 72165,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-17T22:33:19Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 649788,
+          "percent": 94.86
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 10968,
+          "percent": 1.6
+        },
+        {
+          "name": "CSS",
+          "bytes": 9035,
+          "percent": 1.32
+        },
+        {
+          "name": "Shell",
+          "bytes": 5339,
+          "percent": 0.78
+        },
+        {
+          "name": "C++",
+          "bytes": 3405,
+          "percent": 0.5
+        },
+        {
+          "name": "Perl",
+          "bytes": 1876,
+          "percent": 0.27
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 1724,
+          "percent": 0.25
+        },
+        {
+          "name": "HTML",
+          "bytes": 1526,
+          "percent": 0.22
+        },
+        {
+          "name": "C",
+          "bytes": 1330,
+          "percent": 0.19
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.1.0",
+        "name": "v1.1.0: 10s of thousands of training trajectories",
+        "publishedAt": "2025-05-22T16:11:39Z",
+        "url": "https://github.com/SWE-agent/SWE-agent/releases/tag/v1.1.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v1.1.0",
+      "releaseDate": "2025-05-22T16:11:39Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 13229,
+        "comments": 2422,
+        "blank": 2929,
+        "files": 181,
+        "measuredAt": "2026-08-24T17:08:09.067Z",
+        "verifiedAt": "2026-08-24T17:08:09.067Z",
+        "measuredRef": "v1.1.0",
+        "refType": "stable-release-tag",
+        "commitSha": "0f3acafacabc0def8cc76b4e48acb4b6cf302cb9",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/SWE-agent/SWE-agent",
+          "fetchedAt": "2026-08-24T17:08:05.906Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/SWE-agent/SWE-agent/languages",
+          "fetchedAt": "2026-08-24T17:08:06.095Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/SWE-agent/SWE-agent/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:08:06.099Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/SWE-agent/SWE-agent/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:08:06.139Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/SWE-agent/SWE-agent/tree/v1.1.0",
+          "fetchedAt": "2026-08-24T17:08:09.067Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "open-swe",
+      "name": "Open SWE",
+      "category": "cloud-agents",
+      "owner": "langchain-ai",
+      "repo": "open-swe",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/langchain-ai/open-swe",
+      "cloneUrl": "https://github.com/langchain-ai/open-swe.git",
+      "githubUrl": "https://github.com/langchain-ai/open-swe",
+      "apiUrl": "https://api.github.com/repos/langchain-ai/open-swe",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:08:35.687Z",
+      "stars": 10611,
+      "forks": 1240,
+      "openIssues": 33,
+      "contributors": 45,
+      "repositorySizeKb": 26285,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T17:07:14Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 3808409,
+          "percent": 62.92
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 1840215,
+          "percent": 30.4
+        },
+        {
+          "name": "C",
+          "bytes": 297252,
+          "percent": 4.91
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 69850,
+          "percent": 1.15
+        },
+        {
+          "name": "CSS",
+          "bytes": 14999,
+          "percent": 0.25
+        },
+        {
+          "name": "HTML",
+          "bytes": 8862,
+          "percent": 0.15
+        },
+        {
+          "name": "Shell",
+          "bytes": 8742,
+          "percent": 0.14
+        },
+        {
+          "name": "Makefile",
+          "bytes": 2406,
+          "percent": 0.04
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2166,
+          "percent": 0.04
+        },
+        {
+          "name": "Zig",
+          "bytes": 224,
+          "percent": 0
+        }
+      ],
+      "latestRelease": null,
+      "latestTag": null,
+      "version": null,
+      "releaseDate": null,
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 134773,
+        "comments": 13858,
+        "blank": 21964,
+        "files": 785,
+        "measuredAt": "2026-08-24T17:08:12.688Z",
+        "verifiedAt": "2026-08-24T17:08:35.687Z",
+        "measuredRef": "main",
+        "refType": "default-branch",
+        "commitSha": "60e03a4190397efcf9d722ebe97cc80f1d3e1df0",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/langchain-ai/open-swe",
+          "fetchedAt": "2026-08-24T17:08:34.744Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/langchain-ai/open-swe/languages",
+          "fetchedAt": "2026-08-24T17:08:34.936Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/langchain-ai/open-swe/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:08:35.002Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/langchain-ai/open-swe/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:08:35.038Z"
+        },
+        {
+          "type": "latest-tag",
+          "url": "https://api.github.com/repos/langchain-ai/open-swe/tags?per_page=1",
+          "fetchedAt": "2026-08-24T17:08:35.239Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/langchain-ai/open-swe/tree/main",
+          "fetchedAt": "2026-08-24T17:08:35.687Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "langfuse",
+      "name": "Langfuse",
+      "category": "agent-traces",
+      "owner": "langfuse",
+      "repo": "langfuse",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/langfuse/langfuse",
+      "cloneUrl": "https://github.com/langfuse/langfuse.git",
+      "githubUrl": "https://github.com/langfuse/langfuse",
+      "apiUrl": "https://api.github.com/repos/langfuse/langfuse",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:08:42.742Z",
+      "stars": 33637,
+      "forks": 3624,
+      "openIssues": 820,
+      "contributors": 200,
+      "repositorySizeKb": 215514,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T17:05:43Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified-mixed",
+        "name": "Mixed: MIT core with separately licensed enterprise directories",
+        "spdxId": null,
+        "url": null,
+        "summary": "Mixed: MIT core with separately licensed enterprise directories",
+        "components": [
+          {
+            "spdxId": "MIT",
+            "name": "MIT License",
+            "scope": "Core Langfuse source outside explicitly marked enterprise directories",
+            "sourceUrl": "https://github.com/langfuse/langfuse/blob/main/LICENSE"
+          },
+          {
+            "spdxId": "LicenseRef-Langfuse-Enterprise-License",
+            "name": "Langfuse Enterprise License",
+            "scope": "Explicitly marked enterprise directories",
+            "sourceUrl": "https://github.com/langfuse/langfuse/blob/main/LICENSE"
+          }
+        ]
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 30870566,
+          "percent": 98.34
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 276509,
+          "percent": 0.88
+        },
+        {
+          "name": "Shell",
+          "bytes": 88317,
+          "percent": 0.28
+        },
+        {
+          "name": "CSS",
+          "bytes": 42236,
+          "percent": 0.13
+        },
+        {
+          "name": "Python",
+          "bytes": 34278,
+          "percent": 0.11
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": 29901,
+          "percent": 0.1
+        },
+        {
+          "name": "MDX",
+          "bytes": 29522,
+          "percent": 0.09
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 18456,
+          "percent": 0.06
+        },
+        {
+          "name": "HTML",
+          "bytes": 696,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v4.17.0",
+        "name": "v4.17.0",
+        "publishedAt": "2026-08-24T13:14:03Z",
+        "url": "https://github.com/langfuse/langfuse/releases/tag/v4.17.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v4.17.0",
+      "releaseDate": "2026-08-24T13:14:03Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 789767,
+        "comments": 65739,
+        "blank": 82754,
+        "files": 4791,
+        "measuredAt": "2026-08-24T17:08:42.323Z",
+        "verifiedAt": "2026-08-24T17:08:42.323Z",
+        "measuredRef": "v4.17.0",
+        "refType": "stable-release-tag",
+        "commitSha": "7b481ce546645cf96aea27b27cd34c187e7e4fe7",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/langfuse/langfuse",
+          "fetchedAt": "2026-08-24T17:08:34.722Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/langfuse/langfuse/languages",
+          "fetchedAt": "2026-08-24T17:08:34.936Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/langfuse/langfuse/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:08:35.029Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/langfuse/langfuse/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:08:35.260Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/langfuse/langfuse/tree/v4.17.0",
+          "fetchedAt": "2026-08-24T17:08:42.323Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/langfuse/langfuse/blob/main/LICENSE",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "arize-phoenix",
+      "name": "Arize Phoenix",
+      "category": "agent-traces",
+      "owner": "Arize-ai",
+      "repo": "phoenix",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/Arize-ai/phoenix",
+      "cloneUrl": "https://github.com/Arize-ai/phoenix.git",
+      "githubUrl": "https://github.com/Arize-ai/phoenix",
+      "apiUrl": "https://api.github.com/repos/Arize-ai/phoenix",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:14:29.523Z",
+      "stars": 11169,
+      "forks": 1074,
+      "openIssues": 906,
+      "contributors": 218,
+      "repositorySizeKb": 509713,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T17:00:37Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified",
+        "name": "Elastic License 2.0",
+        "spdxId": "Elastic-2.0",
+        "url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 16501028,
+          "percent": 47.31
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 14433535,
+          "percent": 41.38
+        },
+        {
+          "name": "Jupyter Notebook",
+          "bytes": 3422999,
+          "percent": 9.81
+        },
+        {
+          "name": "C",
+          "bytes": 215002,
+          "percent": 0.62
+        },
+        {
+          "name": "Shell",
+          "bytes": 59229,
+          "percent": 0.17
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 50524,
+          "percent": 0.14
+        },
+        {
+          "name": "Jinja",
+          "bytes": 44649,
+          "percent": 0.13
+        },
+        {
+          "name": "Makefile",
+          "bytes": 37813,
+          "percent": 0.11
+        },
+        {
+          "name": "MDX",
+          "bytes": 26547,
+          "percent": 0.08
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": 25237,
+          "percent": 0.07
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 19633,
+          "percent": 0.06
+        },
+        {
+          "name": "HTML",
+          "bytes": 16812,
+          "percent": 0.05
+        },
+        {
+          "name": "CSS",
+          "bytes": 15575,
+          "percent": 0.04
+        },
+        {
+          "name": "Go Template",
+          "bytes": 11627,
+          "percent": 0.03
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 828,
+          "percent": 0
+        },
+        {
+          "name": "Mako",
+          "bytes": 635,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "arize-phoenix-v20.3.0",
+        "name": "arize-phoenix: v20.3.0",
+        "publishedAt": "2026-08-17T21:51:21Z",
+        "url": "https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v20.3.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "arize-phoenix-v20.3.0",
+      "releaseDate": "2026-08-17T21:51:21Z",
+      "releasePolicy": {
+        "mode": "tag-prefix",
+        "reason": "The shared Phoenix repository publishes separate server, client, and eval packages; the comparison column represents the Phoenix product release rather than a client-library tag.",
+        "checkedAt": "2026-08-24",
+        "tagPrefix": "arize-phoenix-v",
+        "rejectedCandidate": {
+          "tagName": "arize-phoenix-client-v3.3.0",
+          "name": "arize-phoenix-client: v3.3.0",
+          "url": "https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-client-v3.3.0"
+        }
+      },
+      "loc": {
+        "status": "measured",
+        "code": 893618,
+        "comments": 149938,
+        "blank": 98440,
+        "files": 5417,
+        "measuredAt": "2026-08-24T17:14:29.132Z",
+        "verifiedAt": "2026-08-24T17:14:29.132Z",
+        "measuredRef": "arize-phoenix-v20.3.0",
+        "refType": "stable-release-tag",
+        "commitSha": "8f31d5d541dca1f67e42bc91ce25e8474b4efe11",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/Arize-ai/phoenix",
+          "fetchedAt": "2026-08-24T17:14:19.035Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/Arize-ai/phoenix/languages",
+          "fetchedAt": "2026-08-24T17:14:19.231Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/Arize-ai/phoenix/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:14:19.393Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/Arize-ai/phoenix/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:14:19.518Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/Arize-ai/phoenix/tree/arize-phoenix-v20.3.0",
+          "fetchedAt": "2026-08-24T17:14:29.132Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "agentops",
+      "name": "AgentOps",
+      "category": "agent-traces",
+      "owner": "AgentOps-AI",
+      "repo": "agentops",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/AgentOps-AI/agentops",
+      "cloneUrl": "https://github.com/AgentOps-AI/agentops.git",
+      "githubUrl": "https://github.com/AgentOps-AI/agentops",
+      "apiUrl": "https://api.github.com/repos/AgentOps-AI/agentops",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:08:49.056Z",
+      "stars": 5795,
+      "forks": 615,
+      "openIssues": 175,
+      "contributors": 49,
+      "repositorySizeKb": 177625,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-06-25T08:25:03Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 3119875,
+          "percent": 60.02
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 1947189,
+          "percent": 37.46
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": 47036,
+          "percent": 0.9
+        },
+        {
+          "name": "Shell",
+          "bytes": 30057,
+          "percent": 0.58
+        },
+        {
+          "name": "CSS",
+          "bytes": 18413,
+          "percent": 0.35
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 12761,
+          "percent": 0.25
+        },
+        {
+          "name": "Jinja",
+          "bytes": 8117,
+          "percent": 0.16
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 5380,
+          "percent": 0.1
+        },
+        {
+          "name": "Just",
+          "bytes": 5187,
+          "percent": 0.1
+        },
+        {
+          "name": "HTML",
+          "bytes": 2300,
+          "percent": 0.04
+        },
+        {
+          "name": "Go Template",
+          "bytes": 2043,
+          "percent": 0.04
+        }
+      ],
+      "latestRelease": {
+        "tagName": "0.4.21",
+        "name": "0.4.21",
+        "publishedAt": "2025-08-29T06:36:28Z",
+        "url": "https://github.com/AgentOps-AI/agentops/releases/tag/0.4.21",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "0.4.21",
+      "releaseDate": "2025-08-29T06:36:28Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 107525,
+        "comments": 26653,
+        "blank": 21442,
+        "files": 1004,
+        "measuredAt": "2026-08-24T17:08:48.886Z",
+        "verifiedAt": "2026-08-24T17:08:48.886Z",
+        "measuredRef": "0.4.21",
+        "refType": "stable-release-tag",
+        "commitSha": "817f554936431dddfc2ae75b30ad252812d63628",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/AgentOps-AI/agentops",
+          "fetchedAt": "2026-08-24T17:08:43.323Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/AgentOps-AI/agentops/languages",
+          "fetchedAt": "2026-08-24T17:08:43.456Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/AgentOps-AI/agentops/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:08:43.853Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/AgentOps-AI/agentops/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:08:43.884Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/AgentOps-AI/agentops/tree/0.4.21",
+          "fetchedAt": "2026-08-24T17:08:48.886Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "eigent",
+      "name": "Eigent",
+      "category": "general-purpose-agents",
+      "owner": "eigent-ai",
+      "repo": "eigent",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/eigent-ai/eigent",
+      "cloneUrl": "https://github.com/eigent-ai/eigent.git",
+      "githubUrl": "https://github.com/eigent-ai/eigent",
+      "apiUrl": "https://api.github.com/repos/eigent-ai/eigent",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:08:49.465Z",
+      "stars": 15092,
+      "forks": 1793,
+      "openIssues": 214,
+      "contributors": 77,
+      "repositorySizeKb": 161893,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T15:42:41Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 4719647,
+          "percent": 57.63
+        },
+        {
+          "name": "Python",
+          "bytes": 3216918,
+          "percent": 39.28
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 195479,
+          "percent": 2.39
+        },
+        {
+          "name": "CSS",
+          "bytes": 32442,
+          "percent": 0.4
+        },
+        {
+          "name": "Shell",
+          "bytes": 10819,
+          "percent": 0.13
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 4499,
+          "percent": 0.05
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 2986,
+          "percent": 0.04
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2924,
+          "percent": 0.04
+        },
+        {
+          "name": "HTML",
+          "bytes": 2085,
+          "percent": 0.03
+        },
+        {
+          "name": "Mako",
+          "bytes": 718,
+          "percent": 0.01
+        },
+        {
+          "name": "Makefile",
+          "bytes": 634,
+          "percent": 0.01
+        },
+        {
+          "name": "NSIS",
+          "bytes": 108,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.0.2",
+        "name": "v1.0.2",
+        "publishedAt": "2026-07-21T16:26:20Z",
+        "url": "https://github.com/eigent-ai/eigent/releases/tag/v1.0.2",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v1.0.2",
+      "releaseDate": "2026-07-21T16:26:20Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 198166,
+        "comments": 27404,
+        "blank": 24629,
+        "files": 1073,
+        "measuredAt": "2026-08-24T17:08:49.338Z",
+        "verifiedAt": "2026-08-24T17:08:49.338Z",
+        "measuredRef": "v1.0.2",
+        "refType": "stable-release-tag",
+        "commitSha": "e478094a9ff433132b3cf1928e4143338ddaab20",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/eigent-ai/eigent",
+          "fetchedAt": "2026-08-24T17:08:45.148Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/eigent-ai/eigent/languages",
+          "fetchedAt": "2026-08-24T17:08:45.426Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/eigent-ai/eigent/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:08:45.426Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/eigent-ai/eigent/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:08:45.703Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/eigent-ai/eigent/tree/v1.0.2",
+          "fetchedAt": "2026-08-24T17:08:49.338Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "lobsterai",
+      "name": "LobsterAI",
+      "category": "general-purpose-agents",
+      "owner": "netease-youdao",
+      "repo": "LobsterAI",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/netease-youdao/LobsterAI",
+      "cloneUrl": "https://github.com/netease-youdao/LobsterAI.git",
+      "githubUrl": "https://github.com/netease-youdao/LobsterAI",
+      "apiUrl": "https://api.github.com/repos/netease-youdao/LobsterAI",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T17:08:53.117Z",
+      "stars": 5943,
+      "forks": 938,
+      "openIssues": 653,
+      "contributors": 59,
+      "repositorySizeKb": 50255,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T16:02:00Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 12106013,
+          "percent": 88.21
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 823088,
+          "percent": 6
+        },
+        {
+          "name": "Python",
+          "bytes": 454669,
+          "percent": 3.31
+        },
+        {
+          "name": "NSIS",
+          "bytes": 116111,
+          "percent": 0.85
+        },
+        {
+          "name": "Shell",
+          "bytes": 74961,
+          "percent": 0.55
+        },
+        {
+          "name": "HTML",
+          "bytes": 64736,
+          "percent": 0.47
+        },
+        {
+          "name": "CSS",
+          "bytes": 46607,
+          "percent": 0.34
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 25277,
+          "percent": 0.18
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 12163,
+          "percent": 0.09
+        }
+      ],
+      "latestRelease": {
+        "tagName": "2026.8.18",
+        "name": "LobsterAI 2026.8.18",
+        "publishedAt": "2026-08-18T12:31:16Z",
+        "url": "https://github.com/netease-youdao/LobsterAI/releases/tag/2026.8.18",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "2026.8.18",
+      "releaseDate": "2026-08-18T12:31:16Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 352995,
+        "comments": 19989,
+        "blank": 35414,
+        "files": 1483,
+        "measuredAt": "2026-08-24T17:08:53.002Z",
+        "verifiedAt": "2026-08-24T17:08:53.002Z",
+        "measuredRef": "2026.8.18",
+        "refType": "stable-release-tag",
+        "commitSha": "582d71baf0e571054e8bc09042b6466bf54087bf",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/netease-youdao/LobsterAI",
+          "fetchedAt": "2026-08-24T17:08:49.290Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/netease-youdao/LobsterAI/languages",
+          "fetchedAt": "2026-08-24T17:08:49.463Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/netease-youdao/LobsterAI/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T17:08:49.464Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/netease-youdao/LobsterAI/releases?per_page=100",
+          "fetchedAt": "2026-08-24T17:08:49.760Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/netease-youdao/LobsterAI/tree/2026.8.18",
+          "fetchedAt": "2026-08-24T17:08:53.002Z"
         }
       ],
       "errors": []

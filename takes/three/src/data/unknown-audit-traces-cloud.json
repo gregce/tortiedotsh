@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-23",
-  "catalogSnapshot": "2026-08-23",
+  "checkedAt": "2026-08-24",
+  "catalogSnapshot": "2026-08-24",
   "scope": {
     "categoryIds": [
       "agent-traces",
@@ -17,19 +17,44 @@
     "platformRows": "Excluded from this ledger. Platform header facts and platform filter rows require a separate exact-SKU host audit; an omitted platform is not inferred to be unsupported."
   },
   "summary": {
-    "productsInScope": 20,
-    "productsWithUnknownCells": 15,
-    "currentUnknownCells": 29,
+    "productsInScope": 26,
+    "productsWithUnknownCells": 18,
+    "currentUnknownCells": 42,
     "agentTraceUnknownCells": 8,
-    "cloudAgentUnknownCells": 21,
+    "cloudAgentUnknownCells": 34,
     "suggestedClosures": 0,
     "implementedClosures": 27,
-    "remainUnknown": 29
+    "remainUnknown": 42
   },
   "categories": [
     {
       "categoryId": "agent-traces",
       "products": [
+        {
+          "productId": "specstory",
+          "sourcesChecked": [
+            "https://docs.specstory.com/",
+            "https://github.com/specstoryai/getspecstory",
+            "https://docs.specstory.com/integrations/terminal-coding-agents/usage",
+            "https://docs.specstory.com/integrations/terminal-coding-agents",
+            "https://docs.specstory.com/specstory/features",
+            "https://docs.specstory.com/cloud/session-sharing",
+            "https://docs.specstory.com/cloud/analytics",
+            "https://docs.specstory.com/cloud/quickstart"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "entire",
+          "sourcesChecked": [
+            "https://entire.io/",
+            "https://github.com/entireio/cli",
+            "https://github.com/entireio/cli/blob/main/docs/architecture/sessions-and-checkpoints.md",
+            "https://github.com/entireio/cli/blob/main/CHANGELOG.md",
+            "https://github.com/entireio"
+          ],
+          "cells": []
+        },
         {
           "productId": "tapes",
           "sourcesChecked": [
@@ -37,7 +62,10 @@
             "https://tapes.dev/docs/architecture/",
             "https://tapes.dev/docs/cli/",
             "https://tapes.dev/docs/integrations/",
-            "https://github.com/papercomputeco/tapes"
+            "https://github.com/papercomputeco/tapes",
+            "https://tapes.dev/docs/introduction/",
+            "https://tapes.dev/docs/tapesctl/commands/",
+            "https://tapes.dev/docs/installation/"
           ],
           "cells": [
             {
@@ -72,7 +100,12 @@
           "sourcesChecked": [
             "https://traces.com/docs/traces-web/exports",
             "https://traces.com/docs/api-reference",
-            "https://traces.com/docs/getting-started"
+            "https://traces.com/docs/getting-started",
+            "https://traces.com/docs",
+            "https://traces.com/docs/cli/troubleshooting",
+            "https://traces.com/docs/sharing/git-hooks",
+            "https://traces.com/docs/cli/commands",
+            "https://traces.com/"
           ],
           "cells": [
             {
@@ -81,6 +114,23 @@
               "rationale": "Traces exports messages and typed parts, including tool calls and thinking blocks, but the exact export and ingestion documentation does not establish normalized workspace files, diffs, patches, or produced artifacts. Tool-call payloads alone are not promoted to artifact coverage."
             }
           ]
+        },
+        {
+          "productId": "agentsview",
+          "sourcesChecked": [
+            "https://www.agentsview.io/",
+            "https://github.com/kenn-io/agentsview",
+            "https://github.com/kenn-io/agentsview/blob/main/docs/usage.md"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "claude-code-history-viewer",
+          "sourcesChecked": [
+            "https://jhlee0409.github.io/claude-code-history-viewer/",
+            "https://github.com/jhlee0409/claude-code-history-viewer"
+          ],
+          "cells": []
         },
         {
           "productId": "agent-sessions",
@@ -100,6 +150,34 @@
               "rationale": "The exact Agent Sessions product is local-only and says it has no telemetry. The checked first-party sources do not document share links, team workspaces, repository publishing, or another collaboration workflow."
             }
           ]
+        },
+        {
+          "productId": "git-ai",
+          "sourcesChecked": [
+            "https://github.com/git-ai-project/git-ai"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "langfuse",
+          "sourcesChecked": [
+            "https://github.com/langfuse/langfuse"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "arize-phoenix",
+          "sourcesChecked": [
+            "https://github.com/Arize-ai/phoenix"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "agentops",
+          "sourcesChecked": [
+            "https://github.com/AgentOps-AI/agentops"
+          ],
+          "cells": []
         }
       ]
     },
@@ -111,7 +189,8 @@
           "sourcesChecked": [
             "https://learn.chatgpt.com/docs/cloud",
             "https://learn.chatgpt.com/docs/environments/cloud-environment",
-            "https://learn.chatgpt.com/docs/cloud/internet-access"
+            "https://learn.chatgpt.com/docs/cloud/internet-access",
+            "https://openai.com/codex/"
           ],
           "cells": [
             {
@@ -143,7 +222,12 @@
             "https://docs.devin.ai/onboard-devin/environment/blueprints",
             "https://docs.devin.ai/enterprise/deployment/overview",
             "https://docs.devin.ai/work-with-devin/devin-session-tools",
-            "https://docs.devin.ai/release-notes/2024"
+            "https://docs.devin.ai/release-notes/2024",
+            "https://docs.devin.ai/get-started/devin-intro",
+            "https://docs.devin.ai/integrations/gh",
+            "https://docs.devin.ai/api-reference/v1/sessions/create-a-new-devin-session",
+            "https://docs.devin.ai/get-started/first-run",
+            "https://docs.devin.ai/onboard-devin/knowledge-onboarding"
           ],
           "cells": [
             {
@@ -165,7 +249,8 @@
             "https://jules.google/docs/running-tasks/",
             "https://jules.google/docs/usage-limits",
             "https://jules.google/docs/api/reference/",
-            "https://jules.google/docs/api/reference/sessions"
+            "https://jules.google/docs/api/reference/sessions",
+            "https://jules.google/docs/changelog/2025-05-19"
           ],
           "cells": [
             {
@@ -193,7 +278,10 @@
           "sourcesChecked": [
             "https://cursor.com/docs/cloud-agent",
             "https://prod.cursor.com/docs/cloud-agent/settings",
-            "https://prod.cursor.com/docs/cloud-agent/security-network"
+            "https://prod.cursor.com/docs/cloud-agent/security-network",
+            "https://cursor.com/docs/cloud-agent/builds",
+            "https://cursor.com/docs/rules",
+            "https://docs.cursor.com/background-agent/api/overview"
           ],
           "cells": [
             {
@@ -211,7 +299,9 @@
             "https://docs.factory.ai/harness/agents-md",
             "https://docs.factory.ai/enterprise/network-and-deployment",
             "https://docs.factory.ai/enterprise/self-managed-scm",
-            "https://docs.factory.ai/enterprise/identity-and-access"
+            "https://docs.factory.ai/enterprise/identity-and-access",
+            "https://docs.factory.ai/",
+            "https://docs.factory.ai/droid-computers/cloud-templates"
           ],
           "cells": [
             {
@@ -232,7 +322,10 @@
             "https://docs.codegen.com/sandboxes/secrets",
             "https://docs.codegen.com/sandboxes/editor",
             "https://docs.codegen.com/settings/repo-rules",
-            "https://docs.codegen.com/api-reference/overview"
+            "https://docs.codegen.com/api-reference/overview",
+            "https://docs.codegen.com/",
+            "https://docs.codegen.com/integrations/github",
+            "https://docs.codegen.com/api-reference/agents/create-agent-run"
           ],
           "cells": [
             {
@@ -254,7 +347,8 @@
             "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
             "https://docs.gitlab.com/user/duo_agent_platform/environment_sandbox/",
             "https://docs.gitlab.com/user/duo_agent_platform/flows/execution_variables/",
-            "https://docs.gitlab.com/api/duo_agent_platform_flows/"
+            "https://docs.gitlab.com/api/duo_agent_platform_flows/",
+            "https://gitlab.com/gitlab-org/gitlab"
           ],
           "cells": [
             {
@@ -286,7 +380,8 @@
             "https://coder.com/docs/ai-coder/agents/getting-started",
             "https://coder.com/docs/ai-coder/agents/architecture",
             "https://coder.com/docs/ai-coder/agents/platform-controls/git-providers",
-            "https://coder.com/docs/ai-coder/agents/platform-controls/template-optimization"
+            "https://coder.com/docs/ai-coder/agents/platform-controls/template-optimization",
+            "https://github.com/coder/coder"
           ],
           "cells": [
             {
@@ -302,7 +397,9 @@
             "https://docs.replit.com/core-concepts/agent/task-system",
             "https://docs.replit.com/references/agent/task-board",
             "https://docs.replit.com/updates/2025/07/11/changelog",
-            "https://docs.replit.com/chat/custom-instructions"
+            "https://docs.replit.com/chat/custom-instructions",
+            "https://docs.replit.com/category/replit-apps",
+            "https://docs.replit.com/learn/foundations/introduction-to-ai"
           ],
           "cells": [
             {
@@ -333,7 +430,9 @@
             "https://github.com/OpenHands/OpenHands-Cloud",
             "https://docs.openhands.dev/sdk/guides/agent-server/cloud-workspace",
             "https://docs.openhands.dev/overview/faqs",
-            "https://docs.openhands.dev/enterprise"
+            "https://docs.openhands.dev/enterprise",
+            "https://github.com/OpenHands/OpenHands",
+            "https://docs.openhands.dev/openhands/usage/cloud/github-installation"
           ],
           "cells": [
             {
@@ -345,6 +444,96 @@
               "rowId": "cloud-task-limit",
               "result": "remain-unknown",
               "rationale": "OpenHands Cloud Workspace publishes sandbox initialization and API request timeouts, not an agent-run duration limit. No exact maximum conversation or task runtime was found in the Cloud repository or current product documentation."
+            }
+          ]
+        },
+        {
+          "productId": "open-swe",
+          "sourcesChecked": [
+            "https://github.com/langchain-ai/open-swe"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-network-policy",
+              "result": "remain-unknown",
+              "rationale": "Open SWE's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent network policy” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Open SWE's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Documented run limit” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "amazon-q-github",
+          "sourcesChecked": [
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/github-code-reviews.html"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer for GitHub's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Hosted isolated environment” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-parallel-tasks",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer for GitHub's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Parallel task runs” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-environment-config",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer for GitHub's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Reproducible environment setup” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-network-policy",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer for GitHub's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent network policy” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-live-steering",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer for GitHub's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Live steering or takeover” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer for GitHub's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Documented run limit” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "sentry-seer",
+          "sourcesChecked": [
+            "https://docs.sentry.io/product/ai-in-sentry/seer/",
+            "https://docs.sentry.io/product/ai-in-sentry/seer/autofix/"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-parallel-tasks",
+              "result": "remain-unknown",
+              "rationale": "Sentry Seer's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Parallel task runs” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-environment-config",
+              "result": "remain-unknown",
+              "rationale": "Sentry Seer's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Reproducible environment setup” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-network-policy",
+              "result": "remain-unknown",
+              "rationale": "Sentry Seer's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent network policy” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-project-instructions",
+              "result": "remain-unknown",
+              "rationale": "Sentry Seer's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Repository instructions” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Sentry Seer's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Documented run limit” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         }

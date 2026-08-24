@@ -1085,6 +1085,198 @@
       "sourceUrl": "https://github.com/herdrdev/herdr/blob/master/assets/logo.svg",
       "sourceType": "official-repository-asset",
       "checkedAt": "2026-08-24"
+    },
+    "visual-studio": {
+      "name": "Visual Studio",
+      "alt": "Visual Studio logo",
+      "src": "/compare/logos/visual-studio.svg",
+      "sourceUrl": "https://visualstudio.microsoft.com/",
+      "sourceType": "official-product-asset",
+      "checkedAt": "2026-08-24"
+    },
+    "replit-project-editor": {
+      "name": "Replit Project Editor",
+      "alt": "Replit Project Editor logo",
+      "src": "/compare/logos/replit-project-editor.png",
+      "sourceUrl": "https://github.com/replit",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "stagewise": {
+      "name": "stagewise",
+      "alt": "stagewise logo",
+      "src": "/compare/logos/stagewise.png",
+      "sourceUrl": "https://github.com/stagewise-io/stagewise",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "tabnine-agent": {
+      "name": "Tabnine Agent",
+      "alt": "Tabnine Agent logo",
+      "src": "/compare/logos/tabnine-agent.ico",
+      "sourceUrl": "https://www.tabnine.com/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-08-24"
+    },
+    "windsurf-plugins": {
+      "name": "Windsurf Plugins",
+      "alt": "Windsurf Plugins logo",
+      "src": "/compare/logos/windsurf-plugins.svg",
+      "sourceUrl": "https://docs.devin.ai/windsurf/plugins/changelog",
+      "sourceType": "official-product-asset",
+      "checkedAt": "2026-08-24"
+    },
+    "sourcegraph-cody-enterprise": {
+      "name": "Sourcegraph Cody Enterprise",
+      "alt": "Sourcegraph Cody Enterprise logo",
+      "src": "/compare/logos/sourcegraph-cody-enterprise.png",
+      "sourceUrl": "https://github.com/sourcegraph",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "openai-symphony": {
+      "name": "OpenAI Symphony",
+      "alt": "OpenAI Symphony logo",
+      "src": "/compare/logos/openai-symphony.png",
+      "sourceUrl": "https://github.com/openai/symphony",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "aionui": {
+      "name": "AionUi",
+      "alt": "AionUi logo",
+      "src": "/compare/logos/aionui.png",
+      "sourceUrl": "https://github.com/iOfficeAI/AionUi",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "openhands-agent-canvas": {
+      "name": "OpenHands Agent Canvas",
+      "alt": "OpenHands Agent Canvas logo",
+      "src": "/compare/logos/openhands-agent-canvas.png",
+      "sourceUrl": "https://github.com/OpenHands/OpenHands",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "kortix": {
+      "name": "Kortix",
+      "alt": "Kortix logo",
+      "src": "/compare/logos/kortix.png",
+      "sourceUrl": "https://github.com/kortix-ai/suna",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "oh-my-openagent": {
+      "name": "Oh My OpenAgent",
+      "alt": "Oh My OpenAgent logo",
+      "src": "/compare/logos/oh-my-openagent.jpg",
+      "sourceUrl": "https://github.com/code-yeongyu/oh-my-openagent",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "oh-my-pi": {
+      "name": "Oh My Pi",
+      "alt": "Oh My Pi logo",
+      "src": "/compare/logos/oh-my-pi.jpg",
+      "sourceUrl": "https://github.com/can1357/oh-my-pi",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "open-interpreter": {
+      "name": "Open Interpreter",
+      "alt": "Open Interpreter logo",
+      "src": "/compare/logos/open-interpreter.png",
+      "sourceUrl": "https://github.com/openinterpreter/openinterpreter",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "swe-agent": {
+      "name": "SWE-agent",
+      "alt": "SWE-agent logo",
+      "src": "/compare/logos/swe-agent.png",
+      "sourceUrl": "https://github.com/SWE-agent/SWE-agent",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "langfuse": {
+      "name": "Langfuse",
+      "alt": "Langfuse logo",
+      "src": "/compare/logos/langfuse.png",
+      "sourceUrl": "https://github.com/langfuse/langfuse",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "arize-phoenix": {
+      "name": "Arize Phoenix",
+      "alt": "Arize Phoenix logo",
+      "src": "/compare/logos/arize-phoenix.jpg",
+      "sourceUrl": "https://github.com/Arize-ai/phoenix",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "agentops": {
+      "name": "AgentOps",
+      "alt": "AgentOps logo",
+      "src": "/compare/logos/agentops.png",
+      "sourceUrl": "https://github.com/AgentOps-AI/agentops",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "open-swe": {
+      "name": "Open SWE",
+      "alt": "Open SWE logo",
+      "src": "/compare/logos/open-swe.png",
+      "sourceUrl": "https://github.com/langchain-ai/open-swe",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "amazon-q-github": {
+      "name": "Amazon Q Developer for GitHub",
+      "alt": "Amazon Q Developer for GitHub logo",
+      "src": "/compare/logos/amazon-q-github.png",
+      "sourceUrl": "https://github.com/aws",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "sentry-seer": {
+      "name": "Sentry Seer",
+      "alt": "Sentry Seer logo",
+      "src": "/compare/logos/sentry-seer.png",
+      "sourceUrl": "https://github.com/getsentry",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "claude-cowork": {
+      "name": "Claude Cowork",
+      "alt": "Claude Cowork logo",
+      "src": "/compare/logos/claude-cowork.png",
+      "sourceUrl": "https://github.com/anthropics",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "chatgpt-work": {
+      "name": "ChatGPT Work",
+      "alt": "ChatGPT Work logo",
+      "src": "/compare/logos/chatgpt-work.png",
+      "sourceUrl": "https://github.com/openai",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "eigent": {
+      "name": "Eigent",
+      "alt": "Eigent logo",
+      "src": "/compare/logos/eigent.png",
+      "sourceUrl": "https://github.com/eigent-ai/eigent",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "lobsterai": {
+      "name": "LobsterAI",
+      "alt": "LobsterAI logo",
+      "src": "/compare/logos/lobsterai.png",
+      "sourceUrl": "https://github.com/netease-youdao/LobsterAI",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-08-24"
     }
   },
   "platforms": {

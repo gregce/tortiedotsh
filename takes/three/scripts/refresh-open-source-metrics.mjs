@@ -200,7 +200,16 @@ function validateManifest(manifest) {
     if (project.release?.mode === "default-branch" && !Number.isFinite(Date.parse(project.release.checkedAt))) {
       throw new Error(`${project.id} must date its default-branch release policy`);
     }
-    if (project.release && project.release.mode !== "default-branch") {
+    if (project.release?.mode === "tag-prefix" && (typeof project.release.tagPrefix !== "string" || project.release.tagPrefix.trim() === "")) {
+      throw new Error(`${project.id} must provide release.tagPrefix for a tag-prefix policy`);
+    }
+    if (project.release?.mode === "tag-prefix" && (typeof project.release.reason !== "string" || project.release.reason.trim() === "")) {
+      throw new Error(`${project.id} must explain its tag-prefix release policy`);
+    }
+    if (project.release?.mode === "tag-prefix" && !Number.isFinite(Date.parse(project.release.checkedAt))) {
+      throw new Error(`${project.id} must date its tag-prefix release policy`);
+    }
+    if (project.release && !["default-branch", "tag-prefix"].includes(project.release.mode)) {
       throw new Error(`${project.id} has an unsupported release.mode`);
     }
     if (project.license) {
@@ -677,14 +686,19 @@ async function latestVersion(project) {
   if (projectForge(project) === "gitlab") return latestGitlabVersion(project);
   const releases = await githubRequest(`/repos/${owner}/${repo}/releases?per_page=100`);
   const now = Date.now();
+  const looksLikePrerelease = (candidate) => {
+    const label = `${candidate.tag_name || ""} ${candidate.name || ""}`;
+    return /(?:^|[._-])(alpha|beta|rc|pre|preview|canary|nightly|dev)(?:[._-]?\d|\b)/i.test(label);
+  };
   const publishedReleases = releases.data
     .filter((candidate) => (
       !candidate.draft &&
+      (!project.release?.tagPrefix || candidate.tag_name?.startsWith(project.release.tagPrefix)) &&
       Number.isFinite(Date.parse(candidate.published_at)) &&
       Date.parse(candidate.published_at) <= now
     ))
     .sort((left, right) => Date.parse(right.published_at) - Date.parse(left.published_at));
-  const release = publishedReleases.find((candidate) => !candidate.prerelease) || publishedReleases[0] || null;
+  const release = publishedReleases.find((candidate) => !candidate.prerelease && !looksLikePrerelease(candidate)) || null;
   if (release) {
     return {
       latestRelease: {
@@ -697,7 +711,38 @@ async function latestVersion(project) {
       latestTag: null,
       version: release.tag_name || null,
       releaseDate: release.published_at || null,
-      releasePolicy: null,
+      releasePolicy: project.release?.mode === "tag-prefix" ? {
+        mode: "tag-prefix",
+        reason: project.release.reason,
+        checkedAt: project.release.checkedAt,
+        tagPrefix: project.release.tagPrefix,
+        rejectedCandidate: releases.data[0] && releases.data[0].tag_name !== release.tag_name ? {
+          tagName: releases.data[0].tag_name || null,
+          name: releases.data[0].name || null,
+          url: releases.data[0].html_url || null,
+        } : null,
+      } : null,
+      sources: [source("latest-release", releases)],
+    };
+  }
+
+  if (project.release?.mode === "tag-prefix") {
+    return {
+      latestRelease: null,
+      latestTag: null,
+      version: null,
+      releaseDate: null,
+      releasePolicy: {
+        mode: "tag-prefix",
+        reason: project.release.reason,
+        checkedAt: project.release.checkedAt,
+        tagPrefix: project.release.tagPrefix,
+        rejectedCandidate: releases.data[0] ? {
+          tagName: releases.data[0].tag_name || null,
+          name: releases.data[0].name || null,
+          url: releases.data[0].html_url || null,
+        } : null,
+      },
       sources: [source("latest-release", releases)],
     };
   }
