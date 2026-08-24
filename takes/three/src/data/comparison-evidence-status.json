@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-23T23:19:29.531Z",
+  "generatedAt": "2026-08-24T03:34:26.807Z",
   "sources": [
     {
       "id": "2fa78aa7f0249c97fb15",
@@ -2604,6 +2604,64 @@
       "error": null
     },
     {
+      "id": "cc43aabac558c9e99448",
+      "url": "https://developer.android.com/build/building-cmdline",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "android-studio",
+          "field": "editor-terminal",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://developer.android.com/build/building-cmdline",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "c19baa232f69e69a69d3",
+      "url": "https://developer.android.com/studio",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "android-studio",
+          "field": "editor-specialization",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://developer.android.com/studio",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "0f1d84377aa74fa2ae9f",
       "url": "https://developer.android.com/studio/gemini/agent-mode",
       "bases": [
@@ -2632,6 +2690,11 @@
         },
         {
           "productId": "android-studio",
+          "field": "editor-browser-tools",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "android-studio",
           "field": "editor-change-review",
           "checkedAt": "2026-08-23"
         },
@@ -2639,33 +2702,31 @@
           "productId": "android-studio",
           "field": "editor-parallel-sessions",
           "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "android-studio",
-          "field": "editor-project-tree",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "android-studio",
-          "field": "editor-terminal",
-          "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
+      "status": "current",
       "fetchUrl": "https://developer.android.com/studio/gemini/agent-mode",
       "resolvedUrl": "https://developer.android.com/studio/gemini/agent-mode",
       "lastCheckedAt": "2026-08-23T23:15:34.966Z",
       "firstObservedAt": "2026-08-23T21:27:22.123Z",
-      "changeDetectedAt": "2026-08-23T23:13:42.892Z",
+      "changeDetectedAt": null,
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
       "contentLength": 275360,
       "contentHash": "ef79dbfb7b2386d4fa5524842fbc685ae2f221d1d461dc710cc2b7cc08fe9d79",
-      "reviewedHash": "78c75486baab9b7c7a778e871d4f767063438c39e487048fd00e7003c929199d",
+      "reviewedHash": "ef79dbfb7b2386d4fa5524842fbc685ae2f221d1d461dc710cc2b7cc08fe9d79",
       "etag": null,
       "lastModified": "Tue, 14 Jul 2026 14:27:29 GMT",
-      "error": null
+      "error": null,
+      "reviewedAt": "2026-08-24T03:23:30.478Z",
+      "reviews": [
+        {
+          "action": "accepted-after-review",
+          "reviewedAt": "2026-08-24T03:23:30.478Z",
+          "contentHash": "ef79dbfb7b2386d4fa5524842fbc685ae2f221d1d461dc710cc2b7cc08fe9d79"
+        }
+      ]
     },
     {
       "id": "ea7da1df277e04b45e30",
@@ -2676,30 +2737,33 @@
       "usedBy": [
         {
           "productId": "android-studio",
-          "field": "editor-browser-tools",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "android-studio",
           "field": "editor-verification-loop",
           "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
+      "status": "current",
       "fetchUrl": "https://developer.android.com/studio/gemini/create-a-new-project-with-ai",
       "resolvedUrl": "https://developer.android.com/studio/gemini/create-a-new-project-with-ai",
       "lastCheckedAt": "2026-08-23T23:15:35.023Z",
       "firstObservedAt": "2026-08-23T21:27:22.213Z",
-      "changeDetectedAt": "2026-08-23T23:13:42.902Z",
+      "changeDetectedAt": null,
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
       "contentLength": 278566,
       "contentHash": "ae98dba6842462763298b48def8878c4abf3f45d7361096b34c9a2f4b4e86356",
-      "reviewedHash": "d5a5be44a6dae28da801d39c6f0ad40d48921c7ae6180aa2da98f6c68cb8e6ce",
+      "reviewedHash": "ae98dba6842462763298b48def8878c4abf3f45d7361096b34c9a2f4b4e86356",
       "etag": null,
       "lastModified": "Fri, 15 May 2026 21:26:03 GMT",
-      "error": null
+      "error": null,
+      "reviewedAt": "2026-08-24T03:23:30.478Z",
+      "reviews": [
+        {
+          "action": "accepted-after-review",
+          "reviewedAt": "2026-08-24T03:23:30.478Z",
+          "contentHash": "ae98dba6842462763298b48def8878c4abf3f45d7361096b34c9a2f4b4e86356"
+        }
+      ]
     },
     {
       "id": "b809a99f73173699abe4",
@@ -2730,20 +2794,28 @@
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
+      "status": "current",
       "fetchUrl": "https://developer.android.com/studio/gemini/features",
       "resolvedUrl": "https://developer.android.com/studio/gemini/features?hl=zh-tw",
       "lastCheckedAt": "2026-08-23T23:15:35.355Z",
       "firstObservedAt": "2026-08-23T21:27:22.223Z",
-      "changeDetectedAt": "2026-08-23T23:13:42.904Z",
+      "changeDetectedAt": null,
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
       "contentLength": 292636,
       "contentHash": "a9aebcf19157fe515f1640d03b7a452082d54cf247831a591339c3f0802351a2",
-      "reviewedHash": "b849a7991fcba27596abc1f403585200508d4b848db7a5b6e87e535ef0b5beaf",
+      "reviewedHash": "a9aebcf19157fe515f1640d03b7a452082d54cf247831a591339c3f0802351a2",
       "etag": null,
       "lastModified": "Tue, 21 Jul 2026 18:04:16 GMT",
-      "error": null
+      "error": null,
+      "reviewedAt": "2026-08-24T03:23:30.478Z",
+      "reviews": [
+        {
+          "action": "accepted-after-review",
+          "reviewedAt": "2026-08-24T03:23:30.478Z",
+          "contentHash": "a9aebcf19157fe515f1640d03b7a452082d54cf247831a591339c3f0802351a2"
+        }
+      ]
     },
     {
       "id": "d80335cca6118df20086",
@@ -2759,11 +2831,6 @@
         },
         {
           "productId": "android-studio",
-          "field": "editor-specialization",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "android-studio",
           "field": "profile.execution",
           "checkedAt": "2026-08-23"
         },
@@ -2789,108 +2856,56 @@
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
+      "status": "current",
       "fetchUrl": "https://developer.android.com/studio/install",
       "resolvedUrl": "https://developer.android.com/studio/install?hl=id",
       "lastCheckedAt": "2026-08-23T23:15:35.362Z",
       "firstObservedAt": "2026-08-23T21:27:22.227Z",
-      "changeDetectedAt": "2026-08-23T23:15:35.362Z",
+      "changeDetectedAt": null,
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
       "contentLength": 560392,
       "contentHash": "33fcaab95a82f036870584d128f763033f04c977f389e14716935cb4b7be1807",
-      "reviewedHash": "861523d35b19239f449d84e2e73b9624d7965458f38aabba0df5c17ad972243e",
+      "reviewedHash": "33fcaab95a82f036870584d128f763033f04c977f389e14716935cb4b7be1807",
       "etag": null,
       "lastModified": "Fri, 31 Jul 2026 00:03:40 GMT",
-      "error": null
+      "error": null,
+      "reviewedAt": "2026-08-24T03:23:30.478Z",
+      "reviews": [
+        {
+          "action": "accepted-after-review",
+          "reviewedAt": "2026-08-24T03:23:30.478Z",
+          "contentHash": "33fcaab95a82f036870584d128f763033f04c977f389e14716935cb4b7be1807"
+        }
+      ]
     },
     {
-      "id": "dc0325ddd67c7eca09dd",
-      "url": "https://developers.google.com/gemini-code-assist/docs/overview",
+      "id": "a68ee23dfca63e485af9",
+      "url": "https://developer.android.com/studio/projects",
       "bases": [
         "vendor-documented"
       ],
       "usedBy": [
         {
-          "productId": "gemini-code-assist",
-          "field": "extension-agent-panel",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "extension-codebase-context",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "extension-host-jetbrains",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "extension-host-vscode",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "extension-hosts",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "extension-inline-completion",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "extension-install-channel",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "extension-tool-execution-boundary",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "profile.execution",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "profile.platform",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "profile.primaryObject",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "profile.source",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "gemini-code-assist",
-          "field": "profile.status",
+          "productId": "android-studio",
+          "field": "editor-project-tree",
           "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
-      "fetchUrl": "https://developers.google.com/gemini-code-assist/docs/overview",
-      "resolvedUrl": "https://developers.google.com/gemini-code-assist/docs/overview?hl=hi",
-      "lastCheckedAt": "2026-08-23T23:15:35.364Z",
-      "firstObservedAt": "2026-08-23T21:27:22.244Z",
-      "changeDetectedAt": "2026-08-23T23:15:35.364Z",
-      "httpStatus": 200,
-      "contentType": "text/html; charset=utf-8",
-      "contentLength": 121817,
-      "contentHash": "b1ec85d309f0d1f5702fbb7aab9cc4632b57b4daa9c34af47da8ef81dfba91b6",
-      "reviewedHash": "f4b765b3a7e73d57a41efabcdc9d5064772e46c8f44cbe7bbea1ccadb76ead7b",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://developer.android.com/studio/projects",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
       "etag": null,
-      "lastModified": "Wed, 20 May 2026 16:21:19 GMT",
+      "lastModified": null,
       "error": null
     },
     {
@@ -3627,6 +3642,114 @@
       "contentLength": 392995,
       "contentHash": "e8a8b5be8d82d302fbb87d630bdfe8b57d1ecbb79e8d1cc4af25582418ee057e",
       "reviewedHash": "e8a8b5be8d82d302fbb87d630bdfe8b57d1ecbb79e8d1cc4af25582418ee057e",
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "81cb02bf952d771e2150",
+      "url": "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "gemini-code-assist",
+          "field": "extension-agent-panel",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-code-assist",
+          "field": "extension-codebase-context",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-code-assist",
+          "field": "extension-inline-completion",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-code-assist",
+          "field": "extension-tool-execution-boundary",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-code-assist",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-code-assist",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-code-assist",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-code-assist",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "64b7954766110ef9bacf",
+      "url": "https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "gemini-code-assist",
+          "field": "extension-host-jetbrains",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-code-assist",
+          "field": "extension-host-vscode",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-code-assist",
+          "field": "extension-hosts",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "gemini-code-assist",
+          "field": "extension-install-channel",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
       "etag": null,
       "lastModified": null,
       "error": null
@@ -5253,6 +5376,7 @@
       "id": "c55084f2b8efa6cf4fd6",
       "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
       "bases": [
+        "repository-derived",
         "vendor-documented"
       ],
       "usedBy": [
@@ -5524,6 +5648,7 @@
       "id": "f84ad535c07dcee935d9",
       "url": "https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-extension?tool=vscode",
       "bases": [
+        "repository-derived",
         "vendor-documented"
       ],
       "usedBy": [
@@ -5793,6 +5918,93 @@
       "error": null
     },
     {
+      "id": "0c9c028c551236d5d669",
+      "url": "https://docs.helix-editor.com/install.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "helix",
+          "field": "editor-release-channel",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.helix-editor.com/install.html",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "6bb23c28cad0b5fca3f9",
+      "url": "https://docs.helix-editor.com/master/commands.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "helix",
+          "field": "editor-project-tree",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.helix-editor.com/master/commands.html",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "9bb4dddfa1d5e7300377",
+      "url": "https://docs.helix-editor.com/package-managers.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "helix",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.helix-editor.com/package-managers.html",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "13a1462dc37f7c76e86b",
       "url": "https://docs.humanlayer.com/guide/workspaces",
       "bases": [
@@ -5906,6 +6118,120 @@
       "reviewedHash": "1b7df50ed784213eee5aae6d83703d0e71f4e6e0b42f5a932edcc6bf98017737",
       "etag": "W/\"4b854b2b40bcf02873aa3c2b324df267\"",
       "lastModified": "Fri, 21 Aug 2026 04:03:08 GMT",
+      "error": null
+    },
+    {
+      "id": "f0a1cdd481d3af2369ab",
+      "url": "https://docs.lapce.dev/get-started/remote-development",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "lapce",
+          "field": "editor-remote-workspaces",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.lapce.dev/get-started/remote-development",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "7c0a22095ad1b29ca8fe",
+      "url": "https://docs.lapce.dev/get-started/setup",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "lapce",
+          "field": "editor-project-tree",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "lapce",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "lapce",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "lapce",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "lapce",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "lapce",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.lapce.dev/get-started/setup",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "d500a6e9c9821cb03680",
+      "url": "https://docs.lapce.dev/get-started/terminal",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "lapce",
+          "field": "editor-terminal",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.lapce.dev/get-started/terminal",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -7003,6 +7329,35 @@
       "error": "HTTP 404"
     },
     {
+      "id": "7f24130ef3928baf0414",
+      "url": "https://docs.warp.dev/agents/cli/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "warp",
+          "field": "workbench-programmable-control",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.warp.dev/agents/cli/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "25818e60e47fdd71673b",
       "url": "https://docs.warp.dev/code/code-editor",
       "bases": [
@@ -7021,20 +7376,28 @@
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
+      "status": "current",
       "fetchUrl": "https://docs.warp.dev/code/code-editor",
       "resolvedUrl": "https://docs.warp.dev/code/code-editor",
       "lastCheckedAt": "2026-08-23T23:15:41.620Z",
       "firstObservedAt": "2026-08-23T21:27:25.864Z",
-      "changeDetectedAt": "2026-08-23T23:13:50.109Z",
+      "changeDetectedAt": null,
       "httpStatus": 304,
       "contentType": "text/html; charset=utf-8",
       "contentLength": 143240,
       "contentHash": "09c96b23dc6dab877834fadb8781085e0f616319a3a9c96c503619c07490ecea",
-      "reviewedHash": "590bc2f5b7c3501e58db4f48e48b1733be9123a188711071a81104faf8610f9d",
+      "reviewedHash": "09c96b23dc6dab877834fadb8781085e0f616319a3a9c96c503619c07490ecea",
       "etag": "W/\"2b101274b930d271fd311bf3a64424e2\"",
       "lastModified": "Sun, 23 Aug 2026 23:03:04 GMT",
-      "error": null
+      "error": null,
+      "reviewedAt": "2026-08-24T03:23:30.478Z",
+      "reviews": [
+        {
+          "action": "accepted-after-review",
+          "reviewedAt": "2026-08-24T03:23:30.478Z",
+          "contentHash": "09c96b23dc6dab877834fadb8781085e0f616319a3a9c96c503619c07490ecea"
+        }
+      ]
     },
     {
       "id": "38a788091fb1d453f1b8",
@@ -7050,49 +7413,28 @@
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
+      "status": "current",
       "fetchUrl": "https://docs.warp.dev/code/ssh-feature-support",
       "resolvedUrl": "https://docs.warp.dev/code/ssh-feature-support",
       "lastCheckedAt": "2026-08-23T23:15:41.653Z",
       "firstObservedAt": "2026-08-23T21:27:26.039Z",
-      "changeDetectedAt": "2026-08-23T23:13:50.115Z",
+      "changeDetectedAt": null,
       "httpStatus": 304,
       "contentType": "text/html; charset=utf-8",
       "contentLength": 136988,
       "contentHash": "6b7b4306de455992c816cbe244d87b74cd2e39cc00d90e0f5cc1887f1e7266e1",
-      "reviewedHash": "7bfc29197d0228a69c0404cdeb752ba2aaf2bc68961643d42f1cafe082d6eed3",
+      "reviewedHash": "6b7b4306de455992c816cbe244d87b74cd2e39cc00d90e0f5cc1887f1e7266e1",
       "etag": "W/\"13ea6fb17602dbc7b7a03390318c6a4d\"",
       "lastModified": "Sun, 23 Aug 2026 23:13:50 GMT",
-      "error": null
-    },
-    {
-      "id": "35707b14a34678a83e05",
-      "url": "https://docs.warp.dev/reference/cli",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
+      "error": null,
+      "reviewedAt": "2026-08-24T03:23:30.478Z",
+      "reviews": [
         {
-          "productId": "warp",
-          "field": "workbench-programmable-control",
-          "checkedAt": "2026-08-23"
+          "action": "accepted-after-review",
+          "reviewedAt": "2026-08-24T03:23:30.478Z",
+          "contentHash": "6b7b4306de455992c816cbe244d87b74cd2e39cc00d90e0f5cc1887f1e7266e1"
         }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "changed",
-      "fetchUrl": "https://docs.warp.dev/reference/cli",
-      "resolvedUrl": "https://docs.warp.dev/reference/cli",
-      "lastCheckedAt": "2026-08-23T23:15:41.694Z",
-      "firstObservedAt": "2026-08-23T21:27:26.051Z",
-      "changeDetectedAt": "2026-08-23T23:13:50.136Z",
-      "httpStatus": 304,
-      "contentType": "text/html; charset=utf-8",
-      "contentLength": 255426,
-      "contentHash": "632d2f20156520c1e5a3ec252642b2e8e8aea90af1bd4a74740d43b48343b4e1",
-      "reviewedHash": "13793a62d5251ffb01fe0c91232001de9e90e10362fbcbebf682eb982a344848",
-      "etag": "W/\"8a1e9ac834b18f240efc51d613a04789\"",
-      "lastModified": "Sun, 23 Aug 2026 22:05:15 GMT",
-      "error": null
+      ]
     },
     {
       "id": "c2c97b48fcd412d2e4c6",
@@ -8336,6 +8678,97 @@
       "error": "HTTP 403"
     },
     {
+      "id": "212a494c4fa3d51830e8",
+      "url": "https://github.com/avante-corp/avante.nvim",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "avante-nvim",
+          "field": "extension-agent-panel",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "extension-byok-local-model",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "extension-codebase-context",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "extension-hosts",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "extension-inline-completion",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "extension-install-channel",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "extension-provider-choice",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "extension-tool-execution-boundary",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "avante-nvim",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/avante-corp/avante.nvim/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "18ccedbf973d29d94d31",
       "url": "https://github.com/BloopAI/vibe-kanban",
       "bases": [
@@ -8680,65 +9113,6 @@
       "error": "HTTP 403"
     },
     {
-      "id": "343b0034c3332e46ad52",
-      "url": "https://github.com/coder/cmux",
-      "bases": [
-        "repository-derived"
-      ],
-      "usedBy": [
-        {
-          "productId": "coder-mux",
-          "field": "orchestrator-attention-signals",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "coder-mux",
-          "field": "orchestrator-inline-review",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "coder-mux",
-          "field": "orchestrator-isolated-workspaces",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "coder-mux",
-          "field": "orchestrator-parallel-workers",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "coder-mux",
-          "field": "orchestrator-remote-execution",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "coder-mux",
-          "field": "orchestrator-review-delivery",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "coder-mux",
-          "field": "orchestrator-worktrees",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "unreachable",
-      "fetchUrl": "https://api.github.com/repos/coder/cmux/readme",
-      "resolvedUrl": "https://api.github.com/repositories/1058825816/readme",
-      "lastCheckedAt": "2026-08-23T23:15:42.471Z",
-      "firstObservedAt": "2026-08-23T21:27:26.769Z",
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": "application/vnd.github.raw+json; charset=utf-8",
-      "contentLength": 4678,
-      "contentHash": "beb44dba0db339c61181c6a984bfc57b38696367c4b373a93645bd533ccb3676",
-      "reviewedHash": "beb44dba0db339c61181c6a984bfc57b38696367c4b373a93645bd533ccb3676",
-      "etag": "\"f5be5bca72d4983bc449124c2f96d6f8c10509bc\"",
-      "lastModified": "Sun, 23 Aug 2026 19:29:22 GMT",
-      "error": "HTTP 403"
-    },
-    {
       "id": "e3c30d76280dd5064587",
       "url": "https://github.com/coder/code-server",
       "bases": [
@@ -8865,6 +9239,87 @@
       "contentHash": "f2d1d734a1361ffc050c9f2c321f5e76d88a7c279c09ccbfb8f1f0fbaf644d70",
       "reviewedHash": "f2d1d734a1361ffc050c9f2c321f5e76d88a7c279c09ccbfb8f1f0fbaf644d70",
       "etag": "W/\"a17ae61b042d30ba5485137b59170c5c4baeb2665a8be0b45ccd9bdcd7a1b02b\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "a375250588a13e2799c8",
+      "url": "https://github.com/coder/xum",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "coder-mux",
+          "field": "orchestrator-attention-signals",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "coder-mux",
+          "field": "orchestrator-inline-review",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "coder-mux",
+          "field": "orchestrator-isolated-workspaces",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "coder-mux",
+          "field": "orchestrator-parallel-workers",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "coder-mux",
+          "field": "orchestrator-remote-execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "coder-mux",
+          "field": "orchestrator-review-delivery",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "coder-mux",
+          "field": "orchestrator-worktrees",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "coder-mux",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "coder-mux",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "coder-mux",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "coder-mux",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/coder/xum/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
@@ -10181,6 +10636,103 @@
       "error": "HTTP 403"
     },
     {
+      "id": "0e3440adf10f0dc3c30c",
+      "url": "https://github.com/helix-editor/helix",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "helix",
+          "field": "editor-specialization",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/helix-editor/helix/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "933912efc7404da0b532",
+      "url": "https://github.com/helix-editor/helix/discussions/4037",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "helix",
+          "field": "editor-ai-feature-boundary",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "helix",
+          "field": "editor-inline-prediction",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "helix",
+          "field": "editor-model-access",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://github.com/helix-editor/helix/discussions/4037",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "d315bdb58f763892938e",
+      "url": "https://github.com/helix-editor/helix/issues/1976",
+      "bases": [
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "helix",
+          "field": "editor-terminal",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://github.com/helix-editor/helix/issues/1976",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "638846f7379e653869d7",
       "url": "https://github.com/HKUDS/nanobot",
       "bases": [
@@ -10931,6 +11483,103 @@
       "contentHash": "f260d417fd59321ecbddb19c2337fd613717871e9f97d938bb29b1518452febc",
       "reviewedHash": "f260d417fd59321ecbddb19c2337fd613717871e9f97d938bb29b1518452febc",
       "etag": "W/\"4eed718685fa12f7a0942adadead92528f4c00c87e5c2eefb7e495ed38a4ccc7\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "e35a77a83c030f16df7f",
+      "url": "https://github.com/lapce/lapce/blob/master/README.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "lapce",
+          "field": "editor-specialization",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/lapce/lapce/master/README.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "ab27ecf290fb4173ea94",
+      "url": "https://github.com/lapce/lapce/releases/latest",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "lapce",
+          "field": "editor-release-channel",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://github.com/lapce/lapce/releases/latest",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "d8e01fc31e3d4c9c965d",
+      "url": "https://github.com/lapce/lapce/releases/tag/v0.4.0",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "lapce",
+          "field": "editor-ai-feature-boundary",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "lapce",
+          "field": "editor-inline-prediction",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "lapce",
+          "field": "editor-model-access",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://github.com/lapce/lapce/releases/tag/v0.4.0",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
@@ -12950,6 +13599,281 @@
       "error": "HTTP 403"
     },
     {
+      "id": "9bbfe82e38f00d2a4333",
+      "url": "https://github.com/RooCodeInc/Roo-Code",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "roo-code",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "roo-code",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "roo-code",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "roo-code",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/RooCodeInc/Roo-Code/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "29f159ff23be279ff455",
+      "url": "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/advanced-usage/available-tools/tool-use-overview.md",
+      "bases": [
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "roo-code",
+          "field": "extension-tool-execution-boundary",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/apps/docs/docs/advanced-usage/available-tools/tool-use-overview.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "f9534b5e6adaca808d69",
+      "url": "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/advanced-usage/available-tools/use-mcp-tool.md",
+      "bases": [
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "roo-code",
+          "field": "extension-mcp",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/apps/docs/docs/advanced-usage/available-tools/use-mcp-tool.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "1672b285786651a8bb7e",
+      "url": "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/features/auto-approving-actions.mdx",
+      "bases": [
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "roo-code",
+          "field": "extension-permissions",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/apps/docs/docs/features/auto-approving-actions.mdx",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "0e44133984b6d09bd0bb",
+      "url": "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/features/checkpoints.mdx",
+      "bases": [
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "roo-code",
+          "field": "extension-checkpoints",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/apps/docs/docs/features/checkpoints.mdx",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "5e8998b85e46e888271f",
+      "url": "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/features/codebase-indexing.mdx",
+      "bases": [
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "roo-code",
+          "field": "extension-codebase-context",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/apps/docs/docs/features/codebase-indexing.mdx",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "2ebe871ab81651d11d02",
+      "url": "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/getting-started/installing.mdx",
+      "bases": [
+        "repository-derived",
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "roo-code",
+          "field": "extension-agent-panel",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "roo-code",
+          "field": "extension-host-vscode",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "roo-code",
+          "field": "extension-hosts",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "roo-code",
+          "field": "extension-install-channel",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "roo-code",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/apps/docs/docs/getting-started/installing.mdx",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "7cbacbafc536d90f1951",
+      "url": "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/providers/index.mdx",
+      "bases": [
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "roo-code",
+          "field": "extension-byok-local-model",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "roo-code",
+          "field": "extension-provider-choice",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/RooCodeInc/Roo-Code/main/apps/docs/docs/providers/index.mdx",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "dc322c171410f2342b46",
       "url": "https://github.com/sipeed/picoclaw",
       "bases": [
@@ -14780,97 +15704,6 @@
       "error": null
     },
     {
-      "id": "480c229a100adaef2e8e",
-      "url": "https://github.com/yetone/avante.nvim",
-      "bases": [
-        "repository-derived",
-        "source-inspected",
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "avante-nvim",
-          "field": "extension-agent-panel",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "extension-byok-local-model",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "extension-codebase-context",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "extension-hosts",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "extension-inline-completion",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "extension-install-channel",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "extension-provider-choice",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "extension-tool-execution-boundary",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "profile.execution",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "profile.platform",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "profile.primaryObject",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "profile.source",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "avante-nvim",
-          "field": "profile.status",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://api.github.com/repos/yetone/avante.nvim/readme",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-23T23:15:43.252Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "etag": null,
-      "lastModified": null,
-      "error": "HTTP 403"
-    },
-    {
       "id": "69bdfd293baf1122ff74",
       "url": "https://github.com/zeroclaw-labs/zeroclaw",
       "bases": [
@@ -14977,6 +15810,52 @@
       "reviewedHash": "42150906bbed3e37272f9da02666d9ed7c7657859db76ed645cea7048691baea",
       "etag": "W/\"6a87d38c-143c2\"",
       "lastModified": "Fri, 21 Aug 2026 04:26:52 GMT",
+      "error": null
+    },
+    {
+      "id": "4789fb742763328af577",
+      "url": "https://helix-editor.com/",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "helix",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "helix",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "helix",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "helix",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://helix-editor.com/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -17316,51 +18195,6 @@
       "error": null
     },
     {
-      "id": "188cf2769c59e7c88736",
-      "url": "https://mux.coder.com",
-      "bases": [
-        "source-inspected",
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "coder-mux",
-          "field": "profile.execution",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "coder-mux",
-          "field": "profile.platform",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "coder-mux",
-          "field": "profile.primaryObject",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "coder-mux",
-          "field": "profile.source",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "current",
-      "fetchUrl": "https://mux.coder.com",
-      "resolvedUrl": "https://xum.coder.com/",
-      "lastCheckedAt": "2026-08-23T23:15:44.819Z",
-      "firstObservedAt": "2026-08-23T21:27:28.679Z",
-      "changeDetectedAt": null,
-      "httpStatus": 200,
-      "contentType": "text/html; charset=utf-8",
-      "contentLength": 264376,
-      "contentHash": "269411fa0d43e0472159457ecb4a3948395651a30cf66775f6fe13886576df32",
-      "reviewedHash": "269411fa0d43e0472159457ecb4a3948395651a30cf66775f6fe13886576df32",
-      "etag": null,
-      "lastModified": null,
-      "error": null
-    },
-    {
       "id": "137d40aa7be34cf3f409",
       "url": "https://onorca.dev/",
       "bases": [
@@ -17375,11 +18209,6 @@
         },
         {
           "productId": "orca",
-          "field": "profile.platform",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "orca",
           "field": "profile.primaryObject",
           "checkedAt": "2026-08-23"
         },
@@ -17390,20 +18219,28 @@
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
+      "status": "current",
       "fetchUrl": "https://onorca.dev/",
       "resolvedUrl": "https://www.onorca.dev/",
       "lastCheckedAt": "2026-08-23T23:15:44.872Z",
       "firstObservedAt": "2026-08-23T21:27:28.709Z",
-      "changeDetectedAt": "2026-08-23T23:13:54.268Z",
+      "changeDetectedAt": null,
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
       "contentLength": 986219,
       "contentHash": "625d42b04480e858008164f36da65571b855c693f6028b2474d5e56258d31942",
-      "reviewedHash": "3d6dfa28149ab7d1117194f17f6094f0029428b4edca045910cb8478e308221e",
+      "reviewedHash": "625d42b04480e858008164f36da65571b855c693f6028b2474d5e56258d31942",
       "etag": null,
       "lastModified": null,
-      "error": null
+      "error": null,
+      "reviewedAt": "2026-08-24T03:23:30.478Z",
+      "reviews": [
+        {
+          "action": "accepted-after-review",
+          "reviewedAt": "2026-08-24T03:23:30.478Z",
+          "contentHash": "625d42b04480e858008164f36da65571b855c693f6028b2474d5e56258d31942"
+        }
+      ]
     },
     {
       "id": "ac8bc5b8d08d758f9d68",
@@ -20377,6 +21214,64 @@
       "error": null
     },
     {
+      "id": "ae744d4115dd462e9abf",
+      "url": "https://www.onorca.dev/docs/remote-servers",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "orca",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://www.onorca.dev/docs/remote-servers",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "a91594d658fa6d4092e3",
+      "url": "https://www.onorca.dev/download",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "orca",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://www.onorca.dev/download",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "fa18782eb999e6b86f28",
       "url": "https://www.perplexity.ai/products/computer",
       "bases": [
@@ -20504,20 +21399,28 @@
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
+      "status": "current",
       "fetchUrl": "https://www.trae.ai/blog/engineering_thought_0731",
       "resolvedUrl": "https://www.trae.ai/blog/engineering_thought_0731",
       "lastCheckedAt": "2026-08-23T23:15:46.653Z",
       "firstObservedAt": "2026-08-23T21:27:29.464Z",
-      "changeDetectedAt": "2026-08-23T23:13:57.375Z",
+      "changeDetectedAt": null,
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "contentLength": 8073,
       "contentHash": "50f218a2e3c1b1799a63c76d23fc4086b33d0445ff5053968103c7d164a7a14a",
-      "reviewedHash": "d122befe8cdf5227f7609da6412178451f884779a5c867f0fdf71978165adcd6",
+      "reviewedHash": "50f218a2e3c1b1799a63c76d23fc4086b33d0445ff5053968103c7d164a7a14a",
       "etag": null,
       "lastModified": null,
-      "error": null
+      "error": null,
+      "reviewedAt": "2026-08-24T03:23:30.478Z",
+      "reviews": [
+        {
+          "action": "accepted-after-review",
+          "reviewedAt": "2026-08-24T03:23:30.478Z",
+          "contentHash": "50f218a2e3c1b1799a63c76d23fc4086b33d0445ff5053968103c7d164a7a14a"
+        }
+      ]
     },
     {
       "id": "7e9bbfeed39a2785876c",
@@ -20553,61 +21456,59 @@
         },
         {
           "productId": "traecode",
-          "field": "editor-parallel-sessions",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "traecode",
-          "field": "editor-project-tree",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "traecode",
           "field": "editor-terminal",
           "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
+      "status": "current",
       "fetchUrl": "https://www.trae.ai/blog/product_solo",
       "resolvedUrl": "https://www.trae.ai/blog/product_solo",
       "lastCheckedAt": "2026-08-23T23:15:46.656Z",
       "firstObservedAt": "2026-08-23T21:27:29.508Z",
-      "changeDetectedAt": "2026-08-23T23:13:57.407Z",
+      "changeDetectedAt": null,
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "contentLength": 8037,
       "contentHash": "ff867544bda89d339cf0da19a0b931ff9d3c6ad4315499814422870490ead56a",
-      "reviewedHash": "e2b14ddf669dc0e8f2d5d25d66be61914458d04caa9bbef5dd8a1edf2d7e15ea",
+      "reviewedHash": "ff867544bda89d339cf0da19a0b931ff9d3c6ad4315499814422870490ead56a",
       "etag": null,
       "lastModified": null,
-      "error": null
+      "error": null,
+      "reviewedAt": "2026-08-24T03:23:30.478Z",
+      "reviews": [
+        {
+          "action": "accepted-after-review",
+          "reviewedAt": "2026-08-24T03:23:30.478Z",
+          "contentHash": "ff867544bda89d339cf0da19a0b931ff9d3c6ad4315499814422870490ead56a"
+        }
+      ]
     },
     {
-      "id": "934f42f81346615a5263",
-      "url": "https://www.trae.ai/blog/product_thought_0617",
+      "id": "0aad14416d37d3748c58",
+      "url": "https://www.trae.ai/blog/product_solo_1112?v=1",
       "bases": [
         "vendor-documented"
       ],
       "usedBy": [
         {
           "productId": "traecode",
-          "field": "editor-verification-loop",
+          "field": "editor-parallel-sessions",
           "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
-      "fetchUrl": "https://www.trae.ai/blog/product_thought_0617",
-      "resolvedUrl": "https://www.trae.ai/blog/product_thought_0617",
-      "lastCheckedAt": "2026-08-23T23:15:46.665Z",
-      "firstObservedAt": "2026-08-23T21:27:29.522Z",
-      "changeDetectedAt": "2026-08-23T23:13:57.462Z",
-      "httpStatus": 200,
-      "contentType": "text/html; charset=UTF-8",
-      "contentLength": 8061,
-      "contentHash": "110a25e9cc710a5685857716d0023af1a8ed7ce14150d8e5d1ed349e70aeeb0c",
-      "reviewedHash": "1bed830297e8699592802f7efe2031dcdc8a08f974fa1e27664341b8b069e049",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://www.trae.ai/blog/product_solo_1112?v=1",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
       "etag": null,
       "lastModified": null,
       "error": null
@@ -20631,20 +21532,28 @@
         }
       ],
       "latestReviewAt": "2026-08-23",
-      "status": "changed",
+      "status": "current",
       "fetchUrl": "https://www.trae.ai/blog/trae_membership_0213",
       "resolvedUrl": "https://www.trae.ai/blog/trae_membership_0213",
       "lastCheckedAt": "2026-08-23T23:15:46.713Z",
       "firstObservedAt": "2026-08-23T21:27:29.550Z",
-      "changeDetectedAt": "2026-08-23T23:13:57.467Z",
+      "changeDetectedAt": null,
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "contentLength": 8061,
       "contentHash": "a1f7ff97e6011f838181f5cbc3fc7ce3c2b584bf4b8692510d09fe3590959d99",
-      "reviewedHash": "5f9617712c8a2b60809a6dd1fbfaa6512794693cd9ae3cd469cf045bf8f92ce9",
+      "reviewedHash": "a1f7ff97e6011f838181f5cbc3fc7ce3c2b584bf4b8692510d09fe3590959d99",
       "etag": null,
       "lastModified": null,
-      "error": null
+      "error": null,
+      "reviewedAt": "2026-08-24T03:23:30.478Z",
+      "reviews": [
+        {
+          "action": "accepted-after-review",
+          "reviewedAt": "2026-08-24T03:23:30.478Z",
+          "contentHash": "a1f7ff97e6011f838181f5cbc3fc7ce3c2b584bf4b8692510d09fe3590959d99"
+        }
+      ]
     },
     {
       "id": "3cbc022e74b47bb6a5a4",
@@ -20730,6 +21639,35 @@
       "contentLength": 10960,
       "contentHash": "8ce5c2d43b4b26418ea3ff821cb1bc8f1585080fe9cb20b024358a1dff6e1d9e",
       "reviewedHash": "8ce5c2d43b4b26418ea3ff821cb1bc8f1585080fe9cb20b024358a1dff6e1d9e",
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "966a16cf532536d812eb",
+      "url": "https://www.trae.ai/ide/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "traecode",
+          "field": "editor-verification-loop",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://www.trae.ai/ide/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
       "etag": null,
       "lastModified": null,
       "error": null

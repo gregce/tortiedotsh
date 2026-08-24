@@ -10,21 +10,23 @@ const defaultOutput = resolve(takeRoot, "src/data/comparison-evidence-status.jso
 const githubToken = process.env.GITHUB_TOKEN?.trim() || null;
 
 function parseArguments(argv) {
-  const options = { concurrency: 6, dryRun: false, syncOnly: false, output: defaultOutput };
+  const options = { acceptChanged: [], concurrency: 6, dryRun: false, syncOnly: false, output: defaultOutput };
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
     if (argument === "--dry-run") options.dryRun = true;
     else if (argument === "--sync-only") options.syncOnly = true;
-    else if (["--concurrency", "--output"].includes(argument)) {
+    else if (["--accept-changed", "--concurrency", "--output"].includes(argument)) {
       const value = argv[index + 1];
       if (!value || value.startsWith("--")) throw new Error(`${argument} requires a value`);
       index += 1;
+      if (argument === "--accept-changed") options.acceptChanged.push(value);
       if (argument === "--concurrency") options.concurrency = Number(value);
       if (argument === "--output") options.output = resolve(process.cwd(), value);
     } else if (argument === "--help") {
       console.log(`Refresh the first-party source registry used by comparison claims.
 
 Options:
+  --accept-changed <url>  Accept one manually reviewed changed source (repeatable)
   --sync-only         Reconcile catalog URLs without network requests
   --dry-run           Fetch and validate without writing
   --concurrency <n>   Concurrent requests, 1-12 (default: 6)
@@ -35,6 +37,9 @@ Options:
   }
   if (!Number.isInteger(options.concurrency) || options.concurrency < 1 || options.concurrency > 12) {
     throw new Error("--concurrency must be an integer from 1 through 12");
+  }
+  if (options.acceptChanged.length > 0 && (options.syncOnly || options.dryRun)) {
+    throw new Error("--accept-changed cannot be combined with --sync-only or --dry-run");
   }
   return options;
 }
@@ -180,6 +185,7 @@ async function fetchSource(source, previous) {
       contentLength: Buffer.byteLength(body),
       contentHash,
       reviewedHash,
+      reviews: previous?.reviews ?? [],
       etag: response.headers.get("etag"),
       lastModified: response.headers.get("last-modified"),
       error: null,
@@ -203,6 +209,7 @@ async function fetchSource(source, previous) {
       contentLength: previous?.contentLength ?? null,
       contentHash: previous?.contentHash ?? null,
       reviewedHash: previous?.reviewedHash ?? null,
+      reviews: previous?.reviews ?? [],
       etag: previous?.etag ?? null,
       lastModified: previous?.lastModified ?? null,
       error: error.message,
@@ -228,8 +235,39 @@ const options = parseArguments(process.argv.slice(2));
 const catalogSources = collectCatalogSources();
 const previous = await readJson(options.output, { schemaVersion: 1, generatedAt: null, sources: [] });
 const previousByUrl = new Map(previous.sources.map((source) => [source.url, source]));
+const catalogByUrl = new Map(catalogSources.map((source) => [source.url, source]));
 
-const sources = options.syncOnly
+for (const url of options.acceptChanged) {
+  if (!catalogByUrl.has(url)) throw new Error(`Cannot accept a URL that is not used by the catalog: ${url}`);
+  const prior = previousByUrl.get(url);
+  if (prior?.status !== "changed" || !prior.contentHash) {
+    throw new Error(`Cannot accept a source that is not currently changed with fetched content: ${url}`);
+  }
+}
+
+const acceptedUrls = new Set(options.acceptChanged);
+const acceptedAt = new Date().toISOString();
+
+const sources = acceptedUrls.size > 0
+  ? catalogSources.map((source) => {
+      const prior = previousByUrl.get(source.url);
+      if (!prior) throw new Error(`Cannot accept changes while catalog source is unsynchronized: ${source.url}`);
+      if (!acceptedUrls.has(source.url)) return { ...prior, ...source };
+      return {
+        ...prior,
+        ...source,
+        status: "current",
+        reviewedHash: prior.contentHash,
+        reviewedAt: acceptedAt,
+        reviews: [
+          ...(prior.reviews ?? []),
+          { action: "accepted-after-review", reviewedAt: acceptedAt, contentHash: prior.contentHash },
+        ],
+        changeDetectedAt: null,
+        error: null,
+      };
+    })
+  : options.syncOnly
   ? catalogSources.map((source) => {
       const prior = previousByUrl.get(source.url);
       const status = prior?.status === "unreachable" && !prior.contentHash

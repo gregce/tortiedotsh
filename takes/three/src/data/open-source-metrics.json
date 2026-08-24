@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-23T23:10:49.301Z",
-  "manifestSyncedAt": "2026-08-23T23:11:57.477Z",
+  "generatedAt": "2026-08-24T03:32:10.670Z",
+  "manifestSyncedAt": "2026-08-24T03:34:26.623Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -10,39 +10,48 @@
       "category": "code-editors",
       "owner": "microsoft",
       "repo": "vscode",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/microsoft/vscode",
+      "cloneUrl": "https://github.com/microsoft/vscode.git",
       "githubUrl": "https://github.com/microsoft/vscode",
       "apiUrl": "https://api.github.com/repos/microsoft/vscode",
+      "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:12:31.862Z",
-      "stars": 189338,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T02:59:39.148Z",
+      "stars": 189351,
+      "forks": 41782,
+      "openIssues": 19988,
       "contributors": 3201,
-      "repositorySizeKb": 1373629,
+      "repositorySizeKb": 1374406,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T17:56:05Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T02:43:08Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
       "languages": [
         {
           "name": "TypeScript",
-          "bytes": 154735966,
+          "bytes": 154822635,
           "percent": 95.97
         },
         {
           "name": "CSS",
-          "bytes": 2574619,
+          "bytes": 2576064,
           "percent": 1.6
         },
         {
           "name": "JavaScript",
-          "bytes": 1025020,
+          "bytes": 1027213,
           "percent": 0.64
         },
         {
           "name": "Rust",
           "bytes": 911188,
-          "percent": 0.57
+          "percent": 0.56
         },
         {
           "name": "HTML",
@@ -56,7 +65,7 @@
         },
         {
           "name": "Jupyter Notebook",
-          "bytes": 233695,
+          "bytes": 232766,
           "percent": 0.14
         },
         {
@@ -66,7 +75,7 @@
         },
         {
           "name": "Shell",
-          "bytes": 164186,
+          "bytes": 165604,
           "percent": 0.1
         },
         {
@@ -76,7 +85,7 @@
         },
         {
           "name": "PowerShell",
-          "bytes": 78264,
+          "bytes": 78814,
           "percent": 0.05
         },
         {
@@ -272,42 +281,47 @@
       "releaseDate": "2026-08-19T09:08:11Z",
       "releasePolicy": null,
       "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 3015510,
+        "comments": 445611,
+        "blank": 481267,
+        "files": 13169,
+        "measuredAt": "2026-08-24T02:59:37.714Z",
+        "verifiedAt": "2026-08-24T02:59:37.714Z",
+        "measuredRef": "1.134.0",
+        "refType": "stable-release-tag",
+        "commitSha": "474a349ad5b745e512ef86b864d1c74f7264dd7a",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large mature editor; GitHub language bytes remain available"
+        "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/microsoft/vscode",
-          "fetchedAt": "2026-08-23T18:12:31.630Z"
-        },
-        {
-          "type": "languages",
-          "url": "https://api.github.com/repos/microsoft/vscode/languages",
-          "fetchedAt": "2026-08-23T18:12:31.727Z"
+          "fetchedAt": "2026-08-24T02:58:43.022Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/microsoft/vscode/releases/latest",
-          "fetchedAt": "2026-08-23T18:12:31.773Z"
+          "fetchedAt": "2026-08-24T02:58:43.224Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/microsoft/vscode/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:12:31.862Z"
+          "fetchedAt": "2026-08-24T02:58:43.335Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/microsoft/vscode/languages",
+          "fetchedAt": "2026-08-24T02:58:43.522Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/microsoft/vscode/tree/1.134.0",
+          "fetchedAt": "2026-08-24T02:59:37.714Z"
         }
       ],
       "errors": []
@@ -318,19 +332,28 @@
       "category": "code-editors",
       "owner": "eclipse-theia",
       "repo": "theia-ide",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/eclipse-theia/theia-ide",
+      "cloneUrl": "https://github.com/eclipse-theia/theia-ide.git",
       "githubUrl": "https://github.com/eclipse-theia/theia-ide",
       "apiUrl": "https://api.github.com/repos/eclipse-theia/theia-ide",
+      "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T21:26:36.646Z",
+      "refreshedAt": "2026-08-24T02:59:40.909Z",
       "stars": 604,
-      "forks": null,
-      "openIssues": null,
+      "forks": 247,
+      "openIssues": 115,
       "contributors": 40,
       "repositorySizeKb": 9889,
       "defaultBranch": "master",
-      "pushedAt": "2026-08-21T10:01:39Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T02:38:20Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
       "languages": [
         {
           "name": "TypeScript",
@@ -374,17 +397,17 @@
       "releaseDate": null,
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 4767,
+        "comments": 807,
+        "blank": 715,
+        "files": 63,
+        "measuredAt": "2026-08-24T02:59:40.892Z",
+        "verifiedAt": "2026-08-24T02:59:40.892Z",
+        "measuredRef": "master",
+        "refType": "default-branch",
+        "commitSha": "8a69208a66498c5cff6377073b28a49284d22c23",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
@@ -394,27 +417,32 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/eclipse-theia/theia-ide",
-          "fetchedAt": "2026-08-23T21:26:35.031Z"
+          "fetchedAt": "2026-08-24T02:59:39.383Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/eclipse-theia/theia-ide/languages",
-          "fetchedAt": "2026-08-23T21:26:35.748Z"
+          "fetchedAt": "2026-08-24T02:59:39.554Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/eclipse-theia/theia-ide/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T21:26:36.505Z"
+          "fetchedAt": "2026-08-24T02:59:39.581Z"
         },
         {
           "type": "latest-tag",
           "url": "https://api.github.com/repos/eclipse-theia/theia-ide/tags?per_page=1",
-          "fetchedAt": "2026-08-23T21:26:35.707Z"
+          "fetchedAt": "2026-08-24T02:59:39.670Z"
         },
         {
           "type": "tag-commit",
           "url": "https://api.github.com/repos/eclipse-theia/theia-ide/commits/bcde42be66c9be5ae8c788f0ee4c4d5b39596099",
-          "fetchedAt": "2026-08-23T21:26:36.646Z"
+          "fetchedAt": "2026-08-24T02:59:39.950Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/eclipse-theia/theia-ide/tree/master",
+          "fetchedAt": "2026-08-24T02:59:40.892Z"
         }
       ],
       "errors": []
@@ -425,43 +453,383 @@
       "category": "code-editors",
       "owner": "JetBrains",
       "repo": "intellij-community",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/JetBrains/intellij-community",
+      "cloneUrl": "https://github.com/JetBrains/intellij-community.git",
       "githubUrl": "https://github.com/JetBrains/intellij-community",
       "apiUrl": "https://api.github.com/repos/JetBrains/intellij-community",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T03:04:00.453Z",
+      "stars": 20479,
+      "forks": 6027,
+      "openIssues": 156,
+      "contributors": 2593,
+      "repositorySizeKb": 5873548,
+      "defaultBranch": "master",
+      "pushedAt": "2026-08-24T02:19:28Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified-mixed",
+        "name": "Mixed: Apache-2.0 source, JetBrains Open Source Build terms, and third-party licenses",
+        "spdxId": null,
+        "url": null,
+        "summary": "Mixed: Apache-2.0 source, JetBrains Open Source Build terms, and third-party licenses",
+        "components": [
+          {
+            "spdxId": "Apache-2.0",
+            "name": "Apache License 2.0",
+            "scope": "IntelliJ Platform and IDEA Community source identified by the root license",
+            "sourceUrl": "https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt"
+          },
+          {
+            "spdxId": "LicenseRef-JetBrains-Open-Source-Build-Terms",
+            "name": "JetBrains Open Source Build Terms",
+            "scope": "JetBrains open-source builds and separately identified components",
+            "sourceUrl": "https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt"
+          }
+        ]
+      },
+      "languages": [
+        {
+          "name": "Java",
+          "bytes": 227746717,
+          "percent": 46.25
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 175845619,
+          "percent": 35.71
+        },
+        {
+          "name": "Python",
+          "bytes": 41495128,
+          "percent": 8.43
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 26045882,
+          "percent": 5.29
+        },
+        {
+          "name": "Starlark",
+          "bytes": 8794985,
+          "percent": 1.79
+        },
+        {
+          "name": "HTML",
+          "bytes": 6581502,
+          "percent": 1.34
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 1102305,
+          "percent": 0.22
+        },
+        {
+          "name": "CSS",
+          "bytes": 635266,
+          "percent": 0.13
+        },
+        {
+          "name": "C++",
+          "bytes": 567599,
+          "percent": 0.12
+        },
+        {
+          "name": "C",
+          "bytes": 507872,
+          "percent": 0.1
+        },
+        {
+          "name": "Cython",
+          "bytes": 397421,
+          "percent": 0.08
+        },
+        {
+          "name": "Rust",
+          "bytes": 343087,
+          "percent": 0.07
+        },
+        {
+          "name": "TeX",
+          "bytes": 323084,
+          "percent": 0.07
+        },
+        {
+          "name": "Shell",
+          "bytes": 319420,
+          "percent": 0.06
+        },
+        {
+          "name": "Go",
+          "bytes": 275529,
+          "percent": 0.06
+        },
+        {
+          "name": "Lex",
+          "bytes": 275341,
+          "percent": 0.06
+        },
+        {
+          "name": "Mermaid",
+          "bytes": 212004,
+          "percent": 0.04
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 147339,
+          "percent": 0.03
+        },
+        {
+          "name": "Go Template",
+          "bytes": 144549,
+          "percent": 0.03
+        },
+        {
+          "name": "XSLT",
+          "bytes": 113271,
+          "percent": 0.02
+        },
+        {
+          "name": "Objective-C",
+          "bytes": 105661,
+          "percent": 0.02
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 95909,
+          "percent": 0.02
+        },
+        {
+          "name": "Groovy",
+          "bytes": 95450,
+          "percent": 0.02
+        },
+        {
+          "name": "NSIS",
+          "bytes": 59380,
+          "percent": 0.01
+        },
+        {
+          "name": "Prolog",
+          "bytes": 40010,
+          "percent": 0.01
+        },
+        {
+          "name": "SCSS",
+          "bytes": 33706,
+          "percent": 0.01
+        },
+        {
+          "name": "AMPL",
+          "bytes": 25989,
+          "percent": 0.01
+        },
+        {
+          "name": "Makefile",
+          "bytes": 17052,
+          "percent": 0
+        },
+        {
+          "name": "CMake",
+          "bytes": 14083,
+          "percent": 0
+        },
+        {
+          "name": "Thrift",
+          "bytes": 8029,
+          "percent": 0
+        },
+        {
+          "name": "Jupyter Notebook",
+          "bytes": 7928,
+          "percent": 0
+        },
+        {
+          "name": "Swift",
+          "bytes": 6139,
+          "percent": 0
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 5562,
+          "percent": 0
+        },
+        {
+          "name": "Astro",
+          "bytes": 3595,
+          "percent": 0
+        },
+        {
+          "name": "Raku",
+          "bytes": 3073,
+          "percent": 0
+        },
+        {
+          "name": "FIRRTL",
+          "bytes": 2595,
+          "percent": 0
+        },
+        {
+          "name": "Perl",
+          "bytes": 2077,
+          "percent": 0
+        },
+        {
+          "name": "Ruby",
+          "bytes": 1957,
+          "percent": 0
+        },
+        {
+          "name": "GLSL",
+          "bytes": 1934,
+          "percent": 0
+        },
+        {
+          "name": "C#",
+          "bytes": 1884,
+          "percent": 0
+        },
+        {
+          "name": "Handlebars",
+          "bytes": 1858,
+          "percent": 0
+        },
+        {
+          "name": "ColdFusion",
+          "bytes": 1623,
+          "percent": 0
+        },
+        {
+          "name": "PHP",
+          "bytes": 1623,
+          "percent": 0
+        },
+        {
+          "name": "Elixir",
+          "bytes": 1537,
+          "percent": 0
+        },
+        {
+          "name": "CoffeeScript",
+          "bytes": 1385,
+          "percent": 0
+        },
+        {
+          "name": "Gherkin",
+          "bytes": 1165,
+          "percent": 0
+        },
+        {
+          "name": "HCL",
+          "bytes": 1148,
+          "percent": 0
+        },
+        {
+          "name": "Rich Text Format",
+          "bytes": 829,
+          "percent": 0
+        },
+        {
+          "name": "Vim Snippet",
+          "bytes": 337,
+          "percent": 0
+        },
+        {
+          "name": "AspectJ",
+          "bytes": 182,
+          "percent": 0
+        },
+        {
+          "name": "Vue",
+          "bytes": 88,
+          "percent": 0
+        },
+        {
+          "name": "F#",
+          "bytes": 60,
+          "percent": 0
+        },
+        {
+          "name": "HLSL",
+          "bytes": 57,
+          "percent": 0
+        },
+        {
+          "name": "Smalltalk",
+          "bytes": 33,
+          "percent": 0
+        },
+        {
+          "name": "Erlang",
+          "bytes": 10,
+          "percent": 0
+        }
+      ],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
-      "releasePolicy": null,
+      "releasePolicy": {
+        "mode": "default-branch",
+        "reason": "The shared JetBrains source repository's GitHub Releases feed contains product-specific build artifacts; its latest entry is a PyCharm release, not an IntelliJ IDEA release.",
+        "checkedAt": "2026-08-23",
+        "rejectedCandidate": {
+          "tagName": "pycharm/2026.2.1",
+          "name": "pycharm/2026.2.1",
+          "url": "https://github.com/JetBrains/intellij-community/releases/tag/pycharm/2026.2.1"
+        }
+      },
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 11173553,
+        "comments": 1489716,
+        "blank": 1803889,
+        "files": 199377,
+        "measuredAt": "2026-08-24T03:03:39.840Z",
+        "verifiedAt": "2026-08-24T03:03:39.840Z",
+        "measuredRef": "master",
+        "refType": "default-branch",
+        "commitSha": "01a45d5f5389021ff3434db5d9f3009c2774666a",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/JetBrains/intellij-community",
+          "fetchedAt": "2026-08-24T02:59:41.126Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/JetBrains/intellij-community/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T02:59:41.277Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/JetBrains/intellij-community/languages",
+          "fetchedAt": "2026-08-24T02:59:41.280Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/JetBrains/intellij-community/tree/master",
+          "fetchedAt": "2026-08-24T03:03:39.840Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/JetBrains/intellij-community/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -470,19 +838,28 @@
       "category": "code-editors",
       "owner": "posit-dev",
       "repo": "positron",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/posit-dev/positron",
+      "cloneUrl": "https://github.com/posit-dev/positron.git",
       "githubUrl": "https://github.com/posit-dev/positron",
       "apiUrl": "https://api.github.com/repos/posit-dev/positron",
+      "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T21:26:36.028Z",
+      "refreshedAt": "2026-08-24T03:04:46.264Z",
       "stars": 4233,
-      "forks": null,
-      "openIssues": null,
+      "forks": 171,
+      "openIssues": 1846,
       "contributors": 60,
       "repositorySizeKb": 301775,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-22T22:57:44Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T02:46:01Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified",
+        "name": "Elastic License 2.0",
+        "spdxId": "Elastic-2.0",
+        "url": "https://github.com/posit-dev/positron/blob/main/LICENSE.txt"
+      },
       "languages": [
         {
           "name": "TypeScript",
@@ -752,42 +1129,52 @@
       "releaseDate": "2026-08-21T14:51:35Z",
       "releasePolicy": null,
       "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 3149514,
+        "comments": 527626,
+        "blank": 522934,
+        "files": 15859,
+        "measuredAt": "2026-08-24T03:04:45.020Z",
+        "verifiedAt": "2026-08-24T03:04:45.020Z",
+        "measuredRef": "2026.08.2-4",
+        "refType": "stable-release-tag",
+        "commitSha": "747dd536c5913adad71a568a57679bb2c5e5cd71",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large Code OSS-derived source-available repository; GitHub language bytes remain available"
+        "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/posit-dev/positron",
-          "fetchedAt": "2026-08-23T21:26:35.249Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/posit-dev/positron/releases/latest",
-          "fetchedAt": "2026-08-23T21:26:35.381Z"
+          "fetchedAt": "2026-08-24T03:04:00.648Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/posit-dev/positron/languages",
-          "fetchedAt": "2026-08-23T21:26:35.747Z"
+          "fetchedAt": "2026-08-24T03:04:00.754Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/posit-dev/positron/releases/latest",
+          "fetchedAt": "2026-08-24T03:04:00.778Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/posit-dev/positron/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T21:26:36.028Z"
+          "fetchedAt": "2026-08-24T03:04:01.429Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/posit-dev/positron/tree/2026.08.2-4",
+          "fetchedAt": "2026-08-24T03:04:45.020Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/posit-dev/positron/blob/main/LICENSE.txt",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -798,19 +1185,28 @@
       "category": "code-editors",
       "owner": "onlook-dev",
       "repo": "onlook",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/onlook-dev/onlook",
+      "cloneUrl": "https://github.com/onlook-dev/onlook.git",
       "githubUrl": "https://github.com/onlook-dev/onlook",
       "apiUrl": "https://api.github.com/repos/onlook-dev/onlook",
+      "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T21:26:40.098Z",
-      "stars": 26546,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T03:04:54.879Z",
+      "stars": 26548,
+      "forks": 2078,
+      "openIssues": 378,
       "contributors": 108,
       "repositorySizeKb": 83016,
       "defaultBranch": "main",
       "pushedAt": "2026-07-22T02:07:29Z",
-      "archived": null,
-      "license": null,
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
       "languages": [
         {
           "name": "TypeScript",
@@ -855,42 +1251,47 @@
       "releaseDate": "2025-07-17T18:36:21Z",
       "releasePolicy": null,
       "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 98484,
+        "comments": 2411,
+        "blank": 8285,
+        "files": 905,
+        "measuredAt": "2026-08-24T03:04:54.818Z",
+        "verifiedAt": "2026-08-24T03:04:54.818Z",
+        "measuredRef": "v0.2.32",
+        "refType": "stable-release-tag",
+        "commitSha": "ea1bcafc774b7d9d6a7aaa607f79fd623c0cacd1",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large monorepo; GitHub language bytes remain available"
+        "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/onlook-dev/onlook",
-          "fetchedAt": "2026-08-23T21:26:37.032Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/onlook-dev/onlook/releases/latest",
-          "fetchedAt": "2026-08-23T21:26:37.121Z"
-        },
-        {
-          "type": "contributors",
-          "url": "https://api.github.com/repos/onlook-dev/onlook/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T21:26:38.720Z"
+          "fetchedAt": "2026-08-24T03:04:46.488Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/onlook-dev/onlook/languages",
-          "fetchedAt": "2026-08-23T21:26:40.098Z"
+          "fetchedAt": "2026-08-24T03:04:46.581Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/onlook-dev/onlook/releases/latest",
+          "fetchedAt": "2026-08-24T03:04:46.618Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/onlook-dev/onlook/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:04:46.661Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/onlook-dev/onlook/tree/v0.2.32",
+          "fetchedAt": "2026-08-24T03:04:54.818Z"
         }
       ],
       "errors": []
@@ -901,23 +1302,53 @@
       "category": "code-editors",
       "owner": "zed-industries",
       "repo": "zed",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/zed-industries/zed",
+      "cloneUrl": "https://github.com/zed-industries/zed.git",
       "githubUrl": "https://github.com/zed-industries/zed",
       "apiUrl": "https://api.github.com/repos/zed-industries/zed",
+      "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:12:31.811Z",
-      "stars": 89097,
-      "forks": null,
-      "openIssues": null,
-      "contributors": 2184,
-      "repositorySizeKb": 507122,
+      "refreshedAt": "2026-08-24T03:05:12.165Z",
+      "stars": 89116,
+      "forks": 10211,
+      "openIssues": 3242,
+      "contributors": 2185,
+      "repositorySizeKb": 507146,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T17:21:52Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T03:02:31Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified-mixed",
+        "name": "Mixed: GPL-3.0-or-later, Apache-2.0, and AGPL-3.0-or-later components",
+        "spdxId": null,
+        "url": null,
+        "summary": "Mixed: GPL-3.0-or-later, Apache-2.0, and AGPL-3.0-or-later components",
+        "components": [
+          {
+            "spdxId": "GPL-3.0-or-later",
+            "name": "GNU General Public License v3.0 or later",
+            "scope": "Primary Zed editor source",
+            "sourceUrl": "https://github.com/zed-industries/zed#licensing"
+          },
+          {
+            "spdxId": "Apache-2.0",
+            "name": "Apache License 2.0",
+            "scope": "Marked Zed components",
+            "sourceUrl": "https://github.com/zed-industries/zed#licensing"
+          },
+          {
+            "spdxId": "AGPL-3.0-or-later",
+            "name": "GNU Affero General Public License v3.0 or later",
+            "scope": "Collaboration service components",
+            "sourceUrl": "https://github.com/zed-industries/zed#licensing"
+          }
+        ]
+      },
       "languages": [
         {
           "name": "Rust",
-          "bytes": 56166870,
+          "bytes": 56169163,
           "percent": 97.42
         },
         {
@@ -1023,42 +1454,52 @@
       "releaseDate": "2026-08-19T16:11:34Z",
       "releasePolicy": null,
       "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 1351494,
+        "comments": 91901,
+        "blank": 154652,
+        "files": 2696,
+        "measuredAt": "2026-08-24T03:05:11.880Z",
+        "verifiedAt": "2026-08-24T03:05:11.880Z",
+        "measuredRef": "v1.16.1",
+        "refType": "stable-release-tag",
+        "commitSha": "eb8e1c8b5502b7007465fbbc465f4a736fa39210",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large mature editor; GitHub language bytes remain available"
+        "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/zed-industries/zed",
-          "fetchedAt": "2026-08-23T18:12:31.581Z"
-        },
-        {
-          "type": "languages",
-          "url": "https://api.github.com/repos/zed-industries/zed/languages",
-          "fetchedAt": "2026-08-23T18:12:31.687Z"
+          "fetchedAt": "2026-08-24T03:04:56.226Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/zed-industries/zed/releases/latest",
-          "fetchedAt": "2026-08-23T18:12:31.724Z"
+          "fetchedAt": "2026-08-24T03:04:56.419Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/zed-industries/zed/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:12:31.811Z"
+          "fetchedAt": "2026-08-24T03:04:57.332Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/zed-industries/zed/languages",
+          "fetchedAt": "2026-08-24T03:04:58.921Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/zed-industries/zed/tree/v1.16.1",
+          "fetchedAt": "2026-08-24T03:05:11.880Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/zed-industries/zed#licensing",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -1069,19 +1510,28 @@
       "category": "code-editors",
       "owner": "lapce",
       "repo": "lapce",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/lapce/lapce",
+      "cloneUrl": "https://github.com/lapce/lapce.git",
       "githubUrl": "https://github.com/lapce/lapce",
       "apiUrl": "https://api.github.com/repos/lapce/lapce",
+      "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:12:31.846Z",
+      "refreshedAt": "2026-08-24T03:05:25.466Z",
       "stars": 38765,
-      "forks": null,
-      "openIssues": null,
+      "forks": 1319,
+      "openIssues": 898,
       "contributors": 190,
       "repositorySizeKb": 28651,
       "defaultBranch": "master",
       "pushedAt": "2026-07-15T11:27:37Z",
-      "archived": null,
-      "license": null,
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
       "languages": [
         {
           "name": "Rust",
@@ -1126,42 +1576,47 @@
       "releaseDate": "2026-01-21T21:44:37Z",
       "releasePolicy": null,
       "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 62604,
+        "comments": 1760,
+        "blank": 5208,
+        "files": 315,
+        "measuredAt": "2026-08-24T03:05:25.450Z",
+        "verifiedAt": "2026-08-24T03:05:25.450Z",
+        "measuredRef": "v0.4.6",
+        "refType": "stable-release-tag",
+        "commitSha": "b012cef466741528f338879fa708355217fc40bd",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large mature editor; GitHub language bytes remain available"
+        "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/lapce/lapce",
-          "fetchedAt": "2026-08-23T18:12:31.607Z"
-        },
-        {
-          "type": "languages",
-          "url": "https://api.github.com/repos/lapce/lapce/languages",
-          "fetchedAt": "2026-08-23T18:12:31.702Z"
+          "fetchedAt": "2026-08-24T03:05:17.505Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/lapce/lapce/releases/latest",
-          "fetchedAt": "2026-08-23T18:12:31.755Z"
+          "fetchedAt": "2026-08-24T03:05:17.720Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/lapce/lapce/languages",
+          "fetchedAt": "2026-08-24T03:05:22.162Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/lapce/lapce/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:12:31.846Z"
+          "fetchedAt": "2026-08-24T03:05:24.187Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/lapce/lapce/tree/v0.4.6",
+          "fetchedAt": "2026-08-24T03:05:25.450Z"
         }
       ],
       "errors": []
@@ -1172,19 +1627,28 @@
       "category": "code-editors",
       "owner": "helix-editor",
       "repo": "helix",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/helix-editor/helix",
+      "cloneUrl": "https://github.com/helix-editor/helix.git",
       "githubUrl": "https://github.com/helix-editor/helix",
       "apiUrl": "https://api.github.com/repos/helix-editor/helix",
+      "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:12:32.152Z",
-      "stars": 45918,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T03:05:44.786Z",
+      "stars": 45921,
+      "forks": 3693,
+      "openIssues": 1621,
       "contributors": 1417,
       "repositorySizeKb": 89865,
       "defaultBranch": "master",
       "pushedAt": "2026-08-18T23:23:16Z",
-      "archived": null,
-      "license": null,
+      "archived": false,
+      "license": {
+        "key": "mpl-2.0",
+        "name": "Mozilla Public License 2.0",
+        "spdxId": "MPL-2.0",
+        "url": "https://api.github.com/licenses/mpl-2.0"
+      },
       "languages": [
         {
           "name": "Rust",
@@ -1244,42 +1708,47 @@
       "releaseDate": "2025-07-18T15:13:19Z",
       "releasePolicy": null,
       "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 103357,
+        "comments": 14227,
+        "blank": 17373,
+        "files": 906,
+        "measuredAt": "2026-08-24T03:05:44.707Z",
+        "verifiedAt": "2026-08-24T03:05:44.707Z",
+        "measuredRef": "25.07.1",
+        "refType": "stable-release-tag",
+        "commitSha": "a05c151bb6e8e9c65ec390b0ae2afe7a5efd619b",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large mature editor; GitHub language bytes remain available"
+        "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/helix-editor/helix",
-          "fetchedAt": "2026-08-23T18:12:31.953Z"
-        },
-        {
-          "type": "languages",
-          "url": "https://api.github.com/repos/helix-editor/helix/languages",
-          "fetchedAt": "2026-08-23T18:12:32.041Z"
+          "fetchedAt": "2026-08-24T03:05:35.222Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/helix-editor/helix/releases/latest",
-          "fetchedAt": "2026-08-23T18:12:32.061Z"
+          "fetchedAt": "2026-08-24T03:05:35.341Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/helix-editor/helix/languages",
+          "fetchedAt": "2026-08-24T03:05:41.688Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/helix-editor/helix/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:12:32.152Z"
+          "fetchedAt": "2026-08-24T03:05:43.106Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/helix-editor/helix/tree/25.07.1",
+          "fetchedAt": "2026-08-24T03:05:44.707Z"
         }
       ],
       "errors": []
@@ -1290,43 +1759,324 @@
       "category": "code-editors",
       "owner": "voideditor",
       "repo": "void",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/voideditor/void",
+      "cloneUrl": "https://github.com/voideditor/void.git",
       "githubUrl": "https://github.com/voideditor/void",
       "apiUrl": "https://api.github.com/repos/voideditor/void",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T03:06:23.281Z",
+      "stars": 28831,
+      "forks": 2638,
+      "openIssues": 307,
+      "contributors": 50,
+      "repositorySizeKb": 36065,
+      "defaultBranch": "main",
+      "pushedAt": "2026-06-02T22:03:55Z",
+      "archived": true,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 69634891,
+          "percent": 95.22
+        },
+        {
+          "name": "CSS",
+          "bytes": 1026130,
+          "percent": 1.4
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 856583,
+          "percent": 1.17
+        },
+        {
+          "name": "Rust",
+          "bytes": 500641,
+          "percent": 0.68
+        },
+        {
+          "name": "HTML",
+          "bytes": 393822,
+          "percent": 0.54
+        },
+        {
+          "name": "Inno Setup",
+          "bytes": 309957,
+          "percent": 0.42
+        },
+        {
+          "name": "Scilab",
+          "bytes": 202892,
+          "percent": 0.28
+        },
+        {
+          "name": "Shell",
+          "bytes": 113209,
+          "percent": 0.15
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 18993,
+          "percent": 0.03
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 15796,
+          "percent": 0.02
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 12860,
+          "percent": 0.02
+        },
+        {
+          "name": "SCSS",
+          "bytes": 6732,
+          "percent": 0.01
+        },
+        {
+          "name": "Groovy",
+          "bytes": 3928,
+          "percent": 0.01
+        },
+        {
+          "name": "Cuda",
+          "bytes": 3634,
+          "percent": 0
+        },
+        {
+          "name": "C++",
+          "bytes": 2745,
+          "percent": 0
+        },
+        {
+          "name": "Makefile",
+          "bytes": 2307,
+          "percent": 0
+        },
+        {
+          "name": "Python",
+          "bytes": 2171,
+          "percent": 0
+        },
+        {
+          "name": "Perl",
+          "bytes": 1922,
+          "percent": 0
+        },
+        {
+          "name": "Ruby",
+          "bytes": 1703,
+          "percent": 0
+        },
+        {
+          "name": "TeX",
+          "bytes": 1602,
+          "percent": 0
+        },
+        {
+          "name": "Nix",
+          "bytes": 1560,
+          "percent": 0
+        },
+        {
+          "name": "Objective-C",
+          "bytes": 1387,
+          "percent": 0
+        },
+        {
+          "name": "Objective-C++",
+          "bytes": 1387,
+          "percent": 0
+        },
+        {
+          "name": "Clojure",
+          "bytes": 1206,
+          "percent": 0
+        },
+        {
+          "name": "Handlebars",
+          "bytes": 1064,
+          "percent": 0
+        },
+        {
+          "name": "Less",
+          "bytes": 1029,
+          "percent": 0
+        },
+        {
+          "name": "PHP",
+          "bytes": 998,
+          "percent": 0
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 960,
+          "percent": 0
+        },
+        {
+          "name": "Julia",
+          "bytes": 940,
+          "percent": 0
+        },
+        {
+          "name": "Jupyter Notebook",
+          "bytes": 929,
+          "percent": 0
+        },
+        {
+          "name": "Visual Basic .NET",
+          "bytes": 893,
+          "percent": 0
+        },
+        {
+          "name": "C#",
+          "bytes": 864,
+          "percent": 0
+        },
+        {
+          "name": "C",
+          "bytes": 818,
+          "percent": 0
+        },
+        {
+          "name": "Raku",
+          "bytes": 761,
+          "percent": 0
+        },
+        {
+          "name": "Pug",
+          "bytes": 654,
+          "percent": 0
+        },
+        {
+          "name": "Go",
+          "bytes": 652,
+          "percent": 0
+        },
+        {
+          "name": "F#",
+          "bytes": 634,
+          "percent": 0
+        },
+        {
+          "name": "Java",
+          "bytes": 599,
+          "percent": 0
+        },
+        {
+          "name": "CoffeeScript",
+          "bytes": 590,
+          "percent": 0
+        },
+        {
+          "name": "R",
+          "bytes": 362,
+          "percent": 0
+        },
+        {
+          "name": "Roff",
+          "bytes": 351,
+          "percent": 0
+        },
+        {
+          "name": "ShaderLab",
+          "bytes": 330,
+          "percent": 0
+        },
+        {
+          "name": "Dart",
+          "bytes": 324,
+          "percent": 0
+        },
+        {
+          "name": "Swift",
+          "bytes": 284,
+          "percent": 0
+        },
+        {
+          "name": "Lua",
+          "bytes": 252,
+          "percent": 0
+        },
+        {
+          "name": "HLSL",
+          "bytes": 184,
+          "percent": 0
+        },
+        {
+          "name": "Hack",
+          "bytes": 16,
+          "percent": 0
+        }
+      ],
       "latestRelease": null,
-      "latestTag": null,
-      "version": null,
+      "latestTag": {
+        "name": "v1.3.4",
+        "commitSha": "34e3413dca8cf875faaa663e052027bbfc41c4e5",
+        "commitDate": "2025-07-05T08:01:07Z",
+        "url": "https://github.com/voideditor/void/tree/v1.3.4"
+      },
+      "version": "v1.3.4",
       "releaseDate": null,
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 1424146,
+        "comments": 178381,
+        "blank": 246640,
+        "files": 6264,
+        "measuredAt": "2026-08-24T03:06:22.696Z",
+        "verifiedAt": "2026-08-24T03:06:22.696Z",
+        "measuredRef": "main",
+        "refType": "default-branch",
+        "commitSha": "b3166e7ef2aefbdfeb139445fdf248a561b85d4d",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/voideditor/void",
+          "fetchedAt": "2026-08-24T03:05:52.585Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/voideditor/void/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:05:57.283Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/voideditor/void/languages",
+          "fetchedAt": "2026-08-24T03:05:59.412Z"
+        },
+        {
+          "type": "latest-tag",
+          "url": "https://api.github.com/repos/voideditor/void/tags?per_page=1",
+          "fetchedAt": "2026-08-24T03:05:57.203Z"
+        },
+        {
+          "type": "tag-commit",
+          "url": "https://api.github.com/repos/voideditor/void/commits/34e3413dca8cf875faaa663e052027bbfc41c4e5",
+          "fetchedAt": "2026-08-24T03:06:04.428Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/voideditor/void/tree/main",
+          "fetchedAt": "2026-08-24T03:06:22.696Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -1335,8 +2085,12 @@
       "category": "agent-workbenches",
       "owner": "gregce",
       "repo": "tortie",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/gregce/tortie",
+      "cloneUrl": "https://github.com/gregce/tortie.git",
       "githubUrl": "https://github.com/gregce/tortie",
       "apiUrl": "https://api.github.com/repos/gregce/tortie",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:39:41.012Z",
       "stars": 4,
@@ -1438,8 +2192,12 @@
       "category": "agent-workbenches",
       "owner": "0-AI-UG",
       "repo": "cate",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/0-AI-UG/cate",
+      "cloneUrl": "https://github.com/0-AI-UG/cate.git",
       "githubUrl": "https://github.com/0-AI-UG/cate",
       "apiUrl": "https://api.github.com/repos/0-AI-UG/cate",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:39:44.481Z",
       "stars": 2088,
@@ -1551,8 +2309,12 @@
       "category": "agent-workbenches",
       "owner": "cdesktop-ai",
       "repo": "cdesktop",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/cdesktop-ai/cdesktop",
+      "cloneUrl": "https://github.com/cdesktop-ai/cdesktop.git",
       "githubUrl": "https://github.com/cdesktop-ai/cdesktop",
       "apiUrl": "https://api.github.com/repos/cdesktop-ai/cdesktop",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:39:44.480Z",
       "stars": 98,
@@ -1679,19 +2441,28 @@
       "category": "ide-extensions",
       "owner": "continuedev",
       "repo": "continue",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/continuedev/continue",
+      "cloneUrl": "https://github.com/continuedev/continue.git",
       "githubUrl": "https://github.com/continuedev/continue",
       "apiUrl": "https://api.github.com/repos/continuedev/continue",
+      "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:12:32.212Z",
-      "stars": 35603,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T03:29:47.816Z",
+      "stars": 35605,
+      "forks": 5276,
+      "openIssues": 935,
       "contributors": 507,
       "repositorySizeKb": 872279,
       "defaultBranch": "main",
       "pushedAt": "2026-08-22T15:17:38Z",
-      "archived": null,
-      "license": null,
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
       "languages": [
         {
           "name": "TypeScript",
@@ -1784,54 +2555,62 @@
           "percent": 0
         }
       ],
-      "latestRelease": {
-        "tagName": "v2.0.0-vscode",
-        "name": "v2.0.0-vscode",
-        "publishedAt": "2026-06-19T00:24:01Z",
-        "url": "https://github.com/continuedev/continue/releases/tag/v2.0.0-vscode",
-        "prerelease": false
-      },
+      "latestRelease": null,
       "latestTag": null,
-      "version": "v2.0.0-vscode",
-      "releaseDate": "2026-06-19T00:24:01Z",
-      "releasePolicy": null,
+      "version": null,
+      "releaseDate": null,
+      "releasePolicy": {
+        "mode": "default-branch",
+        "reason": "The repository is shared by the VS Code extension, JetBrains extension, and CLI; its latest GitHub release is a VS Code-specific artifact and cannot represent every catalog product joined to this repository.",
+        "checkedAt": "2026-08-23",
+        "rejectedCandidate": {
+          "tagName": "v2.0.0-vscode",
+          "name": "v2.0.0-vscode",
+          "url": "https://github.com/continuedev/continue/releases/tag/v2.0.0-vscode"
+        }
+      },
       "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 287693,
+        "comments": 28129,
+        "blank": 41403,
+        "files": 2105,
+        "measuredAt": "2026-08-24T03:29:47.660Z",
+        "verifiedAt": "2026-08-24T03:29:47.660Z",
+        "measuredRef": "main",
+        "refType": "default-branch",
+        "commitSha": "5522c6f44ca0ac3528b37244818fbfa39b5af470",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large monorepo; GitHub language bytes remain available"
+        "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/continuedev/continue",
-          "fetchedAt": "2026-08-23T18:12:32.026Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/continuedev/continue/releases/latest",
-          "fetchedAt": "2026-08-23T18:12:32.112Z"
+          "fetchedAt": "2026-08-24T03:29:39.723Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/continuedev/continue/languages",
-          "fetchedAt": "2026-08-23T18:12:32.121Z"
+          "fetchedAt": "2026-08-24T03:29:39.841Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/continuedev/continue/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:12:32.212Z"
+          "fetchedAt": "2026-08-24T03:29:39.959Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/continuedev/continue/tree/main",
+          "fetchedAt": "2026-08-24T03:29:47.660Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/continuedev/continue/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -1842,23 +2621,32 @@
       "category": "ide-extensions",
       "owner": "cline",
       "repo": "cline",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/cline/cline",
+      "cloneUrl": "https://github.com/cline/cline.git",
       "githubUrl": "https://github.com/cline/cline",
       "apiUrl": "https://api.github.com/repos/cline/cline",
+      "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:12:32.203Z",
-      "stars": 66718,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T03:29:57.341Z",
+      "stars": 66732,
+      "forks": 7197,
+      "openIssues": 1065,
       "contributors": 321,
-      "repositorySizeKb": 558292,
+      "repositorySizeKb": 558188,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T18:04:02Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-23T22:59:35Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
       "languages": [
         {
           "name": "TypeScript",
-          "bytes": 23992722,
+          "bytes": 23992972,
           "percent": 97.31
         },
         {
@@ -1898,53 +2686,58 @@
         }
       ],
       "latestRelease": {
-        "tagName": "v4.1.14",
-        "name": "v4.1.14",
-        "publishedAt": "2026-08-23T10:11:14Z",
-        "url": "https://github.com/cline/cline/releases/tag/v4.1.14",
+        "tagName": "v4.1.15",
+        "name": "v4.1.15",
+        "publishedAt": "2026-08-23T19:56:07Z",
+        "url": "https://github.com/cline/cline/releases/tag/v4.1.15",
         "prerelease": false
       },
       "latestTag": null,
-      "version": "v4.1.14",
-      "releaseDate": "2026-08-23T10:11:14Z",
+      "version": "v4.1.15",
+      "releaseDate": "2026-08-23T19:56:07Z",
       "releasePolicy": null,
       "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 749485,
+        "comments": 45546,
+        "blank": 58213,
+        "files": 2976,
+        "measuredAt": "2026-08-24T03:29:57.116Z",
+        "verifiedAt": "2026-08-24T03:29:57.116Z",
+        "measuredRef": "v4.1.15",
+        "refType": "stable-release-tag",
+        "commitSha": "09ee9026393e681a4834d8acbf4d9d5fdfa8664a",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large monorepo; GitHub language bytes remain available"
+        "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/cline/cline",
-          "fetchedAt": "2026-08-23T18:12:32.026Z"
+          "fetchedAt": "2026-08-24T03:29:48.008Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/cline/cline/languages",
-          "fetchedAt": "2026-08-23T18:12:32.119Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/cline/cline/releases/latest",
-          "fetchedAt": "2026-08-23T18:12:32.130Z"
+          "fetchedAt": "2026-08-24T03:29:48.108Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/cline/cline/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:12:32.203Z"
+          "fetchedAt": "2026-08-24T03:29:48.212Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/cline/cline/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:29:48.463Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/cline/cline/tree/v4.1.15",
+          "fetchedAt": "2026-08-24T03:29:57.116Z"
         }
       ],
       "errors": []
@@ -1955,43 +2748,165 @@
       "category": "ide-extensions",
       "owner": "Kilo-Org",
       "repo": "kilocode",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/Kilo-Org/kilocode",
+      "cloneUrl": "https://github.com/Kilo-Org/kilocode.git",
       "githubUrl": "https://github.com/Kilo-Org/kilocode",
       "apiUrl": "https://api.github.com/repos/Kilo-Org/kilocode",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T03:30:30.759Z",
+      "stars": 26989,
+      "forks": 3081,
+      "openIssues": 588,
+      "contributors": 1217,
+      "repositorySizeKb": 594194,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T03:16:12Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 32516157,
+          "percent": 82.55
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 5484147,
+          "percent": 13.92
+        },
+        {
+          "name": "CSS",
+          "bytes": 1122999,
+          "percent": 2.85
+        },
+        {
+          "name": "HTML",
+          "bytes": 83387,
+          "percent": 0.21
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 76524,
+          "percent": 0.19
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 40228,
+          "percent": 0.1
+        },
+        {
+          "name": "Shell",
+          "bytes": 38020,
+          "percent": 0.1
+        },
+        {
+          "name": "Nix",
+          "bytes": 14289,
+          "percent": 0.04
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 5138,
+          "percent": 0.01
+        },
+        {
+          "name": "Python",
+          "bytes": 3646,
+          "percent": 0.01
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 2301,
+          "percent": 0.01
+        },
+        {
+          "name": "Rust",
+          "bytes": 1044,
+          "percent": 0
+        },
+        {
+          "name": "Go",
+          "bytes": 912,
+          "percent": 0
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 692,
+          "percent": 0
+        },
+        {
+          "name": "PHP",
+          "bytes": 633,
+          "percent": 0
+        },
+        {
+          "name": "Scheme",
+          "bytes": 441,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v7.4.23",
+        "name": "v7.4.23 (release)",
+        "publishedAt": "2026-08-20T12:26:22Z",
+        "url": "https://github.com/Kilo-Org/kilocode/releases/tag/v7.4.23",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v7.4.23",
+      "releaseDate": "2026-08-20T12:26:22Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 1010795,
+        "comments": 63109,
+        "blank": 118097,
+        "files": 7593,
+        "measuredAt": "2026-08-24T03:30:30.222Z",
+        "verifiedAt": "2026-08-24T03:30:30.222Z",
+        "measuredRef": "v7.4.23",
+        "refType": "stable-release-tag",
+        "commitSha": "40fa10e50a75c4887978d892520d1246515413bf",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/Kilo-Org/kilocode",
+          "fetchedAt": "2026-08-24T03:29:57.520Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/Kilo-Org/kilocode/languages",
+          "fetchedAt": "2026-08-24T03:29:57.787Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/Kilo-Org/kilocode/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:29:57.963Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/Kilo-Org/kilocode/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:29:58.840Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/Kilo-Org/kilocode/tree/v7.4.23",
+          "fetchedAt": "2026-08-24T03:30:30.222Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -2000,19 +2915,28 @@
       "category": "ide-extensions",
       "owner": "RooCodeInc",
       "repo": "Roo-Code",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/RooCodeInc/Roo-Code",
+      "cloneUrl": "https://github.com/RooCodeInc/Roo-Code.git",
       "githubUrl": "https://github.com/RooCodeInc/Roo-Code",
       "apiUrl": "https://api.github.com/repos/RooCodeInc/Roo-Code",
+      "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:12:32.438Z",
-      "stars": 24326,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T03:30:40.603Z",
+      "stars": 24328,
+      "forks": 3414,
+      "openIssues": 1036,
       "contributors": 303,
       "repositorySizeKb": 368021,
       "defaultBranch": "main",
       "pushedAt": "2026-05-15T18:08:47Z",
-      "archived": null,
-      "license": null,
+      "archived": true,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
       "languages": [
         {
           "name": "TypeScript",
@@ -2057,42 +2981,47 @@
       "releaseDate": "2026-05-15T17:52:24Z",
       "releasePolicy": null,
       "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 283242,
+        "comments": 36430,
+        "blank": 48910,
+        "files": 1690,
+        "measuredAt": "2026-08-24T03:30:40.427Z",
+        "verifiedAt": "2026-08-24T03:30:40.427Z",
+        "measuredRef": "v3.54.0",
+        "refType": "stable-release-tag",
+        "commitSha": "27001b2b5aa47b65e8a6ba1914e0f4216be0ebb0",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large monorepo; GitHub language bytes remain available"
+        "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/RooCodeInc/Roo-Code",
-          "fetchedAt": "2026-08-23T18:12:32.281Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/releases/latest",
-          "fetchedAt": "2026-08-23T18:12:32.368Z"
+          "fetchedAt": "2026-08-24T03:30:31.010Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/languages",
-          "fetchedAt": "2026-08-23T18:12:32.380Z"
+          "fetchedAt": "2026-08-24T03:30:31.106Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:12:32.438Z"
+          "fetchedAt": "2026-08-24T03:30:31.207Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:30:31.573Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/RooCodeInc/Roo-Code/tree/v3.54.0",
+          "fetchedAt": "2026-08-24T03:30:40.427Z"
         }
       ],
       "errors": []
@@ -2103,8 +3032,12 @@
       "category": "agent-orchestrators",
       "owner": "stablyai",
       "repo": "orca",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/stablyai/orca",
+      "cloneUrl": "https://github.com/stablyai/orca.git",
       "githubUrl": "https://github.com/stablyai/orca",
       "apiUrl": "https://api.github.com/repos/stablyai/orca",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T18:16:59.026Z",
       "stars": 51701,
@@ -2251,8 +3184,12 @@
       "category": "agent-orchestrators",
       "owner": "get-bb",
       "repo": "bb",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/get-bb/bb",
+      "cloneUrl": "https://github.com/get-bb/bb.git",
       "githubUrl": "https://github.com/get-bb/bb",
       "apiUrl": "https://api.github.com/repos/get-bb/bb",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T21:26:44.937Z",
       "stars": 2575,
@@ -2349,8 +3286,12 @@
       "category": "agent-orchestrators",
       "owner": "omnigent-ai",
       "repo": "omnigent",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/omnigent-ai/omnigent",
+      "cloneUrl": "https://github.com/omnigent-ai/omnigent.git",
       "githubUrl": "https://github.com/omnigent-ai/omnigent",
       "apiUrl": "https://api.github.com/repos/omnigent-ai/omnigent",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T21:26:50.680Z",
       "stars": 9198,
@@ -2492,8 +3433,12 @@
       "category": "agent-orchestrators",
       "owner": "Untrivial-ai",
       "repo": "agent-orchestrator",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/Untrivial-ai/agent-orchestrator",
+      "cloneUrl": "https://github.com/Untrivial-ai/agent-orchestrator.git",
       "githubUrl": "https://github.com/Untrivial-ai/agent-orchestrator",
       "apiUrl": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -2537,8 +3482,12 @@
       "category": "agent-orchestrators",
       "owner": "generalaction",
       "repo": "emdash",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/generalaction/emdash",
+      "cloneUrl": "https://github.com/generalaction/emdash.git",
       "githubUrl": "https://github.com/generalaction/emdash",
       "apiUrl": "https://api.github.com/repos/generalaction/emdash",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -2582,8 +3531,12 @@
       "category": "agent-orchestrators",
       "owner": "kdlbs",
       "repo": "kandev",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/kdlbs/kandev",
+      "cloneUrl": "https://github.com/kdlbs/kandev.git",
       "githubUrl": "https://github.com/kdlbs/kandev",
       "apiUrl": "https://api.github.com/repos/kdlbs/kandev",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -2627,8 +3580,12 @@
       "category": "agent-orchestrators",
       "owner": "getpaseo",
       "repo": "paseo",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/getpaseo/paseo",
+      "cloneUrl": "https://github.com/getpaseo/paseo.git",
       "githubUrl": "https://github.com/getpaseo/paseo",
       "apiUrl": "https://api.github.com/repos/getpaseo/paseo",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -2639,7 +3596,12 @@
       "defaultBranch": null,
       "pushedAt": null,
       "archived": null,
-      "license": null,
+      "license": {
+        "key": "manifest-verified",
+        "name": "GNU Affero General Public License v3.0 only",
+        "spdxId": "AGPL-3.0-only",
+        "url": "https://github.com/getpaseo/paseo/blob/main/LICENSE"
+      },
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
@@ -2663,7 +3625,13 @@
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "license-override",
+          "url": "https://github.com/getpaseo/paseo/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -2672,8 +3640,12 @@
       "category": "agent-orchestrators",
       "owner": "superset-sh",
       "repo": "superset",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/superset-sh/superset",
+      "cloneUrl": "https://github.com/superset-sh/superset.git",
       "githubUrl": "https://github.com/superset-sh/superset",
       "apiUrl": "https://api.github.com/repos/superset-sh/superset",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -2684,7 +3656,12 @@
       "defaultBranch": null,
       "pushedAt": null,
       "archived": null,
-      "license": null,
+      "license": {
+        "key": "manifest-verified",
+        "name": "Elastic License 2.0",
+        "spdxId": "Elastic-2.0",
+        "url": "https://github.com/superset-sh/superset/blob/main/LICENSE.md"
+      },
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
@@ -2708,17 +3685,27 @@
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "license-override",
+          "url": "https://github.com/superset-sh/superset/blob/main/LICENSE.md",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
       "errors": []
     },
     {
       "id": "coder-mux",
-      "name": "Coder Mux",
+      "name": "Xum",
       "category": "agent-orchestrators",
       "owner": "coder",
-      "repo": "cmux",
-      "githubUrl": "https://github.com/coder/cmux",
-      "apiUrl": "https://api.github.com/repos/coder/cmux",
+      "repo": "xum",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/coder/xum",
+      "cloneUrl": "https://github.com/coder/xum.git",
+      "githubUrl": "https://github.com/coder/xum",
+      "apiUrl": "https://api.github.com/repos/coder/xum",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -2762,8 +3749,12 @@
       "category": "agent-orchestrators",
       "owner": "nimbalyst",
       "repo": "nimbalyst",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/nimbalyst/nimbalyst",
+      "cloneUrl": "https://github.com/nimbalyst/nimbalyst.git",
       "githubUrl": "https://github.com/nimbalyst/nimbalyst",
       "apiUrl": "https://api.github.com/repos/nimbalyst/nimbalyst",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -2807,8 +3798,12 @@
       "category": "agent-orchestrators",
       "owner": "imbue-ai",
       "repo": "sculptor",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/imbue-ai/sculptor",
+      "cloneUrl": "https://github.com/imbue-ai/sculptor.git",
       "githubUrl": "https://github.com/imbue-ai/sculptor",
       "apiUrl": "https://api.github.com/repos/imbue-ai/sculptor",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -2852,8 +3847,12 @@
       "category": "agent-orchestrators",
       "owner": "smtg-ai",
       "repo": "claude-squad",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/smtg-ai/claude-squad",
+      "cloneUrl": "https://github.com/smtg-ai/claude-squad.git",
       "githubUrl": "https://github.com/smtg-ai/claude-squad",
       "apiUrl": "https://api.github.com/repos/smtg-ai/claude-squad",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -2897,8 +3896,12 @@
       "category": "agent-orchestrators",
       "owner": "asheshgoplani",
       "repo": "agent-deck",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/asheshgoplani/agent-deck",
+      "cloneUrl": "https://github.com/asheshgoplani/agent-deck.git",
       "githubUrl": "https://github.com/asheshgoplani/agent-deck",
       "apiUrl": "https://api.github.com/repos/asheshgoplani/agent-deck",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -2942,8 +3945,12 @@
       "category": "agent-orchestrators",
       "owner": "BloopAI",
       "repo": "vibe-kanban",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/BloopAI/vibe-kanban",
+      "cloneUrl": "https://github.com/BloopAI/vibe-kanban.git",
       "githubUrl": "https://github.com/BloopAI/vibe-kanban",
       "apiUrl": "https://api.github.com/repos/BloopAI/vibe-kanban",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -2987,8 +3994,12 @@
       "category": "agent-workbenches",
       "owner": "manaflow-ai",
       "repo": "cmux",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/manaflow-ai/cmux",
+      "cloneUrl": "https://github.com/manaflow-ai/cmux.git",
       "githubUrl": "https://github.com/manaflow-ai/cmux",
       "apiUrl": "https://api.github.com/repos/manaflow-ai/cmux",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:39:41.599Z",
       "stars": 26378,
@@ -3160,8 +4171,12 @@
       "category": "agent-workbenches",
       "owner": "openwong2kim",
       "repo": "wmux",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/openwong2kim/wmux",
+      "cloneUrl": "https://github.com/openwong2kim/wmux.git",
       "githubUrl": "https://github.com/openwong2kim/wmux",
       "apiUrl": "https://api.github.com/repos/openwong2kim/wmux",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:39:45.579Z",
       "stars": 350,
@@ -3278,8 +4293,12 @@
       "category": "agent-workbenches",
       "owner": "wavetermdev",
       "repo": "waveterm",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/wavetermdev/waveterm",
+      "cloneUrl": "https://github.com/wavetermdev/waveterm.git",
       "githubUrl": "https://github.com/wavetermdev/waveterm",
       "apiUrl": "https://api.github.com/repos/wavetermdev/waveterm",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:39:46.977Z",
       "stars": 22091,
@@ -3401,8 +4420,12 @@
       "category": "agent-workbenches",
       "owner": "standardagents",
       "repo": "dmux",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/standardagents/dmux",
+      "cloneUrl": "https://github.com/standardagents/dmux.git",
       "githubUrl": "https://github.com/standardagents/dmux",
       "apiUrl": "https://api.github.com/repos/standardagents/dmux",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:39:47.970Z",
       "stars": 1750,
@@ -3519,8 +4542,12 @@
       "category": "agent-workbenches",
       "owner": "warpdotdev",
       "repo": "warp",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/warpdotdev/warp",
+      "cloneUrl": "https://github.com/warpdotdev/warp.git",
       "githubUrl": "https://github.com/warpdotdev/warp",
       "apiUrl": "https://api.github.com/repos/warpdotdev/warp",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:42:48.538Z",
       "stars": 64472,
@@ -3690,126 +4717,17 @@
       "errors": []
     },
     {
-      "id": "openhands",
-      "name": "OpenHands",
-      "category": "cloud-agents",
-      "owner": "OpenHands",
-      "repo": "OpenHands",
-      "githubUrl": "https://github.com/OpenHands/OpenHands",
-      "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands",
-      "status": "current",
-      "refreshedAt": "2026-08-23T18:14:00.499Z",
-      "stars": 84856,
-      "forks": null,
-      "openIssues": null,
-      "contributors": 532,
-      "repositorySizeKb": 405199,
-      "defaultBranch": "main",
-      "pushedAt": "2026-08-23T17:13:21Z",
-      "archived": null,
-      "license": null,
-      "languages": [
-        {
-          "name": "TypeScript",
-          "bytes": 8648827,
-          "percent": 94.18
-        },
-        {
-          "name": "JavaScript",
-          "bytes": 439054,
-          "percent": 4.78
-        },
-        {
-          "name": "Shell",
-          "bytes": 27130,
-          "percent": 0.3
-        },
-        {
-          "name": "Python",
-          "bytes": 23887,
-          "percent": 0.26
-        },
-        {
-          "name": "CSS",
-          "bytes": 21524,
-          "percent": 0.23
-        },
-        {
-          "name": "HTML",
-          "bytes": 11619,
-          "percent": 0.13
-        },
-        {
-          "name": "Dockerfile",
-          "bytes": 8437,
-          "percent": 0.09
-        },
-        {
-          "name": "Go Template",
-          "bytes": 3195,
-          "percent": 0.03
-        }
-      ],
-      "latestRelease": {
-        "tagName": "v1.15.0",
-        "name": "v1.15.0",
-        "publishedAt": "2026-08-21T14:01:34Z",
-        "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.15.0",
-        "prerelease": false
-      },
-      "latestTag": null,
-      "version": "v1.15.0",
-      "releaseDate": "2026-08-21T14:01:34Z",
-      "releasePolicy": null,
-      "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
-        "methodology": "source-code-v2",
-        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
-        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large monorepo; GitHub language bytes remain available"
-      },
-      "sources": [
-        {
-          "type": "repository",
-          "url": "https://api.github.com/repos/OpenHands/OpenHands",
-          "fetchedAt": "2026-08-23T18:14:00.314Z"
-        },
-        {
-          "type": "languages",
-          "url": "https://api.github.com/repos/OpenHands/OpenHands/languages",
-          "fetchedAt": "2026-08-23T18:14:00.390Z"
-        },
-        {
-          "type": "contributors",
-          "url": "https://api.github.com/repos/OpenHands/OpenHands/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:14:00.486Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/OpenHands/OpenHands/releases/latest",
-          "fetchedAt": "2026-08-23T18:14:00.499Z"
-        }
-      ],
-      "errors": []
-    },
-    {
       "id": "codex-cli",
       "name": "Codex CLI",
       "category": "coding-agent-harnesses",
       "owner": "openai",
       "repo": "codex",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/openai/codex",
+      "cloneUrl": "https://github.com/openai/codex.git",
       "githubUrl": "https://github.com/openai/codex",
       "apiUrl": "https://api.github.com/repos/openai/codex",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T18:16:47.994Z",
       "stars": 115009,
@@ -3961,8 +4879,12 @@
       "category": "coding-agent-harnesses",
       "owner": "google-gemini",
       "repo": "gemini-cli",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/google-gemini/gemini-cli",
+      "cloneUrl": "https://github.com/google-gemini/gemini-cli.git",
       "githubUrl": "https://github.com/google-gemini/gemini-cli",
       "apiUrl": "https://api.github.com/repos/google-gemini/gemini-cli",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T18:16:59.554Z",
       "stars": 106633,
@@ -4079,8 +5001,12 @@
       "category": "coding-agent-harnesses",
       "owner": "Hmbown",
       "repo": "CodeWhale",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/Hmbown/CodeWhale",
+      "cloneUrl": "https://github.com/Hmbown/CodeWhale.git",
       "githubUrl": "https://github.com/Hmbown/CodeWhale",
       "apiUrl": "https://api.github.com/repos/Hmbown/CodeWhale",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -4124,8 +5050,12 @@
       "category": "coding-agent-harnesses",
       "owner": "QwenLM",
       "repo": "qwen-code",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/QwenLM/qwen-code",
+      "cloneUrl": "https://github.com/QwenLM/qwen-code.git",
       "githubUrl": "https://github.com/QwenLM/qwen-code",
       "apiUrl": "https://api.github.com/repos/QwenLM/qwen-code",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -4169,8 +5099,12 @@
       "category": "coding-agent-harnesses",
       "owner": "xai-org",
       "repo": "grok-build",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/xai-org/grok-build",
+      "cloneUrl": "https://github.com/xai-org/grok-build.git",
       "githubUrl": "https://github.com/xai-org/grok-build",
       "apiUrl": "https://api.github.com/repos/xai-org/grok-build",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -4214,8 +5148,12 @@
       "category": "coding-agent-harnesses",
       "owner": "anomalyco",
       "repo": "opencode",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/anomalyco/opencode",
+      "cloneUrl": "https://github.com/anomalyco/opencode.git",
       "githubUrl": "https://github.com/anomalyco/opencode",
       "apiUrl": "https://api.github.com/repos/anomalyco/opencode",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T18:17:11.650Z",
       "stars": 200600,
@@ -4342,8 +5280,12 @@
       "category": "coding-agent-harnesses",
       "owner": "earendil-works",
       "repo": "pi",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/earendil-works/pi",
+      "cloneUrl": "https://github.com/earendil-works/pi.git",
       "githubUrl": "https://github.com/earendil-works/pi",
       "apiUrl": "https://api.github.com/repos/earendil-works/pi",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T18:17:03.478Z",
       "stars": 95847,
@@ -4460,8 +5402,12 @@
       "category": "coding-agent-harnesses",
       "owner": "Aider-AI",
       "repo": "aider",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/Aider-AI/aider",
+      "cloneUrl": "https://github.com/Aider-AI/aider.git",
       "githubUrl": "https://github.com/Aider-AI/aider",
       "apiUrl": "https://api.github.com/repos/Aider-AI/aider",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T18:17:02.056Z",
       "stars": 48428,
@@ -4588,8 +5534,12 @@
       "category": "coding-agent-harnesses",
       "owner": "aaif-goose",
       "repo": "goose",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/aaif-goose/goose",
+      "cloneUrl": "https://github.com/aaif-goose/goose.git",
       "githubUrl": "https://github.com/aaif-goose/goose",
       "apiUrl": "https://api.github.com/repos/aaif-goose/goose",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T18:17:10.678Z",
       "stars": 53314,
@@ -4736,8 +5686,12 @@
       "category": "coding-agent-harnesses",
       "owner": "deepseek-ai",
       "repo": "deepseek-harness",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/deepseek-ai/deepseek-harness",
+      "cloneUrl": "https://github.com/deepseek-ai/deepseek-harness.git",
       "githubUrl": "https://github.com/deepseek-ai/deepseek-harness",
       "apiUrl": "https://api.github.com/repos/deepseek-ai/deepseek-harness",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T21:26:54.164Z",
       "stars": 187783,
@@ -4858,8 +5812,12 @@
       "category": "coding-agent-harnesses",
       "owner": "PrimeIntellect-ai",
       "repo": "prime-agent",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/PrimeIntellect-ai/prime-agent",
+      "cloneUrl": "https://github.com/PrimeIntellect-ai/prime-agent.git",
       "githubUrl": "https://github.com/PrimeIntellect-ai/prime-agent",
       "apiUrl": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T21:26:54.490Z",
       "stars": 18014,
@@ -4966,8 +5924,12 @@
       "category": "coding-agent-harnesses",
       "owner": "MoonshotAI",
       "repo": "kimi-code",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/MoonshotAI/kimi-code",
+      "cloneUrl": "https://github.com/MoonshotAI/kimi-code.git",
       "githubUrl": "https://github.com/MoonshotAI/kimi-code",
       "apiUrl": "https://api.github.com/repos/MoonshotAI/kimi-code",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5011,8 +5973,12 @@
       "category": "coding-agent-harnesses",
       "owner": "mistralai",
       "repo": "mistral-vibe",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/mistralai/mistral-vibe",
+      "cloneUrl": "https://github.com/mistralai/mistral-vibe.git",
       "githubUrl": "https://github.com/mistralai/mistral-vibe",
       "apiUrl": "https://api.github.com/repos/mistralai/mistral-vibe",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5056,8 +6022,12 @@
       "category": "coding-agent-harnesses",
       "owner": "microsoft",
       "repo": "amplifier-agent",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/microsoft/amplifier-agent",
+      "cloneUrl": "https://github.com/microsoft/amplifier-agent.git",
       "githubUrl": "https://github.com/microsoft/amplifier-agent",
       "apiUrl": "https://api.github.com/repos/microsoft/amplifier-agent",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5101,8 +6071,12 @@
       "category": "coding-agent-harnesses",
       "owner": "gptme",
       "repo": "gptme",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/gptme/gptme",
+      "cloneUrl": "https://github.com/gptme/gptme.git",
       "githubUrl": "https://github.com/gptme/gptme",
       "apiUrl": "https://api.github.com/repos/gptme/gptme",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5146,9 +6120,13 @@
       "category": "remote-companions",
       "owner": "slopus",
       "repo": "happy",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/slopus/happy",
+      "cloneUrl": "https://github.com/slopus/happy.git",
       "githubUrl": "https://github.com/slopus/happy",
       "apiUrl": "https://api.github.com/repos/slopus/happy",
-      "status": "stale",
+      "metricScope": null,
+      "status": "current",
       "refreshedAt": null,
       "stars": null,
       "forks": null,
@@ -5164,7 +6142,16 @@
       "latestTag": null,
       "version": null,
       "releaseDate": null,
-      "releasePolicy": null,
+      "releasePolicy": {
+        "mode": "default-branch",
+        "reason": "The monorepo's latest GitHub release is scoped to the CLI and cannot represent the Happy app, agent, and server as a unified product release.",
+        "checkedAt": "2026-08-23",
+        "rejectedCandidate": {
+          "tagName": "cli-1.1.10",
+          "name": "cli-1.1.10",
+          "url": "https://github.com/slopus/happy/releases/tag/cli-1.1.10"
+        }
+      },
       "loc": {
         "status": "not-measured",
         "code": null,
@@ -5182,7 +6169,13 @@
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "release-policy",
+          "url": "https://github.com/slopus/happy/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -5191,8 +6184,12 @@
       "category": "remote-companions",
       "owner": "amantus-ai",
       "repo": "vibetunnel",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/amantus-ai/vibetunnel",
+      "cloneUrl": "https://github.com/amantus-ai/vibetunnel.git",
       "githubUrl": "https://github.com/amantus-ai/vibetunnel",
       "apiUrl": "https://api.github.com/repos/amantus-ai/vibetunnel",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5236,43 +6233,120 @@
       "category": "ide-extensions",
       "owner": "TabbyML",
       "repo": "pochi",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/TabbyML/pochi",
+      "cloneUrl": "https://github.com/TabbyML/pochi.git",
       "githubUrl": "https://github.com/TabbyML/pochi",
       "apiUrl": "https://api.github.com/repos/TabbyML/pochi",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T03:30:47.883Z",
+      "stars": 122,
+      "forks": 53,
+      "openIssues": 31,
+      "contributors": 22,
+      "repositorySizeKb": 348842,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T01:05:41Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 4588774,
+          "percent": 89.17
+        },
+        {
+          "name": "MDX",
+          "bytes": 372725,
+          "percent": 7.24
+        },
+        {
+          "name": "CSS",
+          "bytes": 127797,
+          "percent": 2.48
+        },
+        {
+          "name": "Shell",
+          "bytes": 38248,
+          "percent": 0.74
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 13955,
+          "percent": 0.27
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 4034,
+          "percent": 0.08
+        },
+        {
+          "name": "HTML",
+          "bytes": 798,
+          "percent": 0.02
+        }
+      ],
+      "latestRelease": {
+        "tagName": "vscode@0.66.0",
+        "name": "pochi-vscode@0.66.0",
+        "publishedAt": "2026-08-20T01:05:45Z",
+        "url": "https://github.com/TabbyML/pochi/releases/tag/vscode%400.66.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "vscode@0.66.0",
+      "releaseDate": "2026-08-20T01:05:45Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 134188,
+        "comments": 7954,
+        "blank": 16249,
+        "files": 1180,
+        "measuredAt": "2026-08-24T03:30:47.812Z",
+        "verifiedAt": "2026-08-24T03:30:47.812Z",
+        "measuredRef": "vscode@0.66.0",
+        "refType": "stable-release-tag",
+        "commitSha": "a47e3250649441ed821586af370b8b0a1070c269",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/TabbyML/pochi",
+          "fetchedAt": "2026-08-24T03:30:40.826Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/TabbyML/pochi/languages",
+          "fetchedAt": "2026-08-24T03:30:40.972Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/TabbyML/pochi/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:30:41.079Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/TabbyML/pochi/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:30:41.523Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/TabbyML/pochi/tree/vscode%400.66.0",
+          "fetchedAt": "2026-08-24T03:30:47.812Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -5281,43 +6355,155 @@
       "category": "ide-extensions",
       "owner": "TabbyML",
       "repo": "tabby",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/TabbyML/tabby",
+      "cloneUrl": "https://github.com/TabbyML/tabby.git",
       "githubUrl": "https://github.com/TabbyML/tabby",
       "apiUrl": "https://api.github.com/repos/TabbyML/tabby",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T03:32:10.670Z",
+      "stars": 33832,
+      "forks": 1783,
+      "openIssues": 331,
+      "contributors": 119,
+      "repositorySizeKb": 109305,
+      "defaultBranch": "main",
+      "pushedAt": "2026-06-30T20:38:02Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified-mixed",
+        "name": "Split: Apache-2.0 outside ee/ and separate enterprise terms under ee/",
+        "spdxId": null,
+        "url": null,
+        "summary": "Split: Apache-2.0 outside ee/ and separate enterprise terms under ee/",
+        "components": [
+          {
+            "spdxId": "Apache-2.0",
+            "name": "Apache License 2.0",
+            "scope": "Repository content outside ee/",
+            "sourceUrl": "https://github.com/TabbyML/tabby/blob/main/LICENSE"
+          },
+          {
+            "spdxId": "LicenseRef-Tabby-Enterprise",
+            "name": "Tabby Enterprise License",
+            "scope": "Repository content under ee/",
+            "sourceUrl": "https://github.com/TabbyML/tabby/blob/main/LICENSE"
+          }
+        ]
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 1532383,
+          "percent": 92.86
+        },
+        {
+          "name": "Python",
+          "bytes": 74127,
+          "percent": 4.49
+        },
+        {
+          "name": "HTML",
+          "bytes": 20155,
+          "percent": 1.22
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 7894,
+          "percent": 0.48
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 6693,
+          "percent": 0.41
+        },
+        {
+          "name": "Shell",
+          "bytes": 5124,
+          "percent": 0.31
+        },
+        {
+          "name": "Makefile",
+          "bytes": 2342,
+          "percent": 0.14
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 1546,
+          "percent": 0.09
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 26,
+          "percent": 0
+        },
+        {
+          "name": "RenderScript",
+          "bytes": 1,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.32.0",
+        "name": "v0.32.0",
+        "publishedAt": "2026-01-25T17:07:44Z",
+        "url": "https://github.com/TabbyML/tabby/releases/tag/v0.32.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.32.0",
+      "releaseDate": "2026-01-25T17:07:44Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 129715,
+        "comments": 5599,
+        "blank": 16275,
+        "files": 1459,
+        "measuredAt": "2026-08-24T03:32:10.488Z",
+        "verifiedAt": "2026-08-24T03:32:10.488Z",
+        "measuredRef": "v0.32.0",
+        "refType": "stable-release-tag",
+        "commitSha": "d4c033a138646524c545a0ead22690ef8ec05175",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/TabbyML/tabby",
+          "fetchedAt": "2026-08-24T03:32:00.683Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/TabbyML/tabby/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:32:01.188Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/TabbyML/tabby/languages",
+          "fetchedAt": "2026-08-24T03:32:01.189Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/TabbyML/tabby/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:32:01.755Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/TabbyML/tabby/tree/v0.32.0",
+          "fetchedAt": "2026-08-24T03:32:10.488Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/TabbyML/tabby/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -5326,88 +6512,267 @@
       "category": "ide-extensions",
       "owner": "olimorris",
       "repo": "codecompanion.nvim",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/olimorris/codecompanion.nvim",
+      "cloneUrl": "https://github.com/olimorris/codecompanion.nvim.git",
       "githubUrl": "https://github.com/olimorris/codecompanion.nvim",
       "apiUrl": "https://api.github.com/repos/olimorris/codecompanion.nvim",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T03:30:54.004Z",
+      "stars": 6820,
+      "forks": 446,
+      "openIssues": 14,
+      "contributors": 198,
+      "repositorySizeKb": 9930,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T21:23:13Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Lua",
+          "bytes": 2832648,
+          "percent": 98.86
+        },
+        {
+          "name": "Shell",
+          "bytes": 15306,
+          "percent": 0.53
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 12006,
+          "percent": 0.42
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 2443,
+          "percent": 0.09
+        },
+        {
+          "name": "Makefile",
+          "bytes": 1620,
+          "percent": 0.06
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 1010,
+          "percent": 0.04
+        },
+        {
+          "name": "Python",
+          "bytes": 153,
+          "percent": 0.01
+        },
+        {
+          "name": "Go",
+          "bytes": 139,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v19.22.0",
+        "name": "v19.22.0",
+        "publishedAt": "2026-07-31T16:29:20Z",
+        "url": "https://github.com/olimorris/codecompanion.nvim/releases/tag/v19.22.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v19.22.0",
+      "releaseDate": "2026-07-31T16:29:20Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 71827,
+        "comments": 9866,
+        "blank": 12105,
+        "files": 478,
+        "measuredAt": "2026-08-24T03:30:53.968Z",
+        "verifiedAt": "2026-08-24T03:30:53.968Z",
+        "measuredRef": "v19.22.0",
+        "refType": "stable-release-tag",
+        "commitSha": "2b959b2bf5fdb13e3b333c078ba549996e477b7c",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/olimorris/codecompanion.nvim",
+          "fetchedAt": "2026-08-24T03:30:51.783Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/languages",
+          "fetchedAt": "2026-08-24T03:30:51.870Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:30:51.983Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:30:52.137Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/olimorris/codecompanion.nvim/tree/v19.22.0",
+          "fetchedAt": "2026-08-24T03:30:53.968Z"
+        }
+      ],
       "errors": []
     },
     {
       "id": "avante-nvim",
       "name": "avante.nvim",
       "category": "ide-extensions",
-      "owner": "yetone",
+      "owner": "avante-corp",
       "repo": "avante.nvim",
-      "githubUrl": "https://github.com/yetone/avante.nvim",
-      "apiUrl": "https://api.github.com/repos/yetone/avante.nvim",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "forge": "github",
+      "repositoryUrl": "https://github.com/avante-corp/avante.nvim",
+      "cloneUrl": "https://github.com/avante-corp/avante.nvim.git",
+      "githubUrl": "https://github.com/avante-corp/avante.nvim",
+      "apiUrl": "https://api.github.com/repos/avante-corp/avante.nvim",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T03:30:57.095Z",
+      "stars": 18126,
+      "forks": 848,
+      "openIssues": 49,
+      "contributors": 283,
+      "repositorySizeKb": 4856,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T22:22:13Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Lua",
+          "bytes": 1253054,
+          "percent": 82.89
+        },
+        {
+          "name": "Rust",
+          "bytes": 93565,
+          "percent": 6.19
+        },
+        {
+          "name": "Python",
+          "bytes": 86277,
+          "percent": 5.71
+        },
+        {
+          "name": "Jinja",
+          "bytes": 38537,
+          "percent": 2.55
+        },
+        {
+          "name": "Shell",
+          "bytes": 16574,
+          "percent": 1.1
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 8335,
+          "percent": 0.55
+        },
+        {
+          "name": "Nix",
+          "bytes": 5619,
+          "percent": 0.37
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 4726,
+          "percent": 0.31
+        },
+        {
+          "name": "Makefile",
+          "bytes": 4246,
+          "percent": 0.28
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 521,
+          "percent": 0.03
+        },
+        {
+          "name": "Vim Script",
+          "bytes": 199,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "release-v0.2",
+        "name": "avante-libs release-v0.2",
+        "publishedAt": "2026-08-21T23:31:59Z",
+        "url": "https://github.com/avante-corp/avante.nvim/releases/tag/release-v0.2",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "release-v0.2",
+      "releaseDate": "2026-08-21T23:31:59Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 32542,
+        "comments": 5917,
+        "blank": 4975,
+        "files": 178,
+        "measuredAt": "2026-08-24T03:30:57.079Z",
+        "verifiedAt": "2026-08-24T03:30:57.079Z",
+        "measuredRef": "release-v0.2",
+        "refType": "stable-release-tag",
+        "commitSha": "a9334315e05ac750985c7d0b391e360e36e0278e",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/avante-corp/avante.nvim",
+          "fetchedAt": "2026-08-24T03:30:54.205Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/avante-corp/avante.nvim/languages",
+          "fetchedAt": "2026-08-24T03:30:54.314Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/avante-corp/avante.nvim/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:30:54.437Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/avante-corp/avante.nvim/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:30:54.602Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/avante-corp/avante.nvim/tree/release-v0.2",
+          "fetchedAt": "2026-08-24T03:30:57.079Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -5416,43 +6781,145 @@
       "category": "ide-extensions",
       "owner": "smallcloudai",
       "repo": "refact",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/smallcloudai/refact",
+      "cloneUrl": "https://github.com/smallcloudai/refact.git",
       "githubUrl": "https://github.com/smallcloudai/refact",
       "apiUrl": "https://api.github.com/repos/smallcloudai/refact",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T03:31:24.753Z",
+      "stars": 3540,
+      "forks": 317,
+      "openIssues": 2,
+      "contributors": 38,
+      "repositorySizeKb": 160126,
+      "defaultBranch": "main",
+      "pushedAt": "2026-05-30T09:42:53Z",
+      "archived": true,
+      "license": {
+        "key": "bsd-3-clause",
+        "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+        "spdxId": "BSD-3-Clause",
+        "url": "https://api.github.com/licenses/bsd-3-clause"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 12902836,
+          "percent": 63.92
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 6167767,
+          "percent": 30.55
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 478144,
+          "percent": 2.37
+        },
+        {
+          "name": "Python",
+          "bytes": 329053,
+          "percent": 1.63
+        },
+        {
+          "name": "CSS",
+          "bytes": 239570,
+          "percent": 1.19
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 36351,
+          "percent": 0.18
+        },
+        {
+          "name": "Shell",
+          "bytes": 11628,
+          "percent": 0.06
+        },
+        {
+          "name": "C++",
+          "bytes": 10882,
+          "percent": 0.05
+        },
+        {
+          "name": "Java",
+          "bytes": 5776,
+          "percent": 0.03
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2467,
+          "percent": 0.01
+        },
+        {
+          "name": "HTML",
+          "bytes": 1922,
+          "percent": 0.01
+        },
+        {
+          "name": "C",
+          "bytes": 103,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "release/v8.0.4",
+        "name": null,
+        "publishedAt": "2026-05-14T08:19:03Z",
+        "url": "https://github.com/smallcloudai/refact/releases/tag/release/v8.0.4",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "release/v8.0.4",
+      "releaseDate": "2026-05-14T08:19:03Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 390492,
+        "comments": 8967,
+        "blank": 39825,
+        "files": 1734,
+        "measuredAt": "2026-08-24T03:31:24.634Z",
+        "verifiedAt": "2026-08-24T03:31:24.634Z",
+        "measuredRef": "release/v8.0.4",
+        "refType": "stable-release-tag",
+        "commitSha": "afa2b35003ce1f09aab9ac3c684c74d3df0c4d01",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/smallcloudai/refact",
+          "fetchedAt": "2026-08-24T03:30:57.745Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/smallcloudai/refact/languages",
+          "fetchedAt": "2026-08-24T03:30:57.839Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/smallcloudai/refact/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:30:58.272Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/smallcloudai/refact/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:30:58.273Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/smallcloudai/refact/tree/release%2Fv8.0.4",
+          "fetchedAt": "2026-08-24T03:31:24.634Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -5461,8 +6928,12 @@
       "category": "cloud-agents",
       "owner": "gitlab-org",
       "repo": "gitlab",
-      "githubUrl": "https://github.com/gitlab-org/gitlab",
-      "apiUrl": "https://api.github.com/repos/gitlab-org/gitlab",
+      "forge": "gitlab",
+      "repositoryUrl": "https://gitlab.com/gitlab-org/gitlab",
+      "cloneUrl": "https://gitlab.com/gitlab-org/gitlab.git",
+      "githubUrl": "https://gitlab.com/gitlab-org/gitlab",
+      "apiUrl": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab",
+      "metricScope": "Whole GitLab monorepo; GitLab Duo Developer Flow is one feature within it.",
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5473,7 +6944,33 @@
       "defaultBranch": null,
       "pushedAt": null,
       "archived": null,
-      "license": null,
+      "license": {
+        "key": "manifest-verified-mixed",
+        "name": "Mixed: MIT, CC BY-SA 4.0, and separate GitLab Enterprise/JH terms",
+        "spdxId": null,
+        "url": null,
+        "summary": "Mixed: MIT, CC BY-SA 4.0, and separate GitLab Enterprise/JH terms",
+        "components": [
+          {
+            "spdxId": "MIT",
+            "name": "MIT License",
+            "scope": "Most source code outside doc/, ee/, and jh/",
+            "sourceUrl": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE"
+          },
+          {
+            "spdxId": "CC-BY-SA-4.0",
+            "name": "Creative Commons Attribution-ShareAlike 4.0",
+            "scope": "Documentation under doc/",
+            "sourceUrl": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE"
+          },
+          {
+            "spdxId": "LicenseRef-GitLab-Enterprise-JH",
+            "name": "GitLab Enterprise and JiHu separate terms",
+            "scope": "Code under ee/ and jh/",
+            "sourceUrl": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE"
+          }
+        ]
+      },
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
@@ -5497,7 +6994,13 @@
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "license-override",
+          "url": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -5506,8 +7009,12 @@
       "category": "cloud-agents",
       "owner": "coder",
       "repo": "coder",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/coder/coder",
+      "cloneUrl": "https://github.com/coder/coder.git",
       "githubUrl": "https://github.com/coder/coder",
       "apiUrl": "https://api.github.com/repos/coder/coder",
+      "metricScope": "Whole Coder platform monorepo, not only Coder Agents.",
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5518,7 +7025,27 @@
       "defaultBranch": null,
       "pushedAt": null,
       "archived": null,
-      "license": null,
+      "license": {
+        "key": "manifest-verified-mixed",
+        "name": "Mixed: AGPL-3.0 and Coder Enterprise License",
+        "spdxId": null,
+        "url": null,
+        "summary": "Mixed: AGPL-3.0 and Coder Enterprise License",
+        "components": [
+          {
+            "spdxId": "AGPL-3.0-only",
+            "name": "GNU Affero General Public License v3.0",
+            "scope": "Open-source code outside enterprise/",
+            "sourceUrl": "https://github.com/coder/coder/blob/main/LICENSE"
+          },
+          {
+            "spdxId": "LicenseRef-Coder-Enterprise",
+            "name": "Coder Enterprise License",
+            "scope": "Code under enterprise/",
+            "sourceUrl": "https://github.com/coder/coder/blob/main/LICENSE.enterprise"
+          }
+        ]
+      },
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
@@ -5542,7 +7069,18 @@
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "license-override",
+          "url": "https://github.com/coder/coder/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/coder/coder/blob/main/LICENSE.enterprise",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -5551,8 +7089,12 @@
       "category": "cloud-agents",
       "owner": "OpenHands",
       "repo": "OpenHands-Cloud",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/OpenHands/OpenHands-Cloud",
+      "cloneUrl": "https://github.com/OpenHands/OpenHands-Cloud.git",
       "githubUrl": "https://github.com/OpenHands/OpenHands-Cloud",
       "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands-Cloud",
+      "metricScope": "OpenHands Cloud deployment charts and control-plane source, not the separate core agent repository.",
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5563,7 +7105,12 @@
       "defaultBranch": null,
       "pushedAt": null,
       "archived": null,
-      "license": null,
+      "license": {
+        "key": "manifest-verified",
+        "name": "PolyForm Free Trial License 1.0.0",
+        "spdxId": "PolyForm-Free-Trial-1.0.0",
+        "url": "https://github.com/OpenHands/OpenHands-Cloud/blob/main/LICENSE"
+      },
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
@@ -5587,7 +7134,13 @@
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "license-override",
+          "url": "https://github.com/OpenHands/OpenHands-Cloud/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -5596,8 +7149,12 @@
       "category": "remote-companions",
       "owner": "coder",
       "repo": "code-server",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/coder/code-server",
+      "cloneUrl": "https://github.com/coder/code-server.git",
       "githubUrl": "https://github.com/coder/code-server",
       "apiUrl": "https://api.github.com/repos/coder/code-server",
+      "metricScope": "code-server checked-in source; shallow checkout excludes the uninitialized VS Code submodule.",
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5641,8 +7198,12 @@
       "category": "remote-companions",
       "owner": "gitpod-io",
       "repo": "openvscode-server",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/gitpod-io/openvscode-server",
+      "cloneUrl": "https://github.com/gitpod-io/openvscode-server.git",
       "githubUrl": "https://github.com/gitpod-io/openvscode-server",
       "apiUrl": "https://api.github.com/repos/gitpod-io/openvscode-server",
+      "metricScope": "Full Code OSS fork; contributor count covers this fork rather than all upstream VS Code authors.",
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5686,8 +7247,12 @@
       "category": "remote-companions",
       "owner": "ekzhang",
       "repo": "sshx",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/ekzhang/sshx",
+      "cloneUrl": "https://github.com/ekzhang/sshx.git",
       "githubUrl": "https://github.com/ekzhang/sshx",
       "apiUrl": "https://api.github.com/repos/ekzhang/sshx",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5731,8 +7296,12 @@
       "category": "remote-companions",
       "owner": "owenthereal",
       "repo": "upterm",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/owenthereal/upterm",
+      "cloneUrl": "https://github.com/owenthereal/upterm.git",
       "githubUrl": "https://github.com/owenthereal/upterm",
       "apiUrl": "https://api.github.com/repos/owenthereal/upterm",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5776,8 +7345,12 @@
       "category": "remote-companions",
       "owner": "Termix-SSH",
       "repo": "Termix",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/Termix-SSH/Termix",
+      "cloneUrl": "https://github.com/Termix-SSH/Termix.git",
       "githubUrl": "https://github.com/Termix-SSH/Termix",
       "apiUrl": "https://api.github.com/repos/Termix-SSH/Termix",
+      "metricScope": "Whole Termix monorepo, including server and desktop/mobile/web clients.",
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5788,7 +7361,12 @@
       "defaultBranch": null,
       "pushedAt": null,
       "archived": null,
-      "license": null,
+      "license": {
+        "key": "manifest-verified",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://github.com/Termix-SSH/Termix/blob/main/LICENSE"
+      },
       "languages": [],
       "latestRelease": null,
       "latestTag": null,
@@ -5812,7 +7390,13 @@
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "license-override",
+          "url": "https://github.com/Termix-SSH/Termix/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -5821,8 +7405,12 @@
       "category": "remote-companions",
       "owner": "tsl0922",
       "repo": "ttyd",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/tsl0922/ttyd",
+      "cloneUrl": "https://github.com/tsl0922/ttyd.git",
       "githubUrl": "https://github.com/tsl0922/ttyd",
       "apiUrl": "https://api.github.com/repos/tsl0922/ttyd",
+      "metricScope": null,
       "status": "stale",
       "refreshedAt": null,
       "stars": null,
@@ -5866,8 +7454,12 @@
       "category": "agent-traces",
       "owner": "specstoryai",
       "repo": "getspecstory",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/specstoryai/getspecstory",
+      "cloneUrl": "https://github.com/specstoryai/getspecstory.git",
       "githubUrl": "https://github.com/specstoryai/getspecstory",
       "apiUrl": "https://api.github.com/repos/specstoryai/getspecstory",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:37:31.636Z",
       "stars": 1310,
@@ -5969,8 +7561,12 @@
       "category": "agent-traces",
       "owner": "entireio",
       "repo": "cli",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/entireio/cli",
+      "cloneUrl": "https://github.com/entireio/cli.git",
       "githubUrl": "https://github.com/entireio/cli",
       "apiUrl": "https://api.github.com/repos/entireio/cli",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:37:31.613Z",
       "stars": 4999,
@@ -6072,8 +7668,12 @@
       "category": "agent-traces",
       "owner": "papercomputeco",
       "repo": "tapes",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/papercomputeco/tapes",
+      "cloneUrl": "https://github.com/papercomputeco/tapes.git",
       "githubUrl": "https://github.com/papercomputeco/tapes",
       "apiUrl": "https://api.github.com/repos/papercomputeco/tapes",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:37:29.583Z",
       "stars": 315,
@@ -6195,8 +7795,12 @@
       "category": "agent-traces",
       "owner": "kenn-io",
       "repo": "agentsview",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/kenn-io/agentsview",
+      "cloneUrl": "https://github.com/kenn-io/agentsview.git",
       "githubUrl": "https://github.com/kenn-io/agentsview",
       "apiUrl": "https://api.github.com/repos/kenn-io/agentsview",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:37:34.242Z",
       "stars": 5227,
@@ -6348,8 +7952,12 @@
       "category": "agent-traces",
       "owner": "jhlee0409",
       "repo": "claude-code-history-viewer",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/jhlee0409/claude-code-history-viewer",
+      "cloneUrl": "https://github.com/jhlee0409/claude-code-history-viewer.git",
       "githubUrl": "https://github.com/jhlee0409/claude-code-history-viewer",
       "apiUrl": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:37:33.682Z",
       "stars": 2089,
@@ -6471,8 +8079,12 @@
       "category": "agent-traces",
       "owner": "jazzyalex",
       "repo": "agent-sessions",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/jazzyalex/agent-sessions",
+      "cloneUrl": "https://github.com/jazzyalex/agent-sessions.git",
       "githubUrl": "https://github.com/jazzyalex/agent-sessions",
       "apiUrl": "https://api.github.com/repos/jazzyalex/agent-sessions",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T22:37:34.338Z",
       "stars": 811,
@@ -6579,8 +8191,12 @@
       "category": "general-purpose-agents",
       "owner": "openclaw",
       "repo": "openclaw",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/openclaw/openclaw",
+      "cloneUrl": "https://github.com/openclaw/openclaw.git",
       "githubUrl": "https://github.com/openclaw/openclaw",
       "apiUrl": "https://api.github.com/repos/openclaw/openclaw",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T23:10:49.301Z",
       "stars": 387265,
@@ -6742,8 +8358,12 @@
       "category": "general-purpose-agents",
       "owner": "NousResearch",
       "repo": "hermes-agent",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/NousResearch/hermes-agent",
+      "cloneUrl": "https://github.com/NousResearch/hermes-agent.git",
       "githubUrl": "https://github.com/NousResearch/hermes-agent",
       "apiUrl": "https://api.github.com/repos/NousResearch/hermes-agent",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T23:09:22.288Z",
       "stars": 234946,
@@ -6960,8 +8580,12 @@
       "category": "general-purpose-agents",
       "owner": "HKUDS",
       "repo": "nanobot",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/HKUDS/nanobot",
+      "cloneUrl": "https://github.com/HKUDS/nanobot.git",
       "githubUrl": "https://github.com/HKUDS/nanobot",
       "apiUrl": "https://api.github.com/repos/HKUDS/nanobot",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T23:09:09.936Z",
       "stars": 47310,
@@ -7083,8 +8707,12 @@
       "category": "general-purpose-agents",
       "owner": "agent0ai",
       "repo": "agent-zero",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/agent0ai/agent-zero",
+      "cloneUrl": "https://github.com/agent0ai/agent-zero.git",
       "githubUrl": "https://github.com/agent0ai/agent-zero",
       "apiUrl": "https://api.github.com/repos/agent0ai/agent-zero",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T23:09:13.844Z",
       "stars": 18946,
@@ -7201,8 +8829,12 @@
       "category": "general-purpose-agents",
       "owner": "zeroclaw-labs",
       "repo": "zeroclaw",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/zeroclaw-labs/zeroclaw",
+      "cloneUrl": "https://github.com/zeroclaw-labs/zeroclaw.git",
       "githubUrl": "https://github.com/zeroclaw-labs/zeroclaw",
       "apiUrl": "https://api.github.com/repos/zeroclaw-labs/zeroclaw",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T23:09:26.574Z",
       "stars": 32636,
@@ -7289,8 +8921,12 @@
       "category": "general-purpose-agents",
       "owner": "nearai",
       "repo": "ironclaw",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/nearai/ironclaw",
+      "cloneUrl": "https://github.com/nearai/ironclaw.git",
       "githubUrl": "https://github.com/nearai/ironclaw",
       "apiUrl": "https://api.github.com/repos/nearai/ironclaw",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T23:09:44.463Z",
       "stars": 12602,
@@ -7422,8 +9058,12 @@
       "category": "general-purpose-agents",
       "owner": "sipeed",
       "repo": "picoclaw",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/sipeed/picoclaw",
+      "cloneUrl": "https://github.com/sipeed/picoclaw.git",
       "githubUrl": "https://github.com/sipeed/picoclaw",
       "apiUrl": "https://api.github.com/repos/sipeed/picoclaw",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T23:09:29.889Z",
       "stars": 29910,
@@ -7550,8 +9190,12 @@
       "category": "general-purpose-agents",
       "owner": "RightNow-AI",
       "repo": "openfang",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/RightNow-AI/openfang",
+      "cloneUrl": "https://github.com/RightNow-AI/openfang.git",
       "githubUrl": "https://github.com/RightNow-AI/openfang",
       "apiUrl": "https://api.github.com/repos/RightNow-AI/openfang",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T23:09:39.299Z",
       "stars": 18130,
@@ -7683,8 +9327,12 @@
       "category": "general-purpose-agents",
       "owner": "bytedance",
       "repo": "UI-TARS-desktop",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/bytedance/UI-TARS-desktop",
+      "cloneUrl": "https://github.com/bytedance/UI-TARS-desktop.git",
       "githubUrl": "https://github.com/bytedance/UI-TARS-desktop",
       "apiUrl": "https://api.github.com/repos/bytedance/UI-TARS-desktop",
+      "metricScope": null,
       "status": "current",
       "refreshedAt": "2026-08-23T23:09:42.924Z",
       "stars": 38697,

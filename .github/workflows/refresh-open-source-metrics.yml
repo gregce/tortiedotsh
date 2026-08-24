@@ -28,9 +28,10 @@ jobs:
       - name: Install LOC counter
         run: sudo apt-get update && sudo apt-get install --yes cloc
 
-      - name: Refresh official GitHub metrics
+      - name: Refresh official forge metrics
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: node takes/three/scripts/refresh-open-source-metrics.mjs --loc
 
       - name: Refresh first-party evidence fingerprints

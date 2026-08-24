@@ -455,6 +455,7 @@ interface ProductInput {
   platform?: readonly PlatformId[];
   platformNote?: string;
   platformSource?: { url: string; title: string };
+  platformSources?: readonly { url: string; title: string }[];
   source: SourceModel | "unknown";
   execution: readonly ExecutionLocation[] | "unknown";
   status?: ProductStatus;
@@ -465,6 +466,13 @@ const product = (input: ProductInput): ComparisonProduct => {
   const sourceUrl = input.officialUrl ?? input.repository?.url ?? null;
   const sourceTitle = `${input.name} primary source`;
   const profileUnknown = "Primary-source verification has not yet established this value.";
+  const platformSources = input.platformSources?.length
+    ? input.platformSources
+    : input.platformSource
+      ? [input.platformSource]
+      : sourceUrl
+        ? [{ url: sourceUrl, title: sourceTitle }]
+        : [];
 
   return {
     id: input.id,
@@ -477,14 +485,17 @@ const product = (input: ProductInput): ComparisonProduct => {
     tags: input.tags,
     profile: {
       platform:
-        input.platform && sourceUrl
-          ? known(
-              input.platform,
-              input.platformSource?.url ?? sourceUrl,
-              input.platformSource?.title ?? sourceTitle,
-              input.platformSource?.url?.includes("github.com") ? "repository-derived" : "vendor-documented",
-              input.platformNote,
-            )
+        input.platform && platformSources.length > 0
+          ? {
+              state: "known",
+              value: input.platform,
+              ...(input.platformNote ? { note: input.platformNote } : {}),
+              evidence: platformSources.map((source) => evidence(
+                source.url,
+                source.title,
+                source.url.includes("github.com") ? "repository-derived" : "vendor-documented",
+              )),
+            }
           : unknown("Platform support is not yet verified from a primary source at row level."),
       source:
         input.source !== "unknown" && sourceUrl
@@ -565,15 +576,15 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     id: "traecode", name: "TraeCode", categoryId: "code-editors", editorialOrder: 2, officialUrl: "https://www.trae.ai/ide",
     tags: ["agent-panel", "solo-mode", "inline-completion", "mcp", "embedded-browser", "formerly-trae-ide"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active",
     claims: {
-      ...builtInClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-project-tree", "editor-terminal", "editor-agent-mode", "editor-agent-shell-tools"]),
+      ...builtInClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-terminal", "editor-agent-mode", "editor-agent-shell-tools"]),
       ...builtInClaims("https://www.trae.ai/blog/engineering_thought_0731", "TraeCode Cue product notes", ["editor-inline-prediction"]),
       ...builtInClaims("https://www.trae.ai/blog/trae_membership_0213", "TraeCode capability overview", ["editor-mcp"]),
-      ...builtInClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-parallel-sessions"]),
+      ...builtInClaims("https://www.trae.ai/blog/product_solo_1112?v=1", "TraeCode SOLO general-availability notes", ["editor-parallel-sessions"]),
       ...limitedClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-background-jobs"], "SOLO supports long multi-step work, but detached durability after client exit is not established."),
-      ...limitedClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-change-review"], "Agent changes and artifacts are surfaced in the IDE, but per-hunk accept and reject behavior is not established."),
+      ...limitedClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-change-review"], "Progress and a final summary are surfaced in the IDE; per-hunk accept and reject behavior is not established."),
       "editor-model-access": factClaim("Vendor-managed models", "https://www.trae.ai/blog/trae_membership_0213", "TraeCode capability overview"),
       "editor-browser-tools": factClaim("Embedded browser in SOLO", "https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes"),
-      "editor-verification-loop": factClaim("Agent tool loop; test contract unverified", "https://www.trae.ai/blog/product_thought_0617", "TraeCode agent tool notes"),
+      "editor-verification-loop": factClaim("Interactive preview and console debugging; test execution not established", "https://www.trae.ai/ide/", "TraeCode product page"),
       "editor-specialization": factClaim("General software", "https://www.trae.ai/ide", "TraeCode product page"),
       "editor-ai-feature-boundary": factClaim("Built into TraeCode", "https://www.trae.ai/ide", "TraeCode product page"),
       "editor-release-channel": factClaim("Active desktop release", "https://www.trae.ai/download?auto=1&product_type=ide", "TraeCode download center"),
@@ -616,13 +627,16 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     id: "android-studio", name: "Android Studio", categoryId: "code-editors", editorialOrder: 5, officialUrl: "https://developer.android.com/studio/install",
     tags: ["android", "gemini", "agent-panel", "parallel-agents", "inline-completion", "mcp", "emulator", "split-source"], platform: ["macos", "windows", "linux"], source: "split-source", execution: ["local-process", "vendor-cloud"], status: "active",
     claims: {
-      ...builtInClaims("https://developer.android.com/studio/gemini/agent-mode", "Gemini in Android Studio Agent Mode", ["editor-project-tree", "editor-terminal", "editor-agent-mode", "editor-background-jobs", "editor-agent-shell-tools", "editor-parallel-sessions", "editor-change-review"]),
+      ...builtInClaims("https://developer.android.com/studio/projects", "Android Studio project window", ["editor-project-tree"]),
+      ...builtInClaims("https://developer.android.com/build/building-cmdline", "Android Studio terminal and command-line build documentation", ["editor-terminal"]),
+      ...builtInClaims("https://developer.android.com/studio/gemini/agent-mode", "Gemini in Android Studio Agent Mode", ["editor-agent-mode", "editor-agent-shell-tools", "editor-parallel-sessions", "editor-change-review"]),
+      ...limitedClaims("https://developer.android.com/studio/gemini/agent-mode", "Gemini in Android Studio Agent Mode", ["editor-background-jobs"], "Multiple agent conversations can run concurrently and remain visible in Recent Chats, but durability after Android Studio exits is not established."),
       ...builtInClaims("https://developer.android.com/studio/gemini/features", "Gemini in Android Studio features", ["editor-inline-prediction", "editor-mcp"]),
       "editor-model-access": factClaim("Gemini default and configured supported providers", "https://developer.android.com/studio/gemini/features", "Gemini in Android Studio features"),
       "editor-agent-permissions": factClaim("Tool permissions and change review", "https://developer.android.com/studio/gemini/agent-mode", "Gemini in Android Studio Agent Mode"),
-      "editor-browser-tools": factClaim("Emulator and device tools", "https://developer.android.com/studio/gemini/create-a-new-project-with-ai", "Android Studio new-project agent"),
-      "editor-verification-loop": factClaim("Builds, tests, diagnostics, emulator, and device", "https://developer.android.com/studio/gemini/create-a-new-project-with-ai", "Android Studio new-project agent"),
-      "editor-specialization": factClaim("Android", "https://developer.android.com/studio/install", "Android Studio install guide"),
+      "editor-browser-tools": factClaim("Emulator and connected-device inspection and control", "https://developer.android.com/studio/gemini/agent-mode", "Gemini in Android Studio Agent Mode"),
+      "editor-verification-loop": factClaim("Builds, build-error diagnosis, emulator, and connected-device checks", "https://developer.android.com/studio/gemini/create-a-new-project-with-ai", "Android Studio new-project agent"),
+      "editor-specialization": factClaim("Android", "https://developer.android.com/studio", "Android Studio product page"),
       "editor-ai-feature-boundary": factClaim("Integrated Gemini service in the shipped IDE", "https://developer.android.com/studio/gemini/features", "Gemini in Android Studio features"),
       "editor-release-channel": factClaim("Active stable desktop release", "https://developer.android.com/studio/install", "Android Studio install guide"),
     },
@@ -758,7 +772,44 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     },
   }),
   product({
-    id: "kiro", name: "Kiro", categoryId: "code-editors", editorialOrder: 13, officialUrl: "https://kiro.dev/docs/ide/",
+    id: "lapce", name: "Lapce", categoryId: "code-editors", editorialOrder: 13,
+    officialUrl: "https://docs.lapce.dev/get-started/setup",
+    repository: repo("lapce/lapce"), repoMetricId: "lapce",
+    tags: ["rust", "modal-editing", "remote-ssh", "plugins", "copilot", "oss"],
+    platform: ["macos", "windows", "linux"],
+    platformSource: { url: "https://docs.lapce.dev/get-started/setup", title: "Lapce setup" },
+    source: "open-source", execution: ["local-process", "ssh-host"], status: "active",
+    claims: {
+      ...builtInClaims("https://docs.lapce.dev/get-started/setup", "Lapce setup", ["editor-project-tree"]),
+      ...builtInClaims("https://docs.lapce.dev/get-started/terminal", "Lapce terminal documentation", ["editor-terminal"]),
+      ...builtInClaims("https://docs.lapce.dev/get-started/remote-development", "Lapce remote development", ["editor-remote-workspaces"]),
+      "editor-inline-prediction": capability("limited", "https://github.com/lapce/lapce/releases/tag/v0.4.0", "Lapce v0.4.0 release", "Lapce documents experimental Copilot support; a current first-party agent workflow is not established.", "repository-derived"),
+      "editor-model-access": factClaim("Experimental GitHub Copilot integration", "https://github.com/lapce/lapce/releases/tag/v0.4.0", "Lapce v0.4.0 release", "No built-in multi-provider agent surface is established.", "repository-derived"),
+      "editor-specialization": factClaim("General software development with modal editing", "https://github.com/lapce/lapce/blob/master/README.md", "Lapce README", undefined, "repository-derived"),
+      "editor-ai-feature-boundary": factClaim("Experimental Copilot completion; no first-party agent panel established", "https://github.com/lapce/lapce/releases/tag/v0.4.0", "Lapce v0.4.0 release", undefined, "repository-derived"),
+      "editor-release-channel": factClaim("Active stable desktop releases", "https://github.com/lapce/lapce/releases/latest", "Lapce releases", undefined, "repository-derived"),
+    },
+  }),
+  product({
+    id: "helix", name: "Helix", categoryId: "code-editors", editorialOrder: 14,
+    officialUrl: "https://helix-editor.com/",
+    repository: repo("helix-editor/helix"), repoMetricId: "helix",
+    tags: ["terminal-editor", "modal-editing", "lsp", "tree-sitter", "oss"],
+    platform: ["macos", "windows", "linux"],
+    platformSource: { url: "https://docs.helix-editor.com/package-managers.html", title: "Helix package managers" },
+    source: "open-source", execution: ["local-process"], status: "active",
+    claims: {
+      ...builtInClaims("https://docs.helix-editor.com/master/commands.html", "Helix commands", ["editor-project-tree"], "Helix provides workspace file explorer and picker commands in its terminal UI."),
+      "editor-terminal": capability("not-available", "https://github.com/helix-editor/helix/issues/1976", "Helix integrated-terminal proposal", "Helix itself runs in a terminal and exposes shell-command pipes, but the integrated-terminal proposal remains open.", "source-inspected"),
+      "editor-inline-prediction": capability("limited", "https://github.com/helix-editor/helix/discussions/4037", "Helix Copilot support discussion", "Maintainers point to external LSP integrations; Helix has no native Copilot or generic inline-AI integration.", "repository-derived"),
+      "editor-model-access": factClaim("External LSP or CLI integrations only", "https://github.com/helix-editor/helix/discussions/4037", "Helix Copilot support discussion", "No built-in model provider or agent configuration is established.", "repository-derived"),
+      "editor-specialization": factClaim("Terminal-first modal code editing", "https://github.com/helix-editor/helix", "Helix repository", undefined, "repository-derived"),
+      "editor-ai-feature-boundary": factClaim("No built-in AI; external LSP or CLI integrations", "https://github.com/helix-editor/helix/discussions/4037", "Helix Copilot support discussion", undefined, "repository-derived"),
+      "editor-release-channel": factClaim("Stable GitHub releases; nightly by building master", "https://docs.helix-editor.com/install.html", "Helix installation documentation"),
+    },
+  }),
+  product({
+    id: "kiro", name: "Kiro", categoryId: "code-editors", editorialOrder: 15, officialUrl: "https://kiro.dev/docs/ide/",
     tags: ["agent-panel", "spec-driven", "parallel-agents", "cloud-sessions"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active",
     claims: {
       ...builtInClaims("https://kiro.dev/docs/ide/", "Kiro IDE documentation", ["editor-project-tree", "editor-agent-mode", "editor-mcp"]),
@@ -775,7 +826,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     },
   }),
   product({
-    id: "void", name: "Void", categoryId: "code-editors", editorialOrder: 14, officialUrl: "https://github.com/voideditor/void", repository: repo("voideditor/void"), repoMetricId: "void",
+    id: "void", name: "Void", categoryId: "code-editors", editorialOrder: 16, officialUrl: "https://github.com/voideditor/void", repository: repo("voideditor/void"), repoMetricId: "void",
     tags: ["agent-panel", "vscode-derived", "oss", "historical"], platform: ["macos", "windows", "linux"], platformSource: { url: "https://github.com/voideditor/binaries/releases", title: "Void first-party binary releases" }, source: "open-source", execution: ["local-process"], status: "archived",
     claims: {
       ...builtInClaims("https://github.com/voideditor/void", "Void repository", ["editor-project-tree", "editor-terminal", "editor-agent-mode", "editor-change-review"], undefined, "repository-derived"),
@@ -847,7 +898,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       ...builtInClaims("https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents", "Warp agent conversations", ["workbench-named-sessions", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery"]),
       ...builtInClaims("https://docs.warp.dev/agent-platform/getting-started/agents-in-warp", "Agents in Warp", ["workbench-cross-project-attention"]),
       ...builtInClaims("https://docs.warp.dev/code/ssh-feature-support", "Warp SSH feature support", ["workbench-remote-host"]),
-      ...builtInClaims("https://docs.warp.dev/reference/cli", "Warp Oz CLI", ["workbench-programmable-control"]),
+      ...builtInClaims("https://docs.warp.dev/agents/cli/", "Warp Agent CLI", ["workbench-programmable-control"]),
     },
   }),
   product({
@@ -888,7 +939,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       "orchestrator-review-delivery": capability("built-in", "https://learn.chatgpt.com/", "ChatGPT product overview", "The Codex workflow documents running checks, reviewing the diff, and preparing changes to ship."),
     },
   }),
-  product({ id: "orca", name: "Orca", categoryId: "agent-orchestrators", editorialOrder: 3, officialUrl: "https://onorca.dev/", repository: repo("stablyai/orca"), repoMetricId: "orca", tags: ["agent-ide", "worktrees", "terminal", "editor", "scm", "remote-ssh", "mobile", "oss"], platform: ["macos", "windows", "linux", "web"], platformNote: "Mobile apps are companion clients; these values describe the desktop and web operator surfaces.", source: "open-source", execution: ["local-process", "ssh-host", "user-cloud"], claims: {
+  product({ id: "orca", name: "Orca", categoryId: "agent-orchestrators", editorialOrder: 3, officialUrl: "https://onorca.dev/", repository: repo("stablyai/orca"), repoMetricId: "orca", tags: ["agent-ide", "worktrees", "terminal", "editor", "scm", "remote-ssh", "mobile", "oss"], platform: ["macos", "windows", "linux", "web", "ios", "android"], platformNote: "iOS and Android are companion clients; the desktop and remote-server surfaces own agent execution.", platformSources: [{ url: "https://www.onorca.dev/download", title: "Orca downloads" }, { url: "https://www.onorca.dev/docs/remote-servers", title: "Orca remote server browser clients" }], source: "open-source", execution: ["local-process", "ssh-host", "user-cloud"], claims: {
     ...builtInClaims("https://github.com/stablyai/orca#readme", "Orca repository README", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-inline-review", "orchestrator-remote-execution"], undefined, "repository-derived"),
     ...builtInClaims("https://github.com/stablyai/orca/blob/main/skill-guides/orca-cli.md", "Orca CLI guide", ["orchestrator-worktrees", "orchestrator-programmable"], undefined, "repository-derived"),
     ...builtInClaims("https://github.com/stablyai/orca#readme", "Orca repository README", ["orchestrator-task-board", "orchestrator-pr-lifecycle", "orchestrator-attention-signals", "orchestrator-live-steering"], "Orca documents GitHub and Linear project boards, PR browsing, notifications and unread state, mobile follow-ups, and steering active agents.", "repository-derived"),
@@ -952,7 +1003,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   product({ id: "superset", name: "Superset", categoryId: "agent-orchestrators", editorialOrder: 12, officialUrl: "https://github.com/superset-sh/superset", repository: repo("superset-sh/superset"), repoMetricId: "superset", tags: ["worktrees", "terminal", "diff-review", "remote-hosts", "source-available"], platform: ["macos", "linux"], platformNote: "macOS is primary; Linux support is documented as experimental and Windows is explicitly not yet available.", source: "source-available", execution: ["local-process", "ssh-host"], status: "active", claims: {
     ...builtInClaims("https://github.com/superset-sh/superset", "Superset repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-inline-review", "orchestrator-pr-lifecycle", "orchestrator-remote-execution", "orchestrator-attention-signals", "orchestrator-live-steering", "orchestrator-programmable"], undefined, "repository-derived"),
   } }),
-  product({ id: "coder-mux", name: "Coder Mux", categoryId: "agent-orchestrators", editorialOrder: 13, officialUrl: "https://mux.coder.com", repository: repo("coder/cmux"), repoMetricId: "coder-mux", tags: ["chat-control-plane", "worktrees", "ssh", "review", "oss"], platform: ["macos", "linux", "web"], source: "open-source", execution: ["local-process", "ssh-host"], claims: builtInClaims("https://github.com/coder/cmux", "Coder Mux repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-inline-review", "orchestrator-remote-execution", "orchestrator-attention-signals"], undefined, "repository-derived") }),
+  product({ id: "coder-mux", name: "Xum", categoryId: "agent-orchestrators", editorialOrder: 13, officialUrl: "https://github.com/coder/xum", repository: repo("coder/xum"), repoMetricId: "coder-mux", tags: ["chat-control-plane", "worktrees", "ssh", "review", "oss", "formerly-coder-mux"], platform: ["macos", "linux", "web"], source: "open-source", execution: ["local-process", "ssh-host"], claims: builtInClaims("https://github.com/coder/xum", "Xum repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-inline-review", "orchestrator-remote-execution", "orchestrator-attention-signals"], undefined, "repository-derived") }),
   product({ id: "nimbalyst", name: "Nimbalyst", categoryId: "agent-orchestrators", editorialOrder: 14, officialUrl: "https://github.com/nimbalyst/nimbalyst", repository: repo("nimbalyst/nimbalyst"), repoMetricId: "nimbalyst", tags: ["agent-ide", "worktrees", "kanban", "editor", "visual-docs", "oss"], platform: ["macos", "windows", "linux"], platformNote: "Mobile companion reach is not counted as a desktop host platform.", source: "open-source", execution: ["local-process"], status: "active", claims: {
     ...builtInClaims("https://github.com/nimbalyst/nimbalyst#readme", "Nimbalyst repository README", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-task-board", "orchestrator-inline-review", "orchestrator-attention-signals"], undefined, "repository-derived"),
     ...builtInClaims("https://github.com/nimbalyst/nimbalyst/blob/main/docs/WORKTREES.md", "Nimbalyst worktree documentation", ["orchestrator-worktrees"], undefined, "repository-derived"),
@@ -1270,10 +1321,11 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "extension-install-channel": factClaim("IDE marketplaces", "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE.html", "Amazon Q Developer in IDEs"),
     "extension-tool-execution-boundary": factClaim("Host IDE + AWS cloud", "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE.html", "Amazon Q Developer in IDEs"),
   } }),
-  product({ id: "gemini-code-assist", name: "Gemini Code Assist IDE extension", categoryId: "ide-extensions", editorialOrder: 9, officialUrl: "https://developers.google.com/gemini-code-assist/docs/overview", tags: ["vscode", "jetbrains", "android-studio", "autocomplete", "agent-panel"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["host-ide-process", "vendor-cloud"], status: "active", claims: {
-    ...builtInClaims("https://developers.google.com/gemini-code-assist/docs/overview", "Gemini Code Assist overview", ["extension-hosts", "extension-inline-completion", "extension-agent-panel", "extension-host-vscode", "extension-host-jetbrains", "extension-codebase-context"]),
-    "extension-install-channel": factClaim("VS Code and JetBrains marketplaces", "https://developers.google.com/gemini-code-assist/docs/overview", "Gemini Code Assist overview"),
-    "extension-tool-execution-boundary": factClaim("Host IDE + Google cloud", "https://developers.google.com/gemini-code-assist/docs/overview", "Gemini Code Assist overview"),
+  product({ id: "gemini-code-assist", name: "Gemini Code Assist Standard / Enterprise extensions", categoryId: "ide-extensions", editorialOrder: 9, officialUrl: "https://docs.cloud.google.com/gemini/docs/codeassist/overview", tags: ["vscode", "jetbrains", "autocomplete", "agent-panel", "standard", "enterprise"], source: "proprietary", execution: ["host-ide-process", "vendor-cloud"], status: "active", claims: {
+    ...builtInClaims("https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages", "Gemini Code Assist supported IDEs", ["extension-hosts", "extension-host-vscode", "extension-host-jetbrains"]),
+    ...builtInClaims("https://docs.cloud.google.com/gemini/docs/codeassist/overview", "Gemini Code Assist Standard and Enterprise overview", ["extension-inline-completion", "extension-agent-panel", "extension-codebase-context"]),
+    "extension-install-channel": factClaim("VS Code and JetBrains extension setup", "https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages", "Gemini Code Assist supported IDEs"),
+    "extension-tool-execution-boundary": factClaim("Host IDE + Google Cloud service", "https://docs.cloud.google.com/gemini/docs/codeassist/overview", "Gemini Code Assist Standard and Enterprise overview"),
   } }),
   product({ id: "jetbrains-ai-assistant", name: "JetBrains AI Assistant", categoryId: "ide-extensions", editorialOrder: 10, officialUrl: "https://www.jetbrains.com/help/idea/ai-assistant-in-jetbrains-ides.html", tags: ["jetbrains", "autocomplete", "agent-panel", "external-agents"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["host-ide-process", "local-process", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://www.jetbrains.com/help/idea/ai-assistant-in-jetbrains-ides.html", "JetBrains AI Assistant overview", ["extension-hosts", "extension-inline-completion", "extension-agent-panel", "extension-host-jetbrains", "extension-provider-choice", "extension-codebase-context"]),
@@ -1301,18 +1353,41 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "extension-tool-execution-boundary": factClaim("Neovim process + local ACP agents", "https://github.com/olimorris/codecompanion.nvim/blob/main/doc/codecompanion.txt", "CodeCompanion.nvim documentation", undefined, "source-inspected"),
     "extension-byok-local-model": capability("built-in", "https://github.com/olimorris/codecompanion.nvim", "CodeCompanion.nvim repository", "Multiple provider adapters and ACP-compatible local agents are supported.", "repository-derived"),
   } }),
-  product({ id: "avante-nvim", name: "avante.nvim", categoryId: "ide-extensions", editorialOrder: 14, officialUrl: "https://github.com/yetone/avante.nvim", repository: repo("yetone/avante.nvim"), repoMetricId: "avante-nvim", tags: ["neovim", "agent-panel", "acp", "multi-provider", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["host-ide-process", "local-process", "vendor-cloud"], status: "active", claims: {
-    ...builtInClaims("https://github.com/yetone/avante.nvim", "avante.nvim repository", ["extension-hosts", "extension-inline-completion", "extension-agent-panel", "extension-provider-choice", "extension-codebase-context"], undefined, "repository-derived"),
-    "extension-install-channel": factClaim("Neovim plugin manager", "https://github.com/yetone/avante.nvim", "avante.nvim repository", undefined, "repository-derived"),
-    "extension-tool-execution-boundary": factClaim("Neovim process + local ACP agents", "https://github.com/yetone/avante.nvim", "avante.nvim repository", undefined, "repository-derived"),
-    "extension-byok-local-model": capability("built-in", "https://github.com/yetone/avante.nvim", "avante.nvim repository", "Configurable model providers and ACP agents are supported.", "repository-derived"),
+  product({ id: "avante-nvim", name: "avante.nvim", categoryId: "ide-extensions", editorialOrder: 14, officialUrl: "https://github.com/avante-corp/avante.nvim", repository: repo("avante-corp/avante.nvim"), repoMetricId: "avante-nvim", tags: ["neovim", "agent-panel", "acp", "multi-provider", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["host-ide-process", "local-process", "vendor-cloud"], status: "active", claims: {
+    ...builtInClaims("https://github.com/avante-corp/avante.nvim", "avante.nvim repository", ["extension-hosts", "extension-inline-completion", "extension-agent-panel", "extension-provider-choice", "extension-codebase-context"], undefined, "repository-derived"),
+    "extension-install-channel": factClaim("Neovim plugin manager", "https://github.com/avante-corp/avante.nvim", "avante.nvim repository", undefined, "repository-derived"),
+    "extension-tool-execution-boundary": factClaim("Neovim process + local ACP agents", "https://github.com/avante-corp/avante.nvim", "avante.nvim repository", undefined, "repository-derived"),
+    "extension-byok-local-model": capability("built-in", "https://github.com/avante-corp/avante.nvim", "avante.nvim repository", "Configurable model providers and ACP agents are supported.", "repository-derived"),
   } }),
-  product({ id: "refact-ide-plugins", name: "Refact IDE plugins", categoryId: "ide-extensions", editorialOrder: 15, officialUrl: "https://github.com/smallcloudai/refact", repository: repo("smallcloudai/refact"), repoMetricId: "refact", tags: ["vscode", "jetbrains", "visual-studio", "sublime", "neovim", "self-hosted", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["host-ide-process", "local-daemon", "vendor-cloud", "user-cloud"], status: "active", claims: {
+  product({ id: "refact-ide-plugins", name: "Refact IDE plugins", categoryId: "ide-extensions", editorialOrder: 15, officialUrl: "https://github.com/smallcloudai/refact", repository: repo("smallcloudai/refact"), repoMetricId: "refact", tags: ["vscode", "jetbrains", "visual-studio", "sublime", "neovim", "self-hosted", "oss", "archived", "historical"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["host-ide-process", "local-daemon", "vendor-cloud", "user-cloud"], status: "archived", claims: {
     ...builtInClaims("https://github.com/smallcloudai/refact", "Refact repository", ["extension-hosts", "extension-inline-completion", "extension-agent-panel", "extension-host-vscode", "extension-host-jetbrains", "extension-provider-choice", "extension-mcp", "extension-codebase-context"], undefined, "repository-derived"),
     "extension-install-channel": factClaim("IDE marketplaces / editor package managers", "https://github.com/smallcloudai/refact-lsp/blob/main/README.md", "Refact agent README", undefined, "source-inspected"),
     "extension-tool-execution-boundary": factClaim("Local Refact agent/LSP + selectable server", "https://github.com/smallcloudai/refact-lsp/blob/main/README.md", "Refact agent README", undefined, "source-inspected"),
     "extension-byok-local-model": capability("built-in", "https://github.com/smallcloudai/refact", "Refact repository", "Cloud, BYOK, and self-hosted server paths are supported.", "repository-derived"),
   } }),
+  product({
+    id: "roo-code", name: "Roo Code extension", categoryId: "ide-extensions", editorialOrder: 16,
+    officialUrl: "https://github.com/RooCodeInc/Roo-Code",
+    repository: repo("RooCodeInc/Roo-Code"), repoMetricId: "roo-code",
+    tags: ["vscode", "agent-panel", "mcp", "checkpoints", "multi-provider", "historical", "oss"],
+    platform: ["macos", "windows", "linux"],
+    platformSource: {
+      url: "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/getting-started/installing.mdx",
+      title: "Roo Code installation documentation",
+    },
+    platformNote: "Historical host support before the extension shut down on 2026-05-15.",
+    source: "open-source", execution: ["host-ide-process"], status: "archived",
+    claims: {
+      ...builtInClaims("https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/getting-started/installing.mdx", "Roo Code installation documentation", ["extension-hosts", "extension-agent-panel", "extension-host-vscode"], "Historical VS Code, Cursor, VSCodium, Windsurf, and compatible-editor extension surface.", "source-inspected"),
+      ...builtInClaims("https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/providers/index.mdx", "Roo Code model providers", ["extension-provider-choice", "extension-byok-local-model"], "Historical support included multiple hosted providers plus Ollama and LM Studio.", "source-inspected"),
+      ...builtInClaims("https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/advanced-usage/available-tools/use-mcp-tool.md", "Roo Code MCP tool documentation", ["extension-mcp"], undefined, "source-inspected"),
+      ...builtInClaims("https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/features/checkpoints.mdx", "Roo Code checkpoints", ["extension-checkpoints"], "Task-scoped shadow-Git checkpoints supplied diff review and file/task restoration.", "source-inspected"),
+      ...builtInClaims("https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/features/auto-approving-actions.mdx", "Roo Code auto-approval documentation", ["extension-permissions"], undefined, "source-inspected"),
+      ...builtInClaims("https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/features/codebase-indexing.mdx", "Roo Code codebase indexing", ["extension-codebase-context"], undefined, "source-inspected"),
+      "extension-install-channel": factClaim("Historical Marketplace, Open VSX, and VSIX; distribution ended", "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/getting-started/installing.mdx", "Roo Code installation documentation", "The extension shut down on 2026-05-15; these are historical channels, not current installation guidance.", "source-inspected"),
+      "extension-tool-execution-boundary": factClaim("Host IDE workspace and local processes", "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/advanced-usage/available-tools/tool-use-overview.md", "Roo Code tool-use overview", undefined, "source-inspected"),
+    },
+  }),
 
   // 6. Cloud and background agents
   product({ id: "openai-codex-cloud", name: "OpenAI Codex cloud", categoryId: "cloud-agents", editorialOrder: 1, officialUrl: "https://openai.com/codex/", tags: ["issue-to-pr", "sandbox", "github", "vendor-service"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "active", claims: {
@@ -1411,7 +1486,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "cloud-triggered-automation": capability("built-in", "https://docs.codegen.com/api-reference/agents/create-agent-run", "Codegen agent-run API", "Agent runs can be created and monitored through the API; Slack, Linear, and Jira are documented intake surfaces."),
     "cloud-result-type": factClaim("Branch or pull request", "https://docs.codegen.com/integrations/github", "Codegen GitHub integration"),
   } }),
-  product({ id: "gitlab-duo-developer-flow", name: "GitLab Duo Developer Flow", categoryId: "cloud-agents", editorialOrder: 9, officialUrl: "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/", repository: repo("gitlab-org/gitlab"), repoMetricId: "gitlab", tags: ["gitlab", "ci-runner", "merge-request", "open-core"], platform: ["web"], source: "split-source", execution: ["user-cloud", "local-process"], status: "active", claims: {
+  product({ id: "gitlab-duo-developer-flow", name: "GitLab Duo Developer Flow", categoryId: "cloud-agents", editorialOrder: 9, officialUrl: "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/", repository: { id: "gitlab-org/gitlab", url: "https://gitlab.com/gitlab-org/gitlab", relationship: "source-tree" }, repoMetricId: "gitlab", tags: ["gitlab", "ci-runner", "merge-request", "open-core"], platform: ["web"], source: "split-source", execution: ["user-cloud", "local-process"], status: "active", claims: {
     ...builtInClaims("https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/", "GitLab Duo Developer Flow", ["cloud-repo-intake", "cloud-live-observability", "cloud-durable-result", "cloud-intake-surfaces", "cloud-code-hosts", "cloud-project-instructions"]),
     "cloud-sandbox": capability("limited", "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/", "GitLab Duo flow execution", "Flows run through configured GitLab CI/CD runners or locally; isolation depends on operator runner configuration."),
     "cloud-execution-owner": factClaim("Customer CI runner or local IDE", "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/", "GitLab Duo flow execution"),

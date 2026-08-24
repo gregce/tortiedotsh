@@ -17,9 +17,34 @@ const defaultManifest = resolve(takeRoot, "src/data/open-source-projects.json");
 const defaultOutput = resolve(takeRoot, "src/data/open-source-metrics.json");
 const githubApi = "https://api.github.com";
 const githubToken = process.env.GITHUB_TOKEN?.trim() || null;
+const gitlabApi = "https://gitlab.com/api/v4";
+const gitlabToken = process.env.GITLAB_TOKEN?.trim() || null;
+
+function projectForge(project) {
+  return project.forge || "github";
+}
+
+function projectRepositoryUrl(project) {
+  return project.repositoryUrl || project.githubUrl;
+}
+
+function projectCloneUrl(project) {
+  return project.cloneUrl || `${projectRepositoryUrl(project)}.git`;
+}
+
+function projectTreeUrl(project, ref) {
+  const separator = projectForge(project) === "gitlab" ? "/-/tree/" : "/tree/";
+  return `${projectRepositoryUrl(project)}${separator}${encodeURIComponent(ref)}`;
+}
+
+function projectReleasesUrl(project) {
+  return projectForge(project) === "gitlab"
+    ? `${projectRepositoryUrl(project)}/-/releases`
+    : `${projectRepositoryUrl(project)}/releases`;
+}
 
 function usage() {
-  console.log(`Refresh committed GitHub metrics for the open-source comparison.
+  console.log(`Refresh committed forge metrics for the open-source comparison.
 
 Usage:
   node scripts/refresh-open-source-metrics.mjs [options]
@@ -29,12 +54,14 @@ Options:
   --project <id>        Refresh one project (repeatable)
   --manifest <path>     Override the manifest path
   --output <path>       Override the generated output path
-  --concurrency <n>     Concurrent GitHub refreshes (default: 3)
+  --concurrency <n>     Concurrent forge refreshes (default: 3)
   --sync-only           Add/remove manifest records without network access
   --dry-run             Fetch and validate without writing
   --help                Show this help
 
-GITHUB_TOKEN is optional. Anonymous GitHub API limits apply when it is absent.`);
+GITHUB_TOKEN is optional. Anonymous GitHub API limits apply when it is absent.
+GITLAB_TOKEN is required for complete GitLab repository statistics; it needs
+Reporter access and read_api scope on each tracked GitLab project.`);
 }
 
 function parseArguments(argv) {
@@ -95,7 +122,7 @@ function validateManifest(manifest) {
   const ids = new Set();
   const repositories = new Set();
   for (const project of manifest.projects) {
-    for (const field of ["id", "name", "category", "owner", "repo", "githubUrl", "apiUrl"]) {
+    for (const field of ["id", "name", "category", "owner", "repo", "apiUrl"]) {
       if (typeof project[field] !== "string" || project[field].trim() === "") {
         throw new Error(`Manifest project ${project.id || "<unknown>"} needs a non-empty ${field}`);
       }
@@ -109,17 +136,46 @@ function validateManifest(manifest) {
     if (ids.has(project.id)) throw new Error(`Duplicate project id: ${project.id}`);
     ids.add(project.id);
 
-    const repository = `${project.owner.toLowerCase()}/${project.repo.toLowerCase()}`;
+    const forge = projectForge(project);
+    if (!["github", "gitlab"].includes(forge)) {
+      throw new Error(`${project.id} uses unsupported forge ${forge}`);
+    }
+    const repository = `${forge}:${project.owner.toLowerCase()}/${project.repo.toLowerCase()}`;
     if (repositories.has(repository)) throw new Error(`Duplicate repository: ${repository}`);
     repositories.add(repository);
 
-    const expectedGithubUrl = `https://github.com/${project.owner}/${project.repo}`;
-    const expectedApiUrl = `${githubApi}/repos/${project.owner}/${project.repo}`;
-    if (project.githubUrl !== expectedGithubUrl || project.apiUrl !== expectedApiUrl) {
-      throw new Error(`${project.id} URLs must exactly match its owner/repo coordinates`);
+    if (forge === "github") {
+      const expectedGithubUrl = `https://github.com/${project.owner}/${project.repo}`;
+      const expectedApiUrl = `${githubApi}/repos/${project.owner}/${project.repo}`;
+      if (project.githubUrl !== expectedGithubUrl || project.apiUrl !== expectedApiUrl) {
+        throw new Error(`${project.id} GitHub URLs must exactly match its owner/repo coordinates`);
+      }
+    } else {
+      const expectedRepositoryUrl = `https://gitlab.com/${project.owner}/${project.repo}`;
+      const expectedApiUrl = `${gitlabApi}/projects/${encodeURIComponent(`${project.owner}/${project.repo}`)}`;
+      const expectedCloneUrl = `${expectedRepositoryUrl}.git`;
+      if (
+        project.repositoryUrl !== expectedRepositoryUrl ||
+        project.apiUrl !== expectedApiUrl ||
+        project.cloneUrl !== expectedCloneUrl
+      ) {
+        throw new Error(`${project.id} GitLab URLs must exactly match its owner/repo coordinates`);
+      }
+    }
+    if (project.metricScope !== undefined && (
+      typeof project.metricScope !== "string" || project.metricScope.trim() === ""
+    )) {
+      throw new Error(`${project.id} metricScope must be a non-empty string when present`);
     }
     if (typeof project.loc?.enabled !== "boolean") {
       throw new Error(`${project.id} must declare loc.enabled`);
+    }
+    if (project.loc.timeoutMinutes !== undefined && (
+      !Number.isInteger(project.loc.timeoutMinutes) ||
+      project.loc.timeoutMinutes < 1 ||
+      project.loc.timeoutMinutes > 60
+    )) {
+      throw new Error(`${project.id} loc.timeoutMinutes must be an integer from 1 through 60`);
     }
     if (!project.loc.enabled && (typeof project.loc.reason !== "string" || project.loc.reason.trim() === "")) {
       throw new Error(`${project.id} must explain why LOC measurement is disabled`);
@@ -134,22 +190,87 @@ function validateManifest(manifest) {
       throw new Error(`${project.id} has an unsupported release.mode`);
     }
     if (project.license) {
-      for (const field of ["spdxId", "name", "sourceUrl", "checkedAt"]) {
-        if (typeof project.license[field] !== "string" || project.license[field].trim() === "") {
-          throw new Error(`${project.id} license override needs a non-empty ${field}`);
-        }
+      if (!Number.isFinite(Date.parse(project.license.checkedAt))) {
+        throw new Error(`${project.id} license override needs a valid check date`);
       }
-      if (!project.license.sourceUrl.startsWith("https://") || !Number.isFinite(Date.parse(project.license.checkedAt))) {
-        throw new Error(`${project.id} license override needs HTTPS provenance and a valid check date`);
+      if (project.license.components !== undefined) {
+        if (
+          typeof project.license.summary !== "string" || project.license.summary.trim() === "" ||
+          !Array.isArray(project.license.components) || project.license.components.length === 0
+        ) {
+          throw new Error(`${project.id} mixed-license override needs a summary and non-empty components`);
+        }
+        for (const component of project.license.components) {
+          for (const field of ["spdxId", "name", "scope", "sourceUrl"]) {
+            if (typeof component[field] !== "string" || component[field].trim() === "") {
+              throw new Error(`${project.id} license component needs a non-empty ${field}`);
+            }
+          }
+          if (!component.sourceUrl.startsWith("https://")) {
+            throw new Error(`${project.id} license component needs HTTPS provenance`);
+          }
+        }
+      } else {
+        for (const field of ["spdxId", "name", "sourceUrl"]) {
+          if (typeof project.license[field] !== "string" || project.license[field].trim() === "") {
+            throw new Error(`${project.id} license override needs a non-empty ${field}`);
+          }
+        }
+        if (!project.license.sourceUrl.startsWith("https://")) {
+          throw new Error(`${project.id} license override needs HTTPS provenance`);
+        }
       }
     }
   }
+}
+
+function manifestLicenseValue(license) {
+  if (!license) return null;
+  if (license.components) {
+    return {
+      key: "manifest-verified-mixed",
+      name: license.summary,
+      spdxId: null,
+      url: null,
+      summary: license.summary,
+      components: license.components.map((component) => ({ ...component })),
+    };
+  }
+  return {
+    key: "manifest-verified",
+    name: license.name,
+    spdxId: license.spdxId,
+    url: license.sourceUrl,
+  };
+}
+
+function manifestLicenseSources(license) {
+  if (!license) return [];
+  const urls = license.components
+    ? [...new Set(license.components.map((component) => component.sourceUrl))]
+    : [license.sourceUrl];
+  return urls.map((url) => ({
+    type: "license-override",
+    url,
+    fetchedAt: `${license.checkedAt}T00:00:00.000Z`,
+  }));
 }
 
 class GithubRequestError extends Error {
   constructor(message, { status, url, body = null, headers = null } = {}) {
     super(message);
     this.name = "GithubRequestError";
+    this.status = status;
+    this.url = url;
+    this.body = body;
+    this.headers = headers;
+  }
+}
+
+class GitlabRequestError extends Error {
+  constructor(message, { status, url, body = null, headers = null } = {}) {
+    super(message);
+    this.name = "GitlabRequestError";
     this.status = status;
     this.url = url;
     this.body = body;
@@ -191,6 +312,34 @@ async function githubRequest(path, { allow404 = false } = {}) {
   };
 }
 
+async function gitlabRequest(url, { allow404 = false } = {}) {
+  const headers = {
+    Accept: "application/json",
+    "User-Agent": "tortie-open-source-metrics",
+  };
+  if (gitlabToken) headers["PRIVATE-TOKEN"] = gitlabToken;
+
+  const response = await fetch(url, { headers, signal: AbortSignal.timeout(30_000) });
+  if (allow404 && response.status === 404) return null;
+  if (!response.ok) {
+    const body = await response.text();
+    throw new GitlabRequestError(`GitLab returned ${response.status} for ${url}`, {
+      status: response.status,
+      url,
+      body: body.slice(0, 500),
+      headers: response.headers,
+    });
+  }
+
+  return {
+    data: await response.json(),
+    url,
+    fetchedAt: new Date().toISOString(),
+    total: response.headers.get("x-total"),
+    totalPages: response.headers.get("x-total-pages"),
+  };
+}
+
 function source(type, response) {
   return { type, url: response.url, fetchedAt: response.fetchedAt };
 }
@@ -214,6 +363,24 @@ function normalizeLanguages(languageBytes) {
       bytes,
       percent: totalBytes === 0 ? 0 : Number(((bytes / totalBytes) * 100).toFixed(2)),
     }));
+}
+
+function normalizeGitlabLanguages(languagePercentages) {
+  return Object.entries(languagePercentages)
+    .sort((left, right) => right[1] - left[1])
+    .map(([name, percent]) => ({
+      name,
+      bytes: null,
+      percent: Number(Number(percent).toFixed(2)),
+    }));
+}
+
+function parseGitlabTotal(response, currentLength) {
+  const total = Number(response.total);
+  if (Number.isInteger(total) && total >= 0) return total;
+  const totalPages = Number(response.totalPages);
+  if (Number.isInteger(totalPages) && totalPages > 1 && currentLength === 1) return totalPages;
+  return currentLength;
 }
 
 function nullLoc(status = "not-measured", reason = null) {
@@ -240,7 +407,7 @@ async function resolveRemoteRefSha(project, measuredRef, refType) {
   const patterns = refType === "default-branch"
     ? [`refs/heads/${measuredRef}`]
     : [`refs/tags/${measuredRef}`, `refs/tags/${measuredRef}^{}`];
-  const { stdout } = await execFileAsync("git", ["ls-remote", project.githubUrl, ...patterns], {
+  const { stdout } = await execFileAsync("git", ["ls-remote", projectCloneUrl(project), ...patterns], {
     timeout: 60_000,
     maxBuffer: 1024 * 1024,
   });
@@ -251,8 +418,20 @@ async function resolveRemoteRefSha(project, measuredRef, refType) {
   return refs.find((item) => item.ref?.endsWith("^{}"))?.sha || refs[0]?.sha || null;
 }
 
+async function currentClocTool() {
+  const { stdout, stderr } = await execFileAsync("cloc", ["--version"], {
+    timeout: 30_000,
+    maxBuffer: 1024 * 1024,
+  });
+  const version = `${stdout || ""}\n${stderr || ""}`.trim().split(/\s+/)[0];
+  if (!version) throw new Error("cloc --version returned no version");
+  return `cloc ${version}`;
+}
+
 async function measureLoc(project, measuredRef, refType, previousLoc = null) {
   if (!project.loc.enabled) return nullLoc("disabled", project.loc.reason || "Disabled in manifest");
+  const locTimeout = (project.loc.timeoutMinutes || 10) * 60_000;
+  const clocTool = await currentClocTool();
 
   try {
     const currentCommitSha = await resolveRemoteRefSha(project, measuredRef, refType);
@@ -262,7 +441,8 @@ async function measureLoc(project, measuredRef, refType, previousLoc = null) {
       previousLoc.measuredRef === measuredRef &&
       previousLoc.refType === refType &&
       previousLoc.commitSha === currentCommitSha &&
-      previousLoc.methodology === LOC_METHODOLOGY
+      previousLoc.methodology === LOC_METHODOLOGY &&
+      previousLoc.tool === clocTool
     ) {
       return {
         ...previousLoc,
@@ -284,9 +464,13 @@ async function measureLoc(project, measuredRef, refType, previousLoc = null) {
       "--single-branch",
       `--branch=${measuredRef}`,
       "--quiet",
-      project.githubUrl,
+      projectCloneUrl(project),
       checkout,
-    ], { timeout: 10 * 60_000, maxBuffer: 4 * 1024 * 1024 });
+    ], {
+      timeout: locTimeout,
+      maxBuffer: 4 * 1024 * 1024,
+      env: { ...process.env, GIT_LFS_SKIP_SMUDGE: "1" },
+    });
 
     const { stdout } = await execFileAsync("cloc", [
       "--json",
@@ -294,7 +478,7 @@ async function measureLoc(project, measuredRef, refType, previousLoc = null) {
       `--exclude-ext=${LOC_EXCLUDED_EXTENSIONS}`,
       `--exclude-dir=${LOC_EXCLUDED_DIRECTORIES}`,
       checkout,
-    ], { timeout: 10 * 60_000, maxBuffer: 32 * 1024 * 1024 });
+    ], { timeout: locTimeout, maxBuffer: 32 * 1024 * 1024 });
     const jsonStart = stdout.indexOf("{");
     const jsonEnd = stdout.lastIndexOf("}");
     if (jsonStart === -1 || jsonEnd === -1) throw new Error("cloc returned no JSON object");
@@ -317,7 +501,7 @@ async function measureLoc(project, measuredRef, refType, previousLoc = null) {
       measuredRef,
       refType,
       commitSha: commitSha.trim(),
-      tool: `cloc ${result.header?.cloc_version || "unknown"}`,
+      tool: clocTool,
       methodology: LOC_METHODOLOGY,
       excludedExtensions: LOC_EXCLUDED_EXTENSIONS,
       excludedDirectories: LOC_EXCLUDED_DIRECTORIES,
@@ -326,6 +510,64 @@ async function measureLoc(project, measuredRef, refType, previousLoc = null) {
   } finally {
     await rm(tempRoot, { recursive: true, force: true });
   }
+}
+
+function gitlabProjectEndpoint(project, suffix = "", query = "") {
+  return `${project.apiUrl}${suffix}${query}`;
+}
+
+async function latestGitlabVersion(project) {
+  const releases = await gitlabRequest(gitlabProjectEndpoint(project, "/releases", "?per_page=100"));
+  const now = Date.now();
+  const release = releases.data
+    .filter((candidate) => (
+      !candidate.upcoming_release &&
+      Number.isFinite(Date.parse(candidate.released_at)) &&
+      Date.parse(candidate.released_at) <= now
+    ))
+    .sort((left, right) => Date.parse(right.released_at) - Date.parse(left.released_at))[0];
+  if (release) {
+    return {
+      latestRelease: {
+        tagName: release.tag_name || null,
+        name: release.name || null,
+        publishedAt: release.released_at || null,
+        url: release._links?.self || projectTreeUrl(project, release.tag_name),
+        prerelease: false,
+      },
+      latestTag: null,
+      version: release.tag_name || null,
+      releaseDate: release.released_at || null,
+      releasePolicy: null,
+      sources: [source("latest-release", releases)],
+    };
+  }
+
+  const tags = await gitlabRequest(gitlabProjectEndpoint(project, "/repository/tags", "?per_page=1"));
+  const tag = tags.data[0];
+  if (!tag) {
+    return {
+      latestRelease: null,
+      latestTag: null,
+      version: null,
+      releaseDate: null,
+      releasePolicy: null,
+      sources: [source("latest-release", releases), source("latest-tag", tags)],
+    };
+  }
+  return {
+    latestRelease: null,
+    latestTag: {
+      name: tag.name,
+      commitSha: tag.commit?.id || null,
+      commitDate: tag.commit?.committed_date || tag.commit?.created_at || null,
+      url: tag.web_url || projectTreeUrl(project, tag.name),
+    },
+    version: tag.name,
+    releaseDate: null,
+    releasePolicy: null,
+    sources: [source("latest-release", releases), source("latest-tag", tags)],
+  };
 }
 
 async function latestVersion(project) {
@@ -344,26 +586,36 @@ async function latestVersion(project) {
       },
       sources: [{
         type: "release-policy",
-        url: `${project.githubUrl}/releases`,
+        url: projectReleasesUrl(project),
         fetchedAt: `${project.release.checkedAt}T00:00:00.000Z`,
       }],
     };
   }
-  const release = await githubRequest(`/repos/${owner}/${repo}/releases/latest`, { allow404: true });
+  if (projectForge(project) === "gitlab") return latestGitlabVersion(project);
+  const releases = await githubRequest(`/repos/${owner}/${repo}/releases?per_page=100`);
+  const now = Date.now();
+  const publishedReleases = releases.data
+    .filter((candidate) => (
+      !candidate.draft &&
+      Number.isFinite(Date.parse(candidate.published_at)) &&
+      Date.parse(candidate.published_at) <= now
+    ))
+    .sort((left, right) => Date.parse(right.published_at) - Date.parse(left.published_at));
+  const release = publishedReleases.find((candidate) => !candidate.prerelease) || publishedReleases[0] || null;
   if (release) {
     return {
       latestRelease: {
-        tagName: release.data.tag_name || null,
-        name: release.data.name || null,
-        publishedAt: release.data.published_at || null,
-        url: release.data.html_url || null,
-        prerelease: Boolean(release.data.prerelease),
+        tagName: release.tag_name || null,
+        name: release.name || null,
+        publishedAt: release.published_at || null,
+        url: release.html_url || null,
+        prerelease: Boolean(release.prerelease),
       },
       latestTag: null,
-      version: release.data.tag_name || null,
-      releaseDate: release.data.published_at || null,
+      version: release.tag_name || null,
+      releaseDate: release.published_at || null,
       releasePolicy: null,
-      sources: [source("latest-release", release)],
+      sources: [source("latest-release", releases)],
     };
   }
 
@@ -376,7 +628,7 @@ async function latestVersion(project) {
       version: null,
       releaseDate: null,
       releasePolicy: null,
-      sources: [source("latest-tag", tags)],
+      sources: [source("latest-release", releases), source("latest-tag", tags)],
     };
   }
 
@@ -392,7 +644,7 @@ async function latestVersion(project) {
     version: tag.name,
     releaseDate: null,
     releasePolicy: null,
-    sources: [source("latest-tag", tags), source("tag-commit", commit)],
+    sources: [source("latest-release", releases), source("latest-tag", tags), source("tag-commit", commit)],
   };
 }
 
@@ -410,8 +662,14 @@ function baseRecord(project, previous) {
     category: project.category,
     owner: project.owner,
     repo: project.repo,
-    githubUrl: project.githubUrl,
+    forge: projectForge(project),
+    repositoryUrl: projectRepositoryUrl(project),
+    cloneUrl: projectCloneUrl(project),
+    // Compatibility alias for the current UI/data consumer. New code should
+    // use repositoryUrl because this value can identify a non-GitHub forge.
+    githubUrl: projectRepositoryUrl(project),
     apiUrl: project.apiUrl,
+    metricScope: project.metricScope || null,
     status: policyResolvesVersionError ? "current" : prior?.status || "stale",
     refreshedAt: prior?.refreshedAt || null,
     stars: prior?.stars ?? null,
@@ -451,23 +709,14 @@ function baseRecord(project, previous) {
     record.sources = (record.sources || []).filter((item) => !["latest-release", "latest-tag", "tag-commit", "release-policy"].includes(item.type));
     record.sources.push({
       type: "release-policy",
-      url: `${project.githubUrl}/releases`,
+      url: projectReleasesUrl(project),
       fetchedAt: `${project.release.checkedAt}T00:00:00.000Z`,
     });
   }
   if (project.license) {
-    record.license = {
-      key: "manifest-verified",
-      name: project.license.name,
-      spdxId: project.license.spdxId,
-      url: project.license.sourceUrl,
-    };
+    record.license = manifestLicenseValue(project.license);
     record.sources = (record.sources || []).filter((item) => item.type !== "license-override");
-    record.sources.push({
-      type: "license-override",
-      url: project.license.sourceUrl,
-      fetchedAt: `${project.license.checkedAt}T00:00:00.000Z`,
-    });
+    record.sources.push(...manifestLicenseSources(project.license));
   }
   return record;
 }
@@ -479,38 +728,70 @@ async function refreshProject(project, previous, includeLoc) {
   let repositoryCurrent = false;
 
   try {
-    const repository = await githubRequest(`/repos/${project.owner}/${project.repo}`);
+    const forge = projectForge(project);
+    const repository = forge === "gitlab"
+      ? await gitlabRequest(`${project.apiUrl}?statistics=true&license=true`)
+      : await githubRequest(`/repos/${project.owner}/${project.repo}`);
     repositoryCurrent = true;
-    record.stars = repository.data.stargazers_count ?? null;
+    record.stars = forge === "gitlab" ? repository.data.star_count ?? null : repository.data.stargazers_count ?? null;
     record.forks = repository.data.forks_count ?? null;
     record.openIssues = repository.data.open_issues_count ?? null;
-    record.repositorySizeKb = repository.data.size ?? null;
+    record.repositorySizeKb = forge === "gitlab"
+      ? Number.isFinite(repository.data.statistics?.repository_size)
+        ? Math.round(repository.data.statistics.repository_size / 1024)
+        : null
+      : repository.data.size ?? null;
     record.defaultBranch = repository.data.default_branch || null;
-    record.pushedAt = repository.data.pushed_at || null;
+    record.pushedAt = forge === "gitlab" ? repository.data.last_activity_at || null : repository.data.pushed_at || null;
     record.archived = typeof repository.data.archived === "boolean" ? repository.data.archived : null;
     record.license = project.license
-      ? {
-          key: "manifest-verified",
-          name: project.license.name,
-          spdxId: project.license.spdxId,
-          url: project.license.sourceUrl,
-        }
+      ? manifestLicenseValue(project.license)
       : repository.data.license
         ? {
             key: repository.data.license.key || null,
             name: repository.data.license.name || null,
-            spdxId: repository.data.license.spdx_id || null,
+            spdxId: repository.data.license.spdx_id || repository.data.license.nickname || null,
             url: repository.data.license.html_url || repository.data.license.url || null,
           }
         : null;
-    record.githubUrl = repository.data.html_url || project.githubUrl;
+    record.repositoryUrl = forge === "gitlab"
+      ? repository.data.web_url || projectRepositoryUrl(project)
+      : repository.data.html_url || projectRepositoryUrl(project);
+    record.cloneUrl = forge === "gitlab"
+      ? repository.data.http_url_to_repo || projectCloneUrl(project)
+      : repository.data.clone_url || projectCloneUrl(project);
+    record.githubUrl = record.repositoryUrl;
     currentSources.push(source("repository", repository));
+    if (forge === "gitlab") {
+      const supplemental = await Promise.allSettled([
+        gitlabRequest(gitlabProjectEndpoint(project, "/issues", "?state=opened&per_page=1")),
+        gitlabRequest(gitlabProjectEndpoint(project, "/repository/commits", "?per_page=1")),
+      ]);
+      if (supplemental[0].status === "fulfilled") {
+        record.openIssues = parseGitlabTotal(supplemental[0].value, supplemental[0].value.data.length);
+        currentSources.push(source("open-issues", supplemental[0].value));
+      } else if (!Number.isInteger(record.openIssues)) {
+        record.errors.push({ section: "open-issues", message: supplemental[0].reason.message });
+      }
+      if (supplemental[1].status === "fulfilled") {
+        record.pushedAt = supplemental[1].value.data[0]?.committed_date || record.pushedAt;
+        currentSources.push(source("last-commit", supplemental[1].value));
+      } else {
+        record.errors.push({ section: "last-commit", message: supplemental[1].reason.message });
+      }
+      const restrictedFields = [
+        [record.repositorySizeKb, "repository size"],
+        [record.archived, "archive status"],
+      ].filter(([value]) => value === null).map(([, label]) => label);
+      if (restrictedFields.length > 0) {
+        record.errors.push({
+          section: "repository-statistics",
+          message: `GitLab omitted ${restrictedFields.join(" and ")}; configure GITLAB_TOKEN with Reporter access and read_api scope`,
+        });
+      }
+    }
     if (project.license) {
-      currentSources.push({
-        type: "license-override",
-        url: project.license.sourceUrl,
-        fetchedAt: `${project.license.checkedAt}T00:00:00.000Z`,
-      });
+      currentSources.push(...manifestLicenseSources(project.license));
     }
   } catch (error) {
     record.errors.push({ section: "repository", message: error.message });
@@ -520,13 +801,21 @@ async function refreshProject(project, previous, includeLoc) {
     let versionCurrent = false;
     const tasks = [
       (async () => {
-        const languages = await githubRequest(`/repos/${project.owner}/${project.repo}/languages`);
-        record.languages = normalizeLanguages(languages.data);
+        const languages = projectForge(project) === "gitlab"
+          ? await gitlabRequest(gitlabProjectEndpoint(project, "/languages"))
+          : await githubRequest(`/repos/${project.owner}/${project.repo}/languages`);
+        record.languages = projectForge(project) === "gitlab"
+          ? normalizeGitlabLanguages(languages.data)
+          : normalizeLanguages(languages.data);
         currentSources.push(source("languages", languages));
       })(),
       (async () => {
-        const contributors = await githubRequest(`/repos/${project.owner}/${project.repo}/contributors?anon=true&per_page=1`);
-        record.contributors = parseLastPage(contributors.link, contributors.data.length);
+        const contributors = projectForge(project) === "gitlab"
+          ? await gitlabRequest(gitlabProjectEndpoint(project, "/repository/contributors", "?per_page=1"))
+          : await githubRequest(`/repos/${project.owner}/${project.repo}/contributors?anon=true&per_page=1`);
+        record.contributors = projectForge(project) === "gitlab"
+          ? parseGitlabTotal(contributors, contributors.data.length)
+          : parseLastPage(contributors.link, contributors.data.length);
         currentSources.push(source("contributors", contributors));
       })(),
       (async () => {
@@ -557,13 +846,13 @@ async function refreshProject(project, previous, includeLoc) {
           ? record.latestRelease?.tagName || record.defaultBranch
           : record.defaultBranch;
         const refType = versionCurrent && record.latestRelease?.tagName
-          ? "stable-release-tag"
+          ? (record.latestRelease.prerelease ? "prerelease-tag" : "stable-release-tag")
           : "default-branch";
         record.loc = await measureLoc(project, measuredRef, refType, previous?.loc);
         if (record.loc.status === "measured") {
           currentSources.push({
             type: "loc-measurement",
-            url: `${project.githubUrl}/tree/${encodeURIComponent(record.loc.measuredRef)}`,
+            url: projectTreeUrl(project, record.loc.measuredRef),
             fetchedAt: record.loc.verifiedAt || record.loc.measuredAt,
           });
         }
@@ -650,7 +939,8 @@ async function main() {
     ? manifest.projects
     : manifest.projects.filter((project) => requestedIds.has(project.id));
 
-  console.log(`Refreshing ${selected.length} project(s)${githubToken ? " with GITHUB_TOKEN" : " anonymously"}${options.includeLoc ? ", including eligible LOC" : ""}.`);
+  const credentials = [githubToken ? "GITHUB_TOKEN" : null, gitlabToken ? "GITLAB_TOKEN" : null].filter(Boolean);
+  console.log(`Refreshing ${selected.length} project(s)${credentials.length ? ` with ${credentials.join(" and ")}` : " anonymously"}${options.includeLoc ? ", including eligible LOC" : ""}.`);
   const refreshed = await mapWithConcurrency(selected, options.concurrency, async (project) => {
     process.stdout.write(`- ${project.name} ... `);
     const result = await refreshProject(project, previousById.get(project.id), options.includeLoc);

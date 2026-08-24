@@ -11,7 +11,7 @@
       "repo": "vscode",
       "githubUrl": "https://github.com/microsoft/vscode",
       "apiUrl": "https://api.github.com/repos/microsoft/vscode",
-      "loc": { "enabled": true }
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
     },
     {
       "id": "eclipse-theia-ide",
@@ -21,7 +21,7 @@
       "repo": "theia-ide",
       "githubUrl": "https://github.com/eclipse-theia/theia-ide",
       "apiUrl": "https://api.github.com/repos/eclipse-theia/theia-ide",
-      "loc": { "enabled": true }
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
     },
     {
       "id": "intellij-community",
@@ -31,7 +31,35 @@
       "repo": "intellij-community",
       "githubUrl": "https://github.com/JetBrains/intellij-community",
       "apiUrl": "https://api.github.com/repos/JetBrains/intellij-community",
-      "loc": { "enabled": true }
+      "release": {
+        "mode": "default-branch",
+        "reason": "The shared JetBrains source repository's GitHub Releases feed contains product-specific build artifacts; its latest entry is a PyCharm release, not an IntelliJ IDEA release.",
+        "checkedAt": "2026-08-23",
+        "rejectedCandidate": {
+          "tagName": "pycharm/2026.2.1",
+          "name": "pycharm/2026.2.1",
+          "url": "https://github.com/JetBrains/intellij-community/releases/tag/pycharm/2026.2.1"
+        }
+      },
+      "license": {
+        "summary": "Mixed: Apache-2.0 source, JetBrains Open Source Build terms, and third-party licenses",
+        "checkedAt": "2026-08-23",
+        "components": [
+          {
+            "spdxId": "Apache-2.0",
+            "name": "Apache License 2.0",
+            "scope": "IntelliJ Platform and IDEA Community source identified by the root license",
+            "sourceUrl": "https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt"
+          },
+          {
+            "spdxId": "LicenseRef-JetBrains-Open-Source-Build-Terms",
+            "name": "JetBrains Open Source Build Terms",
+            "scope": "JetBrains open-source builds and separately identified components",
+            "sourceUrl": "https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt"
+          }
+        ]
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 45 }
     },
     {
       "id": "positron",
@@ -41,7 +69,13 @@
       "repo": "positron",
       "githubUrl": "https://github.com/posit-dev/positron",
       "apiUrl": "https://api.github.com/repos/posit-dev/positron",
-      "loc": { "enabled": true }
+      "license": {
+        "spdxId": "Elastic-2.0",
+        "name": "Elastic License 2.0",
+        "sourceUrl": "https://github.com/posit-dev/positron/blob/main/LICENSE.txt",
+        "checkedAt": "2026-08-23"
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
     },
     {
       "id": "onlook",
@@ -61,6 +95,30 @@
       "repo": "zed",
       "githubUrl": "https://github.com/zed-industries/zed",
       "apiUrl": "https://api.github.com/repos/zed-industries/zed",
+      "license": {
+        "summary": "Mixed: GPL-3.0-or-later, Apache-2.0, and AGPL-3.0-or-later components",
+        "checkedAt": "2026-08-23",
+        "components": [
+          {
+            "spdxId": "GPL-3.0-or-later",
+            "name": "GNU General Public License v3.0 or later",
+            "scope": "Primary Zed editor source",
+            "sourceUrl": "https://github.com/zed-industries/zed#licensing"
+          },
+          {
+            "spdxId": "Apache-2.0",
+            "name": "Apache License 2.0",
+            "scope": "Marked Zed components",
+            "sourceUrl": "https://github.com/zed-industries/zed#licensing"
+          },
+          {
+            "spdxId": "AGPL-3.0-or-later",
+            "name": "GNU Affero General Public License v3.0 or later",
+            "scope": "Collaboration service components",
+            "sourceUrl": "https://github.com/zed-industries/zed#licensing"
+          }
+        ]
+      },
       "loc": { "enabled": true }
     },
     {
@@ -131,7 +189,17 @@
       "repo": "continue",
       "githubUrl": "https://github.com/continuedev/continue",
       "apiUrl": "https://api.github.com/repos/continuedev/continue",
-      "loc": { "enabled": true }
+      "release": {
+        "mode": "default-branch",
+        "reason": "The repository is shared by the VS Code extension, JetBrains extension, and CLI; its latest GitHub release is a VS Code-specific artifact and cannot represent every catalog product joined to this repository.",
+        "checkedAt": "2026-08-23",
+        "rejectedCandidate": {
+          "tagName": "v2.0.0-vscode",
+          "name": "v2.0.0-vscode",
+          "url": "https://github.com/continuedev/continue/releases/tag/v2.0.0-vscode"
+        }
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
     },
     {
       "id": "cline",
@@ -231,6 +299,12 @@
       "repo": "paseo",
       "githubUrl": "https://github.com/getpaseo/paseo",
       "apiUrl": "https://api.github.com/repos/getpaseo/paseo",
+      "license": {
+        "spdxId": "AGPL-3.0-only",
+        "name": "GNU Affero General Public License v3.0 only",
+        "sourceUrl": "https://github.com/getpaseo/paseo/blob/main/LICENSE",
+        "checkedAt": "2026-08-23"
+      },
       "loc": { "enabled": true }
     },
     {
@@ -241,16 +315,22 @@
       "repo": "superset",
       "githubUrl": "https://github.com/superset-sh/superset",
       "apiUrl": "https://api.github.com/repos/superset-sh/superset",
+      "license": {
+        "spdxId": "Elastic-2.0",
+        "name": "Elastic License 2.0",
+        "sourceUrl": "https://github.com/superset-sh/superset/blob/main/LICENSE.md",
+        "checkedAt": "2026-08-23"
+      },
       "loc": { "enabled": true }
     },
     {
       "id": "coder-mux",
-      "name": "Coder Mux",
+      "name": "Xum",
       "category": "agent-orchestrators",
       "owner": "coder",
-      "repo": "cmux",
-      "githubUrl": "https://github.com/coder/cmux",
-      "apiUrl": "https://api.github.com/repos/coder/cmux",
+      "repo": "xum",
+      "githubUrl": "https://github.com/coder/xum",
+      "apiUrl": "https://api.github.com/repos/coder/xum",
       "loc": { "enabled": true }
     },
     {
@@ -361,16 +441,6 @@
           "url": "https://github.com/warpdotdev/warp/releases/tag/tui-screenshots-app5029"
         }
       },
-      "loc": { "enabled": true }
-    },
-    {
-      "id": "openhands",
-      "name": "OpenHands",
-      "category": "cloud-agents",
-      "owner": "OpenHands",
-      "repo": "OpenHands",
-      "githubUrl": "https://github.com/OpenHands/OpenHands",
-      "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands",
       "loc": { "enabled": true }
     },
     {
@@ -531,6 +601,16 @@
       "repo": "happy",
       "githubUrl": "https://github.com/slopus/happy",
       "apiUrl": "https://api.github.com/repos/slopus/happy",
+      "release": {
+        "mode": "default-branch",
+        "reason": "The monorepo's latest GitHub release is scoped to the CLI and cannot represent the Happy app, agent, and server as a unified product release.",
+        "checkedAt": "2026-08-23",
+        "rejectedCandidate": {
+          "tagName": "cli-1.1.10",
+          "name": "cli-1.1.10",
+          "url": "https://github.com/slopus/happy/releases/tag/cli-1.1.10"
+        }
+      },
       "loc": { "enabled": true }
     },
     {
@@ -541,7 +621,7 @@
       "repo": "vibetunnel",
       "githubUrl": "https://github.com/amantus-ai/vibetunnel",
       "apiUrl": "https://api.github.com/repos/amantus-ai/vibetunnel",
-      "loc": { "enabled": true }
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
     },
     {
       "id": "pochi",
@@ -561,6 +641,24 @@
       "repo": "tabby",
       "githubUrl": "https://github.com/TabbyML/tabby",
       "apiUrl": "https://api.github.com/repos/TabbyML/tabby",
+      "license": {
+        "summary": "Split: Apache-2.0 outside ee/ and separate enterprise terms under ee/",
+        "checkedAt": "2026-08-23",
+        "components": [
+          {
+            "spdxId": "Apache-2.0",
+            "name": "Apache License 2.0",
+            "scope": "Repository content outside ee/",
+            "sourceUrl": "https://github.com/TabbyML/tabby/blob/main/LICENSE"
+          },
+          {
+            "spdxId": "LicenseRef-Tabby-Enterprise",
+            "name": "Tabby Enterprise License",
+            "scope": "Repository content under ee/",
+            "sourceUrl": "https://github.com/TabbyML/tabby/blob/main/LICENSE"
+          }
+        ]
+      },
       "loc": { "enabled": true }
     },
     {
@@ -577,10 +675,10 @@
       "id": "avante-nvim",
       "name": "avante.nvim",
       "category": "ide-extensions",
-      "owner": "yetone",
+      "owner": "avante-corp",
       "repo": "avante.nvim",
-      "githubUrl": "https://github.com/yetone/avante.nvim",
-      "apiUrl": "https://api.github.com/repos/yetone/avante.nvim",
+      "githubUrl": "https://github.com/avante-corp/avante.nvim",
+      "apiUrl": "https://api.github.com/repos/avante-corp/avante.nvim",
       "loc": { "enabled": true }
     },
     {
@@ -597,11 +695,38 @@
       "id": "gitlab",
       "name": "GitLab Duo Developer Flow",
       "category": "cloud-agents",
+      "forge": "gitlab",
       "owner": "gitlab-org",
       "repo": "gitlab",
-      "githubUrl": "https://github.com/gitlab-org/gitlab",
-      "apiUrl": "https://api.github.com/repos/gitlab-org/gitlab",
-      "loc": { "enabled": true }
+      "repositoryUrl": "https://gitlab.com/gitlab-org/gitlab",
+      "apiUrl": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab",
+      "cloneUrl": "https://gitlab.com/gitlab-org/gitlab.git",
+      "metricScope": "Whole GitLab monorepo; GitLab Duo Developer Flow is one feature within it.",
+      "license": {
+        "summary": "Mixed: MIT, CC BY-SA 4.0, and separate GitLab Enterprise/JH terms",
+        "checkedAt": "2026-08-23",
+        "components": [
+          {
+            "spdxId": "MIT",
+            "name": "MIT License",
+            "scope": "Most source code outside doc/, ee/, and jh/",
+            "sourceUrl": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE"
+          },
+          {
+            "spdxId": "CC-BY-SA-4.0",
+            "name": "Creative Commons Attribution-ShareAlike 4.0",
+            "scope": "Documentation under doc/",
+            "sourceUrl": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE"
+          },
+          {
+            "spdxId": "LicenseRef-GitLab-Enterprise-JH",
+            "name": "GitLab Enterprise and JiHu separate terms",
+            "scope": "Code under ee/ and jh/",
+            "sourceUrl": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE"
+          }
+        ]
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 60 }
     },
     {
       "id": "coder",
@@ -611,7 +736,26 @@
       "repo": "coder",
       "githubUrl": "https://github.com/coder/coder",
       "apiUrl": "https://api.github.com/repos/coder/coder",
-      "loc": { "enabled": true }
+      "metricScope": "Whole Coder platform monorepo, not only Coder Agents.",
+      "license": {
+        "summary": "Mixed: AGPL-3.0 and Coder Enterprise License",
+        "checkedAt": "2026-08-23",
+        "components": [
+          {
+            "spdxId": "AGPL-3.0-only",
+            "name": "GNU Affero General Public License v3.0",
+            "scope": "Open-source code outside enterprise/",
+            "sourceUrl": "https://github.com/coder/coder/blob/main/LICENSE"
+          },
+          {
+            "spdxId": "LicenseRef-Coder-Enterprise",
+            "name": "Coder Enterprise License",
+            "scope": "Code under enterprise/",
+            "sourceUrl": "https://github.com/coder/coder/blob/main/LICENSE.enterprise"
+          }
+        ]
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 60 }
     },
     {
       "id": "openhands-cloud",
@@ -621,7 +765,14 @@
       "repo": "OpenHands-Cloud",
       "githubUrl": "https://github.com/OpenHands/OpenHands-Cloud",
       "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands-Cloud",
-      "loc": { "enabled": true }
+      "metricScope": "OpenHands Cloud deployment charts and control-plane source, not the separate core agent repository.",
+      "license": {
+        "spdxId": "PolyForm-Free-Trial-1.0.0",
+        "name": "PolyForm Free Trial License 1.0.0",
+        "sourceUrl": "https://github.com/OpenHands/OpenHands-Cloud/blob/main/LICENSE",
+        "checkedAt": "2026-08-23"
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
     },
     {
       "id": "code-server",
@@ -631,6 +782,7 @@
       "repo": "code-server",
       "githubUrl": "https://github.com/coder/code-server",
       "apiUrl": "https://api.github.com/repos/coder/code-server",
+      "metricScope": "code-server checked-in source; shallow checkout excludes the uninitialized VS Code submodule.",
       "loc": { "enabled": true }
     },
     {
@@ -641,7 +793,8 @@
       "repo": "openvscode-server",
       "githubUrl": "https://github.com/gitpod-io/openvscode-server",
       "apiUrl": "https://api.github.com/repos/gitpod-io/openvscode-server",
-      "loc": { "enabled": true }
+      "metricScope": "Full Code OSS fork; contributor count covers this fork rather than all upstream VS Code authors.",
+      "loc": { "enabled": true, "timeoutMinutes": 60 }
     },
     {
       "id": "sshx",
@@ -671,6 +824,13 @@
       "repo": "Termix",
       "githubUrl": "https://github.com/Termix-SSH/Termix",
       "apiUrl": "https://api.github.com/repos/Termix-SSH/Termix",
+      "metricScope": "Whole Termix monorepo, including server and desktop/mobile/web clients.",
+      "license": {
+        "spdxId": "Apache-2.0",
+        "name": "Apache License 2.0",
+        "sourceUrl": "https://github.com/Termix-SSH/Termix/blob/main/LICENSE",
+        "checkedAt": "2026-08-23"
+      },
       "loc": { "enabled": true }
     },
     {

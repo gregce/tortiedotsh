@@ -114,10 +114,10 @@
       "checkedAt": "2026-08-23"
     },
     "coder-mux": {
-      "name": "Coder Mux",
-      "alt": "Coder Mux logo",
-      "src": "/compare/logos/coder-mux.png",
-      "sourceUrl": "https://github.com/coder/cmux/blob/HEAD/public/icon-512.png",
+      "name": "Xum",
+      "alt": "Xum logo",
+      "src": "/compare/logos/coder-mux.svg",
+      "sourceUrl": "https://github.com/coder/xum/blob/HEAD/docs/img/black-xum.svg",
       "sourceType": "official-repository-asset",
       "checkedAt": "2026-08-23"
     },
@@ -722,8 +722,8 @@
       "checkedAt": "2026-08-23"
     },
     "gemini-code-assist": {
-      "name": "Gemini Code Assist IDE extension",
-      "alt": "Gemini Code Assist IDE extension logo",
+      "name": "Gemini Code Assist Standard / Enterprise extensions",
+      "alt": "Gemini Code Assist Standard / Enterprise extensions logo",
       "src": "/compare/logos/gemini-code-assist.jpg",
       "sourceUrl": "https://github.com/google-gemini",
       "sourceType": "official-organization-avatar",
@@ -764,8 +764,8 @@
     "avante-nvim": {
       "name": "avante.nvim",
       "alt": "avante.nvim logo",
-      "src": "/compare/logos/avante-nvim.jpg",
-      "sourceUrl": "https://github.com/yetone/avante.nvim",
+      "src": "/compare/logos/avante-nvim.png",
+      "sourceUrl": "https://github.com/avante-corp/avante.nvim",
       "sourceType": "official-project-owner-avatar",
       "checkedAt": "2026-08-23"
     },
@@ -1019,6 +1019,30 @@
       "src": "/compare/logos/agent-tars.png",
       "sourceUrl": "https://github.com/bytedance/UI-TARS-desktop",
       "sourceType": "official-vendor-avatar-fallback",
+      "checkedAt": "2026-08-23"
+    },
+    "lapce": {
+      "name": "Lapce",
+      "alt": "Lapce logo",
+      "src": "/compare/logos/lapce.svg",
+      "sourceUrl": "https://github.com/lapce/lapce/blob/HEAD/extra/images/logo_app.svg",
+      "sourceType": "official-repository-app-artwork",
+      "checkedAt": "2026-08-23"
+    },
+    "helix": {
+      "name": "Helix",
+      "alt": "Helix logo",
+      "src": "/compare/logos/helix.svg",
+      "sourceUrl": "https://github.com/helix-editor/helix/blob/HEAD/logo.svg",
+      "sourceType": "official-repository-product-artwork",
+      "checkedAt": "2026-08-23"
+    },
+    "roo-code": {
+      "name": "Roo Code extension",
+      "alt": "Roo Code extension logo",
+      "src": "/compare/logos/roo-code.png",
+      "sourceUrl": "https://github.com/RooCodeInc/Roo-Code/blob/HEAD/src/assets/icons/icon.png",
+      "sourceType": "official-extension-package-product-artwork",
       "checkedAt": "2026-08-23"
     }
   },

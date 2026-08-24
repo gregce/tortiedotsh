@@ -64,6 +64,8 @@ const manifestIds = manifest.projects.map((project) => project.id);
 const metricIds = metrics.projects.map((project) => project.id);
 const manifestIdSet = new Set(manifestIds);
 const manifestById = new Map(manifest.projects.map((project) => [project.id, project]));
+const manifestForge = (project) => project.forge || "github";
+const manifestRepositoryUrl = (project) => project.repositoryUrl || project.githubUrl;
 const evidenceBacklog = new Set(["mosaic-terminal", "airport", "muse-code", "omnara"]);
 const publicProductIds = comparisonProducts
   .filter((product) => !evidenceBacklog.has(product.id))
@@ -85,12 +87,53 @@ check(
 );
 
 for (const project of manifest.projects) {
+  const forge = manifestForge(project);
+  check(["github", "gitlab"].includes(forge), `${project.id} uses unsupported forge ${forge}.`);
+  if (forge === "github") {
+    check(
+      project.githubUrl === `https://github.com/${project.owner}/${project.repo}` &&
+        project.apiUrl === `https://api.github.com/repos/${project.owner}/${project.repo}`,
+      `${project.id} GitHub URLs must exactly match its owner/repo coordinates.`,
+    );
+  } else if (forge === "gitlab") {
+    const repositoryUrl = `https://gitlab.com/${project.owner}/${project.repo}`;
+    check(
+      project.repositoryUrl === repositoryUrl &&
+        project.apiUrl === `https://gitlab.com/api/v4/projects/${encodeURIComponent(`${project.owner}/${project.repo}`)}` &&
+        project.cloneUrl === `${repositoryUrl}.git`,
+      `${project.id} GitLab URLs must exactly match its owner/repo coordinates.`,
+    );
+  }
+  if (project.metricScope !== undefined) {
+    check(
+      typeof project.metricScope === "string" && project.metricScope.trim().length > 0,
+      `${project.id} metricScope must be a non-empty string when present.`,
+    );
+  }
   check(typeof project.loc?.enabled === "boolean", `${project.id} must declare whether LOC is enabled.`);
   if (project.loc?.enabled === false) {
     check(
       typeof project.loc.reason === "string" && project.loc.reason.trim().length > 0,
       `${project.id} must explain why LOC measurement is disabled.`,
     );
+  }
+  if (project.license?.components !== undefined) {
+    check(
+      typeof project.license.summary === "string" && project.license.summary.trim().length > 0,
+      `${project.id} mixed-license override needs a summary.`,
+    );
+    check(
+      Array.isArray(project.license.components) && project.license.components.length > 0,
+      `${project.id} mixed-license override needs non-empty components.`,
+    );
+    for (const component of project.license.components || []) {
+      check(
+        ["spdxId", "name", "scope", "sourceUrl"].every((field) => (
+          typeof component[field] === "string" && component[field].trim().length > 0
+        )) && component.sourceUrl.startsWith("https://"),
+        `${project.id} mixed-license components need SPDX/name/scope and HTTPS provenance.`,
+      );
+    }
   }
 }
 
@@ -117,7 +160,7 @@ for (const product of comparisonProducts) {
     const metricProject = manifestById.get(product.repoMetricId);
     if (metricProject && product.repository?.relationship === "product-source") {
       check(
-        metricProject.githubUrl.toLowerCase() === product.repository.url.toLowerCase(),
+        manifestRepositoryUrl(metricProject).toLowerCase() === product.repository.url.toLowerCase(),
         `${product.id} repository and metrics manifest coordinates disagree.`,
       );
     }
@@ -185,9 +228,20 @@ for (const record of metrics.projects) {
   if (!project) continue;
   check(
     record.owner.toLowerCase() === project.owner.toLowerCase() &&
-      record.repo.toLowerCase() === project.repo.toLowerCase(),
+      record.repo.toLowerCase() === project.repo.toLowerCase() &&
+      (record.forge || "github") === manifestForge(project) &&
+      (record.repositoryUrl || record.githubUrl).toLowerCase() === manifestRepositoryUrl(project).toLowerCase() &&
+      record.cloneUrl === (project.cloneUrl || `${manifestRepositoryUrl(project)}.git`) &&
+      record.metricScope === (project.metricScope || null),
     `${record.id} generated metrics identity is stale relative to the manifest.`,
   );
+  if (project.license?.components) {
+    check(
+      record.license?.summary === project.license.summary &&
+        JSON.stringify(record.license?.components) === JSON.stringify(project.license.components),
+      `${record.id} generated mixed-license scope is stale relative to the manifest.`,
+    );
+  }
 }
 
 check(

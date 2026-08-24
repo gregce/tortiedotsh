@@ -38,13 +38,21 @@ interface MetricRecord {
   openIssues: number | null;
   contributors: number | null;
   repositorySizeKb: number | null;
+  metricScope?: string | null;
   pushedAt: string | null;
   archived: boolean | null;
-  license: { key: string | null; name: string | null; spdxId: string | null; url: string | null } | null;
+  license: {
+    key: string | null;
+    name: string | null;
+    spdxId: string | null;
+    url: string | null;
+    summary?: string | null;
+    components?: Array<{ spdxId: string; name: string; scope: string; sourceUrl: string }>;
+  } | null;
   version: string | null;
   releaseDate: string | null;
   githubUrl: string;
-  latestRelease?: { tagName: string | null; publishedAt: string | null } | null;
+  latestRelease?: { tagName: string | null; publishedAt: string | null; prerelease?: boolean } | null;
   releasePolicy?: { mode: string; reason: string } | null;
   sources?: Array<{ type: string; url: string; fetchedAt: string }>;
   languages: Array<{ name: string; percent: number }>;
@@ -63,6 +71,7 @@ interface MetricRecord {
 
 interface MetricRow extends ComparisonRow {
   metricKey:
+    | "scope"
     | "version"
     | "releaseDate"
     | "stars"
@@ -122,7 +131,8 @@ const monitoredSourceWarnings = (evidenceSnapshot.sources as EvidenceMonitorReco
 const hasMetrics = products.some((product) => product.repoMetricId && metrics.has(product.repoMetricId));
 const metricRows: MetricRow[] = hasMetrics
   ? [
-      { id: "metric-version", label: "Latest verified stable release", group: "Open-source project", metricKey: "version" },
+      { id: "metric-scope", label: "Repository metric scope", group: "Open-source project", description: "What the joined repository represents for this product column.", metricKey: "scope" },
+      { id: "metric-version", label: "Latest verified release", group: "Open-source project", metricKey: "version" },
       { id: "metric-release-date", label: "Release date", group: "Open-source project", metricKey: "releaseDate" },
       { id: "metric-license", label: "Repository license", group: "Open-source project", metricKey: "license" },
       { id: "metric-stars", label: "GitHub stars", group: "Open-source project", metricKey: "stars" },
@@ -133,7 +143,7 @@ const metricRows: MetricRow[] = hasMetrics
         id: "metric-loc",
         label: "Source lines at measured ref",
         group: "Open-source project",
-        description: "Version-pinned when the collector can measure the stable release.",
+        description: "Pinned to a verified stable release, a clearly labelled prerelease, or an exact default-branch commit.",
         metricKey: "loc",
       },
       { id: "metric-language", label: "Primary language", group: "Open-source project", metricKey: "language" },
@@ -229,9 +239,31 @@ const metricClaim = (product: ComparisonProduct, row: MetricRow): ComparisonClai
     return unknown("This repository is registered but has not completed its first API refresh.");
   }
 
+  if (row.metricKey === "scope") {
+    const relationship = product.repository?.relationship;
+    const scope = record.metricScope?.trim();
+    if (relationship === "source-tree") {
+      return fact(
+        scope || "Public source tree",
+        "Repository metrics and CLOC describe the joined public source tree; the shipped product or adjacent repository SKUs may include code outside this boundary.",
+      );
+    }
+    if (relationship === "deprecated-predecessor") {
+      return fact("Historical predecessor", "Repository metrics describe a deprecated predecessor rather than the current shipped product.");
+    }
+    if (relationship === "metadata-only") {
+      return fact("Metadata repository", "The linked repository supplies metadata or packaging rather than the complete product source.");
+    }
+    return fact(scope || "Product repository", "Repository metrics and CLOC describe the canonical public product repository.");
+  }
+
   if (row.metricKey === "version") {
     return record.latestRelease?.tagName
-      ? fact(record.latestRelease.tagName, undefined, "latest-release")
+      ? fact(
+          record.latestRelease.prerelease ? `${record.latestRelease.tagName} · prerelease` : record.latestRelease.tagName,
+          record.latestRelease.prerelease ? "No stable release is published; this is the newest dated prerelease and is not promoted to stable." : undefined,
+          "latest-release",
+        )
       : fact("None published", record.releasePolicy?.reason || "The collector verified that no stable GitHub release is published; repository tags are not promoted to releases.", record.releasePolicy ? "release-policy" : "latest-tag");
   }
   if (row.metricKey === "releaseDate") {
@@ -243,7 +275,13 @@ const metricClaim = (product: ComparisonProduct, row: MetricRow): ComparisonClai
     return record.license === undefined
       ? unknown("The latest repository refresh predates license collection.")
       : record.license
-      ? fact(record.license.spdxId || record.license.name || "Detected", record.license.name || undefined)
+      ? fact(
+          record.license.summary || record.license.spdxId || record.license.name || "Detected",
+          record.license.components?.length
+            ? record.license.components.map((component) => `${component.scope}: ${component.name}`).join("; ")
+            : record.license.name || undefined,
+          record.license.key === "manifest-verified" ? "license-override" : "repository",
+        )
       : fact("None detected", "GitHub's repository API did not identify a repository license.");
   }
   if (row.metricKey === "stars") {
