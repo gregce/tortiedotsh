@@ -193,6 +193,17 @@ for (const project of manifest.projects) {
       `${project.id} metricScope must be a non-empty string when present.`,
     );
   }
+  if (project.repositorySizePolicy !== undefined) {
+    check(
+      forge === "gitlab" &&
+        project.repositorySizePolicy.mode === "forge-restricted" &&
+        typeof project.repositorySizePolicy.reason === "string" &&
+        project.repositorySizePolicy.reason.trim().length > 0 &&
+        Number.isFinite(Date.parse(project.repositorySizePolicy.checkedAt)) &&
+        /^https:\/\//.test(project.repositorySizePolicy.sourceUrl),
+      `${project.id} has an invalid repositorySizePolicy.`,
+    );
+  }
   check(typeof project.loc?.enabled === "boolean", `${project.id} must declare whether LOC is enabled.`);
   if (project.loc?.enabled === false) {
     check(
@@ -379,7 +390,13 @@ if (auditFreshness) {
     requireField(Number.isInteger(record.forks) && record.forks >= 0, "forks");
     requireField(Number.isInteger(record.openIssues) && record.openIssues >= 0, "open issues");
     requireField(Number.isInteger(record.contributors) && record.contributors >= 0, "contributors");
-    requireField(Number.isInteger(record.repositorySizeKb) && record.repositorySizeKb >= 0, "repository size");
+    const repositorySizeCurrent = Number.isInteger(record.repositorySizeKb) && record.repositorySizeKb >= 0;
+    const repositorySizeRestricted =
+      record.repositorySizeKb === null &&
+      record.repositorySizePolicy?.mode === "forge-restricted" &&
+      typeof record.repositorySizePolicy.reason === "string" &&
+      sourceTypes.has("repository-size-policy");
+    requireField(repositorySizeCurrent || repositorySizeRestricted, "repository size or explicit forge restriction");
     requireField(typeof record.defaultBranch === "string" && record.defaultBranch.length > 0, "default branch");
     requireField(Number.isFinite(Date.parse(record.pushedAt)), "last push");
     requireField(typeof record.archived === "boolean", "archive status");
@@ -391,7 +408,9 @@ if (auditFreshness) {
     requireField(sourceTypes.has("latest-release") || sourceTypes.has("latest-tag") || sourceTypes.has("release-policy"), "release/tag policy provenance");
     for (const source of record.sources || []) {
       requireField(/^https:\/\//.test(source.url), `${source.type} HTTPS provenance`);
-      const maximumAge = source.type === "release-policy" || source.type === "license-override" ? MAX_EVIDENCE_AGE_DAYS : MAX_METRICS_AGE_DAYS;
+      const maximumAge = ["release-policy", "license-override", "repository-size-policy"].includes(source.type)
+        ? MAX_EVIDENCE_AGE_DAYS
+        : MAX_METRICS_AGE_DAYS;
       requireField(dateAgeDays(source.fetchedAt) <= maximumAge, `fresh ${source.type} provenance`);
     }
 

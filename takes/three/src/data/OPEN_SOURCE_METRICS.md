@@ -17,10 +17,12 @@ archive state, and detected license), languages, the newest chronologically
 published stable release (or a clearly labelled newest prerelease when no
 stable release exists), a separately labelled repository-tag fallback, and contributor count from each
 repository's official forge API. Set `GITHUB_TOKEN` to raise GitHub's public
-rate limit. Complete GitLab project statistics require `GITLAB_TOKEN` with
-`read_api` scope and at least Reporter access to the tracked project; GitLab's
-anonymous Projects API deliberately omits repository size and may omit archive
-state. A refresh missing those fields is recorded as partial, never guessed.
+rate limit. `GITLAB_TOKEN` is optional. GitLab limits forge-reported repository
+size to project members with Reporter access or higher; for a public upstream
+where that membership is unavailable, the manifest records a dated, sourced
+`forge-restricted` policy and the UI says **Not publicly exposed** instead of
+showing a blank or inventing a checkout-size substitute. Archive state is read
+from GitLab's public GraphQL API.
 
 LOC requires a shallow clone and can be expensive for large repositories, so
 it runs in the scheduled refresh rather than during a page build:
@@ -138,17 +140,16 @@ every Monday at 07:17 UTC and:
 5. commits the two generated snapshots only when the entire audit passes.
 
 The workflow token needs `contents: write` so the bot can commit the snapshots.
-Add a `GITLAB_TOKEN` Actions secret with `read_api` and Reporter access to the
-canonical GitLab project so the strict audit can validate GitLab size and
-archive fields.
+An optional `GITLAB_TOKEN` Actions secret can expose additional GitLab fields
+when its account has sufficient upstream membership, but the scheduled job does
+not require an unattainable role on a third-party public project.
 The comparison build remains deterministic and network-free: production reads
 only the reviewed files in Git. Configure the hosting provider to run
 `npm run audit:freshness` before `npm run build`, or make the refresh workflow a
 required check, so stale or incomplete data cannot silently ship.
 
-The current local checkout has no Git remote and its `gh` credential is invalid.
-Those are deployment configuration tasks, not data-model gaps: configure the
-remote/credential, push the repository, then run the first manual workflow.
+After pushing the repository, run the first manual workflow to seed the hosted
+schedule and verify that the workflow has `contents: write` permission.
 
 Catalog products join through `comparison-catalog.ts` `repoMetricId`. Multiple
 catalog products may deliberately share one repository metric. A public
@@ -175,6 +176,7 @@ Every generated project has the manifest identity fields plus:
 | `openIssues` | integer or `null` | Open issue count; GitHub's repository field includes pull requests, while GitLab's issues endpoint does not include merge requests. |
 | `contributors` | integer or `null` | Count inferred from official forge contributor pagination. |
 | `repositorySizeKb` | integer or `null` | Forge-reported repository size normalized to KiB; not a checkout's disk usage. |
+| `repositorySizePolicy` | object or `null` | Dated, sourced explanation when an upstream forge deliberately withholds repository size from public collectors. |
 | `pushedAt` | ISO timestamp or `null` | GitHub `pushed_at`, or the newest GitLab repository commit date. |
 | `archived` | boolean or `null` | Current repository archive state. |
 | `license` | object or `null` | Forge-detected license or manifest-reviewed single/mixed license, preserving mixed-license `summary` and scoped `components`. |
@@ -188,10 +190,11 @@ Every generated project has the manifest identity fields plus:
 | `sources` | array | Exact forge API/repository URL and fetch timestamp for each metric source. |
 | `errors` | array | Per-section errors that explain partial or stale data. |
 
-Unknown and unavailable metrics are represented as `null`. A numeric zero means
-GitHub or `cloc` actually reported zero. If a refresh section fails, the script
-keeps the prior section where possible, marks the record partial/stale, and
-records the failure instead of silently replacing a known value with zero.
+Unknown metrics are represented as `null`; deliberate forge restrictions use a
+typed policy with a human-readable reason. A numeric zero means GitHub or `cloc`
+actually reported zero. If a refresh section fails, the script keeps the prior
+section where possible, marks the record partial/stale, and records the failure
+instead of silently replacing a known value with zero.
 
 ## Source notes
 
@@ -204,7 +207,8 @@ records the failure instead of silently replacing a known value with zero.
   `GET /projects/{url-encoded-path}?statistics=true&license=true`; open issues,
   newest commit, language percentages, contributors, releases, and tags use the
   corresponding project subresources. Every generated source stores the exact
-  queried URL. GitLab's repository-size statistics require Reporter access.
+  queried URL. GitLab's repository-size statistics require Reporter access, so
+  public upstreams without that membership use an explicit reviewed policy.
 - GitLab releases are filtered for non-upcoming releases and sorted by
   `released_at`; if none exist, the collector falls back to the latest official
   repository tag without presenting that tag as a verified release.

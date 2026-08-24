@@ -702,6 +702,12 @@
       "apiUrl": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab",
       "cloneUrl": "https://gitlab.com/gitlab-org/gitlab.git",
       "metricScope": "Whole GitLab monorepo; GitLab Duo Developer Flow is one feature within it.",
+      "repositorySizePolicy": {
+        "mode": "forge-restricted",
+        "reason": "GitLab limits forge-reported repository-size statistics to project members with Reporter access or higher; this public upstream project does not expose that number to anonymous collectors.",
+        "checkedAt": "2026-08-24",
+        "sourceUrl": "https://docs.gitlab.com/api/projects/"
+      },
       "license": {
         "summary": "Mixed: MIT, CC BY-SA 4.0, and separate GitLab Enterprise/JH terms",
         "checkedAt": "2026-08-23",

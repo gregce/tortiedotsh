@@ -39,6 +39,7 @@ interface MetricRecord {
   openIssues: number | null;
   contributors: number | null;
   repositorySizeKb: number | null;
+  repositorySizePolicy?: { mode: "forge-restricted"; reason: string; checkedAt: string; sourceUrl: string } | null;
   metricScope?: string | null;
   pushedAt: string | null;
   archived: boolean | null;
@@ -54,6 +55,7 @@ interface MetricRecord {
   releaseDate: string | null;
   githubUrl: string;
   latestRelease?: { tagName: string | null; publishedAt: string | null; prerelease?: boolean } | null;
+  latestTag?: { name: string; commitSha?: string | null; commitDate?: string | null; url?: string | null } | null;
   releasePolicy?: { mode: string; reason: string } | null;
   sources?: Array<{ type: string; url: string; fetchedAt: string }>;
   languages: Array<{ name: string; percent: number }>;
@@ -265,12 +267,14 @@ const metricClaim = (product: ComparisonProduct, row: MetricRow): ComparisonClai
           record.latestRelease.prerelease ? "No stable release is published; this is the newest dated prerelease and is not promoted to stable." : undefined,
           "latest-release",
         )
-      : fact("None published", record.releasePolicy?.reason || "The collector verified that no stable forge release is published; repository tags are not promoted to releases.", record.releasePolicy ? "release-policy" : "latest-tag");
+      : record.latestTag?.name
+        ? fact(`${record.latestTag.name} · repository tag`, record.releasePolicy?.reason || "No stable forge release is published; this is the newest repository tag and is not promoted to a verified stable release.", "latest-tag")
+        : fact("None published", record.releasePolicy?.reason || "The collector verified that no stable forge release is published; repository tags are not promoted to releases.", record.releasePolicy ? "release-policy" : "latest-tag");
   }
   if (row.metricKey === "releaseDate") {
     return record.latestRelease?.publishedAt
       ? fact(formatDate(record.latestRelease.publishedAt), undefined, "latest-release")
-      : fact("Not applicable", record.releasePolicy?.reason || "No stable GitHub release is published, so there is no release publication date.", record.releasePolicy ? "release-policy" : "latest-tag");
+      : fact("Not applicable", record.releasePolicy?.reason || "No stable forge release is published, so there is no release publication date.", record.latestTag ? "latest-tag" : record.releasePolicy ? "release-policy" : "latest-tag");
   }
   if (row.metricKey === "license") {
     return record.license === undefined
@@ -334,7 +338,9 @@ const metricClaim = (product: ComparisonProduct, row: MetricRow): ComparisonClai
   }
   if (row.metricKey === "repositorySize") {
     return record.repositorySizeKb == null
-      ? unknown("The latest repository refresh did not return the forge's repository-size estimate.")
+      ? record.repositorySizePolicy?.mode === "forge-restricted"
+        ? fact("Not publicly exposed", record.repositorySizePolicy.reason, "repository-size-policy")
+        : unknown("The latest repository refresh did not return the forge's repository-size estimate.")
       : fact(formatKilobytes(record.repositorySizeKb), `${record.repositorySizeKb.toLocaleString("en-US")} KB exactly.`);
   }
   if (row.metricKey === "pushedAt") {

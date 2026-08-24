@@ -18,6 +18,7 @@ const defaultOutput = resolve(takeRoot, "src/data/open-source-metrics.json");
 const githubApi = "https://api.github.com";
 const githubToken = process.env.GITHUB_TOKEN?.trim() || null;
 const gitlabApi = "https://gitlab.com/api/v4";
+const gitlabGraphqlApi = "https://gitlab.com/api/graphql";
 const gitlabToken = process.env.GITLAB_TOKEN?.trim() || null;
 
 function projectForge(project) {
@@ -60,8 +61,9 @@ Options:
   --help                Show this help
 
 GITHUB_TOKEN is optional. Anonymous GitHub API limits apply when it is absent.
-GITLAB_TOKEN is required for complete GitLab repository statistics; it needs
-Reporter access and read_api scope on each tracked GitLab project.`);
+GITLAB_TOKEN is optional. GitLab repository-size statistics require Reporter
+access; manifest-reviewed forge-restricted policies represent that field
+honestly when an upstream public project does not expose it.`);
 }
 
 function parseArguments(argv) {
@@ -166,6 +168,18 @@ function validateManifest(manifest) {
       typeof project.metricScope !== "string" || project.metricScope.trim() === ""
     )) {
       throw new Error(`${project.id} metricScope must be a non-empty string when present`);
+    }
+    if (project.repositorySizePolicy !== undefined) {
+      const policy = project.repositorySizePolicy;
+      if (
+        forge !== "gitlab" ||
+        policy.mode !== "forge-restricted" ||
+        typeof policy.reason !== "string" || policy.reason.trim() === "" ||
+        !Number.isFinite(Date.parse(policy.checkedAt)) ||
+        typeof policy.sourceUrl !== "string" || !policy.sourceUrl.startsWith("https://")
+      ) {
+        throw new Error(`${project.id} has an invalid repositorySizePolicy`);
+      }
     }
     if (typeof project.loc?.enabled !== "boolean") {
       throw new Error(`${project.id} must declare loc.enabled`);
@@ -338,6 +352,59 @@ async function gitlabRequest(url, { allow404 = false } = {}) {
     total: response.headers.get("x-total"),
     totalPages: response.headers.get("x-total-pages"),
   };
+}
+
+async function gitlabGraphqlRequest(query, variables) {
+  const headers = {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    "User-Agent": "tortie-open-source-metrics",
+  };
+  if (gitlabToken) headers.Authorization = `Bearer ${gitlabToken}`;
+  const response = await fetch(gitlabGraphqlApi, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ query, variables }),
+    signal: AbortSignal.timeout(30_000),
+  });
+  if (!response.ok) {
+    const body = await response.text();
+    throw new GitlabRequestError(`GitLab GraphQL returned ${response.status} for ${gitlabGraphqlApi}`, {
+      status: response.status,
+      url: gitlabGraphqlApi,
+      body: body.slice(0, 500),
+      headers: response.headers,
+    });
+  }
+  const payload = await response.json();
+  if (payload.errors?.length) {
+    throw new GitlabRequestError(`GitLab GraphQL returned errors for ${variables.fullPath}`, {
+      status: response.status,
+      url: gitlabGraphqlApi,
+      body: JSON.stringify(payload.errors).slice(0, 500),
+      headers: response.headers,
+    });
+  }
+  return {
+    data: payload.data,
+    url: gitlabGraphqlApi,
+    fetchedAt: new Date().toISOString(),
+  };
+}
+
+async function verifyPublicSource(url) {
+  const response = await fetch(url, {
+    headers: {
+      Accept: "text/html,application/xhtml+xml",
+      "User-Agent": "tortie-open-source-metrics",
+    },
+    redirect: "follow",
+    signal: AbortSignal.timeout(30_000),
+  });
+  if (!response.ok) {
+    throw new Error(`Policy source returned ${response.status} for ${url}`);
+  }
+  return { url, fetchedAt: new Date().toISOString() };
 }
 
 function source(type, response) {
@@ -517,9 +584,14 @@ function gitlabProjectEndpoint(project, suffix = "", query = "") {
 }
 
 async function latestGitlabVersion(project) {
-  const releases = await gitlabRequest(gitlabProjectEndpoint(project, "/releases", "?per_page=100"));
+  let releases = null;
+  try {
+    releases = await gitlabRequest(gitlabProjectEndpoint(project, "/releases", "?per_page=100"));
+  } catch (error) {
+    if (!(error instanceof GitlabRequestError) || error.status !== 403) throw error;
+  }
   const now = Date.now();
-  const release = releases.data
+  const release = (releases?.data || [])
     .filter((candidate) => (
       !candidate.upcoming_release &&
       Number.isFinite(Date.parse(candidate.released_at)) &&
@@ -552,7 +624,10 @@ async function latestGitlabVersion(project) {
       version: null,
       releaseDate: null,
       releasePolicy: null,
-      sources: [source("latest-release", releases), source("latest-tag", tags)],
+      sources: [
+        ...(releases ? [source("latest-release", releases)] : []),
+        source("latest-tag", tags),
+      ],
     };
   }
   return {
@@ -565,8 +640,16 @@ async function latestGitlabVersion(project) {
     },
     version: tag.name,
     releaseDate: null,
-    releasePolicy: null,
-    sources: [source("latest-release", releases), source("latest-tag", tags)],
+    releasePolicy: releases ? null : {
+      mode: "forge-tag-fallback",
+      reason: "GitLab does not expose this public upstream project's Releases feed to anonymous API clients; the newest official repository tag is retained as a tag, not promoted to a verified stable release.",
+      checkedAt: new Date().toISOString().slice(0, 10),
+      rejectedCandidate: null,
+    },
+    sources: [
+      ...(releases ? [source("latest-release", releases)] : []),
+      source("latest-tag", tags),
+    ],
   };
 }
 
@@ -677,6 +760,7 @@ function baseRecord(project, previous) {
     openIssues: prior?.openIssues ?? null,
     contributors: prior?.contributors ?? null,
     repositorySizeKb: prior?.repositorySizeKb ?? null,
+    repositorySizePolicy: project.repositorySizePolicy || null,
     defaultBranch: prior?.defaultBranch ?? null,
     pushedAt: prior?.pushedAt ?? null,
     archived: prior?.archived ?? null,
@@ -766,6 +850,13 @@ async function refreshProject(project, previous, includeLoc) {
       const supplemental = await Promise.allSettled([
         gitlabRequest(gitlabProjectEndpoint(project, "/issues", "?state=opened&per_page=1")),
         gitlabRequest(gitlabProjectEndpoint(project, "/repository/commits", "?per_page=1")),
+        gitlabGraphqlRequest(
+          "query ProjectArchiveState($fullPath: ID!) { project(fullPath: $fullPath) { archived } }",
+          { fullPath: `${project.owner}/${project.repo}` },
+        ),
+        project.repositorySizePolicy
+          ? verifyPublicSource(project.repositorySizePolicy.sourceUrl)
+          : Promise.resolve(null),
       ]);
       if (supplemental[0].status === "fulfilled") {
         record.openIssues = parseGitlabTotal(supplemental[0].value, supplemental[0].value.data.length);
@@ -779,10 +870,32 @@ async function refreshProject(project, previous, includeLoc) {
       } else {
         record.errors.push({ section: "last-commit", message: supplemental[1].reason.message });
       }
+      if (supplemental[2].status === "fulfilled" && typeof supplemental[2].value.data?.project?.archived === "boolean") {
+        record.archived = supplemental[2].value.data.project.archived;
+        currentSources.push(source("archive-status", supplemental[2].value));
+      } else if (typeof record.archived !== "boolean") {
+        const message = supplemental[2].status === "rejected"
+          ? supplemental[2].reason.message
+          : "GitLab GraphQL omitted archive status";
+        record.errors.push({ section: "archive-status", message });
+      }
+      if (record.repositorySizeKb === null && project.repositorySizePolicy) {
+        record.repositorySizePolicy = project.repositorySizePolicy;
+        if (supplemental[3].status === "fulfilled" && supplemental[3].value) {
+          currentSources.push(source("repository-size-policy", supplemental[3].value));
+        } else {
+          record.errors.push({
+            section: "repository-size-policy",
+            message: supplemental[3].status === "rejected"
+              ? supplemental[3].reason.message
+              : "Repository-size policy source was not checked",
+          });
+        }
+      }
       const restrictedFields = [
-        [record.repositorySizeKb, "repository size"],
-        [record.archived, "archive status"],
-      ].filter(([value]) => value === null).map(([, label]) => label);
+        [record.repositorySizeKb === null && !record.repositorySizePolicy, "repository size"],
+        [typeof record.archived !== "boolean", "archive status"],
+      ].filter(([missing]) => missing).map(([, label]) => label);
       if (restrictedFields.length > 0) {
         record.errors.push({
           section: "repository-statistics",
@@ -843,11 +956,13 @@ async function refreshProject(project, previous, includeLoc) {
     if (includeLoc) {
       try {
         const measuredRef = versionCurrent
-          ? record.latestRelease?.tagName || record.defaultBranch
+          ? record.latestRelease?.tagName || record.latestTag?.name || record.defaultBranch
           : record.defaultBranch;
         const refType = versionCurrent && record.latestRelease?.tagName
           ? (record.latestRelease.prerelease ? "prerelease-tag" : "stable-release-tag")
-          : "default-branch";
+          : versionCurrent && record.latestTag?.name
+            ? "repository-tag"
+            : "default-branch";
         record.loc = await measureLoc(project, measuredRef, refType, previous?.loc);
         if (record.loc.status === "measured") {
           currentSources.push({
