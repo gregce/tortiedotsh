@@ -12,8 +12,8 @@ npm run verify
 
 Confirm that the command prints both of these signals (the exact product and repository counts may grow as the catalog expands):
 
-- `Comparison data is valid:` followed by `8 categories`
-- the Astro build completes successfully and includes the eight category routes plus `/compare/`
+- `Comparison data is valid:` followed by `9 categories`
+- the Astro build completes successfully and includes the 9 category routes plus `/compare/`
 
 ## 2. Open the comparison
 
@@ -27,7 +27,7 @@ Open the local URL printed by Astro, then visit `/compare/`. Confirm that it ope
 
 ## 3. Exercise category navigation
 
-Open each category link in order: Code IDEs, Extensions, Agent IDEs, Agent Orchestrators, Harnesses, Agent Traces, Cloud agents, and Remote.
+Open each category link in order: Code IDEs, Extensions, Agent Multiplexers, Agent Orchestrators, Harnesses, Agent Traces, Cloud agents, General agents, and Remote.
 
 Confirm that:
 

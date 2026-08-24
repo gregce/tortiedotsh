@@ -28,6 +28,9 @@ not only their snapshot timestamps. See
 `src/data/OPEN_SOURCE_METRICS.md` and `src/data/EVIDENCE_MONITOR.md` for the
 scheduled refresh and human-review process.
 
+The end-to-end operator guide is
+[`docs/operations/comparison-data-refresh.md`](../../docs/operations/comparison-data-refresh.md).
+
 ## What is in here
 
 - `src/pages/index.astro` is the one page. Components live in

@@ -59,9 +59,11 @@ The research was done before any take was built and it lives in `docs/research/`
 - `07c-harness-closure-ledger.md` records the second-pass harness closures and the two adjacent workbench corrections.
 - `08a-harness-expansion.md` through `08d-code-ide-expansion.md` record the broader 2026 product discovery pass, exact-SKU category rulings, rejected candidates, and implementation-ready first-party claim ledgers.
 
+The operator documentation starts at [`docs/README.md`](docs/README.md). The full data, refresh and deployment guide is [`docs/operations/comparison-data-refresh.md`](docs/operations/comparison-data-refresh.md).
+
 ## The comparison workspace
 
-Take three includes a category-aware comparison at `/compare/`. It keeps Code IDEs, IDE extensions, Agent IDEs, Agent Orchestrators, coding-agent harnesses, Agent Traces, cloud/background agents, and remote tools in separate matrices so unlike products are not forced into one scorecard.
+Take three includes a category-aware comparison at `/compare/`. It keeps Code IDEs, IDE extensions, Agent Multiplexers, Agent Orchestrators, coding-agent harnesses, Agent Traces, cloud/background agents, general-purpose agents, and remote tools in separate matrices so unlike products are not forced into one scorecard.
 
 The static product and evidence catalog lives in `takes/three/src/data/comparison-catalog.ts`. Volatile repository facts live in `open-source-metrics.json` and can be refreshed without changing the UI:
 
