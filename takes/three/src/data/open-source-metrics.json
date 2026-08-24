@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T03:32:10.670Z",
-  "manifestSyncedAt": "2026-08-24T03:34:26.623Z",
+  "generatedAt": "2026-08-24T03:37:25.235Z",
+  "manifestSyncedAt": "2026-08-24T03:37:25.235Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -3039,26 +3039,31 @@
       "apiUrl": "https://api.github.com/repos/stablyai/orca",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:16:59.026Z",
-      "stars": 51701,
-      "forks": null,
-      "openIssues": null,
-      "contributors": 339,
-      "repositorySizeKb": 597949,
+      "refreshedAt": "2026-08-24T03:36:53.835Z",
+      "stars": 52060,
+      "forks": 3602,
+      "openIssues": 4423,
+      "contributors": 340,
+      "repositorySizeKb": 603256,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T18:13:33Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T03:35:26Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
       "languages": [
         {
           "name": "TypeScript",
-          "bytes": 110650729,
-          "percent": 96.73
+          "bytes": 110869932,
+          "percent": 96.74
         },
         {
           "name": "JavaScript",
-          "bytes": 2877588,
-          "percent": 2.52
+          "bytes": 2880190,
+          "percent": 2.51
         },
         {
           "name": "Swift",
@@ -3068,7 +3073,7 @@
         {
           "name": "CSS",
           "bytes": 234600,
-          "percent": 0.21
+          "percent": 0.2
         },
         {
           "name": "HTML",
@@ -3139,7 +3144,7 @@
         "blank": 276542,
         "files": 16397,
         "measuredAt": "2026-08-23T18:16:58.402Z",
-        "verifiedAt": null,
+        "verifiedAt": "2026-08-24T03:36:53.835Z",
         "measuredRef": "v1.4.188",
         "refType": "stable-release-tag",
         "commitSha": "f32ce859047a85a3ea4f507f633604dfbf596a0e",
@@ -3153,27 +3158,27 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/stablyai/orca",
-          "fetchedAt": "2026-08-23T18:16:34.433Z"
+          "fetchedAt": "2026-08-24T03:36:51.972Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/stablyai/orca/languages",
-          "fetchedAt": "2026-08-23T18:16:34.523Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/stablyai/orca/releases/latest",
-          "fetchedAt": "2026-08-23T18:16:34.572Z"
+          "fetchedAt": "2026-08-24T03:36:52.074Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/stablyai/orca/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:16:34.723Z"
+          "fetchedAt": "2026-08-24T03:36:52.666Z"
         },
         {
-          "type": "loc-checkout",
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/stablyai/orca/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:36:53.429Z"
+        },
+        {
+          "type": "loc-measurement",
           "url": "https://github.com/stablyai/orca/tree/v1.4.188",
-          "fetchedAt": "2026-08-23T18:16:58.402Z"
+          "fetchedAt": "2026-08-24T03:36:53.835Z"
         }
       ],
       "errors": []
@@ -3191,16 +3196,21 @@
       "apiUrl": "https://api.github.com/repos/get-bb/bb",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T21:26:44.937Z",
-      "stars": 2575,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T03:37:00.215Z",
+      "stars": 2586,
+      "forks": 303,
+      "openIssues": 245,
       "contributors": 49,
       "repositorySizeKb": 166111,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T15:51:37Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T03:14:37Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
       "languages": [
         {
           "name": "TypeScript",
@@ -3240,17 +3250,17 @@
       "releaseDate": "2026-08-19T01:36:42Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 861540,
+        "comments": 45432,
+        "blank": 68453,
+        "files": 3410,
+        "measuredAt": "2026-08-24T03:37:00.070Z",
+        "verifiedAt": "2026-08-24T03:37:00.070Z",
+        "measuredRef": "desktop-v0.39.0",
+        "refType": "stable-release-tag",
+        "commitSha": "b33abbff098ac4c857578e7350d492dcaa65d489",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
@@ -3260,22 +3270,27 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/get-bb/bb",
-          "fetchedAt": "2026-08-23T21:26:37.707Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/get-bb/bb/releases/latest",
-          "fetchedAt": "2026-08-23T21:26:37.795Z"
-        },
-        {
-          "type": "contributors",
-          "url": "https://api.github.com/repos/get-bb/bb/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T21:26:41.656Z"
+          "fetchedAt": "2026-08-24T03:36:52.066Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/get-bb/bb/languages",
-          "fetchedAt": "2026-08-23T21:26:44.937Z"
+          "fetchedAt": "2026-08-24T03:36:52.592Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/get-bb/bb/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:36:52.623Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/get-bb/bb/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:36:53.054Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/get-bb/bb/tree/desktop-v0.39.0",
+          "fetchedAt": "2026-08-24T03:37:00.070Z"
         }
       ],
       "errors": []
@@ -3293,25 +3308,30 @@
       "apiUrl": "https://api.github.com/repos/omnigent-ai/omnigent",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T21:26:50.680Z",
-      "stars": 9198,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T03:37:01.146Z",
+      "stars": 9202,
+      "forks": 1415,
+      "openIssues": 1215,
       "contributors": 210,
-      "repositorySizeKb": 124896,
+      "repositorySizeKb": 122681,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T09:07:00Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T03:35:35Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
       "languages": [
         {
           "name": "Python",
-          "bytes": 43845143,
+          "bytes": 43861982,
           "percent": 80.82
         },
         {
           "name": "TypeScript",
-          "bytes": 8985464,
+          "bytes": 8988337,
           "percent": 16.56
         },
         {
@@ -3387,17 +3407,17 @@
       "releaseDate": "2026-08-19T04:34:41Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 819683,
+        "comments": 360637,
+        "blank": 183355,
+        "files": 3145,
+        "measuredAt": "2026-08-24T03:37:00.962Z",
+        "verifiedAt": "2026-08-24T03:37:00.962Z",
+        "measuredRef": "v0.10.0",
+        "refType": "stable-release-tag",
+        "commitSha": "40755dd8dddb07e1eb6e4055d1d9936e184ceb9b",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
@@ -3407,22 +3427,27 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/omnigent-ai/omnigent",
-          "fetchedAt": "2026-08-23T21:26:45.949Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/omnigent-ai/omnigent/releases/latest",
-          "fetchedAt": "2026-08-23T21:26:46.060Z"
+          "fetchedAt": "2026-08-24T03:36:51.804Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/omnigent-ai/omnigent/languages",
-          "fetchedAt": "2026-08-23T21:26:49.427Z"
+          "fetchedAt": "2026-08-24T03:36:51.987Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/omnigent-ai/omnigent/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:36:52.099Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/omnigent-ai/omnigent/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T21:26:50.680Z"
+          "fetchedAt": "2026-08-24T03:36:52.121Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/omnigent-ai/omnigent/tree/v0.10.0",
+          "fetchedAt": "2026-08-24T03:37:00.962Z"
         }
       ],
       "errors": []
@@ -3439,41 +3464,129 @@
       "githubUrl": "https://github.com/Untrivial-ai/agent-orchestrator",
       "apiUrl": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T03:37:07.871Z",
+      "stars": 9910,
+      "forks": 1410,
+      "openIssues": 728,
+      "contributors": 90,
+      "repositorySizeKb": 184589,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T03:13:15Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Go",
+          "bytes": 10503325,
+          "percent": 58.62
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 6924085,
+          "percent": 38.64
+        },
+        {
+          "name": "CSS",
+          "bytes": 183241,
+          "percent": 1.02
+        },
+        {
+          "name": "MDX",
+          "bytes": 133770,
+          "percent": 0.75
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 118073,
+          "percent": 0.66
+        },
+        {
+          "name": "Shell",
+          "bytes": 27451,
+          "percent": 0.15
+        },
+        {
+          "name": "Python",
+          "bytes": 25239,
+          "percent": 0.14
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2303,
+          "percent": 0.01
+        },
+        {
+          "name": "Nix",
+          "bytes": 892,
+          "percent": 0
+        },
+        {
+          "name": "HTML",
+          "bytes": 300,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.12.6",
+        "name": "v0.12.6",
+        "publishedAt": "2026-08-16T17:59:49Z",
+        "url": "https://github.com/Untrivial-ai/agent-orchestrator/releases/tag/v0.12.6",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.12.6",
+      "releaseDate": "2026-08-16T17:59:49Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 396311,
+        "comments": 45094,
+        "blank": 39195,
+        "files": 2087,
+        "measuredAt": "2026-08-24T03:37:07.705Z",
+        "verifiedAt": "2026-08-24T03:37:07.705Z",
+        "measuredRef": "v0.12.6",
+        "refType": "stable-release-tag",
+        "commitSha": "075de7a0195d84f1de8d8eaef03ad3b98871bee1",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator",
+          "fetchedAt": "2026-08-24T03:36:55.492Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator/languages",
+          "fetchedAt": "2026-08-24T03:37:00.460Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:37:00.750Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:37:00.884Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/Untrivial-ai/agent-orchestrator/tree/v0.12.6",
+          "fetchedAt": "2026-08-24T03:37:07.705Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -3488,41 +3601,119 @@
       "githubUrl": "https://github.com/generalaction/emdash",
       "apiUrl": "https://api.github.com/repos/generalaction/emdash",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T03:37:13.236Z",
+      "stars": 5474,
+      "forks": 563,
+      "openIssues": 196,
+      "contributors": 122,
+      "repositorySizeKb": 171182,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T12:44:51Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 17137742,
+          "percent": 99.08
+        },
+        {
+          "name": "CSS",
+          "bytes": 64002,
+          "percent": 0.37
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 62745,
+          "percent": 0.36
+        },
+        {
+          "name": "HTML",
+          "bytes": 14897,
+          "percent": 0.09
+        },
+        {
+          "name": "Nix",
+          "bytes": 8294,
+          "percent": 0.05
+        },
+        {
+          "name": "Shell",
+          "bytes": 5478,
+          "percent": 0.03
+        },
+        {
+          "name": "MDX",
+          "bytes": 2259,
+          "percent": 0.01
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 1779,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.1.40",
+        "name": "v1.1.40",
+        "publishedAt": "2026-07-17T21:35:18Z",
+        "url": "https://github.com/generalaction/emdash/releases/tag/v1.1.40",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v1.1.40",
+      "releaseDate": "2026-07-17T21:35:18Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 288077,
+        "comments": 19028,
+        "blank": 35606,
+        "files": 3022,
+        "measuredAt": "2026-08-24T03:37:13.096Z",
+        "verifiedAt": "2026-08-24T03:37:13.096Z",
+        "measuredRef": "v1.1.40",
+        "refType": "stable-release-tag",
+        "commitSha": "49df5cf7ff347b309a6b3674927dd560df82f8ac",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/generalaction/emdash",
+          "fetchedAt": "2026-08-24T03:37:04.094Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/generalaction/emdash/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:37:06.821Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/generalaction/emdash/languages",
+          "fetchedAt": "2026-08-24T03:37:07.011Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/generalaction/emdash/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:37:09.364Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/generalaction/emdash/tree/v1.1.40",
+          "fetchedAt": "2026-08-24T03:37:13.096Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -3537,41 +3728,139 @@
       "githubUrl": "https://github.com/kdlbs/kandev",
       "apiUrl": "https://api.github.com/repos/kdlbs/kandev",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T03:37:25.235Z",
+      "stars": 681,
+      "forks": 94,
+      "openIssues": 80,
+      "contributors": 48,
+      "repositorySizeKb": 193646,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T23:13:23Z",
+      "archived": false,
+      "license": {
+        "key": "agpl-3.0",
+        "name": "GNU Affero General Public License v3.0",
+        "spdxId": "AGPL-3.0",
+        "url": "https://api.github.com/licenses/agpl-3.0"
+      },
+      "languages": [
+        {
+          "name": "Go",
+          "bytes": 42035744,
+          "percent": 56.51
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 30704855,
+          "percent": 41.28
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 663154,
+          "percent": 0.89
+        },
+        {
+          "name": "Shell",
+          "bytes": 388507,
+          "percent": 0.52
+        },
+        {
+          "name": "Python",
+          "bytes": 268018,
+          "percent": 0.36
+        },
+        {
+          "name": "Rust",
+          "bytes": 106696,
+          "percent": 0.14
+        },
+        {
+          "name": "CSS",
+          "bytes": 86758,
+          "percent": 0.12
+        },
+        {
+          "name": "HTML",
+          "bytes": 64262,
+          "percent": 0.09
+        },
+        {
+          "name": "Makefile",
+          "bytes": 52432,
+          "percent": 0.07
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 12524,
+          "percent": 0.02
+        },
+        {
+          "name": "Ruby",
+          "bytes": 4434,
+          "percent": 0.01
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 3431,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.91.0",
+        "name": "v0.91.0",
+        "publishedAt": "2026-08-21T14:34:35Z",
+        "url": "https://github.com/kdlbs/kandev/releases/tag/v0.91.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.91.0",
+      "releaseDate": "2026-08-21T14:34:35Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 1656561,
+        "comments": 165887,
+        "blank": 188525,
+        "files": 9207,
+        "measuredAt": "2026-08-24T03:37:24.779Z",
+        "verifiedAt": "2026-08-24T03:37:24.779Z",
+        "measuredRef": "v0.91.0",
+        "refType": "stable-release-tag",
+        "commitSha": "e04428fa363ecc14b4731269630e7c5a7e579d6f",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/kdlbs/kandev",
+          "fetchedAt": "2026-08-24T03:37:05.602Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/kdlbs/kandev/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T03:37:06.654Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/kdlbs/kandev/languages",
+          "fetchedAt": "2026-08-24T03:37:07.266Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/kdlbs/kandev/releases?per_page=100",
+          "fetchedAt": "2026-08-24T03:37:09.347Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/kdlbs/kandev/tree/v0.91.0",
+          "fetchedAt": "2026-08-24T03:37:24.779Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -3586,16 +3875,16 @@
       "githubUrl": "https://github.com/getpaseo/paseo",
       "apiUrl": "https://api.github.com/repos/getpaseo/paseo",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
+      "status": "partial",
+      "refreshedAt": "2026-08-24T03:37:14.935Z",
+      "stars": 14820,
+      "forks": 1579,
+      "openIssues": 999,
       "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
+      "repositorySizeKb": 113925,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T21:21:53Z",
+      "archived": false,
       "license": {
         "key": "manifest-verified",
         "name": "GNU Affero General Public License v3.0 only",
@@ -3609,17 +3898,17 @@
       "releaseDate": null,
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 819002,
+        "comments": 18426,
+        "blank": 83445,
+        "files": 3858,
+        "measuredAt": "2026-08-24T03:37:14.723Z",
+        "verifiedAt": "2026-08-24T03:37:14.723Z",
+        "measuredRef": "main",
+        "refType": "default-branch",
+        "commitSha": "4f796181bf9d7e6b5ea2067ece4eace7213938cb",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
@@ -3627,12 +3916,35 @@
       },
       "sources": [
         {
+          "type": "repository",
+          "url": "https://api.github.com/repos/getpaseo/paseo",
+          "fetchedAt": "2026-08-24T03:37:08.313Z"
+        },
+        {
           "type": "license-override",
           "url": "https://github.com/getpaseo/paseo/blob/main/LICENSE",
           "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/getpaseo/paseo/tree/main",
+          "fetchedAt": "2026-08-24T03:37:14.723Z"
         }
       ],
-      "errors": []
+      "errors": [
+        {
+          "section": "languages",
+          "message": "GitHub returned 403 for https://api.github.com/repos/getpaseo/paseo/languages; rate limit resets at 2026-08-24T04:29:39.000Z"
+        },
+        {
+          "section": "contributors",
+          "message": "GitHub returned 403 for https://api.github.com/repos/getpaseo/paseo/contributors?anon=true&per_page=1; rate limit resets at 2026-08-24T04:29:39.000Z"
+        },
+        {
+          "section": "version",
+          "message": "GitHub returned 403 for https://api.github.com/repos/getpaseo/paseo/releases?per_page=100; rate limit resets at 2026-08-24T04:29:39.000Z"
+        }
+      ]
     },
     {
       "id": "superset",
