@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T04:31:33.758Z",
-  "manifestSyncedAt": "2026-08-24T04:31:33.758Z",
+  "generatedAt": "2026-08-24T04:32:48.854Z",
+  "manifestSyncedAt": "2026-08-24T04:32:48.854Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -6820,26 +6820,31 @@
       "apiUrl": "https://api.github.com/repos/aaif-goose/goose",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:17:10.678Z",
-      "stars": 53314,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T04:32:00.451Z",
+      "stars": 53335,
+      "forks": 6080,
+      "openIssues": 259,
       "contributors": 615,
-      "repositorySizeKb": 964465,
+      "repositorySizeKb": 964875,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-22T00:11:06Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T03:53:08Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
       "languages": [
         {
           "name": "Rust",
-          "bytes": 9380018,
-          "percent": 71.28
+          "bytes": 9385405,
+          "percent": 71.21
         },
         {
           "name": "TypeScript",
-          "bytes": 3133769,
-          "percent": 23.82
+          "bytes": 3148707,
+          "percent": 23.89
         },
         {
           "name": "Shell",
@@ -6864,7 +6869,7 @@
         {
           "name": "CSS",
           "bytes": 34878,
-          "percent": 0.27
+          "percent": 0.26
         },
         {
           "name": "Just",
@@ -6920,7 +6925,7 @@
         "blank": 61582,
         "files": 1906,
         "measuredAt": "2026-08-23T18:17:10.515Z",
-        "verifiedAt": null,
+        "verifiedAt": "2026-08-24T04:32:00.451Z",
         "measuredRef": "v1.47.0",
         "refType": "stable-release-tag",
         "commitSha": "f9c7aaccde4834810dfd13d5efa8f0d39ba28a20",
@@ -6934,27 +6939,27 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/aaif-goose/goose",
-          "fetchedAt": "2026-08-23T18:17:02.201Z"
+          "fetchedAt": "2026-08-24T04:31:58.993Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/aaif-goose/goose/languages",
-          "fetchedAt": "2026-08-23T18:17:02.281Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/aaif-goose/goose/releases/latest",
-          "fetchedAt": "2026-08-23T18:17:02.403Z"
+          "fetchedAt": "2026-08-24T04:31:59.110Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/aaif-goose/goose/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:17:02.419Z"
+          "fetchedAt": "2026-08-24T04:31:59.299Z"
         },
         {
-          "type": "loc-checkout",
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/aaif-goose/goose/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:32:00.032Z"
+        },
+        {
+          "type": "loc-measurement",
           "url": "https://github.com/aaif-goose/goose/tree/v1.47.0",
-          "fetchedAt": "2026-08-23T18:17:10.515Z"
+          "fetchedAt": "2026-08-24T04:32:00.451Z"
         }
       ],
       "errors": []
@@ -6972,16 +6977,21 @@
       "apiUrl": "https://api.github.com/repos/deepseek-ai/deepseek-harness",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T21:26:54.164Z",
-      "stars": 187783,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T04:32:05.743Z",
+      "stars": 188944,
+      "forks": 21046,
+      "openIssues": 0,
       "contributors": 38,
       "repositorySizeKb": 108918,
       "defaultBranch": "master",
       "pushedAt": "2026-08-21T12:35:08Z",
-      "archived": null,
-      "license": null,
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
       "languages": [
         {
           "name": "TypeScript",
@@ -7029,58 +7039,59 @@
           "percent": 0
         }
       ],
-      "latestRelease": null,
-      "latestTag": {
-        "name": "dsh-v0.1.1-rc.2",
-        "commitSha": "b150a551b8d465e31e418e1b2eaf5e79bbb7d28e",
-        "commitDate": "2026-08-21T12:03:37Z",
-        "url": "https://github.com/deepseek-ai/deepseek-harness/tree/dsh-v0.1.1-rc.2"
+      "latestRelease": {
+        "tagName": "dsh-v0.1.1-rc.2",
+        "name": "v0.1.1-rc.2",
+        "publishedAt": "2026-08-21T12:35:08Z",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.1.1-rc.2",
+        "prerelease": true
       },
+      "latestTag": null,
       "version": "dsh-v0.1.1-rc.2",
-      "releaseDate": null,
+      "releaseDate": "2026-08-21T12:35:08Z",
       "releasePolicy": null,
       "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 496725,
+        "comments": 94068,
+        "blank": 52490,
+        "files": 3137,
+        "measuredAt": "2026-08-24T04:32:05.294Z",
+        "verifiedAt": "2026-08-24T04:32:05.294Z",
+        "measuredRef": "dsh-v0.1.1-rc.2",
+        "refType": "prerelease-tag",
+        "commitSha": "b150a551b8d465e31e418e1b2eaf5e79bbb7d28e",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large monorepo; GitHub language bytes remain available"
+        "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness",
-          "fetchedAt": "2026-08-23T21:26:50.468Z"
+          "fetchedAt": "2026-08-24T04:31:58.944Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/languages",
-          "fetchedAt": "2026-08-23T21:26:52.325Z"
+          "fetchedAt": "2026-08-24T04:31:59.110Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T21:26:53.334Z"
+          "fetchedAt": "2026-08-24T04:31:59.133Z"
         },
         {
-          "type": "latest-tag",
-          "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/tags?per_page=1",
-          "fetchedAt": "2026-08-23T21:26:52.257Z"
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:31:59.296Z"
         },
         {
-          "type": "tag-commit",
-          "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/commits/b150a551b8d465e31e418e1b2eaf5e79bbb7d28e",
-          "fetchedAt": "2026-08-23T21:26:54.164Z"
+          "type": "loc-measurement",
+          "url": "https://github.com/deepseek-ai/deepseek-harness/tree/dsh-v0.1.1-rc.2",
+          "fetchedAt": "2026-08-24T04:32:05.294Z"
         }
       ],
       "errors": []
@@ -7098,16 +7109,21 @@
       "apiUrl": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T21:26:54.490Z",
-      "stars": 18014,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T04:32:05.755Z",
+      "stars": 18052,
+      "forks": 1953,
+      "openIssues": 70,
       "contributors": 222,
-      "repositorySizeKb": 51314,
+      "repositorySizeKb": 50981,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T21:21:13Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T00:54:27Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
       "languages": [
         {
           "name": "TypeScript",
@@ -7157,42 +7173,47 @@
       "releaseDate": "2026-08-21T21:18:10Z",
       "releasePolicy": null,
       "loc": {
-        "status": "disabled",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 325457,
+        "comments": 15952,
+        "blank": 36521,
+        "files": 1009,
+        "measuredAt": "2026-08-24T04:32:05.634Z",
+        "verifiedAt": "2026-08-24T04:32:05.634Z",
+        "measuredRef": "v0.8.0",
+        "refType": "stable-release-tag",
+        "commitSha": "8d7deeab5861bf9d77bde3d8511046a5c799818d",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": "Large monorepo; GitHub language bytes remain available"
+        "reason": null
       },
       "sources": [
         {
           "type": "repository",
           "url": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent",
-          "fetchedAt": "2026-08-23T21:26:53.882Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent/releases/latest",
-          "fetchedAt": "2026-08-23T21:26:53.977Z"
-        },
-        {
-          "type": "contributors",
-          "url": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T21:26:54.394Z"
+          "fetchedAt": "2026-08-24T04:32:00.682Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent/languages",
-          "fetchedAt": "2026-08-23T21:26:54.490Z"
+          "fetchedAt": "2026-08-24T04:32:00.792Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T04:32:00.888Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:32:01.006Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/PrimeIntellect-ai/prime-agent/tree/v0.8.0",
+          "fetchedAt": "2026-08-24T04:32:05.634Z"
         }
       ],
       "errors": []
@@ -7209,41 +7230,124 @@
       "githubUrl": "https://github.com/MoonshotAI/kimi-code",
       "apiUrl": "https://api.github.com/repos/MoonshotAI/kimi-code",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T04:32:29.757Z",
+      "stars": 7027,
+      "forks": 1120,
+      "openIssues": 1172,
+      "contributors": 51,
+      "repositorySizeKb": 75650,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T04:12:10Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 33211846,
+          "percent": 97.87
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 679823,
+          "percent": 2
+        },
+        {
+          "name": "CSS",
+          "bytes": 12113,
+          "percent": 0.04
+        },
+        {
+          "name": "Nix",
+          "bytes": 8763,
+          "percent": 0.03
+        },
+        {
+          "name": "Shell",
+          "bytes": 8689,
+          "percent": 0.03
+        },
+        {
+          "name": "C",
+          "bytes": 8377,
+          "percent": 0.02
+        },
+        {
+          "name": "HTML",
+          "bytes": 3227,
+          "percent": 0.01
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 992,
+          "percent": 0
+        },
+        {
+          "name": "Makefile",
+          "bytes": 693,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "@moonshot-ai/kimi-code@0.38.0",
+        "name": "@moonshot-ai/kimi-code@0.38.0",
+        "publishedAt": "2026-08-20T13:13:44Z",
+        "url": "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai/kimi-code%400.38.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "@moonshot-ai/kimi-code@0.38.0",
+      "releaseDate": "2026-08-20T13:13:44Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 755175,
+        "comments": 72732,
+        "blank": 93817,
+        "files": 4369,
+        "measuredAt": "2026-08-24T04:32:29.499Z",
+        "verifiedAt": "2026-08-24T04:32:29.499Z",
+        "measuredRef": "@moonshot-ai/kimi-code@0.38.0",
+        "refType": "stable-release-tag",
+        "commitSha": "0999454bdcb5ddd98f39bffee434dcf0a810f394",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/MoonshotAI/kimi-code",
+          "fetchedAt": "2026-08-24T04:32:05.923Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/MoonshotAI/kimi-code/languages",
+          "fetchedAt": "2026-08-24T04:32:06.064Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/MoonshotAI/kimi-code/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T04:32:06.087Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/MoonshotAI/kimi-code/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:32:06.681Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/MoonshotAI/kimi-code/tree/%40moonshot-ai%2Fkimi-code%400.38.0",
+          "fetchedAt": "2026-08-24T04:32:29.499Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -7258,41 +7362,94 @@
       "githubUrl": "https://github.com/mistralai/mistral-vibe",
       "apiUrl": "https://api.github.com/repos/mistralai/mistral-vibe",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T04:32:44.550Z",
+      "stars": 4868,
+      "forks": 648,
+      "openIssues": 278,
+      "contributors": 10,
+      "repositorySizeKb": 7067,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-20T17:38:59Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 8555731,
+          "percent": 99.81
+        },
+        {
+          "name": "Shell",
+          "bytes": 12155,
+          "percent": 0.14
+        },
+        {
+          "name": "Nix",
+          "bytes": 4392,
+          "percent": 0.05
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v2.24.3",
+        "name": "v2.24.3",
+        "publishedAt": "2026-08-20T17:39:00Z",
+        "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.24.3",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v2.24.3",
+      "releaseDate": "2026-08-20T17:39:00Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 221738,
+        "comments": 8002,
+        "blank": 42770,
+        "files": 1176,
+        "measuredAt": "2026-08-24T04:32:44.479Z",
+        "verifiedAt": "2026-08-24T04:32:44.479Z",
+        "measuredRef": "v2.24.3",
+        "refType": "stable-release-tag",
+        "commitSha": "a84be0391bf93e93a4025a5e08e8032ecb587123",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/mistralai/mistral-vibe",
+          "fetchedAt": "2026-08-24T04:32:41.459Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/mistralai/mistral-vibe/languages",
+          "fetchedAt": "2026-08-24T04:32:41.574Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/mistralai/mistral-vibe/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T04:32:41.750Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/mistralai/mistral-vibe/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:32:42.158Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/mistralai/mistral-vibe/tree/v2.24.3",
+          "fetchedAt": "2026-08-24T04:32:44.479Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -7307,41 +7464,104 @@
       "githubUrl": "https://github.com/microsoft/amplifier-agent",
       "apiUrl": "https://api.github.com/repos/microsoft/amplifier-agent",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T04:32:43.775Z",
+      "stars": 7,
+      "forks": 6,
+      "openIssues": 4,
+      "contributors": 8,
+      "repositorySizeKb": 57158,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T15:07:14Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "HTML",
+          "bytes": 3790152,
+          "percent": 64.39
+        },
+        {
+          "name": "Python",
+          "bytes": 1859452,
+          "percent": 31.59
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 213425,
+          "percent": 3.63
+        },
+        {
+          "name": "Shell",
+          "bytes": 19556,
+          "percent": 0.33
+        },
+        {
+          "name": "Makefile",
+          "bytes": 3793,
+          "percent": 0.06
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.14.1",
+        "name": "v0.14.1",
+        "publishedAt": "2026-08-21T17:02:53Z",
+        "url": "https://github.com/microsoft/amplifier-agent/releases/tag/v0.14.1",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.14.1",
+      "releaseDate": "2026-08-21T17:02:53Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 60098,
+        "comments": 15277,
+        "blank": 8397,
+        "files": 285,
+        "measuredAt": "2026-08-24T04:32:43.717Z",
+        "verifiedAt": "2026-08-24T04:32:43.717Z",
+        "measuredRef": "v0.14.1",
+        "refType": "stable-release-tag",
+        "commitSha": "6507664054c7fe1902a821fc2e26b95803584f45",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/microsoft/amplifier-agent",
+          "fetchedAt": "2026-08-24T04:32:41.389Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/microsoft/amplifier-agent/languages",
+          "fetchedAt": "2026-08-24T04:32:41.473Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/microsoft/amplifier-agent/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:32:41.688Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/microsoft/amplifier-agent/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T04:32:41.717Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/microsoft/amplifier-agent/tree/v0.14.1",
+          "fetchedAt": "2026-08-24T04:32:43.717Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -7356,41 +7576,129 @@
       "githubUrl": "https://github.com/gptme/gptme",
       "apiUrl": "https://api.github.com/repos/gptme/gptme",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T04:32:48.854Z",
+      "stars": 4392,
+      "forks": 411,
+      "openIssues": 19,
+      "contributors": 48,
+      "repositorySizeKb": 80935,
+      "defaultBranch": "master",
+      "pushedAt": "2026-08-24T04:08:56Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 12445529,
+          "percent": 84.84
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 1970162,
+          "percent": 13.43
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 77906,
+          "percent": 0.53
+        },
+        {
+          "name": "Shell",
+          "bytes": 51054,
+          "percent": 0.35
+        },
+        {
+          "name": "Rust",
+          "bytes": 45736,
+          "percent": 0.31
+        },
+        {
+          "name": "HTML",
+          "bytes": 39579,
+          "percent": 0.27
+        },
+        {
+          "name": "Makefile",
+          "bytes": 18167,
+          "percent": 0.12
+        },
+        {
+          "name": "CSS",
+          "bytes": 12833,
+          "percent": 0.09
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 5808,
+          "percent": 0.04
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 3290,
+          "percent": 0.02
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.33.0",
+        "name": "v0.33.0",
+        "publishedAt": "2026-08-19T14:34:30Z",
+        "url": "https://github.com/gptme/gptme/releases/tag/v0.33.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.33.0",
+      "releaseDate": "2026-08-19T14:34:30Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 285624,
+        "comments": 66900,
+        "blank": 72074,
+        "files": 1267,
+        "measuredAt": "2026-08-24T04:32:48.799Z",
+        "verifiedAt": "2026-08-24T04:32:48.799Z",
+        "measuredRef": "v0.33.0",
+        "refType": "stable-release-tag",
+        "commitSha": "eb5b671bd997804794d6b3b02ebc72ba525dc790",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/gptme/gptme",
+          "fetchedAt": "2026-08-24T04:32:43.928Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/gptme/gptme/languages",
+          "fetchedAt": "2026-08-24T04:32:44.035Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/gptme/gptme/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T04:32:44.194Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/gptme/gptme/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:32:44.795Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/gptme/gptme/tree/v0.33.0",
+          "fetchedAt": "2026-08-24T04:32:48.799Z"
+        }
+      ],
       "errors": []
     },
     {
