@@ -1,42 +1,18 @@
 ---
-import "../../../../../assets/gmux-tokens.css";
-import "../../styles/site.css";
-import Nav from "../../components/Nav.astro";
-import Footer from "../../components/Footer.astro";
-import changelog from "../../data/changelog.json";
-const description = "The Tortie changelog, synchronized from the public Git repository.";
+const destination = "/docs/changelog/";
 ---
 
-<!doctype html><html lang="en"><head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Changelog — Tortie</title><meta name="description" content={description} /><link rel="canonical" href="https://tortie.sh/changelog/" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" /><meta name="theme-color" content="#131417" />
-</head><body><Nav current="changelog" /><main class="page-shell changelog-page">
-  <header class="page-intro"><div class="container"><h1>What changed, in plain words.</h1><p>Every release is synchronized from Tortie’s public changelog. Each item links back to the commit that delivered it.</p></div></header>
-  <div class="container changelog-list page-content">{changelog.releases.map((release, index) => (
-    <article class="release" id={`v${release.version}`}>
-      <header class="release-head"><div><p>{index === 0 ? "Latest release" : "Release"}</p><h2>{release.version}</h2></div><time datetime={release.date}>{release.date}</time></header>
-      <p class="release-summary">{release.summary}</p>
-      <div class="release-sections">{release.sections.map((section) => <section><h3>{section.title}</h3><ul>{section.items.map((item) => <li><span>{item.text}</span>{item.commits.length > 0 && <span class="commit-links">{item.commits.map((commit) => <a href={commit.url} aria-label={`View commit ${commit.hash}`}>{commit.hash}</a>)}</span>}</li>)}</ul></section>)}</div>
-    </article>
-  ))}</div>
-</main><Footer /></body></html>
-
-<style>
-  .changelog-page { font-family: var(--font-ui); }
-  .changelog-list { max-width: 920px; }
-  .release { padding-bottom: clamp(64px, 10vw, 112px); margin-bottom: clamp(64px, 10vw, 112px); border-bottom: 1px solid var(--border); }
-  .release:last-child { margin-bottom: 0; border-bottom: 0; }
-  .release-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-8); }
-  .release-head p { margin: 0 0 var(--space-4); color: var(--accent-text); font-size: 12px; }
-  .release-head h2 { margin: 0; font-family: var(--font-mono); font-size: clamp(30px, 4vw, 48px); font-weight: var(--weight-regular); letter-spacing: -.03em; }
-  .release-head time { color: var(--text-muted); font-family: var(--font-mono); font-size: 12px; }
-  .release-summary { max-width: 70ch; margin: var(--space-8) 0 clamp(40px, 6vw, 64px); color: var(--text-secondary); font-size: 16px; line-height: 1.7; }
-  .release-sections { display: grid; gap: clamp(36px, 5vw, 56px); }
-  .release-sections h3 { margin: 0 0 var(--space-6); color: var(--text-primary); font-size: 14px; }
-  .release-sections ul { margin: 0; padding: 0; list-style: none; }
-  .release-sections li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-8); padding: var(--space-6) 0; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 14px; line-height: 1.65; }
-  .commit-links { display: flex; gap: var(--space-4); }
-  .commit-links a { font-family: var(--font-mono); font-size: 11px; }
-  @media (max-width: 600px) { .release-sections li { grid-template-columns: 1fr; gap: var(--space-4); } }
-</style>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Changelog moved — Tortie</title>
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${destination}`} />
+    <link rel="canonical" href="https://tortie.sh/docs/changelog/" />
+  </head>
+  <body>
+    <p>The Tortie changelog moved to <a href={destination}>Tortie docs</a>.</p>
+  </body>
+</html>

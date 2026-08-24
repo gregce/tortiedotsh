@@ -47,13 +47,13 @@ spacing:
 components:
   button-primary:
     backgroundColor: "{colors.action-blue}"
-    textColor: "{colors.canvas}"
+    textColor: "#ffffff"
     rounded: "{rounded.md}"
     padding: "0 22px"
     height: "44px"
   button-primary-hover:
     backgroundColor: "{colors.action-blue-hover}"
-    textColor: "{colors.canvas}"
+    textColor: "#ffffff"
     rounded: "{rounded.md}"
   button-secondary:
     backgroundColor: "transparent"
@@ -146,7 +146,7 @@ Corners are gently restrained: 4px for compact controls, 6px for buttons, and 10
 ### Buttons
 
 - **Shape:** Compact rectangle with a 6px radius.
-- **Primary:** Action blue with dark text, 44px tall; the label names the action.
+- **Primary:** Deep action blue with white text, 44px tall; the label names the action.
 - **Hover / Focus:** A lighter blue hover and a visible blue focus ring.
 - **Secondary:** Transparent graphite with a strong 1px boundary.
 
@@ -160,7 +160,7 @@ Corners are gently restrained: 4px for compact controls, 6px for buttons, and 10
 
 ### Navigation
 
-The navigation is a compact dark band with the unchanged TORTIE.sh wordmark, quiet text links, an active-page state, and one persistent blue download action. Mobile navigation must remain keyboard-operable and must not hide access to Compare, Docs, Changelog, or GitHub.
+The navigation uses one 56px structure across the site: the unchanged TORTIE.sh wordmark, an optional contextual route label, quiet text links, an active-page state, and one persistent blue download action. Only the homepage changes the material by placing that same structure transparently over the studio hero. Mobile navigation must remain keyboard-operable and must not hide access to Compare, Docs, Changelog, or GitHub.
 
 ### Evidence matrix
 

@@ -4,10 +4,19 @@ import "../../styles/site.css";
 import "../../styles/docs.css";
 import DocsShell from "../../components/DocsShell.astro";
 import DocsArticle from "../../components/DocsArticle.astro";
-import { docsPageByPath } from "../../data/docs";
+import { docsPages, type DocPage } from "../../data/docs";
 
-const page = docsPageByPath.get("/docs/");
-if (!page) throw new Error("Getting started documentation is missing.");
+export function getStaticPaths() {
+  return docsPages
+    .filter((page) => page.path !== "/docs/")
+    .map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+interface Props {
+  page: DocPage;
+}
+
+const { page } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,7 +26,7 @@ if (!page) throw new Error("Getting started documentation is missing.");
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{page.title} — Tortie docs</title>
     <meta name="description" content={page.description} />
-    <link rel="canonical" href="https://tortie.sh/docs/" />
+    <link rel="canonical" href={`https://tortie.sh${page.path}`} />
     <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon-180.png" />

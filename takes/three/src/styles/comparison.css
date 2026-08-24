@@ -12,7 +12,7 @@
 
 .category-shell {
   position: sticky;
-  top: 52px;
+  top: 56px;
   z-index: 90;
   background: var(--bg-sidebar);
   border-top: 1px solid var(--border);

@@ -1,0 +1,394 @@
+---
+/**
+ * THESIS: Documentation is a durable place to regain orientation, not a marketing page with longer copy.
+ * OWN-WORLD: True black canvas, silver system type, one blue action, a searchable left rail, and quiet hairlines.
+ * STORY: Start quickly, understand Tortie's model, evaluate its daily workflow, then verify details and releases.
+ * FIRST VIEWPORT: One uniform site header above a narrow docs rail and a generous, immediately readable article.
+ * FORM: User-pinned cmux docs structure, interpreted through Tortie's graphite design system and product language.
+ */
+import Nav from "./Nav.astro";
+import Footer from "./Footer.astro";
+import { docsNavGroups } from "../data/docs";
+
+interface Props {
+  currentPath: string;
+  current?: "docs" | "changelog";
+}
+
+const { currentPath, current = "docs" } = Astro.props;
+---
+
+<Nav current={current} sectionLabel="docs" />
+
+<main class="docs-shell">
+  <aside class="docs-sidebar" aria-label="Documentation navigation" data-pagefind-ignore="all">
+    <details class="docs-sidebar-panel" open>
+      <summary>Browse documentation</summary>
+      <div class="docs-sidebar-content">
+        <div class="docs-search-shell">
+          <div class="docs-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+            <label class="visually-hidden" for="docs-search-input">Search documentation</label>
+            <input
+              id="docs-search-input"
+              type="search"
+              placeholder="Search docs…"
+              autocomplete="off"
+              spellcheck="false"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-controls="docs-search-results"
+              aria-expanded="false"
+            />
+          </div>
+          <div
+            class="docs-search-results"
+            id="docs-search-results"
+            role="listbox"
+            aria-label="Documentation search results"
+            aria-busy="false"
+            hidden
+          >
+            <div class="docs-search-results-frame">
+              <p class="docs-search-results-count" data-search-count></p>
+              <div class="docs-search-results-list" data-search-results-list></div>
+              <p class="docs-search-message" data-search-message hidden></p>
+            </div>
+          </div>
+        </div>
+        <p class="visually-hidden" id="docs-search-status" aria-live="polite"></p>
+
+        <nav class="docs-nav" aria-label="Documentation">
+          {docsNavGroups.map((group) => (
+            <section class="docs-nav-group">
+              <h2>{group.title}</h2>
+              <div>
+                {group.items.map((item) => (
+                  <a
+                    class="docs-nav-link"
+                    href={item.href}
+                    aria-current={currentPath === item.href ? "page" : undefined}
+                    data-search-title={item.title}
+                    data-search-description={item.description}
+                    data-search-text={`${item.title} ${item.description} ${item.searchTerms ?? ""}`.toLowerCase()}
+                  >{item.title}</a>
+                ))}
+              </div>
+            </section>
+          ))}
+        </nav>
+      </div>
+    </details>
+  </aside>
+
+  <div class="docs-main" data-pagefind-body><slot /></div>
+</main>
+
+<Footer />
+
+<script is:inline>
+  (() => {
+    const input = document.getElementById("docs-search-input");
+    const status = document.getElementById("docs-search-status");
+    const resultsPanel = document.getElementById("docs-search-results");
+    const resultsList = document.querySelector("[data-search-results-list]");
+    const resultsCount = document.querySelector("[data-search-count]");
+    const resultsMessage = document.querySelector("[data-search-message]");
+    const links = Array.from(document.querySelectorAll(".docs-nav-link"));
+    if (
+      !(input instanceof HTMLInputElement)
+      || !(status instanceof HTMLElement)
+      || !(resultsPanel instanceof HTMLElement)
+      || !(resultsList instanceof HTMLElement)
+      || !(resultsCount instanceof HTMLElement)
+      || !(resultsMessage instanceof HTMLElement)
+    ) return;
+
+    const fallbackIndex = links.flatMap((link) => {
+      if (!(link instanceof HTMLAnchorElement)) return [];
+      return [{
+        href: link.getAttribute("href") || "/docs/",
+        title: link.dataset.searchTitle || link.textContent?.trim() || "Documentation",
+        excerptHtml: link.dataset.searchDescription || "",
+        plainExcerpt: link.dataset.searchDescription || "",
+        searchText: link.dataset.searchText || "",
+      }];
+    });
+
+    let pagefindPromise = null;
+    let debounceTimer = 0;
+    let requestId = 0;
+    let activeIndex = -1;
+    let renderedResults = [];
+
+    const escapeHtml = (value) => value.replace(/[&<>'"]/g, (character) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      "'": "&#39;",
+      '"': "&quot;",
+    })[character]);
+
+    const highlightedText = (value, query) => {
+      const normalizedQuery = query.trim();
+      if (!normalizedQuery) return escapeHtml(value);
+      const escapedQuery = normalizedQuery.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      return escapeHtml(value).replace(new RegExp(`(${escapedQuery})`, "ig"), "<mark>$1</mark>");
+    };
+
+    const sanitizeExcerpt = (html) => {
+      const template = document.createElement("template");
+      template.innerHTML = html;
+      template.content.querySelectorAll("*").forEach((element) => {
+        if (element.tagName === "MARK") {
+          Array.from(element.attributes).forEach((attribute) => element.removeAttribute(attribute.name));
+          return;
+        }
+        element.replaceWith(...element.childNodes);
+      });
+      return template.innerHTML;
+    };
+
+    const normalizeUrl = (url) => {
+      const parsed = new URL(url, window.location.origin);
+      let path = parsed.pathname.replace(/\/index\.html$/, "/");
+      if (!path.endsWith("/") && !path.split("/").pop()?.includes(".")) path += "/";
+      return `${path}${parsed.hash}`;
+    };
+
+    const subResultScore = (result) => (
+      result?.weighted_locations?.reduce(
+        (score, location) => score + (location.balanced_score ?? location.weight ?? 0),
+        0,
+      ) ?? 0
+    );
+
+    const bestSubResult = (subResults = []) => {
+      const candidates = subResults.filter((item) => item.excerpt || item.url);
+      if (!candidates.length) return undefined;
+      const best = candidates.reduce((current, candidate) => (
+        subResultScore(candidate) > subResultScore(current) ? candidate : current
+      ));
+      const bestHash = new URL(best.url || "/", window.location.origin).hash;
+      if (bestHash && bestHash !== "#top") return best;
+      const bestSection = candidates
+        .filter((candidate) => {
+          const hash = new URL(candidate.url || "/", window.location.origin).hash;
+          return hash && hash !== "#top";
+        })
+        .reduce((current, candidate) => (
+          !current || subResultScore(candidate) > subResultScore(current) ? candidate : current
+        ), undefined);
+      return bestSection && subResultScore(bestSection) >= subResultScore(best) * 0.65
+        ? bestSection
+        : best;
+    };
+
+    const normalizeResult = (data) => {
+      const subResult = bestSubResult(data.sub_results);
+      return {
+        href: normalizeUrl(subResult?.url || data.url),
+        title: subResult?.title || data.meta?.title || "Documentation",
+        excerptHtml: sanitizeExcerpt(subResult?.excerpt || data.excerpt || ""),
+        plainExcerpt: subResult?.plain_excerpt || data.plain_excerpt || "",
+      };
+    };
+
+    const loadPagefind = async () => {
+      if (!pagefindPromise) {
+        pagefindPromise = import(/* @vite-ignore */ "/pagefind/pagefind.js")
+          .then(async (pagefind) => {
+            await pagefind.options({
+              ranking: {
+                pageLength: 0.6,
+                termFrequency: 0.8,
+                metaWeights: { title: 8 },
+              },
+            });
+            await pagefind.init();
+            return pagefind;
+          })
+          .catch((error) => {
+            pagefindPromise = null;
+            throw error;
+          });
+      }
+      return pagefindPromise;
+    };
+
+    const announce = (message) => {
+      status.textContent = "";
+      window.requestAnimationFrame(() => { status.textContent = message; });
+    };
+
+    const setExpanded = (expanded) => {
+      input.setAttribute("aria-expanded", String(expanded));
+      resultsPanel.hidden = !expanded;
+      if (!expanded) input.removeAttribute("aria-activedescendant");
+    };
+
+    const selectResult = (nextIndex) => {
+      const resultLinks = Array.from(resultsList.querySelectorAll(".docs-search-result"));
+      if (!resultLinks.length) {
+        activeIndex = -1;
+        input.removeAttribute("aria-activedescendant");
+        return;
+      }
+      activeIndex = (nextIndex + resultLinks.length) % resultLinks.length;
+      resultLinks.forEach((link, index) => {
+        link.setAttribute("aria-selected", String(index === activeIndex));
+      });
+      const active = resultLinks[activeIndex];
+      if (active instanceof HTMLElement) {
+        input.setAttribute("aria-activedescendant", active.id);
+        active.scrollIntoView({ block: "nearest" });
+      }
+    };
+
+    const showMessage = (message, kind = "status") => {
+      resultsPanel.dataset.state = kind;
+      resultsPanel.setAttribute("aria-busy", String(kind === "loading"));
+      resultsCount.textContent = "";
+      resultsList.replaceChildren();
+      resultsMessage.hidden = false;
+      resultsMessage.textContent = message;
+      renderedResults = [];
+      activeIndex = -1;
+      setExpanded(true);
+    };
+
+    const renderResults = (results, limited = false) => {
+      resultsPanel.dataset.state = results.length ? "ready" : "empty";
+      resultsPanel.setAttribute("aria-busy", "false");
+      resultsMessage.hidden = true;
+      resultsMessage.textContent = "";
+      resultsList.replaceChildren();
+      renderedResults = results;
+
+      if (!results.length) {
+        showMessage("No matching guides. Try a broader search.", "empty");
+        announce("No documentation results found. Try a broader search.");
+        return;
+      }
+
+      resultsCount.textContent = `${results.length} ${results.length === 1 ? "result" : "results"}${limited ? " · guide index" : ""}`;
+      results.forEach((result, index) => {
+        const link = document.createElement("a");
+        link.className = "docs-search-result";
+        link.id = `docs-search-result-${index}`;
+        link.href = result.href;
+        link.setAttribute("role", "option");
+        link.setAttribute("aria-selected", "false");
+        link.innerHTML = `
+          <span class="docs-search-result-title">${escapeHtml(result.title)}</span>
+          ${result.excerptHtml ? `<span class="docs-search-result-excerpt">${result.excerptHtml}</span>` : ""}
+          <span class="docs-search-result-path">${escapeHtml(result.href)}</span>
+        `;
+        link.addEventListener("pointerenter", () => selectResult(index));
+        resultsList.append(link);
+      });
+      setExpanded(true);
+      selectResult(0);
+      announce(`${results.length} documentation ${results.length === 1 ? "result" : "results"} found${limited ? " in the guide index" : ""}.`);
+    };
+
+    const fallbackSearch = (query) => fallbackIndex
+      .filter((item) => item.searchText.includes(query.toLowerCase()))
+      .slice(0, 8)
+      .map((item) => ({
+        ...item,
+        excerptHtml: highlightedText(item.plainExcerpt, query),
+      }));
+
+    const runSearch = async (query, currentRequest) => {
+      showMessage("Searching documentation…", "loading");
+      try {
+        const pagefind = await loadPagefind();
+        const search = await pagefind.search(query);
+        if (currentRequest !== requestId || !search) return;
+        const data = await Promise.all(search.results.slice(0, 12).map((result) => result.data()));
+        if (currentRequest !== requestId) return;
+        const seen = new Set();
+        const results = data
+          .map(normalizeResult)
+          .filter((result) => {
+            if (!result.href.startsWith("/docs/") || seen.has(result.href)) return false;
+            seen.add(result.href);
+            return true;
+          })
+          .slice(0, 8);
+        renderResults(results);
+      } catch {
+        if (currentRequest !== requestId) return;
+        renderResults(fallbackSearch(query), true);
+      }
+    };
+
+    const clearSearch = () => {
+      window.clearTimeout(debounceTimer);
+      requestId += 1;
+      activeIndex = -1;
+      renderedResults = [];
+      resultsList.replaceChildren();
+      resultsCount.textContent = "";
+      resultsMessage.textContent = "";
+      resultsMessage.hidden = true;
+      resultsPanel.removeAttribute("data-state");
+      resultsPanel.setAttribute("aria-busy", "false");
+      setExpanded(false);
+      announce("Search cleared. Documentation navigation restored.");
+    };
+
+    const queueSearch = () => {
+      window.clearTimeout(debounceTimer);
+      const query = input.value.trim();
+      requestId += 1;
+      const currentRequest = requestId;
+      if (query.length < 2) {
+        clearSearch();
+        if (query.length === 1) announce("Type one more character to search documentation.");
+        return;
+      }
+      debounceTimer = window.setTimeout(() => runSearch(query, currentRequest), 180);
+    };
+
+    input.addEventListener("focus", () => { loadPagefind().catch(() => {}); });
+    input.addEventListener("input", queueSearch);
+    input.addEventListener("keydown", (event) => {
+      if (event.isComposing) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        if (!input.value) {
+          input.blur();
+          return;
+        }
+        input.value = "";
+        clearSearch();
+        return;
+      }
+      if (!renderedResults.length) return;
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        selectResult(activeIndex + 1);
+        return;
+      }
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+        selectResult(activeIndex - 1);
+        return;
+      }
+      if (event.key === "Enter" && activeIndex >= 0) {
+        event.preventDefault();
+        window.location.assign(renderedResults[activeIndex].href);
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      const target = event.target;
+      const isTyping = target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || (target instanceof HTMLElement && target.isContentEditable);
+      if (event.key === "/" && !event.metaKey && !event.ctrlKey && !event.altKey && !isTyping) {
+        event.preventDefault();
+        input.focus();
+      }
+    });
+  })();
+</script>

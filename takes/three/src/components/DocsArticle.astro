@@ -1,0 +1,48 @@
+---
+import type { DocPage } from "../data/docs";
+import { docsNavItems } from "../data/docs";
+
+interface Props {
+  page: DocPage;
+}
+
+const { page } = Astro.props;
+const pageIndex = docsNavItems.findIndex((item) => item.href === page.path);
+const previous = pageIndex > 0 ? docsNavItems[pageIndex - 1] : undefined;
+const next = pageIndex >= 0 && pageIndex < docsNavItems.length - 1 ? docsNavItems[pageIndex + 1] : undefined;
+---
+
+<article class="docs-article">
+  <header class="docs-article-header">
+    <div class="docs-heading">
+      <a class="docs-heading-anchor" href="#top" aria-label={`Link to ${page.title}`}>#</a>
+      <h1 id="top" data-pagefind-meta="title" data-pagefind-weight="10">{page.title}</h1>
+    </div>
+    <p class="docs-lead">{page.lead}</p>
+  </header>
+
+  {page.sections.map((section) => (
+    <section class="docs-section">
+      <div class="docs-heading">
+        <a class="docs-heading-anchor" href={`#${section.id}`} aria-label={`Link to ${section.title}`}>#</a>
+        <h2 id={section.id} data-pagefind-weight="6">{section.title}</h2>
+      </div>
+      <div class="docs-copy">
+        {section.blocks.map((block) => (
+          block.type === "paragraph" ? <p set:html={block.html} />
+          : block.type === "list" ? <ul>{block.items.map((item) => <li set:html={item} />)}</ul>
+          : block.type === "steps" ? <ol class="docs-steps">{block.items.map((item) => <li><strong>{item.title}</strong> <span set:html={item.html} /></li>)}</ol>
+          : block.type === "code" ? <div class="docs-code">{block.label && <p class="docs-code-label">{block.label}</p>}<pre><code>{block.code}</code></pre></div>
+          : block.type === "note" ? <aside class="docs-note">{block.title && <p class="docs-note-title">{block.title}</p>}<p set:html={block.html} /></aside>
+          : block.type === "table" ? <div class="docs-table-wrap"><table class="docs-table"><thead><tr>{block.headers.map((header) => <th scope="col">{header}</th>)}</tr></thead><tbody>{block.rows.map((row) => <tr>{row.map((cell) => <td set:html={cell} />)}</tr>)}</tbody></table></div>
+          : null
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <nav class="docs-pagination" aria-label="Documentation pages">
+    {previous ? <a href={previous.href}><span>Previous</span><strong>← {previous.title}</strong></a> : <span></span>}
+    {next && <a href={next.href}><span>Next</span><strong>{next.title} →</strong></a>}
+  </nav>
+</article>

@@ -1,0 +1,70 @@
+---
+import "../../../../../../assets/gmux-tokens.css";
+import "../../../styles/site.css";
+import "../../../styles/docs.css";
+import DocsShell from "../../../components/DocsShell.astro";
+import InlineReleaseText from "../../../components/InlineReleaseText.astro";
+import changelog from "../../../data/changelog.json";
+
+const description = "Every Tortie release, synchronized from the public repository.";
+const formatDate = (date: string) => new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+}).format(new Date(`${date}T00:00:00Z`));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Changelog — Tortie docs</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href="https://tortie.sh/docs/changelog/" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon-180.png" />
+    <meta name="theme-color" content="#000000" />
+  </head>
+  <body class="docs-body">
+    <DocsShell currentPath="/docs/changelog/" current="changelog">
+      <article class="docs-article changelog-article">
+        <header class="docs-article-header changelog-header">
+          <div class="docs-heading">
+            <a class="docs-heading-anchor" href="#top" aria-label="Link to Changelog">#</a>
+            <h1 id="top" data-pagefind-meta="title" data-pagefind-weight="10">Changelog</h1>
+          </div>
+        </header>
+
+        <div class="release-list">
+          {changelog.releases.map((release) => (
+            <article class="release">
+              <header class="release-head">
+                <h2 id={`v${release.version}`} data-pagefind-weight="6"><a class="release-version" href={`#v${release.version}`}>{release.version}</a></h2>
+                <time datetime={release.date}>{formatDate(release.date)}</time>
+              </header>
+              <p class="release-summary">{release.summary}</p>
+              <div class="release-sections">
+                {release.sections.map((section) => (
+                  <section>
+                    <h3><span class:list={["release-label", `release-label-${section.title.toLowerCase()}`]}>{section.title}</span></h3>
+                    <ul>
+                      {section.items.map((item) => (
+                        <li class="release-item">
+                          <span><InlineReleaseText text={item.text} /></span>
+                          {item.commits.length > 0 && <span class="release-commits">{item.commits.map((commit) => <a href={commit.url} aria-label={`View commit ${commit.hash}`}>#{commit.hash}</a>)}</span>}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </article>
+    </DocsShell>
+  </body>
+</html>
