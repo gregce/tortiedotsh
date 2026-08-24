@@ -1,14 +1,17 @@
 ---
 // The nav is the app's band. One bar on --bg-sidebar, one 1px hairline
 // under it, both CTAs repeated small.
+import AppleMark from "./AppleMark.astro";
+
 interface Props {
   current?: "compare" | "docs" | "changelog";
+  overlay?: boolean;
 }
 
-const { current } = Astro.props;
+const { current, overlay = false } = Astro.props;
 ---
 
-<header class="nav">
+<header class:list={["nav", { "nav-overlay": overlay }]}>
   <div class="container nav-inner">
     <a class="lockup nav-lockup" href="/" aria-label="Tortie.sh, home">
       <img src="/brand/tortie-mark-560.webp" alt="" width="26" height="26" />
@@ -28,11 +31,11 @@ const { current } = Astro.props;
       <a
         class="btn btn-primary btn-small"
         href="https://github.com/gregce/tortie/releases/latest"
-        >Download for macOS</a
+        ><AppleMark /> Download for macOS</a
       >
     </nav>
     <div class="nav-mobile">
-      <a class="btn btn-primary btn-small" href="https://github.com/gregce/tortie/releases/latest">Download</a>
+      <a class="btn btn-primary btn-small" href="https://github.com/gregce/tortie/releases/latest"><AppleMark /> Download</a>
       <details class="nav-menu">
         <summary aria-label="Open navigation"><span></span><span></span><span></span></summary>
         <nav aria-label="Mobile primary">
@@ -80,6 +83,10 @@ const { current } = Astro.props;
     gap: var(--space-2);
   }
 
+  .nav .btn {
+    gap: var(--space-4);
+  }
+
   .nav-link {
     display: inline-flex;
     align-items: center;
@@ -93,6 +100,39 @@ const { current } = Astro.props;
   .nav-link:hover,
   .nav-link[aria-current="page"] {
     color: var(--text-primary);
+  }
+
+  .nav-overlay {
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    border-bottom: 0;
+  }
+
+  .nav-overlay .nav-inner {
+    max-width: none;
+    height: 58px;
+    padding-inline: clamp(18px, 2.5vw, 36px);
+  }
+
+  .nav-overlay .nav-lockup img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .nav-overlay .nav-lockup .wordmark {
+    font-size: 14px;
+  }
+
+  .nav-overlay .nav-link {
+    color: rgba(232, 234, 237, 0.72);
+    font-size: 12px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  .nav-overlay .btn-small {
+    height: 34px;
+    padding-inline: 16px;
   }
 
   .nav-mobile { display: none; }
@@ -112,7 +152,7 @@ const { current } = Astro.props;
   .nav-menu nav a { padding: 9px 10px; color: var(--text-secondary); font-size: 13px; }
   .nav-menu nav a:hover, .nav-menu nav a[aria-current="page"] { color: var(--text-primary); background: var(--bg-raised); }
 
-  @media (max-width: 760px) {
+  @media (max-width: 840px) {
     .nav-actions-desktop { display: none; }
     .nav-mobile { display: flex; align-items: center; gap: var(--space-4); }
   }

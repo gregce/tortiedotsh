@@ -42,14 +42,14 @@
 </script>
 
 <style>
-  .feature-chapter { padding: clamp(64px, 9vw, 112px) 0; }
+  .feature-chapter { padding: clamp(36px, 4vw, 56px) 0; }
   .feature-layout { display: grid; grid-template-columns: minmax(200px, .55fr) minmax(0, 1.45fr); align-items: center; gap: clamp(40px, 7vw, 96px); }
   .feature-copy { max-width: 280px; }
   .feature-kicker { margin: 0 0 var(--space-7); color: var(--accent-text); font-size: 12px; }
   .feature-copy h2 { margin: 0; font-size: clamp(28px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
   .feature-copy > p:last-child { margin: var(--space-6) 0 0; color: var(--text-secondary); line-height: 1.6; }
-  .feature-media { margin: 0; }
-  .feature-media img, .feature-media :global(.feature-live) { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; border: 1px solid var(--border-strong); border-radius: var(--r-lg); background: var(--bg-canvas); overflow: hidden; }
+  .feature-media { margin: 0; overflow: hidden; }
+  .feature-media img, .feature-media :global(.feature-live) { display: block; width: 100%; height: clamp(210px, 24vw, 300px); object-fit: cover; border: 1px solid var(--border-strong); border-radius: var(--r-lg); background: var(--bg-canvas); overflow: hidden; }
   .feature-media figcaption { margin-top: var(--space-5); color: var(--text-muted); font-size: 12px; text-align: right; }
-  @media (max-width: 780px) { .feature-layout { grid-template-columns: 1fr; } .feature-copy { max-width: 34ch; } }
+  @media (max-width: 780px) { .feature-layout { grid-template-columns: 1fr; } .feature-copy { max-width: 34ch; } .feature-media img, .feature-media :global(.feature-live) { height: clamp(190px, 56vw, 260px); } }
 </style>

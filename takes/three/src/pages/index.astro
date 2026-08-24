@@ -45,14 +45,25 @@ const description =
     <meta name="twitter:image" content="https://tortie.sh/og/og-image.jpg" />
   </head>
   <body>
-    <Nav />
+    <Nav overlay />
     <main>
       <Hero />
-      <Demo />
-      <Pillars />
-      <Destinations />
-      <Download />
+      <div class="home-after-fold">
+        <Demo />
+        <Pillars />
+        <Destinations />
+        <Download />
+      </div>
     </main>
-    <Footer />
+    <div class="home-footer"><Footer /></div>
   </body>
 </html>
+
+<style>
+  .home-after-fold,
+  .home-footer {
+    --bg-canvas: var(--bg-marketing);
+    --bg-sidebar: var(--bg-marketing);
+    background: var(--bg-marketing);
+  }
+</style>
