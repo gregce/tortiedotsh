@@ -98,11 +98,30 @@ function githubFetchTarget(url) {
   const parsed = new URL(url);
   if (parsed.hostname !== "github.com") return url;
   const segments = parsed.pathname.split("/").filter(Boolean);
+  const reservedRoutes = new Set([
+    "apps",
+    "collections",
+    "customer-stories",
+    "enterprise",
+    "features",
+    "login",
+    "marketplace",
+    "new",
+    "organizations",
+    "orgs",
+    "pricing",
+    "search",
+    "security",
+    "settings",
+    "signup",
+    "sponsors",
+    "topics",
+  ]);
   if (segments.length >= 5 && segments[2] === "blob") {
     const [owner, repo, , ref, ...path] = segments;
     return `https://raw.githubusercontent.com/${owner}/${repo}/${ref}/${path.join("/")}`;
   }
-  if (segments.length === 2) {
+  if (segments.length === 2 && !reservedRoutes.has(segments[0].toLowerCase())) {
     return `https://api.github.com/repos/${segments[0]}/${segments[1]}/readme`;
   }
   return url;
@@ -277,7 +296,7 @@ const sources = acceptedUrls.size > 0
         ...prior,
         ...source,
         status,
-        fetchUrl: prior?.fetchUrl ?? githubFetchTarget(source.url),
+        fetchUrl: githubFetchTarget(source.url),
         resolvedUrl: prior?.resolvedUrl ?? null,
         lastCheckedAt: prior?.lastCheckedAt ?? null,
         firstObservedAt: prior?.firstObservedAt ?? null,

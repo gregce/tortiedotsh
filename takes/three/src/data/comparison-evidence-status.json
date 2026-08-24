@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T04:15:14.039Z",
+  "generatedAt": "2026-08-24T04:21:34.057Z",
   "sources": [
     {
       "id": "2fa78aa7f0249c97fb15",
@@ -9744,7 +9744,7 @@
       ],
       "latestReviewAt": "2026-08-23",
       "status": "awaiting-refresh",
-      "fetchUrl": "https://api.github.com/repos/apps/openhands-ai/readme",
+      "fetchUrl": "https://github.com/apps/openhands-ai",
       "resolvedUrl": null,
       "lastCheckedAt": "2026-08-24T04:11:49.674Z",
       "firstObservedAt": null,
