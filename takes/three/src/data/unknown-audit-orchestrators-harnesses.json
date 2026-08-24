@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-08-23",
+  "catalogSnapshot": "2026-08-23",
+  "scope": {
+    "categoryIds": ["agent-orchestrators", "coding-agent-harnesses"],
+    "excludedProductIds": ["mosaic-terminal", "airport", "muse-code", "omnara"],
+    "renderedRows": "Non-platform catalog rows resolved through getComparisonClaim(). Generated repository metrics are governed separately by the freshness gate.",
+    "platformHeaders": "Products whose complete platform fact is Unknown are audited separately below. An omitted OS in a known platform list is not rendered as an Unknown table cell."
+  },
+  "summary": {
+    "products": 47,
+    "currentUnknownCells": 167,
+    "agentOrchestratorUnknownCells": 98,
+    "codingAgentHarnessUnknownCells": 69,
+    "suggestedClosures": 8,
+    "remainUnknown": 159
+  },
+  "categories": [
+    {
+      "categoryId": "agent-orchestrators",
+      "products": [
+        {
+          "productId": "claude-code-desktop",
+          "sourcesChecked": ["https://code.claude.com/docs/en/desktop"],
+          "cells": [
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Claude Code desktop documents opening and resuming Claude Code work, but not transferring one task and its context into a different harness."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"The desktop page describes local and cloud work without identifying a per-task container or VM boundary for this desktop SKU."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"The desktop task/session surfaces are not documented as a task or Kanban board."},
+            {"rowId":"orchestrator-programmable","result":"remain-unknown","rationale":"No external API, CLI, webhook, or automation contract for controlling Claude Code desktop is documented on the exact-SKU page."}
+          ]
+        },
+        {
+          "productId": "chatgpt-desktop",
+          "sourcesChecked": ["https://learn.chatgpt.com/docs/app", "https://learn.chatgpt.com/"],
+          "cells": [
+            {"rowId":"orchestrator-isolated-workspaces","result":"remain-unknown","rationale":"ChatGPT projects and parallel work are documented, but neither source establishes checkout, filesystem, or environment isolation between them."},
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Choosing ChatGPT or Codex does not establish context-preserving transfer of an active task between distinct harnesses."},
+            {"rowId":"orchestrator-worktrees","result":"remain-unknown","rationale":"The app documentation does not claim that ChatGPT desktop creates or manages Git worktrees."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"Long-running work is documented without an exact desktop claim of per-task container or VM isolation."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"Projects and parallel work are not documented as a task or Kanban board."},
+            {"rowId":"orchestrator-inline-review","result":"remain-unknown","rationale":"The overview establishes reviewable changes, but not line-level diff feedback inside the ChatGPT desktop SKU."},
+            {"rowId":"orchestrator-pr-lifecycle","result":"remain-unknown","rationale":"Reviewing and preparing changes to ship does not establish desktop-owned pull-request creation, update, or merge lifecycle."},
+            {"rowId":"orchestrator-remote-execution","result":"remain-unknown","rationale":"The sources do not distinguish local desktop execution from a documented remotely hosted worker contract for this SKU."},
+            {"rowId":"orchestrator-attention-signals","result":"remain-unknown","rationale":"No fleet-level blocked, waiting, failed, or completed attention signal is documented for parallel desktop work."},
+            {"rowId":"orchestrator-live-steering","result":"remain-unknown","rationale":"The app pages do not state that an operator can redirect an already active worker without restarting it."},
+            {"rowId":"orchestrator-programmable","result":"remain-unknown","rationale":"No ChatGPT desktop control API, CLI, webhook, or automation surface is established by the checked app pages."}
+          ]
+        },
+        {
+          "productId": "orca",
+          "sourcesChecked": ["https://onorca.dev/", "https://github.com/stablyai/orca#readme", "https://github.com/stablyai/orca/blob/main/skill-guides/orca-cli.md"],
+          "cells": [
+            {"rowId":"product-status","result":"remain-unknown","rationale":"Current releases and repository activity show ongoing work, but the checked first-party material does not assign Orca a lifecycle label such as active, beta, or archived."},
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Orca runs multiple harnesses, but its README and CLI guide do not establish context-preserving transfer of one active task between them."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"Orca documents worktrees and remote hosts, not a product-owned per-task container or VM boundary."}
+          ]
+        },
+        {
+          "productId": "conductor",
+          "sourcesChecked": ["https://www.conductor.build/docs/", "https://www.conductor.build/docs/concepts/git-worktrees", "https://www.conductor.build/docs/concepts/workflow", "https://www.conductor.build/docs/reference/harnesses", "https://www.conductor.build/docs/api"],
+          "cells": [
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Harness selection and API control are documented, but not transfer of one active task's context into another harness."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"Conductor documents worktree isolation and cloud execution without asserting a separate container or VM per delegated task."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"The workflow documentation describes workspaces and runs, not a first-class task or Kanban board."},
+            {"rowId":"orchestrator-attention-signals","result":"remain-unknown","rationale":"The checked workflow and API pages do not document fleet-level blocked, waiting, failure, or completion attention signals."}
+          ]
+        },
+        {
+          "productId": "poolside-desktop-assistant",
+          "sourcesChecked": ["https://poolside.ai/blog/introducing-poolside-desktop-assistant"],
+          "cells": [
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"The launch article establishes worktree isolation, not a product-owned container or VM for each task."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"Parallel sessions in the launch article are not described as a task or Kanban board."},
+            {"rowId":"orchestrator-inline-review","result":"remain-unknown","rationale":"Review and merge decisions are documented, but no line-level diff feedback workflow is stated."},
+            {"rowId":"orchestrator-pr-lifecycle","result":"remain-unknown","rationale":"The launch article does not assign Desktop Assistant ownership of pull-request creation, updates, checks, or merge."},
+            {"rowId":"orchestrator-remote-execution","result":"remain-unknown","rationale":"The exact desktop announcement does not establish that delegated workers execute on a remote host or vendor cloud."},
+            {"rowId":"orchestrator-attention-signals","result":"remain-unknown","rationale":"The article does not document explicit fleet states for blocked, waiting, failed, or completed agents."},
+            {"rowId":"orchestrator-live-steering","result":"remain-unknown","rationale":"Cross-agent handoff is documented, but redirecting an already running worker with a follow-up is not."},
+            {"rowId":"orchestrator-programmable","result":"remain-unknown","rationale":"No API, CLI, webhook, or automation contract for Desktop Assistant is stated in its launch article."}
+          ]
+        },
+        {
+          "productId": "bb",
+          "sourcesChecked": ["https://github.com/get-bb/bb", "https://github.com/get-bb/bb/blob/main/docs/worktrees.md"],
+          "cells": [
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"bb's daemon, worktree, and paired-machine model does not establish per-task container or VM isolation."},
+            {"rowId":"orchestrator-pr-lifecycle","result":"remain-unknown","rationale":"The repository documents review and worktrees, but not a bb-owned create, update, checks, or merge pull-request lifecycle."}
+          ]
+        },
+        {
+          "productId": "omnigent",
+          "sourcesChecked": ["https://github.com/omnigent-ai/omnigent"],
+          "cells": [
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Omnigent's multiple-agent support does not document transfer of one active task and context between harnesses."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"The canonical README does not establish a task or Kanban board."},
+            {"rowId":"orchestrator-inline-review","result":"remain-unknown","rationale":"The repository does not document line-level diff feedback returned to a worker."},
+            {"rowId":"orchestrator-pr-lifecycle","result":"remain-unknown","rationale":"No Omnigent-owned pull-request creation, update, checks, or merge workflow is established in the repository."}
+          ]
+        },
+        {
+          "productId": "agent-orchestrator",
+          "sourcesChecked": ["https://github.com/Untrivial-ai/agent-orchestrator"],
+          "cells": [
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"The repository's orchestration features do not prove context-preserving task transfer between distinct harnesses."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"Workspace isolation is documented without an explicit container or VM boundary."},
+            {"rowId":"orchestrator-inline-review","result":"remain-unknown","rationale":"Review delivery is documented, but line-level diff feedback is not established."},
+            {"rowId":"orchestrator-remote-execution","result":"remain-unknown","rationale":"The canonical repository does not guarantee execution on a remote host or vendor-managed worker."}
+          ]
+        },
+        {
+          "productId": "emdash",
+          "sourcesChecked": ["https://emdash.com/docs", "https://github.com/generalaction/emdash"],
+          "cells": [
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Emdash can start different agents, but the docs do not establish context transfer from one active harness to another."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"Isolated worktrees are documented; a separate container or VM per task is not."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"The documented task list is not established as a first-class task or Kanban planning board."},
+            {"rowId":"orchestrator-inline-review","result":"remain-unknown","rationale":"Diff review is documented without line-level feedback sent to the active worker."},
+            {"rowId":"orchestrator-live-steering","result":"remain-unknown","rationale":"The docs do not state that a running Emdash worker accepts redirecting follow-ups without restart."},
+            {"rowId":"orchestrator-programmable","result":"remain-unknown","rationale":"No supported external API, CLI control plane, or webhook contract is documented for Emdash."}
+          ]
+        },
+        {
+          "productId": "kandev",
+          "sourcesChecked": ["https://kandev.ai/docs/", "https://github.com/kdlbs/kandev/blob/main/docs/features.md"],
+          "cells": [
+            {"rowId":"orchestrator-inline-review","result":"remain-unknown","rationale":"Kandev's feature contract establishes review and delivery surfaces but not line-level diff feedback returned to the agent."}
+          ]
+        },
+        {
+          "productId": "paseo",
+          "sourcesChecked": ["https://github.com/getpaseo/paseo", "https://github.com/getpaseo/paseo/blob/main/public-docs/orchestration.md", "https://github.com/getpaseo/paseo/blob/main/public-docs/providers.md"],
+          "cells": [
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"Paseo's orchestration and provider documents describe sessions, schedules, and workers, not a task or Kanban board."}
+          ]
+        },
+        {
+          "productId": "superset",
+          "sourcesChecked": ["https://github.com/superset-sh/superset"],
+          "cells": [
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Running multiple harnesses does not establish context-preserving transfer of an active Superset task between them."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"Superset documents worktrees and remote hosts but not a per-task container or VM boundary."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"The repository does not establish a first-class task or Kanban board."}
+          ]
+        },
+        {
+          "productId": "coder-mux",
+          "sourcesChecked": ["https://mux.coder.com", "https://github.com/coder/xum"],
+          "identityNote": "The exact product is now named Xum; retain the durable product ID until the coordinated catalog migration.",
+          "cells": [
+            {"rowId":"product-status","result":"remain-unknown","rationale":"Xum has current releases, but its checked README and docs do not assign a lifecycle label such as active, beta, or archived."},
+            {"rowId":"orchestrator-multi-harness","result":"remain-unknown","rationale":"Xum documents one custom agent loop and multiple models; model choice is not evidence that third-party harnesses can run."},
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"The Xum README does not document transfer of one active task's context into another harness."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"Local, worktree, and SSH runtimes are documented without a per-task container or VM boundary."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"Xum's workspace suite and sidebar are not documented as a task or Kanban board."},
+            {"rowId":"orchestrator-pr-lifecycle","result":"remain-unknown","rationale":"Integrated code review does not establish product-owned pull-request creation, update, checks, or merge."},
+            {"rowId":"orchestrator-live-steering","result":"remain-unknown","rationale":"Managing a suite of agents does not prove that follow-ups can redirect an already active worker."},
+            {"rowId":"orchestrator-programmable","result":"remain-unknown","rationale":"The checked Xum sources do not expose a supported external control API, webhook, or automation CLI."}
+          ]
+        },
+        {
+          "productId": "nimbalyst",
+          "sourcesChecked": ["https://github.com/nimbalyst/nimbalyst#readme", "https://github.com/nimbalyst/nimbalyst/blob/main/docs/WORKTREES.md"],
+          "cells": [
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Nimbalyst's multi-agent workflow does not establish context-preserving transfer of one task between harnesses."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"The worktree document establishes Git isolation, not container or VM isolation."},
+            {"rowId":"orchestrator-pr-lifecycle","result":"remain-unknown","rationale":"Review delivery is documented without an owned pull-request create, update, checks, or merge lifecycle."},
+            {"rowId":"orchestrator-remote-execution","result":"remain-unknown","rationale":"The repository does not guarantee workers execute on a remote host or managed cloud."},
+            {"rowId":"orchestrator-programmable","result":"remain-unknown","rationale":"No stable API, webhook, or external orchestration CLI is documented for Nimbalyst."}
+          ]
+        },
+        {
+          "productId": "t3-code",
+          "sourcesChecked": ["https://t3.codes/", "https://github.com/pingdotgg/t3code"],
+          "cells": [
+            {"rowId":"orchestrator-isolated-workspaces","result":"remain-unknown","rationale":"T3 Code's multiple sessions do not explicitly establish filesystem or environment isolation between tasks."},
+            {"rowId":"orchestrator-worktrees","result":"remain-unknown","rationale":"The product sources do not state that T3 Code creates or manages Git worktrees."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"No per-task container or VM boundary is documented for T3 Code."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"The current product does not document a first-class task or Kanban board."},
+            {"rowId":"orchestrator-remote-execution","result":"remain-unknown","rationale":"The checked exact-SKU sources do not establish execution on remote hosts or vendor cloud workers."},
+            {"rowId":"orchestrator-attention-signals","result":"remain-unknown","rationale":"No fleet-level blocked, waiting, failure, or completion signal contract is documented."},
+            {"rowId":"orchestrator-live-steering","result":"remain-unknown","rationale":"The sources do not state that an operator can redirect an active T3 Code worker without restart."},
+            {"rowId":"orchestrator-programmable","result":"remain-unknown","rationale":"No supported external API, webhook, or automation control plane is documented for T3 Code."}
+          ]
+        },
+        {
+          "productId": "vibe-kanban",
+          "sourcesChecked": ["https://github.com/BloopAI/vibe-kanban", "https://www.vibekanban.com/docs/core-features/monitoring-task-execution", "https://www.vibekanban.com/docs/core-features/creating-tasks", "https://www.vibekanban.com/docs/core-features/reviewing-code-changes", "https://www.vibekanban.com/docs/reviewing-code"],
+          "cells": [
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Vibe Kanban can launch agents for tasks, but no context-preserving cross-harness transfer is documented."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"Task workspaces and worktrees are documented without a container or VM isolation guarantee."},
+            {"rowId":"orchestrator-attention-signals","result":"remain-unknown","rationale":"Monitoring execution is documented, but the sources do not define operator attention signals for blocked or waiting workers."},
+            {"rowId":"orchestrator-live-steering","result":"remain-unknown","rationale":"Creating and reviewing tasks does not establish redirecting a worker while it remains active."},
+            {"rowId":"orchestrator-programmable","result":"remain-unknown","rationale":"The checked Vibe Kanban sources do not document a stable external control API or webhook surface."}
+          ]
+        },
+        {
+          "productId": "sculptor",
+          "sourcesChecked": ["https://github.com/imbue-ai/sculptor", "https://github.com/imbue-ai/sculptor/blob/main/docs/help/experimental/container_backend.md"],
+          "cells": [
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Parallel agents do not establish context-preserving task transfer between distinct harnesses."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"Sculptor's agent/session surfaces are not documented as a task or Kanban board."},
+            {"rowId":"orchestrator-inline-review","result":"remain-unknown","rationale":"The repository does not establish line-level diff feedback sent back to a worker."},
+            {"rowId":"orchestrator-attention-signals","result":"remain-unknown","rationale":"No fleet-level blocked, waiting, failure, or completion signal contract is documented."},
+            {"rowId":"orchestrator-live-steering","result":"remain-unknown","rationale":"The checked sources do not state that active Sculptor workers accept redirecting follow-ups."},
+            {"rowId":"orchestrator-programmable","result":"remain-unknown","rationale":"The repository does not expose a supported external API, webhook, or automation control plane."}
+          ]
+        },
+        {
+          "productId": "humanlayer",
+          "sourcesChecked": ["https://humanlayer.com/", "https://docs.humanlayer.com/guide/workspaces", "https://docs.humanlayer.com/reference/skills-workflows", "https://docs.humanlayer.com/tutorials/remote-daemon"],
+          "cells": [
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"HumanLayer's workspace and workflow docs do not establish context-preserving transfer of one task between harnesses."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"Local and remote daemon execution is documented without a per-task container or VM isolation guarantee."}
+          ]
+        },
+        {
+          "productId": "claude-squad",
+          "sourcesChecked": ["https://github.com/smtg-ai/claude-squad"],
+          "cells": [
+            {"rowId":"product-status","result":"remain-unknown","rationale":"The repository has current releases but does not assign claude-squad an explicit lifecycle label."},
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Running multiple tmux agents does not establish context-preserving transfer of one active task between harnesses."},
+            {"rowId":"orchestrator-containers","result":"remain-unknown","rationale":"claude-squad documents tmux and worktrees, not a container or VM boundary."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"The TUI session list is not documented as a task or Kanban board."},
+            {"rowId":"orchestrator-pr-lifecycle","result":"remain-unknown","rationale":"The repository does not establish product-owned pull-request creation, update, checks, or merge."},
+            {"rowId":"orchestrator-remote-execution","result":"remain-unknown","rationale":"tmux prerequisites do not establish a supported remote-host execution contract."},
+            {"rowId":"orchestrator-attention-signals","result":"remain-unknown","rationale":"No explicit blocked, waiting, failed, or completed fleet attention states are documented."},
+            {"rowId":"orchestrator-programmable","result":"remain-unknown","rationale":"No stable API, webhook, or external automation surface is documented for claude-squad."}
+          ]
+        },
+        {
+          "productId": "agent-deck",
+          "sourcesChecked": ["https://github.com/asheshgoplani/agent-deck"],
+          "cells": [
+            {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"agent-deck runs multiple agents but does not document transferring one active task's context between harnesses."},
+            {"rowId":"orchestrator-review-delivery","result":"remain-unknown","rationale":"The canonical README does not establish an agent-deck-owned diff review and delivery flow."},
+            {"rowId":"orchestrator-task-board","result":"remain-unknown","rationale":"The session dashboard is not documented as a task or Kanban board."},
+            {"rowId":"orchestrator-inline-review","result":"remain-unknown","rationale":"No line-level diff feedback workflow is documented for agent-deck."},
+            {"rowId":"orchestrator-pr-lifecycle","result":"remain-unknown","rationale":"No product-owned pull-request creation, update, checks, or merge lifecycle is established."}
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": "coding-agent-harnesses",
+      "products": [
+        {
+          "productId":"codex-cli",
+          "sourcesChecked":["https://learn.chatgpt.com/docs/codex/cli","https://github.com/openai/codex","https://learn.chatgpt.com/docs/codex/noninteractive"],
+          "cells":[{"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"Codex documents session resume, review, and Git-aware work, but no first-party workspace checkpoint and rollback contract was found; internal rollout migration rollback code is not a user feature."}]
+        },
+        {
+          "productId":"github-copilot-cli",
+          "sourcesChecked":["https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli","https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference","https://github.com/github/copilot-cli/blob/main/changelog.md"],
+          "cells":[
+            {"rowId":"harness-sandbox","result":"suggested-closure","suggestedState":"built-in","rationale":"The first-party changelog documents the `/sandbox` policy UI, path and network enforcement, platform policies, bypass behavior, and sandboxed commands.","evidence":{"url":"https://github.com/github/copilot-cli/blob/main/changelog.md","title":"GitHub Copilot CLI changelog","basis":"repository-derived"}},
+            {"rowId":"harness-multimodal-input","result":"suggested-closure","suggestedState":"built-in","rationale":"The first-party changelog explicitly documents pasted and dragged images, attached images and PDFs, vision policy, and the non-interactive `--attachment` flag.","evidence":{"url":"https://github.com/github/copilot-cli/blob/main/changelog.md","title":"GitHub Copilot CLI changelog","basis":"repository-derived"}}
+          ]
+        },
+        {
+          "productId":"gemini-cli",
+          "sourcesChecked":["https://github.com/google-gemini/gemini-cli","https://geminicli.com/docs/get-started/installation/"],
+          "cells":[{"rowId":"harness-multi-provider","result":"remain-unknown","rationale":"Gemini model selection is documented, but the checked exact-SKU sources do not establish operator-selectable Anthropic, OpenAI, local, or arbitrary third-party providers."}]
+        },
+        {
+          "productId":"amp",
+          "sourcesChecked":["https://ampcode.com/manual"],
+          "cells":[{"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"Amp's manual documents threads, resume, Git awareness, and hosted runners, but not a checkpoint that restores both harness state and workspace mutations."}]
+        },
+        {
+          "productId":"prime-agent",
+          "sourcesChecked":["https://github.com/PrimeIntellect-ai/prime-agent/blob/main/README.md","https://github.com/PrimeIntellect-ai/prime-agent/blob/main/packages/coding-agent/docs/usage.md"],
+          "cells":[{"rowId":"harness-git-workflow","result":"remain-unknown","rationale":"Prime Agent can modify the current directory and recommends a disposable clone or clean worktree, but the checked docs do not establish a harness-owned branch, commit, diff-review, or PR workflow."}]
+        },
+        {
+          "productId":"deepseek-harness",
+          "sourcesChecked":["https://deepseek.com/harness/en/","https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/README.md","https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/config-catalog.md"],
+          "cells":[{"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"The exact Harness product and CLI pages do not establish user-supplied image or web-page input; adjacent DeepSeek chat multimodality is not inherited."}]
+        },
+        {
+          "productId":"poolside-pool",
+          "sourcesChecked":["https://docs.poolside.ai/cli/pool","https://github.com/poolsideai/pool"],
+          "cells":[{"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"pool's CLI and repository document prompts, tools, providers, and files without an exact contract for image or web-page prompt input."}]
+        },
+        {
+          "productId":"kimi-code-cli",
+          "sourcesChecked":["https://github.com/MoonshotAI/kimi-code","https://github.com/MoonshotAI/kimi-code/blob/main/docs/en/customization/agents.md","https://moonshotai.github.io/kimi-code/en/guides/interaction"],
+          "cells":[
+            {"rowId":"harness-project-instructions","result":"suggested-closure","suggestedState":"built-in","rationale":"Kimi's first-party agent customization guide explicitly documents global and project `AGENTS.md` locations and injects their content as workspace instructions.","evidence":{"url":"https://github.com/MoonshotAI/kimi-code/blob/main/docs/en/customization/agents.md","title":"Kimi Code agent customization","basis":"repository-derived"}},
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"Kimi documents approval and yolo/plan modes; its Nix development environment and configurable home directory do not establish a runtime sandbox boundary."},
+            {"rowId":"harness-git-workflow","result":"remain-unknown","rationale":"Kimi runs inside a project and uses Git Bash on Windows, but the checked docs do not establish harness-owned commits, branches, worktrees, or pull requests."}
+          ]
+        },
+        {
+          "productId":"kilo-code-cli",
+          "sourcesChecked":["https://kilo.ai/docs/code-with-ai/platforms/cli","https://github.com/Kilo-Org/kilocode"],
+          "cells":[
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"Kilo CLI's permissions and platform docs do not establish a process, filesystem, or network sandbox boundary."},
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"No exact Kilo CLI workspace checkpoint and rollback contract was found in the CLI page or canonical repository."},
+            {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"The checked CLI sources do not directly establish image or web-page input for the Kilo CLI surface; extension behavior is not inherited."}
+          ]
+        },
+        {
+          "productId":"mistral-vibe",
+          "sourcesChecked":["https://github.com/mistralai/mistral-vibe"],
+          "cells":[
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"Vibe documents tool execution approval, which controls authorization but does not establish an OS, filesystem, container, or network sandbox."},
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"Persistent history and Git-status context do not establish a workspace checkpoint and rollback feature."},
+            {"rowId":"harness-multimodal-input","result":"suggested-closure","suggestedState":"built-in","rationale":"The canonical README explicitly documents `@` image attachments for PNG, JPEG, GIF, and WebP files sent as native multimodal content.","evidence":{"url":"https://github.com/mistralai/mistral-vibe#features","title":"Mistral Vibe README","basis":"repository-derived"}}
+          ]
+        },
+        {
+          "productId":"continue-cli",
+          "sourcesChecked":["https://docs.continue.dev/cli/quickstart","https://github.com/continuedev/continue/blob/main/extensions/cli/README.md","https://github.com/continuedev/continue/blob/main/docs/cli/tool-permissions.mdx"],
+          "cells":[
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"Continue CLI tool permissions govern approval but do not establish a process, filesystem, container, or network sandbox."},
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"The final CLI documentation does not establish workspace checkpoints and rollback."},
+            {"rowId":"harness-subagents","result":"remain-unknown","rationale":"The checked exact CLI sources do not document child-agent or agent-team delegation."},
+            {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"The checked CLI pages do not directly establish image or web-page prompt input for the CLI SKU."}
+          ]
+        },
+        {
+          "productId":"crush",
+          "sourcesChecked":["https://github.com/charmbracelet/crush"],
+          "cells":[
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"Crush's canonical README does not establish an OS, filesystem, container, or network sandbox boundary."},
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"Session persistence does not establish workspace checkpoint and rollback."},
+            {"rowId":"harness-subagents","result":"remain-unknown","rationale":"The README does not document child-agent or agent-team delegation for Crush."},
+            {"rowId":"harness-structured-output","result":"remain-unknown","rationale":"No JSON, JSONL, schema-constrained, or other machine-output contract is documented for Crush."},
+            {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"The canonical README does not directly establish image or web-page input."}
+          ]
+        },
+        {
+          "productId":"auggie-cli",
+          "sourcesChecked":["https://docs.augmentcode.com/cli/overview","https://docs.augmentcode.com/cli/reference","https://docs.augmentcode.com/cli/permissions","https://github.com/augmentcode/auggie"],
+          "cells":[
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"Auggie permissions are documented, but a process, filesystem, container, or network sandbox is not."},
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"No exact Auggie CLI workspace checkpoint and rollback contract was found."},
+            {"rowId":"harness-git-workflow","result":"remain-unknown","rationale":"Separate GitHub Actions exist for PR work, but the local Auggie CLI sources do not establish a harness-owned branch, commit, or PR lifecycle."}
+          ]
+        },
+        {
+          "productId":"kiro-cli",
+          "sourcesChecked":["https://kiro.dev/docs/cli/","https://kiro.dev/docs/cli/chat/help-agent/"],
+          "cells":[{"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"Kiro CLI's current help and overview pages do not establish image or web-page prompt input for the CLI surface."}]
+        },
+        {
+          "productId":"amplifier-agent",
+          "sourcesChecked":["https://github.com/microsoft/amplifier-agent","https://github.com/microsoft/amplifier-agent/blob/main/docs/CLI.md"],
+          "cells":[
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"Amplifier's tests run in isolated containers, but the user-facing agent runtime does not document a built-in sandbox boundary."},
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"The checked CLI and repository sources do not establish user-facing workspace checkpoint and rollback."},
+            {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"Wire support and image-tagging evaluation fixtures do not establish image or web-page input in the shipped Amplifier Agent CLI contract."}
+          ]
+        },
+        {
+          "productId":"gptme",
+          "sourcesChecked":["https://github.com/gptme/gptme", "https://github.com/gptme/gptme/blob/master/docs/features.rst"],
+          "cells":[
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"gptme's guardrails and local-first execution do not establish a built-in OS, filesystem, container, or network sandbox."},
+            {"rowId":"harness-git-workflow","result":"suggested-closure","suggestedState":"built-in","rationale":"The canonical README and current feature documentation explicitly identify the built-in auto-commit tool and pre-commit integration.","evidence":{"url":"https://github.com/gptme/gptme/blob/master/docs/features.rst","title":"gptme features","basis":"repository-derived"}}
+          ]
+        },
+        {
+          "productId":"cursor-cli",
+          "sourcesChecked":["https://cursor.com/cli","https://docs.cursor.com/en/cli/using","https://docs.cursor.com/cli/reference/permissions","https://docs.cursor.com/en/cli/headless"],
+          "cells":[
+            {"rowId":"product-status","result":"remain-unknown","rationale":"The current CLI pages establish availability but do not assign Cursor CLI an explicit lifecycle label."},
+            {"rowId":"harness-multi-provider","result":"remain-unknown","rationale":"Cursor model selection does not establish operator-controlled third-party or local provider credentials for the CLI."},
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"Cursor CLI permissions govern tool approval; the checked pages do not establish a process, filesystem, container, or network sandbox."},
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"No exact Cursor CLI workspace checkpoint and rollback contract was found."},
+            {"rowId":"harness-subagents","result":"remain-unknown","rationale":"The exact CLI pages do not document child-agent or agent-team delegation."},
+            {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"The checked CLI pages do not directly establish image or web-page prompt input; Cursor IDE behavior is not inherited."}
+          ]
+        },
+        {
+          "productId":"factory-droid-cli",
+          "sourcesChecked":["https://docs.factory.ai/cli/getting-started/quickstart","https://docs.factory.ai/droid-cli/overview","https://docs.factory.ai/droid-exec/overview","https://docs.factory.ai/droid-cli/settings"],
+          "cells":[
+            {"rowId":"product-status","result":"remain-unknown","rationale":"Current Factory documentation establishes the CLI product but does not assign an explicit active, beta, or preview lifecycle label."},
+            {"rowId":"harness-multi-provider","result":"remain-unknown","rationale":"The checked Droid CLI pages do not establish operator-selectable third-party or local model providers."},
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"No exact Droid CLI workspace checkpoint and rollback contract was found."},
+            {"rowId":"harness-git-workflow","result":"remain-unknown","rationale":"Factory's broader platform supports reviewable diffs and PRs, but the local Droid CLI pages do not assign that lifecycle to the harness itself."},
+            {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"The checked CLI and Droid Exec pages do not directly establish image or web-page input."}
+          ]
+        },
+        {
+          "productId":"codewhale",
+          "sourcesChecked":["https://github.com/Hmbown/CodeWhale", "https://github.com/Hmbown/CodeWhale/blob/main/docs/CONFIGURATION.md"],
+          "cells":[
+            {"rowId":"product-status","result":"suggested-closure","suggestedState":"active","rationale":"The current canonical README explicitly says CodeWhale is independently maintained, welcomes current contributions, and exposes a current CLI contract.","evidence":{"url":"https://github.com/Hmbown/CodeWhale","title":"CodeWhale README","basis":"repository-derived"}},
+            {"rowId":"harness-git-workflow","result":"remain-unknown","rationale":"CodeWhale reads and edits a repository and can restore snapshots, but the checked docs do not establish harness-owned commits, branches, worktrees, or PR lifecycle."},
+            {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"The README and configuration guide do not directly establish image or web-page prompt input."}
+          ]
+        },
+        {
+          "productId":"antigravity-cli",
+          "sourcesChecked":["https://antigravity.google/docs/cli-overview","https://www.antigravity.google/docs/cli/features","https://www.antigravity.google/docs/cli/best-practices"],
+          "cells":[
+            {"rowId":"product-status","result":"remain-unknown","rationale":"The exact CLI pages are current but do not assign Antigravity CLI a lifecycle label such as active, beta, or preview."},
+            {"rowId":"harness-multi-provider","result":"remain-unknown","rationale":"The checked Antigravity CLI pages do not establish operator-selectable third-party or local model providers."}
+          ]
+        },
+        {
+          "productId":"qwen-code",
+          "sourcesChecked":["https://github.com/QwenLM/qwen-code"],
+          "cells":[{"rowId":"product-status","result":"suggested-closure","suggestedState":"active","rationale":"The canonical README explicitly says Qwen Code is actively iterating on itself and links the current installation and release surfaces.","evidence":{"url":"https://github.com/QwenLM/qwen-code","title":"Qwen Code README","basis":"repository-derived"}}]
+        },
+        {
+          "productId":"pi-coding-agent",
+          "sourcesChecked":["https://github.com/earendil-works/pi", "https://github.com/earendil-works/pi/blob/main/packages/coding-agent/README.md"],
+          "cells":[{"rowId":"product-status","result":"remain-unknown","rationale":"The current organization repository and release instructions show maintained code but do not assign Pi coding agent an explicit lifecycle label."}]
+        },
+        {
+          "productId":"opencode",
+          "sourcesChecked":["https://opencode.ai/docs/cli/","https://github.com/anomalyco/opencode","https://opencode.ai/docs/permissions/"],
+          "cells":[
+            {"rowId":"product-status","result":"remain-unknown","rationale":"Current docs and releases establish availability but do not assign OpenCode CLI a lifecycle label."},
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"OpenCode's allow/ask/deny permissions are not a documented process, filesystem, container, or network sandbox."},
+            {"rowId":"harness-git-workflow","result":"remain-unknown","rationale":"Snapshots and repository operation do not establish a harness-owned branch, commit, worktree, review, or PR lifecycle."}
+          ]
+        },
+        {
+          "productId":"goose",
+          "sourcesChecked":["https://github.com/aaif-goose/goose","https://github.com/aaif-goose/goose/blob/main/documentation/docs/guides/running-tasks.md","https://goose-docs.ai/docs/guides/sessions/session-management/"],
+          "cells":[
+            {"rowId":"product-status","result":"remain-unknown","rationale":"Current releases and foundation governance show maintained software but the checked exact CLI sources do not assign a lifecycle label."},
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"Goose session resume does not establish restoration of workspace mutations from a checkpoint."},
+            {"rowId":"harness-structured-output","result":"suggested-closure","suggestedState":"built-in","rationale":"The first-party running-tasks guide explicitly documents `--output-format json` and `--output-format stream-json` for automation.","evidence":{"url":"https://github.com/aaif-goose/goose/blob/main/documentation/docs/guides/running-tasks.md","title":"Goose running tasks","basis":"repository-derived"}},
+            {"rowId":"harness-git-workflow","result":"remain-unknown","rationale":"Goose can edit repositories through tools, but the checked CLI docs do not establish a harness-owned commit, branch, worktree, or PR workflow."},
+            {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"Provider multimodality and internal image types do not establish user-facing image or web-page input in the Goose CLI contract."}
+          ]
+        },
+        {
+          "productId":"aider",
+          "sourcesChecked":["https://github.com/Aider-AI/aider","https://aider.chat/docs/usage/conventions.html","https://aider.chat/docs/git.html"],
+          "cells":[
+            {"rowId":"product-status","result":"remain-unknown","rationale":"The project site and repository remain available, but the checked sources do not assign Aider a current lifecycle label."},
+            {"rowId":"harness-extension-protocol","result":"remain-unknown","rationale":"Convention files and model/provider integrations do not establish MCP, a plugin SDK, or a user extension protocol."},
+            {"rowId":"harness-permission-controls","result":"remain-unknown","rationale":"The checked Aider sources do not document per-tool allow, ask, or deny policy controls."},
+            {"rowId":"harness-sandbox","result":"remain-unknown","rationale":"No built-in process, filesystem, container, or network sandbox boundary is established for Aider."},
+            {"rowId":"harness-subagents","result":"remain-unknown","rationale":"The checked exact Aider sources do not document child-agent or agent-team delegation."},
+            {"rowId":"harness-structured-output","result":"remain-unknown","rationale":"No JSON, JSONL, schema-constrained, or other machine-output contract is established by the checked sources."}
+          ]
+        },
+        {
+          "productId":"grok-build",
+          "sourcesChecked":["https://github.com/xai-org/grok-build","https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-pager/docs/user-guide/14-headless-mode.md"],
+          "cells":[
+            {"rowId":"product-status","result":"remain-unknown","rationale":"The repository documents installing the released xAI CLI source snapshot but does not assign Grok Build a lifecycle label."},
+            {"rowId":"harness-multimodal-input","result":"remain-unknown","rationale":"The README and headless guide do not directly establish user-supplied image or web-page input for Grok Build."}
+          ]
+        }
+      ]
+    }
+  ],
+  "platformHeaderAudit": [
+    {"productId":"amplifier-agent","result":"suggested-closure","suggestedPlatforms":["macos","windows","linux"],"rationale":"The canonical installer documents the Unix install path and an explicit Windows Git Bash path.","sourcesChecked":["https://github.com/microsoft/amplifier-agent"]},
+    {"productId":"cursor-cli","result":"remain-unknown","rationale":"The checked CLI pages did not yield one exact native host support matrix; do not inherit Cursor editor platforms.","sourcesChecked":["https://cursor.com/cli","https://docs.cursor.com/en/cli/using"]},
+    {"productId":"factory-droid-cli","result":"remain-unknown","rationale":"The quickstart did not establish one exact native host matrix for Droid CLI; cloud Droid Computers are a different execution SKU.","sourcesChecked":["https://docs.factory.ai/cli/getting-started/quickstart"]},
+    {"productId":"codewhale","result":"remain-unknown","rationale":"Package and release availability was not promoted to native OS support without an explicit current support matrix.","sourcesChecked":["https://github.com/Hmbown/CodeWhale"]},
+    {"productId":"antigravity-cli","result":"remain-unknown","rationale":"The overview did not provide an exact native-host support matrix; adjacent Google IDE and cloud surfaces were excluded.","sourcesChecked":["https://antigravity.google/docs/cli-overview"]},
+    {"productId":"pi-coding-agent","result":"remain-unknown","rationale":"Standalone build and package instructions do not themselves establish the supported native OS set.","sourcesChecked":["https://github.com/earendil-works/pi","https://github.com/earendil-works/pi/blob/main/packages/coding-agent/README.md"]},
+    {"productId":"opencode","result":"suggested-closure","suggestedPlatforms":["macos","windows","linux"],"rationale":"The canonical README's install table explicitly lists macOS, Windows, and Linux packages for OpenCode.","sourcesChecked":["https://github.com/anomalyco/opencode"]},
+    {"productId":"goose","result":"remain-unknown","rationale":"The checked exact CLI sources did not establish a complete native host matrix; desktop support and WSL guidance were not inherited.","sourcesChecked":["https://github.com/aaif-goose/goose","https://block.github.io/goose/index.html"]},
+    {"productId":"aider","result":"suggested-closure","suggestedPlatforms":["macos","windows","linux"],"rationale":"Aider's first-party installation guide supplies supported installation paths for macOS, Windows, and Linux.","sourcesChecked":["https://aider.chat/docs/install.html"]},
+    {"productId":"grok-build","result":"suggested-closure","suggestedPlatforms":["macos","windows","linux"],"rationale":"The canonical README explicitly documents its installer for macOS, Linux, and Git Bash on Windows.","sourcesChecked":["https://github.com/xai-org/grok-build"]}
+  ],
+  "generatedMetricUnknowns": {
+    "result":"excluded-from-editorial-ledger",
+    "rationale":"Repository metric Unknowns are generated collector failures or not-yet-refreshed values, not exact-SKU capability claims. The weekly --loc refresh and audit:freshness gate must close or block them; editorial research must not hand-fill those cells."
+  }
+}
