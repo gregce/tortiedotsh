@@ -10,23 +10,25 @@ const defaultOutput = resolve(takeRoot, "src/data/comparison-evidence-status.jso
 const githubToken = process.env.GITHUB_TOKEN?.trim() || null;
 
 function parseArguments(argv) {
-  const options = { acceptChanged: [], concurrency: 6, dryRun: false, syncOnly: false, output: defaultOutput };
+  const options = { acceptChanged: [], concurrency: 6, dryRun: false, syncOnly: false, output: defaultOutput, urls: [] };
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
     if (argument === "--dry-run") options.dryRun = true;
     else if (argument === "--sync-only") options.syncOnly = true;
-    else if (["--accept-changed", "--concurrency", "--output"].includes(argument)) {
+    else if (["--accept-changed", "--concurrency", "--output", "--url"].includes(argument)) {
       const value = argv[index + 1];
       if (!value || value.startsWith("--")) throw new Error(`${argument} requires a value`);
       index += 1;
       if (argument === "--accept-changed") options.acceptChanged.push(value);
       if (argument === "--concurrency") options.concurrency = Number(value);
       if (argument === "--output") options.output = resolve(process.cwd(), value);
+      if (argument === "--url") options.urls.push(value);
     } else if (argument === "--help") {
       console.log(`Refresh the first-party source registry used by comparison claims.
 
 Options:
   --accept-changed <url>  Accept one manually reviewed changed source (repeatable)
+  --url <url>          Refresh only one catalog source (repeatable)
   --sync-only         Reconcile catalog URLs without network requests
   --dry-run           Fetch and validate without writing
   --concurrency <n>   Concurrent requests, 1-12 (default: 6)
@@ -40,6 +42,9 @@ Options:
   }
   if (options.acceptChanged.length > 0 && (options.syncOnly || options.dryRun)) {
     throw new Error("--accept-changed cannot be combined with --sync-only or --dry-run");
+  }
+  if (options.urls.length > 0 && (options.acceptChanged.length > 0 || options.syncOnly)) {
+    throw new Error("--url cannot be combined with --accept-changed or --sync-only");
   }
   return options;
 }
@@ -256,6 +261,10 @@ const previous = await readJson(options.output, { schemaVersion: 1, generatedAt:
 const previousByUrl = new Map(previous.sources.map((source) => [source.url, source]));
 const catalogByUrl = new Map(catalogSources.map((source) => [source.url, source]));
 
+for (const url of options.urls) {
+  if (!catalogByUrl.has(url)) throw new Error(`Cannot refresh a URL that is not used by the catalog: ${url}`);
+}
+
 for (const url of options.acceptChanged) {
   if (!catalogByUrl.has(url)) throw new Error(`Cannot accept a URL that is not used by the catalog: ${url}`);
   const prior = previousByUrl.get(url);
@@ -265,7 +274,33 @@ for (const url of options.acceptChanged) {
 }
 
 const acceptedUrls = new Set(options.acceptChanged);
+const selectedUrls = new Set(options.urls);
 const acceptedAt = new Date().toISOString();
+
+function preserveSource(source) {
+  const prior = previousByUrl.get(source.url);
+  const status = prior?.status === "unreachable" && !prior.contentHash
+    ? "awaiting-refresh"
+    : prior?.status ?? "awaiting-refresh";
+  return {
+    ...prior,
+    ...source,
+    status,
+    fetchUrl: githubFetchTarget(source.url),
+    resolvedUrl: prior?.resolvedUrl ?? null,
+    lastCheckedAt: prior?.lastCheckedAt ?? null,
+    firstObservedAt: prior?.firstObservedAt ?? null,
+    changeDetectedAt: prior?.changeDetectedAt ?? null,
+    httpStatus: prior?.httpStatus ?? null,
+    contentType: prior?.contentType ?? null,
+    contentLength: prior?.contentLength ?? null,
+    contentHash: prior?.contentHash ?? null,
+    reviewedHash: prior?.reviewedHash ?? null,
+    etag: prior?.etag ?? null,
+    lastModified: prior?.lastModified ?? null,
+    error: prior?.error ?? null,
+  };
+}
 
 const sources = acceptedUrls.size > 0
   ? catalogSources.map((source) => {
@@ -287,32 +322,11 @@ const sources = acceptedUrls.size > 0
       };
     })
   : options.syncOnly
-  ? catalogSources.map((source) => {
-      const prior = previousByUrl.get(source.url);
-      const status = prior?.status === "unreachable" && !prior.contentHash
-        ? "awaiting-refresh"
-        : prior?.status ?? "awaiting-refresh";
-      return {
-        ...prior,
-        ...source,
-        status,
-        fetchUrl: githubFetchTarget(source.url),
-        resolvedUrl: prior?.resolvedUrl ?? null,
-        lastCheckedAt: prior?.lastCheckedAt ?? null,
-        firstObservedAt: prior?.firstObservedAt ?? null,
-        changeDetectedAt: prior?.changeDetectedAt ?? null,
-        httpStatus: prior?.httpStatus ?? null,
-        contentType: prior?.contentType ?? null,
-        contentLength: prior?.contentLength ?? null,
-        contentHash: prior?.contentHash ?? null,
-        reviewedHash: prior?.reviewedHash ?? null,
-        etag: prior?.etag ?? null,
-        lastModified: prior?.lastModified ?? null,
-        error: prior?.error ?? null,
-      };
-    })
+  ? catalogSources.map(preserveSource)
   : await mapConcurrent(catalogSources, options.concurrency, (source) =>
-      fetchSource(source, previousByUrl.get(source.url)));
+      selectedUrls.size === 0 || selectedUrls.has(source.url)
+        ? fetchSource(source, previousByUrl.get(source.url))
+        : preserveSource(source));
 
 const output = {
   schemaVersion: 1,

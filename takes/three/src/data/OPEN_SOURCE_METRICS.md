@@ -113,6 +113,17 @@ record that exact decision with `npm run refresh:evidence -- --accept-changed
 the reviewed hash and timestamp, appends an audit entry to that source, and
 never treats unrelated changed pages as reviewed.
 
+When adding or replacing a small set of sources, refresh only those URLs without
+spending the anonymous forge quota on the entire registry:
+
+```sh
+npm run refresh:evidence -- --url <exact-catalog-url>
+```
+
+`--url` is repeatable. Unselected registry entries retain their last observed
+content, review history, and status; each selected URL must already be used by
+the catalog.
+
 ## Shipping and continuous operation
 
 The repository includes `.github/workflows/refresh-open-source-metrics.yml`.
