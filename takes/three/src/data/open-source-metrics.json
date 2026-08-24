@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T05:01:18.454Z",
-  "manifestSyncedAt": "2026-08-24T05:01:18.454Z",
+  "generatedAt": "2026-08-24T05:07:33.323Z",
+  "manifestSyncedAt": "2026-08-24T05:07:33.323Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -8989,16 +8989,6 @@
           "fetchedAt": "2026-08-24T05:01:03.442Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/coder/coder/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
-          "type": "license-override",
-          "url": "https://github.com/coder/coder/blob/main/LICENSE.enterprise",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/coder/coder/languages",
           "fetchedAt": "2026-08-24T05:01:03.532Z"
@@ -9017,6 +9007,16 @@
           "type": "loc-measurement",
           "url": "https://github.com/coder/coder/tree/v2.36.1",
           "fetchedAt": "2026-08-24T05:01:18.038Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/coder/coder/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/coder/coder/blob/main/LICENSE.enterprise",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -9033,8 +9033,8 @@
       "githubUrl": "https://github.com/OpenHands/OpenHands-Cloud",
       "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands-Cloud",
       "metricScope": "OpenHands Cloud deployment charts and control-plane source, not the separate core agent repository.",
-      "status": "partial",
-      "refreshedAt": "2026-08-24T05:01:04.690Z",
+      "status": "current",
+      "refreshedAt": "2026-08-24T05:07:06.811Z",
       "stars": 71,
       "forks": 44,
       "openIssues": 105,
@@ -9081,10 +9081,16 @@
           "percent": 1.4
         }
       ],
-      "latestRelease": null,
+      "latestRelease": {
+        "tagName": "openhands/0.50.0",
+        "name": "openhands: v0.50.0",
+        "publishedAt": "2026-08-21T19:14:26Z",
+        "url": "https://github.com/OpenHands/OpenHands-Cloud/releases/tag/openhands/0.50.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "openhands/0.50.0",
+      "releaseDate": "2026-08-21T19:14:26Z",
       "releasePolicy": null,
       "loc": {
         "status": "measured",
@@ -9092,10 +9098,10 @@
         "comments": 2688,
         "blank": 2375,
         "files": 68,
-        "measuredAt": "2026-08-24T05:01:04.669Z",
-        "verifiedAt": "2026-08-24T05:01:04.669Z",
-        "measuredRef": "main",
-        "refType": "default-branch",
+        "measuredAt": "2026-08-24T05:07:06.790Z",
+        "verifiedAt": "2026-08-24T05:07:06.790Z",
+        "measuredRef": "openhands/0.50.0",
+        "refType": "stable-release-tag",
         "commitSha": "a32ed0e68c7684cb56494a122ed6c310fd68bbcb",
         "tool": "cloc 2.06",
         "methodology": "source-code-v2",
@@ -9107,7 +9113,7 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud",
-          "fetchedAt": "2026-08-24T05:01:03.459Z"
+          "fetchedAt": "2026-08-24T05:07:05.360Z"
         },
         {
           "type": "license-override",
@@ -9117,25 +9123,25 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud/languages",
-          "fetchedAt": "2026-08-24T05:01:03.540Z"
+          "fetchedAt": "2026-08-24T05:07:05.496Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-24T05:01:03.650Z"
+          "fetchedAt": "2026-08-24T05:07:05.615Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud/releases?per_page=100",
+          "fetchedAt": "2026-08-24T05:07:05.781Z"
         },
         {
           "type": "loc-measurement",
-          "url": "https://github.com/OpenHands/OpenHands-Cloud/tree/main",
-          "fetchedAt": "2026-08-24T05:01:04.669Z"
+          "url": "https://github.com/OpenHands/OpenHands-Cloud/tree/openhands%2F0.50.0",
+          "fetchedAt": "2026-08-24T05:07:06.790Z"
         }
       ],
-      "errors": [
-        {
-          "section": "version",
-          "message": "GitHub returned 403 for https://api.github.com/repos/OpenHands/OpenHands-Cloud/releases?per_page=100; rate limit resets at 2026-08-24T05:16:51.000Z"
-        }
-      ]
+      "errors": []
     },
     {
       "id": "code-server",
@@ -9149,47 +9155,125 @@
       "githubUrl": "https://github.com/coder/code-server",
       "apiUrl": "https://api.github.com/repos/coder/code-server",
       "metricScope": "code-server checked-in source; shallow checkout excludes the uninitialized VS Code submodule.",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T05:07:07.497Z",
+      "stars": 79032,
+      "forks": 6823,
+      "openIssues": 151,
+      "contributors": 298,
+      "repositorySizeKb": 55017,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-20T21:45:26Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 359662,
+          "percent": 81.72
+        },
+        {
+          "name": "Shell",
+          "bytes": 62382,
+          "percent": 14.17
+        },
+        {
+          "name": "HTML",
+          "bytes": 4122,
+          "percent": 0.94
+        },
+        {
+          "name": "CSS",
+          "bytes": 3477,
+          "percent": 0.79
+        },
+        {
+          "name": "HCL",
+          "bytes": 3438,
+          "percent": 0.78
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 2272,
+          "percent": 0.52
+        },
+        {
+          "name": "Mustache",
+          "bytes": 1885,
+          "percent": 0.43
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 1792,
+          "percent": 0.41
+        },
+        {
+          "name": "Nix",
+          "bytes": 1101,
+          "percent": 0.25
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v4.133.0",
+        "name": "v4.133.0",
+        "publishedAt": "2026-08-17T18:28:34Z",
+        "url": "https://github.com/coder/code-server/releases/tag/v4.133.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v4.133.0",
+      "releaseDate": "2026-08-17T18:28:34Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 11900,
+        "comments": 2538,
+        "blank": 1872,
+        "files": 146,
+        "measuredAt": "2026-08-24T05:07:07.482Z",
+        "verifiedAt": "2026-08-24T05:07:07.482Z",
+        "measuredRef": "v4.133.0",
+        "refType": "stable-release-tag",
+        "commitSha": "d2f7a122522456b351e9b3ddd39e4f3fb9fd5318",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
-      "errors": [
+      "sources": [
         {
-          "section": "repository",
-          "message": "GitHub returned 403 for https://api.github.com/repos/coder/code-server; rate limit resets at 2026-08-24T05:16:51.000Z"
+          "type": "repository",
+          "url": "https://api.github.com/repos/coder/code-server",
+          "fetchedAt": "2026-08-24T05:07:05.386Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/coder/code-server/languages",
+          "fetchedAt": "2026-08-24T05:07:05.558Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/coder/code-server/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T05:07:05.672Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/coder/code-server/releases?per_page=100",
+          "fetchedAt": "2026-08-24T05:07:06.494Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/coder/code-server/tree/v4.133.0",
+          "fetchedAt": "2026-08-24T05:07:07.482Z"
         }
-      ]
+      ],
+      "errors": []
     },
     {
       "id": "openvscode-server",
@@ -9203,47 +9287,310 @@
       "githubUrl": "https://github.com/gitpod-io/openvscode-server",
       "apiUrl": "https://api.github.com/repos/gitpod-io/openvscode-server",
       "metricScope": "Full Code OSS fork; contributor count covers this fork rather than all upstream VS Code authors.",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T05:07:33.323Z",
+      "stars": 6156,
+      "forks": 596,
+      "openIssues": 140,
+      "contributors": 2939,
+      "repositorySizeKb": 1108692,
+      "defaultBranch": "main",
+      "pushedAt": "2026-03-26T15:23:07Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 81608642,
+          "percent": 95.57
+        },
+        {
+          "name": "CSS",
+          "bytes": 1348075,
+          "percent": 1.58
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 800696,
+          "percent": 0.94
+        },
+        {
+          "name": "Rust",
+          "bytes": 502091,
+          "percent": 0.59
+        },
+        {
+          "name": "HTML",
+          "bytes": 376021,
+          "percent": 0.44
+        },
+        {
+          "name": "Inno Setup",
+          "bytes": 324750,
+          "percent": 0.38
+        },
+        {
+          "name": "Scilab",
+          "bytes": 202892,
+          "percent": 0.24
+        },
+        {
+          "name": "Shell",
+          "bytes": 118255,
+          "percent": 0.14
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 23265,
+          "percent": 0.03
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 15713,
+          "percent": 0.02
+        },
+        {
+          "name": "Tree-sitter Query",
+          "bytes": 14260,
+          "percent": 0.02
+        },
+        {
+          "name": "SCSS",
+          "bytes": 6732,
+          "percent": 0.01
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 6156,
+          "percent": 0.01
+        },
+        {
+          "name": "Python",
+          "bytes": 4146,
+          "percent": 0
+        },
+        {
+          "name": "Groovy",
+          "bytes": 3928,
+          "percent": 0
+        },
+        {
+          "name": "Cuda",
+          "bytes": 3634,
+          "percent": 0
+        },
+        {
+          "name": "C++",
+          "bytes": 2745,
+          "percent": 0
+        },
+        {
+          "name": "Makefile",
+          "bytes": 2307,
+          "percent": 0
+        },
+        {
+          "name": "Perl",
+          "bytes": 1922,
+          "percent": 0
+        },
+        {
+          "name": "Ruby",
+          "bytes": 1703,
+          "percent": 0
+        },
+        {
+          "name": "TeX",
+          "bytes": 1602,
+          "percent": 0
+        },
+        {
+          "name": "Objective-C",
+          "bytes": 1387,
+          "percent": 0
+        },
+        {
+          "name": "Objective-C++",
+          "bytes": 1387,
+          "percent": 0
+        },
+        {
+          "name": "Clojure",
+          "bytes": 1206,
+          "percent": 0
+        },
+        {
+          "name": "Handlebars",
+          "bytes": 1064,
+          "percent": 0
+        },
+        {
+          "name": "Less",
+          "bytes": 1029,
+          "percent": 0
+        },
+        {
+          "name": "PHP",
+          "bytes": 998,
+          "percent": 0
+        },
+        {
+          "name": "Julia",
+          "bytes": 940,
+          "percent": 0
+        },
+        {
+          "name": "Jupyter Notebook",
+          "bytes": 929,
+          "percent": 0
+        },
+        {
+          "name": "Visual Basic .NET",
+          "bytes": 893,
+          "percent": 0
+        },
+        {
+          "name": "C#",
+          "bytes": 864,
+          "percent": 0
+        },
+        {
+          "name": "C",
+          "bytes": 818,
+          "percent": 0
+        },
+        {
+          "name": "Raku",
+          "bytes": 761,
+          "percent": 0
+        },
+        {
+          "name": "Pug",
+          "bytes": 654,
+          "percent": 0
+        },
+        {
+          "name": "Go",
+          "bytes": 652,
+          "percent": 0
+        },
+        {
+          "name": "F#",
+          "bytes": 634,
+          "percent": 0
+        },
+        {
+          "name": "Java",
+          "bytes": 599,
+          "percent": 0
+        },
+        {
+          "name": "CoffeeScript",
+          "bytes": 590,
+          "percent": 0
+        },
+        {
+          "name": "R",
+          "bytes": 362,
+          "percent": 0
+        },
+        {
+          "name": "Roff",
+          "bytes": 351,
+          "percent": 0
+        },
+        {
+          "name": "ShaderLab",
+          "bytes": 330,
+          "percent": 0
+        },
+        {
+          "name": "Dart",
+          "bytes": 324,
+          "percent": 0
+        },
+        {
+          "name": "Swift",
+          "bytes": 284,
+          "percent": 0
+        },
+        {
+          "name": "Lua",
+          "bytes": 252,
+          "percent": 0
+        },
+        {
+          "name": "HLSL",
+          "bytes": 184,
+          "percent": 0
+        },
+        {
+          "name": "Hack",
+          "bytes": 16,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "openvscode-server-v1.109.5",
+        "name": "openvscode-server-v1.109.5",
+        "publishedAt": "2026-02-20T18:49:34Z",
+        "url": "https://github.com/gitpod-io/openvscode-server/releases/tag/openvscode-server-v1.109.5",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "openvscode-server-v1.109.5",
+      "releaseDate": "2026-02-20T18:49:34Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 1617716,
+        "comments": 209881,
+        "blank": 275005,
+        "files": 6982,
+        "measuredAt": "2026-08-24T05:07:32.762Z",
+        "verifiedAt": "2026-08-24T05:07:32.762Z",
+        "measuredRef": "openvscode-server-v1.109.5",
+        "refType": "stable-release-tag",
+        "commitSha": "4ffe2270acdf711bbefecc3e8c79f4b3631640e5",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
-      "errors": [
+      "sources": [
         {
-          "section": "repository",
-          "message": "GitHub returned 403 for https://api.github.com/repos/gitpod-io/openvscode-server; rate limit resets at 2026-08-24T05:16:51.000Z"
+          "type": "repository",
+          "url": "https://api.github.com/repos/gitpod-io/openvscode-server",
+          "fetchedAt": "2026-08-24T05:07:07.145Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/gitpod-io/openvscode-server/languages",
+          "fetchedAt": "2026-08-24T05:07:07.306Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/gitpod-io/openvscode-server/releases?per_page=100",
+          "fetchedAt": "2026-08-24T05:07:07.658Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/gitpod-io/openvscode-server/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T05:07:08.724Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/gitpod-io/openvscode-server/tree/openvscode-server-v1.109.5",
+          "fetchedAt": "2026-08-24T05:07:32.762Z"
         }
-      ]
+      ],
+      "errors": []
     },
     {
       "id": "sshx",
@@ -9257,47 +9604,120 @@
       "githubUrl": "https://github.com/ekzhang/sshx",
       "apiUrl": "https://api.github.com/repos/ekzhang/sshx",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T05:07:08.681Z",
+      "stars": 7649,
+      "forks": 300,
+      "openIssues": 26,
+      "contributors": 5,
+      "repositorySizeKb": 1012,
+      "defaultBranch": "main",
+      "pushedAt": "2025-06-19T14:09:18Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 125787,
+          "percent": 45.36
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 78157,
+          "percent": 28.18
+        },
+        {
+          "name": "Svelte",
+          "bytes": 63650,
+          "percent": 22.95
+        },
+        {
+          "name": "Shell",
+          "bytes": 5084,
+          "percent": 1.83
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 2344,
+          "percent": 0.85
+        },
+        {
+          "name": "HTML",
+          "bytes": 989,
+          "percent": 0.36
+        },
+        {
+          "name": "CSS",
+          "bytes": 656,
+          "percent": 0.24
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 643,
+          "percent": 0.23
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.4.1",
+        "name": "v0.4.1",
+        "publishedAt": "2025-02-12T20:40:31Z",
+        "url": "https://github.com/ekzhang/sshx/releases/tag/v0.4.1",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.4.1",
+      "releaseDate": "2025-02-12T20:40:31Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 9043,
+        "comments": 842,
+        "blank": 1172,
+        "files": 79,
+        "measuredAt": "2026-08-24T05:07:08.675Z",
+        "verifiedAt": "2026-08-24T05:07:08.675Z",
+        "measuredRef": "v0.4.1",
+        "refType": "stable-release-tag",
+        "commitSha": "5dd5ff9558e9cb9248baeba02966016755a6fd5f",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
-      "errors": [
+      "sources": [
         {
-          "section": "repository",
-          "message": "GitHub returned 403 for https://api.github.com/repos/ekzhang/sshx; rate limit resets at 2026-08-24T05:16:51.000Z"
+          "type": "repository",
+          "url": "https://api.github.com/repos/ekzhang/sshx",
+          "fetchedAt": "2026-08-24T05:07:07.669Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/ekzhang/sshx/languages",
+          "fetchedAt": "2026-08-24T05:07:07.787Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/ekzhang/sshx/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T05:07:07.867Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/ekzhang/sshx/releases?per_page=100",
+          "fetchedAt": "2026-08-24T05:07:07.910Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/ekzhang/sshx/tree/v0.4.1",
+          "fetchedAt": "2026-08-24T05:07:08.675Z"
         }
-      ]
+      ],
+      "errors": []
     },
     {
       "id": "upterm",
@@ -9311,47 +9731,115 @@
       "githubUrl": "https://github.com/owenthereal/upterm",
       "apiUrl": "https://api.github.com/repos/owenthereal/upterm",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T05:07:10.215Z",
+      "stars": 1282,
+      "forks": 80,
+      "openIssues": 53,
+      "contributors": 23,
+      "repositorySizeKb": 175955,
+      "defaultBranch": "master",
+      "pushedAt": "2026-08-03T18:54:08Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Go",
+          "bytes": 435317,
+          "percent": 87.67
+        },
+        {
+          "name": "Shell",
+          "bytes": 33381,
+          "percent": 6.72
+        },
+        {
+          "name": "Roff",
+          "bytes": 15414,
+          "percent": 3.1
+        },
+        {
+          "name": "HCL",
+          "bytes": 8624,
+          "percent": 1.74
+        },
+        {
+          "name": "Makefile",
+          "bytes": 1853,
+          "percent": 0.37
+        },
+        {
+          "name": "Mustache",
+          "bytes": 1810,
+          "percent": 0.36
+        },
+        {
+          "name": "Procfile",
+          "bytes": 126,
+          "percent": 0.03
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.24.0",
+        "name": "Upterm 0.24.0",
+        "publishedAt": "2026-05-06T04:11:44Z",
+        "url": "https://github.com/owenthereal/upterm/releases/tag/v0.24.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.24.0",
+      "releaseDate": "2026-05-06T04:11:44Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 14184,
+        "comments": 1503,
+        "blank": 2873,
+        "files": 112,
+        "measuredAt": "2026-08-24T05:07:10.205Z",
+        "verifiedAt": "2026-08-24T05:07:10.205Z",
+        "measuredRef": "v0.24.0",
+        "refType": "stable-release-tag",
+        "commitSha": "dfb195a697091b27ff49ce4857199550ef31fc9c",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
-      "errors": [
+      "sources": [
         {
-          "section": "repository",
-          "message": "GitHub returned 403 for https://api.github.com/repos/owenthereal/upterm; rate limit resets at 2026-08-24T05:16:51.000Z"
+          "type": "repository",
+          "url": "https://api.github.com/repos/owenthereal/upterm",
+          "fetchedAt": "2026-08-24T05:07:08.884Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/owenthereal/upterm/languages",
+          "fetchedAt": "2026-08-24T05:07:09.027Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/owenthereal/upterm/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T05:07:09.101Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/owenthereal/upterm/releases?per_page=100",
+          "fetchedAt": "2026-08-24T05:07:09.366Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/owenthereal/upterm/tree/v0.24.0",
+          "fetchedAt": "2026-08-24T05:07:10.205Z"
         }
-      ]
+      ],
+      "errors": []
     },
     {
       "id": "termix",
@@ -9365,40 +9853,92 @@
       "githubUrl": "https://github.com/Termix-SSH/Termix",
       "apiUrl": "https://api.github.com/repos/Termix-SSH/Termix",
       "metricScope": "Whole Termix monorepo, including server and desktop/mobile/web clients.",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T05:07:13.800Z",
+      "stars": 14881,
+      "forks": 687,
+      "openIssues": 9,
+      "contributors": 11,
+      "repositorySizeKb": 62977,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T04:51:39Z",
+      "archived": false,
       "license": {
         "key": "manifest-verified",
         "name": "Apache License 2.0",
         "spdxId": "Apache-2.0",
         "url": "https://github.com/Termix-SSH/Termix/blob/main/LICENSE"
       },
-      "languages": [],
-      "latestRelease": null,
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 9578328,
+          "percent": 97.49
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 209594,
+          "percent": 2.13
+        },
+        {
+          "name": "CSS",
+          "bytes": 15781,
+          "percent": 0.16
+        },
+        {
+          "name": "Shell",
+          "bytes": 11172,
+          "percent": 0.11
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 3908,
+          "percent": 0.04
+        },
+        {
+          "name": "HTML",
+          "bytes": 1904,
+          "percent": 0.02
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 1690,
+          "percent": 0.02
+        },
+        {
+          "name": "Go Template",
+          "bytes": 1513,
+          "percent": 0.02
+        },
+        {
+          "name": "Ruby",
+          "bytes": 753,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "release-2.7.1-tag",
+        "name": "release-2.7.1",
+        "publishedAt": "2026-08-23T00:57:07Z",
+        "url": "https://github.com/Termix-SSH/Termix/releases/tag/release-2.7.1-tag",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "release-2.7.1-tag",
+      "releaseDate": "2026-08-23T00:57:07Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 329666,
+        "comments": 18619,
+        "blank": 26651,
+        "files": 1319,
+        "measuredAt": "2026-08-24T05:07:13.734Z",
+        "verifiedAt": "2026-08-24T05:07:13.734Z",
+        "measuredRef": "release-2.7.1-tag",
+        "refType": "stable-release-tag",
+        "commitSha": "76fd9eedbf0f7e853d5ffe40717cac126ffe6a98",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
@@ -9406,17 +9946,37 @@
       },
       "sources": [
         {
+          "type": "repository",
+          "url": "https://api.github.com/repos/Termix-SSH/Termix",
+          "fetchedAt": "2026-08-24T05:07:10.449Z"
+        },
+        {
           "type": "license-override",
           "url": "https://github.com/Termix-SSH/Termix/blob/main/LICENSE",
           "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/Termix-SSH/Termix/languages",
+          "fetchedAt": "2026-08-24T05:07:10.585Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/Termix-SSH/Termix/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T05:07:10.629Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/Termix-SSH/Termix/releases?per_page=100",
+          "fetchedAt": "2026-08-24T05:07:11.037Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/Termix-SSH/Termix/tree/release-2.7.1-tag",
+          "fetchedAt": "2026-08-24T05:07:13.734Z"
         }
       ],
-      "errors": [
-        {
-          "section": "repository",
-          "message": "GitHub returned 403 for https://api.github.com/repos/Termix-SSH/Termix; rate limit resets at 2026-08-24T05:16:51.000Z"
-        }
-      ]
+      "errors": []
     },
     {
       "id": "ttyd",
@@ -9430,47 +9990,120 @@
       "githubUrl": "https://github.com/tsl0922/ttyd",
       "apiUrl": "https://api.github.com/repos/tsl0922/ttyd",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T05:07:15.170Z",
+      "stars": 12249,
+      "forks": 1195,
+      "openIssues": 113,
+      "contributors": 70,
+      "repositorySizeKb": 20567,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-12T03:39:18Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "C",
+          "bytes": 66725,
+          "percent": 56.07
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 31411,
+          "percent": 26.4
+        },
+        {
+          "name": "Shell",
+          "bytes": 7666,
+          "percent": 6.44
+        },
+        {
+          "name": "CMake",
+          "bytes": 5710,
+          "percent": 4.8
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 4825,
+          "percent": 4.05
+        },
+        {
+          "name": "SCSS",
+          "bytes": 1627,
+          "percent": 1.37
+        },
+        {
+          "name": "HTML",
+          "bytes": 738,
+          "percent": 0.62
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 301,
+          "percent": 0.25
+        }
+      ],
+      "latestRelease": {
+        "tagName": "1.7.7",
+        "name": "1.7.7",
+        "publishedAt": "2024-03-30T03:18:34Z",
+        "url": "https://github.com/tsl0922/ttyd/releases/tag/1.7.7",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "1.7.7",
+      "releaseDate": "2024-03-30T03:18:34Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 19210,
+        "comments": 55,
+        "blank": 457,
+        "files": 31,
+        "measuredAt": "2026-08-24T05:07:15.157Z",
+        "verifiedAt": "2026-08-24T05:07:15.157Z",
+        "measuredRef": "1.7.7",
+        "refType": "stable-release-tag",
+        "commitSha": "40e79c706be14029b391f369bee6613c31667abb",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
-      "errors": [
+      "sources": [
         {
-          "section": "repository",
-          "message": "GitHub returned 403 for https://api.github.com/repos/tsl0922/ttyd; rate limit resets at 2026-08-24T05:16:51.000Z"
+          "type": "repository",
+          "url": "https://api.github.com/repos/tsl0922/ttyd",
+          "fetchedAt": "2026-08-24T05:07:13.998Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/tsl0922/ttyd/languages",
+          "fetchedAt": "2026-08-24T05:07:14.143Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/tsl0922/ttyd/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T05:07:14.180Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/tsl0922/ttyd/releases?per_page=100",
+          "fetchedAt": "2026-08-24T05:07:14.304Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/tsl0922/ttyd/tree/1.7.7",
+          "fetchedAt": "2026-08-24T05:07:15.157Z"
         }
-      ]
+      ],
+      "errors": []
     },
     {
       "id": "specstory",
