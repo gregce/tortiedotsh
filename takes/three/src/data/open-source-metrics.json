@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T04:33:12.962Z",
-  "manifestSyncedAt": "2026-08-24T04:33:12.962Z",
+  "generatedAt": "2026-08-24T05:01:18.454Z",
+  "manifestSyncedAt": "2026-08-24T05:01:18.454Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -7819,11 +7819,6 @@
           "fetchedAt": "2026-08-24T04:33:08.454Z"
         },
         {
-          "type": "release-policy",
-          "url": "https://github.com/slopus/happy/releases",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/slopus/happy/languages",
           "fetchedAt": "2026-08-24T04:33:08.538Z"
@@ -7837,6 +7832,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/slopus/happy/tree/main",
           "fetchedAt": "2026-08-24T04:33:12.647Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/slopus/happy/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -8836,16 +8836,16 @@
       "githubUrl": "https://github.com/coder/coder",
       "apiUrl": "https://api.github.com/repos/coder/coder",
       "metricScope": "Whole Coder platform monorepo, not only Coder Agents.",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T05:01:18.454Z",
+      "stars": 14234,
+      "forks": 1447,
+      "openIssues": 968,
+      "contributors": 270,
+      "repositorySizeKb": 459152,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T04:22:33Z",
+      "archived": false,
       "license": {
         "key": "manifest-verified-mixed",
         "name": "Mixed: AGPL-3.0 and Coder Enterprise License",
@@ -8867,30 +8867,127 @@
           }
         ]
       },
-      "languages": [],
-      "latestRelease": null,
+      "languages": [
+        {
+          "name": "Go",
+          "bytes": 31837790,
+          "percent": 75.22
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 9632184,
+          "percent": 22.76
+        },
+        {
+          "name": "Shell",
+          "bytes": 294526,
+          "percent": 0.7
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": 134445,
+          "percent": 0.32
+        },
+        {
+          "name": "HCL",
+          "bytes": 124744,
+          "percent": 0.29
+        },
+        {
+          "name": "Go Template",
+          "bytes": 91262,
+          "percent": 0.22
+        },
+        {
+          "name": "Makefile",
+          "bytes": 71284,
+          "percent": 0.17
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 60863,
+          "percent": 0.14
+        },
+        {
+          "name": "Open Policy Agent",
+          "bytes": 17419,
+          "percent": 0.04
+        },
+        {
+          "name": "CSS",
+          "bytes": 15098,
+          "percent": 0.04
+        },
+        {
+          "name": "Nix",
+          "bytes": 14565,
+          "percent": 0.03
+        },
+        {
+          "name": "HTML",
+          "bytes": 11950,
+          "percent": 0.03
+        },
+        {
+          "name": "NSIS",
+          "bytes": 9366,
+          "percent": 0.02
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 8498,
+          "percent": 0.02
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 2345,
+          "percent": 0.01
+        },
+        {
+          "name": "jq",
+          "bytes": 2160,
+          "percent": 0.01
+        },
+        {
+          "name": "Smarty",
+          "bytes": 323,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v2.36.1",
+        "name": "v2.36.1",
+        "publishedAt": "2026-08-20T07:24:00Z",
+        "url": "https://github.com/coder/coder/releases/tag/v2.36.1",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v2.36.1",
+      "releaseDate": "2026-08-20T07:24:00Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 1222991,
+        "comments": 113252,
+        "blank": 149032,
+        "files": 6198,
+        "measuredAt": "2026-08-24T05:01:18.038Z",
+        "verifiedAt": "2026-08-24T05:01:18.038Z",
+        "measuredRef": "v2.36.1",
+        "refType": "stable-release-tag",
+        "commitSha": "9548f239a8bdfe74d0f62eafc41c97b2d7adca91",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
       "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/coder/coder",
+          "fetchedAt": "2026-08-24T05:01:03.442Z"
+        },
         {
           "type": "license-override",
           "url": "https://github.com/coder/coder/blob/main/LICENSE",
@@ -8900,6 +8997,26 @@
           "type": "license-override",
           "url": "https://github.com/coder/coder/blob/main/LICENSE.enterprise",
           "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/coder/coder/languages",
+          "fetchedAt": "2026-08-24T05:01:03.532Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/coder/coder/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T05:01:03.910Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/coder/coder/releases?per_page=100",
+          "fetchedAt": "2026-08-24T05:01:04.802Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/coder/coder/tree/v2.36.1",
+          "fetchedAt": "2026-08-24T05:01:18.038Z"
         }
       ],
       "errors": []
@@ -8916,40 +9033,71 @@
       "githubUrl": "https://github.com/OpenHands/OpenHands-Cloud",
       "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands-Cloud",
       "metricScope": "OpenHands Cloud deployment charts and control-plane source, not the separate core agent repository.",
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
+      "status": "partial",
+      "refreshedAt": "2026-08-24T05:01:04.690Z",
+      "stars": 71,
+      "forks": 44,
+      "openIssues": 105,
+      "contributors": 22,
+      "repositorySizeKb": 4157,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-21T20:45:42Z",
+      "archived": false,
       "license": {
         "key": "manifest-verified",
         "name": "PolyForm Free Trial License 1.0.0",
         "spdxId": "PolyForm-Free-Trial-1.0.0",
         "url": "https://github.com/OpenHands/OpenHands-Cloud/blob/main/LICENSE"
       },
-      "languages": [],
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 328317,
+          "percent": 52.72
+        },
+        {
+          "name": "Go Template",
+          "bytes": 143624,
+          "percent": 23.06
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 100277,
+          "percent": 16.1
+        },
+        {
+          "name": "Shell",
+          "bytes": 21906,
+          "percent": 3.52
+        },
+        {
+          "name": "HCL",
+          "bytes": 19939,
+          "percent": 3.2
+        },
+        {
+          "name": "Makefile",
+          "bytes": 8722,
+          "percent": 1.4
+        }
+      ],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 8135,
+        "comments": 2688,
+        "blank": 2375,
+        "files": 68,
+        "measuredAt": "2026-08-24T05:01:04.669Z",
+        "verifiedAt": "2026-08-24T05:01:04.669Z",
+        "measuredRef": "main",
+        "refType": "default-branch",
+        "commitSha": "a32ed0e68c7684cb56494a122ed6c310fd68bbcb",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
@@ -8957,12 +9105,37 @@
       },
       "sources": [
         {
+          "type": "repository",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud",
+          "fetchedAt": "2026-08-24T05:01:03.459Z"
+        },
+        {
           "type": "license-override",
           "url": "https://github.com/OpenHands/OpenHands-Cloud/blob/main/LICENSE",
           "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud/languages",
+          "fetchedAt": "2026-08-24T05:01:03.540Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T05:01:03.650Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/OpenHands/OpenHands-Cloud/tree/main",
+          "fetchedAt": "2026-08-24T05:01:04.669Z"
         }
       ],
-      "errors": []
+      "errors": [
+        {
+          "section": "version",
+          "message": "GitHub returned 403 for https://api.github.com/repos/OpenHands/OpenHands-Cloud/releases?per_page=100; rate limit resets at 2026-08-24T05:16:51.000Z"
+        }
+      ]
     },
     {
       "id": "code-server",
@@ -9011,7 +9184,12 @@
         "reason": null
       },
       "sources": [],
-      "errors": []
+      "errors": [
+        {
+          "section": "repository",
+          "message": "GitHub returned 403 for https://api.github.com/repos/coder/code-server; rate limit resets at 2026-08-24T05:16:51.000Z"
+        }
+      ]
     },
     {
       "id": "openvscode-server",
@@ -9060,7 +9238,12 @@
         "reason": null
       },
       "sources": [],
-      "errors": []
+      "errors": [
+        {
+          "section": "repository",
+          "message": "GitHub returned 403 for https://api.github.com/repos/gitpod-io/openvscode-server; rate limit resets at 2026-08-24T05:16:51.000Z"
+        }
+      ]
     },
     {
       "id": "sshx",
@@ -9109,7 +9292,12 @@
         "reason": null
       },
       "sources": [],
-      "errors": []
+      "errors": [
+        {
+          "section": "repository",
+          "message": "GitHub returned 403 for https://api.github.com/repos/ekzhang/sshx; rate limit resets at 2026-08-24T05:16:51.000Z"
+        }
+      ]
     },
     {
       "id": "upterm",
@@ -9158,7 +9346,12 @@
         "reason": null
       },
       "sources": [],
-      "errors": []
+      "errors": [
+        {
+          "section": "repository",
+          "message": "GitHub returned 403 for https://api.github.com/repos/owenthereal/upterm; rate limit resets at 2026-08-24T05:16:51.000Z"
+        }
+      ]
     },
     {
       "id": "termix",
@@ -9218,7 +9411,12 @@
           "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
-      "errors": []
+      "errors": [
+        {
+          "section": "repository",
+          "message": "GitHub returned 403 for https://api.github.com/repos/Termix-SSH/Termix; rate limit resets at 2026-08-24T05:16:51.000Z"
+        }
+      ]
     },
     {
       "id": "ttyd",
@@ -9267,7 +9465,12 @@
         "reason": null
       },
       "sources": [],
-      "errors": []
+      "errors": [
+        {
+          "section": "repository",
+          "message": "GitHub returned 403 for https://api.github.com/repos/tsl0922/ttyd; rate limit resets at 2026-08-24T05:16:51.000Z"
+        }
+      ]
     },
     {
       "id": "specstory",
