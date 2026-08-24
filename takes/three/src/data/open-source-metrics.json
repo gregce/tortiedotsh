@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T04:17:45.862Z",
-  "manifestSyncedAt": "2026-08-24T04:17:45.862Z",
+  "generatedAt": "2026-08-24T04:31:33.758Z",
+  "manifestSyncedAt": "2026-08-24T04:31:33.758Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -3988,11 +3988,6 @@
           "fetchedAt": "2026-08-24T04:17:06.759Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/getpaseo/paseo/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/getpaseo/paseo/languages",
           "fetchedAt": "2026-08-24T04:17:06.872Z"
@@ -4011,6 +4006,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/getpaseo/paseo/tree/v0.5.1",
           "fetchedAt": "2026-08-24T04:17:14.750Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/getpaseo/paseo/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -4140,11 +4140,6 @@
           "fetchedAt": "2026-08-24T04:17:06.736Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/superset-sh/superset/blob/main/LICENSE.md",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/superset-sh/superset/languages",
           "fetchedAt": "2026-08-24T04:17:06.829Z"
@@ -4163,6 +4158,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/superset-sh/superset/tree/desktop-v1.24.2",
           "fetchedAt": "2026-08-24T04:17:15.458Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/superset-sh/superset/blob/main/LICENSE.md",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -5690,26 +5690,31 @@
       "apiUrl": "https://api.github.com/repos/openai/codex",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:16:47.994Z",
-      "stars": 115009,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T04:30:10.363Z",
+      "stars": 115838,
+      "forks": 17673,
+      "openIssues": 13591,
       "contributors": 573,
-      "repositorySizeKb": 566976,
+      "repositorySizeKb": 567394,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T17:04:41Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T03:36:38Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
       "languages": [
         {
           "name": "Rust",
-          "bytes": 51670155,
-          "percent": 96.29
+          "bytes": 51915728,
+          "percent": 96.28
         },
         {
           "name": "Python",
-          "bytes": 1534825,
-          "percent": 2.86
+          "bytes": 1551696,
+          "percent": 2.88
         },
         {
           "name": "Starlark",
@@ -5778,27 +5783,27 @@
         }
       ],
       "latestRelease": {
-        "tagName": "rust-v0.149.0",
-        "name": "0.149.0",
-        "publishedAt": "2026-08-20T21:04:55Z",
-        "url": "https://github.com/openai/codex/releases/tag/rust-v0.149.0",
+        "tagName": "rust-v0.149.1",
+        "name": "0.149.1",
+        "publishedAt": "2026-08-24T00:28:28Z",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.149.1",
         "prerelease": false
       },
       "latestTag": null,
-      "version": "rust-v0.149.0",
-      "releaseDate": "2026-08-20T21:04:55Z",
+      "version": "rust-v0.149.1",
+      "releaseDate": "2026-08-24T00:28:28Z",
       "releasePolicy": null,
       "loc": {
         "status": "measured",
-        "code": 1526663,
-        "comments": 49130,
-        "blank": 132236,
-        "files": 5523,
-        "measuredAt": "2026-08-23T18:16:47.500Z",
-        "verifiedAt": null,
-        "measuredRef": "rust-v0.149.0",
+        "code": 1343201,
+        "comments": 48434,
+        "blank": 123248,
+        "files": 4372,
+        "measuredAt": "2026-08-24T04:30:10.095Z",
+        "verifiedAt": "2026-08-24T04:30:10.095Z",
+        "measuredRef": "rust-v0.149.1",
         "refType": "stable-release-tag",
-        "commitSha": "758ef40f50c1a458425c7cfbf1eb12cbc07af0b0",
+        "commitSha": "ff29a44391deccde0aba0f8390337d7f3c319ea4",
         "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
@@ -5809,27 +5814,27 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/openai/codex",
-          "fetchedAt": "2026-08-23T18:16:37.906Z"
+          "fetchedAt": "2026-08-24T04:29:55.394Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/openai/codex/languages",
-          "fetchedAt": "2026-08-23T18:16:37.991Z"
+          "fetchedAt": "2026-08-24T04:29:55.479Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/openai/codex/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:16:38.070Z"
+          "fetchedAt": "2026-08-24T04:29:55.603Z"
         },
         {
           "type": "latest-release",
-          "url": "https://api.github.com/repos/openai/codex/releases/latest",
-          "fetchedAt": "2026-08-23T18:16:38.084Z"
+          "url": "https://api.github.com/repos/openai/codex/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:30:01.535Z"
         },
         {
-          "type": "loc-checkout",
-          "url": "https://github.com/openai/codex/tree/rust-v0.149.0",
-          "fetchedAt": "2026-08-23T18:16:47.500Z"
+          "type": "loc-measurement",
+          "url": "https://github.com/openai/codex/tree/rust-v0.149.1",
+          "fetchedAt": "2026-08-24T04:30:10.095Z"
         }
       ],
       "errors": []
@@ -5847,16 +5852,21 @@
       "apiUrl": "https://api.github.com/repos/google-gemini/gemini-cli",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:16:59.554Z",
-      "stars": 106633,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T04:29:56.446Z",
+      "stars": 106640,
+      "forks": 14476,
+      "openIssues": 799,
       "contributors": 692,
-      "repositorySizeKb": 102363,
+      "repositorySizeKb": 103192,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T01:15:05Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T00:59:21Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
       "languages": [
         {
           "name": "TypeScript",
@@ -5917,7 +5927,7 @@
         "blank": 86439,
         "files": 2727,
         "measuredAt": "2026-08-23T18:16:59.419Z",
-        "verifiedAt": null,
+        "verifiedAt": "2026-08-24T04:29:56.446Z",
         "measuredRef": "v0.56.0",
         "refType": "stable-release-tag",
         "commitSha": "b6e23a7dc29eb15fede4bbe646d91869e948b45a",
@@ -5931,27 +5941,27 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/google-gemini/gemini-cli",
-          "fetchedAt": "2026-08-23T18:16:48.303Z"
+          "fetchedAt": "2026-08-24T04:29:55.457Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/google-gemini/gemini-cli/languages",
-          "fetchedAt": "2026-08-23T18:16:48.390Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/google-gemini/gemini-cli/releases/latest",
-          "fetchedAt": "2026-08-23T18:16:48.502Z"
+          "fetchedAt": "2026-08-24T04:29:55.551Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/google-gemini/gemini-cli/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:16:48.553Z"
+          "fetchedAt": "2026-08-24T04:29:55.695Z"
         },
         {
-          "type": "loc-checkout",
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/google-gemini/gemini-cli/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:29:55.945Z"
+        },
+        {
+          "type": "loc-measurement",
           "url": "https://github.com/google-gemini/gemini-cli/tree/v0.56.0",
-          "fetchedAt": "2026-08-23T18:16:59.419Z"
+          "fetchedAt": "2026-08-24T04:29:56.446Z"
         }
       ],
       "errors": []
@@ -5968,41 +5978,144 @@
       "githubUrl": "https://github.com/Hmbown/CodeWhale",
       "apiUrl": "https://api.github.com/repos/Hmbown/CodeWhale",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T04:30:29.566Z",
+      "stars": 40833,
+      "forks": 3536,
+      "openIssues": 141,
+      "contributors": 213,
+      "repositorySizeKb": 123848,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T04:28:08Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 37107802,
+          "percent": 93.35
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 1143479,
+          "percent": 2.88
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 645412,
+          "percent": 1.62
+        },
+        {
+          "name": "Python",
+          "bytes": 392402,
+          "percent": 0.99
+        },
+        {
+          "name": "Shell",
+          "bytes": 260077,
+          "percent": 0.65
+        },
+        {
+          "name": "CSS",
+          "bytes": 108231,
+          "percent": 0.27
+        },
+        {
+          "name": "HTML",
+          "bytes": 26007,
+          "percent": 0.07
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 24499,
+          "percent": 0.06
+        },
+        {
+          "name": "Gherkin",
+          "bytes": 21117,
+          "percent": 0.05
+        },
+        {
+          "name": "Nix",
+          "bytes": 6463,
+          "percent": 0.02
+        },
+        {
+          "name": "NSIS",
+          "bytes": 6457,
+          "percent": 0.02
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 5353,
+          "percent": 0.01
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 2444,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.9.11",
+        "name": "v0.9.11",
+        "publishedAt": "2026-08-23T17:39:46Z",
+        "url": "https://github.com/Hmbown/CodeWhale/releases/tag/v0.9.11",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.9.11",
+      "releaseDate": "2026-08-23T17:39:46Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 849213,
+        "comments": 115893,
+        "blank": 76929,
+        "files": 1342,
+        "measuredAt": "2026-08-24T04:30:29.484Z",
+        "verifiedAt": "2026-08-24T04:30:29.484Z",
+        "measuredRef": "v0.9.11",
+        "refType": "stable-release-tag",
+        "commitSha": "96d13a0bc3f40280ea3865280ad5ccf0e2845e6f",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/Hmbown/CodeWhale",
+          "fetchedAt": "2026-08-24T04:29:56.570Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/Hmbown/CodeWhale/languages",
+          "fetchedAt": "2026-08-24T04:29:56.662Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/Hmbown/CodeWhale/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T04:29:56.721Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/Hmbown/CodeWhale/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:29:57.765Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/Hmbown/CodeWhale/tree/v0.9.11",
+          "fetchedAt": "2026-08-24T04:30:29.484Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -6017,41 +6130,164 @@
       "githubUrl": "https://github.com/QwenLM/qwen-code",
       "apiUrl": "https://api.github.com/repos/QwenLM/qwen-code",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
-      "latestRelease": null,
+      "status": "current",
+      "refreshedAt": "2026-08-24T04:31:33.758Z",
+      "stars": 27323,
+      "forks": 2927,
+      "openIssues": 1164,
+      "contributors": 535,
+      "repositorySizeKb": 1028681,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-24T04:19:46Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 96249452,
+          "percent": 81.23
+        },
+        {
+          "name": "Rust",
+          "bytes": 9230170,
+          "percent": 7.79
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 5576438,
+          "percent": 4.71
+        },
+        {
+          "name": "C",
+          "bytes": 4039114,
+          "percent": 3.41
+        },
+        {
+          "name": "Python",
+          "bytes": 1197803,
+          "percent": 1.01
+        },
+        {
+          "name": "Java",
+          "bytes": 717809,
+          "percent": 0.61
+        },
+        {
+          "name": "CSS",
+          "bytes": 639377,
+          "percent": 0.54
+        },
+        {
+          "name": "Shell",
+          "bytes": 390599,
+          "percent": 0.33
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 232869,
+          "percent": 0.2
+        },
+        {
+          "name": "HTML",
+          "bytes": 83575,
+          "percent": 0.07
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 79954,
+          "percent": 0.07
+        },
+        {
+          "name": "Objective-C++",
+          "bytes": 22117,
+          "percent": 0.02
+        },
+        {
+          "name": "C++",
+          "bytes": 12653,
+          "percent": 0.01
+        },
+        {
+          "name": "Swift",
+          "bytes": 7142,
+          "percent": 0.01
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 3543,
+          "percent": 0
+        },
+        {
+          "name": "Makefile",
+          "bytes": 1330,
+          "percent": 0
+        },
+        {
+          "name": "NSIS",
+          "bytes": 716,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.22.0",
+        "name": "Release v0.22.0",
+        "publishedAt": "2026-08-22T14:58:36Z",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.22.0",
+        "prerelease": false
+      },
       "latestTag": null,
-      "version": null,
-      "releaseDate": null,
+      "version": "v0.22.0",
+      "releaseDate": "2026-08-22T14:58:36Z",
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 2655045,
+        "comments": 404692,
+        "blank": 289859,
+        "files": 7267,
+        "measuredAt": "2026-08-24T04:31:33.258Z",
+        "verifiedAt": "2026-08-24T04:31:33.258Z",
+        "measuredRef": "v0.22.0",
+        "refType": "stable-release-tag",
+        "commitSha": "1c3a385d9bc83e0b2a1ce5a24454ce1d090595fb",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/QwenLM/qwen-code",
+          "fetchedAt": "2026-08-24T04:30:10.581Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/QwenLM/qwen-code/languages",
+          "fetchedAt": "2026-08-24T04:30:10.684Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/QwenLM/qwen-code/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T04:30:10.805Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:30:11.274Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/QwenLM/qwen-code/tree/v0.22.0",
+          "fetchedAt": "2026-08-24T04:31:33.258Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -6066,41 +6302,108 @@
       "githubUrl": "https://github.com/xai-org/grok-build",
       "apiUrl": "https://api.github.com/repos/xai-org/grok-build",
       "metricScope": null,
-      "status": "stale",
-      "refreshedAt": null,
-      "stars": null,
-      "forks": null,
-      "openIssues": null,
-      "contributors": null,
-      "repositorySizeKb": null,
-      "defaultBranch": null,
-      "pushedAt": null,
-      "archived": null,
-      "license": null,
-      "languages": [],
+      "status": "current",
+      "refreshedAt": "2026-08-24T04:31:13.155Z",
+      "stars": 25957,
+      "forks": 4878,
+      "openIssues": 0,
+      "contributors": 1,
+      "repositorySizeKb": 36580,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T10:49:04Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 63605539,
+          "percent": 99.62
+        },
+        {
+          "name": "Python",
+          "bytes": 110069,
+          "percent": 0.17
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 66127,
+          "percent": 0.1
+        },
+        {
+          "name": "Shell",
+          "bytes": 40749,
+          "percent": 0.06
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 24822,
+          "percent": 0.04
+        },
+        {
+          "name": "RenderScript",
+          "bytes": 1,
+          "percent": 0
+        }
+      ],
       "latestRelease": null,
       "latestTag": null,
       "version": null,
       "releaseDate": null,
       "releasePolicy": null,
       "loc": {
-        "status": "not-measured",
-        "code": null,
-        "comments": null,
-        "blank": null,
-        "files": null,
-        "measuredAt": null,
-        "verifiedAt": null,
-        "measuredRef": null,
-        "refType": null,
-        "commitSha": null,
-        "tool": null,
+        "status": "measured",
+        "code": 1326499,
+        "comments": 232983,
+        "blank": 116643,
+        "files": 2795,
+        "measuredAt": "2026-08-24T04:31:12.936Z",
+        "verifiedAt": "2026-08-24T04:31:12.936Z",
+        "measuredRef": "main",
+        "refType": "default-branch",
+        "commitSha": "07b2f7144fd5c5c9d3dd1966937a87852d2dbdb8",
+        "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
         "reason": null
       },
-      "sources": [],
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/xai-org/grok-build",
+          "fetchedAt": "2026-08-24T04:30:29.738Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/xai-org/grok-build/languages",
+          "fetchedAt": "2026-08-24T04:30:29.851Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/xai-org/grok-build/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-24T04:30:29.980Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/xai-org/grok-build/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:30:29.979Z"
+        },
+        {
+          "type": "latest-tag",
+          "url": "https://api.github.com/repos/xai-org/grok-build/tags?per_page=1",
+          "fetchedAt": "2026-08-24T04:30:30.078Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/xai-org/grok-build/tree/main",
+          "fetchedAt": "2026-08-24T04:31:12.936Z"
+        }
+      ],
       "errors": []
     },
     {
@@ -6116,16 +6419,21 @@
       "apiUrl": "https://api.github.com/repos/anomalyco/opencode",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:17:11.650Z",
-      "stars": 200600,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T04:31:17.991Z",
+      "stars": 200729,
+      "forks": 25961,
+      "openIssues": 5360,
       "contributors": 1002,
-      "repositorySizeKb": 474646,
+      "repositorySizeKb": 475481,
       "defaultBranch": "dev",
-      "pushedAt": "2026-08-23T18:11:27Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-24T04:30:36Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
       "languages": [
         {
           "name": "TypeScript",
@@ -6196,7 +6504,7 @@
         "blank": 124116,
         "files": 5958,
         "measuredAt": "2026-08-23T18:17:11.349Z",
-        "verifiedAt": null,
+        "verifiedAt": "2026-08-24T04:31:17.991Z",
         "measuredRef": "v1.18.21",
         "refType": "stable-release-tag",
         "commitSha": "826d9ad46a22bef0294998e08daa3c4904fea28f",
@@ -6210,27 +6518,27 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/anomalyco/opencode",
-          "fetchedAt": "2026-08-23T18:16:54.798Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/anomalyco/opencode/releases/latest",
-          "fetchedAt": "2026-08-23T18:16:54.868Z"
+          "fetchedAt": "2026-08-24T04:31:14.022Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/anomalyco/opencode/languages",
-          "fetchedAt": "2026-08-23T18:16:54.900Z"
+          "fetchedAt": "2026-08-24T04:31:14.543Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/anomalyco/opencode/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:16:55.039Z"
+          "fetchedAt": "2026-08-24T04:31:14.777Z"
         },
         {
-          "type": "loc-checkout",
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/anomalyco/opencode/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:31:17.541Z"
+        },
+        {
+          "type": "loc-measurement",
           "url": "https://github.com/anomalyco/opencode/tree/v1.18.21",
-          "fetchedAt": "2026-08-23T18:17:11.349Z"
+          "fetchedAt": "2026-08-24T04:31:17.991Z"
         }
       ],
       "errors": []
@@ -6248,26 +6556,31 @@
       "apiUrl": "https://api.github.com/repos/earendil-works/pi",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:17:03.478Z",
-      "stars": 95847,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T04:31:19.264Z",
+      "stars": 96069,
+      "forks": 11883,
+      "openIssues": 133,
       "contributors": 282,
-      "repositorySizeKb": 65426,
+      "repositorySizeKb": 65552,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T10:44:20Z",
-      "archived": null,
-      "license": null,
+      "pushedAt": "2026-08-23T21:34:30Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
       "languages": [
         {
           "name": "TypeScript",
-          "bytes": 8539287,
+          "bytes": 8549903,
           "percent": 93.88
         },
         {
           "name": "JavaScript",
           "bytes": 490036,
-          "percent": 5.39
+          "percent": 5.38
         },
         {
           "name": "Shell",
@@ -6318,7 +6631,7 @@
         "blank": 40369,
         "files": 1337,
         "measuredAt": "2026-08-23T18:17:03.414Z",
-        "verifiedAt": null,
+        "verifiedAt": "2026-08-24T04:31:19.264Z",
         "measuredRef": "v0.84.2",
         "refType": "stable-release-tag",
         "commitSha": "914cf1472e715297caa30db4b9535d534a9eb718",
@@ -6332,27 +6645,27 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/earendil-works/pi",
-          "fetchedAt": "2026-08-23T18:16:59.261Z"
+          "fetchedAt": "2026-08-24T04:31:18.214Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/earendil-works/pi/languages",
-          "fetchedAt": "2026-08-23T18:16:59.341Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/earendil-works/pi/releases/latest",
-          "fetchedAt": "2026-08-23T18:16:59.349Z"
+          "fetchedAt": "2026-08-24T04:31:18.352Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/earendil-works/pi/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:16:59.675Z"
+          "fetchedAt": "2026-08-24T04:31:18.429Z"
         },
         {
-          "type": "loc-checkout",
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/earendil-works/pi/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:31:18.837Z"
+        },
+        {
+          "type": "loc-measurement",
           "url": "https://github.com/earendil-works/pi/tree/v0.84.2",
-          "fetchedAt": "2026-08-23T18:17:03.414Z"
+          "fetchedAt": "2026-08-24T04:31:19.264Z"
         }
       ],
       "errors": []
@@ -6370,16 +6683,21 @@
       "apiUrl": "https://api.github.com/repos/Aider-AI/aider",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T18:17:02.056Z",
-      "stars": 48428,
-      "forks": null,
-      "openIssues": null,
+      "refreshedAt": "2026-08-24T04:31:20.140Z",
+      "stars": 48437,
+      "forks": 4874,
+      "openIssues": 1818,
       "contributors": 182,
       "repositorySizeKb": 140356,
       "defaultBranch": "main",
       "pushedAt": "2026-05-22T14:02:20Z",
-      "archived": null,
-      "license": null,
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
       "languages": [
         {
           "name": "Python",
@@ -6450,7 +6768,7 @@
         "blank": 33020,
         "files": 480,
         "measuredAt": "2026-08-23T18:17:02.017Z",
-        "verifiedAt": null,
+        "verifiedAt": "2026-08-24T04:31:20.140Z",
         "measuredRef": "v0.86.0",
         "refType": "stable-release-tag",
         "commitSha": "a4be6ccd87ebaa59b361f3f028d116ce1761b626",
@@ -6464,27 +6782,27 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/Aider-AI/aider",
-          "fetchedAt": "2026-08-23T18:16:59.706Z"
+          "fetchedAt": "2026-08-24T04:31:19.413Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/Aider-AI/aider/languages",
-          "fetchedAt": "2026-08-23T18:16:59.792Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/Aider-AI/aider/releases/latest",
-          "fetchedAt": "2026-08-23T18:16:59.805Z"
+          "fetchedAt": "2026-08-24T04:31:19.518Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/Aider-AI/aider/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T18:16:59.855Z"
+          "fetchedAt": "2026-08-24T04:31:19.565Z"
         },
         {
-          "type": "loc-checkout",
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/Aider-AI/aider/releases?per_page=100",
+          "fetchedAt": "2026-08-24T04:31:19.790Z"
+        },
+        {
+          "type": "loc-measurement",
           "url": "https://github.com/Aider-AI/aider/tree/v0.86.0",
-          "fetchedAt": "2026-08-23T18:17:02.017Z"
+          "fetchedAt": "2026-08-24T04:31:20.140Z"
         }
       ],
       "errors": []
