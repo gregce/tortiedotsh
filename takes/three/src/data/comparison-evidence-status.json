@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T04:21:34.057Z",
+  "generatedAt": "2026-08-24T04:42:32.212Z",
   "sources": [
     {
       "id": "2fa78aa7f0249c97fb15",
@@ -3355,56 +3355,6 @@
       "error": null
     },
     {
-      "id": "2a40d519ee4084f61b1e",
-      "url": "https://devin.ai/",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "devin",
-          "field": "profile.execution",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "devin",
-          "field": "profile.platform",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "devin",
-          "field": "profile.primaryObject",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "devin",
-          "field": "profile.source",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "devin",
-          "field": "profile.status",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://devin.ai/",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:44.239Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "HTTP 429"
-    },
-    {
       "id": "532431fc05661441ad39",
       "url": "https://docs.anthropic.com/en/docs/claude-code/cli-usage",
       "bases": [
@@ -3977,8 +3927,8 @@
       "error": null
     },
     {
-      "id": "e4e368d269dcd4bfbfef",
-      "url": "https://docs.cline.bot/provider-config/overview",
+      "id": "83a6d362e41de9e5553a",
+      "url": "https://docs.cline.bot/running-models-locally/overview",
       "bases": [
         "vendor-documented"
       ],
@@ -3991,9 +3941,9 @@
       ],
       "latestReviewAt": "2026-08-23",
       "status": "awaiting-refresh",
-      "fetchUrl": "https://docs.cline.bot/provider-config/overview",
+      "fetchUrl": "https://docs.cline.bot/running-models-locally/overview",
       "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:44.921Z",
+      "lastCheckedAt": null,
       "firstObservedAt": null,
       "changeDetectedAt": null,
       "httpStatus": null,
@@ -4001,10 +3951,9 @@
       "contentLength": null,
       "contentHash": null,
       "reviewedHash": null,
-      "reviews": [],
       "etag": null,
       "lastModified": null,
-      "error": "HTTP 404"
+      "error": null
     },
     {
       "id": "80d3be8773493b0f2b6f",
@@ -4762,36 +4711,6 @@
       "error": null
     },
     {
-      "id": "d884476da5bca594052b",
-      "url": "https://docs.continue.dev/getting-started/install",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "continue",
-          "field": "extension-install-channel",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://docs.continue.dev/getting-started/install",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:45.539Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "Response contained too little source content"
-    },
-    {
       "id": "d43d33c205777ea12ec3",
       "url": "https://docs.continue.dev/ide-extensions/agent/how-it-works",
       "bases": [
@@ -5202,66 +5121,6 @@
       "error": null
     },
     {
-      "id": "094452bb62c05989abd4",
-      "url": "https://docs.devin.ai/desktop/editor/browser-previews",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "windsurf",
-          "field": "editor-browser-tools",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://docs.devin.ai/desktop/editor/browser-previews",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:45.863Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "HTTP 404"
-    },
-    {
-      "id": "dd328eb0a887322e7fd3",
-      "url": "https://docs.devin.ai/desktop/editor/models",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "windsurf",
-          "field": "editor-model-access",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://docs.devin.ai/desktop/editor/models",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:45.870Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "HTTP 404"
-    },
-    {
       "id": "2ba547ac45e44c5fdabb",
       "url": "https://docs.devin.ai/desktop/getting-started",
       "bases": [
@@ -5352,6 +5211,64 @@
       "error": null
     },
     {
+      "id": "fcdbe482efac3310bb9d",
+      "url": "https://docs.devin.ai/desktop/models",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "windsurf",
+          "field": "editor-model-access",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.devin.ai/desktop/models",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "fa5fa64a934b1fdbaef9",
+      "url": "https://docs.devin.ai/desktop/previews",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "windsurf",
+          "field": "editor-browser-tools",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.devin.ai/desktop/previews",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "1c5dd2a343f4604cb7ab",
       "url": "https://docs.devin.ai/desktop/tab/overview",
       "bases": [
@@ -5412,6 +5329,45 @@
       "contentHash": "7b82f698f35237365ed058e28ab90954e505269b6d1f2674ac7d203804661ae5",
       "reviewedHash": "7b82f698f35237365ed058e28ab90954e505269b6d1f2674ac7d203804661ae5",
       "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "1b070c7b6e05fc3815df",
+      "url": "https://docs.devin.ai/get-started/devin-intro",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "devin",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "devin",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "devin",
+          "field": "profile.source",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.devin.ai/get-started/devin-intro",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
       "etag": null,
       "lastModified": null,
       "error": null
@@ -5517,6 +5473,11 @@
           "productId": "devin",
           "field": "cloud-sandbox",
           "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "devin",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
@@ -5562,6 +5523,35 @@
       "contentHash": "26103abebcf44723f55ffb4173e026597fba07835c50d7abf258e5b938b7e626",
       "reviewedHash": "26103abebcf44723f55ffb4173e026597fba07835c50d7abf258e5b938b7e626",
       "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "5f250b745e0d3285d819",
+      "url": "https://docs.devin.ai/release-notes/overview",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "devin",
+          "field": "profile.status",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.devin.ai/release-notes/overview",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
       "etag": null,
       "lastModified": null,
       "error": null
@@ -7372,6 +7362,35 @@
       "error": null
     },
     {
+      "id": "df5fdce06b5f51f05045",
+      "url": "https://docs.openhands.dev/openhands/usage/cloud/github-installation",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "openhands-cloud",
+          "field": "cloud-triggered-automation",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://docs.openhands.dev/openhands/usage/cloud/github-installation",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "c467dc7fbdd1c860fb63",
       "url": "https://docs.poolside.ai/cli/pool",
       "bases": [
@@ -8219,111 +8238,6 @@
       "error": null
     },
     {
-      "id": "bd114ddea2f43b5f4af8",
-      "url": "https://docs.warp.dev/agent-platform/getting-started/agents-in-warp",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "warp",
-          "field": "workbench-cross-project-attention",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://docs.warp.dev/agent-platform/getting-started/agents-in-warp",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:48.929Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "HTTP 404"
-    },
-    {
-      "id": "0ec1dc316e672a03165f",
-      "url": "https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "warp",
-          "field": "workbench-attention-signals",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "warp",
-          "field": "workbench-named-sessions",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "warp",
-          "field": "workbench-session-recovery",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "warp",
-          "field": "workbench-splits",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:48.954Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "HTTP 404"
-    },
-    {
-      "id": "6798694f26ccbe339de5",
-      "url": "https://docs.warp.dev/agent-platform/local-agents/overview",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "warp",
-          "field": "workbench-scm",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://docs.warp.dev/agent-platform/local-agents/overview",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:48.981Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "HTTP 404"
-    },
-    {
       "id": "7f24130ef3928baf0414",
       "url": "https://docs.warp.dev/agents/cli/",
       "bases": [
@@ -8410,6 +8324,11 @@
         {
           "productId": "warp",
           "field": "workbench-change-review",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "warp",
+          "field": "workbench-scm",
           "checkedAt": "2026-08-23"
         },
         {
@@ -9727,36 +9646,6 @@
       "reviews": [],
       "etag": "\"b5a4c8ddd9794e8c20bd287603bfa0c336522796\"",
       "lastModified": "Sun, 23 Aug 2026 17:15:36 GMT",
-      "error": "HTTP 403"
-    },
-    {
-      "id": "7f95cb69e93d657d1e43",
-      "url": "https://github.com/apps/openhands-ai",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "openhands-cloud",
-          "field": "cloud-triggered-automation",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://github.com/apps/openhands-ai",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:49.674Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
       "error": "HTTP 403"
     },
     {
@@ -17441,6 +17330,35 @@
       "error": "HTTP 403"
     },
     {
+      "id": "6486c72c24b4f8cdfbb7",
+      "url": "https://github.com/zeroclaw-labs/zeroclaw/blob/master/.claude/skills/zeroclaw/SKILL.md",
+      "bases": [
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "zeroclaw",
+          "field": "general-scheduled-automation",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/.claude/skills/zeroclaw/SKILL.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "38fce5c5e468192dc4f4",
       "url": "https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/book/src/providers/overview.md",
       "bases": [
@@ -17499,36 +17417,6 @@
       "etag": "W/\"ed95f50bb4e9a9d09734ce743f171700c9e2b6f2925e9cc6dd5f48454b2ba453\"",
       "lastModified": null,
       "error": null
-    },
-    {
-      "id": "f24faebaee08d430eddb",
-      "url": "https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/reference/cli/commands-reference.md",
-      "bases": [
-        "source-inspected"
-      ],
-      "usedBy": [
-        {
-          "productId": "zeroclaw",
-          "field": "general-scheduled-automation",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/reference/cli/commands-reference.md",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:51.234Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "HTTP 404"
     },
     {
       "id": "234e2944a9ab292f633b",
@@ -18562,36 +18450,6 @@
       "error": null
     },
     {
-      "id": "28e152ed55e8727e0aac",
-      "url": "https://kilo.ai/docs/code-with-ai/platforms",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "kilo-code",
-          "field": "extension-install-channel",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://kilo.ai/docs/code-with-ai/platforms",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:51.860Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "HTTP 404"
-    },
-    {
       "id": "2258849613a2af912460",
       "url": "https://kilo.ai/docs/code-with-ai/platforms/cli",
       "bases": [
@@ -18703,6 +18561,11 @@
           "productId": "kilo-code",
           "field": "extension-host-jetbrains",
           "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "kilo-code",
+          "field": "extension-install-channel",
+          "checkedAt": "2026-08-23"
         }
       ],
       "latestReviewAt": "2026-08-23",
@@ -18736,6 +18599,11 @@
         {
           "productId": "kilo-code",
           "field": "extension-inline-completion",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "kilo-code",
+          "field": "extension-install-channel",
           "checkedAt": "2026-08-23"
         }
       ],
@@ -19619,38 +19487,8 @@
       "error": null
     },
     {
-      "id": "528e278e88b55da91bca",
-      "url": "https://learn.chatgpt.com/docs/codex/noninteractive",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "codex-cli",
-          "field": "harness-structured-output",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://learn.chatgpt.com/docs/codex/noninteractive",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:52.359Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "HTTP 404"
-    },
-    {
-      "id": "95aa838ee2d7d5db6b0d",
-      "url": "https://learn.chatgpt.com/docs/config-advanced",
+      "id": "3d9c8f85945796db475b",
+      "url": "https://learn.chatgpt.com/docs/config-file/config-advanced",
       "bases": [
         "vendor-documented"
       ],
@@ -19663,9 +19501,9 @@
       ],
       "latestReviewAt": "2026-08-23",
       "status": "awaiting-refresh",
-      "fetchUrl": "https://learn.chatgpt.com/docs/config-advanced",
+      "fetchUrl": "https://learn.chatgpt.com/docs/config-file/config-advanced",
       "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:52.366Z",
+      "lastCheckedAt": null,
       "firstObservedAt": null,
       "changeDetectedAt": null,
       "httpStatus": null,
@@ -19673,10 +19511,9 @@
       "contentLength": null,
       "contentHash": null,
       "reviewedHash": null,
-      "reviews": [],
       "etag": null,
       "lastModified": null,
-      "error": "HTTP 404"
+      "error": null
     },
     {
       "id": "65df5b2010923deb18c7",
@@ -19726,6 +19563,35 @@
       "reviews": [],
       "etag": "W/\"014830d909650308adc78311e2ae95e4\"",
       "lastModified": "Mon, 24 Aug 2026 00:42:04 GMT",
+      "error": null
+    },
+    {
+      "id": "ef5ba26f3f873ef4e959",
+      "url": "https://learn.chatgpt.com/docs/non-interactive-mode",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "codex-cli",
+          "field": "harness-structured-output",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://learn.chatgpt.com/docs/non-interactive-mode",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -20972,6 +20838,35 @@
       "error": null
     },
     {
+      "id": "3db896e8fb7afdc145c2",
+      "url": "https://raw.githubusercontent.com/papercomputeco/tapes/main/install.sh",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "tapes",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/papercomputeco/tapes/main/install.sh",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "ef264d3dc56b1fd7b0f7",
       "url": "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md",
       "bases": [
@@ -21421,36 +21316,6 @@
       "etag": "W/\"c5fbdc802d9290a947832a5f4ff89d8a\"",
       "lastModified": "Sun, 23 Aug 2026 18:20:20 GMT",
       "error": null
-    },
-    {
-      "id": "1ac4286a9a5ee4084647",
-      "url": "https://tapes.dev/agents/",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "tapes",
-          "field": "profile.platform",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://tapes.dev/agents/",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:53.181Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "HTTP 404"
     },
     {
       "id": "ca692b9ef2fd7f63c387",
@@ -22067,6 +21932,113 @@
       "contentHash": "4578d357e0cc3f002347b024b7ab8d71810dd332b3176478acc0fd4cc7306ed5",
       "reviewedHash": "4578d357e0cc3f002347b024b7ab8d71810dd332b3176478acc0fd4cc7306ed5",
       "etag": "W/\"1tiwqcxnwz2k0h\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "be2b9ea9dcb3a3de0975",
+      "url": "https://vibekanban.com/docs/core-features/creating-tasks",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-task-board",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://vibekanban.com/docs/core-features/creating-tasks",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "314d5b31a796bcb1b9b9",
+      "url": "https://vibekanban.com/docs/core-features/monitoring-task-execution",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-isolated-workspaces",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-multi-harness",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-worktrees",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://vibekanban.com/docs/core-features/monitoring-task-execution",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "d87b194a71784f90b305",
+      "url": "https://vibekanban.com/docs/workspaces/changes",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-inline-review",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-pr-lifecycle",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-review-delivery",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://vibekanban.com/docs/workspaces/changes",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
@@ -23731,146 +23703,6 @@
       "etag": null,
       "lastModified": null,
       "error": null
-    },
-    {
-      "id": "e63d2bba13540bcafbd6",
-      "url": "https://www.vibekanban.com/docs/core-features/creating-tasks",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-task-board",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://www.vibekanban.com/docs/core-features/creating-tasks",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:55.061Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "fetch failed"
-    },
-    {
-      "id": "c708f7adf563077c21bd",
-      "url": "https://www.vibekanban.com/docs/core-features/monitoring-task-execution",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-isolated-workspaces",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-multi-harness",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-parallel-workers",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-review-delivery",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-worktrees",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://www.vibekanban.com/docs/core-features/monitoring-task-execution",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:55.091Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "fetch failed"
-    },
-    {
-      "id": "8a3fd0713425dfc58e46",
-      "url": "https://www.vibekanban.com/docs/core-features/reviewing-code-changes",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-inline-review",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://www.vibekanban.com/docs/core-features/reviewing-code-changes",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:55.091Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "fetch failed"
-    },
-    {
-      "id": "74f70884589f1e2a2558",
-      "url": "https://www.vibekanban.com/docs/reviewing-code",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-pr-lifecycle",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://www.vibekanban.com/docs/reviewing-code",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:11:55.101Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "fetch failed"
     },
     {
       "id": "8d73894f4f6f87fe2f4d",

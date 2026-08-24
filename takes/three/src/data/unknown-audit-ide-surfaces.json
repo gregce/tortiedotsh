@@ -19,13 +19,13 @@
   },
   "summary": {
     "products": 40,
-    "currentUnknownCells": 194,
+    "currentUnknownCells": 200,
     "codeEditorUnknownCells": 70,
-    "ideExtensionUnknownCells": 96,
-    "agentMultiplexerUnknownCells": 28,
+    "ideExtensionUnknownCells": 97,
+    "agentMultiplexerUnknownCells": 33,
     "appliedClosures": 14,
-    "changedSourceCorrections": 8,
-    "remainUnknown": 194
+    "changedSourceCorrections": 14,
+    "remainUnknown": 200
   },
   "categories": [
     {
@@ -315,8 +315,8 @@
             "https://docs.devin.ai/desktop/terminal",
             "https://docs.devin.ai/desktop/tab/overview",
             "https://docs.devin.ai/desktop/cascade/mcp",
-            "https://docs.devin.ai/desktop/editor/models",
-            "https://docs.devin.ai/desktop/editor/browser-previews"
+            "https://docs.devin.ai/desktop/models",
+            "https://docs.devin.ai/desktop/previews"
           ],
           "cells": [
             {
@@ -653,7 +653,7 @@
             "https://docs.cline.bot/core-workflows/checkpoints",
             "https://docs.cline.bot/features/auto-approve",
             "https://docs.cline.bot/provider-config/other-30-plus-providers",
-            "https://docs.cline.bot/provider-config/overview"
+            "https://docs.cline.bot/running-models-locally/overview"
           ],
           "cells": [
             {
@@ -701,7 +701,6 @@
             "https://docs.continue.dev/customize/deep-dives/configuration",
             "https://docs.continue.dev/customize/overview",
             "https://docs.continue.dev/customize/deep-dives/custom-providers",
-            "https://docs.continue.dev/getting-started/install",
             "https://docs.continue.dev/ide-extensions/agent/how-it-works",
             "https://docs.continue.dev/customize/model-providers/overview"
           ],
@@ -727,6 +726,11 @@
               "rationale": "Continue's final extension documentation and canonical read-only repository establish the VS Code and JetBrains plugins, providers, MCP, codebase context, and local agent boundary. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
             },
             {
+              "rowId": "extension-install-channel",
+              "result": "remain-unknown",
+              "rationale": "Continue's final extension documentation and canonical read-only repository establish the VS Code and JetBrains plugins, providers, MCP, codebase context, and local agent boundary. It does not establish an exact marketplace listing, package, setup path, or other supported installation channel for this extension."
+            },
+            {
               "rowId": "extension-remote-session-client",
               "result": "remain-unknown",
               "rationale": "Continue's final extension documentation and canonical read-only repository establish the VS Code and JetBrains plugins, providers, MCP, codebase context, and local agent boundary. It does not establish a client for observing or steering a separately owned cloud or background session."
@@ -744,8 +748,7 @@
             "https://kilo.ai/docs/automate/mcp/using-in-kilo-code",
             "https://kilo.ai/docs/code-with-ai/features/checkpoints",
             "https://kilo.ai/docs/getting-started/settings/auto-approving-actions",
-            "https://kilo.ai/docs/automate/agent-manager",
-            "https://kilo.ai/docs/code-with-ai/platforms"
+            "https://kilo.ai/docs/automate/agent-manager"
           ],
           "cells": [
             {
@@ -1385,12 +1388,9 @@
             "https://www.warp.dev/",
             "https://github.com/warpdotdev/warp",
             "https://docs.warp.dev/code/code-editor",
-            "https://docs.warp.dev/agent-platform/local-agents/overview",
-            "https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents",
-            "https://docs.warp.dev/agent-platform/getting-started/agents-in-warp",
+            "https://docs.warp.dev/code/code-review",
             "https://docs.warp.dev/code/ssh-feature-support",
             "https://docs.warp.dev/agents/cli/",
-            "https://docs.warp.dev/code/code-review",
             "https://docs.warp.dev/code/git-worktrees"
           ],
           "cells": [
@@ -1405,9 +1405,34 @@
               "rationale": "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
             },
             {
+              "rowId": "workbench-named-sessions",
+              "result": "remain-unknown",
+              "rationale": "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate. It does not establish user-named durable workspaces or sessions whose identity and history survive closing and reopening the UI."
+            },
+            {
               "rowId": "workbench-pty-survives-ui",
               "result": "remain-unknown",
               "rationale": "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate. Persisted scrollback, layout, or conversation resume does not establish that the original live PTY process survives UI exit."
+            },
+            {
+              "rowId": "workbench-cross-project-attention",
+              "result": "remain-unknown",
+              "rationale": "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate. It does not establish one operator view that carries actionable state across multiple projects."
+            },
+            {
+              "rowId": "workbench-splits",
+              "result": "remain-unknown",
+              "rationale": "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate. It does not establish multiple first-class panes or splits that keep distinct agent or terminal sessions visible together."
+            },
+            {
+              "rowId": "workbench-attention-signals",
+              "result": "remain-unknown",
+              "rationale": "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate. It does not establish explicit cross-session waiting, blocked, failed, or completed attention states."
+            },
+            {
+              "rowId": "workbench-session-recovery",
+              "result": "remain-unknown",
+              "rationale": "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate. It does not establish recovery of the same durable agent or terminal session after interruption or application restart."
             },
             {
               "rowId": "workbench-browser",
@@ -1681,6 +1706,48 @@
       "auditedUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
       "evidenceUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
       "rationale": "The current page documents per-tool restrictions for VS Code, while IntelliJ documents review and approval rather than an equivalent per-tool policy."
+    },
+    {
+      "productId": "continue",
+      "rowId": "extension-install-channel",
+      "targetState": "unknown",
+      "auditedUrl": "https://docs.continue.dev/getting-started/install",
+      "rationale": "The current URL returns only redirect-shell content and no longer establishes a substantive VS Code or JetBrains installation channel."
+    },
+    {
+      "productId": "warp",
+      "rowId": "workbench-named-sessions",
+      "targetState": "unknown",
+      "auditedUrl": "https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents",
+      "rationale": "The former local-agent conversation page is no longer published, and current exact first-party evidence for durable named sessions was not established."
+    },
+    {
+      "productId": "warp",
+      "rowId": "workbench-splits",
+      "targetState": "unknown",
+      "auditedUrl": "https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents",
+      "rationale": "The former local-agent conversation page is no longer published, and current exact first-party evidence for split-session behavior was not established."
+    },
+    {
+      "productId": "warp",
+      "rowId": "workbench-attention-signals",
+      "targetState": "unknown",
+      "auditedUrl": "https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents",
+      "rationale": "The former local-agent conversation page is no longer published, and current exact first-party evidence for explicit attention states was not established."
+    },
+    {
+      "productId": "warp",
+      "rowId": "workbench-session-recovery",
+      "targetState": "unknown",
+      "auditedUrl": "https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents",
+      "rationale": "The former local-agent conversation page is no longer published, and current exact first-party evidence for agent-session recovery was not established."
+    },
+    {
+      "productId": "warp",
+      "rowId": "workbench-cross-project-attention",
+      "targetState": "unknown",
+      "auditedUrl": "https://docs.warp.dev/agent-platform/getting-started/agents-in-warp",
+      "rationale": "The former Agents in Warp page is no longer published, and current exact first-party evidence for actionable state across projects was not established."
     }
   ],
   "generatedMetricUnknowns": {

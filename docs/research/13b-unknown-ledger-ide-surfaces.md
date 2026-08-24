@@ -9,11 +9,11 @@ This ledger resolves every non-platform row through `getComparisonClaim()` for C
 | Category | Public products | Current rendered Unknowns | Remain Unknown |
 | --- | ---: | ---: | ---: |
 | Code IDEs | 16 | 70 | 70 |
-| IDE extensions | 16 | 96 | 96 |
-| Agent Multiplexers | 8 | 28 | 28 |
-| **Total** | **40** | **194** | **194** |
+| IDE extensions | 16 | 97 | 97 |
+| Agent Multiplexers | 8 | 33 | 33 |
+| **Total** | **40** | **200** | **200** |
 
-The generated ledger has exact key parity with all 194 current rendered Unknown cells. Every cell has a product-and-row-specific rationale and every product has an exact-SKU first-party `sourcesChecked` list. The generator rejects missing, extra, or duplicate keys.
+The generated ledger has exact key parity with all 200 current rendered Unknown cells. Every cell has a product-and-row-specific rationale and every product has an exact-SKU first-party `sourcesChecked` list. The generator rejects missing, extra, or duplicate keys.
 
 ## Changed-source corrections preserved
 
@@ -29,6 +29,12 @@ Fresh reads of changed first-party pages narrowed overbroad claims and restored 
 | Qoder IDE | `editor-project-tree` | limited | [First-party page](https://docs.qoder.com/user-guide/chat/agent) | The current Agent guide establishes project search, file editing, directory traversal, file status, and diffs, but not a conventional persistent project tree. |
 | Gemini Code Assist Standard / Enterprise extensions | `extension-install-channel` | unknown | [First-party page](https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages) | The current supported-languages page establishes VS Code and JetBrains hosts but does not document a marketplace, package, setup path, or other install channel. |
 | Gemini Code Assist Standard / Enterprise extensions | `extension-permissions` | limited | [First-party page](https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer) | The current page documents per-tool restrictions for VS Code, while IntelliJ documents review and approval rather than an equivalent per-tool policy. |
+| Continue extension | `extension-install-channel` | unknown | [First-party page](https://docs.continue.dev/getting-started/install) | The current URL returns only redirect-shell content and no longer establishes a substantive VS Code or JetBrains installation channel. |
+| Warp | `workbench-named-sessions` | unknown | [First-party page](https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents) | The former local-agent conversation page is no longer published, and current exact first-party evidence for durable named sessions was not established. |
+| Warp | `workbench-splits` | unknown | [First-party page](https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents) | The former local-agent conversation page is no longer published, and current exact first-party evidence for split-session behavior was not established. |
+| Warp | `workbench-attention-signals` | unknown | [First-party page](https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents) | The former local-agent conversation page is no longer published, and current exact first-party evidence for explicit attention states was not established. |
+| Warp | `workbench-session-recovery` | unknown | [First-party page](https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents) | The former local-agent conversation page is no longer published, and current exact first-party evidence for agent-session recovery was not established. |
+| Warp | `workbench-cross-project-attention` | unknown | [First-party page](https://docs.warp.dev/agent-platform/getting-started/agents-in-warp) | The former Agents in Warp page is no longer published, and current exact first-party evidence for actionable state across projects was not established. |
 
 ## High-confidence affirmative closures applied
 
@@ -80,7 +86,7 @@ These previously Unknown cells now resolve from the catalog to the audited state
 | --- | ---: | ---: |
 | `github-copilot-vscode` | 5 | 5 |
 | `cline` | 7 | 7 |
-| `continue` | 5 | 5 |
+| `continue` | 6 | 6 |
 | `kilo-code` | 3 | 3 |
 | `codex-ide-extension` | 7 | 7 |
 | `claude-code-vscode` | 7 | 7 |
@@ -104,7 +110,7 @@ These previously Unknown cells now resolve from the catalog to the audited state
 | `cdesktop` | 5 | 5 |
 | `cmux` | 2 | 2 |
 | `wmux` | 2 | 2 |
-| `warp` | 4 | 4 |
+| `warp` | 9 | 9 |
 | `wave-terminal` | 6 | 6 |
 | `dmux` | 5 | 5 |
 

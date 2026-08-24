@@ -767,8 +767,8 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       ...builtInClaims("https://docs.devin.ai/desktop/cascade/mcp", "Devin Desktop MCP documentation", ["editor-mcp"]),
       ...builtInClaims("https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started", ["editor-remote-workspaces"]),
       "editor-change-review": capability("built-in", "https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started", "Quick Review is a documented first-party editor surface."),
-      "editor-model-access": factClaim("Devin-managed selectable editor models", "https://docs.devin.ai/desktop/editor/models", "Devin Desktop models"),
-      "editor-browser-tools": factClaim("Browser previews", "https://docs.devin.ai/desktop/editor/browser-previews", "Devin Desktop browser previews"),
+      "editor-model-access": factClaim("Devin-managed selectable editor models", "https://docs.devin.ai/desktop/models", "Devin Desktop models"),
+      "editor-browser-tools": factClaim("Browser previews", "https://docs.devin.ai/desktop/previews", "Devin Desktop browser previews"),
       "editor-verification-loop": factClaim("Local agent code execution, terminal, Quick Review, and browser previews", "https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started"),
       "editor-specialization": factClaim("General software development", "https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started"),
       "editor-ai-feature-boundary": factClaim("Built-in Devin Local harness shared with Devin CLI", "https://docs.devin.ai/desktop/getting-started", "Devin Desktop getting started"),
@@ -916,9 +916,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     tags: ["terminal", "cloud-agent", "blocks", "code-editor", "hybrid:workbench-cloud", "oss", "agpl-3.0"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process", "vendor-cloud"], status: "active",
     claims: {
       ...builtInClaims("https://docs.warp.dev/code/code-editor", "Warp code editor", ["workbench-editor", "workbench-file-tree"]),
-      ...limitedClaims("https://docs.warp.dev/agent-platform/local-agents/overview", "Warp local agents overview", ["workbench-scm"], "Interactive code review covers agent diffs and inline feedback; documentation does not establish a complete source-control surface."),
-      ...builtInClaims("https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents", "Warp agent conversations", ["workbench-named-sessions", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery"]),
-      ...builtInClaims("https://docs.warp.dev/agent-platform/getting-started/agents-in-warp", "Agents in Warp", ["workbench-cross-project-attention"]),
+      ...limitedClaims("https://docs.warp.dev/code/code-review", "Warp Code Review", ["workbench-scm"], "Code Review covers Git diffs, branch comparisons, edits, and reverts; the documentation does not establish a complete source-control client."),
       ...builtInClaims("https://docs.warp.dev/code/ssh-feature-support", "Warp SSH feature support", ["workbench-remote-host"]),
       ...builtInClaims("https://docs.warp.dev/agents/cli/", "Warp Agent CLI", ["workbench-programmable-control"]),
       "workbench-change-review": capability("built-in", "https://docs.warp.dev/code/code-review", "Warp Code Review", "The Code Review panel supports live diffs, inline comments, batch agent feedback, editing, reverting, and marking files reviewed."),
@@ -1041,10 +1039,9 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     ...builtInClaims("https://t3.codes/", "T3 Code product page", ["orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-agent-handoff", "orchestrator-review-delivery", "orchestrator-inline-review", "orchestrator-pr-lifecycle"], "T3 Code documents multiple agent threads, five named harnesses, mid-thread model switching, inline diff review, and a commit/push/pull-request workflow."),
   } }),
   product({ id: "vibe-kanban", name: "Vibe Kanban", categoryId: "agent-orchestrators", editorialOrder: 16, officialUrl: "https://github.com/BloopAI/vibe-kanban", repository: repo("BloopAI/vibe-kanban"), repoMetricId: "vibe-kanban", tags: ["kanban", "worktrees", "approvals", "oss", "sunsetting"], platform: ["macos", "web"], platformNote: "The repository documents a macOS source build and a browser UI. Windows-specific configuration does not establish a native Windows client; Linux client support is not asserted.", source: "open-source", execution: ["local-process"], status: "sunsetting", claims: {
-    ...builtInClaims("https://www.vibekanban.com/docs/core-features/monitoring-task-execution", "Vibe Kanban task execution documentation", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees"]),
-    ...builtInClaims("https://www.vibekanban.com/docs/core-features/creating-tasks", "Vibe Kanban task documentation", ["orchestrator-task-board"]),
-    ...builtInClaims("https://www.vibekanban.com/docs/core-features/reviewing-code-changes", "Vibe Kanban code review", ["orchestrator-inline-review"]),
-    ...builtInClaims("https://www.vibekanban.com/docs/reviewing-code", "Vibe Kanban review workflow", ["orchestrator-pr-lifecycle"]),
+    ...builtInClaims("https://vibekanban.com/docs/core-features/monitoring-task-execution", "Vibe Kanban task execution documentation", ["orchestrator-isolated-workspaces", "orchestrator-multi-harness", "orchestrator-worktrees"]),
+    ...builtInClaims("https://vibekanban.com/docs/workspaces/changes", "Vibe Kanban changes panel", ["orchestrator-review-delivery", "orchestrator-inline-review", "orchestrator-pr-lifecycle"]),
+    ...builtInClaims("https://vibekanban.com/docs/core-features/creating-tasks", "Vibe Kanban task documentation", ["orchestrator-task-board"]),
     "orchestrator-remote-execution": capability("limited", "https://github.com/BloopAI/vibe-kanban", "Vibe Kanban repository README", "The project documents remote-server and self-hosted Docker deployments; this does not establish a vendor-managed execution plane.", "repository-derived"),
   } }),
   product({ id: "sculptor", name: "Sculptor", categoryId: "agent-orchestrators", editorialOrder: 17, officialUrl: "https://github.com/imbue-ai/sculptor", repository: repo("imbue-ai/sculptor"), repoMetricId: "sculptor", tags: ["containers", "worktrees", "ide-pairing", "oss"], platform: ["macos", "linux"], source: "open-source", execution: ["container"], status: "beta", claims: {
@@ -1090,8 +1087,8 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "harness-permission-controls": capability("built-in", "https://learn.chatgpt.com/docs/codex/cli", "Codex CLI documentation", "User-selectable permissions govern what Codex may do."),
     "harness-sandbox": capability("built-in", "https://learn.chatgpt.com/docs/sandboxing", "Codex sandboxing documentation", "Codex documents sandbox modes and operating-system enforcement."),
     "harness-subagents": capability("built-in", "https://learn.chatgpt.com/docs/agent-configuration/subagents", "Codex subagents documentation", "First-party subagent configuration and delegation."),
-    "harness-multi-provider": capability("built-in", "https://learn.chatgpt.com/docs/config-advanced", "Codex advanced configuration", "The CLI exposes a documented model-provider configuration contract for OpenAI-compatible and local endpoints."),
-    "harness-structured-output": capability("built-in", "https://learn.chatgpt.com/docs/codex/noninteractive", "Codex non-interactive mode", "Codex exec can emit JSONL events and a schema-constrained final result."),
+    "harness-multi-provider": capability("built-in", "https://learn.chatgpt.com/docs/config-file/config-advanced", "Codex advanced configuration", "Custom providers configure base URL, wire API, authentication, and headers; local OSS mode supports Ollama and LM Studio."),
+    "harness-structured-output": capability("built-in", "https://learn.chatgpt.com/docs/non-interactive-mode", "Codex non-interactive mode", "Codex exec can emit JSONL events and a schema-constrained final result."),
     "harness-git-workflow": capability("built-in", "https://learn.chatgpt.com/docs/codex/cli", "Codex CLI documentation", "The CLI documentation includes repository-aware review and Git workflows."),
     "harness-multimodal-input": capability("built-in", "https://learn.chatgpt.com/docs/codex/cli", "Codex CLI documentation", "The CLI accepts image inputs as session context."),
   } }),
@@ -1302,7 +1299,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "extension-provider-choice": capability("built-in", "https://docs.cline.bot/provider-config/other-30-plus-providers", "Cline provider configuration", "Extension settings expose API-provider, credential, and model selection across hosted, local, and OpenAI-compatible providers."),
     "extension-install-channel": factClaim("VS Code Marketplace / Open VSX", "https://docs.cline.bot/usage/ide", "Cline IDE documentation"),
     "extension-tool-execution-boundary": factClaim("Host IDE", "https://docs.cline.bot/usage/ide", "Cline IDE documentation"),
-    "extension-byok-local-model": capability("built-in", "https://docs.cline.bot/provider-config/overview", "Cline provider configuration", "Supports configured hosted providers, OpenAI-compatible endpoints, and local providers."),
+    "extension-byok-local-model": capability("built-in", "https://docs.cline.bot/running-models-locally/overview", "Cline local models", "Supports local models through documented Ollama, LM Studio, and Atomic Chat integrations."),
   } }),
   product({ id: "continue", name: "Continue extension", categoryId: "ide-extensions", editorialOrder: 3, officialUrl: "https://docs.continue.dev/", repository: repo("continuedev/continue"), repoMetricId: "continue", tags: ["vscode", "jetbrains", "autocomplete", "agent-panel", "cli", "oss"], source: "open-source", execution: ["host-ide-process"], status: "archived", statusSource: { url: "https://github.com/continuedev/continue", title: "Continue repository README", basis: "repository-derived" }, claims: {
     ...builtInClaims("https://docs.continue.dev/", "Continue extension documentation", ["extension-hosts", "extension-inline-completion", "extension-agent-panel"]),
@@ -1311,7 +1308,6 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "extension-provider-choice": capability("built-in", "https://docs.continue.dev/customize/overview", "Continue customization overview", "Multiple hosted providers and self-hosted model providers can be configured by role."),
     "extension-mcp": capability("built-in", "https://docs.continue.dev/customize/overview", "Continue customization overview", "Agent mode can use tools supplied by MCP servers."),
     "extension-codebase-context": capability("built-in", "https://docs.continue.dev/customize/deep-dives/custom-providers", "Continue custom providers documentation", "Repository map, files, tree, Git diff, terminal, and embedding-backed codebase context."),
-    "extension-install-channel": factClaim("VS Code and JetBrains marketplaces", "https://docs.continue.dev/getting-started/install", "Continue installation documentation"),
     "extension-tool-execution-boundary": factClaim("Host IDE", "https://docs.continue.dev/ide-extensions/agent/how-it-works", "Continue agent mode documentation"),
     "extension-byok-local-model": capability("built-in", "https://docs.continue.dev/customize/model-providers/overview", "Continue model providers", "Supports hosted providers, self-hosted endpoints, and local model providers."),
   } }),
@@ -1326,7 +1322,14 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "extension-isolated-parallel": capability("built-in", "https://kilo.ai/docs/automate/agent-manager", "Kilo Code Agent Manager", "Agent Manager runs parallel sessions in separate Git worktrees with diff review."),
     "extension-inline-completion": capability("built-in", "https://kilo.ai/docs/code-with-ai/platforms/vscode", "Kilo Code for VS Code", "FIM autocomplete is a named VS Code extension feature."),
     "extension-background-delegation": capability("built-in", "https://kilo.ai/docs/automate/agent-manager", "Kilo Code Agent Manager", "Agent Manager runs multiple worktree-isolated sessions in parallel and keeps panel state."),
-    "extension-install-channel": factClaim("VS Code and JetBrains marketplaces", "https://kilo.ai/docs/code-with-ai/platforms", "Kilo Code IDE platforms"),
+    "extension-install-channel": {
+      state: "fact",
+      displayValue: "VS Code and JetBrains marketplaces",
+      evidence: [
+        evidence("https://kilo.ai/docs/code-with-ai/platforms/vscode", "Kilo Code for VS Code"),
+        evidence("https://kilo.ai/docs/code-with-ai/platforms/jetbrains", "Kilo Code for JetBrains"),
+      ],
+    },
     "extension-tool-execution-boundary": factClaim("Host IDE + local agent manager", "https://kilo.ai/docs/automate/agent-manager", "Kilo Code Agent Manager"),
     "extension-byok-local-model": capability("built-in", "https://kilo.ai/docs/getting-started/setup-authentication", "Kilo Code authentication setup", "Kilo provider, BYOK, and custom providers are supported."),
   } }),
@@ -1466,7 +1469,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       evidence: [evidence("https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation")],
     },
   } }),
-  product({ id: "devin", name: "Devin", categoryId: "cloud-agents", editorialOrder: 3, officialUrl: "https://devin.ai/", tags: ["cloud-sandbox", "issue-to-pr", "cli-client", "vendor-service"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "active", claims: {
+  product({ id: "devin", name: "Devin", categoryId: "cloud-agents", editorialOrder: 3, officialUrl: "https://docs.devin.ai/get-started/devin-intro", tags: ["cloud-sandbox", "issue-to-pr", "cli-client", "vendor-service"], platform: ["web"], platformSource: { url: "https://docs.devin.ai/get-started/devin-intro", title: "Introducing Devin" }, source: "hosted-service", sourceSource: { url: "https://docs.devin.ai/get-started/devin-intro", title: "Introducing Devin" }, execution: ["vendor-cloud"], executionSource: { url: "https://docs.devin.ai/onboard-devin/environment/blueprints", title: "Devin environment blueprints" }, status: "active", statusSource: { url: "https://docs.devin.ai/release-notes/overview", title: "Devin release notes" }, claims: {
     "cloud-repo-intake": capability("built-in", "https://docs.devin.ai/integrations/gh", "Devin GitHub integration", "Repositories can be mentioned in web prompts and sessions can be created through the API."),
     "cloud-sandbox": capability("built-in", "https://docs.devin.ai/onboard-devin/environment/blueprints", "Devin environment blueprints", "Each session boots a fresh copy of the configured snapshot."),
     "cloud-live-observability": capability("built-in", "https://docs.devin.ai/work-with-devin/devin-session-tools", "Devin session tools", "Progress view plus live Shell, IDE, Browser, and diff inspection."),
@@ -1589,7 +1592,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "cloud-execution-owner": factClaim("OpenHands cloud or enterprise self-host", "https://github.com/OpenHands/OpenHands-Cloud", "OpenHands Cloud repository", undefined, "repository-derived"),
     "cloud-isolation-unit": factClaim("Sandboxed OpenHands runtime", "https://github.com/OpenHands/OpenHands", "OpenHands repository", undefined, "repository-derived"),
     "cloud-human-takeover": capability("built-in", "https://github.com/OpenHands/OpenHands", "OpenHands repository", "The web workspace exposes terminal, browser, files, and live conversation for operator intervention.", "repository-derived"),
-    "cloud-triggered-automation": capability("built-in", "https://github.com/apps/openhands-ai", "OpenHands GitHub App", "GitHub App integration can start and update repository work."),
+    "cloud-triggered-automation": capability("built-in", "https://docs.openhands.dev/openhands/usage/cloud/github-installation", "OpenHands Cloud GitHub integration", "Installed GitHub integration can launch work from the Cloud UI, an openhands issue label, or @openhands; successful issue work opens a pull request and reports progress back to the issue."),
     "cloud-result-type": factClaim("Repository changes or pull request", "https://github.com/OpenHands/OpenHands", "OpenHands repository", undefined, "repository-derived"),
   } }),
 
@@ -1743,7 +1746,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     claims: {
       ...builtInClaims("https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", ["general-durable-identity", "general-long-term-memory", "general-browser-control", "general-terminal-files", "general-communications", "general-skills-integrations", "general-self-hosting"], undefined, "repository-derived"),
       "general-operator-surfaces": factClaim("CLI and 30+ messaging adapters", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", undefined, "repository-derived"),
-      "general-scheduled-automation": capability("built-in", "https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/reference/cli/commands-reference.md", "ZeroClaw command reference", "Persistent cron, at-time, interval, pause, resume, and one-shot scheduled tasks are documented.", "source-inspected"),
+      "general-scheduled-automation": capability("built-in", "https://github.com/zeroclaw-labs/zeroclaw/blob/master/.claude/skills/zeroclaw/SKILL.md", "ZeroClaw operations skill", "Persistent cron, at-time, interval, pause, resume, and one-shot scheduled tasks are documented.", "source-inspected"),
       "general-event-triggers": capability("limited", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", "Webhook adapters are documented; a broader durable event-automation contract is not established.", "repository-derived"),
       "general-multi-agent": capability("built-in", "https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/book/src/providers/routing.md", "ZeroClaw provider routing", "spawn_subagent runs an ephemeral child under its own identity and provider/model profile.", "source-inspected"),
       "general-human-approvals": capability("limited", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", "Autonomy, sandboxing, and tool-receipt controls are documented; the exact default and per-action policy require the security guide.", "repository-derived"),
@@ -1984,7 +1987,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "trace-ci-analytics": capability("limited", "https://github.com/entireio", "Entire GitHub organization overview", "The dashboard browses activity across repositories; a dedicated CI analytics contract is not established.", "repository-derived"),
     "trace-self-hosting": capability("built-in", "https://entire.io/", "Entire product page", "Core checkpoint capture and storage are open-source, local, and repository-backed."),
   } }),
-  product({ id: "tapes", name: "Tapes", categoryId: "agent-traces", editorialOrder: 3, officialUrl: "https://tapes.dev/docs/introduction/", repository: repo("papercomputeco/tapes"), repoMetricId: "tapes", tags: ["opentelemetry", "append-only", "postgresql", "semantic-search", "export", "self-hosted", "oss", "paper-compute"], platform: ["macos", "windows", "linux"], platformSource: { url: "https://tapes.dev/agents/", title: "Tapes agent installation" }, source: "open-source", execution: ["local-daemon", "container", "user-cloud"], status: "active", claims: {
+  product({ id: "tapes", name: "Tapes", categoryId: "agent-traces", editorialOrder: 3, officialUrl: "https://tapes.dev/docs/introduction/", repository: repo("papercomputeco/tapes"), repoMetricId: "tapes", tags: ["opentelemetry", "append-only", "postgresql", "semantic-search", "export", "self-hosted", "oss", "paper-compute"], platform: ["macos", "linux"], platformNote: "The current first-party installer explicitly supports Darwin/macOS and Linux on x86_64 and arm64; current Windows support is not established.", platformSource: { url: "https://raw.githubusercontent.com/papercomputeco/tapes/main/install.sh", title: "Tapes installer" }, source: "open-source", execution: ["local-daemon", "container", "user-cloud"], status: "active", claims: {
     "trace-capture-coverage": factClaim("Transparent provider proxy, transcript sync, and harness plugins", "https://tapes.dev/docs/integrations/", "Tapes agent integrations"),
     "trace-storage-boundary": factClaim("Operator-owned PostgreSQL append-only raw-turn log", "https://github.com/papercomputeco/tapes", "Tapes repository", undefined, "repository-derived"),
     "trace-search-timeline": capability("built-in", "https://tapes.dev/docs/introduction/", "Tapes introduction", "Sessions, traces, and spans are browsable and previous work is searchable by meaning."),

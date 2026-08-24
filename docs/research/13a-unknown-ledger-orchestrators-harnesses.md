@@ -10,11 +10,11 @@ The result reconciles exactly with the current catalog:
 
 | Category | Products | Rendered catalog Unknowns | Suggested closures | Must remain Unknown |
 | --- | ---: | ---: | ---: | ---: |
-| Agent Orchestrators | 20 | 98 | 0 | 98 |
+| Agent Orchestrators | 20 | 99 | 0 | 99 |
 | Coding-agent Harnesses | 27 | 62 | 0 | 62 |
-| Total | 47 | 160 | 0 | 160 |
+| Total | 47 | 161 | 0 | 161 |
 
-Every one of the 160 remaining cells has its own product/row record, checked first-party source set, and product-specific rationale in the JSON ledger. There are no category-wide placeholder rationales. The eight closures below are retained separately as an implementation record.
+Every one of the 161 remaining cells has its own product/row record, checked first-party source set, and product-specific rationale in the JSON ledger. There are no category-wide placeholder rationales. The eight closures below are retained separately as an implementation record.
 
 This count deliberately does not mix in two different kinds of presentation gap:
 
@@ -40,7 +40,7 @@ These are affirmative closures. No cell was converted to `Not available` merely 
 
 ## Agent Orchestrator ledger index
 
-The row list below enumerates all 98 current Unknowns. The JSON ledger contains the exact rationale and checked sources for each cell.
+The row list below enumerates all 99 current Unknowns. The JSON ledger contains the exact rationale and checked sources for each cell.
 
 | Product ID | Count | Cells that remain Unknown |
 | --- | ---: | --- |
@@ -59,7 +59,7 @@ The row list below enumerates all 98 current Unknowns. The JSON ledger contains 
 | `coder-mux` | 8 | `product-status`, `orchestrator-multi-harness`, `orchestrator-agent-handoff`, `orchestrator-containers`, `orchestrator-task-board`, `orchestrator-pr-lifecycle`, `orchestrator-live-steering`, `orchestrator-programmable` |
 | `nimbalyst` | 5 | `orchestrator-agent-handoff`, `orchestrator-containers`, `orchestrator-pr-lifecycle`, `orchestrator-remote-execution`, `orchestrator-programmable` |
 | `t3-code` | 8 | `orchestrator-isolated-workspaces`, `orchestrator-worktrees`, `orchestrator-containers`, `orchestrator-task-board`, `orchestrator-remote-execution`, `orchestrator-attention-signals`, `orchestrator-live-steering`, `orchestrator-programmable` |
-| `vibe-kanban` | 5 | `orchestrator-agent-handoff`, `orchestrator-containers`, `orchestrator-attention-signals`, `orchestrator-live-steering`, `orchestrator-programmable` |
+| `vibe-kanban` | 6 | `orchestrator-parallel-workers`, `orchestrator-agent-handoff`, `orchestrator-containers`, `orchestrator-attention-signals`, `orchestrator-live-steering`, `orchestrator-programmable` |
 | `sculptor` | 6 | `orchestrator-agent-handoff`, `orchestrator-task-board`, `orchestrator-inline-review`, `orchestrator-attention-signals`, `orchestrator-live-steering`, `orchestrator-programmable` |
 | `humanlayer` | 2 | `orchestrator-agent-handoff`, `orchestrator-containers` |
 | `claude-squad` | 8 | `product-status`, `orchestrator-agent-handoff`, `orchestrator-containers`, `orchestrator-task-board`, `orchestrator-pr-lifecycle`, `orchestrator-remote-execution`, `orchestrator-attention-signals`, `orchestrator-programmable` |
