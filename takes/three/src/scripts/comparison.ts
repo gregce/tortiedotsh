@@ -1,7 +1,11 @@
-const root = document.querySelector<HTMLElement>("[data-comparison-root]");
+const comparisonControllers = new WeakMap<HTMLElement, AbortController>();
 
-if (root) {
+function initializeComparison(root: HTMLElement) {
+  comparisonControllers.get(root)?.abort();
+  const controller = new AbortController();
+  comparisonControllers.set(root, controller);
   const table = root.querySelector<HTMLTableElement>("[data-comparison-table]");
+  const matrixScroll = root.querySelector<HTMLElement>("[data-matrix-scroll]");
   const search = root.querySelector<HTMLInputElement>("[data-filter-search]");
   const show = root.querySelector<HTMLSelectElement>("[data-filter-show]");
   const os = root.querySelector<HTMLSelectElement>("[data-filter-os]");
@@ -264,7 +268,7 @@ if (root) {
     if (rail?.classList.contains("is-open") && !rail.contains(event.target as Node)) {
       setRailOpen(false);
     }
-  });
+  }, { signal: controller.signal });
 
   rail?.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && rail.classList.contains("is-open")) {
@@ -322,14 +326,74 @@ if (root) {
   }
 
   fullscreenToggle?.addEventListener("click", toggleFullscreen);
-  document.addEventListener("fullscreenchange", syncFullscreenState);
+  document.addEventListener("fullscreenchange", syncFullscreenState, { signal: controller.signal });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && fallbackFullscreen) {
       fallbackFullscreen = false;
       syncFullscreenState();
       updateQuery();
       fullscreenToggle?.focus();
+      return;
     }
+
+    const isFullscreen = document.fullscreenElement === workspace || fallbackFullscreen;
+    const target = event.target as HTMLElement | null;
+    const isTextInput = Boolean(target?.closest("input, select, textarea, [contenteditable='true']"));
+    if (isFullscreen && !isTextInput && matrixScroll && (event.key === "ArrowLeft" || event.key === "ArrowRight")) {
+      event.preventDefault();
+      const direction = event.key === "ArrowLeft" ? -1 : 1;
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      matrixScroll.scrollBy({
+        left: direction * Math.max(180, matrixScroll.clientWidth * 0.55),
+        behavior: reducedMotion ? "auto" : "smooth",
+      });
+    }
+  }, { signal: controller.signal });
+
+  async function navigateFullscreenCategory(link: HTMLAnchorElement) {
+    if (!workspace) return;
+    const isNativeFullscreen = document.fullscreenElement === workspace;
+    if (!isNativeFullscreen && !fallbackFullscreen) {
+      window.location.assign(link.href);
+      return;
+    }
+
+    const targetUrl = new URL(link.href, window.location.href);
+    if (fallbackFullscreen) targetUrl.searchParams.set("fullscreen", "1");
+    else targetUrl.searchParams.delete("fullscreen");
+    workspace.setAttribute("aria-busy", "true");
+
+    try {
+      const response = await fetch(targetUrl);
+      if (!response.ok) throw new Error(`Category request failed with ${response.status}`);
+      const nextDocument = new DOMParser().parseFromString(await response.text(), "text/html");
+      const nextWorkspace = nextDocument.querySelector<HTMLElement>("[data-matrix-workspace]");
+      if (!nextWorkspace) throw new Error("Category response did not contain a matrix workspace");
+
+      const currentCategoryShell = root.querySelector<HTMLElement>(".category-shell");
+      const nextCategoryShell = nextDocument.querySelector<HTMLElement>(".category-shell");
+      if (currentCategoryShell && nextCategoryShell) {
+        currentCategoryShell.replaceWith(document.importNode(nextCategoryShell, true));
+      }
+
+      workspace.replaceChildren(
+        ...Array.from(nextWorkspace.childNodes).map((node) => document.importNode(node, true)),
+      );
+      workspace.removeAttribute("aria-busy");
+      document.title = nextDocument.title;
+      window.history.replaceState(null, "", `${targetUrl.pathname}${targetUrl.search}`);
+      initializeComparison(root);
+    } catch (error) {
+      workspace.removeAttribute("aria-busy");
+      console.error("Unable to change comparison category", error);
+    }
+  }
+
+  root.querySelectorAll<HTMLAnchorElement>("[data-fullscreen-category]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      void navigateFullscreenCategory(link);
+    });
   });
 
   document.querySelectorAll<HTMLElement>(".category-nav a").forEach((link) => {
@@ -343,3 +407,6 @@ if (root) {
   reorderProducts();
   applyFilters();
 }
+
+const root = document.querySelector<HTMLElement>("[data-comparison-root]");
+if (root) initializeComparison(root);

@@ -430,20 +430,20 @@ const basisLabel = (source: EvidenceSource): string => {
                 href={`${previousCategory.route}?fullscreen=1`}
                 aria-label={`Previous category: ${previousCategory.label}`}
                 title={previousCategory.shortLabel}
+                data-fullscreen-category
               >
                 <svg aria-hidden="true" viewBox="0 0 16 16"><path d="m10 3-5 5 5 5"></path></svg>
               </a>
-            </nav>
-            <h1 id="matrix-title">{currentCategory.label}</h1>
-            <nav class="fullscreen-category-nav" aria-label="Next comparison category">
               <a
                 href={`${nextCategory.route}?fullscreen=1`}
                 aria-label={`Next category: ${nextCategory.label}`}
                 title={nextCategory.shortLabel}
+                data-fullscreen-category
               >
                 <svg aria-hidden="true" viewBox="0 0 16 16"><path d="m6 3 5 5-5 5"></path></svg>
               </a>
             </nav>
+            <h1 id="matrix-title">{currentCategory.label}</h1>
             <p>{currentCategory.description}</p>
           </div>
           <div class="workspace-actions">

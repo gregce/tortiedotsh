@@ -102,32 +102,32 @@
 
 .fullscreen-category-nav {
   display: none;
+  align-items: center;
+  gap: 1px;
 }
 
 .fullscreen-category-nav a {
-  width: 28px;
-  height: 28px;
+  width: 18px;
+  height: 24px;
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--r-sm);
+  border-radius: 2px;
 }
 
 .fullscreen-category-nav a:hover {
   background: var(--bg-raised);
   color: var(--text-primary);
-  border-color: var(--text-muted);
 }
 
 .fullscreen-category-nav svg {
-  width: 14px;
-  height: 14px;
+  width: 11px;
+  height: 11px;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.5;
+  stroke-width: 1.75;
 }
 
 .matrix-identity p {
