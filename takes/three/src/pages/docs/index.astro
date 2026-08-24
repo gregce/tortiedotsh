@@ -1,0 +1,42 @@
+---
+import "../../../../../assets/gmux-tokens.css";
+import "../../styles/site.css";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+
+const sections = [
+  { id: "start", title: "Start with a project", copy: "Install Tortie, open any folder, then create a named agent or shell session. A Git repository also unlocks the source-control sidebar.", links: [{ label: "Download the latest release", href: "https://github.com/gregce/tortie/releases/latest" }] },
+  { id: "sessions", title: "Sessions belong to the work", copy: "Tortie runs sessions on a private background server. Closing the window does not stop them. When a supported agent has a conversation identifier, Tortie prepares that agent’s own resume command so the conversation can continue too.", links: [{ label: "Read the durability research", href: "https://github.com/gregce/tortie/blob/main/docs/research/26-tortie-durability-architecture-and-recovery.md" }] },
+  { id: "projects", title: "Keep every thread in place", copy: "Projects are tabs in one window. Sessions, Explorer, Search, Source Control, diffs, and open files stay tied to the active project. Drag sessions together to make a split.", links: [] },
+  { id: "attention", title: "Go where you are needed", copy: "Tortie keeps routine activity quiet. A session that needs input rises above the background, and ⌘J moves through the sessions waiting for you.", links: [{ label: "Read the Zen of Tortie", href: "https://github.com/gregce/tortie/blob/main/docs/ZEN-OF-TORTIE.md" }] },
+  { id: "remote", title: "Work on another Mac", copy: "Add and confirm a remote machine in Settings. Tortie can create and restore sessions there, browse its projects, edit files, and stage or commit changes through an explicit write boundary.", links: [{ label: "Read the remote-session model", href: "https://github.com/gregce/tortie/blob/main/docs/research/28-remote-sessions.md" }] },
+  { id: "source", title: "Inspect the full manual", copy: "The public repository carries the current design specification, research, release history, and operating constraints while this documentation grows into task-by-task guides.", links: [{ label: "Browse the source documentation", href: "https://github.com/gregce/tortie/tree/main/docs" }] },
+];
+const description = "Learn how Tortie keeps coding-agent sessions alive, restores conversations, organizes projects, and protects your attention.";
+---
+
+<!doctype html><html lang="en"><head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Docs — Tortie</title><meta name="description" content={description} /><link rel="canonical" href="https://tortie.sh/docs/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" /><meta name="theme-color" content="#131417" />
+</head><body><Nav current="docs" /><main class="page-shell docs-page">
+  <header class="page-intro"><div class="container"><h1>Use Tortie without learning the machinery.</h1><p>Start with the concepts that make Tortie different. The complete technical record stays linked to the source while these guides grow.</p></div></header>
+  <div class="container docs-layout page-content">
+    <nav class="docs-nav" aria-label="On this page"><p>On this page</p>{sections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}</nav>
+    <div class="docs-sections">{sections.map((section) => <section id={section.id}><h2>{section.title}</h2><p>{section.copy}</p>{section.links.map((link) => <a href={link.href}>{link.label} <span aria-hidden="true">→</span></a>)}</section>)}</div>
+  </div>
+</main><Footer /></body></html>
+
+<style>
+  .docs-layout { display: grid; grid-template-columns: 220px minmax(0, 680px); gap: clamp(48px, 8vw, 112px); align-items: start; }
+  .docs-nav { position: sticky; top: 84px; display: grid; gap: var(--space-2); }
+  .docs-nav p { margin: 0 0 var(--space-5); color: var(--text-muted); font-size: 12px; }
+  .docs-nav a { padding: 5px 0; color: var(--text-secondary); font-size: 13px; }
+  .docs-nav a:hover { color: var(--text-primary); }
+  .docs-sections section { scroll-margin-top: 84px; padding: 0 0 clamp(48px, 7vw, 80px); margin: 0 0 clamp(48px, 7vw, 80px); border-bottom: 1px solid var(--border); }
+  .docs-sections section:last-child { border-bottom: 0; margin-bottom: 0; }
+  .docs-sections h2 { margin: 0; font-size: clamp(24px, 3vw, 34px); line-height: 1.15; letter-spacing: -.02em; }
+  .docs-sections p { margin: var(--space-6) 0; color: var(--text-secondary); font-size: 16px; line-height: 1.7; }
+  .docs-sections a { font-size: 13px; }
+  @media (max-width: 740px) { .docs-layout { grid-template-columns: 1fr; } .docs-nav { position: static; grid-template-columns: 1fr 1fr; padding-bottom: var(--space-8); border-bottom: 1px solid var(--border); } .docs-nav p { grid-column: 1 / -1; } }
+</style>

@@ -12,11 +12,12 @@
       >
     </a>
     <nav class="footer-links" aria-label="Footer">
-      <a href="/compare/">Compare tools</a>
+      <a href="/compare/">Compare</a>
+      <a href="/docs/">Docs</a>
+      <a href="/changelog/">Changelog</a>
       <a href="https://github.com/gregce/tortie">GitHub</a>
-      <a href="https://github.com/gregce/tortie/releases/latest">Releases</a>
       <a href="https://github.com/gregce/tortie/blob/main/LICENSE"
-        >Apache 2.0 license</a
+        >License</a
       >
     </nav>
   </div>
@@ -50,6 +51,7 @@
 
   .footer-links {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-8);
     font-size: 13px;
   }
@@ -60,5 +62,10 @@
 
   .footer-links a:hover {
     color: var(--text-primary);
+  }
+
+  @media (max-width: 560px) {
+    .footer-inner { align-items: flex-start; flex-direction: column; }
+    .footer-links { display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: var(--space-5) var(--space-9); }
   }
 </style>

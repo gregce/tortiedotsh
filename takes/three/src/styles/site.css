@@ -25,6 +25,9 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+img,
+video { max-width: 100%; }
+
 a {
   color: var(--accent-text);
   text-decoration: none;
@@ -72,6 +75,15 @@ kbd {
 .narrow {
   max-width: 720px;
 }
+
+.page-shell { min-height: calc(100svh - 52px); }
+.page-intro { padding: clamp(64px, 10vw, 112px) 0 clamp(48px, 7vw, 80px); border-bottom: 1px solid var(--border); }
+.page-intro h1 {
+  max-width: 12ch; margin: 0; font-size: clamp(44px, 6vw, 76px);
+  font-weight: var(--weight-semibold); line-height: 1.02; letter-spacing: -0.035em; text-wrap: balance;
+}
+.page-intro p { max-width: 60ch; margin: var(--space-8) 0 0; color: var(--text-secondary); font-size: 17px; }
+.page-content { padding: clamp(48px, 8vw, 96px) 0; }
 
 /* ── Buttons ───────────────────────────────────────────────────────── */
 

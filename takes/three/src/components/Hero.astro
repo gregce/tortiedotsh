@@ -1,105 +1,40 @@
 ---
-// The first screen is the design: the TORTIE.sh lockup at display scale
-// under the wordmark law, the hero sentence, and the two CTAs. All three
-// visitor goals sit inside this viewport.
+// Replace this image with a muted, looped 16:9 product film after capture.
+// Keep the WebP as its poster and reduced-motion fallback so layout never shifts.
 ---
 
 <section class="hero">
-  <div class="container">
-    <h1 class="lockup hero-lockup" aria-label="Tortie.sh">
-      <img src="/brand/tortie-mark-560.webp" alt="" width="560" height="560" />
-      <span class="wordmark" aria-hidden="true"
-        ><span class="wm-name">TORTIE</span><span class="wm-suffix">.sh</span></span
-      >
-    </h1>
-
+  <div class="container hero-layout">
     <div class="hero-copy">
-      <p class="hero-claim">The sessions were never interrupted.</p>
-      <p class="hero-sub">
-        Tortie is a macOS shell for coding agents. Sessions run on a private
-        background server that outlives the window, so quitting the app never
-        stops the work.
-      </p>
-
-      <div class="hero-ctas">
-        <a
-          class="btn btn-primary"
-          href="https://github.com/gregce/tortie/releases/latest"
-          >Download for macOS</a
-        >
-        <a class="btn btn-outline" href="https://github.com/gregce/tortie"
-          >View on GitHub</a
-        >
+      <h1>Your work<br />continues.</h1>
+      <p>Tortie keeps coding-agent sessions alive, organized, and ready when you return.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/gregce/tortie/releases/latest"><span aria-hidden="true">↓</span> Download for macOS</a>
       </div>
-      <p class="hero-fine">Apple silicon. Free under the Apache 2.0 license.</p>
+      <p class="hero-meta">macOS 13+ <span aria-hidden="true">·</span> Apple silicon &amp; Intel</p>
     </div>
+    <figure class="hero-stage">
+      <img src="/marketing/hero-cinematic.webp" alt="Illustrative Tortie product window showing several coding-agent sessions arranged in one project." width="1600" height="901" fetchpriority="high" />
+      <figcaption>Product film preview</figcaption>
+    </figure>
   </div>
 </section>
 
 <style>
-  .hero {
-    padding: clamp(48px, 9vh, 96px) 0 clamp(48px, 8vh, 88px);
-  }
-
-  /*
-   * The wordmark law in ratios. The mark is 1.9 times the cap height.
-   * SF caps measure about 0.72 em, so the mark is 1.37 em and the gap is
-   * one third of the mark's width, 0.46 em.
-   */
-  .hero-lockup {
-    font-size: clamp(40px, 12.5vw, 142px);
-    gap: 0.46em;
-    margin: 0;
-  }
-
-  .hero-lockup img {
-    width: 1.37em;
-    height: 1.37em;
-    display: block;
-  }
-
-  .hero-lockup .wordmark {
-    font-size: 1em;
-  }
-
-  .hero-copy {
-    max-width: 640px;
-    margin-top: clamp(28px, 5vh, 56px);
-  }
-
-  .hero-claim {
-    font-size: clamp(24px, 3vw, 34px);
-    line-height: 1.25;
-    font-weight: var(--weight-semibold);
-    letter-spacing: -0.01em;
-    color: var(--text-primary);
-    margin: 0;
-  }
-
-  .hero-sub {
-    font-size: 17px;
-    line-height: 1.65;
-    color: var(--text-secondary);
-    margin: var(--space-6) 0 0;
-  }
-
-  .hero-ctas {
-    display: flex;
-    gap: var(--space-5);
-    margin-top: var(--space-8);
-    flex-wrap: wrap;
-  }
-
-  .hero-fine {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin: var(--space-5) 0 0;
-  }
-
-  @media (max-width: 480px) {
-    .hero-ctas {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  }
+  .hero { min-height: min(760px, calc(100svh - 52px)); display: grid; align-items: center; padding: clamp(64px, 10vh, 112px) 0; overflow: hidden; border-bottom: 1px solid var(--border); }
+  .hero-layout { display: grid; grid-template-columns: minmax(250px, .72fr) minmax(520px, 1.55fr); align-items: center; gap: clamp(40px, 6vw, 88px); }
+  .hero-copy { position: relative; z-index: 1; }
+  .hero-copy h1 { max-width: 8ch; margin: 0; font-size: clamp(44px, 5vw, 72px); font-weight: var(--weight-semibold); line-height: 1.02; letter-spacing: -.035em; text-wrap: balance; }
+  .hero-copy > p:first-of-type { max-width: 33ch; margin: var(--space-8) 0 0; color: var(--text-secondary); font-size: 17px; line-height: 1.55; }
+  .hero-actions { margin-top: var(--space-9); }
+  .hero-actions .btn { gap: var(--space-5); }
+  .hero-meta { margin: var(--space-5) 0 0; color: var(--text-muted); font-size: 12px; }
+  .hero-stage { position: relative; width: min(74vw, 900px); margin: 0; animation: stage-reveal 700ms var(--ease-out) both; }
+  .hero-stage::after { content: ""; position: absolute; inset: auto 7% -20px; height: 28px; background: rgba(0,0,0,.42); filter: blur(18px); z-index: -1; }
+  .hero-stage img { display: block; width: 100%; height: auto; border: 1px solid var(--border-strong); border-radius: var(--r-lg); background: var(--bg-surface); box-shadow: var(--shadow-3); }
+  .hero-stage figcaption { margin-top: var(--space-4); color: var(--text-muted); font-size: 11px; text-align: right; }
+  @keyframes stage-reveal { from { clip-path: inset(0 0 100% 0); filter: blur(8px); } to { clip-path: inset(0); filter: blur(0); } }
+  @media (max-width: 1020px) { .hero { min-height: auto; } .hero-layout { grid-template-columns: 1fr; } .hero-stage { width: 100%; } .hero-copy h1 { max-width: 10ch; } }
+  @media (max-width: 520px) { .hero-actions .btn { width: 100%; } }
+  @media (prefers-reduced-motion: reduce) { .hero-stage { animation: none; } }
 </style>

@@ -1,64 +1,17 @@
----
-// The download section. The same two CTAs, the install line, and the
-// license line.
----
-
-<section class="download band" id="download">
-  <div class="container narrow download-inner">
-    <h2 class="section-title">Download</h2>
-    <p class="download-install">
-      Drag Tortie into Applications and point it at a project folder. Any
-      folder works. A git repository gets the full sidebar.
-    </p>
-    <div class="download-ctas">
-      <a
-        class="btn btn-primary"
-        href="https://github.com/gregce/tortie/releases/latest"
-        >Download for macOS</a
-      >
-      <a class="btn btn-outline" href="https://github.com/gregce/tortie"
-        >View on GitHub</a
-      >
-    </div>
-    <p class="download-fine">Apple silicon. Free under the Apache 2.0 license.</p>
+<section class="download" id="download">
+  <div class="container download-layout">
+    <div><h2>Open source.<br />Built for real work.</h2><p>Tortie is free under the Apache 2.0 license and built in public.</p><a class="btn btn-outline" href="https://github.com/gregce/tortie">Star on GitHub</a></div>
+    <div class="download-action"><a class="btn btn-primary" href="https://github.com/gregce/tortie/releases/latest"><span aria-hidden="true">↓</span> Download for macOS</a><p>macOS 13+ <span aria-hidden="true">·</span> Apple silicon &amp; Intel</p></div>
   </div>
 </section>
 
 <style>
-  .download {
-    padding: clamp(48px, 8vh, 88px) 0;
-  }
-
-  .download-inner {
-    text-align: center;
-  }
-
-  .download-install {
-    font-size: 16px;
-    line-height: 1.65;
-    color: var(--text-secondary);
-    max-width: 480px;
-    margin: 0 auto;
-  }
-
-  .download-ctas {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-5);
-    margin-top: var(--space-8);
-    flex-wrap: wrap;
-  }
-
-  .download-fine {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin: var(--space-5) 0 0;
-  }
-
-  @media (max-width: 480px) {
-    .download-ctas {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  }
+  .download { padding: clamp(64px, 9vw, 112px) 0; }
+  .download-layout { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: var(--space-10); }
+  .download h2 { margin: 0; font-size: clamp(28px, 3.5vw, 46px); line-height: 1.06; letter-spacing: -.025em; }
+  .download p { max-width: 42ch; margin: var(--space-6) 0 var(--space-8); color: var(--text-secondary); }
+  .download-action { text-align: center; }
+  .download-action .btn { gap: var(--space-5); }
+  .download-action p { margin: var(--space-5) 0 0; color: var(--text-muted); font-size: 12px; }
+  @media (max-width: 720px) { .download-layout { grid-template-columns: 1fr; align-items: start; } .download-action, .download-action .btn { width: 100%; } }
 </style>

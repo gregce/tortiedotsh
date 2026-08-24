@@ -1,0 +1,39 @@
+name: Refresh Tortie changelog
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "47 7 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-tortie-changelog
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Synchronize the public changelog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node takes/three/scripts/sync-changelog.mjs
+      - name: Commit a changed feed
+        run: |
+          if git diff --quiet -- takes/three/src/data/changelog.json; then
+            echo "The changelog feed is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add takes/three/src/data/changelog.json
+          git commit -m "chore(data): refresh Tortie changelog"
+          git push

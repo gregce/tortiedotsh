@@ -1,0 +1,1387 @@
+{
+  "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
+  "releases": [
+    {
+      "version": "0.70.0",
+      "date": "2026-08-24",
+      "summary": "This release adds Catch Me Up, a page that shows the conversation you have been having with every session in a project, taken word for word from each agent's own log. One keyboard chord opens it, and most of the rest of the release makes that page better. A small model can also keep the project view's one line per session current, and that stays off until you pick an agent for it.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "You can now read the conversation you have been having with every session in a project, with your asks and each agent's closing answer word for word from its own log, and a mark beside a claim about files says whether git agrees. It opens on the session you are in, on the sessions in a split side by side, or on the whole project at one line each, and Return jumps to that turn in the live session, though a Gemini session shows your asks only because Gemini records no agent answer",
+              "commits": [
+                {
+                  "hash": "cecd6fe",
+                  "url": "https://github.com/gregce/tortie/commit/cecd6fe"
+                }
+              ]
+            },
+            {
+              "text": "The one session view now carries a rail of your asks down the right side, showing your first words and the time, and pressing a row or walking the rail with the arrow keys lands the conversation on that exchange. The arrow keys now scroll the conversation as the selection moves, each session in the side by side view scrolls on its own, an agent session shows its agent's mark, and a session's actions menu can open the page for that session alone, though the rail leaves the screen on a narrow window",
+              "commits": [
+                {
+                  "hash": "ca90b63",
+                  "url": "https://github.com/gregce/tortie/commit/ca90b63"
+                }
+              ]
+            },
+            {
+              "text": "You can now pick an agent and a model under Settings, then Catch Me Up, and a small model writes the project view's one line for a session after that session finishes a turn, in place of the line Tortie builds from your ask and from git. It ships off and stays off until you pick an agent, and a sentence that names a file, carries a number or says what state the session is in is refused whole, so that row keeps the line Tortie built",
+              "commits": [
+                {
+                  "hash": "56c9c59",
+                  "url": "https://github.com/gregce/tortie/commit/56c9c59"
+                }
+              ]
+            },
+            {
+              "text": "Claude Code, Codex CLI, Cursor CLI, Pi and Grok can each write that line now, and every other agent stays in the picker as a row you cannot choose, on a line saying Tortie has not measured it yet. A row whose line a model wrote says written and the time at the end of the row, though nothing on screen tells you when writing a line failed",
+              "commits": [
+                {
+                  "hash": "d4c4d29",
+                  "url": "https://github.com/gregce/tortie/commit/d4c4d29"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "The wording Tortie uses about remote machines moved out of one large file into files named for the surface each one describes, so changing what one surface says no longer reaches the rest. Nothing a person reads on screen changed",
+              "commits": [
+                {
+                  "hash": "2905051",
+                  "url": "https://github.com/gregce/tortie/commit/2905051"
+                }
+              ]
+            },
+            {
+              "text": "Every internal script that starts the app now closes it again even when the script fails partway, so abandoned copies no longer pile up and exhaust the machine. Nothing a person sees in the app changed",
+              "commits": [
+                {
+                  "hash": "4d246f1",
+                  "url": "https://github.com/gregce/tortie/commit/4d246f1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "The agent's closing answer on Catch Me Up now renders as real markdown instead of plain text, and raw HTML inside an answer never becomes part of the page, while your own asks and the project view's one line summaries stay plain. The chord that opens the page is Shift+Command+U, and a per-agent hotkey you recorded on that chord before this release still wins",
+              "commits": [
+                {
+                  "hash": "2aa7b6b",
+                  "url": "https://github.com/gregce/tortie/commit/2aa7b6b"
+                }
+              ]
+            },
+            {
+              "text": "The skill preview sheet is wider and uses more of the window, so more of a long command and its details are readable at once",
+              "commits": [
+                {
+                  "hash": "75991fd",
+                  "url": "https://github.com/gregce/tortie/commit/75991fd"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.68.7",
+      "date": "2026-08-23",
+      "summary": "This release adds a guarded workflow for editing and committing projects on remote machines, from file changes through staging and commit. It also improves navigation and setup screens, and strengthens internal architecture checks. Remote write operations have only been verified on macOS.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "You can edit, save and create remote files within a confirmed folder. Saves reject stale content, have no undo, discard hard links and extended attributes, and may be uncertain after a disconnect",
+              "commits": [
+                {
+                  "hash": "1bff045",
+                  "url": "https://github.com/gregce/tortie/commit/1bff045"
+                }
+              ]
+            },
+            {
+              "text": "You can create folders and rename files or folders inside the confirmed write root; open tabs follow remote renames. A concurrent process can still create the destination between the availability check and rename, allowing the rename to replace it",
+              "commits": [
+                {
+                  "hash": "d0fedbc",
+                  "url": "https://github.com/gregce/tortie/commit/d0fedbc"
+                }
+              ]
+            },
+            {
+              "text": "You can stage and unstage individual or grouped remote changes from the Changes panel, which refreshes after every action",
+              "commits": [
+                {
+                  "hash": "2e87e16",
+                  "url": "https://github.com/gregce/tortie/commit/2e87e16"
+                }
+              ]
+            },
+            {
+              "text": "You can commit staged remote changes from the Changes panel; remote hooks and signing run there. Tortie prevents stale or duplicate commits, but cannot enter signing passphrases, and timed-out commits may still finish",
+              "commits": [
+                {
+                  "hash": "e03af86",
+                  "url": "https://github.com/gregce/tortie/commit/e03af86"
+                }
+              ]
+            },
+            {
+              "text": "Settings now separates agents by machine, session lists support arrow-key navigation, project tabs can collapse or move to a left rail, and Shift+Command+Return focuses the active file or session",
+              "commits": [
+                {
+                  "hash": "33b0925",
+                  "url": "https://github.com/gregce/tortie/commit/33b0925"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "Split large renderer and file-tree controllers into smaller modules, and removed test harness code from normal launches. Build checks now enforce bundle and import boundaries",
+              "commits": [
+                {
+                  "hash": "a60dc8e",
+                  "url": "https://github.com/gregce/tortie/commit/a60dc8e"
+                }
+              ]
+            },
+            {
+              "text": "Split machine IPC contracts by domain and extracted session services without changing public contracts. Local and remote GitHub Actions now share one parser",
+              "commits": [
+                {
+                  "hash": "82c4eff",
+                  "url": "https://github.com/gregce/tortie/commit/82c4eff"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Showing an unavailable agent's install command no longer shifts the onboarding layout, including with long commands or short windows",
+              "commits": [
+                {
+                  "hash": "bfb4e29",
+                  "url": "https://github.com/gregce/tortie/commit/bfb4e29"
+                }
+              ]
+            },
+            {
+              "text": "Removed production runtime import cycles and added a graph check to stop them returning",
+              "commits": [
+                {
+                  "hash": "8ce91a0",
+                  "url": "https://github.com/gregce/tortie/commit/8ce91a0"
+                }
+              ]
+            },
+            {
+              "text": "Machine settings now show readiness first and keep consent details visible. Low-level settings and the agreement fingerprint moved under 'More about this machine'",
+              "commits": [
+                {
+                  "hash": "625bdb9",
+                  "url": "https://github.com/gregce/tortie/commit/625bdb9"
+                }
+              ]
+            },
+            {
+              "text": "Fixed stylesheet order in the skill install panel so its layout rules apply, the agent list stays whole and the facts and plan section gets more space",
+              "commits": [
+                {
+                  "hash": "d828913",
+                  "url": "https://github.com/gregce/tortie/commit/d828913"
+                }
+              ]
+            },
+            {
+              "text": "Moved project rail controls to the start and kept New project available in every rail state. Sidebar controls now use its header, recovering 48px when projects are on the left",
+              "commits": [
+                {
+                  "hash": "272a114",
+                  "url": "https://github.com/gregce/tortie/commit/272a114"
+                }
+              ]
+            },
+            {
+              "text": "Added complete copyright and icon attribution to About and NOTICE, and standardised the company name as Ita Vero, LLC",
+              "commits": [
+                {
+                  "hash": "b04ffae",
+                  "url": "https://github.com/gregce/tortie/commit/b04ffae"
+                }
+              ]
+            },
+            {
+              "text": "New and restored agents now inherit the app's current macOS login session instead of the long-lived server's stale session. Existing sessions keep their original value and need a restart, which does not resume the conversation",
+              "commits": [
+                {
+                  "hash": "a43a589",
+                  "url": "https://github.com/gregce/tortie/commit/a43a589"
+                }
+              ]
+            },
+            {
+              "text": "Restructured skill search, preview and confirmation sheets so actions stay visible while long content scrolls separately. The wider sheets show more of long commands",
+              "commits": [
+                {
+                  "hash": "f3c140f",
+                  "url": "https://github.com/gregce/tortie/commit/f3c140f"
+                }
+              ]
+            },
+            {
+              "text": "Made unavailable-agent install commands wrap and copyable, and improved Add machine spacing. Connection and key setup guidance is shorter without losing consent details",
+              "commits": [
+                {
+                  "hash": "d2be957",
+                  "url": "https://github.com/gregce/tortie/commit/d2be957"
+                }
+              ]
+            },
+            {
+              "text": "Made installed preload bridge members required at compile time and removed compensating casts, while keeping runtime guards and genuinely uninstalled APIs optional",
+              "commits": [
+                {
+                  "hash": "9b99ab4",
+                  "url": "https://github.com/gregce/tortie/commit/9b99ab4"
+                }
+              ]
+            },
+            {
+              "text": "Corrected Material Icon Theme attribution to Material Extensions in source comments, generator output and design docs; no icon assets or matching rules changed",
+              "commits": [
+                {
+                  "hash": "354c03c",
+                  "url": "https://github.com/gregce/tortie/commit/354c03c"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.62.1",
+      "date": "2026-08-21",
+      "summary": "This release makes remote work safer and more accurate. Tortie now preserves unconfirmed sessions and interrupted copies, reads agent availability from the target machine, and fixes Quick Open paths, workflow runs and TypeScript process boundaries.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Settings then Agents now shows each machine's detected agents, reported paths and scan age, with a per-machine Rescan action that preserves existing results on failure",
+              "commits": [
+                {
+                  "hash": "3d60a08",
+                  "url": "https://github.com/gregce/tortie/commit/3d60a08"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "The create sheet now checks agent availability on the target machine in one batched scan and disables only agents confirmed absent. Discovery also ignores executable directories and treats failed machine-facts reads as unknown",
+              "commits": [
+                {
+                  "hash": "d646830",
+                  "url": "https://github.com/gregce/tortie/commit/d646830"
+                }
+              ]
+            },
+            {
+              "text": "Quick Open now handles project and recent-file paths containing spaces by passing the project root and relative path as separate fields",
+              "commits": [
+                {
+                  "hash": "3d883ab",
+                  "url": "https://github.com/gregce/tortie/commit/3d883ab"
+                }
+              ]
+            },
+            {
+              "text": "SpecStory-captured sessions can now be restored or restarted without history capture, and the choice persists for future restores",
+              "commits": [
+                {
+                  "hash": "3f08719",
+                  "url": "https://github.com/gregce/tortie/commit/3f08719"
+                }
+              ]
+            },
+            {
+              "text": "Runs now includes workflows triggered by a tag at the current branch tip, including queued and in-progress runs",
+              "commits": [
+                {
+                  "hash": "89226a0",
+                  "url": "https://github.com/gregce/tortie/commit/89226a0"
+                }
+              ]
+            },
+            {
+              "text": "TypeScript now compiles tests in a separate project, allowing production checks to reject renderer-to-main imports and Node or Electron APIs in shared and renderer code",
+              "commits": [
+                {
+                  "hash": "43b12fd",
+                  "url": "https://github.com/gregce/tortie/commit/43b12fd"
+                }
+              ]
+            },
+            {
+              "text": "Tortie now keeps and marks a remote session unreachable when startup confirmation cannot reach the machine. It reconciles the record when the connection returns instead of launching a duplicate",
+              "commits": [
+                {
+                  "hash": "682c870",
+                  "url": "https://github.com/gregce/tortie/commit/682c870"
+                }
+              ]
+            },
+            {
+              "text": "Quitting Tortie now closes tracked remote SSH work and records interrupted project copies for the next launch, though remote processes may continue. Machine removal is now transactional, so a failure leaves session records and machine configuration unchanged",
+              "commits": [
+                {
+                  "hash": "2ad8fcb",
+                  "url": "https://github.com/gregce/tortie/commit/2ad8fcb"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.58.3",
+      "date": "2026-08-20",
+      "summary": "This release makes another Mac a Tortie workspace. You can run and restore sessions there, then browse, search and review its projects without leaving the app. Remote project tabs remain read only, and remote SpecStory capture is not supported.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Add, test and confirm remote machines in Settings without changing your SSH known-hosts file",
+              "commits": [
+                {
+                  "hash": "d8b5e1f",
+                  "url": "https://github.com/gregce/tortie/commit/d8b5e1f"
+                }
+              ]
+            },
+            {
+              "text": "Prepare a remote machine by starting its tmux server with Tortie's required settings and checking its version",
+              "commits": [
+                {
+                  "hash": "4c86bea",
+                  "url": "https://github.com/gregce/tortie/commit/4c86bea"
+                }
+              ]
+            },
+            {
+              "text": "Create, open, rename and end sessions on another Mac, with clear machine badges and connection states",
+              "commits": [
+                {
+                  "hash": "17f1dea",
+                  "url": "https://github.com/gregce/tortie/commit/17f1dea"
+                }
+              ]
+            },
+            {
+              "text": "Choose System, JetBrains Mono or Source Code Pro for terminals, editors, diffs, Markdown code and exported screenshots",
+              "commits": [
+                {
+                  "hash": "7b429d5",
+                  "url": "https://github.com/gregce/tortie/commit/7b429d5"
+                }
+              ]
+            },
+            {
+              "text": "Restore stopped remote sessions only when the machine is reachable, with timestamped saved output and duplicate-work protection. Remote conversations are not restored",
+              "commits": [
+                {
+                  "hash": "1741a01",
+                  "url": "https://github.com/gregce/tortie/commit/1741a01"
+                }
+              ]
+            },
+            {
+              "text": "Focus the current session with Shift+Command+Return while preserving its split layout and running state",
+              "commits": [
+                {
+                  "hash": "8713547",
+                  "url": "https://github.com/gregce/tortie/commit/8713547"
+                }
+              ]
+            },
+            {
+              "text": "Install a dedicated passwordless SSH key for a machine through a confirmed setup flow. Tortie does not store the password or change your existing SSH keys",
+              "commits": [
+                {
+                  "hash": "dbbed64",
+                  "url": "https://github.com/gregce/tortie/commit/dbbed64"
+                }
+              ]
+            },
+            {
+              "text": "Upload images to remote sessions, review remote changes in diffs and show when saved agent output was last copied. Remote image uploads are limited to 90 KB",
+              "commits": [
+                {
+                  "hash": "ecd1b67",
+                  "url": "https://github.com/gregce/tortie/commit/ecd1b67"
+                }
+              ]
+            },
+            {
+              "text": "Allow an exact unmeasured remote tmux version after confirmation, and stop connection attempts after 10 seconds",
+              "commits": [
+                {
+                  "hash": "069ef77",
+                  "url": "https://github.com/gregce/tortie/commit/069ef77"
+                }
+              ]
+            },
+            {
+              "text": "Choose remote working folders, launch agents by absolute path and preserve remote session output and removal state",
+              "commits": [
+                {
+                  "hash": "5e8aa02",
+                  "url": "https://github.com/gregce/tortie/commit/5e8aa02"
+                }
+              ]
+            },
+            {
+              "text": "Find a matching remote project by its Git address, or offer to clone it after confirmation",
+              "commits": [
+                {
+                  "hash": "e61e836",
+                  "url": "https://github.com/gregce/tortie/commit/e61e836"
+                }
+              ]
+            },
+            {
+              "text": "Prefill supported remote conversation resume commands without pressing Enter for you",
+              "commits": [
+                {
+                  "hash": "3cf14ad",
+                  "url": "https://github.com/gregce/tortie/commit/3cf14ad"
+                }
+              ]
+            },
+            {
+              "text": "Open a remote folder as a read-only project tab with its Explorer, changed files and file diffs",
+              "commits": [
+                {
+                  "hash": "9d247ab",
+                  "url": "https://github.com/gregce/tortie/commit/9d247ab"
+                }
+              ]
+            },
+            {
+              "text": "Open remote folders from the home screen and keep their machine identity in recent projects",
+              "commits": [
+                {
+                  "hash": "8596b77",
+                  "url": "https://github.com/gregce/tortie/commit/8596b77"
+                }
+              ]
+            },
+            {
+              "text": "Show untracked remote files in their own Changes group and include them in the Source Control count",
+              "commits": [
+                {
+                  "hash": "2ca5310",
+                  "url": "https://github.com/gregce/tortie/commit/2ca5310"
+                }
+              ]
+            },
+            {
+              "text": "Search remote project files on the remote machine without copying them locally",
+              "commits": [
+                {
+                  "hash": "1f98e2b",
+                  "url": "https://github.com/gregce/tortie/commit/1f98e2b"
+                }
+              ]
+            },
+            {
+              "text": "Find and open remote files through Quick Open, with recent files tracked per machine",
+              "commits": [
+                {
+                  "hash": "2e3eb86",
+                  "url": "https://github.com/gregce/tortie/commit/2e3eb86"
+                }
+              ]
+            },
+            {
+              "text": "Read a one-time snapshot of the remote screen or its last 1,000, 10,000 or 25,000 lines, with clear truncation notices",
+              "commits": [
+                {
+                  "hash": "ce56d1f",
+                  "url": "https://github.com/gregce/tortie/commit/ce56d1f"
+                }
+              ]
+            },
+            {
+              "text": "Show up to 10 GitHub Actions runs for the remote branch, using your local GitHub sign-in",
+              "commits": [
+                {
+                  "hash": "16d4d2c",
+                  "url": "https://github.com/gregce/tortie/commit/16d4d2c"
+                }
+              ]
+            },
+            {
+              "text": "Show the remote branch, commit, upstream and ahead or behind counts without changing or fetching the repository",
+              "commits": [
+                {
+                  "hash": "02aed16",
+                  "url": "https://github.com/gregce/tortie/commit/02aed16"
+                }
+              ]
+            },
+            {
+              "text": "Browse remote commit history in pages of 50, including lanes, authors, subjects, branches and tags",
+              "commits": [
+                {
+                  "hash": "99c19b8",
+                  "url": "https://github.com/gregce/tortie/commit/99c19b8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "Remote machines now push session changes instead of relying on polling, while unmeasured tmux versions retain the polling fallback",
+              "commits": [
+                {
+                  "hash": "e9351e8",
+                  "url": "https://github.com/gregce/tortie/commit/e9351e8"
+                }
+              ]
+            },
+            {
+              "text": "Simplified machine setup, added clearer recovery guidance and improved Tailscale device discovery",
+              "commits": [
+                {
+                  "hash": "3e1ba07",
+                  "url": "https://github.com/gregce/tortie/commit/3e1ba07"
+                }
+              ]
+            },
+            {
+              "text": "Load saved sessions and project tabs before the login shell finishes, while keeping Restore disabled until the shell is ready",
+              "commits": [
+                {
+                  "hash": "2f0e841",
+                  "url": "https://github.com/gregce/tortie/commit/2f0e841"
+                }
+              ]
+            },
+            {
+              "text": "Shortened session and machine setup copy, restored compact spacing and moved Diagnostics to the end of Settings",
+              "commits": [
+                {
+                  "hash": "efafb86",
+                  "url": "https://github.com/gregce/tortie/commit/efafb86"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Refuse new state-changing requests during shutdown and finish accepted work before saving the final snapshot",
+              "commits": [
+                {
+                  "hash": "60bf5ac",
+                  "url": "https://github.com/gregce/tortie/commit/60bf5ac"
+                }
+              ]
+            },
+            {
+              "text": "Warn when a remote Quick Open result list was cut off at its size limit",
+              "commits": [
+                {
+                  "hash": "caa07d3",
+                  "url": "https://github.com/gregce/tortie/commit/caa07d3"
+                }
+              ]
+            },
+            {
+              "text": "Isolate test servers and folders so concurrent harness runs cannot affect each other or their cleanup",
+              "commits": [
+                {
+                  "hash": "abc32fa",
+                  "url": "https://github.com/gregce/tortie/commit/abc32fa"
+                }
+              ]
+            },
+            {
+              "text": "Sign bundled SpecStory with its required entitlement and update it to 2.10.0 for current Codex and Muse Code capture",
+              "commits": [
+                {
+                  "hash": "f97d69b",
+                  "url": "https://github.com/gregce/tortie/commit/f97d69b"
+                }
+              ]
+            },
+            {
+              "text": "Separate run age from duration, add hover details and remove repeated job names from single-job runs",
+              "commits": [
+                {
+                  "hash": "d1ce49f",
+                  "url": "https://github.com/gregce/tortie/commit/d1ce49f"
+                }
+              ]
+            },
+            {
+              "text": "Mark remote sessions as unreachable during connection loss instead of offering Restore and risking duplicate agents",
+              "commits": [
+                {
+                  "hash": "95aa770",
+                  "url": "https://github.com/gregce/tortie/commit/95aa770"
+                }
+              ]
+            },
+            {
+              "text": "Remove the duplicate full-screen menu item, show home-screen update status and focus the last file opened from Finder",
+              "commits": [
+                {
+                  "hash": "a3dcb53",
+                  "url": "https://github.com/gregce/tortie/commit/a3dcb53"
+                }
+              ]
+            },
+            {
+              "text": "Restore the weekly package check without allowing it to publish a release",
+              "commits": [
+                {
+                  "hash": "ab94847",
+                  "url": "https://github.com/gregce/tortie/commit/ab94847"
+                }
+              ]
+            },
+            {
+              "text": "Start shell sessions as login shells, preserve restore arguments and clarify New Project and SpecStory setup messages",
+              "commits": [
+                {
+                  "hash": "2867223",
+                  "url": "https://github.com/gregce/tortie/commit/2867223"
+                }
+              ]
+            },
+            {
+              "text": "Save session state before sleep and prevent a second shutdown from starting before the first finishes",
+              "commits": [
+                {
+                  "hash": "d47ecd7",
+                  "url": "https://github.com/gregce/tortie/commit/d47ecd7"
+                }
+              ]
+            },
+            {
+              "text": "Remove extra characters from connection-test paths and label the fallback Runs button as Copy",
+              "commits": [
+                {
+                  "hash": "9fbe8ed",
+                  "url": "https://github.com/gregce/tortie/commit/9fbe8ed"
+                }
+              ]
+            },
+            {
+              "text": "Make split dragging reliable, add shortcuts search and improve keyboard control and option summaries in session creation",
+              "commits": [
+                {
+                  "hash": "f6cd1ad",
+                  "url": "https://github.com/gregce/tortie/commit/f6cd1ad"
+                }
+              ]
+            },
+            {
+              "text": "Keep Explorer, Git decorations, Search and Context tied to the machine that owns the active tab",
+              "commits": [
+                {
+                  "hash": "f6e4e32",
+                  "url": "https://github.com/gregce/tortie/commit/f6e4e32"
+                }
+              ]
+            },
+            {
+              "text": "Enable Restore even when projects or sessions fail to load at launch",
+              "commits": [
+                {
+                  "hash": "e5d2034",
+                  "url": "https://github.com/gregce/tortie/commit/e5d2034"
+                }
+              ]
+            },
+            {
+              "text": "Keep the Capture control visible but disabled for remote agent sessions, with an explanation",
+              "commits": [
+                {
+                  "hash": "13dbec1",
+                  "url": "https://github.com/gregce/tortie/commit/13dbec1"
+                }
+              ]
+            },
+            {
+              "text": "Make remote activity indicators follow actual session output instead of stale connection state",
+              "commits": [
+                {
+                  "hash": "5e4e217",
+                  "url": "https://github.com/gregce/tortie/commit/5e4e217"
+                }
+              ]
+            },
+            {
+              "text": "Retry fault-test races so all 16 session recovery cases run every night",
+              "commits": [
+                {
+                  "hash": "32d901d",
+                  "url": "https://github.com/gregce/tortie/commit/32d901d"
+                }
+              ]
+            },
+            {
+              "text": "Start sessions from remote tabs on the tab's machine and folder, including agent hotkeys",
+              "commits": [
+                {
+                  "hash": "eb61ffd",
+                  "url": "https://github.com/gregce/tortie/commit/eb61ffd"
+                }
+              ]
+            },
+            {
+              "text": "Reopen a closed project from the attention list, show each session's folder and add confirmed keyboard session ending",
+              "commits": [
+                {
+                  "hash": "9f89497",
+                  "url": "https://github.com/gregce/tortie/commit/9f89497"
+                }
+              ]
+            },
+            {
+              "text": "Enforce read-only remote files, disable unsafe remote session actions and reduce abandoned image uploads",
+              "commits": [
+                {
+                  "hash": "1e3b062",
+                  "url": "https://github.com/gregce/tortie/commit/1e3b062"
+                }
+              ]
+            },
+            {
+              "text": "Stop scroll polling when a session has no local pane and show that remote scrollback is unavailable",
+              "commits": [
+                {
+                  "hash": "1fc2c5f",
+                  "url": "https://github.com/gregce/tortie/commit/1fc2c5f"
+                }
+              ]
+            },
+            {
+              "text": "Fix the quit-snapshot test race and log counts for every snapshot outcome",
+              "commits": [
+                {
+                  "hash": "6487c4f",
+                  "url": "https://github.com/gregce/tortie/commit/6487c4f"
+                }
+              ]
+            },
+            {
+              "text": "Give every smoke-test run its own tmux socket and profile, including safe cleanup of abandoned servers",
+              "commits": [
+                {
+                  "hash": "859a4a0",
+                  "url": "https://github.com/gregce/tortie/commit/859a4a0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.31.0",
+      "date": "2026-08-16",
+      "summary": "This release improves how Tortie integrates with macOS and installed agents. Finder and the new `tortie` command can open projects, Settings shows exactly which agent binaries Tortie uses, and new appearance controls let you adjust highlights and contrast. Updating does not affect running sessions.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Settings now shows every detected copy of each agent, its version and why Tortie chose one over the others. Missing agents show an official, copyable install command, and sessions always launch the recorded binary",
+              "commits": [
+                {
+                  "hash": "bf6e9e2",
+                  "url": "https://github.com/gregce/tortie/commit/bf6e9e2"
+                }
+              ]
+            },
+            {
+              "text": "Run `tortie .` to open the current folder as a project, starting Tortie if needed. Settings can install or remove this command, which accepts a folder but no agent-launching flags",
+              "commits": [
+                {
+                  "hash": "051558e",
+                  "url": "https://github.com/gregce/tortie/commit/051558e"
+                }
+              ]
+            },
+            {
+              "text": "Grok is now a supported agent with conversation resume by session ID. Tortie suppresses Grok's blocking first-run banner without changing your data-sharing choice, and the documentation now covers all 13 agent trademarks",
+              "commits": [
+                {
+                  "hash": "b8c59f4",
+                  "url": "https://github.com/gregce/tortie/commit/b8c59f4"
+                }
+              ]
+            },
+            {
+              "text": "Finder can open folders, supported text and source files, HTML, Markdown and images in Tortie without making it the default app. Files open inside their nearest Git repository or parent folder",
+              "commits": [
+                {
+                  "hash": "6982ae4",
+                  "url": "https://github.com/gregce/tortie/commit/6982ae4"
+                }
+              ]
+            },
+            {
+              "text": "Settings now offers 4 highlight schemes and 3 contrast levels. The default blue and normal-contrast combination preserves the previous appearance",
+              "commits": [
+                {
+                  "hash": "c8508ec",
+                  "url": "https://github.com/gregce/tortie/commit/c8508ec"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.26.1",
+      "date": "2026-08-16",
+      "summary": "This release bundles tmux, replaces update dialogs with a quiet status control and improves several session interactions. The bundled tmux takes effect only when a new server starts, so updating does not interrupt running sessions.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Tortie now includes a signed tmux 3.7b, so new installations need no separate tmux setup. It adopts the bundled version only for new servers and refuses untested client-server version combinations",
+              "commits": [
+                {
+                  "hash": "2c225e4",
+                  "url": "https://github.com/gregce/tortie/commit/2c225e4"
+                }
+              ]
+            },
+            {
+              "text": "A status ring above Settings now shows update progress and offers actions such as restart now, install on quit and repair. Background checks remain quiet, although the ring is unavailable on the home screen until an update is staged",
+              "commits": [
+                {
+                  "hash": "9eb2b7f",
+                  "url": "https://github.com/gregce/tortie/commit/9eb2b7f"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Collapsed session lists now support group drag and drop, restoring a session asks before opening its project, and the View menu shows all 4 views and shortcuts",
+              "commits": [
+                {
+                  "hash": "cc60680",
+                  "url": "https://github.com/gregce/tortie/commit/cc60680"
+                }
+              ]
+            },
+            {
+              "text": "Agent startup failures now identify missing interpreters or show the agent's final output instead of leaving a dead pane. Tortie also waits up to 10 seconds for slow login shells",
+              "commits": [
+                {
+                  "hash": "2b4ee2f",
+                  "url": "https://github.com/gregce/tortie/commit/2b4ee2f"
+                }
+              ]
+            },
+            {
+              "text": "Test and harness launches no longer access the macOS keychain or leave keychain prompts behind",
+              "commits": [
+                {
+                  "hash": "0d92728",
+                  "url": "https://github.com/gregce/tortie/commit/0d92728"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.24.3",
+      "date": "2026-08-15",
+      "summary": "This release stops ignored files from flashing during repository updates.",
+      "sections": [
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "The Explorer now keeps the last known ignored-file state while refreshing it, so ignored rows no longer flash white during writes. Changes to `.gitignore` can take up to 10 seconds to appear",
+              "commits": [
+                {
+                  "hash": "3bbc3e6",
+                  "url": "https://github.com/gregce/tortie/commit/3bbc3e6"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.24.2",
+      "date": "2026-08-15",
+      "summary": "This release makes updates recoverable and improves everyday repository work. You can inspect CI runs, open files in other apps and use a clearer Explorer without losing terminal selections or session ownership.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Source Control now shows the latest 10 GitHub Actions runs for the current branch, including jobs and steps, and watches the run triggered by a push",
+              "commits": [
+                {
+                  "hash": "1eeddea",
+                  "url": "https://github.com/gregce/tortie/commit/1eeddea"
+                }
+              ]
+            },
+            {
+              "text": "File rows now include an Open With menu containing compatible macOS apps and the system chooser",
+              "commits": [
+                {
+                  "hash": "9a69e89",
+                  "url": "https://github.com/gregce/tortie/commit/9a69e89"
+                }
+              ]
+            },
+            {
+              "text": "Settings now provides debug logging and diagnostic tools. Logs rotate at 2 MiB, redact the home-directory path and never upload crash data",
+              "commits": [
+                {
+                  "hash": "774132a",
+                  "url": "https://github.com/gregce/tortie/commit/774132a"
+                }
+              ]
+            },
+            {
+              "text": "Agent definitions can pass named environment variables from your login shell without storing their values on disk",
+              "commits": [
+                {
+                  "hash": "67ce3e3",
+                  "url": "https://github.com/gregce/tortie/commit/67ce3e3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "The Explorer now greys ignored files, keeps filters active after opening a result and offers row-spacing controls. History also gains a compact gutter option",
+              "commits": [
+                {
+                  "hash": "53e919d",
+                  "url": "https://github.com/gregce/tortie/commit/53e919d"
+                }
+              ]
+            },
+            {
+              "text": "Right-clicking terminal text now preserves the selection, making Copy as HTML usable. Split groups also make the focused pane clearer without dimming attention indicators",
+              "commits": [
+                {
+                  "hash": "08b4757",
+                  "url": "https://github.com/gregce/tortie/commit/08b4757"
+                }
+              ]
+            },
+            {
+              "text": "Failed updates now explain the cause, and Repair Updates can reset a broken updater in one step",
+              "commits": [
+                {
+                  "hash": "cb07b37",
+                  "url": "https://github.com/gregce/tortie/commit/cb07b37"
+                }
+              ]
+            },
+            {
+              "text": "Sessions in the same folder no longer claim each other's conversation records. Tortie now normalises equivalent paths, allows stronger ownership evidence to replace weaker claims and reports uncertain resumes honestly",
+              "commits": [
+                {
+                  "hash": "a5c63aa",
+                  "url": "https://github.com/gregce/tortie/commit/a5c63aa"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.20.2",
+      "date": "2026-08-15",
+      "summary": "This release stops crashes during quit and makes removed sessions recoverable for 90 days. It also improves update feedback and preserves split layouts across restarts.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Past Sessions provides a searchable list of removed sessions for 90 days and shows whether each can resume its conversation",
+              "commits": [
+                {
+                  "hash": "d08ab00",
+                  "url": "https://github.com/gregce/tortie/commit/d08ab00"
+                }
+              ]
+            },
+            {
+              "text": "Manual update checks now show when an update is ready and confirm that it will install when you quit",
+              "commits": [
+                {
+                  "hash": "aa4e456",
+                  "url": "https://github.com/gregce/tortie/commit/aa4e456"
+                }
+              ]
+            },
+            {
+              "text": "Packaged builds now log updater activity and report why an installation was refused on the next launch",
+              "commits": [
+                {
+                  "hash": "a63ec76",
+                  "url": "https://github.com/gregce/tortie/commit/a63ec76"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "New File and New Folder now ask for a valid name before writing anything to disk",
+              "commits": [
+                {
+                  "hash": "7c0ae02",
+                  "url": "https://github.com/gregce/tortie/commit/7c0ae02"
+                }
+              ]
+            },
+            {
+              "text": "Removing a skill now uses the skills CLI and shows every path that will be deleted before confirmation",
+              "commits": [
+                {
+                  "hash": "f33599b",
+                  "url": "https://github.com/gregce/tortie/commit/f33599b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Tortie now waits for file watchers to stop before quitting, preventing the crash reports previously created on every exit",
+              "commits": [
+                {
+                  "hash": "3c09245",
+                  "url": "https://github.com/gregce/tortie/commit/3c09245"
+                },
+                {
+                  "hash": "3d1d70c",
+                  "url": "https://github.com/gregce/tortie/commit/3d1d70c"
+                }
+              ]
+            },
+            {
+              "text": "Split groups now preserve their layout and focused pane when projects reopen or Tortie restarts",
+              "commits": [
+                {
+                  "hash": "2cbd873",
+                  "url": "https://github.com/gregce/tortie/commit/2cbd873"
+                }
+              ]
+            },
+            {
+              "text": "Antigravity sessions now prove conversation ownership from the process holding the conversation open and can reclaim incorrect assignments",
+              "commits": [
+                {
+                  "hash": "ecdfcad",
+                  "url": "https://github.com/gregce/tortie/commit/ecdfcad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.19.1",
+      "date": "2026-08-14",
+      "summary": "This maintenance release corrects the application credit in Tortie's first self-delivered update.",
+      "sections": [
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "The About panel now credits gregce and links to the correct repository instead of naming SpecStory",
+              "commits": [
+                {
+                  "hash": "dbbaea1",
+                  "url": "https://github.com/gregce/tortie/commit/dbbaea1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.19.0",
+      "date": "2026-08-14",
+      "summary": "This release adds quiet, automatic updates that install when you quit without interrupting sessions. Version 0.18.0 cannot update itself, so you must install 0.19.0 manually once.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Tortie now checks GitHub Releases for updates, installs them on quit and verifies bundled files after updating. The About menu also adds Check for Updates, and maintainers can remove a bad release from the feed",
+              "commits": [
+                {
+                  "hash": "b96b519",
+                  "url": "https://github.com/gregce/tortie/commit/b96b519"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Terminal panes now restore hardware-accelerated rendering after wake, and helper process exits include their cause and decoded exit code in the log",
+              "commits": [
+                {
+                  "hash": "e9a8731",
+                  "url": "https://github.com/gregce/tortie/commit/e9a8731"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.18.0",
+      "date": "2026-08-14",
+      "summary": "This is the first installable Tortie release: a signed and notarized macOS workspace for persistent coding-agent sessions. Projects open as tabs, sessions survive app quits and restarts, and ended conversations can resume with their scrollback. Existing users must approve macOS permissions again because the app identity changed to `com.itavero.tortie`; data and sessions remain intact. This version does not update itself, and its session-data migration prevents older builds from reopening the data.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Tortie now ships as a signed and notarized application under the Itavero identity, backed by a 4-lane CI and release pipeline",
+              "commits": [
+                {
+                  "hash": "47eb4f9",
+                  "url": "https://github.com/gregce/tortie/commit/47eb4f9"
+                }
+              ]
+            },
+            {
+              "text": "Ended sessions can now replay their scrollback and prepare the agent's resume command for confirmation",
+              "commits": [
+                {
+                  "hash": "68620b8",
+                  "url": "https://github.com/gregce/tortie/commit/68620b8"
+                }
+              ]
+            },
+            {
+              "text": "The Context view lists each agent's skills, MCP servers, hooks, plugins and instruction files, and can install skills from GitHub",
+              "commits": [
+                {
+                  "hash": "ec219a3",
+                  "url": "https://github.com/gregce/tortie/commit/ec219a3"
+                }
+              ]
+            },
+            {
+              "text": "Custom agents can now be defined in JSON. Configuration cannot run code directly, and process-launching changes require confirmation",
+              "commits": [
+                {
+                  "hash": "89a5a9a",
+                  "url": "https://github.com/gregce/tortie/commit/89a5a9a"
+                }
+              ]
+            },
+            {
+              "text": "The new home screen lists recent projects and can clone repositories with progress for each phase",
+              "commits": [
+                {
+                  "hash": "7b42536",
+                  "url": "https://github.com/gregce/tortie/commit/7b42536"
+                }
+              ]
+            },
+            {
+              "text": "Markdown files can now show a side-by-side HTML preview, with untrusted content isolated in a restricted frame",
+              "commits": [
+                {
+                  "hash": "ffd623b",
+                  "url": "https://github.com/gregce/tortie/commit/ffd623b"
+                }
+              ]
+            },
+            {
+              "text": "Tortie now keeps verified backups of the session list and can rebuild the list from them",
+              "commits": [
+                {
+                  "hash": "8bb473e",
+                  "url": "https://github.com/gregce/tortie/commit/8bb473e"
+                }
+              ]
+            },
+            {
+              "text": "Session data now uses durable writes, enforced by a fault test that terminates Tortie at 16 critical points",
+              "commits": [
+                {
+                  "hash": "3be5d0e",
+                  "url": "https://github.com/gregce/tortie/commit/3be5d0e"
+                }
+              ]
+            },
+            {
+              "text": "The Search pane now supports zoom through the shared view layout model",
+              "commits": [
+                {
+                  "hash": "d6d0fc8",
+                  "url": "https://github.com/gregce/tortie/commit/d6d0fc8"
+                }
+              ]
+            },
+            {
+              "text": "Each session now shows its SpecStory capture, sync and cloud status",
+              "commits": [
+                {
+                  "hash": "e930530",
+                  "url": "https://github.com/gregce/tortie/commit/e930530"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "The window now uses one layout model, preventing open files from compressing the session tab strip",
+              "commits": [
+                {
+                  "hash": "bfa67d7",
+                  "url": "https://github.com/gregce/tortie/commit/bfa67d7"
+                }
+              ]
+            },
+            {
+              "text": "The app is now named Tortie, and its data migrates by copying and verifying while leaving the original intact",
+              "commits": [
+                {
+                  "hash": "09cb853",
+                  "url": "https://github.com/gregce/tortie/commit/09cb853"
+                },
+                {
+                  "hash": "53fa1e4",
+                  "url": "https://github.com/gregce/tortie/commit/53fa1e4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Restore now uses the agent details recorded with the session, so later registry changes cannot lose its conversation",
+              "commits": [
+                {
+                  "hash": "a00f798",
+                  "url": "https://github.com/gregce/tortie/commit/a00f798"
+                }
+              ]
+            },
+            {
+              "text": "Tortie now detects the renamed DeepSeek CLI as CodeWhale while retaining support for the old binary name",
+              "commits": [
+                {
+                  "hash": "041b664",
+                  "url": "https://github.com/gregce/tortie/commit/041b664"
+                }
+              ]
+            },
+            {
+              "text": "The Context view now opens global skills without Git errors, searches the skill registry, supports enabling skills for more agents and presents installation details more clearly",
+              "commits": [
+                {
+                  "hash": "5bdf81b",
+                  "url": "https://github.com/gregce/tortie/commit/5bdf81b"
+                },
+                {
+                  "hash": "d8e2ebf",
+                  "url": "https://github.com/gregce/tortie/commit/d8e2ebf"
+                }
+              ]
+            },
+            {
+              "text": "Session reconciliation no longer marks newly created live sessions as restorable, and shared SQLite settings now handle concurrent writers explicitly",
+              "commits": [
+                {
+                  "hash": "cda2b1a",
+                  "url": "https://github.com/gregce/tortie/commit/cda2b1a"
+                },
+                {
+                  "hash": "bfc3c85",
+                  "url": "https://github.com/gregce/tortie/commit/bfc3c85"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
