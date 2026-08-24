@@ -31,6 +31,7 @@ interface Props {
 
 interface MetricRecord {
   id: string;
+  forge?: "github" | "gitlab";
   status: string;
   refreshedAt: string | null;
   stars: number | null;
@@ -135,10 +136,10 @@ const metricRows: MetricRow[] = hasMetrics
       { id: "metric-version", label: "Latest verified release", group: "Open-source project", metricKey: "version" },
       { id: "metric-release-date", label: "Release date", group: "Open-source project", metricKey: "releaseDate" },
       { id: "metric-license", label: "Repository license", group: "Open-source project", metricKey: "license" },
-      { id: "metric-stars", label: "GitHub stars", group: "Open-source project", metricKey: "stars" },
-      { id: "metric-forks", label: "GitHub forks", group: "Open-source project", metricKey: "forks" },
-      { id: "metric-open-issues", label: "Open GitHub issues", group: "Open-source project", metricKey: "openIssues" },
-      { id: "metric-contributors", label: "GitHub contributor entries", group: "Open-source project", metricKey: "contributors" },
+      { id: "metric-stars", label: "Repository stars", group: "Open-source project", metricKey: "stars" },
+      { id: "metric-forks", label: "Repository forks", group: "Open-source project", metricKey: "forks" },
+      { id: "metric-open-issues", label: "Open repository issues", group: "Open-source project", metricKey: "openIssues" },
+      { id: "metric-contributors", label: "Contributor entries", group: "Open-source project", metricKey: "contributors" },
       {
         id: "metric-loc",
         label: "Source lines at measured ref",
@@ -147,7 +148,7 @@ const metricRows: MetricRow[] = hasMetrics
         metricKey: "loc",
       },
       { id: "metric-language", label: "Primary language", group: "Open-source project", metricKey: "language" },
-      { id: "metric-repository-size", label: "GitHub repository size", group: "Open-source project", metricKey: "repositorySize" },
+      { id: "metric-repository-size", label: "Repository size", group: "Open-source project", metricKey: "repositorySize" },
       { id: "metric-last-push", label: "Repository last push", group: "Open-source project", metricKey: "pushedAt" },
       { id: "metric-archive-status", label: "Repository status", group: "Open-source project", metricKey: "archived" },
       { id: "metric-refreshed", label: "Repository data refreshed", group: "Open-source project", metricKey: "refreshedAt" },
@@ -264,7 +265,7 @@ const metricClaim = (product: ComparisonProduct, row: MetricRow): ComparisonClai
           record.latestRelease.prerelease ? "No stable release is published; this is the newest dated prerelease and is not promoted to stable." : undefined,
           "latest-release",
         )
-      : fact("None published", record.releasePolicy?.reason || "The collector verified that no stable GitHub release is published; repository tags are not promoted to releases.", record.releasePolicy ? "release-policy" : "latest-tag");
+      : fact("None published", record.releasePolicy?.reason || "The collector verified that no stable forge release is published; repository tags are not promoted to releases.", record.releasePolicy ? "release-policy" : "latest-tag");
   }
   if (row.metricKey === "releaseDate") {
     return record.latestRelease?.publishedAt
@@ -282,7 +283,7 @@ const metricClaim = (product: ComparisonProduct, row: MetricRow): ComparisonClai
             : record.license.name || undefined,
           record.license.key === "manifest-verified" ? "license-override" : "repository",
         )
-      : fact("None detected", "GitHub's repository API did not identify a repository license.");
+      : fact("None detected", "The canonical forge API did not identify a repository license.");
   }
   if (row.metricKey === "stars") {
     return record.stars === null
@@ -297,14 +298,21 @@ const metricClaim = (product: ComparisonProduct, row: MetricRow): ComparisonClai
   if (row.metricKey === "openIssues") {
     return record.openIssues == null
       ? unknown("The latest repository refresh did not return an open-issue count.")
-      : fact(formatNumber(record.openIssues), `${record.openIssues.toLocaleString("en-US")} open issues and pull requests exactly.`);
+      : fact(
+          formatNumber(record.openIssues),
+          record.forge === "gitlab"
+            ? `${record.openIssues.toLocaleString("en-US")} open issues exactly; merge requests are not included.`
+            : `${record.openIssues.toLocaleString("en-US")} open issues and pull requests exactly.`,
+        );
   }
   if (row.metricKey === "contributors") {
     return record.contributors === null
       ? unknown("The contributors endpoint did not return a count.")
       : fact(
           formatNumber(record.contributors),
-          `${record.contributors.toLocaleString("en-US")} entries from GitHub's current repository-history contributor endpoint, including anonymous entries.`,
+          record.forge === "gitlab"
+            ? `${record.contributors.toLocaleString("en-US")} entries from GitLab's current repository contributor endpoint.`
+            : `${record.contributors.toLocaleString("en-US")} entries from GitHub's current repository-history contributor endpoint, including anonymous entries.`,
           "contributors",
         );
   }
@@ -326,7 +334,7 @@ const metricClaim = (product: ComparisonProduct, row: MetricRow): ComparisonClai
   }
   if (row.metricKey === "repositorySize") {
     return record.repositorySizeKb == null
-      ? unknown("The latest repository refresh did not return GitHub's repository-size estimate.")
+      ? unknown("The latest repository refresh did not return the forge's repository-size estimate.")
       : fact(formatKilobytes(record.repositorySizeKb), `${record.repositorySizeKb.toLocaleString("en-US")} KB exactly.`);
   }
   if (row.metricKey === "pushedAt") {

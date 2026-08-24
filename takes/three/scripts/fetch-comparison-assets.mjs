@@ -124,7 +124,7 @@ const products = {
   "openai-codex-cloud": ["OpenAI Codex cloud", avatar("openai"), "https://github.com/openai", "official-organization-avatar"],
   "github-copilot-coding-agent": ["GitHub Copilot coding agent", avatar("github"), "https://github.com/github", "official-organization-avatar"],
   devin: ["Devin", "https://mintcdn.com/cognitionai/Hhrl_8XUBqA4VQ6v/logo/favicon.svg?fit=max&auto=format&n=Hhrl_8XUBqA4VQ6v&q=85&s=ab641f30c01bf5374b90b62209db569e", "https://docs.devin.ai/", "official-product-asset"],
-  jules: ["Jules", "https://www.gstatic.com/labs-code/code-app/favicon-48x48.png", "https://jules.google.com/", "official-product-icon"],
+  jules: ["Jules", "https://www.gstatic.com/labs-code/labs-logo.svg", "https://jules.google.com/", "official-product-asset"],
   "claude-code-web": ["Claude Code on the web", avatar("anthropics"), "https://github.com/anthropics", "official-organization-avatar"],
   "cursor-cloud-agents": ["Cursor Cloud Agents", "https://cursor.com/marketing-static/favicon-light.svg", "https://cursor.com/docs/cloud-agent", "official-site-icon"],
   "factory-cloud-sessions": ["Factory Droid Computers / cloud sessions", "https://docs.factory.ai/favicon.svg", "https://docs.factory.ai/", "official-site-icon"],
@@ -171,7 +171,6 @@ const platforms = {
   macos: ["macOS", "https://www.apple.com/apple-touch-icon.png", "https://www.apple.com/macos/", "official-vendor-icon"],
   windows: ["Windows", "https://www.microsoft.com/favicon.ico", "https://www.microsoft.com/windows/", "official-vendor-icon"],
   linux: ["Linux", "https://www.linuxfoundation.org/hubfs/Tux-flat-version.png", "https://www.linuxfoundation.org/", "official-foundation-asset"],
-  ios: ["iOS", "https://www.apple.com/apple-touch-icon.png", "https://www.apple.com/ios/", "official-vendor-icon"],
   android: ["Android", "https://developer.android.com/static/images/brand/android-head_3D.svg", "https://developer.android.com/distribute/marketing-tools/brand-guidelines", "official-vendor-asset"],
 };
 
@@ -341,6 +340,14 @@ const downloadedPlatformManifest = await downloadGroup(
 );
 const platformManifest = {
   ...downloadedPlatformManifest,
+  ios: {
+    name: "iOS",
+    alt: "iOS device",
+    src: "/compare/platforms/ios.svg",
+    sourceUrl: "https://www.apple.com/ios/",
+    sourceType: "original-interface-glyph",
+    checkedAt,
+  },
   web: {
     name: "Web",
     alt: "Web globe",

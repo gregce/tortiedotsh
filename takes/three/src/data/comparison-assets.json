@@ -452,9 +452,9 @@
     "jules": {
       "name": "Jules",
       "alt": "Jules logo",
-      "src": "/compare/logos/jules.png",
+      "src": "/compare/logos/jules.svg",
       "sourceUrl": "https://jules.google.com/",
-      "sourceType": "official-product-icon",
+      "sourceType": "official-product-asset",
       "checkedAt": "2026-08-23"
     },
     "claude-code-web": {
@@ -1071,20 +1071,20 @@
       "sourceType": "official-foundation-asset",
       "checkedAt": "2026-08-23"
     },
-    "ios": {
-      "name": "iOS",
-      "alt": "iOS logo",
-      "src": "/compare/platforms/ios.png",
-      "sourceUrl": "https://www.apple.com/ios/",
-      "sourceType": "official-vendor-icon",
-      "checkedAt": "2026-08-23"
-    },
     "android": {
       "name": "Android",
       "alt": "Android logo",
       "src": "/compare/platforms/android.svg",
       "sourceUrl": "https://developer.android.com/distribute/marketing-tools/brand-guidelines",
       "sourceType": "official-vendor-asset",
+      "checkedAt": "2026-08-23"
+    },
+    "ios": {
+      "name": "iOS",
+      "alt": "iOS device",
+      "src": "/compare/platforms/ios.svg",
+      "sourceUrl": "https://www.apple.com/ios/",
+      "sourceType": "original-interface-glyph",
       "checkedAt": "2026-08-23"
     },
     "web": {
