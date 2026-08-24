@@ -2119,6 +2119,46 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   } }),
 ];
 
+const harnessFieldGuideOrder = [
+  "claude-code",
+  "codex-cli",
+  "grok-build",
+  "pi-coding-agent",
+  "cursor-cli",
+  "amp",
+  "antigravity-cli",
+  "opencode",
+  "muse-code",
+  "github-copilot-cli",
+  "gemini-cli",
+  "prime-agent",
+  "deepseek-harness",
+  "poolside-pool",
+  "kimi-code-cli",
+  "kilo-code-cli",
+  "mistral-vibe",
+  "continue-cli",
+  "crush",
+  "auggie-cli",
+  "kiro-cli",
+  "amplifier-agent",
+  "gptme",
+  "factory-droid-cli",
+  "codewhale",
+  "qwen-code",
+  "goose",
+  "aider",
+  "rovo-dev-cli",
+] as const;
+
+for (const [index, productId] of harnessFieldGuideOrder.entries()) {
+  const product = comparisonProducts.find((item) => item.id === productId);
+  if (!product || product.categoryId !== "coding-agent-harnesses") {
+    throw new Error(`Harness field-guide product is missing or misclassified: ${productId}`);
+  }
+  product.editorialOrder = index + 1;
+}
+
 export const comparisonProductById = new Map(
   comparisonProducts.map((item) => [item.id, item] as const),
 );
