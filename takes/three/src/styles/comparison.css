@@ -740,20 +740,35 @@ th[data-product-id="jules"] .product-logo-frame {
   color: var(--accent-text);
 }
 
-.evidence-link[data-source-status="changed"],
-.evidence-link[data-source-status="unreachable"] {
+.evidence-link[data-source-status="changed"] {
   position: relative;
   color: var(--error);
 }
 
-.evidence-link[data-source-status="changed"]::after,
-.evidence-link[data-source-status="unreachable"]::after {
+.evidence-link[data-source-status="changed"]::after {
   position: absolute;
   top: 3px;
   right: 3px;
   width: 4px;
   height: 4px;
   background: var(--error);
+  border-radius: 50%;
+  content: "";
+}
+
+.evidence-link[data-source-status="unreachable"] {
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.evidence-link[data-source-status="unreachable"]::after {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 4px;
+  height: 4px;
+  background: var(--bg-canvas);
+  border: 1px solid var(--text-muted);
   border-radius: 50%;
   content: "";
 }

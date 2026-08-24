@@ -259,6 +259,14 @@ Run the evidence monitor from `takes/three`:
 npm run refresh:evidence
 ```
 
+The command uses `GITHUB_TOKEN` when it is set. On a developer machine it otherwise uses the active `gh auth token`. If neither credential is available, a refresh containing GitHub API sources stops before fetching or writing anything. This prevents an anonymous API rate limit from replacing healthy source states with a wall of HTTP 403 failures.
+
+For an explicit credential:
+
+```sh
+GITHUB_TOKEN="$(gh auth token)" npm run refresh:evidence
+```
+
 The monitor enumerates every unique URL used by a known catalog profile or capability claim. It also records each product and field that uses the URL.
 
 For GitHub sources, it converts:
@@ -287,7 +295,7 @@ Each source stores:
 | --- | --- | --- |
 | `current` | observed content matches the reviewed hash | passes while the review is fresh |
 | `changed` | observed content differs from the reviewed hash | blocks the strict audit |
-| `unreachable` | a previously captured source cannot be fetched | passes only while its human review is within 120 days |
+| `unreachable` | a previously captured source cannot be fetched | shown as a quiet outlined retrieval warning; passes only while its human review is within 120 days |
 | `awaiting-refresh` | the source has never returned usable content | blocks once it lacks a current reviewed baseline |
 
 The monitor detects change. It does not decide what the new wording means.

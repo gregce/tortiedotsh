@@ -1,13 +1,27 @@
 #!/usr/bin/env node
 
 import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { comparisonProducts } from "../src/data/comparison-catalog.ts";
 
 const takeRoot = resolve(import.meta.dirname, "..");
 const defaultOutput = resolve(takeRoot, "src/data/comparison-evidence-status.json");
-const githubToken = process.env.GITHUB_TOKEN?.trim() || null;
+function resolveGitHubToken() {
+  const environmentToken = process.env.GITHUB_TOKEN?.trim();
+  if (environmentToken) return environmentToken;
+  try {
+    return execFileSync("gh", ["auth", "token"], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim() || null;
+  } catch {
+    return null;
+  }
+}
+
+const githubToken = resolveGitHubToken();
 
 function parseArguments(argv) {
   const options = { acceptChanged: [], concurrency: 6, dryRun: false, syncOnly: false, output: defaultOutput, urls: [] };
@@ -257,6 +271,14 @@ async function mapConcurrent(items, concurrency, mapper) {
 
 const options = parseArguments(process.argv.slice(2));
 const catalogSources = collectCatalogSources();
+const fetchSources = options.urls.length > 0
+  ? catalogSources.filter((source) => options.urls.includes(source.url))
+  : catalogSources;
+const needsGitHubApi = !options.syncOnly && options.acceptChanged.length === 0 && fetchSources.some((source) =>
+  new URL(githubFetchTarget(source.url)).hostname === "api.github.com");
+if (needsGitHubApi && !githubToken) {
+  throw new Error("GitHub evidence refresh requires GITHUB_TOKEN or an authenticated `gh auth login`; refusing an anonymous refresh that could overwrite healthy sources with rate-limit failures.");
+}
 const previous = await readJson(options.output, { schemaVersion: 1, generatedAt: null, sources: [] });
 const previousByUrl = new Map(previous.sources.map((source) => [source.url, source]));
 const catalogByUrl = new Map(catalogSources.map((source) => [source.url, source]));
