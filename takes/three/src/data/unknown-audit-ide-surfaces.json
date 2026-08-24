@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-23",
+  "checkedAt": "2026-08-24",
   "catalogSnapshot": "2026-08-23",
   "scope": {
     "categoryIds": [
@@ -19,12 +19,13 @@
   },
   "summary": {
     "products": 40,
-    "currentUnknownCells": 190,
-    "codeEditorUnknownCells": 67,
-    "ideExtensionUnknownCells": 95,
+    "currentUnknownCells": 194,
+    "codeEditorUnknownCells": 70,
+    "ideExtensionUnknownCells": 96,
     "agentMultiplexerUnknownCells": 28,
     "appliedClosures": 14,
-    "remainUnknown": 190
+    "changedSourceCorrections": 8,
+    "remainUnknown": 194
   },
   "categories": [
     {
@@ -72,9 +73,9 @@
             "https://www.trae.ai/ide",
             "https://www.trae.ai/blog/product_solo",
             "https://www.trae.ai/blog/engineering_thought_0731",
-            "https://www.trae.ai/blog/trae_membership_0213",
             "https://www.trae.ai/blog/product_solo_1112?v=1",
             "https://www.trae.ai/blog/engineering_thought_0108?v=1",
+            "https://www.trae.ai/blog/trae_membership_0213",
             "https://www.trae.ai/ide/",
             "https://www.trae.ai/download?auto=1&product_type=ide"
           ],
@@ -83,6 +84,16 @@
               "rowId": "editor-project-tree",
               "result": "remain-unknown",
               "rationale": "TRAE's exact IDE and SOLO material establishes the shipped editor, agent, terminal, browser preview, model service, and current safety controls without inheriting capabilities from the separate SOLO Web product. It does not directly establish a conventional project tree paired with an editable source surface for this exact product mode."
+            },
+            {
+              "rowId": "editor-agent-shell-tools",
+              "result": "remain-unknown",
+              "rationale": "TRAE's exact IDE and SOLO material establishes the shipped editor, agent, terminal, browser preview, model service, and current safety controls without inheriting capabilities from the separate SOLO Web product. It does not establish an editor-owned agent tool that can execute shell commands rather than merely exposing a terminal to the operator."
+            },
+            {
+              "rowId": "editor-mcp",
+              "result": "remain-unknown",
+              "rationale": "TRAE's exact IDE and SOLO material establishes the shipped editor, agent, terminal, browser preview, model service, and current safety controls without inheriting capabilities from the separate SOLO Web product. It does not establish an MCP client available to this exact editor's agent surface."
             },
             {
               "rowId": "editor-worktree-isolation",
@@ -147,6 +158,11 @@
             "https://developer.android.com/studio"
           ],
           "cells": [
+            {
+              "rowId": "source-model",
+              "result": "remain-unknown",
+              "rationale": "Android Studio's first-party pages establish the IDE, Gemini agent mode, terminal execution, emulator and device verification, and current desktop distribution without treating adjacent Google coding products as this SKU. The checked product source does not establish whether the shipped distribution is open source, split source, source available, proprietary, or a hosted service."
+            },
             {
               "rowId": "editor-worktree-isolation",
               "result": "remain-unknown",
@@ -959,6 +975,11 @@
               "rationale": "Google Cloud's exact Gemini Code Assist IDE documentation establishes VS Code and JetBrains extensions, inline assistance, agent mode, tools, context, MCP, and current service-tier boundaries. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
             },
             {
+              "rowId": "extension-install-channel",
+              "result": "remain-unknown",
+              "rationale": "Google Cloud's exact Gemini Code Assist IDE documentation establishes VS Code and JetBrains extensions, inline assistance, agent mode, tools, context, MCP, and current service-tier boundaries. It does not establish an exact marketplace listing, package, setup path, or other supported installation channel for this extension."
+            },
+            {
               "rowId": "extension-byok-local-model",
               "result": "remain-unknown",
               "rationale": "Google Cloud's exact Gemini Code Assist IDE documentation establishes VS Code and JetBrains extensions, inline assistance, agent mode, tools, context, MCP, and current service-tier boundaries. It does not establish operator-supplied provider credentials, a local model, or a self-hosted inference endpoint for this exact extension."
@@ -1539,11 +1560,11 @@
     {
       "productId": "gemini-code-assist",
       "rowId": "extension-permissions",
-      "targetState": "built-in",
+      "targetState": "limited",
       "evidenceUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
       "evidenceTitle": "Gemini Code Assist agent mode",
       "basis": "vendor-documented",
-      "rationale": "Gemini Code Assist documents coreTools and excludeTools controls, including command-specific restrictions for shell tools."
+      "rationale": "VS Code exposes coreTools and excludeTools with command-specific restrictions; IntelliJ documents review and approval rather than the same per-tool policy."
     },
     {
       "productId": "jetbrains-ai-assistant",
@@ -1598,6 +1619,68 @@
       "evidenceTitle": "Wave Terminal workspaces",
       "basis": "vendor-documented",
       "rationale": "Wave documents named saved workspaces whose tabs, layouts, terminal histories, and AI histories persist automatically and can be reopened."
+    }
+  ],
+  "changedSourceCorrections": [
+    {
+      "productId": "android-studio",
+      "rowId": "editor-agent-shell-tools",
+      "targetState": "limited",
+      "auditedUrl": "https://developer.android.com/studio/gemini/agent-mode",
+      "evidenceUrl": "https://developer.android.com/studio/gemini/agent-mode",
+      "rationale": "The current Agent Mode page establishes build and connected-device tooling including adb shell input, but not general-purpose terminal command execution."
+    },
+    {
+      "productId": "android-studio",
+      "rowId": "source-model",
+      "targetState": "unknown",
+      "auditedUrl": "https://developer.android.com/studio/install",
+      "rationale": "The current install page establishes the desktop distribution and supported stable channel, but not Android Studio's shipped source-model boundary."
+    },
+    {
+      "productId": "traecode",
+      "rowId": "editor-agent-shell-tools",
+      "targetState": "unknown",
+      "auditedUrl": "https://www.trae.ai/blog/product_solo",
+      "rationale": "The current SOLO page establishes autonomous coding, tests, deployment, and an integrated terminal view, but does not establish shell-command execution by the agent."
+    },
+    {
+      "productId": "traecode",
+      "rowId": "editor-mcp",
+      "targetState": "unknown",
+      "auditedUrl": "https://www.trae.ai/blog/trae_membership_0213",
+      "rationale": "The current membership page describes plans, models, context windows, and tool-call allowances, but contains no MCP evidence."
+    },
+    {
+      "productId": "android-studio",
+      "rowId": "editor-project-tree",
+      "targetState": "limited",
+      "auditedUrl": "https://developer.android.com/studio/projects",
+      "evidenceUrl": "https://developer.android.com/studio/projects",
+      "rationale": "The current project page establishes Android and Project views over the file hierarchy, but does not directly establish the paired editable code surface required by the combined row."
+    },
+    {
+      "productId": "qoder-ide",
+      "rowId": "editor-project-tree",
+      "targetState": "limited",
+      "auditedUrl": "https://docs.qoder.com/user-guide/chat/agent",
+      "evidenceUrl": "https://docs.qoder.com/user-guide/chat/agent",
+      "rationale": "The current Agent guide establishes project search, file editing, directory traversal, file status, and diffs, but not a conventional persistent project tree."
+    },
+    {
+      "productId": "gemini-code-assist",
+      "rowId": "extension-install-channel",
+      "targetState": "unknown",
+      "auditedUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages",
+      "rationale": "The current supported-languages page establishes VS Code and JetBrains hosts but does not document a marketplace, package, setup path, or other install channel."
+    },
+    {
+      "productId": "gemini-code-assist",
+      "rowId": "extension-permissions",
+      "targetState": "limited",
+      "auditedUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "evidenceUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "rationale": "The current page documents per-tool restrictions for VS Code, while IntelliJ documents review and approval rather than an equivalent per-tool policy."
     }
   ],
   "generatedMetricUnknowns": {

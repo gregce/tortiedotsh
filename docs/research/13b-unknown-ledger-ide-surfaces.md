@@ -1,6 +1,6 @@
 # Explicit Unknown ledger: IDE surfaces
 
-Checked 2026-08-23. The machine-readable source of truth is [`unknown-audit-ide-surfaces.json`](../../takes/three/src/data/unknown-audit-ide-surfaces.json).
+Checked 2026-08-24. The machine-readable source of truth is [`unknown-audit-ide-surfaces.json`](../../takes/three/src/data/unknown-audit-ide-surfaces.json).
 
 ## Scope and exact parity
 
@@ -8,12 +8,27 @@ This ledger resolves every non-platform row through `getComparisonClaim()` for C
 
 | Category | Public products | Current rendered Unknowns | Remain Unknown |
 | --- | ---: | ---: | ---: |
-| Code IDEs | 16 | 67 | 67 |
-| IDE extensions | 16 | 95 | 95 |
+| Code IDEs | 16 | 70 | 70 |
+| IDE extensions | 16 | 96 | 96 |
 | Agent Multiplexers | 8 | 28 | 28 |
-| **Total** | **40** | **190** | **190** |
+| **Total** | **40** | **194** | **194** |
 
-The generated ledger has exact key parity with all 190 current rendered Unknown cells. Every cell has a product-and-row-specific rationale and every product has an exact-SKU first-party `sourcesChecked` list. The generator rejects missing, extra, or duplicate keys.
+The generated ledger has exact key parity with all 194 current rendered Unknown cells. Every cell has a product-and-row-specific rationale and every product has an exact-SKU first-party `sourcesChecked` list. The generator rejects missing, extra, or duplicate keys.
+
+## Changed-source corrections preserved
+
+Fresh reads of changed first-party pages narrowed overbroad claims and restored unsupported claims to Unknown. These corrections are assertions in the generator, not editorial negatives.
+
+| Product | Row | Preserved state | Audited source | Reason |
+| --- | --- | --- | --- | --- |
+| Android Studio | `editor-agent-shell-tools` | limited | [First-party page](https://developer.android.com/studio/gemini/agent-mode) | The current Agent Mode page establishes build and connected-device tooling including adb shell input, but not general-purpose terminal command execution. |
+| Android Studio | `source-model` | unknown | [First-party page](https://developer.android.com/studio/install) | The current install page establishes the desktop distribution and supported stable channel, but not Android Studio's shipped source-model boundary. |
+| TraeCode | `editor-agent-shell-tools` | unknown | [First-party page](https://www.trae.ai/blog/product_solo) | The current SOLO page establishes autonomous coding, tests, deployment, and an integrated terminal view, but does not establish shell-command execution by the agent. |
+| TraeCode | `editor-mcp` | unknown | [First-party page](https://www.trae.ai/blog/trae_membership_0213) | The current membership page describes plans, models, context windows, and tool-call allowances, but contains no MCP evidence. |
+| Android Studio | `editor-project-tree` | limited | [First-party page](https://developer.android.com/studio/projects) | The current project page establishes Android and Project views over the file hierarchy, but does not directly establish the paired editable code surface required by the combined row. |
+| Qoder IDE | `editor-project-tree` | limited | [First-party page](https://docs.qoder.com/user-guide/chat/agent) | The current Agent guide establishes project search, file editing, directory traversal, file status, and diffs, but not a conventional persistent project tree. |
+| Gemini Code Assist Standard / Enterprise extensions | `extension-install-channel` | unknown | [First-party page](https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages) | The current supported-languages page establishes VS Code and JetBrains hosts but does not document a marketplace, package, setup path, or other install channel. |
+| Gemini Code Assist Standard / Enterprise extensions | `extension-permissions` | limited | [First-party page](https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer) | The current page documents per-tool restrictions for VS Code, while IntelliJ documents review and approval rather than an equivalent per-tool policy. |
 
 ## High-confidence affirmative closures applied
 
@@ -28,7 +43,7 @@ These previously Unknown cells now resolve from the catalog to the audited state
 | Continue extension | `product-status` | archived | [Continue repository README](https://github.com/continuedev/continue) | The canonical repository explicitly says it is read-only and no longer actively maintained and calls 2.0.0 the final extension release. |
 | Amazon Q Developer IDE extension | `extension-permissions` | built-in | [Amazon Q Developer MCP tools](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html) | Amazon Q's IDE MCP configuration documents auto-approved, requires-approval, and dangerous tool permission levels. |
 | Gemini Code Assist Standard / Enterprise extensions | `extension-mcp` | built-in | [Gemini Code Assist agent mode](https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer) | Google documents local and remote MCP server configuration for Gemini Code Assist in both VS Code and IntelliJ. |
-| Gemini Code Assist Standard / Enterprise extensions | `extension-permissions` | built-in | [Gemini Code Assist agent mode](https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer) | Gemini Code Assist documents coreTools and excludeTools controls, including command-specific restrictions for shell tools. |
+| Gemini Code Assist Standard / Enterprise extensions | `extension-permissions` | limited | [Gemini Code Assist agent mode](https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer) | VS Code exposes coreTools and excludeTools with command-specific restrictions; IntelliJ documents review and approval rather than the same per-tool policy. |
 | JetBrains AI Assistant | `extension-mcp` | built-in | [JetBrains AI Assistant agents](https://www.jetbrains.com/help/ai-assistant/agents.html) | JetBrains documents configuring MCP servers in AI Assistant settings and exposing their tools to coding agents. |
 | JetBrains AI Assistant | `extension-permissions` | built-in | [JetBrains AI Assistant agents](https://www.jetbrains.com/help/ai-assistant/agents.html) | JetBrains documents per-agent operation modes and an authorize-actions step that can approve, deny, or automatically run actions. |
 | CodeCompanion.nvim | `extension-mcp` | built-in | [CodeCompanion.nvim repository README](https://github.com/olimorris/codecompanion.nvim) | The canonical README explicitly lists built-in Model Context Protocol support. |
@@ -43,10 +58,10 @@ These previously Unknown cells now resolve from the catalog to the audited state
 | Product ID | Current Unknowns | Must remain Unknown |
 | --- | ---: | ---: |
 | `eclipse-theia-ide` | 5 | 5 |
-| `traecode` | 4 | 4 |
+| `traecode` | 6 | 6 |
 | `qoder-ide` | 0 | 0 |
 | `antigravity-ide` | 2 | 2 |
-| `android-studio` | 3 | 3 |
+| `android-studio` | 4 | 4 |
 | `intellij-idea` | 4 | 4 |
 | `positron` | 3 | 3 |
 | `onlook` | 4 | 4 |
@@ -71,7 +86,7 @@ These previously Unknown cells now resolve from the catalog to the audited state
 | `claude-code-vscode` | 7 | 7 |
 | `claude-code-jetbrains` | 9 | 9 |
 | `amazon-q-developer-ide` | 6 | 6 |
-| `gemini-code-assist` | 6 | 6 |
+| `gemini-code-assist` | 7 | 7 |
 | `jetbrains-ai-assistant` | 5 | 5 |
 | `pochi-vscode` | 4 | 4 |
 | `tabby-ide-extensions` | 7 | 7 |
@@ -110,4 +125,4 @@ Run:
 node --experimental-strip-types takes/three/scripts/generate-unknown-audit-ide-surfaces.mjs --check
 ```
 
-The check re-derives the rendered Unknown set, requires exact key parity, validates every source and rationale, verifies every applied closure's state and exact evidence URL, and checks that the generated JSON and report have not drifted.
+The check re-derives the rendered Unknown set, requires exact key parity, validates every source and rationale, verifies every applied closure and changed-source correction, and checks that the generated JSON and report have not drifted.

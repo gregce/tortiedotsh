@@ -10,12 +10,12 @@
   },
   "summary": {
     "products": 47,
-    "currentUnknownCells": 159,
+    "currentUnknownCells": 160,
     "agentOrchestratorUnknownCells": 98,
-    "codingAgentHarnessUnknownCells": 61,
+    "codingAgentHarnessUnknownCells": 62,
     "suggestedClosures": 0,
     "implementedClosures": 8,
-    "remainUnknown": 159
+    "remainUnknown": 160
   },
   "categories": [
     {
@@ -397,8 +397,10 @@
         },
         {
           "productId":"qwen-code",
-          "sourcesChecked":["https://github.com/QwenLM/qwen-code"],
-          "cells":[]
+          "sourcesChecked":["https://github.com/QwenLM/qwen-code","https://github.com/QwenLM/qwen-code/blob/main/docs/users/configuration/settings.md"],
+          "cells":[
+            {"rowId":"harness-checkpoints","result":"remain-unknown","rationale":"The current exact Qwen Code settings document no longer defines checkpointing or rollback. Its only checkpoint reference is an unrelated startup-profiler memory snapshot, so the former capability claim cannot be retained without a new exact first-party product source."}
+          ]
         },
         {
           "productId":"pi-coding-agent",

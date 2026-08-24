@@ -9,7 +9,7 @@ import {
   getComparisonClaim,
 } from "../src/data/comparison-catalog.ts";
 
-const checkedAt = "2026-08-23";
+const checkedAt = "2026-08-24";
 const root = resolve(import.meta.dirname, "..");
 const ledgerPath = resolve(root, "src/data/unknown-audit-ide-surfaces.json");
 const reportPath = resolve(root, "../../docs/research/13b-unknown-ledger-ide-surfaces.md");
@@ -67,6 +67,7 @@ const productNotes = {
 };
 
 const rowBoundaries = {
+  "source-model": "The checked product source does not establish whether the shipped distribution is open source, split source, source available, proprietary, or a hosted service.",
   "product-status": "The checked first-party material does not assign an explicit lifecycle label that maps to the catalog's active, beta, community-maintained, sunsetting, archived, or pivoted states.",
   "editor-project-tree": "It does not directly establish a conventional project tree paired with an editable source surface for this exact product mode.",
   "editor-agent-mode": "It does not establish a first-party autonomous coding-agent loop inside this editor.",
@@ -90,6 +91,7 @@ const rowBoundaries = {
   "extension-mcp": "It does not establish an MCP client exposed by this exact extension rather than the host IDE or an optional third-party plugin.",
   "extension-checkpoints": "It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history.",
   "extension-permissions": "It does not establish per-tool approval or allow, ask, and deny policies for this exact extension.",
+  "extension-install-channel": "It does not establish an exact marketplace listing, package, setup path, or other supported installation channel for this extension.",
   "extension-codebase-context": "It does not establish a maintained codebase map or indexing/retrieval layer; ordinary file reads and text search are insufficient.",
   "extension-isolated-parallel": "It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation.",
   "extension-byok-local-model": "It does not establish operator-supplied provider credentials, a local model, or a self-hosted inference endpoint for this exact extension.",
@@ -131,13 +133,24 @@ const appliedClosures = [
   { productId: "continue", rowId: "product-status", targetState: "archived", claimState: "fact", evidenceUrl: "https://github.com/continuedev/continue", evidenceTitle: "Continue repository README", basis: "repository-derived", rationale: "The canonical repository explicitly says it is read-only and no longer actively maintained and calls 2.0.0 the final extension release." },
   { productId: "amazon-q-developer-ide", rowId: "extension-permissions", targetState: "built-in", evidenceUrl: "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html", evidenceTitle: "Amazon Q Developer MCP tools", basis: "vendor-documented", rationale: "Amazon Q's IDE MCP configuration documents auto-approved, requires-approval, and dangerous tool permission levels." },
   { productId: "gemini-code-assist", rowId: "extension-mcp", targetState: "built-in", evidenceUrl: "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer", evidenceTitle: "Gemini Code Assist agent mode", basis: "vendor-documented", rationale: "Google documents local and remote MCP server configuration for Gemini Code Assist in both VS Code and IntelliJ." },
-  { productId: "gemini-code-assist", rowId: "extension-permissions", targetState: "built-in", evidenceUrl: "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer", evidenceTitle: "Gemini Code Assist agent mode", basis: "vendor-documented", rationale: "Gemini Code Assist documents coreTools and excludeTools controls, including command-specific restrictions for shell tools." },
+  { productId: "gemini-code-assist", rowId: "extension-permissions", targetState: "limited", evidenceUrl: "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer", evidenceTitle: "Gemini Code Assist agent mode", basis: "vendor-documented", rationale: "VS Code exposes coreTools and excludeTools with command-specific restrictions; IntelliJ documents review and approval rather than the same per-tool policy." },
   { productId: "jetbrains-ai-assistant", rowId: "extension-mcp", targetState: "built-in", evidenceUrl: "https://www.jetbrains.com/help/ai-assistant/agents.html", evidenceTitle: "JetBrains AI Assistant agents", basis: "vendor-documented", rationale: "JetBrains documents configuring MCP servers in AI Assistant settings and exposing their tools to coding agents." },
   { productId: "jetbrains-ai-assistant", rowId: "extension-permissions", targetState: "built-in", evidenceUrl: "https://www.jetbrains.com/help/ai-assistant/agents.html", evidenceTitle: "JetBrains AI Assistant agents", basis: "vendor-documented", rationale: "JetBrains documents per-agent operation modes and an authorize-actions step that can approve, deny, or automatically run actions." },
   { productId: "codecompanion-nvim", rowId: "extension-mcp", targetState: "built-in", evidenceUrl: "https://github.com/olimorris/codecompanion.nvim", evidenceTitle: "CodeCompanion.nvim repository README", basis: "repository-derived", rationale: "The canonical README explicitly lists built-in Model Context Protocol support." },
   { productId: "warp", rowId: "workbench-change-review", targetState: "built-in", evidenceUrl: "https://docs.warp.dev/code/code-review", evidenceTitle: "Warp Code Review", basis: "vendor-documented", rationale: "Warp documents a first-party Code Review panel with live diffs, inline comments, batch agent feedback, edit, revert, and file review." },
   { productId: "warp", rowId: "workbench-worktrees", targetState: "built-in", evidenceUrl: "https://docs.warp.dev/code/code-review", evidenceTitle: "Warp Code Review", basis: "vendor-documented", rationale: "Warp's Code Review documentation explicitly states native Git worktree support and links the product's worktree workflow." },
   { productId: "wave-terminal", rowId: "workbench-named-sessions", targetState: "built-in", evidenceUrl: "https://docs.waveterm.dev/workspaces", evidenceTitle: "Wave Terminal workspaces", basis: "vendor-documented", rationale: "Wave documents named saved workspaces whose tabs, layouts, terminal histories, and AI histories persist automatically and can be reopened." },
+];
+
+const changedSourceCorrections = [
+  { productId: "android-studio", rowId: "editor-agent-shell-tools", targetState: "limited", auditedUrl: "https://developer.android.com/studio/gemini/agent-mode", evidenceUrl: "https://developer.android.com/studio/gemini/agent-mode", rationale: "The current Agent Mode page establishes build and connected-device tooling including adb shell input, but not general-purpose terminal command execution." },
+  { productId: "android-studio", rowId: "source-model", targetState: "unknown", auditedUrl: "https://developer.android.com/studio/install", rationale: "The current install page establishes the desktop distribution and supported stable channel, but not Android Studio's shipped source-model boundary." },
+  { productId: "traecode", rowId: "editor-agent-shell-tools", targetState: "unknown", auditedUrl: "https://www.trae.ai/blog/product_solo", rationale: "The current SOLO page establishes autonomous coding, tests, deployment, and an integrated terminal view, but does not establish shell-command execution by the agent." },
+  { productId: "traecode", rowId: "editor-mcp", targetState: "unknown", auditedUrl: "https://www.trae.ai/blog/trae_membership_0213", rationale: "The current membership page describes plans, models, context windows, and tool-call allowances, but contains no MCP evidence." },
+  { productId: "android-studio", rowId: "editor-project-tree", targetState: "limited", auditedUrl: "https://developer.android.com/studio/projects", evidenceUrl: "https://developer.android.com/studio/projects", rationale: "The current project page establishes Android and Project views over the file hierarchy, but does not directly establish the paired editable code surface required by the combined row." },
+  { productId: "qoder-ide", rowId: "editor-project-tree", targetState: "limited", auditedUrl: "https://docs.qoder.com/user-guide/chat/agent", evidenceUrl: "https://docs.qoder.com/user-guide/chat/agent", rationale: "The current Agent guide establishes project search, file editing, directory traversal, file status, and diffs, but not a conventional persistent project tree." },
+  { productId: "gemini-code-assist", rowId: "extension-install-channel", targetState: "unknown", auditedUrl: "https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages", rationale: "The current supported-languages page establishes VS Code and JetBrains hosts but does not document a marketplace, package, setup path, or other install channel." },
+  { productId: "gemini-code-assist", rowId: "extension-permissions", targetState: "limited", auditedUrl: "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer", evidenceUrl: "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer", rationale: "The current page documents per-tool restrictions for VS Code, while IntelliJ documents review and approval rather than an equivalent per-tool policy." },
 ];
 
 const appliedClosureByKey = new Map(appliedClosures.map((closure) => [`${closure.productId}::${closure.rowId}`, closure]));
@@ -156,6 +169,13 @@ for (const closure of appliedClosures) {
   assertHttpsUrl(closure.evidenceUrl, `Applied closure evidence for ${closure.productId}::${closure.rowId}`);
   if (!closure.targetState.trim() || !closure.evidenceTitle.trim() || !closure.rationale.trim()) {
     throw new Error(`Applied closure ${closure.productId}::${closure.rowId} is incomplete.`);
+  }
+}
+for (const correction of changedSourceCorrections) {
+  assertHttpsUrl(correction.auditedUrl, `Changed-source audit for ${correction.productId}::${correction.rowId}`);
+  if (correction.evidenceUrl) assertHttpsUrl(correction.evidenceUrl, `Changed-source correction for ${correction.productId}::${correction.rowId}`);
+  if (!correction.targetState.trim() || !correction.rationale.trim()) {
+    throw new Error(`Changed-source correction ${correction.productId}::${correction.rowId} is incomplete.`);
   }
 }
 
@@ -238,6 +258,23 @@ for (const [key, closure] of appliedClosureByKey) {
     throw new Error(`Applied closure ${key} is missing its audited evidence URL ${closure.evidenceUrl}.`);
   }
 }
+for (const correction of changedSourceCorrections) {
+  const key = `${correction.productId}::${correction.rowId}`;
+  const product = comparisonProducts.find((item) => item.id === correction.productId);
+  const row = comparisonCategories.flatMap((category) => category.rows).find((item) => item.id === correction.rowId);
+  if (!product || !row) throw new Error(`Changed-source correction ${key} no longer resolves to a catalog product and row.`);
+  const claim = getComparisonClaim(product, row);
+  if (claim.state !== correction.targetState) {
+    throw new Error(`Changed-source correction ${key} resolves to ${claim.state}; expected ${correction.targetState}.`);
+  }
+  if (correction.targetState === "unknown") {
+    if (!renderedKeys.has(key)) throw new Error(`Changed-source correction ${key} must remain in the rendered Unknown ledger.`);
+    if (claim.evidence.length !== 0) throw new Error(`Changed-source correction ${key} is Unknown but still carries evidence.`);
+  }
+  if (correction.evidenceUrl && !claim.evidence.some((item) => item.url === correction.evidenceUrl)) {
+    throw new Error(`Changed-source correction ${key} is missing its audited evidence URL ${correction.evidenceUrl}.`);
+  }
+}
 
 const countFor = (categoryId) => allCells.filter((cell) => cell.categoryId === categoryId).length;
 const summary = {
@@ -247,6 +284,7 @@ const summary = {
   ideExtensionUnknownCells: countFor("ide-extensions"),
   agentMultiplexerUnknownCells: countFor("agent-workbenches"),
   appliedClosures: appliedClosures.length,
+  changedSourceCorrections: changedSourceCorrections.length,
   remainUnknown: allCells.length,
 };
 
@@ -263,6 +301,7 @@ const ledger = {
   summary,
   categories,
   appliedClosures,
+  changedSourceCorrections,
   generatedMetricUnknowns: {
     result: "excluded-from-editorial-ledger",
     rationale: "Repository metric Unknowns are collector failures or not-yet-refreshed values. The deterministic repository refresh and audit:freshness gate must close or block them; editorial research must not hand-fill those cells.",
@@ -289,6 +328,18 @@ const reportLines = [
   `| **Total** | **${summary.products}** | **${summary.currentUnknownCells}** | **${summary.remainUnknown}** |`,
   "",
   `The generated ledger has exact key parity with all ${summary.currentUnknownCells} current rendered Unknown cells. Every cell has a product-and-row-specific rationale and every product has an exact-SKU first-party \`sourcesChecked\` list. The generator rejects missing, extra, or duplicate keys.`,
+  "",
+  "## Changed-source corrections preserved",
+  "",
+  "Fresh reads of changed first-party pages narrowed overbroad claims and restored unsupported claims to Unknown. These corrections are assertions in the generator, not editorial negatives.",
+  "",
+  "| Product | Row | Preserved state | Audited source | Reason |",
+  "| --- | --- | --- | --- | --- |",
+  ...changedSourceCorrections.map((correction) => {
+    const product = comparisonProducts.find((item) => item.id === correction.productId);
+    const source = `[First-party page](${correction.auditedUrl})`;
+    return `| ${product.name} | \`${correction.rowId}\` | ${correction.targetState} | ${source} | ${correction.rationale} |`;
+  }),
   "",
   "## High-confidence affirmative closures applied",
   "",
@@ -333,7 +384,7 @@ const reportLines = [
   "node --experimental-strip-types takes/three/scripts/generate-unknown-audit-ide-surfaces.mjs --check",
   "```",
   "",
-  "The check re-derives the rendered Unknown set, requires exact key parity, validates every source and rationale, verifies every applied closure's state and exact evidence URL, and checks that the generated JSON and report have not drifted.",
+  "The check re-derives the rendered Unknown set, requires exact key parity, validates every source and rationale, verifies every applied closure and changed-source correction, and checks that the generated JSON and report have not drifted.",
   "",
 ].join("\n");
 
@@ -344,7 +395,7 @@ if (checkOnly) {
   ]);
   if (existingJson !== json) throw new Error("unknown-audit-ide-surfaces.json is stale; rerun the generator.");
   if (existingReport !== reportLines) throw new Error("13b-unknown-ledger-ide-surfaces.md is stale; rerun the generator.");
-  console.log(`Unknown audit is current: ${summary.currentUnknownCells} exact rendered keys, ${summary.appliedClosures} applied closures, ${summary.remainUnknown} remain Unknown.`);
+  console.log(`Unknown audit is current: ${summary.currentUnknownCells} exact rendered keys, ${summary.appliedClosures} applied closures, ${summary.changedSourceCorrections} changed-source corrections, ${summary.remainUnknown} remain Unknown.`);
 } else {
   await Promise.all([
     writeFile(ledgerPath, json),

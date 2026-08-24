@@ -457,7 +457,9 @@ interface ProductInput {
   platformSource?: { url: string; title: string };
   platformSources?: readonly { url: string; title: string }[];
   source: SourceModel | "unknown";
+  sourceSource?: { url: string; title: string; basis?: EvidenceBasis };
   execution: readonly ExecutionLocation[] | "unknown";
+  executionSource?: { url: string; title: string; basis?: EvidenceBasis };
   status?: ProductStatus;
   statusSource?: { url: string; title: string; basis?: EvidenceBasis };
   claims?: Readonly<Record<string, ComparisonClaim>>;
@@ -500,11 +502,21 @@ const product = (input: ProductInput): ComparisonProduct => {
           : unknown("Platform support is not yet verified from a primary source at row level."),
       source:
         input.source !== "unknown" && sourceUrl
-          ? known(input.source, sourceUrl, sourceTitle, input.repository ? "source-inspected" : "vendor-documented")
+          ? known(
+              input.source,
+              input.sourceSource?.url ?? sourceUrl,
+              input.sourceSource?.title ?? sourceTitle,
+              input.sourceSource?.basis ?? (input.repository ? "source-inspected" : "vendor-documented"),
+            )
           : unknown("The shipped product's source model is not yet established by primary evidence."),
       execution:
         input.execution !== "unknown" && sourceUrl
-          ? known(input.execution, sourceUrl, sourceTitle)
+          ? known(
+              input.execution,
+              input.executionSource?.url ?? sourceUrl,
+              input.executionSource?.title ?? sourceTitle,
+              input.executionSource?.basis ?? "vendor-documented",
+            )
           : unknown(profileUnknown),
       primaryObject: sourceUrl
         ? known(objectForCategory[input.categoryId], sourceUrl, sourceTitle, "vendor-documented")
@@ -580,11 +592,10 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   }),
   product({
     id: "traecode", name: "TraeCode", categoryId: "code-editors", editorialOrder: 2, officialUrl: "https://www.trae.ai/ide",
-    tags: ["agent-panel", "solo-mode", "inline-completion", "mcp", "embedded-browser", "formerly-trae-ide"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active",
+    tags: ["agent-panel", "solo-mode", "inline-completion", "embedded-browser", "formerly-trae-ide"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active",
     claims: {
-      ...builtInClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-terminal", "editor-agent-mode", "editor-agent-shell-tools"]),
+      ...builtInClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-terminal", "editor-agent-mode"]),
       ...builtInClaims("https://www.trae.ai/blog/engineering_thought_0731", "TraeCode Cue product notes", ["editor-inline-prediction"]),
-      ...builtInClaims("https://www.trae.ai/blog/trae_membership_0213", "TraeCode capability overview", ["editor-mcp"]),
       ...builtInClaims("https://www.trae.ai/blog/product_solo_1112?v=1", "TraeCode SOLO general-availability notes", ["editor-parallel-sessions"]),
       ...limitedClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-background-jobs"], "SOLO supports long multi-step work, but detached durability after client exit is not established."),
       ...limitedClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-change-review"], "Progress and a final summary are surfaced in the IDE; per-hunk accept and reject behavior is not established."),
@@ -601,7 +612,8 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     id: "qoder-ide", name: "Qoder IDE", categoryId: "code-editors", editorialOrder: 3, officialUrl: "https://docs.qoder.com/product-series/what-is-qoder",
     tags: ["agent-panel", "quest", "inline-completion", "mcp", "parallel-agents", "scheduled-tasks", "remote-ssh", "sandbox"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud", "ssh-host"], status: "active",
     claims: {
-      ...builtInClaims("https://docs.qoder.com/user-guide/chat/agent", "Qoder IDE Agent guide", ["editor-project-tree", "editor-terminal", "editor-agent-mode", "editor-agent-shell-tools", "editor-mcp", "editor-change-review"]),
+      ...builtInClaims("https://docs.qoder.com/user-guide/chat/agent", "Qoder IDE Agent guide", ["editor-terminal", "editor-agent-mode", "editor-agent-shell-tools", "editor-mcp", "editor-change-review"]),
+      "editor-project-tree": capability("limited", "https://docs.qoder.com/user-guide/chat/agent", "Qoder IDE Agent guide", "Agent Mode provides project search, file editing, directory traversal, Workspace file statuses, and diffs; this page does not establish a conventional persistent project tree."),
       ...builtInClaims("https://docs.qoder.com/user-guide/chat/overview", "Qoder IDE Editor overview", ["editor-inline-prediction"]),
       ...builtInClaims("https://docs.qoder.com/release-notes/desktop", "Qoder IDE release notes", ["editor-background-jobs", "editor-parallel-sessions", "editor-remote-workspaces"]),
       "editor-worktree-isolation": capability("built-in", "https://docs.qoder.com/user-guide/quest/execution-environments", "Qoder Quest execution environments", "Local Worktree mode creates a separate Git checkout for parallel task execution and can move completed work back to the local workspace."),
@@ -633,12 +645,13 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   }),
   product({
     id: "android-studio", name: "Android Studio", categoryId: "code-editors", editorialOrder: 5, officialUrl: "https://developer.android.com/studio/install",
-    tags: ["android", "gemini", "agent-panel", "parallel-agents", "inline-completion", "mcp", "emulator", "split-source"], platform: ["macos", "windows", "linux"], source: "split-source", execution: ["local-process", "vendor-cloud"], status: "active",
+    tags: ["android", "gemini", "agent-panel", "parallel-agents", "inline-completion", "mcp", "emulator"], platform: ["macos", "windows", "linux"], source: "unknown", execution: ["local-process", "vendor-cloud"], status: "active",
     claims: {
-      ...builtInClaims("https://developer.android.com/studio/projects", "Android Studio project window", ["editor-project-tree"]),
+      "editor-project-tree": capability("limited", "https://developer.android.com/studio/projects", "Android Studio project window", "Android Studio exposes Android and Project views over the complete project file hierarchy; this page does not directly establish the paired editable code surface."),
       ...builtInClaims("https://developer.android.com/build/building-cmdline", "Android Studio terminal and command-line build documentation", ["editor-terminal"]),
-      ...builtInClaims("https://developer.android.com/studio/gemini/agent-mode", "Gemini in Android Studio Agent Mode", ["editor-agent-mode", "editor-agent-shell-tools", "editor-parallel-sessions", "editor-change-review"]),
+      ...builtInClaims("https://developer.android.com/studio/gemini/agent-mode", "Gemini in Android Studio Agent Mode", ["editor-agent-mode", "editor-parallel-sessions", "editor-change-review"]),
       ...limitedClaims("https://developer.android.com/studio/gemini/agent-mode", "Gemini in Android Studio Agent Mode", ["editor-background-jobs"], "Multiple agent conversations can run concurrently and remain visible in Recent Chats, but durability after Android Studio exits is not established."),
+      ...limitedClaims("https://developer.android.com/studio/gemini/agent-mode", "Gemini in Android Studio Agent Mode", ["editor-agent-shell-tools"], "Agent Mode invokes build and connected-device tooling including adb shell input; general-purpose terminal command execution is not established."),
       ...builtInClaims("https://developer.android.com/studio/gemini/features", "Gemini in Android Studio features", ["editor-inline-prediction", "editor-mcp"]),
       "editor-model-access": factClaim("Gemini default and configured supported providers", "https://developer.android.com/studio/gemini/features", "Gemini in Android Studio features"),
       "editor-agent-permissions": factClaim("Tool permissions and change review", "https://developer.android.com/studio/gemini/agent-mode", "Gemini in Android Studio Agent Mode"),
@@ -995,7 +1008,10 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   product({
     id: "emdash", name: "Emdash", categoryId: "agent-orchestrators", editorialOrder: 9, officialUrl: "https://emdash.com/docs", repository: repo("generalaction/emdash"), repoMetricId: "emdash",
     tags: ["agentic-development-environment", "multi-harness", "worktrees", "diff-review", "remote-ssh", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process", "ssh-host", "user-cloud"], status: "active",
-    claims: builtInClaims("https://emdash.com/docs", "Emdash documentation", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-pr-lifecycle", "orchestrator-remote-execution", "orchestrator-attention-signals"]),
+    claims: {
+      ...builtInClaims("https://emdash.com/docs", "Emdash documentation", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-pr-lifecycle", "orchestrator-remote-execution"]),
+      "orchestrator-attention-signals": capability("built-in", "https://emdash.com/docs/providers", "Emdash providers", "Lifecycle hooks track working, awaiting-input, and done states and drive notifications for supported harnesses."),
+    },
   }),
   product({
     id: "kandev", name: "Kandev", categoryId: "agent-orchestrators", editorialOrder: 10, officialUrl: "https://kandev.ai/docs/", repository: repo("kdlbs/kandev"), repoMetricId: "kandev",
@@ -1101,11 +1117,11 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "harness-git-workflow": capability("built-in", "https://github.com/google-gemini/gemini-cli", "Gemini CLI repository", "The first-party GitHub integration documents pull-request review and issue workflows.", "repository-derived"),
     "harness-multimodal-input": capability("built-in", "https://github.com/google-gemini/gemini-cli", "Gemini CLI repository", "The current README explicitly documents generating applications from PDFs, images, or sketches through multimodal input.", "repository-derived"),
   } }),
-  product({ id: "amp", name: "Amp", categoryId: "coding-agent-harnesses", editorialOrder: 5, officialUrl: "https://ampcode.com/manual", tags: ["cli", "headless", "threads", "plugins", "subagents"], platform: ["macos", "windows", "linux"], platformNote: "The manual documents macOS, Linux, WSL, and native Windows PowerShell installs.", source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active", claims: {
+  product({ id: "amp", name: "Amp", categoryId: "coding-agent-harnesses", editorialOrder: 5, officialUrl: "https://ampcode.com/manual", tags: ["cli", "headless", "threads", "plugins", "subagents"], platform: ["macos", "windows", "linux"], platformNote: "The manual documents macOS, Linux, WSL, and native Windows PowerShell installs.", source: "proprietary", sourceSource: { url: "https://ampcode.com/security", title: "Amp Security Reference" }, execution: ["local-process", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://ampcode.com/manual", "Amp manual", ["harness-interactive-cli", "harness-headless", "harness-multi-provider", "harness-session-resume", "harness-extension-protocol", "harness-project-instructions", "harness-subagents", "harness-structured-output", "harness-multimodal-input"]),
-    "harness-permission-controls": capability("not-available", "https://ampcode.com/manual", "Amp manual", "The local agent does not ask before tool execution; the manual directs users to isolation for a stronger boundary."),
-    "harness-sandbox": capability("via-integration", "https://ampcode.com/manual", "Amp manual", "Local CLI execution is not sandboxed; hosted runners and Orbs can supply an isolated execution environment."),
-    "harness-git-workflow": capability("limited", "https://ampcode.com/manual", "Amp manual", "Amp documents Git-aware changes and commit trailers, but not a managed worktree or branch lifecycle."),
+    "harness-permission-controls": capability("built-in", "https://ampcode.com/manual", "Amp manual", "Amp runs tools without prompts by default, but its Plugin API and compatibility settings provide allow, reject, and interactive approval policies."),
+    "harness-sandbox": capability("via-integration", "https://ampcode.com/manual/orbs", "Amp Orbs", "The local CLI uses its host environment; optional Orbs give each thread a fresh remote machine containing a cloned repository and its tools."),
+    "harness-git-workflow": capability("built-in", "https://ampcode.com/manual", "Amp manual", "Changes Workflow can commit and push to main, push a branch and return a GitHub pull-request URL, or run a configured custom ship prompt."),
   } }),
   product({ id: "prime-agent", name: "Prime Agent", categoryId: "coding-agent-harnesses", editorialOrder: 6, officialUrl: "https://github.com/PrimeIntellect-ai/prime-agent", repository: repo("PrimeIntellect-ai/prime-agent"), repoMetricId: "prime-agent", tags: ["cli", "daemon", "continual-agent", "subagents", "multi-model", "oss"], platform: ["macos", "linux"], platformNote: "The stable installation path documents macOS and Linux; native Windows support is not asserted.", source: "open-source", execution: ["local-process", "local-daemon"], status: "active", claims: {
     ...builtInClaims("https://github.com/PrimeIntellect-ai/prime-agent/blob/main/README.md", "Prime Agent README", ["harness-interactive-cli", "harness-multi-provider", "harness-session-resume", "harness-extension-protocol", "harness-subagents"], undefined, "repository-derived"),
@@ -1226,7 +1242,6 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "harness-project-instructions": capability("built-in", "https://qwenlm.github.io/qwen-code-docs/en/users/features/memory/", "Qwen Code memory", "Project instruction and memory files are loaded as documented context."),
     "harness-permission-controls": capability("built-in", "https://github.com/QwenLM/qwen-code/blob/main/docs/users/configuration/settings.md", "Qwen Code settings", "Documented settings control tool permissions."),
     "harness-sandbox": capability("built-in", "https://qwenlm.github.io/qwen-code-docs/en/users/features/sandbox/", "Qwen Code sandbox", "First-party documentation describes isolated tool execution."),
-    "harness-checkpoints": capability("built-in", "https://github.com/QwenLM/qwen-code/blob/main/docs/users/configuration/settings.md", "Qwen Code settings", "Checkpointing is a documented configurable capability."),
     "harness-git-workflow": capability("limited", "https://github.com/QwenLM/qwen-code/blob/main/docs/users/configuration/settings.md", "Qwen Code settings", "Git attribution is documented; broader automated review delivery is not asserted."),
     "harness-multimodal-input": capability("built-in", "https://qwenlm.github.io/qwen-code-docs/en/developers/tools/file-system/", "Qwen Code filesystem tools", "The first-party file tool supports multimodal file inputs."),
   } }),
@@ -1344,8 +1359,8 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   product({ id: "gemini-code-assist", name: "Gemini Code Assist Standard / Enterprise extensions", categoryId: "ide-extensions", editorialOrder: 9, officialUrl: "https://docs.cloud.google.com/gemini/docs/codeassist/overview", tags: ["vscode", "jetbrains", "autocomplete", "agent-panel", "standard", "enterprise"], source: "proprietary", execution: ["host-ide-process", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages", "Gemini Code Assist supported IDEs", ["extension-hosts", "extension-host-vscode", "extension-host-jetbrains"]),
     ...builtInClaims("https://docs.cloud.google.com/gemini/docs/codeassist/overview", "Gemini Code Assist Standard and Enterprise overview", ["extension-inline-completion", "extension-agent-panel", "extension-codebase-context"]),
-    ...builtInClaims("https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer", "Gemini Code Assist agent mode", ["extension-mcp", "extension-permissions"]),
-    "extension-install-channel": factClaim("VS Code and JetBrains extension setup", "https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages", "Gemini Code Assist supported IDEs"),
+    ...builtInClaims("https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer", "Gemini Code Assist agent mode", ["extension-mcp"]),
+    "extension-permissions": capability("limited", "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer", "Gemini Code Assist agent mode", "VS Code exposes coreTools and excludeTools with command-specific restrictions; IntelliJ documents review, approval, and auto-approval of changes rather than the same per-tool policy."),
     "extension-tool-execution-boundary": factClaim("Host IDE + Google Cloud service", "https://docs.cloud.google.com/gemini/docs/codeassist/overview", "Gemini Code Assist Standard and Enterprise overview"),
   } }),
   product({ id: "jetbrains-ai-assistant", name: "JetBrains AI Assistant", categoryId: "ide-extensions", editorialOrder: 10, officialUrl: "https://www.jetbrains.com/help/idea/ai-assistant-in-jetbrains-ides.html", tags: ["jetbrains", "autocomplete", "agent-panel", "external-agents"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["host-ide-process", "local-process", "vendor-cloud"], status: "active", claims: {
@@ -1644,15 +1659,15 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   product({
     id: "perplexity-computer", name: "Perplexity Computer", categoryId: "general-purpose-agents", editorialOrder: 4,
     officialUrl: "https://www.perplexity.ai/products/computer", tags: ["digital-worker", "cloud-sandbox", "memory", "browser", "connectors", "scheduled-tasks", "subagents"],
-    platform: ["web", "ios", "android"], platformSource: { url: "https://www.perplexity.ai/products/computer", title: "What is Perplexity Computer" },
-    source: "hosted-service", execution: ["vendor-cloud"], status: "active",
+    platform: ["web", "ios", "android"], platformSource: { url: "https://www.perplexity.ai/help-center/en/articles/13837784-what-is-computer", title: "What is Computer?" },
+    source: "hosted-service", execution: ["vendor-cloud"], executionSource: { url: "https://www.perplexity.ai/help-center/en/articles/13837784-what-is-computer", title: "What is Computer?" }, status: "active",
     claims: {
-      ...builtInClaims("https://www.perplexity.ai/products/computer", "What is Perplexity Computer", ["general-durable-identity", "general-long-term-memory", "general-browser-control", "general-terminal-files", "general-communications", "general-skills-integrations", "general-multi-agent"]),
+      ...builtInClaims("https://www.perplexity.ai/help-center/en/articles/13837784-what-is-computer", "What is Computer?", ["general-durable-identity", "general-long-term-memory", "general-browser-control", "general-terminal-files", "general-communications", "general-skills-integrations", "general-multi-agent"]),
       "general-computer-use": capability("limited", "https://www.perplexity.ai/products/computer", "What is Perplexity Computer", "Browser automation, code, and artifacts are documented; native desktop-application control is not established."),
-      "general-operator-surfaces": factClaim("Web desktop, iOS, Android, Slack, Microsoft 365, and email", "https://www.perplexity.ai/products/computer", "What is Perplexity Computer"),
-      ...builtInClaims("https://www.perplexity.ai/products/computer", "Perplexity tasks", ["general-scheduled-automation", "general-event-triggers"]),
-      "general-execution-owner": factClaim("Perplexity cloud", "https://www.perplexity.ai/products/computer", "Perplexity Computer product page"),
-      "general-isolation": capability("built-in", "https://www.perplexity.ai/products/computer", "What is Perplexity Computer", "Each user receives a secure isolated personal cloud sandbox."),
+      "general-operator-surfaces": factClaim("Web desktop, iOS, Android, Slack, and Microsoft 365", "https://www.perplexity.ai/help-center/en/articles/13837784-what-is-computer", "What is Computer?"),
+      ...builtInClaims("https://www.perplexity.ai/help-center/en/articles/13837784-what-is-computer", "What is Computer?", ["general-scheduled-automation", "general-event-triggers"]),
+      "general-execution-owner": factClaim("Perplexity cloud", "https://www.perplexity.ai/help-center/en/articles/13837784-what-is-computer", "What is Computer?"),
+      "general-isolation": capability("built-in", "https://www.perplexity.ai/help-center/en/articles/13901210-computer-for-enterprise", "Computer for Enterprise", "Computer tasks run in isolated compute containers with dedicated filesystems and browser instances."),
       "general-self-hosting": unknownClaim("Current exact-SKU documentation does not establish a self-hosted deployment."),
       "general-model-freedom": unknownClaim("Current exact-SKU documentation does not establish operator-selectable third-party or local models."),
     },
