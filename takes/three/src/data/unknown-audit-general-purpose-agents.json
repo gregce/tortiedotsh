@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-08-23",
+  "catalogSnapshot": "2026-08-23",
+  "scope": {
+    "categoryIds": ["general-purpose-agents"],
+    "excludedProductIds": ["mosaic-terminal", "airport", "muse-code", "omnara"],
+    "renderedRows": "Non-platform catalog rows resolved through getComparisonClaim(). Generated repository metrics are governed separately by the freshness gate.",
+    "platformHeaders": "Products whose complete platform fact is Unknown are audited separately below. An omitted OS in a known platform list is not rendered as an Unknown table cell.",
+    "parityRule": "cells must exactly equal the current rendered non-platform Unknown keys. Implemented closures are recorded separately and are no longer Unknown catalog state."
+  },
+  "summary": {
+    "products": 13,
+    "currentUnknownCells": 34,
+    "suggestedClosures": 0,
+    "implementedClosures": 8,
+    "remainUnknown": 34
+  },
+  "categories": [
+    {
+      "categoryId": "general-purpose-agents",
+      "products": [
+        {
+          "productId": "openclaw",
+          "sourcesChecked": [
+            "https://docs.openclaw.ai/",
+            "https://docs.openclaw.ai/browser",
+            "https://docs.openclaw.ai/tools",
+            "https://docs.openclaw.ai/nodes/computer-use",
+            "https://github.com/openclaw/openclaw/blob/main/docs/automation/cron-jobs.md",
+            "https://github.com/openclaw/openclaw/blob/main/docs/gateway/sandboxing.md"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "hermes-agent",
+          "sourcesChecked": [
+            "https://github.com/NousResearch/hermes-agent",
+            "https://hermes-agent.nousresearch.com/docs/user-guide/features/browser/",
+            "https://hermes-agent.nousresearch.com/docs/user-guide/features/tools/",
+            "https://hermes-agent.nousresearch.com/docs/user-guide/features/cron/",
+            "https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation/",
+            "https://github.com/NousResearch/hermes-agent/blob/main/apps/desktop/README.md"
+          ],
+          "cells": [
+            {"rowId":"general-computer-use","result":"remain-unknown","rationale":"Hermes Agent documents a native operator desktop, browser automation, shell tools, and hosted sandbox backends, but none of the checked exact-product sources establishes pointer/keyboard control of arbitrary native GUI applications."}
+          ]
+        },
+        {
+          "productId": "grok-bot",
+          "sourcesChecked": [
+            "https://docs.x.ai/grok-bot/overview",
+            "https://docs.x.ai/grok-bot/computer-and-apps",
+            "https://docs.x.ai/grok-bot/skills-routines-and-automations",
+            "https://docs.x.ai/grok-bot/approvals-security-and-privacy",
+            "https://docs.x.ai/grok-bot/faq"
+          ],
+          "cells": [
+            {"rowId":"general-self-hosting","result":"remain-unknown","rationale":"Grok Bot's exact documentation assigns each Bot a vendor-managed cloud computer and optional paired local access; it does not establish a customer-operated Bot control plane or self-hosted runtime."},
+            {"rowId":"general-model-freedom","result":"remain-unknown","rationale":"The Grok Bot pages describe the hosted xAI product but do not expose operator-selectable third-party providers, local models, or an OpenAI-compatible model endpoint for this SKU."}
+          ]
+        },
+        {
+          "productId": "perplexity-computer",
+          "sourcesChecked": [
+            "https://www.perplexity.ai/products/computer",
+            "https://www.perplexity.ai/help-center/en/articles/13837784-what-is-computer",
+            "https://www.perplexity.ai/help-center/en/articles/11521526-perplexity-tasks"
+          ],
+          "cells": [
+            {"rowId":"general-human-approvals","result":"remain-unknown","rationale":"Perplexity Computer documents a personal cloud sandbox and connected apps, but the checked Computer and Tasks pages do not define an exact enforced approval gate for consequential tool actions."},
+            {"rowId":"general-self-hosting","result":"remain-unknown","rationale":"The exact Computer SKU is documented as a Perplexity-operated cloud worker; the checked sources do not offer a user-controlled deployment package or self-hosting contract."},
+            {"rowId":"general-model-freedom","result":"remain-unknown","rationale":"Computer may coordinate internal specialist models, but that is not evidence that an operator can choose external providers, supply local models, or configure a model endpoint."}
+          ]
+        },
+        {
+          "productId": "manus",
+          "sourcesChecked": [
+            "https://manus.im/docs/features/desktop",
+            "https://help.manus.im/en/articles/15392111-what-is-the-cloud-computer",
+            "https://manus.im/features/agent-skills"
+          ],
+          "cells": [
+            {"rowId":"general-communications","result":"remain-unknown","rationale":"Manus documents connected services and Desktop access, but these exact pages do not establish a supported messaging channel that can receive delegated work or send agent replies."},
+            {"rowId":"general-event-triggers","result":"remain-unknown","rationale":"Scheduled work and a persistent cloud computer do not establish webhook, inbox-event, repository-event, or other external event invocation for Manus."},
+            {"rowId":"general-multi-agent","result":"remain-unknown","rationale":"The checked Manus product pages establish one agent using skills and cloud/local computers, not a documented product-owned subagent or peer-agent delegation contract."},
+            {"rowId":"general-self-hosting","result":"remain-unknown","rationale":"Manus Desktop can act on explicitly authorized local folders, while the agent service and Cloud Computer remain vendor-operated; no self-hosted Manus service is documented."},
+            {"rowId":"general-model-freedom","result":"remain-unknown","rationale":"The checked Manus pages do not document operator-selected third-party providers, local models, or configurable inference endpoints."}
+          ]
+        },
+        {
+          "productId": "genspark-super-agent",
+          "sourcesChecked": [
+            "https://www.genspark.ai/helpcenter/super-agent",
+            "https://www.genspark.ai/helpcenter/secondbrain"
+          ],
+          "cells": [
+            {"rowId":"general-scheduled-automation","result":"remain-unknown","rationale":"Genspark documents background execution and reusable skills, but the exact Super Agent pages checked do not define a one-shot or recurring schedule owned by this SKU."},
+            {"rowId":"general-event-triggers","result":"remain-unknown","rationale":"SecondBrain connects personal context sources, but the checked material does not state that email, calendar, webhook, or repository events automatically invoke Super Agent work."},
+            {"rowId":"general-human-approvals","result":"remain-unknown","rationale":"The sources describe autonomous action in a dedicated sandbox without documenting a product-enforced human approval policy for consequential external actions."},
+            {"rowId":"general-self-hosting","result":"remain-unknown","rationale":"Super Agent is presented as a Genspark-hosted service; no operator-run deployment or self-hosting package is established."},
+            {"rowId":"general-model-freedom","result":"remain-unknown","rationale":"Coordination of Genspark specialist agents does not establish operator choice of third-party or local model providers."}
+          ]
+        },
+        {
+          "productId": "nanobot",
+          "sourcesChecked": [
+            "https://github.com/HKUDS/nanobot",
+            "https://github.com/HKUDS/nanobot/blob/main/docs/configuration.md",
+            "https://github.com/HKUDS/nanobot/blob/main/docs/automations.md"
+          ],
+          "cells": [
+            {"rowId":"general-computer-use","result":"remain-unknown","rationale":"nanobot documents files, shell, web search/fetch, WebUI, messaging, and MCP, but not interactive control of a full desktop or arbitrary native GUI applications."},
+            {"rowId":"general-human-approvals","result":"remain-unknown","rationale":"The checked repository and configuration material do not define a user-facing allow, deny, or confirm gate enforced before nanobot performs consequential tool actions."}
+          ]
+        },
+        {
+          "productId": "agent-zero",
+          "sourcesChecked": [
+            "https://github.com/agent0ai/agent-zero",
+            "https://www.agent-zero.ai/p/docs/",
+            "https://www.agent-zero.ai/p/docs/task-scheduler/",
+            "https://www.agent-zero.ai/p/docs/a0-cli-connector/"
+          ],
+          "cells": [
+            {"rowId":"general-communications","result":"remain-unknown","rationale":"Agent Zero documents its Web UI, CLI connector, plugins, and agent-to-agent protocols, but the checked exact-product sources do not establish an external human messaging ingress/egress channel such as Slack or Telegram."},
+            {"rowId":"general-event-triggers","result":"remain-unknown","rationale":"The task scheduler proves recurring and delayed work, but no exact webhook or external event trigger contract was found for Agent Zero."}
+          ]
+        },
+        {
+          "productId": "zeroclaw",
+          "sourcesChecked": [
+            "https://github.com/zeroclaw-labs/zeroclaw",
+            "https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/reference/cli/commands-reference.md",
+            "https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/book/src/providers/overview.md",
+            "https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/book/src/providers/routing.md"
+          ],
+          "cells": [
+            {"rowId":"general-computer-use","result":"remain-unknown","rationale":"ZeroClaw documents browser, shell, hardware, and HTTP tools, but the checked repository does not establish pointer/keyboard control of a full native desktop or arbitrary GUI applications."}
+          ]
+        },
+        {
+          "productId": "ironclaw",
+          "sourcesChecked": [
+            "https://github.com/nearai/ironclaw",
+            "https://github.com/nearai/ironclaw/blob/main/docs/capabilities/llm-providers.md"
+          ],
+          "cells": [
+            {"rowId":"general-browser-control","result":"remain-unknown","rationale":"IronClaw documents a browser WebUI and HTTP-capable integrations, but these do not establish an interactive browser operator that navigates and acts in arbitrary websites."},
+            {"rowId":"general-computer-use","result":"remain-unknown","rationale":"The background service, terminal REPL, WebUI, WASM tools, and isolated jobs do not establish control of arbitrary native desktop GUI applications."},
+            {"rowId":"general-human-approvals","result":"remain-unknown","rationale":"Capability-limited tools, allowlists, and secret boundaries are documented, but the checked exact-product sources do not expose a human allow/deny action gate for individual consequential operations."}
+          ]
+        },
+        {
+          "productId": "picoclaw",
+          "sourcesChecked": [
+            "https://github.com/sipeed/picoclaw",
+            "https://github.com/sipeed/picoclaw/blob/main/docs/guides/configuration.md",
+            "https://github.com/sipeed/picoclaw/blob/main/docs/reference/tools_configuration.md"
+          ],
+          "cells": [
+            {"rowId":"general-computer-use","result":"remain-unknown","rationale":"PicoClaw documents WebUI, vision input, web tools, and an Android client, but not pointer/keyboard control of an arbitrary desktop or native GUI application."},
+            {"rowId":"general-human-approvals","result":"remain-unknown","rationale":"The tool guide recommends approval or manual review for risky build-and-run workflows, but does not establish an implemented product approval prompt or enforced per-action decision flow."}
+          ]
+        },
+        {
+          "productId": "openfang",
+          "sourcesChecked": [
+            "https://github.com/RightNow-AI/openfang",
+            "https://github.com/RightNow-AI/openfang/blob/main/docs/configuration.md",
+            "https://github.com/RightNow-AI/openfang/blob/main/MIGRATION.md"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "agent-tars",
+          "sourcesChecked": [
+            "https://github.com/bytedance/UI-TARS-desktop"
+          ],
+          "identityNote": "Agent TARS and UI-TARS Desktop share a repository; desktop-only UI-TARS claims are not inherited by the Agent TARS SKU.",
+          "cells": [
+            {"rowId":"general-durable-identity","result":"remain-unknown","rationale":"Agent TARS documents CLI, WebUI, and headless tasks, but the shared repository does not establish a named durable Agent TARS identity or resumable session that persists across launches."},
+            {"rowId":"general-long-term-memory","result":"remain-unknown","rationale":"No exact Agent TARS cross-session memory, preference recall, or searchable persistent history contract was found in the canonical repository."},
+            {"rowId":"general-communications","result":"remain-unknown","rationale":"The Agent TARS CLI/WebUI/server surfaces do not establish external messaging ingress or agent replies through a communications channel."},
+            {"rowId":"general-scheduled-automation","result":"remain-unknown","rationale":"Headless operation is documented without a first-party one-shot or recurring scheduler owned by Agent TARS."},
+            {"rowId":"general-event-triggers","result":"remain-unknown","rationale":"The canonical repository does not establish webhooks or external events that wake an Agent TARS task."},
+            {"rowId":"general-multi-agent","result":"remain-unknown","rationale":"Agent TARS combines browser, GUI, shell, and MCP tools in one agent loop; the checked source does not document subagent delegation or peer-agent handoff."},
+            {"rowId":"general-human-approvals","result":"remain-unknown","rationale":"The repository does not define an exact Agent TARS human approval gate for consequential browser, shell, or computer actions."},
+            {"rowId":"general-model-freedom","result":"remain-unknown","rationale":"Agent TARS documents model integration points, but the checked product material does not establish a supported operator-facing contract for arbitrary providers or local models."}
+          ]
+        }
+      ]
+    }
+  ],
+  "implementedClosures": [
+    {"productId":"zeroclaw","rowId":"general-scheduled-automation","state":"built-in","evidenceUrl":"https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/reference/cli/commands-reference.md","rationale":"The current CLI contract includes persistent cron, at-time, interval, pause, resume, and one-shot scheduled tasks."},
+    {"productId":"zeroclaw","rowId":"general-multi-agent","state":"built-in","evidenceUrl":"https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/book/src/providers/routing.md","rationale":"The routing documentation explicitly defines spawn_subagent with a child identity and independent provider/model profile."},
+    {"productId":"zeroclaw","rowId":"general-model-freedom","state":"built-in","evidenceUrl":"https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/book/src/providers/overview.md","rationale":"ZeroClaw supports vendor providers, arbitrary OpenAI-compatible endpoints, self-hosted inference, and local Ollama models."},
+    {"productId":"ironclaw","rowId":"general-model-freedom","state":"built-in","evidenceUrl":"https://github.com/nearai/ironclaw/blob/main/docs/capabilities/llm-providers.md","rationale":"The exact product exposes more than twenty selectable providers plus Ollama and custom OpenAI-compatible endpoints."},
+    {"productId":"picoclaw","rowId":"general-terminal-files","state":"built-in","evidenceUrl":"https://github.com/sipeed/picoclaw/blob/main/docs/guides/configuration.md","rationale":"The configuration contract explicitly defines read, write, edit, append, list, and exec tools within the agent workspace."},
+    {"productId":"picoclaw","rowId":"general-isolation","state":"limited","evidenceUrl":"https://github.com/sipeed/picoclaw/blob/main/docs/reference/tools_configuration.md","rationale":"PicoClaw defaults to workspace-restricted file and command tools with deny patterns, while its own guide explicitly warns that child processes can bypass the direct exec guard and recommends stronger container or VM isolation for untrusted code."},
+    {"productId":"openfang","rowId":"general-terminal-files","state":"built-in","evidenceUrl":"https://github.com/RightNow-AI/openfang/blob/main/MIGRATION.md","rationale":"The canonical tool mapping explicitly names file_read, file_write, file_list, and capability-gated shell_exec tools."},
+    {"productId":"openfang","rowId":"general-model-freedom","state":"built-in","evidenceUrl":"https://github.com/RightNow-AI/openfang/blob/main/docs/configuration.md","rationale":"OpenFang exposes a configurable provider/model contract spanning cloud vendors and local Ollama, vLLM, and LM Studio endpoints."}
+  ],
+  "platformHeaderAudit": [],
+  "generatedMetricUnknowns": {
+    "result": "excluded-from-editorial-ledger",
+    "rationale": "Repository metric Unknowns are generated collector failures or not-yet-refreshed values, not exact-SKU capability claims. The scheduled refresh and audit:freshness gate must close or block them; editorial research must not hand-fill those cells."
+  }
+}

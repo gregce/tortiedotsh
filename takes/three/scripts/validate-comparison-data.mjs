@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import {
   comparisonCategories,
   comparisonProducts,
+  getComparisonClaim,
 } from "../src/data/comparison-catalog.ts";
 
 const args = new Set(process.argv.slice(2));
@@ -30,6 +31,16 @@ const assets = JSON.parse(
 );
 const evidenceStatus = JSON.parse(
   await readFile(resolve(takeRoot, "src/data/comparison-evidence-status.json"), "utf8"),
+);
+const dataDirectory = resolve(takeRoot, "src/data");
+const unknownAuditFileNames = (await readdir(dataDirectory))
+  .filter((name) => name.startsWith("unknown-audit-") && name.endsWith(".json"))
+  .sort();
+const unknownAudits = await Promise.all(
+  unknownAuditFileNames.map(async (fileName) => ({
+    fileName,
+    data: JSON.parse(await readFile(resolve(dataDirectory, fileName), "utf8")),
+  })),
 );
 
 const failures = [];
@@ -70,6 +81,78 @@ const evidenceBacklog = new Set(["mosaic-terminal", "airport", "muse-code", "omn
 const publicProductIds = comparisonProducts
   .filter((product) => !evidenceBacklog.has(product.id))
   .map((product) => product.id);
+
+const expectedUnknownKeysByCategory = new Map(
+  comparisonCategories.map((category) => {
+    const keys = [];
+    for (const product of comparisonProducts.filter((item) => (
+      item.categoryId === category.id && !evidenceBacklog.has(item.id)
+    ))) {
+      for (const row of category.rows) {
+        if (!row.platform && getComparisonClaim(product, row).state === "unknown") {
+          keys.push(`${category.id}:${product.id}:${row.id}`);
+        }
+      }
+    }
+    return [category.id, keys];
+  }),
+);
+
+const auditedCategoryIds = [];
+for (const { fileName, data } of unknownAudits) {
+  check(data.schemaVersion === 1, `${fileName} must use schemaVersion 1.`);
+  check(/^\d{4}-\d{2}-\d{2}$/.test(data.checkedAt), `${fileName} needs a YYYY-MM-DD checkedAt date.`);
+  check(Array.isArray(data.categories) && data.categories.length > 0, `${fileName} must contain category audits.`);
+
+  let fileCellCount = 0;
+  for (const categoryAudit of data.categories || []) {
+    const { categoryId } = categoryAudit;
+    auditedCategoryIds.push(categoryId);
+    check(categoryIds.includes(categoryId), `${fileName} audits unknown category ${categoryId}.`);
+
+    const actualKeys = [];
+    for (const productAudit of categoryAudit.products || []) {
+      check(
+        Array.isArray(productAudit.sourcesChecked) && productAudit.sourcesChecked.length > 0 &&
+          productAudit.sourcesChecked.every((url) => /^https:\/\//.test(url)),
+        `${fileName} ${categoryId}:${productAudit.productId} needs exact HTTPS sourcesChecked.`,
+      );
+      for (const cell of productAudit.cells || []) {
+        check(
+          typeof cell.rationale === "string" && cell.rationale.trim().length > 0,
+          `${fileName} ${categoryId}:${productAudit.productId}:${cell.rowId} needs its own rationale.`,
+        );
+        actualKeys.push(`${categoryId}:${productAudit.productId}:${cell.rowId}`);
+      }
+    }
+
+    const expectedKeys = expectedUnknownKeysByCategory.get(categoryId) || [];
+    const actualKeySet = new Set(actualKeys);
+    const expectedKeySet = new Set(expectedKeys);
+    const missing = expectedKeys.filter((key) => !actualKeySet.has(key));
+    const extra = actualKeys.filter((key) => !expectedKeySet.has(key));
+    check(unique(actualKeys), `${fileName} ${categoryId} contains duplicate Unknown keys.`);
+    check(
+      missing.length === 0 && extra.length === 0,
+      `${fileName} ${categoryId} must exactly match rendered Unknowns (${missing.length} missing, ${extra.length} extra).`,
+    );
+    fileCellCount += actualKeys.length;
+  }
+
+  if (Number.isInteger(data.summary?.currentUnknownCells)) {
+    check(
+      data.summary.currentUnknownCells === fileCellCount,
+      `${fileName} summary currentUnknownCells must equal its ${fileCellCount} audited cells.`,
+    );
+  }
+}
+
+check(unique(auditedCategoryIds), "Unknown audit ledgers may cover each category only once.");
+check(
+  categoryIds.every((id) => auditedCategoryIds.includes(id)) &&
+    auditedCategoryIds.every((id) => categoryIds.includes(id)),
+  "Unknown audit ledgers must cover every comparison category exactly once.",
+);
 
 check(comparisonCategories.length === 9, "The catalog must contain exactly nine comparison categories.");
 check(comparisonProducts.length >= 50, "The research catalog may not shrink below its 50-product launch baseline.");

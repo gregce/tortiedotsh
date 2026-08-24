@@ -459,6 +459,7 @@ interface ProductInput {
   source: SourceModel | "unknown";
   execution: readonly ExecutionLocation[] | "unknown";
   status?: ProductStatus;
+  statusSource?: { url: string; title: string; basis?: EvidenceBasis };
   claims?: Readonly<Record<string, ComparisonClaim>>;
 }
 
@@ -510,7 +511,12 @@ const product = (input: ProductInput): ComparisonProduct => {
         : unknown("No public first-party product source has been established."),
       status:
         input.status && sourceUrl
-          ? known(input.status, sourceUrl, sourceTitle, input.repository ? "repository-derived" : "vendor-documented")
+          ? known(
+              input.status,
+              input.statusSource?.url ?? sourceUrl,
+              input.statusSource?.title ?? sourceTitle,
+              input.statusSource?.basis ?? (input.repository ? "repository-derived" : "vendor-documented"),
+            )
           : unknown("Current lifecycle status has not been reviewed from a status-specific primary source."),
     },
     claims: input.claims ?? {},
@@ -582,6 +588,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       ...builtInClaims("https://www.trae.ai/blog/product_solo_1112?v=1", "TraeCode SOLO general-availability notes", ["editor-parallel-sessions"]),
       ...limitedClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-background-jobs"], "SOLO supports long multi-step work, but detached durability after client exit is not established."),
       ...limitedClaims("https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes", ["editor-change-review"], "Progress and a final summary are surfaced in the IDE; per-hunk accept and reject behavior is not established."),
+      "editor-agent-sandbox": capability("limited", "https://www.trae.ai/blog/engineering_thought_0108?v=1", "TRAE sandbox security", "Beta Sandbox Mode isolates filesystem access to allowed project and temporary paths and intercepts shell commands."),
       "editor-model-access": factClaim("Vendor-managed models", "https://www.trae.ai/blog/trae_membership_0213", "TraeCode capability overview"),
       "editor-browser-tools": factClaim("Embedded browser in SOLO", "https://www.trae.ai/blog/product_solo", "TraeCode SOLO product notes"),
       "editor-verification-loop": factClaim("Interactive preview and console debugging; test execution not established", "https://www.trae.ai/ide/", "TraeCode product page"),
@@ -597,6 +604,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       ...builtInClaims("https://docs.qoder.com/user-guide/chat/agent", "Qoder IDE Agent guide", ["editor-project-tree", "editor-terminal", "editor-agent-mode", "editor-agent-shell-tools", "editor-mcp", "editor-change-review"]),
       ...builtInClaims("https://docs.qoder.com/user-guide/chat/overview", "Qoder IDE Editor overview", ["editor-inline-prediction"]),
       ...builtInClaims("https://docs.qoder.com/release-notes/desktop", "Qoder IDE release notes", ["editor-background-jobs", "editor-parallel-sessions", "editor-remote-workspaces"]),
+      "editor-worktree-isolation": capability("built-in", "https://docs.qoder.com/user-guide/quest/execution-environments", "Qoder Quest execution environments", "Local Worktree mode creates a separate Git checkout for parallel task execution and can move completed work back to the local workspace."),
       "editor-model-access": factClaim("Vendor models and BYOK", "https://docs.qoder.com/user-guide/quest/terminal-and-sandbox", "Qoder IDE terminal and sandbox guide"),
       "editor-agent-permissions": factClaim("Command confirmation, hooks, or Full Access", "https://docs.qoder.com/user-guide/quest/terminal-and-sandbox", "Qoder IDE terminal and sandbox guide"),
       "editor-agent-sandbox": factClaim("Seatbelt, Windows vendor sandbox, or bubblewrap", "https://docs.qoder.com/user-guide/quest/terminal-and-sandbox", "Qoder IDE terminal and sandbox guide"),
@@ -762,6 +770,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       ...builtInClaims("https://zed.dev/docs/ai/parallel-agents", "Zed Parallel Agents", ["editor-background-jobs", "editor-parallel-sessions", "editor-worktree-isolation"]),
       ...builtInClaims("https://zed.dev/docs/ai/edit-prediction", "Zed Edit Prediction", ["editor-inline-prediction"]),
       ...builtInClaims("https://zed.dev/docs/ai/agent-panel", "Zed Agent Panel", ["editor-mcp"]),
+      "editor-remote-workspaces": capability("built-in", "https://zed.dev/docs/remote-development", "Zed Remote Development", "An SSH-backed remote server owns source files, language servers, tasks, and terminals while the local application owns the UI and AI client."),
       "editor-model-access": factClaim("Zed-hosted and configured external providers", "https://zed.dev/docs/ai/zed-agent", "Zed Agent documentation"),
       "editor-agent-permissions": factClaim("Per-tool allow, deny, or confirmation rules", "https://zed.dev/docs/ai/agent-profiles", "Zed Agent Profiles"),
       "editor-agent-sandbox": factClaim("Optional terminal and fetch sandbox on macOS, Linux, and Windows/WSL", "https://zed.dev/docs/ai/sandboxing", "Zed agent sandboxing"),
@@ -899,6 +908,8 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       ...builtInClaims("https://docs.warp.dev/agent-platform/getting-started/agents-in-warp", "Agents in Warp", ["workbench-cross-project-attention"]),
       ...builtInClaims("https://docs.warp.dev/code/ssh-feature-support", "Warp SSH feature support", ["workbench-remote-host"]),
       ...builtInClaims("https://docs.warp.dev/agents/cli/", "Warp Agent CLI", ["workbench-programmable-control"]),
+      "workbench-change-review": capability("built-in", "https://docs.warp.dev/code/code-review", "Warp Code Review", "The Code Review panel supports live diffs, inline comments, batch agent feedback, editing, reverting, and marking files reviewed."),
+      "workbench-worktrees": capability("built-in", "https://docs.warp.dev/code/code-review", "Warp Code Review", "Warp documents native Git worktree support as part of its Code Review workflow."),
     },
   }),
   product({
@@ -906,6 +917,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     tags: ["terminal", "workspace-blocks", "editor-blocks", "browser", "remote-ssh", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process", "ssh-host"], status: "active",
     claims: {
       ...builtInClaims("https://github.com/wavetermdev/waveterm", "Wave Terminal repository", ["workbench-arbitrary-cli", "workbench-editor", "workbench-splits", "workbench-browser", "workbench-remote-host", "workbench-programmable-control"], undefined, "repository-derived"),
+      "workbench-named-sessions": capability("built-in", "https://docs.waveterm.dev/workspaces", "Wave Terminal workspaces", "Named saved workspaces persist tabs, layouts, terminal histories, and AI histories and can be reopened."),
       ...limitedClaims("https://github.com/wavetermdev/waveterm", "Wave Terminal repository", ["workbench-pty-survives-ui"], "Durable SSH terminal sessions survive network changes and Wave restarts; equivalent survival is not established for arbitrary local processes.", "repository-derived"),
       ...limitedClaims("https://github.com/wavetermdev/waveterm", "Wave Terminal repository", ["workbench-file-tree"], "Directory and file preview plus connected file management are built in; a project-wide IDE tree is not claimed.", "repository-derived"),
       ...limitedClaims("https://github.com/wavetermdev/waveterm", "Wave Terminal repository", ["workbench-session-recovery"], "Durable SSH sessions reconnect after network changes and Wave restarts; this does not establish local-process survival.", "repository-derived"),
@@ -1272,11 +1284,12 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "extension-checkpoints": capability("built-in", "https://docs.cline.bot/core-workflows/checkpoints", "Cline checkpoints documentation", "Shadow-Git checkpoints restore files, task history, or both."),
     "extension-permissions": capability("built-in", "https://docs.cline.bot/features/auto-approve", "Cline Auto Approve documentation", "Auto Approve controls reads, edits, commands, browser, MCP, and notifications."),
     "extension-mcp": capability("built-in", "https://docs.cline.bot/features/auto-approve", "Cline Auto Approve documentation", "MCP tools are a documented approval category in the extension."),
+    "extension-provider-choice": capability("built-in", "https://docs.cline.bot/provider-config/other-30-plus-providers", "Cline provider configuration", "Extension settings expose API-provider, credential, and model selection across hosted, local, and OpenAI-compatible providers."),
     "extension-install-channel": factClaim("VS Code Marketplace / Open VSX", "https://docs.cline.bot/usage/ide", "Cline IDE documentation"),
     "extension-tool-execution-boundary": factClaim("Host IDE", "https://docs.cline.bot/usage/ide", "Cline IDE documentation"),
     "extension-byok-local-model": capability("built-in", "https://docs.cline.bot/provider-config/overview", "Cline provider configuration", "Supports configured hosted providers, OpenAI-compatible endpoints, and local providers."),
   } }),
-  product({ id: "continue", name: "Continue extension", categoryId: "ide-extensions", editorialOrder: 3, officialUrl: "https://docs.continue.dev/", repository: repo("continuedev/continue"), repoMetricId: "continue", tags: ["vscode", "jetbrains", "autocomplete", "agent-panel", "cli", "oss"], source: "open-source", execution: ["host-ide-process"], claims: {
+  product({ id: "continue", name: "Continue extension", categoryId: "ide-extensions", editorialOrder: 3, officialUrl: "https://docs.continue.dev/", repository: repo("continuedev/continue"), repoMetricId: "continue", tags: ["vscode", "jetbrains", "autocomplete", "agent-panel", "cli", "oss"], source: "open-source", execution: ["host-ide-process"], status: "archived", statusSource: { url: "https://github.com/continuedev/continue", title: "Continue repository README", basis: "repository-derived" }, claims: {
     ...builtInClaims("https://docs.continue.dev/", "Continue extension documentation", ["extension-hosts", "extension-inline-completion", "extension-agent-panel"]),
     "extension-host-vscode": capability("built-in", "https://docs.continue.dev/customize/deep-dives/configuration", "Continue configuration documentation", "First-party VS Code extension."),
     "extension-host-jetbrains": capability("built-in", "https://docs.continue.dev/customize/deep-dives/configuration", "Continue configuration documentation", "First-party JetBrains extension with its own sidebar shortcut."),
@@ -1324,17 +1337,20 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   } }),
   product({ id: "amazon-q-developer-ide", name: "Amazon Q Developer IDE extension", categoryId: "ide-extensions", editorialOrder: 8, officialUrl: "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE.html", tags: ["vscode", "jetbrains", "eclipse", "visual-studio", "autocomplete", "agent-panel", "mcp"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["host-ide-process", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE.html", "Amazon Q Developer in IDEs", ["extension-hosts", "extension-inline-completion", "extension-agent-panel", "extension-host-vscode", "extension-host-jetbrains", "extension-mcp", "extension-codebase-context"]),
+    "extension-permissions": capability("built-in", "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html", "Amazon Q Developer MCP tools", "IDE MCP configuration supports auto-approved, requires-approval, and dangerous tool permission levels."),
     "extension-install-channel": factClaim("IDE marketplaces", "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE.html", "Amazon Q Developer in IDEs"),
     "extension-tool-execution-boundary": factClaim("Host IDE + AWS cloud", "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE.html", "Amazon Q Developer in IDEs"),
   } }),
   product({ id: "gemini-code-assist", name: "Gemini Code Assist Standard / Enterprise extensions", categoryId: "ide-extensions", editorialOrder: 9, officialUrl: "https://docs.cloud.google.com/gemini/docs/codeassist/overview", tags: ["vscode", "jetbrains", "autocomplete", "agent-panel", "standard", "enterprise"], source: "proprietary", execution: ["host-ide-process", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages", "Gemini Code Assist supported IDEs", ["extension-hosts", "extension-host-vscode", "extension-host-jetbrains"]),
     ...builtInClaims("https://docs.cloud.google.com/gemini/docs/codeassist/overview", "Gemini Code Assist Standard and Enterprise overview", ["extension-inline-completion", "extension-agent-panel", "extension-codebase-context"]),
+    ...builtInClaims("https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer", "Gemini Code Assist agent mode", ["extension-mcp", "extension-permissions"]),
     "extension-install-channel": factClaim("VS Code and JetBrains extension setup", "https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages", "Gemini Code Assist supported IDEs"),
     "extension-tool-execution-boundary": factClaim("Host IDE + Google Cloud service", "https://docs.cloud.google.com/gemini/docs/codeassist/overview", "Gemini Code Assist Standard and Enterprise overview"),
   } }),
   product({ id: "jetbrains-ai-assistant", name: "JetBrains AI Assistant", categoryId: "ide-extensions", editorialOrder: 10, officialUrl: "https://www.jetbrains.com/help/idea/ai-assistant-in-jetbrains-ides.html", tags: ["jetbrains", "autocomplete", "agent-panel", "external-agents"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["host-ide-process", "local-process", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://www.jetbrains.com/help/idea/ai-assistant-in-jetbrains-ides.html", "JetBrains AI Assistant overview", ["extension-hosts", "extension-inline-completion", "extension-agent-panel", "extension-host-jetbrains", "extension-provider-choice", "extension-codebase-context"]),
+    ...builtInClaims("https://www.jetbrains.com/help/ai-assistant/agents.html", "JetBrains AI Assistant agents", ["extension-mcp", "extension-permissions"]),
     "extension-install-channel": factClaim("JetBrains Marketplace", "https://www.jetbrains.com/help/ai-assistant/installation-guide-ai-assistant.html", "JetBrains AI Assistant installation"),
     "extension-tool-execution-boundary": factClaim("Host IDE + selectable agents/models", "https://www.jetbrains.com/help/ai-assistant/agents.html", "JetBrains AI Assistant agents"),
     "extension-byok-local-model": capability("built-in", "https://www.jetbrains.com/help/ai-assistant/use-custom-models.html", "JetBrains custom models", "Supports configured external and local model endpoints in eligible editions."),
@@ -1354,6 +1370,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   } }),
   product({ id: "codecompanion-nvim", name: "CodeCompanion.nvim", categoryId: "ide-extensions", editorialOrder: 13, officialUrl: "https://github.com/olimorris/codecompanion.nvim", repository: repo("olimorris/codecompanion.nvim"), repoMetricId: "codecompanion-nvim", tags: ["neovim", "chat-buffer", "acp", "multi-provider", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["host-ide-process", "local-process", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://github.com/olimorris/codecompanion.nvim", "CodeCompanion.nvim repository", ["extension-hosts", "extension-inline-completion", "extension-agent-panel", "extension-provider-choice", "extension-permissions"], undefined, "repository-derived"),
+    "extension-mcp": capability("built-in", "https://github.com/olimorris/codecompanion.nvim", "CodeCompanion.nvim repository README", "The canonical README explicitly lists built-in Model Context Protocol support.", "repository-derived"),
     "extension-background-delegation": capability("limited", "https://github.com/olimorris/codecompanion.nvim", "CodeCompanion.nvim repository", "Asynchronous execution is documented, not a hosted delegated-job service.", "repository-derived"),
     "extension-install-channel": factClaim("Neovim plugin manager", "https://github.com/olimorris/codecompanion.nvim", "CodeCompanion.nvim repository", undefined, "repository-derived"),
     "extension-tool-execution-boundary": factClaim("Neovim process + local ACP agents", "https://github.com/olimorris/codecompanion.nvim/blob/main/doc/codecompanion.txt", "CodeCompanion.nvim documentation", undefined, "source-inspected"),
@@ -1419,6 +1436,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "cloud-intake-surfaces": capability("built-in", "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation", "GitHub agents panel, issues, VS Code, PR comments, API, schedules, and event automations."),
     "cloud-code-hosts": capability("built-in", "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation", "GitHub repositories only. Treat this positive scope as a fact, not a negative score."),
     "cloud-environment-config": capability("built-in", "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation", "Ephemeral GitHub Actions-powered development environment."),
+    "cloud-network-policy": capability("built-in", "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall", "GitHub Copilot cloud-agent firewall", "Internet access is limited by default; organization and repository policy can manage the recommended and custom allowlists or disable the firewall."),
     "cloud-project-instructions": capability("built-in", "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation", "Repository custom instructions, MCP, custom agents, hooks, and skills."),
     "cloud-live-steering": capability("built-in", "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation", "Continue the same conversation, ask follow-ups, inspect commits and logs, and iterate before PR creation."),
     "cloud-execution-owner": factClaim("GitHub cloud", "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation"),
@@ -1452,11 +1470,20 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   } }),
   product({ id: "jules", name: "Jules", categoryId: "cloud-agents", editorialOrder: 4, officialUrl: "https://jules.google/docs/", tags: ["github", "cloud-vm", "issue-to-pr", "experimental"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "beta", claims: {
     ...builtInClaims("https://jules.google/docs/", "Jules getting started", ["cloud-repo-intake", "cloud-sandbox", "cloud-live-observability", "cloud-durable-result", "cloud-intake-surfaces", "cloud-code-hosts"]),
+    "cloud-parallel-tasks": capability("built-in", "https://jules.google/docs/usage-limits", "Jules limits and plans", "Current plans publish concurrent-task allowances of 3, 15, and 60."),
     "cloud-environment-config": capability("built-in", "https://jules.google/docs/running-tasks/", "Jules running tasks", "Tasks run in a fresh environment configured from the connected repository."),
+    "cloud-project-instructions": capability("built-in", "https://jules.google/docs/", "Jules getting started", "Jules automatically reads root-level AGENTS.md for repository tools and conventions."),
     "cloud-live-steering": capability("built-in", "https://jules.google/docs/running-tasks/", "Jules running tasks", "Operators review the plan, monitor progress, and provide follow-up direction."),
+    "cloud-task-limit": {
+      state: "fact",
+      displayValue: "15 / 100 / 300 daily; 3 / 15 / 60 concurrent",
+      note: "Rolling-24-hour task quotas and concurrent-task caps for Jules, Pro, and Ultra respectively.",
+      evidence: [evidence("https://jules.google/docs/usage-limits", "Jules limits and plans")],
+    },
     "cloud-execution-owner": factClaim("Google cloud", "https://jules.google/docs/changelog/2025-05-19", "Jules launch architecture"),
     "cloud-isolation-unit": factClaim("Fresh cloud VM per task", "https://jules.google/docs/changelog/2025-05-19", "Jules launch architecture"),
     "cloud-human-takeover": capability("limited", "https://jules.google/docs/running-tasks/", "Jules running tasks", "Plan review and follow-up are documented; direct shell takeover is not."),
+    "cloud-triggered-automation": capability("built-in", "https://jules.google/docs/api/reference/", "Jules REST API quickstart", "The API creates and manages sessions and is documented for CI/CD, Slack, Linear, and GitHub automation."),
     "cloud-result-type": factClaim("Branch and pull request", "https://jules.google/docs/running-tasks/", "Jules running tasks"),
   } }),
   product({ id: "claude-code-web", name: "Claude Code on the web", categoryId: "cloud-agents", editorialOrder: 5, officialUrl: "https://code.claude.com/docs/en/claude-code-on-the-web", tags: ["github", "local-bundle", "cloud-vm", "teleport", "research-preview"], platform: ["web", "ios", "android"], source: "hosted-service", execution: ["vendor-cloud", "paired-machine"], status: "beta", claims: {
@@ -1481,20 +1508,33 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   } }),
   product({ id: "factory-cloud-sessions", name: "Factory Droid Computers / cloud sessions", categoryId: "cloud-agents", editorialOrder: 7, officialUrl: "https://docs.factory.ai/", tags: ["cloud-computer", "templates", "web", "mobile", "pull-request"], platform: ["web", "ios", "android"], source: "hosted-service", execution: ["vendor-cloud", "user-cloud"], status: "active", claims: {
     ...builtInClaims("https://docs.factory.ai/", "Factory documentation", ["cloud-repo-intake", "cloud-sandbox", "cloud-live-observability", "cloud-durable-result", "cloud-intake-surfaces", "cloud-parallel-tasks", "cloud-environment-config", "cloud-live-steering"]),
+    "cloud-code-hosts": capability("built-in", "https://docs.factory.ai/enterprise/self-managed-scm", "Factory self-managed source control", "Factory supports GitHub, GitHub Enterprise, GitLab, and GitLab Self-Hosted repositories in sessions."),
+    "cloud-network-policy": capability("built-in", "https://docs.factory.ai/enterprise/network-and-deployment", "Factory deployment patterns", "Cloud, hybrid, and air-gapped execution support outbound host restrictions, proxies, custom certificate authorities, and managed network settings."),
+    "cloud-project-instructions": capability("built-in", "https://docs.factory.ai/harness/agents-md", "Factory AGENTS.md", "Droids load root and nested repository instruction files with documented discovery and precedence."),
     "cloud-execution-owner": factClaim("Factory cloud or operator machine", "https://docs.factory.ai/", "Factory documentation"),
     "cloud-isolation-unit": factClaim("Cloud computer from a template", "https://docs.factory.ai/droid-computers/cloud-templates", "Factory cloud templates"),
     "cloud-human-takeover": capability("built-in", "https://docs.factory.ai/", "Factory documentation", "Sessions are synchronized to web and mobile for operator review and steering."),
+    "cloud-triggered-automation": capability("built-in", "https://docs.factory.ai/software-factory/automations", "Factory custom automations", "Schedules, Slack messages, and GitHub events can start Droid workflows."),
     "cloud-result-type": factClaim("Reviewable diff, branch, or pull request", "https://docs.factory.ai/", "Factory documentation"),
   } }),
   product({ id: "codegen-agent", name: "Codegen agent", categoryId: "cloud-agents", editorialOrder: 8, officialUrl: "https://docs.codegen.com/", tags: ["github", "api", "slack", "linear", "jira", "pull-request"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://docs.codegen.com/integrations/github", "Codegen GitHub integration", ["cloud-repo-intake", "cloud-live-observability", "cloud-durable-result", "cloud-intake-surfaces", "cloud-code-hosts"]),
+    "cloud-sandbox": capability("built-in", "https://docs.codegen.com/sandboxes/overview", "Codegen code execution sandboxes", "Agents run in secure isolated sandboxes with filesystem, terminal, process, and controlled-network access."),
+    "cloud-environment-config": capability("built-in", "https://docs.codegen.com/sandboxes/setup-commands", "Codegen sandbox setup commands", "Repository setup commands create reusable snapshots; environment variables and encrypted repository secrets configure runs."),
+    "cloud-network-policy": capability("built-in", "https://docs.codegen.com/sandboxes/overview", "Codegen code execution sandboxes", "Sandbox networking is controlled and can be restricted."),
+    "cloud-project-instructions": capability("built-in", "https://docs.codegen.com/settings/repo-rules", "Codegen agent rules", "User, organization, and repository rules are supported, including automatic discovery of AGENTS.md and compatible instruction files."),
+    "cloud-live-steering": capability("built-in", "https://docs.codegen.com/capabilities/triggering-codegen", "Triggering Codegen", "Follow-ups in the originating thread, issue, ticket, or pull request return to the same agent context."),
     "cloud-execution-owner": factClaim("Codegen cloud", "https://docs.codegen.com/api-reference/agents/create-agent-run", "Codegen agent-run API"),
+    "cloud-isolation-unit": factClaim("Isolated sandbox per agent context", "https://docs.codegen.com/sandboxes/overview", "Codegen code execution sandboxes"),
+    "cloud-human-takeover": capability("built-in", "https://docs.codegen.com/sandboxes/editor", "Codegen remote editor", "A password-protected VS Code editor opens the active sandbox for terminal access, debugging, inspection, and manual edits."),
     "cloud-triggered-automation": capability("built-in", "https://docs.codegen.com/api-reference/agents/create-agent-run", "Codegen agent-run API", "Agent runs can be created and monitored through the API; Slack, Linear, and Jira are documented intake surfaces."),
     "cloud-result-type": factClaim("Branch or pull request", "https://docs.codegen.com/integrations/github", "Codegen GitHub integration"),
   } }),
   product({ id: "gitlab-duo-developer-flow", name: "GitLab Duo Developer Flow", categoryId: "cloud-agents", editorialOrder: 9, officialUrl: "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/", repository: { id: "gitlab-org/gitlab", url: "https://gitlab.com/gitlab-org/gitlab", relationship: "source-tree" }, repoMetricId: "gitlab", tags: ["gitlab", "ci-runner", "merge-request", "open-core"], platform: ["web"], source: "split-source", execution: ["user-cloud", "local-process"], status: "active", claims: {
     ...builtInClaims("https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/", "GitLab Duo Developer Flow", ["cloud-repo-intake", "cloud-live-observability", "cloud-durable-result", "cloud-intake-surfaces", "cloud-code-hosts", "cloud-project-instructions"]),
     "cloud-sandbox": capability("limited", "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/", "GitLab Duo flow execution", "Flows run through configured GitLab CI/CD runners or locally; isolation depends on operator runner configuration."),
+    "cloud-environment-config": capability("built-in", "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/", "Configure GitLab Duo flow execution", "Committed agent configuration supports setup scripts, container images, caches, variables, ID tokens, and selected runners."),
+    "cloud-network-policy": capability("built-in", "https://docs.gitlab.com/user/duo_agent_platform/environment_sandbox/", "GitLab remote execution environment sandbox", "The remote execution sandbox provides default allowed domains and project, group, and instance allow or deny controls."),
     "cloud-execution-owner": factClaim("Customer CI runner or local IDE", "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/", "GitLab Duo flow execution"),
     "cloud-isolation-unit": factClaim("CI job or local process", "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/", "GitLab Duo flow execution"),
     "cloud-triggered-automation": capability("built-in", "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/", "GitLab Duo flow execution", "Developer Flow can be executed asynchronously through GitLab CI/CD."),
@@ -1504,16 +1544,27 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "cloud-repo-intake": capability("limited", "https://coder.com/docs/ai-coder/agents", "Coder Agents architecture", "Tasks select a Coder template and workspace rather than requiring GitHub-only intake."),
     ...builtInClaims("https://coder.com/docs/ai-coder/agents", "Coder Agents architecture", ["cloud-sandbox", "cloud-live-observability", "cloud-intake-surfaces", "cloud-parallel-tasks", "cloud-environment-config", "cloud-live-steering"]),
     "cloud-durable-result": capability("limited", "https://coder.com/docs/ai-coder/agents", "Coder Agents architecture", "Durable files, diffs, and attachments are documented; a pull request is not guaranteed."),
+    "cloud-code-hosts": capability("built-in", "https://coder.com/docs/ai-coder/agents/architecture", "Coder Agents architecture", "External authentication supports GitHub, GitLab, and Bitbucket, including enterprise and self-hosted variants."),
+    "cloud-network-policy": capability("built-in", "https://coder.com/docs/ai-coder/agents/platform-controls/template-optimization", "Coder Agents template optimization", "The workspace is the network boundary and can restrict egress to the control plane and Git provider."),
+    "cloud-project-instructions": capability("built-in", "https://coder.com/docs/ai-coder/agents/getting-started", "Coder Agents getting started", "Coder automatically loads workspace AGENTS.md instructions and supports an administrator system prompt."),
     "cloud-execution-owner": factClaim("Operator Coder deployment", "https://coder.com/docs/ai-coder/agents", "Coder Agents architecture"),
     "cloud-isolation-unit": factClaim("Provisioned Coder workspace", "https://coder.com/docs/ai-coder/agents", "Coder Agents architecture"),
     "cloud-human-takeover": capability("built-in", "https://coder.com/docs/ai-coder/agents", "Coder Agents architecture", "Operators can open the same provisioned workspace through Coder."),
+    "cloud-triggered-automation": capability("built-in", "https://coder.com/docs/ai-coder/agents/getting-started", "Coder Agents getting started", "The Chats API and service-to-service API keys provide a programmatic automation surface."),
     "cloud-result-type": factClaim("Workspace files, diff, and attachments", "https://coder.com/docs/ai-coder/agents", "Coder Agents architecture"),
   } }),
   product({ id: "replit-agent-background-tasks", name: "Replit Agent background tasks", categoryId: "cloud-agents", editorialOrder: 11, officialUrl: "https://docs.replit.com/core-concepts/agent/task-system", tags: ["replit", "background-tasks", "checkpoints", "deployment"], platform: ["web", "ios", "android"], source: "hosted-service", execution: ["vendor-cloud"], status: "active", claims: {
     "cloud-repo-intake": capability("limited", "https://docs.replit.com/category/replit-apps", "Replit Apps documentation", "Starts from a Replit project or imported repository rather than a code-host issue assignment."),
     ...builtInClaims("https://docs.replit.com/core-concepts/agent/task-system", "Replit Agent task system", ["cloud-sandbox", "cloud-live-observability", "cloud-intake-surfaces", "cloud-parallel-tasks", "cloud-live-steering"]),
     "cloud-durable-result": capability("limited", "https://docs.replit.com/core-concepts/agent/task-system", "Replit Agent task system", "The primary result is a checkpointed Replit project or deployment, not necessarily a pull request."),
+    "cloud-project-instructions": capability("built-in", "https://docs.replit.com/updates/2025/07/11/changelog", "Replit replit.md documentation announcement", "Agent automatically reads the root replit.md file for project architecture, conventions, and preferred tools."),
     "cloud-execution-owner": factClaim("Replit cloud", "https://docs.replit.com/learn/foundations/introduction-to-ai", "Replit AI foundations"),
+    "cloud-task-limit": {
+      state: "fact",
+      displayValue: "1 concurrent on Core; up to 10 on Pro",
+      note: "Additional accepted background tasks queue when the plan's active-task cap is reached.",
+      evidence: [evidence("https://docs.replit.com/core-concepts/agent/task-system", "Replit Agent task system")],
+    },
     "cloud-isolation-unit": factClaim("Durable Replit workspace", "https://docs.replit.com/core-concepts/agent/task-system", "Replit Agent task system"),
     "cloud-human-takeover": capability("built-in", "https://docs.replit.com/core-concepts/agent/task-system", "Replit Agent task system", "The operator can edit the shared Replit workspace around independent task threads."),
     "cloud-result-type": factClaim("Checkpoint, app, or deployment", "https://docs.replit.com/core-concepts/agent/task-system", "Replit Agent task system"),
@@ -1677,10 +1728,13 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     claims: {
       ...builtInClaims("https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", ["general-durable-identity", "general-long-term-memory", "general-browser-control", "general-terminal-files", "general-communications", "general-skills-integrations", "general-self-hosting"], undefined, "repository-derived"),
       "general-operator-surfaces": factClaim("CLI and 30+ messaging adapters", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", undefined, "repository-derived"),
+      "general-scheduled-automation": capability("built-in", "https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/reference/cli/commands-reference.md", "ZeroClaw command reference", "Persistent cron, at-time, interval, pause, resume, and one-shot scheduled tasks are documented.", "source-inspected"),
       "general-event-triggers": capability("limited", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", "Webhook adapters are documented; a broader durable event-automation contract is not established.", "repository-derived"),
+      "general-multi-agent": capability("built-in", "https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/book/src/providers/routing.md", "ZeroClaw provider routing", "spawn_subagent runs an ephemeral child under its own identity and provider/model profile.", "source-inspected"),
       "general-human-approvals": capability("limited", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", "Autonomy, sandboxing, and tool-receipt controls are documented; the exact default and per-action policy require the security guide.", "repository-derived"),
       "general-execution-owner": factClaim("Operator machine, container, or server", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", undefined, "repository-derived"),
       "general-isolation": capability("limited", "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md", "ZeroClaw repository", "Sandbox controls are configurable; the reviewed first-party summary does not establish the exact default policy.", "repository-derived"),
+      "general-model-freedom": capability("built-in", "https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/book/src/providers/overview.md", "ZeroClaw model providers", "Supports vendor providers, arbitrary OpenAI-compatible endpoints, self-hosted inference, and local Ollama models.", "source-inspected"),
     },
   }),
   product({
@@ -1695,6 +1749,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       "general-multi-agent": capability("limited", "https://raw.githubusercontent.com/nearai/ironclaw/main/README.md", "IronClaw repository", "Parallel isolated jobs are documented; arbitrary peer-agent handoff is not established.", "repository-derived"),
       "general-execution-owner": factClaim("Operator-run local or server service", "https://raw.githubusercontent.com/nearai/ironclaw/main/README.md", "IronClaw repository", undefined, "repository-derived"),
       "general-isolation": capability("built-in", "https://raw.githubusercontent.com/nearai/ironclaw/main/README.md", "IronClaw repository", "Untrusted tools run in capability-limited WASM; container jobs use per-job tokens and secrets cross the host boundary explicitly.", "repository-derived"),
+      "general-model-freedom": capability("built-in", "https://github.com/nearai/ironclaw/blob/main/docs/capabilities/llm-providers.md", "IronClaw inference providers", "More than twenty selectable providers are documented, including Ollama and custom OpenAI-compatible endpoints.", "source-inspected"),
     },
   }),
   product({
@@ -1706,9 +1761,11 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     claims: {
       ...builtInClaims("https://raw.githubusercontent.com/sipeed/picoclaw/main/README.md", "PicoClaw repository", ["general-durable-identity", "general-long-term-memory", "general-communications", "general-scheduled-automation", "general-skills-integrations", "general-multi-agent", "general-self-hosting", "general-model-freedom"], undefined, "repository-derived"),
       "general-browser-control": capability("limited", "https://raw.githubusercontent.com/sipeed/picoclaw/main/README.md", "PicoClaw repository", "Web search is documented; interactive click/type browser control is not established.", "repository-derived"),
+      "general-terminal-files": capability("built-in", "https://github.com/sipeed/picoclaw/blob/main/docs/guides/configuration.md", "PicoClaw configuration", "Read, write, edit, append, list, and exec tools operate within the configured agent workspace.", "source-inspected"),
       "general-operator-surfaces": factClaim("Browser WebUI, terminal/gateway, Android, and 19+ chat channels", "https://raw.githubusercontent.com/sipeed/picoclaw/main/README.md", "PicoClaw repository", undefined, "repository-derived"),
       "general-event-triggers": capability("limited", "https://raw.githubusercontent.com/sipeed/picoclaw/main/README.md", "PicoClaw repository", "Hooks are documented in current guides and releases; a general public webhook contract is not established.", "repository-derived"),
       "general-execution-owner": factClaim("Operator local host, Docker, VM, Android, or edge device", "https://raw.githubusercontent.com/sipeed/picoclaw/main/README.md", "PicoClaw repository", undefined, "repository-derived"),
+      "general-isolation": capability("limited", "https://github.com/sipeed/picoclaw/blob/main/docs/reference/tools_configuration.md", "PicoClaw tools configuration", "Workspace restrictions and command deny patterns are enabled by default, but child processes can bypass the direct exec guard; stronger container or VM isolation is recommended for untrusted code.", "source-inspected"),
     },
   }),
   product({
@@ -1719,12 +1776,14 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     source: "open-source", execution: ["local-process", "local-daemon", "user-cloud"], status: "active",
     claims: {
       ...builtInClaims("https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", ["general-durable-identity", "general-long-term-memory", "general-browser-control", "general-communications", "general-scheduled-automation", "general-event-triggers", "general-skills-integrations", "general-self-hosting"], undefined, "repository-derived"),
+      "general-terminal-files": capability("built-in", "https://github.com/RightNow-AI/openfang/blob/main/MIGRATION.md", "OpenFang canonical tool mapping", "The tool contract names file_read, file_write, file_list, and capability-gated shell_exec.", "source-inspected"),
       "general-computer-use": capability("limited", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", "Persistent browser workflows are documented; general native-desktop control is not established.", "repository-derived"),
       "general-operator-surfaces": factClaim("Local dashboard, CLI/TUI, Tauri desktop, and 40 channel adapters", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", undefined, "repository-derived"),
       "general-multi-agent": capability("limited", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", "Scheduled Hands are autonomous capability packages; arbitrary peer-agent collaboration is not established.", "repository-derived"),
       "general-human-approvals": capability("built-in", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", "The Browser Hand gates purchases and the Twitter Hand has a publication approval queue.", "repository-derived"),
       "general-execution-owner": factClaim("Operator-run Agent OS", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", undefined, "repository-derived"),
       "general-isolation": capability("built-in", "https://raw.githubusercontent.com/RightNow-AI/openfang/main/README.md", "OpenFang repository", "WASM tool sandboxing, capability gates, signed manifests, audit trails, injection checks, and approval gates are documented.", "repository-derived"),
+      "general-model-freedom": capability("built-in", "https://github.com/RightNow-AI/openfang/blob/main/docs/configuration.md", "OpenFang configuration", "The configurable provider contract spans cloud providers and local Ollama, vLLM, and LM Studio endpoints.", "source-inspected"),
     },
   }),
   product({
@@ -1752,6 +1811,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-terminal-input": capability("built-in", "https://github.com/slopus/happy", "Happy repository", "Switch control between phone and desktop; remote mode steers the wrapped session.", "repository-derived"),
     "remote-notifications": capability("built-in", "https://github.com/slopus/happy", "Happy repository", "Push alerts for permission requests and errors.", "repository-derived"),
     "remote-hosting-boundary": capability("limited", "https://github.com/slopus/happy/blob/main/docs/README.md", "Happy architecture documentation", "Encrypted session sync uses the Happy Server relay. The claim is scoped to session content, not every stored credential.", "source-inspected"),
+    "remote-session-history": capability("built-in", "https://github.com/slopus/happy/blob/main/packages/happy-agent/README.md", "Happy agent CLI", "The CLI exposes encrypted chronological message history per session, with bounded and JSON output.", "source-inspected"),
     "remote-agent-aware": capability("built-in", "https://github.com/slopus/happy", "Happy repository", "Happy wraps Claude Code and Codex sessions and understands permission requests and errors.", "repository-derived"),
     "remote-input-model": factClaim("Follow-ups, terminal control, and approve/deny", "https://github.com/slopus/happy", "Happy repository", undefined, "repository-derived"),
     "remote-host-ownership": factClaim("Existing session on paired machine", "https://github.com/slopus/happy", "Happy repository", undefined, "repository-derived"),
@@ -1793,6 +1853,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-encryption": capability("limited", "https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation", "TLS and scoped credentials are documented; end-to-end or zero-knowledge encryption is not claimed."),
     "remote-terminal-input": capability("limited", "https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation", "Remote Control sends Claude Code follow-ups and approvals rather than exposing an arbitrary raw terminal."),
     "remote-hosting-boundary": capability("built-in", "https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation", "The local CLI makes outbound HTTPS connections through Anthropic services; no inbound port is required."),
+    "remote-session-history": capability("built-in", "https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation", "Remote Control carries over current conversation history and exposes named sessions through claude.ai/code and the mobile session list."),
     "remote-input-model": factClaim("Follow-ups and structured approvals", "https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation"),
     "remote-host-ownership": factClaim("Existing local CLI or VS Code session", "https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation"),
     "remote-relay-deployment": factClaim("Anthropic-hosted relay", "https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation"),
@@ -1821,6 +1882,8 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   } }),
   product({ id: "vscode-remote-development", name: "VS Code Remote Development extensions", categoryId: "remote-companions", editorialOrder: 8, officialUrl: "https://code.visualstudio.com/docs/remote/remote-overview", tags: ["vscode", "ssh", "containers", "wsl", "tunnels"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["ssh-host", "container", "user-cloud"], status: "active", claims: {
     "remote-existing-session": capability("limited", "https://code.visualstudio.com/docs/remote/remote-overview", "VS Code Remote Development overview", "Connects to a remote development workspace, not an agent conversation."),
+    "remote-client-reach": capability("built-in", "https://code.visualstudio.com/docs/remote/tunnels", "VS Code Remote Tunnels", "Connects from VS Code desktop or from a vscode.dev URL on a client of the operator's choosing."),
+    "remote-browser-pwa": capability("built-in", "https://code.visualstudio.com/docs/remote/tunnels", "VS Code Remote Tunnels", "The official tunnel workflow emits a vscode.dev browser URL with the Remote Tunnels extension preinstalled."),
     ...builtInClaims("https://code.visualstudio.com/docs/remote/remote-overview", "VS Code Remote Development overview", ["remote-terminal-input", "remote-hosting-boundary"]),
     "remote-agent-aware": capability("limited", "https://code.visualstudio.com/docs/remote/remote-overview", "VS Code Remote Development overview", "The suite moves the editor extension host and terminal rather than defining a normalized agent-session protocol."),
     "remote-input-model": factClaim("Full desktop IDE, terminal, and file editing", "https://code.visualstudio.com/docs/remote/remote-overview", "VS Code Remote Development overview"),
@@ -1835,6 +1898,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-agent-aware": capability("limited", "https://github.com/ekzhang/sshx", "sshx repository", "sshx is a generic collaborative terminal rather than a normalized agent-session protocol.", "repository-derived"),
     "remote-input-model": factClaim("Raw collaborative terminal input", "https://github.com/ekzhang/sshx", "sshx repository", undefined, "repository-derived"),
     "remote-host-ownership": factClaim("Command launched on paired host", "https://github.com/ekzhang/sshx", "sshx repository", undefined, "repository-derived"),
+    "remote-hosting-boundary": capability("built-in", "https://github.com/ekzhang/sshx", "sshx repository", "Uses a hosted coordination relay while terminal content remains protected by client-side Argon2-derived AES end-to-end encryption.", "repository-derived"),
     "remote-relay-deployment": factClaim("Hosted relay", "https://github.com/ekzhang/sshx", "sshx repository", "Development self-hosting is not packaged as a supported deployment.", "repository-derived"),
     "remote-transport-security": factClaim("Argon2-derived AES end-to-end encryption", "https://github.com/ekzhang/sshx", "sshx repository", undefined, "source-inspected"),
     "remote-session-durability": factClaim("Host command must remain running", "https://github.com/ekzhang/sshx", "sshx repository", undefined, "repository-derived"),
@@ -1852,9 +1916,11 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
   } }),
   product({ id: "termix", name: "Termix", categoryId: "remote-companions", editorialOrder: 11, officialUrl: "https://github.com/Termix-SSH/Termix", repository: repo("Termix-SSH/Termix"), repoMetricId: "termix", tags: ["ssh", "rdp", "vnc", "web", "desktop", "mobile", "self-hosted", "oss"], platform: ["macos", "windows", "linux", "web", "ios", "android"], source: "open-source", execution: ["local-daemon", "user-cloud", "paired-machine"], status: "active", claims: {
     ...builtInClaims("https://github.com/Termix-SSH/Termix", "Termix repository", ["remote-client-reach", "remote-existing-session", "remote-native-ios", "remote-native-android", "remote-browser-pwa", "remote-terminal-input", "remote-hosting-boundary", "remote-session-history"], undefined, "repository-derived"),
+    "remote-approvals": capability("limited", "https://github.com/Termix-SSH/Termix", "Termix repository", "The optional AI Assistant proposes infrastructure changes for explicit user approval instead of applying them directly; this does not establish approvals for arbitrary external harnesses.", "repository-derived"),
     "remote-agent-aware": capability("limited", "https://github.com/Termix-SSH/Termix", "Termix repository", "Termix manages generic SSH, RDP, VNC, and Telnet sessions rather than a normalized coding-agent protocol.", "repository-derived"),
     "remote-input-model": factClaim("SSH terminal and remote desktop input", "https://github.com/Termix-SSH/Termix", "Termix repository", undefined, "repository-derived"),
     "remote-host-ownership": factClaim("Remote SSH/RDP/VNC/Telnet host", "https://github.com/Termix-SSH/Termix", "Termix repository", undefined, "repository-derived"),
+    "remote-notifications": capability("built-in", "https://github.com/Termix-SSH/Termix", "Termix repository", "Alert and automation rules notify operators through ntfy, Discord, and webhooks, with firing and resolved history.", "repository-derived"),
     "remote-relay-deployment": factClaim("Self-hosted Termix service", "https://github.com/Termix-SSH/Termix", "Termix repository", undefined, "repository-derived"),
     "remote-transport-security": factClaim("Protocol and deployment-dependent", "https://github.com/Termix-SSH/Termix", "Termix repository", undefined, "repository-derived"),
     "remote-session-durability": factClaim("Saved connection and shared-session history", "https://github.com/Termix-SSH/Termix", "Termix repository", undefined, "repository-derived"),
@@ -1880,9 +1946,11 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "trace-multi-harness": capability("built-in", "https://docs.specstory.com/integrations/terminal-coding-agents", "SpecStory terminal-agent overview", "The current docs name Claude Code, Cursor CLI and IDE, Codex CLI, Droid, Antigravity, DeepSeek, and Copilot capture paths."),
     "trace-transcript-coverage": capability("built-in", "https://docs.specstory.com/integrations/terminal-coding-agents", "SpecStory terminal-agent overview", "Prompts, responses, commands, and decisions are rendered as searchable Markdown."),
     "trace-tool-call-coverage": capability("built-in", "https://docs.specstory.com/integrations/terminal-coding-agents", "SpecStory terminal-agent overview", "Captured Markdown includes terminal-agent commands and outputs when present in the source session."),
+    "trace-artifact-coverage": capability("limited", "https://docs.specstory.com/specstory/features", "SpecStory features", "Saved conversations preserve code blocks and diffs; an independent normalized workspace-artifact model is not established."),
     "trace-export-api": factClaim("Markdown, stdout/JSON CLI output, and Cloud API", "https://docs.specstory.com/integrations/terminal-coding-agents/usage", "SpecStory CLI usage"),
     "trace-redaction-privacy": capability("built-in", "https://docs.specstory.com/integrations/terminal-coding-agents/usage", "SpecStory CLI usage", "Local-first capture, explicit cloud opt-in, configurable secret redaction, and analytics opt-out are documented."),
     "trace-sharing": capability("built-in", "https://docs.specstory.com/cloud/session-sharing", "SpecStory session sharing", "Individual sessions can be shared explicitly; local Markdown can also travel through normal repository review."),
+    "trace-ci-analytics": capability("limited", "https://docs.specstory.com/cloud/analytics", "SpecStory Cloud Analytics", "Cross-agent activity, project, duration, concurrency, message, token, and cost analytics are built in; CI-specific and shared-team reporting are not established."),
     "trace-self-hosting": capability("limited", "https://docs.specstory.com/cloud/quickstart", "SpecStory Cloud quickstart", "Local capture and search are operator-owned; self-hosting SpecStory Cloud is not documented."),
   } }),
   product({ id: "entire", name: "Entire", categoryId: "agent-traces", editorialOrder: 2, officialUrl: "https://entire.io/", repository: repo("entireio/cli"), repoMetricId: "entire", tags: ["git-native", "checkpoints", "rewind", "cross-agent", "redaction", "oss"], platform: ["macos", "windows", "linux", "web"], platformNote: "The CLI documents Homebrew/install.sh and Scoop distribution plus native OS keyrings; the optional dashboard is browser-based.", platformSource: { url: "https://github.com/entireio/cli", title: "Entire CLI repository and install matrix" }, source: "open-source", execution: ["local-process", "vendor-cloud"], status: "active", claims: {
@@ -1895,6 +1963,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "trace-transcript-coverage": capability("built-in", "https://github.com/entireio/cli", "Entire CLI repository", "Sessions capture prompts, responses, timestamps, and the full transcript.", "repository-derived"),
     "trace-tool-call-coverage": capability("built-in", "https://entire.io/", "Entire product page", "The first-party product page explicitly includes tool calls in the repository-backed session record."),
     "trace-artifact-coverage": capability("built-in", "https://github.com/entireio/cli", "Entire CLI repository", "Checkpoints retain file changes, files touched, and code state alongside session metadata.", "repository-derived"),
+    "trace-export-api": capability("built-in", "https://github.com/entireio/cli/blob/main/CHANGELOG.md", "Entire CLI changelog", "Current releases document the authenticated entire api passthrough and machine-readable checkpoint listing.", "source-inspected"),
     "trace-redaction-privacy": capability("built-in", "https://github.com/entireio/cli", "Entire CLI repository", "Detected secrets are redacted before persistent checkpoint storage; the project describes this as best-effort.", "repository-derived"),
     "trace-sharing": capability("built-in", "https://github.com/entireio/cli", "Entire CLI repository", "Checkpoint refs can use the code remote or a separate private checkpoint repository.", "repository-derived"),
     "trace-ci-analytics": capability("limited", "https://github.com/entireio", "Entire GitHub organization overview", "The dashboard browses activity across repositories; a dedicated CI analytics contract is not established.", "repository-derived"),

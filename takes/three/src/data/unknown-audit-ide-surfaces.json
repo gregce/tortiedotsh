@@ -1,0 +1,1607 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-08-23",
+  "catalogSnapshot": "2026-08-23",
+  "scope": {
+    "categoryIds": [
+      "code-editors",
+      "ide-extensions",
+      "agent-workbenches"
+    ],
+    "excludedProductIds": [
+      "mosaic-terminal",
+      "airport",
+      "muse-code",
+      "omnara"
+    ],
+    "renderedRows": "Every non-platform category row resolved through getComparisonClaim(). Generated repository metrics are governed separately by the freshness gate.",
+    "platformHeaders": "Platform-header support is outside this rendered-cell ledger. An omitted OS in a known platform list is not treated as Unknown."
+  },
+  "summary": {
+    "products": 40,
+    "currentUnknownCells": 190,
+    "codeEditorUnknownCells": 67,
+    "ideExtensionUnknownCells": 95,
+    "agentMultiplexerUnknownCells": 28,
+    "appliedClosures": 14,
+    "remainUnknown": 190
+  },
+  "categories": [
+    {
+      "categoryId": "code-editors",
+      "products": [
+        {
+          "productId": "eclipse-theia-ide",
+          "sourcesChecked": [
+            "https://theia-ide.org/docs/user_getting_started/",
+            "https://github.com/eclipse-theia/theia-ide",
+            "https://theia-ide.org/docs/user_ai/",
+            "https://theia-ide.org/docs/theia_coder/"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "The packaged Eclipse Theia IDE sources establish its editor, terminal, AI panel, MCP, and browser-delivered application, while keeping framework capabilities distinct from this exact IDE SKU. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "The packaged Eclipse Theia IDE sources establish its editor, terminal, AI panel, MCP, and browser-delivered application, while keeping framework capabilities distinct from this exact IDE SKU. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "The packaged Eclipse Theia IDE sources establish its editor, terminal, AI panel, MCP, and browser-delivered application, while keeping framework capabilities distinct from this exact IDE SKU. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "The packaged Eclipse Theia IDE sources establish its editor, terminal, AI panel, MCP, and browser-delivered application, while keeping framework capabilities distinct from this exact IDE SKU. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            },
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "The packaged Eclipse Theia IDE sources establish its editor, terminal, AI panel, MCP, and browser-delivered application, while keeping framework capabilities distinct from this exact IDE SKU. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
+            }
+          ]
+        },
+        {
+          "productId": "traecode",
+          "sourcesChecked": [
+            "https://www.trae.ai/ide",
+            "https://www.trae.ai/blog/product_solo",
+            "https://www.trae.ai/blog/engineering_thought_0731",
+            "https://www.trae.ai/blog/trae_membership_0213",
+            "https://www.trae.ai/blog/product_solo_1112?v=1",
+            "https://www.trae.ai/blog/engineering_thought_0108?v=1",
+            "https://www.trae.ai/ide/",
+            "https://www.trae.ai/download?auto=1&product_type=ide"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-project-tree",
+              "result": "remain-unknown",
+              "rationale": "TRAE's exact IDE and SOLO material establishes the shipped editor, agent, terminal, browser preview, model service, and current safety controls without inheriting capabilities from the separate SOLO Web product. It does not directly establish a conventional project tree paired with an editable source surface for this exact product mode."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "TRAE's exact IDE and SOLO material establishes the shipped editor, agent, terminal, browser preview, model service, and current safety controls without inheriting capabilities from the separate SOLO Web product. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-remote-workspaces",
+              "result": "remain-unknown",
+              "rationale": "TRAE's exact IDE and SOLO material establishes the shipped editor, agent, terminal, browser preview, model service, and current safety controls without inheriting capabilities from the separate SOLO Web product. It does not establish that the editor runs the workspace, language services, terminal, or agent tools on a remote host."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "TRAE's exact IDE and SOLO material establishes the shipped editor, agent, terminal, browser preview, model service, and current safety controls without inheriting capabilities from the separate SOLO Web product. It does not establish an approval scope or allow, ask, and deny policy for the editor agent's tool calls."
+            }
+          ]
+        },
+        {
+          "productId": "qoder-ide",
+          "sourcesChecked": [
+            "https://docs.qoder.com/product-series/what-is-qoder",
+            "https://docs.qoder.com/user-guide/chat/agent",
+            "https://docs.qoder.com/user-guide/chat/overview",
+            "https://docs.qoder.com/release-notes/desktop",
+            "https://docs.qoder.com/user-guide/quest/execution-environments",
+            "https://docs.qoder.com/user-guide/quest/terminal-and-sandbox"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "antigravity-ide",
+          "sourcesChecked": [
+            "https://antigravity.google/docs/ide/overview/",
+            "https://antigravity.google/docs/mcp",
+            "https://antigravity.google/docs/ide/settings/",
+            "https://antigravity.google/docs/ide/agent-side-panel",
+            "https://antigravity.google/download"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "Antigravity's IDE pages establish its editor, agent side panel, terminal tools, MCP, permissions, browser agent, and desktop downloads without inheriting Antigravity CLI or cloud behavior. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-remote-workspaces",
+              "result": "remain-unknown",
+              "rationale": "Antigravity's IDE pages establish its editor, agent side panel, terminal tools, MCP, permissions, browser agent, and desktop downloads without inheriting Antigravity CLI or cloud behavior. It does not establish that the editor runs the workspace, language services, terminal, or agent tools on a remote host."
+            }
+          ]
+        },
+        {
+          "productId": "android-studio",
+          "sourcesChecked": [
+            "https://developer.android.com/studio/install",
+            "https://developer.android.com/studio/projects",
+            "https://developer.android.com/build/building-cmdline",
+            "https://developer.android.com/studio/gemini/agent-mode",
+            "https://developer.android.com/studio/gemini/features",
+            "https://developer.android.com/studio/gemini/create-a-new-project-with-ai",
+            "https://developer.android.com/studio"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "Android Studio's first-party pages establish the IDE, Gemini agent mode, terminal execution, emulator and device verification, and current desktop distribution without treating adjacent Google coding products as this SKU. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-remote-workspaces",
+              "result": "remain-unknown",
+              "rationale": "Android Studio's first-party pages establish the IDE, Gemini agent mode, terminal execution, emulator and device verification, and current desktop distribution without treating adjacent Google coding products as this SKU. It does not establish that the editor runs the workspace, language services, terminal, or agent tools on a remote host."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Android Studio's first-party pages establish the IDE, Gemini agent mode, terminal execution, emulator and device verification, and current desktop distribution without treating adjacent Google coding products as this SKU. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            }
+          ]
+        },
+        {
+          "productId": "intellij-idea",
+          "sourcesChecked": [
+            "https://www.jetbrains.com/help/idea/intellij-idea-single-distribution.html",
+            "https://github.com/JetBrains/intellij-community",
+            "https://www.jetbrains.com/help/idea/project-tool-window.html",
+            "https://www.jetbrains.com/help/idea/terminal-emulator.html",
+            "https://www.jetbrains.com/help/idea/mcp-server.html",
+            "https://www.jetbrains.com/help/idea/use-git-worktrees.html",
+            "https://www.jetbrains.com/help/idea/remote-development-starting-page.html",
+            "https://www.jetbrains.com/help/idea/ai-assistant-in-jetbrains-ides.html",
+            "https://www.jetbrains.com/help/ai-assistant/agents.html",
+            "https://www.jetbrains.com/idea/"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            },
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
+            }
+          ]
+        },
+        {
+          "productId": "positron",
+          "sourcesChecked": [
+            "https://positron.posit.co/",
+            "https://github.com/posit-dev/positron",
+            "https://positron.posit.co/assistant.html",
+            "https://assistant.posit.co/docs/features/permissions/"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "Positron's exact product, Assistant, permission, and repository sources establish its data-science editor, terminal, agent tools, MCP, review, remote access, and browser preview boundaries. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "Positron's exact product, Assistant, permission, and repository sources establish its data-science editor, terminal, agent tools, MCP, review, remote access, and browser preview boundaries. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "Positron's exact product, Assistant, permission, and repository sources establish its data-science editor, terminal, agent tools, MCP, review, remote access, and browser preview boundaries. It does not establish product-managed Git worktrees that isolate agent changes."
+            }
+          ]
+        },
+        {
+          "productId": "onlook",
+          "sourcesChecked": [
+            "https://docs.onlook.com/",
+            "https://github.com/onlook-dev/onlook",
+            "https://docs.onlook.com/getting-started/ui-overview"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-inline-prediction",
+              "result": "remain-unknown",
+              "rationale": "Onlook's current web editor, canonical repository, UI guide, and self-hosting pages establish its visual React workspace and sandbox-provider architecture without inheriting behavior from the retired desktop build. It does not establish current inline or next-edit code prediction for this exact editor release."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "Onlook's current web editor, canonical repository, UI guide, and self-hosting pages establish its visual React workspace and sandbox-provider architecture without inheriting behavior from the retired desktop build. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "Onlook's current web editor, canonical repository, UI guide, and self-hosting pages establish its visual React workspace and sandbox-provider architecture without inheriting behavior from the retired desktop build. It does not establish an approval scope or allow, ask, and deny policy for the editor agent's tool calls."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Onlook's current web editor, canonical repository, UI guide, and self-hosting pages establish its visual React workspace and sandbox-provider architecture without inheriting behavior from the retired desktop build. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            }
+          ]
+        },
+        {
+          "productId": "visual-studio-code",
+          "sourcesChecked": [
+            "https://code.visualstudio.com/docs/agents/overview",
+            "https://github.com/microsoft/vscode",
+            "https://code.visualstudio.com/docs/agents/run/agents-window",
+            "https://code.visualstudio.com/docs/agents/run/tools",
+            "https://code.visualstudio.com/docs/agents/concepts/agent-harnesses",
+            "https://code.visualstudio.com/docs/editing/ai-powered-suggestions",
+            "https://code.visualstudio.com/docs/agent-customization/language-models",
+            "https://code.visualstudio.com/docs/agents/run/approvals",
+            "https://code.visualstudio.com/docs/agents/run/browser-tools",
+            "https://code.visualstudio.com/docs/",
+            "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+            "https://code.visualstudio.com/updates/archive"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "cursor-ide",
+          "sourcesChecked": [
+            "https://docs.cursor.com/en/get-started/quickstart",
+            "https://docs.cursor.com/en/agent/terminal",
+            "https://docs.cursor.com/context/model-context-protocol",
+            "https://docs.cursor.com/background-agent",
+            "https://cursor.com/docs/agent/agents-window",
+            "https://cursor.com/docs/models-and-pricing",
+            "https://cursor.com/docs/agent/security/run-modes",
+            "https://cursor.com/docs/agent/tools/browser",
+            "https://cursor.com/docs",
+            "https://cursor.com/docs/customize-cursor",
+            "https://cursor.com/changelog"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "windsurf",
+          "sourcesChecked": [
+            "https://docs.devin.ai/desktop/getting-started",
+            "https://docs.devin.ai/desktop/terminal",
+            "https://docs.devin.ai/desktop/tab/overview",
+            "https://docs.devin.ai/desktop/cascade/mcp",
+            "https://docs.devin.ai/desktop/editor/models",
+            "https://docs.devin.ai/desktop/editor/browser-previews"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish an approval scope or allow, ask, and deny policy for the editor agent's tool calls."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Devin Desktop documentation establishes the renamed desktop editor, local agent, terminal, MCP, Tab completion, Quick Review, and browser preview; hosted Devin sessions remain a separate product boundary. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            }
+          ]
+        },
+        {
+          "productId": "zed",
+          "sourcesChecked": [
+            "https://zed.dev/docs/ai/overview",
+            "https://github.com/zed-industries/zed",
+            "https://zed.dev/docs/ai/zed-agent",
+            "https://zed.dev/docs/ai/parallel-agents",
+            "https://zed.dev/docs/ai/edit-prediction",
+            "https://zed.dev/docs/ai/agent-panel",
+            "https://zed.dev/docs/remote-development",
+            "https://zed.dev/docs/ai/agent-profiles",
+            "https://zed.dev/docs/ai/sandboxing",
+            "https://zed.dev/docs/ai/tools",
+            "https://zed.dev/docs/",
+            "https://zed.dev/docs/ai/agents",
+            "https://zed.dev/docs/installation"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "Zed's exact editor documentation establishes its native agent, ACP, parallel worktrees, approvals, sandbox, terminal tools, and current desktop channels. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
+            }
+          ]
+        },
+        {
+          "productId": "lapce",
+          "sourcesChecked": [
+            "https://docs.lapce.dev/get-started/setup",
+            "https://github.com/lapce/lapce",
+            "https://docs.lapce.dev/get-started/terminal",
+            "https://docs.lapce.dev/get-started/remote-development",
+            "https://github.com/lapce/lapce/releases/tag/v0.4.0",
+            "https://github.com/lapce/lapce/blob/master/README.md",
+            "https://github.com/lapce/lapce/releases/latest"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-agent-mode",
+              "result": "remain-unknown",
+              "rationale": "Lapce's setup, terminal, remote-development, release, and canonical repository sources establish a general modal editor with experimental Copilot completion rather than a first-party coding-agent surface. It does not establish a first-party autonomous coding-agent loop inside this editor."
+            },
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "Lapce's setup, terminal, remote-development, release, and canonical repository sources establish a general modal editor with experimental Copilot completion rather than a first-party coding-agent surface. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
+            },
+            {
+              "rowId": "editor-agent-shell-tools",
+              "result": "remain-unknown",
+              "rationale": "Lapce's setup, terminal, remote-development, release, and canonical repository sources establish a general modal editor with experimental Copilot completion rather than a first-party coding-agent surface. It does not establish an editor-owned agent tool that can execute shell commands rather than merely exposing a terminal to the operator."
+            },
+            {
+              "rowId": "editor-mcp",
+              "result": "remain-unknown",
+              "rationale": "Lapce's setup, terminal, remote-development, release, and canonical repository sources establish a general modal editor with experimental Copilot completion rather than a first-party coding-agent surface. It does not establish an MCP client available to this exact editor's agent surface."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "Lapce's setup, terminal, remote-development, release, and canonical repository sources establish a general modal editor with experimental Copilot completion rather than a first-party coding-agent surface. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "Lapce's setup, terminal, remote-development, release, and canonical repository sources establish a general modal editor with experimental Copilot completion rather than a first-party coding-agent surface. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-change-review",
+              "result": "remain-unknown",
+              "rationale": "Lapce's setup, terminal, remote-development, release, and canonical repository sources establish a general modal editor with experimental Copilot completion rather than a first-party coding-agent surface. It does not establish a first-party review surface for agent-produced changes."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "Lapce's setup, terminal, remote-development, release, and canonical repository sources establish a general modal editor with experimental Copilot completion rather than a first-party coding-agent surface. It does not establish an approval scope or allow, ask, and deny policy for the editor agent's tool calls."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Lapce's setup, terminal, remote-development, release, and canonical repository sources establish a general modal editor with experimental Copilot completion rather than a first-party coding-agent surface. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            },
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "Lapce's setup, terminal, remote-development, release, and canonical repository sources establish a general modal editor with experimental Copilot completion rather than a first-party coding-agent surface. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
+            },
+            {
+              "rowId": "editor-verification-loop",
+              "result": "remain-unknown",
+              "rationale": "Lapce's setup, terminal, remote-development, release, and canonical repository sources establish a general modal editor with experimental Copilot completion rather than a first-party coding-agent surface. It does not establish a documented agent loop that runs tests, builds, diagnostics, browser inspection, or device checks and consumes the result."
+            }
+          ]
+        },
+        {
+          "productId": "helix",
+          "sourcesChecked": [
+            "https://helix-editor.com/",
+            "https://github.com/helix-editor/helix",
+            "https://docs.helix-editor.com/master/commands.html",
+            "https://github.com/helix-editor/helix/issues/1976",
+            "https://github.com/helix-editor/helix/discussions/4037",
+            "https://docs.helix-editor.com/install.html"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-agent-mode",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish a first-party autonomous coding-agent loop inside this editor."
+            },
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
+            },
+            {
+              "rowId": "editor-agent-shell-tools",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish an editor-owned agent tool that can execute shell commands rather than merely exposing a terminal to the operator."
+            },
+            {
+              "rowId": "editor-mcp",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish an MCP client available to this exact editor's agent surface."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-change-review",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish a first-party review surface for agent-produced changes."
+            },
+            {
+              "rowId": "editor-remote-workspaces",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish that the editor runs the workspace, language services, terminal, or agent tools on a remote host."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish an approval scope or allow, ask, and deny policy for the editor agent's tool calls."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            },
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
+            },
+            {
+              "rowId": "editor-verification-loop",
+              "result": "remain-unknown",
+              "rationale": "Helix's commands, installation guide, canonical repository, and maintainer discussions establish a terminal-first modal editor whose AI integrations remain external LSP or CLI concerns. It does not establish a documented agent loop that runs tests, builds, diagnostics, browser inspection, or device checks and consumes the result."
+            }
+          ]
+        },
+        {
+          "productId": "kiro",
+          "sourcesChecked": [
+            "https://kiro.dev/docs/ide/",
+            "https://kiro.dev/docs/chat/dev-servers/",
+            "https://kiro.dev/docs/ide/experimental/focus-mode",
+            "https://kiro.dev/ide/",
+            "https://kiro.dev/docs/how-kiro-works",
+            "https://kiro.dev/docs/cli/chat/permissions/",
+            "https://kiro.dev/docs/cli/reference/built-in-tools/",
+            "https://kiro.dev/changelog/ide/page/2/"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-inline-prediction",
+              "result": "remain-unknown",
+              "rationale": "Kiro's exact IDE, shared-harness, permissions, Focus, source-control, and release documentation establishes the desktop editor while keeping Kiro Web and Kiro CLI as separate surfaces. It does not establish current inline or next-edit code prediction for this exact editor release."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "Kiro's exact IDE, shared-harness, permissions, Focus, source-control, and release documentation establishes the desktop editor while keeping Kiro Web and Kiro CLI as separate surfaces. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Kiro's exact IDE, shared-harness, permissions, Focus, source-control, and release documentation establishes the desktop editor while keeping Kiro Web and Kiro CLI as separate surfaces. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            }
+          ]
+        },
+        {
+          "productId": "void",
+          "sourcesChecked": [
+            "https://github.com/voideditor/void",
+            "https://github.com/voideditor/void/releases"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "Void's archived repository and historical releases establish the final open-source desktop editor and experimental AI surface; no current product documentation exists beyond that retained record. It does not establish a detached agent job that keeps running independently of the foreground editor conversation."
+            },
+            {
+              "rowId": "editor-agent-shell-tools",
+              "result": "remain-unknown",
+              "rationale": "Void's archived repository and historical releases establish the final open-source desktop editor and experimental AI surface; no current product documentation exists beyond that retained record. It does not establish an editor-owned agent tool that can execute shell commands rather than merely exposing a terminal to the operator."
+            },
+            {
+              "rowId": "editor-mcp",
+              "result": "remain-unknown",
+              "rationale": "Void's archived repository and historical releases establish the final open-source desktop editor and experimental AI surface; no current product documentation exists beyond that retained record. It does not establish an MCP client available to this exact editor's agent surface."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "Void's archived repository and historical releases establish the final open-source desktop editor and experimental AI surface; no current product documentation exists beyond that retained record. It does not establish concurrently running agent sessions owned and surfaced by this exact editor."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "Void's archived repository and historical releases establish the final open-source desktop editor and experimental AI surface; no current product documentation exists beyond that retained record. It does not establish product-managed Git worktrees that isolate agent changes."
+            },
+            {
+              "rowId": "editor-remote-workspaces",
+              "result": "remain-unknown",
+              "rationale": "Void's archived repository and historical releases establish the final open-source desktop editor and experimental AI surface; no current product documentation exists beyond that retained record. It does not establish that the editor runs the workspace, language services, terminal, or agent tools on a remote host."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "Void's archived repository and historical releases establish the final open-source desktop editor and experimental AI surface; no current product documentation exists beyond that retained record. It does not establish an approval scope or allow, ask, and deny policy for the editor agent's tool calls."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Void's archived repository and historical releases establish the final open-source desktop editor and experimental AI surface; no current product documentation exists beyond that retained record. It does not establish a documented process, filesystem, container, VM, or network containment boundary for agent-run commands."
+            },
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "Void's archived repository and historical releases establish the final open-source desktop editor and experimental AI surface; no current product documentation exists beyond that retained record. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
+            },
+            {
+              "rowId": "editor-verification-loop",
+              "result": "remain-unknown",
+              "rationale": "Void's archived repository and historical releases establish the final open-source desktop editor and experimental AI surface; no current product documentation exists beyond that retained record. It does not establish a documented agent loop that runs tests, builds, diagnostics, browser inspection, or device checks and consumes the result."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": "ide-extensions",
+      "products": [
+        {
+          "productId": "github-copilot-vscode",
+          "sourcesChecked": [
+            "https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-extension?tool=vscode",
+            "https://docs.github.com/en/copilot/reference/copilot-feature-matrix?tool=vscode",
+            "https://code.visualstudio.com/docs/copilot/concepts/customization",
+            "https://code.visualstudio.com/docs/agent-customization/custom-instructions",
+            "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-provider-choice",
+              "result": "remain-unknown",
+              "rationale": "GitHub's IDE feature matrix and installation pages establish the multi-host Copilot extension family; host-specific VS Code behavior and the separately owned cloud coding agent are not automatically universal to every host. It does not establish an operator-facing provider or model selector for this exact extension surface."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "GitHub's IDE feature matrix and installation pages establish the multi-host Copilot extension family; host-specific VS Code behavior and the separately owned cloud coding agent are not automatically universal to every host. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-permissions",
+              "result": "remain-unknown",
+              "rationale": "GitHub's IDE feature matrix and installation pages establish the multi-host Copilot extension family; host-specific VS Code behavior and the separately owned cloud coding agent are not automatically universal to every host. It does not establish per-tool approval or allow, ask, and deny policies for this exact extension."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "GitHub's IDE feature matrix and installation pages establish the multi-host Copilot extension family; host-specific VS Code behavior and the separately owned cloud coding agent are not automatically universal to every host. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-byok-local-model",
+              "result": "remain-unknown",
+              "rationale": "GitHub's IDE feature matrix and installation pages establish the multi-host Copilot extension family; host-specific VS Code behavior and the separately owned cloud coding agent are not automatically universal to every host. It does not establish operator-supplied provider credentials, a local model, or a self-hosted inference endpoint for this exact extension."
+            }
+          ]
+        },
+        {
+          "productId": "cline",
+          "sourcesChecked": [
+            "https://docs.cline.bot/",
+            "https://github.com/cline/cline",
+            "https://docs.cline.bot/usage/ide",
+            "https://docs.cline.bot/core-workflows/checkpoints",
+            "https://docs.cline.bot/features/auto-approve",
+            "https://docs.cline.bot/provider-config/other-30-plus-providers",
+            "https://docs.cline.bot/provider-config/overview"
+          ],
+          "cells": [
+            {
+              "rowId": "product-status",
+              "result": "remain-unknown",
+              "rationale": "Cline's exact extension documentation establishes its IDE panel, tools, MCP, checkpoints, auto-approval, and configurable model-provider layer without inheriting Cline CLI or hosted-service ownership. The checked first-party material does not assign an explicit lifecycle label that maps to the catalog's active, beta, community-maintained, sunsetting, archived, or pivoted states."
+            },
+            {
+              "rowId": "extension-inline-completion",
+              "result": "remain-unknown",
+              "rationale": "Cline's exact extension documentation establishes its IDE panel, tools, MCP, checkpoints, auto-approval, and configurable model-provider layer without inheriting Cline CLI or hosted-service ownership. It does not establish inline completion as a capability of this exact extension rather than the host editor or a sibling plugin."
+            },
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "Cline's exact extension documentation establishes its IDE panel, tools, MCP, checkpoints, auto-approval, and configurable model-provider layer without inheriting Cline CLI or hosted-service ownership. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-host-jetbrains",
+              "result": "remain-unknown",
+              "rationale": "Cline's exact extension documentation establishes its IDE panel, tools, MCP, checkpoints, auto-approval, and configurable model-provider layer without inheriting Cline CLI or hosted-service ownership. It does not establish a first-party JetBrains package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-codebase-context",
+              "result": "remain-unknown",
+              "rationale": "Cline's exact extension documentation establishes its IDE panel, tools, MCP, checkpoints, auto-approval, and configurable model-provider layer without inheriting Cline CLI or hosted-service ownership. It does not establish a maintained codebase map or indexing/retrieval layer; ordinary file reads and text search are insufficient."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Cline's exact extension documentation establishes its IDE panel, tools, MCP, checkpoints, auto-approval, and configurable model-provider layer without inheriting Cline CLI or hosted-service ownership. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Cline's exact extension documentation establishes its IDE panel, tools, MCP, checkpoints, auto-approval, and configurable model-provider layer without inheriting Cline CLI or hosted-service ownership. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "continue",
+          "sourcesChecked": [
+            "https://docs.continue.dev/",
+            "https://github.com/continuedev/continue",
+            "https://docs.continue.dev/customize/deep-dives/configuration",
+            "https://docs.continue.dev/customize/overview",
+            "https://docs.continue.dev/customize/deep-dives/custom-providers",
+            "https://docs.continue.dev/getting-started/install",
+            "https://docs.continue.dev/ide-extensions/agent/how-it-works",
+            "https://docs.continue.dev/customize/model-providers/overview"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "Continue's final extension documentation and canonical read-only repository establish the VS Code and JetBrains plugins, providers, MCP, codebase context, and local agent boundary. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Continue's final extension documentation and canonical read-only repository establish the VS Code and JetBrains plugins, providers, MCP, codebase context, and local agent boundary. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-permissions",
+              "result": "remain-unknown",
+              "rationale": "Continue's final extension documentation and canonical read-only repository establish the VS Code and JetBrains plugins, providers, MCP, codebase context, and local agent boundary. It does not establish per-tool approval or allow, ask, and deny policies for this exact extension."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Continue's final extension documentation and canonical read-only repository establish the VS Code and JetBrains plugins, providers, MCP, codebase context, and local agent boundary. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Continue's final extension documentation and canonical read-only repository establish the VS Code and JetBrains plugins, providers, MCP, codebase context, and local agent boundary. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "kilo-code",
+          "sourcesChecked": [
+            "https://kilo.ai/docs/",
+            "https://github.com/Kilo-Org/kilocode",
+            "https://kilo.ai/docs/code-with-ai/platforms/vscode",
+            "https://kilo.ai/docs/code-with-ai/platforms/jetbrains",
+            "https://kilo.ai/docs/getting-started/setup-authentication",
+            "https://kilo.ai/docs/automate/mcp/using-in-kilo-code",
+            "https://kilo.ai/docs/code-with-ai/features/checkpoints",
+            "https://kilo.ai/docs/getting-started/settings/auto-approving-actions",
+            "https://kilo.ai/docs/automate/agent-manager",
+            "https://kilo.ai/docs/code-with-ai/platforms"
+          ],
+          "cells": [
+            {
+              "rowId": "product-status",
+              "result": "remain-unknown",
+              "rationale": "Kilo Code's exact VS Code and JetBrains extension pages establish provider choice, MCP, checkpoints, permissions, and Agent Manager worktrees while keeping the cloud agent and CLI as sibling surfaces. The checked first-party material does not assign an explicit lifecycle label that maps to the catalog's active, beta, community-maintained, sunsetting, archived, or pivoted states."
+            },
+            {
+              "rowId": "extension-codebase-context",
+              "result": "remain-unknown",
+              "rationale": "Kilo Code's exact VS Code and JetBrains extension pages establish provider choice, MCP, checkpoints, permissions, and Agent Manager worktrees while keeping the cloud agent and CLI as sibling surfaces. It does not establish a maintained codebase map or indexing/retrieval layer; ordinary file reads and text search are insufficient."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Kilo Code's exact VS Code and JetBrains extension pages establish provider choice, MCP, checkpoints, permissions, and Agent Manager worktrees while keeping the cloud agent and CLI as sibling surfaces. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "codex-ide-extension",
+          "sourcesChecked": [
+            "https://developers.openai.com/codex/ide",
+            "https://github.com/openai/codex",
+            "https://developers.openai.com/codex/ide/cloud-tasks"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-inline-completion",
+              "result": "remain-unknown",
+              "rationale": "OpenAI's Codex IDE pages establish the VS Code-compatible extension, local Codex sidecar, permissions, MCP, and cloud-task handoff without inheriting every Codex CLI or cloud capability. It does not establish inline completion as a capability of this exact extension rather than the host editor or a sibling plugin."
+            },
+            {
+              "rowId": "extension-host-jetbrains",
+              "result": "remain-unknown",
+              "rationale": "OpenAI's Codex IDE pages establish the VS Code-compatible extension, local Codex sidecar, permissions, MCP, and cloud-task handoff without inheriting every Codex CLI or cloud capability. It does not establish a first-party JetBrains package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-provider-choice",
+              "result": "remain-unknown",
+              "rationale": "OpenAI's Codex IDE pages establish the VS Code-compatible extension, local Codex sidecar, permissions, MCP, and cloud-task handoff without inheriting every Codex CLI or cloud capability. It does not establish an operator-facing provider or model selector for this exact extension surface."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "OpenAI's Codex IDE pages establish the VS Code-compatible extension, local Codex sidecar, permissions, MCP, and cloud-task handoff without inheriting every Codex CLI or cloud capability. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-codebase-context",
+              "result": "remain-unknown",
+              "rationale": "OpenAI's Codex IDE pages establish the VS Code-compatible extension, local Codex sidecar, permissions, MCP, and cloud-task handoff without inheriting every Codex CLI or cloud capability. It does not establish a maintained codebase map or indexing/retrieval layer; ordinary file reads and text search are insufficient."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "OpenAI's Codex IDE pages establish the VS Code-compatible extension, local Codex sidecar, permissions, MCP, and cloud-task handoff without inheriting every Codex CLI or cloud capability. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-byok-local-model",
+              "result": "remain-unknown",
+              "rationale": "OpenAI's Codex IDE pages establish the VS Code-compatible extension, local Codex sidecar, permissions, MCP, and cloud-task handoff without inheriting every Codex CLI or cloud capability. It does not establish operator-supplied provider credentials, a local model, or a self-hosted inference endpoint for this exact extension."
+            }
+          ]
+        },
+        {
+          "productId": "claude-code-vscode",
+          "sourcesChecked": [
+            "https://code.claude.com/docs/en/ide-integrations",
+            "https://code.claude.com/docs/en/platforms"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-inline-completion",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's IDE integration and platform comparison establish the VS Code-compatible Claude Code extension backed by the local CLI, while web and remote sessions remain separately owned surfaces. It does not establish inline completion as a capability of this exact extension rather than the host editor or a sibling plugin."
+            },
+            {
+              "rowId": "extension-host-jetbrains",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's IDE integration and platform comparison establish the VS Code-compatible Claude Code extension backed by the local CLI, while web and remote sessions remain separately owned surfaces. It does not establish a first-party JetBrains package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-provider-choice",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's IDE integration and platform comparison establish the VS Code-compatible Claude Code extension backed by the local CLI, while web and remote sessions remain separately owned surfaces. It does not establish an operator-facing provider or model selector for this exact extension surface."
+            },
+            {
+              "rowId": "extension-mcp",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's IDE integration and platform comparison establish the VS Code-compatible Claude Code extension backed by the local CLI, while web and remote sessions remain separately owned surfaces. It does not establish an MCP client exposed by this exact extension rather than the host IDE or an optional third-party plugin."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's IDE integration and platform comparison establish the VS Code-compatible Claude Code extension backed by the local CLI, while web and remote sessions remain separately owned surfaces. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's IDE integration and platform comparison establish the VS Code-compatible Claude Code extension backed by the local CLI, while web and remote sessions remain separately owned surfaces. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-byok-local-model",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's IDE integration and platform comparison establish the VS Code-compatible Claude Code extension backed by the local CLI, while web and remote sessions remain separately owned surfaces. It does not establish operator-supplied provider credentials, a local model, or a self-hosted inference endpoint for this exact extension."
+            }
+          ]
+        },
+        {
+          "productId": "claude-code-jetbrains",
+          "sourcesChecked": [
+            "https://code.claude.com/docs/en/platforms"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-inline-completion",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's exact platform comparison establishes the JetBrains plugin and local Claude Code execution boundary without inheriting the sibling VS Code extension or web client. It does not establish inline completion as a capability of this exact extension rather than the host editor or a sibling plugin."
+            },
+            {
+              "rowId": "extension-host-vscode",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's exact platform comparison establishes the JetBrains plugin and local Claude Code execution boundary without inheriting the sibling VS Code extension or web client. It does not establish a first-party VS Code or compatible-fork package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-provider-choice",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's exact platform comparison establishes the JetBrains plugin and local Claude Code execution boundary without inheriting the sibling VS Code extension or web client. It does not establish an operator-facing provider or model selector for this exact extension surface."
+            },
+            {
+              "rowId": "extension-mcp",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's exact platform comparison establishes the JetBrains plugin and local Claude Code execution boundary without inheriting the sibling VS Code extension or web client. It does not establish an MCP client exposed by this exact extension rather than the host IDE or an optional third-party plugin."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's exact platform comparison establishes the JetBrains plugin and local Claude Code execution boundary without inheriting the sibling VS Code extension or web client. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-codebase-context",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's exact platform comparison establishes the JetBrains plugin and local Claude Code execution boundary without inheriting the sibling VS Code extension or web client. It does not establish a maintained codebase map or indexing/retrieval layer; ordinary file reads and text search are insufficient."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's exact platform comparison establishes the JetBrains plugin and local Claude Code execution boundary without inheriting the sibling VS Code extension or web client. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-byok-local-model",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's exact platform comparison establishes the JetBrains plugin and local Claude Code execution boundary without inheriting the sibling VS Code extension or web client. It does not establish operator-supplied provider credentials, a local model, or a self-hosted inference endpoint for this exact extension."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Anthropic's exact platform comparison establishes the JetBrains plugin and local Claude Code execution boundary without inheriting the sibling VS Code extension or web client. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "amazon-q-developer-ide",
+          "sourcesChecked": [
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE.html",
+            "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer's IDE matrix and MCP documentation establish the extension family across VS Code, JetBrains, Eclipse, and Visual Studio, with host-specific feature differences preserved. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-provider-choice",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer's IDE matrix and MCP documentation establish the extension family across VS Code, JetBrains, Eclipse, and Visual Studio, with host-specific feature differences preserved. It does not establish an operator-facing provider or model selector for this exact extension surface."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer's IDE matrix and MCP documentation establish the extension family across VS Code, JetBrains, Eclipse, and Visual Studio, with host-specific feature differences preserved. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer's IDE matrix and MCP documentation establish the extension family across VS Code, JetBrains, Eclipse, and Visual Studio, with host-specific feature differences preserved. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-byok-local-model",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer's IDE matrix and MCP documentation establish the extension family across VS Code, JetBrains, Eclipse, and Visual Studio, with host-specific feature differences preserved. It does not establish operator-supplied provider credentials, a local model, or a self-hosted inference endpoint for this exact extension."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Amazon Q Developer's IDE matrix and MCP documentation establish the extension family across VS Code, JetBrains, Eclipse, and Visual Studio, with host-specific feature differences preserved. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "gemini-code-assist",
+          "sourcesChecked": [
+            "https://docs.cloud.google.com/gemini/docs/codeassist/overview",
+            "https://docs.cloud.google.com/gemini/docs/codeassist/supported-languages",
+            "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "Google Cloud's exact Gemini Code Assist IDE documentation establishes VS Code and JetBrains extensions, inline assistance, agent mode, tools, context, MCP, and current service-tier boundaries. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-provider-choice",
+              "result": "remain-unknown",
+              "rationale": "Google Cloud's exact Gemini Code Assist IDE documentation establishes VS Code and JetBrains extensions, inline assistance, agent mode, tools, context, MCP, and current service-tier boundaries. It does not establish an operator-facing provider or model selector for this exact extension surface."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Google Cloud's exact Gemini Code Assist IDE documentation establishes VS Code and JetBrains extensions, inline assistance, agent mode, tools, context, MCP, and current service-tier boundaries. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Google Cloud's exact Gemini Code Assist IDE documentation establishes VS Code and JetBrains extensions, inline assistance, agent mode, tools, context, MCP, and current service-tier boundaries. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-byok-local-model",
+              "result": "remain-unknown",
+              "rationale": "Google Cloud's exact Gemini Code Assist IDE documentation establishes VS Code and JetBrains extensions, inline assistance, agent mode, tools, context, MCP, and current service-tier boundaries. It does not establish operator-supplied provider credentials, a local model, or a self-hosted inference endpoint for this exact extension."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Google Cloud's exact Gemini Code Assist IDE documentation establishes VS Code and JetBrains extensions, inline assistance, agent mode, tools, context, MCP, and current service-tier boundaries. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "jetbrains-ai-assistant",
+          "sourcesChecked": [
+            "https://www.jetbrains.com/help/idea/ai-assistant-in-jetbrains-ides.html",
+            "https://www.jetbrains.com/help/ai-assistant/agents.html",
+            "https://www.jetbrains.com/help/ai-assistant/installation-guide-ai-assistant.html",
+            "https://www.jetbrains.com/help/ai-assistant/use-custom-models.html"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "JetBrains AI Assistant documentation establishes the JetBrains-only plugin, selectable models and agents, ACP, MCP, operation modes, authorization, and change review. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-host-vscode",
+              "result": "remain-unknown",
+              "rationale": "JetBrains AI Assistant documentation establishes the JetBrains-only plugin, selectable models and agents, ACP, MCP, operation modes, authorization, and change review. It does not establish a first-party VS Code or compatible-fork package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "JetBrains AI Assistant documentation establishes the JetBrains-only plugin, selectable models and agents, ACP, MCP, operation modes, authorization, and change review. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "JetBrains AI Assistant documentation establishes the JetBrains-only plugin, selectable models and agents, ACP, MCP, operation modes, authorization, and change review. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "JetBrains AI Assistant documentation establishes the JetBrains-only plugin, selectable models and agents, ACP, MCP, operation modes, authorization, and change review. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "pochi-vscode",
+          "sourcesChecked": [
+            "https://github.com/TabbyML/pochi",
+            "https://github.com/TabbyML/pochi/blob/main/packages/docs/content/docs/vscode.mdx"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-host-jetbrains",
+              "result": "remain-unknown",
+              "rationale": "Pochi's canonical repository and exact VS Code guide establish its extension, models, tool use, worktree-isolated parallel tasks, task history, and optional cloud storage without inheriting unrelated Tabby products. It does not establish a first-party JetBrains package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-mcp",
+              "result": "remain-unknown",
+              "rationale": "Pochi's canonical repository and exact VS Code guide establish its extension, models, tool use, worktree-isolated parallel tasks, task history, and optional cloud storage without inheriting unrelated Tabby products. It does not establish an MCP client exposed by this exact extension rather than the host IDE or an optional third-party plugin."
+            },
+            {
+              "rowId": "extension-codebase-context",
+              "result": "remain-unknown",
+              "rationale": "Pochi's canonical repository and exact VS Code guide establish its extension, models, tool use, worktree-isolated parallel tasks, task history, and optional cloud storage without inheriting unrelated Tabby products. It does not establish a maintained codebase map or indexing/retrieval layer; ordinary file reads and text search are insufficient."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Pochi's canonical repository and exact VS Code guide establish its extension, models, tool use, worktree-isolated parallel tasks, task history, and optional cloud storage without inheriting unrelated Tabby products. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "tabby-ide-extensions",
+          "sourcesChecked": [
+            "https://github.com/TabbyML/tabby",
+            "https://github.com/TabbyML/tabby/blob/main/clients/tabby-agent/README.md"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "Tabby's canonical repository and agent-client documentation establish its self-hosted completion service and editor clients without treating the separate Pochi agent extension as Tabby core. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-mcp",
+              "result": "remain-unknown",
+              "rationale": "Tabby's canonical repository and agent-client documentation establish its self-hosted completion service and editor clients without treating the separate Pochi agent extension as Tabby core. It does not establish an MCP client exposed by this exact extension rather than the host IDE or an optional third-party plugin."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Tabby's canonical repository and agent-client documentation establish its self-hosted completion service and editor clients without treating the separate Pochi agent extension as Tabby core. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-permissions",
+              "result": "remain-unknown",
+              "rationale": "Tabby's canonical repository and agent-client documentation establish its self-hosted completion service and editor clients without treating the separate Pochi agent extension as Tabby core. It does not establish per-tool approval or allow, ask, and deny policies for this exact extension."
+            },
+            {
+              "rowId": "extension-codebase-context",
+              "result": "remain-unknown",
+              "rationale": "Tabby's canonical repository and agent-client documentation establish its self-hosted completion service and editor clients without treating the separate Pochi agent extension as Tabby core. It does not establish a maintained codebase map or indexing/retrieval layer; ordinary file reads and text search are insufficient."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Tabby's canonical repository and agent-client documentation establish its self-hosted completion service and editor clients without treating the separate Pochi agent extension as Tabby core. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Tabby's canonical repository and agent-client documentation establish its self-hosted completion service and editor clients without treating the separate Pochi agent extension as Tabby core. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "codecompanion-nvim",
+          "sourcesChecked": [
+            "https://github.com/olimorris/codecompanion.nvim",
+            "https://github.com/olimorris/codecompanion.nvim/blob/main/doc/codecompanion.txt"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-host-vscode",
+              "result": "remain-unknown",
+              "rationale": "CodeCompanion's canonical repository and Neovim documentation establish its chat buffers, providers, ACP agents, MCP, tools, inline transforms, and asynchronous in-process execution. It does not establish a first-party VS Code or compatible-fork package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-host-jetbrains",
+              "result": "remain-unknown",
+              "rationale": "CodeCompanion's canonical repository and Neovim documentation establish its chat buffers, providers, ACP agents, MCP, tools, inline transforms, and asynchronous in-process execution. It does not establish a first-party JetBrains package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "CodeCompanion's canonical repository and Neovim documentation establish its chat buffers, providers, ACP agents, MCP, tools, inline transforms, and asynchronous in-process execution. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-codebase-context",
+              "result": "remain-unknown",
+              "rationale": "CodeCompanion's canonical repository and Neovim documentation establish its chat buffers, providers, ACP agents, MCP, tools, inline transforms, and asynchronous in-process execution. It does not establish a maintained codebase map or indexing/retrieval layer; ordinary file reads and text search are insufficient."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "CodeCompanion's canonical repository and Neovim documentation establish its chat buffers, providers, ACP agents, MCP, tools, inline transforms, and asynchronous in-process execution. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "CodeCompanion's canonical repository and Neovim documentation establish its chat buffers, providers, ACP agents, MCP, tools, inline transforms, and asynchronous in-process execution. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "avante-nvim",
+          "sourcesChecked": [
+            "https://github.com/avante-corp/avante.nvim"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "avante.nvim's canonical repository establishes a Neovim-resident agent panel, provider adapters, ACP agents, inline editing, and repository context without inheriting capabilities from the Neovim host or optional companion plugins. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-host-vscode",
+              "result": "remain-unknown",
+              "rationale": "avante.nvim's canonical repository establishes a Neovim-resident agent panel, provider adapters, ACP agents, inline editing, and repository context without inheriting capabilities from the Neovim host or optional companion plugins. It does not establish a first-party VS Code or compatible-fork package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-host-jetbrains",
+              "result": "remain-unknown",
+              "rationale": "avante.nvim's canonical repository establishes a Neovim-resident agent panel, provider adapters, ACP agents, inline editing, and repository context without inheriting capabilities from the Neovim host or optional companion plugins. It does not establish a first-party JetBrains package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-mcp",
+              "result": "remain-unknown",
+              "rationale": "avante.nvim's canonical repository establishes a Neovim-resident agent panel, provider adapters, ACP agents, inline editing, and repository context without inheriting capabilities from the Neovim host or optional companion plugins. It does not establish an MCP client exposed by this exact extension rather than the host IDE or an optional third-party plugin."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "avante.nvim's canonical repository establishes a Neovim-resident agent panel, provider adapters, ACP agents, inline editing, and repository context without inheriting capabilities from the Neovim host or optional companion plugins. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-permissions",
+              "result": "remain-unknown",
+              "rationale": "avante.nvim's canonical repository establishes a Neovim-resident agent panel, provider adapters, ACP agents, inline editing, and repository context without inheriting capabilities from the Neovim host or optional companion plugins. It does not establish per-tool approval or allow, ask, and deny policies for this exact extension."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "avante.nvim's canonical repository establishes a Neovim-resident agent panel, provider adapters, ACP agents, inline editing, and repository context without inheriting capabilities from the Neovim host or optional companion plugins. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "avante.nvim's canonical repository establishes a Neovim-resident agent panel, provider adapters, ACP agents, inline editing, and repository context without inheriting capabilities from the Neovim host or optional companion plugins. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "refact-ide-plugins",
+          "sourcesChecked": [
+            "https://github.com/smallcloudai/refact",
+            "https://github.com/smallcloudai/refact-lsp/blob/main/README.md"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "Refact's canonical product and agent repositories establish its editor plugins, local agent/LSP, providers, MCP, codebase context, and self-hosted server boundary. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Refact's canonical product and agent repositories establish its editor plugins, local agent/LSP, providers, MCP, codebase context, and self-hosted server boundary. It does not establish task-scoped workspace snapshots that can restore file mutations, rather than ordinary undo or chat history."
+            },
+            {
+              "rowId": "extension-permissions",
+              "result": "remain-unknown",
+              "rationale": "Refact's canonical product and agent repositories establish its editor plugins, local agent/LSP, providers, MCP, codebase context, and self-hosted server boundary. It does not establish per-tool approval or allow, ask, and deny policies for this exact extension."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Refact's canonical product and agent repositories establish its editor plugins, local agent/LSP, providers, MCP, codebase context, and self-hosted server boundary. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Refact's canonical product and agent repositories establish its editor plugins, local agent/LSP, providers, MCP, codebase context, and self-hosted server boundary. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "roo-code",
+          "sourcesChecked": [
+            "https://github.com/RooCodeInc/Roo-Code",
+            "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/getting-started/installing.mdx",
+            "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/providers/index.mdx",
+            "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/advanced-usage/available-tools/use-mcp-tool.md",
+            "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/features/checkpoints.mdx",
+            "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/features/auto-approving-actions.mdx",
+            "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/features/codebase-indexing.mdx",
+            "https://github.com/RooCodeInc/Roo-Code/blob/main/apps/docs/docs/advanced-usage/available-tools/tool-use-overview.md"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-inline-completion",
+              "result": "remain-unknown",
+              "rationale": "Roo Code's archived repository and retained exact extension documentation establish the historical VS Code-family panel, providers, MCP, checkpoints, permissions, and indexing before shutdown. It does not establish inline completion as a capability of this exact extension rather than the host editor or a sibling plugin."
+            },
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "Roo Code's archived repository and retained exact extension documentation establish the historical VS Code-family panel, providers, MCP, checkpoints, permissions, and indexing before shutdown. It does not establish a separately owned background job that continues outside the foreground extension conversation."
+            },
+            {
+              "rowId": "extension-host-jetbrains",
+              "result": "remain-unknown",
+              "rationale": "Roo Code's archived repository and retained exact extension documentation establish the historical VS Code-family panel, providers, MCP, checkpoints, permissions, and indexing before shutdown. It does not establish a first-party JetBrains package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Roo Code's archived repository and retained exact extension documentation establish the historical VS Code-family panel, providers, MCP, checkpoints, permissions, and indexing before shutdown. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Roo Code's archived repository and retained exact extension documentation establish the historical VS Code-family panel, providers, MCP, checkpoints, permissions, and indexing before shutdown. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": "agent-workbenches",
+      "products": [
+        {
+          "productId": "tortie",
+          "sourcesChecked": [
+            "https://github.com/gregce/tortie",
+            "https://github.com/gregce/tortie#readme"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "Tortie's canonical repository and shipped acceptance documentation establish its tmux-owned sessions, recovery, cross-project attention, editor, file tree, SCM, review, and current macOS product boundary. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
+            },
+            {
+              "rowId": "workbench-programmable-control",
+              "result": "remain-unknown",
+              "rationale": "Tortie's canonical repository and shipped acceptance documentation establish its tmux-owned sessions, recovery, cross-project attention, editor, file tree, SCM, review, and current macOS product boundary. It does not establish a supported CLI, socket, API, or event contract for external workspace control."
+            },
+            {
+              "rowId": "workbench-worktrees",
+              "result": "remain-unknown",
+              "rationale": "Tortie's canonical repository and shipped acceptance documentation establish its tmux-owned sessions, recovery, cross-project attention, editor, file tree, SCM, review, and current macOS product boundary. It does not establish product-managed creation, isolation, review, and cleanup of Git worktrees."
+            }
+          ]
+        },
+        {
+          "productId": "cate",
+          "sourcesChecked": [
+            "https://github.com/0-AI-UG/cate",
+            "https://github.com/0-AI-UG/cate/blob/main/CHANGELOG.md"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "Cate's canonical repository and changelog establish its multi-agent canvas, terminal, editor, browser, SCM, remote SSH, programmable control, and worktree workflows. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
+            }
+          ]
+        },
+        {
+          "productId": "cdesktop",
+          "sourcesChecked": [
+            "https://github.com/cdesktop-ai/cdesktop"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "cdesktop's canonical repository establishes its current local web client, worktree-backed sessions, diff review, browser, and roadmap boundaries without promoting planned desktop installers to shipped behavior. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
+            },
+            {
+              "rowId": "workbench-pty-survives-ui",
+              "result": "remain-unknown",
+              "rationale": "cdesktop's canonical repository establishes its current local web client, worktree-backed sessions, diff review, browser, and roadmap boundaries without promoting planned desktop installers to shipped behavior. Persisted scrollback, layout, or conversation resume does not establish that the original live PTY process survives UI exit."
+            },
+            {
+              "rowId": "workbench-cross-project-attention",
+              "result": "remain-unknown",
+              "rationale": "cdesktop's canonical repository establishes its current local web client, worktree-backed sessions, diff review, browser, and roadmap boundaries without promoting planned desktop installers to shipped behavior. It does not establish one operator view that carries actionable state across multiple projects."
+            },
+            {
+              "rowId": "workbench-attention-signals",
+              "result": "remain-unknown",
+              "rationale": "cdesktop's canonical repository establishes its current local web client, worktree-backed sessions, diff review, browser, and roadmap boundaries without promoting planned desktop installers to shipped behavior. It does not establish explicit cross-session waiting, blocked, failed, or completed attention states."
+            },
+            {
+              "rowId": "workbench-programmable-control",
+              "result": "remain-unknown",
+              "rationale": "cdesktop's canonical repository establishes its current local web client, worktree-backed sessions, diff review, browser, and roadmap boundaries without promoting planned desktop installers to shipped behavior. It does not establish a supported CLI, socket, API, or event contract for external workspace control."
+            }
+          ]
+        },
+        {
+          "productId": "cmux",
+          "sourcesChecked": [
+            "https://github.com/manaflow-ai/cmux",
+            "https://github.com/manaflow-ai/cmux/blob/main/README.md",
+            "https://github.com/manaflow-ai/cmux#session-restore",
+            "https://cmux.com/blog/cmux-finder",
+            "https://cmux.com/docs/changelog",
+            "https://github.com/manaflow-ai/cmux-home/blob/main/docs/customization.md"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "cmux's canonical repository, changelog, Finder, home, and customization sources establish a macOS terminal workspace with durable session recovery, attention states, browser panes, remote access, and CLI control. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
+            },
+            {
+              "rowId": "workbench-editor",
+              "result": "remain-unknown",
+              "rationale": "cmux's canonical repository, changelog, Finder, home, and customization sources establish a macOS terminal workspace with durable session recovery, attention states, browser panes, remote access, and CLI control. File preview, a diff viewer, or launching an external editor does not establish an editable in-product code surface."
+            }
+          ]
+        },
+        {
+          "productId": "wmux",
+          "sourcesChecked": [
+            "https://github.com/openwong2kim/wmux",
+            "https://github.com/openwong2kim/wmux/blob/main/README.md"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "wmux's canonical README establishes its daemon-owned terminal sessions, splits, file and Git surfaces, diff review, remote access, and Linux/browser reach without treating agent delegation as session transfer. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
+            },
+            {
+              "rowId": "workbench-editor",
+              "result": "remain-unknown",
+              "rationale": "wmux's canonical README establishes its daemon-owned terminal sessions, splits, file and Git surfaces, diff review, remote access, and Linux/browser reach without treating agent delegation as session transfer. File preview, a diff viewer, or launching an external editor does not establish an editable in-product code surface."
+            }
+          ]
+        },
+        {
+          "productId": "warp",
+          "sourcesChecked": [
+            "https://www.warp.dev/",
+            "https://github.com/warpdotdev/warp",
+            "https://docs.warp.dev/code/code-editor",
+            "https://docs.warp.dev/agent-platform/local-agents/overview",
+            "https://docs.warp.dev/agent-platform/local-agents/interacting-with-agents",
+            "https://docs.warp.dev/agent-platform/getting-started/agents-in-warp",
+            "https://docs.warp.dev/code/ssh-feature-support",
+            "https://docs.warp.dev/agents/cli/",
+            "https://docs.warp.dev/code/code-review",
+            "https://docs.warp.dev/code/git-worktrees"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-arbitrary-cli",
+              "result": "remain-unknown",
+              "rationale": "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate. It does not establish admission of arbitrary operator-chosen CLI agents beyond the explicitly integrated set."
+            },
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
+            },
+            {
+              "rowId": "workbench-pty-survives-ui",
+              "result": "remain-unknown",
+              "rationale": "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate. Persisted scrollback, layout, or conversation resume does not establish that the original live PTY process survives UI exit."
+            },
+            {
+              "rowId": "workbench-browser",
+              "result": "remain-unknown",
+              "rationale": "Warp's exact local application documentation establishes its terminal and agent modes, code editor, project tree, Code Review, SSH, local-agent integrations, and current worktree support while keeping Oz cloud orchestration separate. It does not establish an embedded interactive browser owned by the workbench."
+            }
+          ]
+        },
+        {
+          "productId": "wave-terminal",
+          "sourcesChecked": [
+            "https://github.com/wavetermdev/waveterm",
+            "https://docs.waveterm.dev/workspaces",
+            "https://docs.waveterm.dev/durable-sessions"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "Wave Terminal's canonical repository and exact workspace documentation establish its saved workspaces, terminal blocks, graphical editor, browser, remote connections, durable SSH sessions, and wsh control surface. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
+            },
+            {
+              "rowId": "workbench-cross-project-attention",
+              "result": "remain-unknown",
+              "rationale": "Wave Terminal's canonical repository and exact workspace documentation establish its saved workspaces, terminal blocks, graphical editor, browser, remote connections, durable SSH sessions, and wsh control surface. It does not establish one operator view that carries actionable state across multiple projects."
+            },
+            {
+              "rowId": "workbench-scm",
+              "result": "remain-unknown",
+              "rationale": "Wave Terminal's canonical repository and exact workspace documentation establish its saved workspaces, terminal blocks, graphical editor, browser, remote connections, durable SSH sessions, and wsh control surface. It does not establish a first-party source-control workflow rather than terminal access to Git."
+            },
+            {
+              "rowId": "workbench-change-review",
+              "result": "remain-unknown",
+              "rationale": "Wave Terminal's canonical repository and exact workspace documentation establish its saved workspaces, terminal blocks, graphical editor, browser, remote connections, durable SSH sessions, and wsh control surface. It does not establish in-product visual diff review as a first-class session surface."
+            },
+            {
+              "rowId": "workbench-attention-signals",
+              "result": "remain-unknown",
+              "rationale": "Wave Terminal's canonical repository and exact workspace documentation establish its saved workspaces, terminal blocks, graphical editor, browser, remote connections, durable SSH sessions, and wsh control surface. It does not establish explicit cross-session waiting, blocked, failed, or completed attention states."
+            },
+            {
+              "rowId": "workbench-worktrees",
+              "result": "remain-unknown",
+              "rationale": "Wave Terminal's canonical repository and exact workspace documentation establish its saved workspaces, terminal blocks, graphical editor, browser, remote connections, durable SSH sessions, and wsh control surface. It does not establish product-managed creation, isolation, review, and cleanup of Git worktrees."
+            }
+          ]
+        },
+        {
+          "productId": "dmux",
+          "sourcesChecked": [
+            "https://github.com/standardagents/dmux"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "dmux's canonical README establishes its tmux panes, supported agent launchers, worktree isolation, file and diff browser, notifications, multi-project navigation, merge, and pull-request workflow. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
+            },
+            {
+              "rowId": "workbench-editor",
+              "result": "remain-unknown",
+              "rationale": "dmux's canonical README establishes its tmux panes, supported agent launchers, worktree isolation, file and diff browser, notifications, multi-project navigation, merge, and pull-request workflow. File preview, a diff viewer, or launching an external editor does not establish an editable in-product code surface."
+            },
+            {
+              "rowId": "workbench-browser",
+              "result": "remain-unknown",
+              "rationale": "dmux's canonical README establishes its tmux panes, supported agent launchers, worktree isolation, file and diff browser, notifications, multi-project navigation, merge, and pull-request workflow. It does not establish an embedded interactive browser owned by the workbench."
+            },
+            {
+              "rowId": "workbench-remote-host",
+              "result": "remain-unknown",
+              "rationale": "dmux's canonical README establishes its tmux panes, supported agent launchers, worktree isolation, file and diff browser, notifications, multi-project navigation, merge, and pull-request workflow. It does not establish a supported SSH or remote-host execution workflow for the workbench."
+            },
+            {
+              "rowId": "workbench-programmable-control",
+              "result": "remain-unknown",
+              "rationale": "dmux's canonical README establishes its tmux panes, supported agent launchers, worktree isolation, file and diff browser, notifications, multi-project navigation, merge, and pull-request workflow. It does not establish a supported CLI, socket, API, or event contract for external workspace control."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "appliedClosures": [
+    {
+      "productId": "traecode",
+      "rowId": "editor-agent-sandbox",
+      "targetState": "limited",
+      "evidenceUrl": "https://www.trae.ai/blog/engineering_thought_0108?v=1",
+      "evidenceTitle": "TRAE sandbox security",
+      "basis": "vendor-documented",
+      "rationale": "TRAE documents a beta Sandbox Mode with filesystem isolation, allowed project and temporary paths, and shell-command interception."
+    },
+    {
+      "productId": "qoder-ide",
+      "rowId": "editor-worktree-isolation",
+      "targetState": "built-in",
+      "evidenceUrl": "https://docs.qoder.com/user-guide/quest/execution-environments",
+      "evidenceTitle": "Qoder Quest execution environments",
+      "basis": "vendor-documented",
+      "rationale": "Qoder Quest documents local Worktree mode, separate Git checkouts, parallel tasks, and moving completed work back to the local workspace."
+    },
+    {
+      "productId": "zed",
+      "rowId": "editor-remote-workspaces",
+      "targetState": "built-in",
+      "evidenceUrl": "https://zed.dev/docs/remote-development",
+      "evidenceTitle": "Zed Remote Development",
+      "basis": "vendor-documented",
+      "rationale": "Zed documents an SSH-backed remote server that owns source files, language servers, tasks, and terminals while the local application owns the UI and AI client."
+    },
+    {
+      "productId": "cline",
+      "rowId": "extension-provider-choice",
+      "targetState": "built-in",
+      "evidenceUrl": "https://docs.cline.bot/provider-config/other-30-plus-providers",
+      "evidenceTitle": "Cline provider configuration",
+      "basis": "vendor-documented",
+      "rationale": "Cline's extension settings expose an API Provider selector, provider credentials, and model selection across hosted, local, and OpenAI-compatible providers."
+    },
+    {
+      "productId": "continue",
+      "rowId": "product-status",
+      "targetState": "archived",
+      "claimState": "fact",
+      "evidenceUrl": "https://github.com/continuedev/continue",
+      "evidenceTitle": "Continue repository README",
+      "basis": "repository-derived",
+      "rationale": "The canonical repository explicitly says it is read-only and no longer actively maintained and calls 2.0.0 the final extension release."
+    },
+    {
+      "productId": "amazon-q-developer-ide",
+      "rowId": "extension-permissions",
+      "targetState": "built-in",
+      "evidenceUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidenceTitle": "Amazon Q Developer MCP tools",
+      "basis": "vendor-documented",
+      "rationale": "Amazon Q's IDE MCP configuration documents auto-approved, requires-approval, and dangerous tool permission levels."
+    },
+    {
+      "productId": "gemini-code-assist",
+      "rowId": "extension-mcp",
+      "targetState": "built-in",
+      "evidenceUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "evidenceTitle": "Gemini Code Assist agent mode",
+      "basis": "vendor-documented",
+      "rationale": "Google documents local and remote MCP server configuration for Gemini Code Assist in both VS Code and IntelliJ."
+    },
+    {
+      "productId": "gemini-code-assist",
+      "rowId": "extension-permissions",
+      "targetState": "built-in",
+      "evidenceUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "evidenceTitle": "Gemini Code Assist agent mode",
+      "basis": "vendor-documented",
+      "rationale": "Gemini Code Assist documents coreTools and excludeTools controls, including command-specific restrictions for shell tools."
+    },
+    {
+      "productId": "jetbrains-ai-assistant",
+      "rowId": "extension-mcp",
+      "targetState": "built-in",
+      "evidenceUrl": "https://www.jetbrains.com/help/ai-assistant/agents.html",
+      "evidenceTitle": "JetBrains AI Assistant agents",
+      "basis": "vendor-documented",
+      "rationale": "JetBrains documents configuring MCP servers in AI Assistant settings and exposing their tools to coding agents."
+    },
+    {
+      "productId": "jetbrains-ai-assistant",
+      "rowId": "extension-permissions",
+      "targetState": "built-in",
+      "evidenceUrl": "https://www.jetbrains.com/help/ai-assistant/agents.html",
+      "evidenceTitle": "JetBrains AI Assistant agents",
+      "basis": "vendor-documented",
+      "rationale": "JetBrains documents per-agent operation modes and an authorize-actions step that can approve, deny, or automatically run actions."
+    },
+    {
+      "productId": "codecompanion-nvim",
+      "rowId": "extension-mcp",
+      "targetState": "built-in",
+      "evidenceUrl": "https://github.com/olimorris/codecompanion.nvim",
+      "evidenceTitle": "CodeCompanion.nvim repository README",
+      "basis": "repository-derived",
+      "rationale": "The canonical README explicitly lists built-in Model Context Protocol support."
+    },
+    {
+      "productId": "warp",
+      "rowId": "workbench-change-review",
+      "targetState": "built-in",
+      "evidenceUrl": "https://docs.warp.dev/code/code-review",
+      "evidenceTitle": "Warp Code Review",
+      "basis": "vendor-documented",
+      "rationale": "Warp documents a first-party Code Review panel with live diffs, inline comments, batch agent feedback, edit, revert, and file review."
+    },
+    {
+      "productId": "warp",
+      "rowId": "workbench-worktrees",
+      "targetState": "built-in",
+      "evidenceUrl": "https://docs.warp.dev/code/code-review",
+      "evidenceTitle": "Warp Code Review",
+      "basis": "vendor-documented",
+      "rationale": "Warp's Code Review documentation explicitly states native Git worktree support and links the product's worktree workflow."
+    },
+    {
+      "productId": "wave-terminal",
+      "rowId": "workbench-named-sessions",
+      "targetState": "built-in",
+      "evidenceUrl": "https://docs.waveterm.dev/workspaces",
+      "evidenceTitle": "Wave Terminal workspaces",
+      "basis": "vendor-documented",
+      "rationale": "Wave documents named saved workspaces whose tabs, layouts, terminal histories, and AI histories persist automatically and can be reopened."
+    }
+  ],
+  "generatedMetricUnknowns": {
+    "result": "excluded-from-editorial-ledger",
+    "rationale": "Repository metric Unknowns are collector failures or not-yet-refreshed values. The deterministic repository refresh and audit:freshness gate must close or block them; editorial research must not hand-fill those cells."
+  }
+}

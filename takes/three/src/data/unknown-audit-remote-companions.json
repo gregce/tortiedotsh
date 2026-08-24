@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-08-23",
+  "catalogSnapshot": "2026-08-23",
+  "scope": {
+    "categoryIds": ["remote-companions"],
+    "excludedProductIds": ["mosaic-terminal", "airport", "muse-code", "omnara"],
+    "renderedRows": "Non-platform catalog rows resolved through getComparisonClaim(). Generated repository metrics are governed separately by the freshness gate.",
+    "platformHeaders": "Products whose complete platform fact is Unknown are audited separately below. An omitted OS in a known platform list is not rendered as an Unknown table cell.",
+    "parityRule": "cells must exactly equal the current rendered non-platform Unknown keys. Implemented closures are recorded separately and are no longer Unknown catalog state."
+  },
+  "summary": {
+    "products": 11,
+    "currentUnknownCells": 53,
+    "suggestedClosures": 0,
+    "implementedClosures": 7,
+    "remainUnknown": 53
+  },
+  "categories": [
+    {
+      "categoryId": "remote-companions",
+      "products": [
+        {
+          "productId": "happy",
+          "sourcesChecked": [
+            "https://github.com/slopus/happy",
+            "https://github.com/slopus/happy/blob/main/docs/README.md",
+            "https://github.com/slopus/happy/blob/main/packages/happy-agent/README.md",
+            "https://github.com/slopus/happy/blob/main/docs/protocol.md",
+            "https://github.com/slopus/happy-server"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "vibetunnel",
+          "sourcesChecked": [
+            "https://github.com/amantus-ai/vibetunnel"
+          ],
+          "cells": [
+            {"rowId":"remote-approvals","result":"remain-unknown","rationale":"VibeTunnel forwards raw PTY input and is positioned for terminal agents, but its canonical repository does not define normalized approve/deny actions or exact agent follow-up semantics."},
+            {"rowId":"remote-encryption","result":"remain-unknown","rationale":"The repository documents deployment-dependent Tailscale WireGuard and ngrok TLS paths, not product-level end-to-end encryption across every VibeTunnel deployment."},
+            {"rowId":"remote-native-android","result":"remain-unknown","rationale":"VibeTunnel documents a responsive browser client and a work-in-progress native iOS app; no first-party native Android application is established."},
+            {"rowId":"remote-notifications","result":"remain-unknown","rationale":"Active/idle indicators are visible while using VibeTunnel, but the checked repository does not document push delivery or an out-of-app attention notification contract."}
+          ]
+        },
+        {
+          "productId": "shunt",
+          "sourcesChecked": [
+            "https://shunt.app/"
+          ],
+          "cells": [
+            {"rowId":"source-model","result":"remain-unknown","rationale":"Shunt's product page describes installable daemon and clients but does not link a canonical public product-source repository, name a source license, or affirm that the shipped product is proprietary."},
+            {"rowId":"remote-encryption","result":"remain-unknown","rationale":"Shunt documents paired remote access without an exact end-to-end or zero-knowledge encryption claim for session content."},
+            {"rowId":"remote-native-android","result":"remain-unknown","rationale":"The checked Shunt page documents web/PWA and preview native iOS clients, not a native Android application."},
+            {"rowId":"remote-hosting-boundary","result":"remain-unknown","rationale":"The product page does not state whether remote traffic is direct, relayed by Shunt, or routed through a user-selected tunnel, so the security boundary cannot be assigned."},
+            {"rowId":"remote-relay-deployment","result":"remain-unknown","rationale":"No supported vendor relay, direct-connect, or self-hosted relay deployment contract is identified on the checked exact-SKU page."},
+            {"rowId":"remote-transport-security","result":"remain-unknown","rationale":"The page does not name TLS, SSH, WireGuard, application-layer encryption, or another exact transport-security mechanism for Shunt remote sessions."}
+          ]
+        },
+        {
+          "productId": "claude-code-remote-control",
+          "sourcesChecked": [
+            "https://code.claude.com/docs/en/remote-control",
+            "https://code.claude.com/docs/en/commands"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "code-server",
+          "sourcesChecked": [
+            "https://github.com/coder/code-server",
+            "https://github.com/coder/code-server/blob/main/docs/FAQ.md",
+            "https://github.com/coder/code-server/blob/main/docs/ipad.md"
+          ],
+          "cells": [
+            {"rowId":"remote-approvals","result":"remain-unknown","rationale":"code-server exposes a full remote VS Code-compatible workspace and terminal, but does not normalize an agent permission request into a product-owned approve/deny or follow-up flow."},
+            {"rowId":"remote-encryption","result":"remain-unknown","rationale":"The FAQ documents user-configured TLS, reverse proxies, and secure tunnels while the default server certificate setting is off; no code-server end-to-end encryption claim is established."},
+            {"rowId":"remote-native-ios","result":"remain-unknown","rationale":"The exact iPad guide recommends Safari/PWA and explicitly treats a third-party App Store wrapper as unsupported, so it does not establish a native code-server iOS client."},
+            {"rowId":"remote-native-android","result":"remain-unknown","rationale":"The canonical code-server material establishes a browser client but no first-party native Android application."},
+            {"rowId":"remote-supported-harnesses","result":"remain-unknown","rationale":"VS Code extensions can add agents, but the exact code-server sources do not provide a supported named coding-harness matrix and cannot inherit host-editor marketplace claims."},
+            {"rowId":"remote-notifications","result":"remain-unknown","rationale":"Editor UI notifications do not establish mobile push or an attention-notification contract for code-server itself."},
+            {"rowId":"remote-session-history","result":"remain-unknown","rationale":"Server workspace persistence and editor reconnection do not establish recorded terminal history or browsable coding-agent conversation history."}
+          ]
+        },
+        {
+          "productId": "openvscode-server",
+          "sourcesChecked": [
+            "https://github.com/gitpod-io/openvscode-server"
+          ],
+          "cells": [
+            {"rowId":"remote-approvals","result":"remain-unknown","rationale":"OpenVSCode Server exposes a remote Code OSS workspace but does not define a product-owned normalized agent approval or follow-up flow."},
+            {"rowId":"remote-encryption","result":"remain-unknown","rationale":"The canonical repository leaves deployment and transport protection to the operator and does not claim end-to-end session-content encryption."},
+            {"rowId":"remote-native-ios","result":"remain-unknown","rationale":"A browser-accessible Code OSS server is documented without a first-party native iOS client."},
+            {"rowId":"remote-native-android","result":"remain-unknown","rationale":"A browser-accessible Code OSS server is documented without a first-party native Android client."},
+            {"rowId":"remote-supported-harnesses","result":"remain-unknown","rationale":"Open VSX extensions can run in the workspace, but the exact product repository does not publish a supported named coding-agent harness matrix."},
+            {"rowId":"remote-notifications","result":"remain-unknown","rationale":"The repository does not establish mobile push or an out-of-app operator attention channel owned by OpenVSCode Server."},
+            {"rowId":"remote-session-history","result":"remain-unknown","rationale":"A persistent Code OSS workspace is not evidence of terminal recording or browsable agent conversation history."}
+          ]
+        },
+        {
+          "productId": "vscode-remote-development",
+          "sourcesChecked": [
+            "https://code.visualstudio.com/docs/remote/remote-overview",
+            "https://code.visualstudio.com/docs/remote/tunnels",
+            "https://code.visualstudio.com/docs/remote/faq",
+            "https://code.visualstudio.com/api/advanced-topics/extension-host"
+          ],
+          "cells": [
+            {"rowId":"remote-approvals","result":"remain-unknown","rationale":"Remote Development transports the VS Code workspace and extension host; the suite does not itself define a normalized coding-agent approval/follow-up protocol."},
+            {"rowId":"remote-encryption","result":"remain-unknown","rationale":"The official FAQ says security follows the selected SSH, container, WSL, or tunnel transport, not one product-wide end-to-end encryption layer."},
+            {"rowId":"remote-native-ios","result":"remain-unknown","rationale":"The checked Remote Development pages establish desktop VS Code and browser access through vscode.dev, not a native iOS Remote Development client."},
+            {"rowId":"remote-native-android","result":"remain-unknown","rationale":"The checked Remote Development pages do not establish a native Android client."},
+            {"rowId":"remote-supported-harnesses","result":"remain-unknown","rationale":"Remote extension hosts can run compatible extensions, but the suite does not publish an exact named coding-agent harness support matrix."},
+            {"rowId":"remote-notifications","result":"remain-unknown","rationale":"VS Code connection/UI notifications do not establish mobile push or a remote agent attention channel owned by Remote Development."},
+            {"rowId":"remote-session-history","result":"remain-unknown","rationale":"Reconnectable remote workspaces do not establish recorded terminal history or browsable agent session history for the Remote Development suite."}
+          ]
+        },
+        {
+          "productId": "sshx",
+          "sourcesChecked": [
+            "https://github.com/ekzhang/sshx"
+          ],
+          "cells": [
+            {"rowId":"remote-approvals","result":"remain-unknown","rationale":"sshx shares raw collaborative terminal input and does not expose normalized agent action approvals or a structured follow-up channel."},
+            {"rowId":"remote-native-ios","result":"remain-unknown","rationale":"The canonical sshx repository documents a web client, not a first-party native iOS application."},
+            {"rowId":"remote-native-android","result":"remain-unknown","rationale":"The canonical sshx repository documents a web client, not a first-party native Android application."},
+            {"rowId":"remote-supported-harnesses","result":"remain-unknown","rationale":"sshx can host arbitrary terminal commands, but its repository does not name or normalize supported coding-agent harnesses."},
+            {"rowId":"remote-notifications","result":"remain-unknown","rationale":"The sshx repository does not document push or out-of-app attention notifications."},
+            {"rowId":"remote-session-history","result":"remain-unknown","rationale":"The shared process remains live while the host runs, but no first-party recording or browsable historical-session contract is documented."}
+          ]
+        },
+        {
+          "productId": "upterm",
+          "sourcesChecked": [
+            "https://github.com/owenthereal/upterm"
+          ],
+          "cells": [
+            {"rowId":"remote-approvals","result":"remain-unknown","rationale":"Upterm can prompt the host for SFTP file-operation approval, but that narrow transfer control does not establish normalized coding-agent action approvals or follow-ups."},
+            {"rowId":"remote-native-ios","result":"remain-unknown","rationale":"The canonical product documents SSH clients and installable host binaries without a first-party native iOS application."},
+            {"rowId":"remote-native-android","result":"remain-unknown","rationale":"The canonical product documents SSH clients and installable host binaries without a first-party native Android application."},
+            {"rowId":"remote-browser-pwa","result":"remain-unknown","rationale":"WebSocket is an optional transport for SSH clients; it does not establish a first-party browser or PWA terminal client."},
+            {"rowId":"remote-supported-harnesses","result":"remain-unknown","rationale":"Upterm can host any command or tmux attachment but does not name supported coding-agent harnesses or parse their state."},
+            {"rowId":"remote-notifications","result":"remain-unknown","rationale":"The repository does not document mobile push or an out-of-app attention-notification surface."},
+            {"rowId":"remote-session-history","result":"remain-unknown","rationale":"A host command or tmux attachment can persist while running, but Upterm does not document terminal recording or a browsable session archive."}
+          ]
+        },
+        {
+          "productId": "termix",
+          "sourcesChecked": [
+            "https://github.com/Termix-SSH/Termix"
+          ],
+          "cells": [
+            {"rowId":"remote-encryption","result":"remain-unknown","rationale":"Termix documents per-user secret encryption, optional database encryption, protocol security, and operator TLS; it does not claim end-to-end encryption of live terminal or desktop session content."},
+            {"rowId":"remote-supported-harnesses","result":"remain-unknown","rationale":"Termix has a provider-configurable AI Assistant, but the canonical product does not publish a supported external coding-agent harness matrix."}
+          ]
+        },
+        {
+          "productId": "ttyd",
+          "sourcesChecked": [
+            "https://github.com/tsl0922/ttyd"
+          ],
+          "cells": [
+            {"rowId":"remote-approvals","result":"remain-unknown","rationale":"ttyd bridges a raw PTY over WebSocket and does not define structured agent approvals or a normalized follow-up channel."},
+            {"rowId":"remote-encryption","result":"remain-unknown","rationale":"ttyd supports operator-configured TLS, but the canonical repository does not establish end-to-end session encryption or a zero-knowledge relay."},
+            {"rowId":"remote-native-ios","result":"remain-unknown","rationale":"ttyd supplies a browser terminal without a first-party native iOS client."},
+            {"rowId":"remote-native-android","result":"remain-unknown","rationale":"ttyd supplies a browser terminal without a first-party native Android client."},
+            {"rowId":"remote-supported-harnesses","result":"remain-unknown","rationale":"Any command can run behind ttyd, but the product does not name supported coding-agent harnesses or understand their state."},
+            {"rowId":"remote-notifications","result":"remain-unknown","rationale":"The repository does not document push or out-of-app operator attention notifications."},
+            {"rowId":"remote-session-history","result":"remain-unknown","rationale":"A ttyd-hosted PTY lives while its host command runs, but no recording or browsable historical-session feature is established."}
+          ]
+        }
+      ]
+    }
+  ],
+  "implementedClosures": [
+    {"productId":"happy","rowId":"remote-session-history","state":"built-in","evidenceUrl":"https://github.com/slopus/happy/blob/main/packages/happy-agent/README.md","rationale":"The exact Happy agent CLI exposes encrypted chronological message history per session, including bounded and JSON output."},
+    {"productId":"claude-code-remote-control","rowId":"remote-session-history","state":"built-in","evidenceUrl":"https://code.claude.com/docs/en/remote-control","rationale":"Remote Control carries over the current conversation history and exposes named sessions through the claude.ai/code and mobile session list."},
+    {"productId":"vscode-remote-development","rowId":"remote-client-reach","state":"built-in","evidenceUrl":"https://code.visualstudio.com/docs/remote/tunnels","rationale":"Remote Tunnels explicitly connects from VS Code desktop or a vscode.dev URL on a client of the operator's choosing."},
+    {"productId":"vscode-remote-development","rowId":"remote-browser-pwa","state":"built-in","evidenceUrl":"https://code.visualstudio.com/docs/remote/tunnels","rationale":"The official tunnel workflow emits a vscode.dev browser URL and ships the Remote Tunnels extension in that web client."},
+    {"productId":"sshx","rowId":"remote-hosting-boundary","state":"built-in","evidenceUrl":"https://github.com/ekzhang/sshx","rationale":"sshx documents a hosted coordination relay while terminal content remains protected by client-side Argon2-derived AES end-to-end encryption."},
+    {"productId":"termix","rowId":"remote-approvals","state":"limited","evidenceUrl":"https://github.com/Termix-SSH/Termix","rationale":"Termix's optional AI Assistant proposes infrastructure changes for explicit user approval rather than applying them directly; this is narrower than arbitrary external-harness approvals."},
+    {"productId":"termix","rowId":"remote-notifications","state":"built-in","evidenceUrl":"https://github.com/Termix-SSH/Termix","rationale":"Termix alert and automation rules can notify operators through ntfy, Discord, and webhooks, with firing and resolved history."}
+  ],
+  "platformHeaderAudit": [],
+  "generatedMetricUnknowns": {
+    "result": "excluded-from-editorial-ledger",
+    "rationale": "Repository metric Unknowns are generated collector failures or not-yet-refreshed values, not exact-SKU capability claims. The scheduled refresh and audit:freshness gate must close or block them; editorial research must not hand-fill those cells."
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-08-23",
+  "catalogSnapshot": "2026-08-23",
+  "scope": {
+    "categoryIds": [
+      "agent-traces",
+      "cloud-agents"
+    ],
+    "excludedProductIds": [
+      "mosaic-terminal",
+      "airport",
+      "muse-code",
+      "omnara"
+    ],
+    "renderedRows": "Non-platform catalog rows resolved through getComparisonClaim(). Generated repository metrics are governed separately by the freshness gate.",
+    "platformRows": "Excluded from this ledger. Platform header facts and platform filter rows require a separate exact-SKU host audit; an omitted platform is not inferred to be unsupported."
+  },
+  "summary": {
+    "productsInScope": 19,
+    "productsWithUnknownCells": 15,
+    "currentUnknownCells": 29,
+    "agentTraceUnknownCells": 8,
+    "cloudAgentUnknownCells": 21,
+    "suggestedClosures": 0,
+    "implementedClosures": 27,
+    "remainUnknown": 29
+  },
+  "categories": [
+    {
+      "categoryId": "agent-traces",
+      "products": [
+        {
+          "productId": "tapes",
+          "sourcesChecked": [
+            "https://tapes.dev/docs/",
+            "https://tapes.dev/docs/architecture/",
+            "https://tapes.dev/docs/cli/",
+            "https://tapes.dev/docs/integrations/",
+            "https://github.com/papercomputeco/tapes"
+          ],
+          "cells": [
+            {
+              "rowId": "trace-git-linkage",
+              "result": "remain-unknown",
+              "rationale": "Tapes documents append-only session, trace, span, and capture identities, but its exact architecture does not bind those records to Git commits, branches, or worktrees. Repository co-location and adjacent Paper Compute projects were not treated as a Tapes feature."
+            },
+            {
+              "rowId": "trace-replay-resume",
+              "result": "remain-unknown",
+              "rationale": "The Tapes CLI uses “replay” for backfilling raw capture artifacts into a deployment, not reopening or resuming a recorded agent conversation. The architecture explicitly says there is no user-facing checkout or branching workflow, so no affirmative replay/resume claim is supported."
+            },
+            {
+              "rowId": "trace-artifact-coverage",
+              "result": "remain-unknown",
+              "rationale": "Tapes retains provider bytes, derived spans, transcripts, and tool activity. The checked exact-product pages do not establish a normalized record of workspace files, patches, diffs, images, or other produced artifacts."
+            },
+            {
+              "rowId": "trace-redaction-privacy",
+              "result": "remain-unknown",
+              "rationale": "Operator-owned PostgreSQL and append-only storage establish a storage boundary, not automatic secret redaction, field masking, retention controls, or content-level privacy policy. No such Tapes control was found in the architecture, CLI, integration, or repository sources checked."
+            },
+            {
+              "rowId": "trace-sharing",
+              "result": "remain-unknown",
+              "rationale": "A deployable read API and export command make records accessible to an operator, but the checked Tapes sources do not document share links, team namespaces, review comments, access-controlled collaboration, or another product-owned sharing workflow."
+            }
+          ]
+        },
+        {
+          "productId": "traces-com",
+          "sourcesChecked": [
+            "https://traces.com/docs/traces-web/exports",
+            "https://traces.com/docs/api-reference",
+            "https://traces.com/docs/getting-started"
+          ],
+          "cells": [
+            {
+              "rowId": "trace-artifact-coverage",
+              "result": "remain-unknown",
+              "rationale": "Traces exports messages and typed parts, including tool calls and thinking blocks, but the exact export and ingestion documentation does not establish normalized workspace files, diffs, patches, or produced artifacts. Tool-call payloads alone are not promoted to artifact coverage."
+            }
+          ]
+        },
+        {
+          "productId": "agent-sessions",
+          "sourcesChecked": [
+            "https://github.com/jazzyalex/agent-sessions",
+            "https://jazzyalex.github.io/agent-sessions/"
+          ],
+          "cells": [
+            {
+              "rowId": "trace-export-api",
+              "result": "remain-unknown",
+              "rationale": "Agent Sessions documents local read-only adapters, unified browsing, search, images, resume commands, and analytics. Its canonical repository and product site do not document a stable data export format, ingestion endpoint, CLI JSON contract, or API."
+            },
+            {
+              "rowId": "trace-sharing",
+              "result": "remain-unknown",
+              "rationale": "The exact Agent Sessions product is local-only and says it has no telemetry. The checked first-party sources do not document share links, team workspaces, repository publishing, or another collaboration workflow."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryId": "cloud-agents",
+      "products": [
+        {
+          "productId": "openai-codex-cloud",
+          "sourcesChecked": [
+            "https://learn.chatgpt.com/docs/cloud",
+            "https://learn.chatgpt.com/docs/environments/cloud-environment",
+            "https://learn.chatgpt.com/docs/cloud/internet-access"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "The Codex cloud pages document per-task containers, usage limits, and long-running work, but they do not publish an exact maximum task runtime or other run ceiling for Codex cloud. API model rate limits were excluded because they are not cloud-task duration limits."
+            }
+          ]
+        },
+        {
+          "productId": "github-copilot-coding-agent",
+          "sourcesChecked": [
+            "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+            "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent",
+            "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-the-firewall",
+            "https://docs.github.com/en/copilot/concepts/about-cloud-and-local-sandboxes"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-parallel-tasks",
+              "result": "remain-unknown",
+              "rationale": "GitHub documents parallel Copilot CLI cloud-sandbox sessions and CLI subagents, but the exact Copilot coding-agent pages do not establish concurrent coding-agent jobs. The adjacent CLI/cloud-sandbox SKU was not inherited."
+            }
+          ]
+        },
+        {
+          "productId": "devin",
+          "sourcesChecked": [
+            "https://docs.devin.ai/onboard-devin/environment/blueprints",
+            "https://docs.devin.ai/enterprise/deployment/overview",
+            "https://docs.devin.ai/work-with-devin/devin-session-tools",
+            "https://docs.devin.ai/release-notes/2024"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-network-policy",
+              "result": "remain-unknown",
+              "rationale": "Devin deployment documentation describes required routing, HTTPS connectivity, VPC placement, and firewall troubleshooting, but it does not publish an exact product-level outbound egress allowlist or deny policy for standard Devin sessions. Customer infrastructure routing was not recast as a built-in Devin control."
+            },
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Blueprint build steps have a one-hour timeout and old startup commands had a two-minute timeout, but neither is a Devin session run limit. Current session docs emphasize sleep and resume without publishing an exact maximum session duration."
+            }
+          ]
+        },
+        {
+          "productId": "jules",
+          "sourcesChecked": [
+            "https://jules.google/docs/",
+            "https://jules.google/docs/running-tasks/",
+            "https://jules.google/docs/usage-limits",
+            "https://jules.google/docs/api/reference/",
+            "https://jules.google/docs/api/reference/sessions"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-network-policy",
+              "result": "remain-unknown",
+              "rationale": "Jules documents a fresh Google-hosted VM and environment setup, but the checked exact-product pages do not define outbound internet defaults, allowlists, denylists, private-network access, or administrator egress controls."
+            }
+          ]
+        },
+        {
+          "productId": "claude-code-web",
+          "sourcesChecked": [
+            "https://code.claude.com/docs/en/claude-code-on-the-web"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Claude Code on the web publishes approximate CPU, memory, and disk ceilings and shared account rate limits, but no exact maximum cloud-session runtime. Setup-script timing and account rate limits are not task duration limits."
+            }
+          ]
+        },
+        {
+          "productId": "cursor-cloud-agents",
+          "sourcesChecked": [
+            "https://cursor.com/docs/cloud-agent",
+            "https://prod.cursor.com/docs/cloud-agent/settings",
+            "https://prod.cursor.com/docs/cloud-agent/security-network"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Cursor documents spend limits, capacity management, and unrestricted parallel agent starts, but the checked Cloud Agent pages do not publish a maximum run duration or exact per-task execution ceiling."
+            }
+          ]
+        },
+        {
+          "productId": "factory-cloud-sessions",
+          "sourcesChecked": [
+            "https://docs.factory.ai/droid-computers/overview",
+            "https://docs.factory.ai/software-factory/automations",
+            "https://docs.factory.ai/harness/agents-md",
+            "https://docs.factory.ai/enterprise/network-and-deployment",
+            "https://docs.factory.ai/enterprise/self-managed-scm",
+            "https://docs.factory.ai/enterprise/identity-and-access"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Factory publishes compute shapes, plan usage, and persistent-computer lifecycle controls, but the checked Droid Computer and cloud-session documentation does not state an exact maximum session runtime."
+            }
+          ]
+        },
+        {
+          "productId": "codegen-agent",
+          "sourcesChecked": [
+            "https://docs.codegen.com/capabilities/capabilities",
+            "https://docs.codegen.com/capabilities/triggering-codegen",
+            "https://docs.codegen.com/sandboxes/overview",
+            "https://docs.codegen.com/sandboxes/setup-commands",
+            "https://docs.codegen.com/sandboxes/environment-variables",
+            "https://docs.codegen.com/sandboxes/secrets",
+            "https://docs.codegen.com/sandboxes/editor",
+            "https://docs.codegen.com/settings/repo-rules",
+            "https://docs.codegen.com/api-reference/overview"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-parallel-tasks",
+              "result": "remain-unknown",
+              "rationale": "Codegen's asynchronous create-run API, run listing, and batch-operation examples permit multiple submissions, but the checked exact-product docs do not explicitly promise concurrent execution of independent agent runs."
+            },
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Codegen publishes API request-rate limits and sandbox lifecycle language, but no exact maximum agent-run duration or per-run execution ceiling was found. Request quotas are not task limits."
+            }
+          ]
+        },
+        {
+          "productId": "gitlab-duo-developer-flow",
+          "sourcesChecked": [
+            "https://docs.gitlab.com/user/duo_agent_platform/flows/foundational_flows/developer/",
+            "https://docs.gitlab.com/user/duo_agent_platform/flows/execution/",
+            "https://docs.gitlab.com/user/duo_agent_platform/environment_sandbox/",
+            "https://docs.gitlab.com/user/duo_agent_platform/flows/execution_variables/",
+            "https://docs.gitlab.com/api/duo_agent_platform_flows/"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-parallel-tasks",
+              "result": "remain-unknown",
+              "rationale": "GitLab's broader Agent Platform describes agents working in parallel, but the exact foundational Developer Flow documentation does not establish concurrent Developer Flow runs or a concurrency contract."
+            },
+            {
+              "rowId": "cloud-live-steering",
+              "result": "remain-unknown",
+              "rationale": "The Flows API can allow an agent to pause and request input, and custom flows can define human-input components, but the exact Developer Flow pages do not establish redirecting an already running flow with operator follow-ups."
+            },
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Developer Flow jobs expose `CI_JOB_TIMEOUT`, but the checked documentation does not publish a fixed product run limit; the value is runner or job configuration rather than an exact Developer Flow ceiling."
+            },
+            {
+              "rowId": "cloud-human-takeover",
+              "result": "remain-unknown",
+              "rationale": "GitLab supports local IDE execution and separately supports remote CI execution, but the sources do not document entering the live remote Developer Flow job or handing that same running workspace to a human."
+            }
+          ]
+        },
+        {
+          "productId": "coder-agents",
+          "sourcesChecked": [
+            "https://coder.com/docs/ai-coder/agents",
+            "https://coder.com/docs/ai-coder/agents/getting-started",
+            "https://coder.com/docs/ai-coder/agents/architecture",
+            "https://coder.com/docs/ai-coder/agents/platform-controls/git-providers",
+            "https://coder.com/docs/ai-coder/agents/platform-controls/template-optimization"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Coder documents workspace autostop fallback up to 30 days, but active conversations extend it and templates can override it. This is workspace lifecycle policy, not an exact maximum agent-task runtime."
+            }
+          ]
+        },
+        {
+          "productId": "replit-agent-background-tasks",
+          "sourcesChecked": [
+            "https://docs.replit.com/core-concepts/agent/task-system",
+            "https://docs.replit.com/references/agent/task-board",
+            "https://docs.replit.com/updates/2025/07/11/changelog",
+            "https://docs.replit.com/chat/custom-instructions"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-code-hosts",
+              "result": "remain-unknown",
+              "rationale": "Background tasks are documented against a Replit project or imported code. The exact task-system pages do not enumerate supported Git hosts or claim issue/branch write-back to a code host."
+            },
+            {
+              "rowId": "cloud-environment-config",
+              "result": "remain-unknown",
+              "rationale": "Each Replit background task receives an isolated project copy, but the task-system sources do not define which runtime, secrets, setup commands, package state, or reproducibility configuration is cloned into that copy."
+            },
+            {
+              "rowId": "cloud-network-policy",
+              "result": "remain-unknown",
+              "rationale": "The checked Replit background-task and project-instruction sources do not publish outbound network defaults, egress allowlists, private-network access, or administrator network policy for task copies."
+            },
+            {
+              "rowId": "cloud-triggered-automation",
+              "result": "remain-unknown",
+              "rationale": "Replit has adjacent Routines and automation features, but the exact Agent background-task system does not document schedule, event, webhook, or API triggers for background coding tasks."
+            }
+          ]
+        },
+        {
+          "productId": "openhands-cloud",
+          "sourcesChecked": [
+            "https://github.com/OpenHands/OpenHands-Cloud",
+            "https://docs.openhands.dev/sdk/guides/agent-server/cloud-workspace",
+            "https://docs.openhands.dev/overview/faqs",
+            "https://docs.openhands.dev/enterprise"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-network-policy",
+              "result": "remain-unknown",
+              "rationale": "OpenHands documents that sandboxed agents can make external network requests and that Enterprise can run in customer infrastructure, but the checked Cloud sources do not specify a managed egress allowlist, denylist, or configurable outbound policy for OpenHands Cloud."
+            },
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "OpenHands Cloud Workspace publishes sandbox initialization and API request timeouts, not an agent-run duration limit. No exact maximum conversation or task runtime was found in the Cloud repository or current product documentation."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
