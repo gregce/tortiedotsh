@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T04:44:06.234Z",
+  "generatedAt": "2026-08-24T04:45:15.592Z",
   "sources": [
     {
       "id": "2fa78aa7f0249c97fb15",
@@ -9899,6 +9899,116 @@
       "etag": "\"32c6ed4ccd4649a9c78058a694dbbc1297c421a8\"",
       "lastModified": "Fri, 24 Apr 2026 09:17:32 GMT",
       "error": "HTTP 403"
+    },
+    {
+      "id": "cfd5db18159cd3df7d36",
+      "url": "https://github.com/BloopAI/vibe-kanban/blob/main/docs/core-features/creating-tasks.mdx",
+      "bases": [
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-task-board",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "current",
+      "fetchUrl": "https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/docs/core-features/creating-tasks.mdx",
+      "resolvedUrl": "https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/docs/core-features/creating-tasks.mdx",
+      "lastCheckedAt": "2026-08-24T04:45:15.370Z",
+      "firstObservedAt": "2026-08-24T04:45:15.370Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "contentLength": 4341,
+      "contentHash": "8e7cdd854671f4cc2b7881f68095537d22e74f37d7352950ae9f58403a13ae4a",
+      "reviewedHash": "8e7cdd854671f4cc2b7881f68095537d22e74f37d7352950ae9f58403a13ae4a",
+      "reviews": [],
+      "etag": "W/\"682fa96a22ed5e22ee1803b59a02bfc89c9a80a2957beb3986ed79dae8508c2d\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "894fc7abd0a50306b49a",
+      "url": "https://github.com/BloopAI/vibe-kanban/blob/main/docs/core-features/monitoring-task-execution.mdx",
+      "bases": [
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-isolated-workspaces",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-multi-harness",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-worktrees",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "current",
+      "fetchUrl": "https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/docs/core-features/monitoring-task-execution.mdx",
+      "resolvedUrl": "https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/docs/core-features/monitoring-task-execution.mdx",
+      "lastCheckedAt": "2026-08-24T04:45:15.395Z",
+      "firstObservedAt": "2026-08-24T04:45:15.395Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "contentLength": 5705,
+      "contentHash": "a9e6c3f8ea47ebbcb92aad4ed2ee357b4121bd707071dcd48ce570f78c6cd900",
+      "reviewedHash": "a9e6c3f8ea47ebbcb92aad4ed2ee357b4121bd707071dcd48ce570f78c6cd900",
+      "reviews": [],
+      "etag": "W/\"889d749ce306fa937ea633a17a7a4ada14e5130f0c761b09a3bdd2f743922d8e\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "dd7a07f361261d4d7ba3",
+      "url": "https://github.com/BloopAI/vibe-kanban/blob/main/docs/workspaces/changes.mdx",
+      "bases": [
+        "source-inspected"
+      ],
+      "usedBy": [
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-inline-review",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-pr-lifecycle",
+          "checkedAt": "2026-08-23"
+        },
+        {
+          "productId": "vibe-kanban",
+          "field": "orchestrator-review-delivery",
+          "checkedAt": "2026-08-23"
+        }
+      ],
+      "latestReviewAt": "2026-08-23",
+      "status": "current",
+      "fetchUrl": "https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/docs/workspaces/changes.mdx",
+      "resolvedUrl": "https://raw.githubusercontent.com/BloopAI/vibe-kanban/main/docs/workspaces/changes.mdx",
+      "lastCheckedAt": "2026-08-24T04:45:15.396Z",
+      "firstObservedAt": "2026-08-24T04:45:15.396Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "contentLength": 6682,
+      "contentHash": "42cdba72ba7d3c96ccc19fb9f1f8d35197b59fc979835d0d32dc52e6f844bce2",
+      "reviewedHash": "42cdba72ba7d3c96ccc19fb9f1f8d35197b59fc979835d0d32dc52e6f844bce2",
+      "reviews": [],
+      "etag": "W/\"14057b441c53e9501fa332f9e2f121498a79cfd9299d9541f37663a3f8d1bdee\"",
+      "lastModified": null,
+      "error": null
     },
     {
       "id": "76a435bcb8eeb8bd3d6f",
@@ -21944,116 +22054,6 @@
       "etag": "W/\"1tiwqcxnwz2k0h\"",
       "lastModified": null,
       "error": null
-    },
-    {
-      "id": "be2b9ea9dcb3a3de0975",
-      "url": "https://vibekanban.com/docs/core-features/creating-tasks",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-task-board",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://vibekanban.com/docs/core-features/creating-tasks",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:44:06.045Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "fetch failed"
-    },
-    {
-      "id": "314d5b31a796bcb1b9b9",
-      "url": "https://vibekanban.com/docs/core-features/monitoring-task-execution",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-isolated-workspaces",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-multi-harness",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-worktrees",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://vibekanban.com/docs/core-features/monitoring-task-execution",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:44:06.115Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "fetch failed"
-    },
-    {
-      "id": "d87b194a71784f90b305",
-      "url": "https://vibekanban.com/docs/workspaces/changes",
-      "bases": [
-        "vendor-documented"
-      ],
-      "usedBy": [
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-inline-review",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-pr-lifecycle",
-          "checkedAt": "2026-08-23"
-        },
-        {
-          "productId": "vibe-kanban",
-          "field": "orchestrator-review-delivery",
-          "checkedAt": "2026-08-23"
-        }
-      ],
-      "latestReviewAt": "2026-08-23",
-      "status": "awaiting-refresh",
-      "fetchUrl": "https://vibekanban.com/docs/workspaces/changes",
-      "resolvedUrl": null,
-      "lastCheckedAt": "2026-08-24T04:44:06.118Z",
-      "firstObservedAt": null,
-      "changeDetectedAt": null,
-      "httpStatus": null,
-      "contentType": null,
-      "contentLength": null,
-      "contentHash": null,
-      "reviewedHash": null,
-      "reviews": [],
-      "etag": null,
-      "lastModified": null,
-      "error": "fetch failed"
     },
     {
       "id": "3eec055c5dd259da8e15",

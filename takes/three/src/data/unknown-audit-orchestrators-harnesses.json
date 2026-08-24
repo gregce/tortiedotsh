@@ -186,7 +186,7 @@
         },
         {
           "productId": "vibe-kanban",
-          "sourcesChecked": ["https://github.com/BloopAI/vibe-kanban", "https://vibekanban.com/docs/core-features/monitoring-task-execution", "https://vibekanban.com/docs/core-features/creating-tasks", "https://vibekanban.com/docs/workspaces/changes"],
+          "sourcesChecked": ["https://github.com/BloopAI/vibe-kanban", "https://github.com/BloopAI/vibe-kanban/blob/main/docs/core-features/monitoring-task-execution.mdx", "https://github.com/BloopAI/vibe-kanban/blob/main/docs/core-features/creating-tasks.mdx", "https://github.com/BloopAI/vibe-kanban/blob/main/docs/workspaces/changes.mdx"],
           "cells": [
             {"rowId":"orchestrator-parallel-workers","result":"remain-unknown","rationale":"The current monitoring page establishes isolated attempts and multiple harness support, but does not explicitly establish concurrent independent workers."},
             {"rowId":"orchestrator-agent-handoff","result":"remain-unknown","rationale":"Vibe Kanban can launch agents for tasks, but no context-preserving cross-harness transfer is documented."},
