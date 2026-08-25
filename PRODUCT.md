@@ -41,7 +41,7 @@ The comparison is category-aware. It does not flatten editors, agent IDEs, workt
 ## Brand Commitments
 
 - Name: Tortie. The TORTIE.sh wordmark law and cat mark remain unchanged.
-- The comparison surface inherits the established `takes/three` Tortie tokens, system type, cool graphite materials, blue accent, tight radii, and 1px hairlines.
+- The comparison surface inherits the established Tortie tokens, system type, cool graphite materials, blue accent, tight radii, and 1px hairlines.
 - Amber remains semantic: the comparison uses it only for evidenced partial or limited support, never as decoration.
 - The voice is plain, specific, and evidence-led. It avoids hype and false rankings.
 

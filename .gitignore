@@ -1,1 +1,42 @@
+# Dependencies and package-manager caches
+node_modules/
+.npm-cache/
+
+# Astro and production output
+.astro/
+dist/
+
+# Vercel local project linkage
+.vercel/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Logs and process state
+*.log
+*.pid
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor and operating-system state
 .DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Private agent/session history
+.specstory/
+.claude/
+.codex/
+
+# Generated browser assets copied by scripts/sync-assets.mjs
+public/demos/durable-session/tokens.css
+public/demos/durable-session/gsap.min.js
+public/vendor/
+
+# Local verification captures
+verify/

@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/docs.css";
+import DocsShell from "../../components/DocsShell.astro";
+import DocsArticle from "../../components/DocsArticle.astro";
+import { docsPages, type DocPage } from "../../data/docs";
+
+export function getStaticPaths() {
+  return docsPages
+    .filter((page) => page.path !== "/docs/")
+    .map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+interface Props {
+  page: DocPage;
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title={page.title + " — Tortie docs"} description={page.description} canonicalPath={page.path} bodyClass="docs-body" themeColor="#000000">
+    <DocsShell currentPath={page.path}>
+      <DocsArticle page={page} />
+    </DocsShell>
+</BaseLayout>

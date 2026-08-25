@@ -1,0 +1,217 @@
+---
+// The nav is the app's band. One bar on --bg-sidebar, one 1px hairline
+// under it, both CTAs repeated small.
+import AppleMark from "./AppleMark.astro";
+import GitHubMark from "./GitHubMark.astro";
+import openSourceMetrics from "../data/open-source-metrics.json";
+import { TORTIE_MACOS_DOWNLOAD_URL, TORTIE_REPOSITORY_URL } from "../data/site-links";
+
+interface Props {
+  current?: "compare" | "docs" | "changelog";
+  overlay?: boolean;
+  sectionLabel?: "compare" | "docs";
+}
+
+const { current, overlay = false, sectionLabel } = Astro.props;
+const tortieMetrics = openSourceMetrics.projects.find((project) => project.id === "tortie");
+const githubStars = typeof tortieMetrics?.stars === "number" ? tortieMetrics.stars : null;
+const githubStarsLabel = githubStars === null
+  ? null
+  : new Intl.NumberFormat("en-US", {
+      notation: githubStars >= 1_000 ? "compact" : "standard",
+      maximumFractionDigits: 1,
+    }).format(githubStars).toLowerCase();
+const githubAriaLabel = githubStars === null
+  ? "Tortie on GitHub"
+  : "Tortie on GitHub, " + githubStars.toLocaleString("en-US") + " " + (githubStars === 1 ? "star" : "stars");
+---
+
+<header class:list={["nav", { "nav-overlay": overlay }]}>
+  <div class="container nav-inner">
+    <a class="lockup nav-lockup" href="/" aria-label="Tortie.sh, home">
+      <img src="/brand/tortie-mark-560.webp" alt="" width="26" height="26" />
+      <span class="wordmark" aria-hidden="true"
+        ><span class="wm-name">TORTIE</span><span class="wm-suffix">.sh</span></span
+      >
+      {sectionLabel && <span class="nav-context" aria-hidden="true"><span>/</span>{sectionLabel}</span>}
+    </a>
+    <nav class="nav-actions nav-actions-desktop" aria-label="Primary">
+      <a
+        class="nav-link"
+        href="/compare/agent-multiplexers/"
+        aria-current={current === "compare" ? "page" : undefined}
+      >Compare</a>
+      <a class="nav-link" href="/docs/" aria-current={current === "docs" ? "page" : undefined}>Docs</a>
+      <a class="nav-link" href="/docs/changelog/" aria-current={current === "changelog" ? "page" : undefined}>Changelog</a>
+      <a
+        class="nav-link nav-github"
+        href={TORTIE_REPOSITORY_URL}
+        aria-label={githubAriaLabel}
+        title={githubAriaLabel}
+      >
+        <GitHubMark />
+        {githubStarsLabel && <span class="nav-github-count" aria-hidden="true">{githubStarsLabel}</span>}
+      </a>
+      <a
+        class="btn btn-primary btn-small"
+        href={TORTIE_MACOS_DOWNLOAD_URL}
+        ><AppleMark /> Download for macOS</a
+      >
+    </nav>
+    <div class="nav-mobile">
+      <a class="btn btn-primary btn-small" href={TORTIE_MACOS_DOWNLOAD_URL}><AppleMark /> Download</a>
+      <details class="nav-menu">
+        <summary aria-label="Navigation"><span></span><span></span><span></span></summary>
+        <nav aria-label="Mobile primary">
+          <a href="/compare/agent-multiplexers/" aria-current={current === "compare" ? "page" : undefined}>Compare</a>
+          <a href="/docs/" aria-current={current === "docs" ? "page" : undefined}>Docs</a>
+          <a href="/docs/changelog/" aria-current={current === "changelog" ? "page" : undefined}>Changelog</a>
+          <a class="nav-menu-github" href={TORTIE_REPOSITORY_URL} aria-label={githubAriaLabel}>
+            <GitHubMark />
+            <span>GitHub{githubStarsLabel ? " · " + githubStarsLabel : ""}</span>
+          </a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-titlebar);
+    background: #080909;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1152px;
+    height: 56px;
+    padding-inline: 24px;
+  }
+
+  .nav-lockup {
+    gap: 9px;
+  }
+
+  .nav-lockup .wordmark {
+    font-size: 15px;
+  }
+
+  .nav-lockup img {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-context {
+    display: inline-flex;
+    gap: 14px;
+    margin-left: 9px;
+    color: #8f949e;
+    font-size: 14px;
+  }
+
+  .nav-context span {
+    color: #3f4248;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .nav .btn {
+    gap: var(--space-4);
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 var(--space-5);
+    color: var(--text-secondary);
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .nav-link:hover,
+  .nav-link[aria-current="page"] {
+    color: var(--text-primary);
+  }
+
+  .nav-github {
+    gap: 7px;
+    padding-inline: 9px;
+    color: #aeb3bd;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .nav-github :global(.github-mark) { width: 19px; height: 19px; }
+  .nav-github-count { min-width: 1ch; color: inherit; font-size: 13px; line-height: 1; }
+  .nav-github:hover { color: var(--text-primary); }
+
+  .nav-overlay {
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    border-bottom: 0;
+  }
+
+  .nav-overlay .nav-inner {
+    height: 56px;
+  }
+
+  .nav-overlay .nav-lockup img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-overlay .nav-lockup .wordmark {
+    font-size: 15px;
+  }
+
+  .nav-overlay .nav-link {
+    color: rgba(232, 234, 237, 0.72);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  .nav .btn-small {
+    height: 38px;
+    padding-inline: 17px;
+  }
+
+  .nav-mobile { display: none; }
+  .nav-menu { position: relative; }
+  .nav-menu summary {
+    display: grid; align-content: center; gap: 4px; width: 32px; height: 32px;
+    padding: 7px; border: 1px solid var(--border-strong); border-radius: var(--r-md);
+    cursor: pointer; list-style: none;
+  }
+  .nav-menu summary::-webkit-details-marker { display: none; }
+  .nav-menu summary span { display: block; height: 1px; background: var(--text-secondary); }
+  .nav-menu nav {
+    position: absolute; top: 38px; right: 0; display: grid; min-width: 168px;
+    padding: var(--space-3); border: 1px solid var(--border-strong);
+    border-radius: var(--r-md); background: var(--bg-surface); box-shadow: var(--shadow-2);
+  }
+  .nav-menu nav a { padding: 9px 10px; color: var(--text-secondary); font-size: 13px; }
+  .nav-menu nav a:hover, .nav-menu nav a[aria-current="page"] { color: var(--text-primary); background: var(--bg-raised); }
+  .nav-menu-github { display: flex; align-items: center; gap: 8px; }
+  .nav-menu-github :global(.github-mark) { width: 16px; height: 16px; }
+
+  @media (max-width: 840px) {
+    .nav-actions-desktop { display: none; }
+    .nav-mobile { display: flex; align-items: center; gap: var(--space-4); }
+  }
+
+  @media (max-width: 390px) {
+    .nav-lockup .wordmark { display: none; }
+    .nav-context { margin-left: 0; }
+  }
+</style>

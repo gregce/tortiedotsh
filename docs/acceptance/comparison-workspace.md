@@ -4,7 +4,7 @@ Run this checklist from the operator's seat before treating the comparison works
 
 ## 1. Verify the build and catalog
 
-Working directory: `/Users/gdc/tortiedotsh/takes/three`
+Working directory: the repository root
 
 ```sh
 npm run verify

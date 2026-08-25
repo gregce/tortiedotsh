@@ -1,0 +1,34 @@
+{
+  "name": "tortiedotsh",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "The public Tortie marketing, documentation, changelog, and comparison site.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && npm run search:index",
+    "preview": "astro preview",
+    "search:index": "pagefind --site dist --glob \"docs/**/*.html\" --force-language en",
+    "search:verify": "node scripts/verify-docs-search.mjs",
+    "site:verify": "node scripts/verify-site-routes.mjs",
+    "validate:data": "node --experimental-strip-types scripts/validate-comparison-data.mjs",
+    "audit:freshness": "node --experimental-strip-types scripts/validate-comparison-data.mjs --freshness",
+    "refresh:metrics": "node scripts/refresh-open-source-metrics.mjs",
+    "refresh:evidence": "node --experimental-strip-types scripts/refresh-comparison-evidence.mjs",
+    "refresh:assets": "node scripts/fetch-comparison-assets.mjs",
+    "refresh:changelog": "node scripts/sync-changelog.mjs",
+    "verify": "npm run validate:data && npm run build && npm run search:verify && npm run site:verify",
+    "sync:assets": "node scripts/sync-assets.mjs",
+    "predev": "npm run sync:assets",
+    "prebuild": "npm run sync:assets"
+  },
+  "dependencies": {
+    "@hyperframes/player": "0.7.108",
+    "@vercel/analytics": "^2.0.1",
+    "astro": "7.2.2",
+    "gsap": "3.15.0"
+  },
+  "devDependencies": {
+    "pagefind": "^1.5.2"
+  }
+}

@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/docs.css";
+import DocsShell from "../../../components/DocsShell.astro";
+import InlineReleaseText from "../../../components/InlineReleaseText.astro";
+import changelog from "../../../data/changelog.json";
+
+const description = "Every Tortie release, synchronized from the public repository.";
+const formatDate = (date: string) => new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+}).format(new Date(`${date}T00:00:00Z`));
+---
+
+<BaseLayout title="Changelog — Tortie docs" description={description} canonicalPath="/docs/changelog/" bodyClass="docs-body" themeColor="#000000">
+    <DocsShell currentPath="/docs/changelog/" current="changelog">
+      <article class="docs-article changelog-article">
+        <header class="docs-article-header changelog-header">
+          <div class="docs-heading">
+            <a class="docs-heading-anchor" href="#top" aria-label="Link to Changelog">#</a>
+            <h1 id="top" data-pagefind-meta="title" data-pagefind-weight="10">Changelog</h1>
+          </div>
+        </header>
+
+        <div class="release-list">
+          {changelog.releases.map((release) => (
+            <article class="release">
+              <header class="release-head">
+                <h2 id={`v${release.version}`} data-pagefind-weight="6"><a class="release-version" href={`#v${release.version}`}>{release.version}</a></h2>
+                <time datetime={release.date}>{formatDate(release.date)}</time>
+              </header>
+              <p class="release-summary">{release.summary}</p>
+              <div class="release-sections">
+                {release.sections.map((section) => (
+                  <section>
+                    <h3><span class:list={["release-label", `release-label-${section.title.toLowerCase()}`]}>{section.title}</span></h3>
+                    <ul>
+                      {section.items.map((item) => (
+                        <li class="release-item">
+                          <span><InlineReleaseText text={item.text} /></span>
+                          {item.commits.length > 0 && (
+                            <span class="release-commits" aria-label="Related commits">
+                              {item.commits.map((commit) => (
+                                <a href={commit.url} aria-label={`View commit ${commit.hash}`} title={`View commit ${commit.hash} on GitHub`}>
+                                  <svg class="release-commit-mark" viewBox="0 0 16 16" aria-hidden="true">
+                                    <path d="M1.5 8h4M10.5 8h4"></path>
+                                    <circle cx="8" cy="8" r="2.5"></circle>
+                                  </svg>
+                                  <span>{commit.hash}</span>
+                                </a>
+                              ))}
+                            </span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </article>
+    </DocsShell>
+</BaseLayout>

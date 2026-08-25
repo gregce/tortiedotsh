@@ -25,15 +25,15 @@ jobs:
       - name: Synchronize the public changelog
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node takes/three/scripts/sync-changelog.mjs
+        run: node scripts/sync-changelog.mjs
       - name: Commit a changed feed
         run: |
-          if git diff --quiet -- takes/three/src/data/changelog.json; then
+          if git diff --quiet -- src/data/changelog.json; then
             echo "The changelog feed is already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add takes/three/src/data/changelog.json
+          git add src/data/changelog.json
           git commit -m "chore(data): refresh Tortie changelog"
           git push

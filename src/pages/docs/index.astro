@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/docs.css";
+import DocsShell from "../../components/DocsShell.astro";
+import DocsArticle from "../../components/DocsArticle.astro";
+import { docsPageByPath } from "../../data/docs";
+
+const page = docsPageByPath.get("/docs/");
+if (!page) throw new Error("Getting started documentation is missing.");
+---
+
+<BaseLayout title={page.title + " — Tortie docs"} description={page.description} canonicalPath={page.path} bodyClass="docs-body" themeColor="#000000">
+    <DocsShell currentPath={page.path}>
+      <DocsArticle page={page} />
+    </DocsShell>
+</BaseLayout>

@@ -42,16 +42,16 @@ The comparison uses reviewed source files and generated snapshots. Do not edit a
 
 | File | Ownership | Purpose |
 | --- | --- | --- |
-| [`comparison-catalog.ts`](../../takes/three/src/data/comparison-catalog.ts) | reviewed by a person | categories, products, rows, profile facts, capability claims and evidence |
-| [`open-source-projects.json`](../../takes/three/src/data/open-source-projects.json) | reviewed by a person | canonical forge identities, metric scope, license exceptions, release policies and CLOC settings |
-| [`open-source-metrics.json`](../../takes/three/src/data/open-source-metrics.json) | generated | current forge facts, releases, tags, languages, contributors and CLOC |
-| [`comparison-evidence-status.json`](../../takes/three/src/data/comparison-evidence-status.json) | generated | content fingerprints and retrieval state for catalog evidence URLs |
-| [`comparison-assets.json`](../../takes/three/src/data/comparison-assets.json) | generated from a reviewed source map | local product and platform assets with provenance |
+| [`comparison-catalog.ts`](../../src/data/comparison-catalog.ts) | reviewed by a person | categories, products, rows, profile facts, capability claims and evidence |
+| [`open-source-projects.json`](../../src/data/open-source-projects.json) | reviewed by a person | canonical forge identities, metric scope, license exceptions, release policies and CLOC settings |
+| [`open-source-metrics.json`](../../src/data/open-source-metrics.json) | generated | current forge facts, releases, tags, languages, contributors and CLOC |
+| [`comparison-evidence-status.json`](../../src/data/comparison-evidence-status.json) | generated | content fingerprints and retrieval state for catalog evidence URLs |
+| [`comparison-assets.json`](../../src/data/comparison-assets.json) | generated from a reviewed source map | local product and platform assets with provenance |
 | `unknown-audit-*.json` | reviewed by a person | exact rationale and sources checked for every rendered Unknown cell |
-| [`refresh-open-source-metrics.mjs`](../../takes/three/scripts/refresh-open-source-metrics.mjs) | application code | GitHub and GitLab metrics, release resolution and CLOC |
-| [`refresh-comparison-evidence.mjs`](../../takes/three/scripts/refresh-comparison-evidence.mjs) | application code | documentation retrieval, normalization, fingerprinting and review acceptance |
-| [`fetch-comparison-assets.mjs`](../../takes/three/scripts/fetch-comparison-assets.mjs) | application code with reviewed mappings | first-party product and platform asset retrieval |
-| [`validate-comparison-data.mjs`](../../takes/three/scripts/validate-comparison-data.mjs) | application code | catalog, provenance, Unknown-ledger and freshness gates |
+| [`refresh-open-source-metrics.mjs`](../../scripts/refresh-open-source-metrics.mjs) | application code | GitHub and GitLab metrics, release resolution and CLOC |
+| [`refresh-comparison-evidence.mjs`](../../scripts/refresh-comparison-evidence.mjs) | application code | documentation retrieval, normalization, fingerprinting and review acceptance |
+| [`fetch-comparison-assets.mjs`](../../scripts/fetch-comparison-assets.mjs) | application code with reviewed mappings | first-party product and platform asset retrieval |
+| [`validate-comparison-data.mjs`](../../scripts/validate-comparison-data.mjs) | application code | catalog, provenance, Unknown-ledger and freshness gates |
 | [`refresh-open-source-metrics.yml`](../../.github/workflows/refresh-open-source-metrics.yml) | deployment automation | scheduled refresh, validation and snapshot commit |
 
 The files in [`docs/research/`](../research/) preserve discovery and editorial decisions. They support future reviews but do not render the live matrix.
@@ -60,7 +60,7 @@ The files in [`docs/research/`](../research/) preserve discovery and editorial d
 
 Astro builds the comparison from committed data. The build does not need GitHub, GitLab or vendor documentation to be online.
 
-[`ComparisonPage.astro`](../../takes/three/src/components/ComparisonPage.astro) joins data by stable ID:
+[`ComparisonPage.astro`](../../src/components/ComparisonPage.astro) joins data by stable ID:
 
 1. `comparison-catalog.ts` supplies the product and its claims.
 2. `repoMetricId` joins an eligible product to `open-source-metrics.json`.
@@ -119,7 +119,7 @@ The current catalog helper applies `COMPARISON_SNAPSHOT` as the default review d
 
 ## Repository manifest
 
-Add public-source repositories to [`open-source-projects.json`](../../takes/three/src/data/open-source-projects.json). The manifest identifies what the collector should measure. The generated metrics file records what the forge returned.
+Add public-source repositories to [`open-source-projects.json`](../../src/data/open-source-projects.json). The manifest identifies what the collector should measure. The generated metrics file records what the forge returned.
 
 Each manifest entry includes:
 
@@ -148,7 +148,7 @@ The matrix displays this boundary beside repository metrics.
 
 ## Repository refresh
 
-Run the full collector from `takes/three`:
+Run the full collector from the repository root:
 
 ```sh
 npm run refresh:metrics -- --loc
@@ -253,7 +253,7 @@ If one value changes, it clones and counts again.
 
 ## Documentation evidence monitor
 
-Run the evidence monitor from `takes/three`:
+Run the evidence monitor from the repository root:
 
 ```sh
 npm run refresh:evidence
@@ -370,7 +370,7 @@ Unknown means that checked sources did not establish a supported answer. It is n
 
 The comparison serves product and platform images from its own origin. It does not load vendor images at page view time.
 
-[`fetch-comparison-assets.mjs`](../../takes/three/scripts/fetch-comparison-assets.mjs) contains a reviewed source mapping for every public product and platform.
+[`fetch-comparison-assets.mjs`](../../scripts/fetch-comparison-assets.mjs) contains a reviewed source mapping for every public product and platform.
 
 The source preference is:
 
@@ -446,7 +446,7 @@ Run the full static build:
 npm run build
 ```
 
-The build writes 11 routes to `takes/three/dist`. It makes no forge or vendor requests.
+The build writes 11 routes to `dist`. It makes no forge or vendor requests.
 
 ## Daily GitHub Actions job
 
@@ -497,14 +497,14 @@ Set up the repository before deploying the site.
 Use this production build command from the repository root:
 
 ```sh
-npm --prefix takes/three run audit:freshness && \
-npm --prefix takes/three run build
+npm run audit:freshness && \
+npm run build
 ```
 
 Publish this directory:
 
 ```text
-takes/three/dist
+dist
 ```
 
 The hosting provider should rebuild after every default-branch commit. The daily bot commit then becomes the deployment trigger.
@@ -789,7 +789,7 @@ Use the separate [comparison workspace acceptance script](../acceptance/comparis
 
 ## Command reference
 
-Run these commands from `takes/three` unless stated otherwise.
+Run these commands from the repository root unless stated otherwise.
 
 | Command | Purpose |
 | --- | --- |

@@ -1,0 +1,43 @@
+---
+/**
+ * THESIS: The work lives beyond the window; refuse the generic centered hero with a screenshot card beneath it.
+ * OWN-WORLD: A matte graphite studio, one real product window, 1px hairlines, blue action, and amber only for attention.
+ * STORY: Learn that closing Tortie is safe, see four concrete proofs, choose a deeper destination, then download.
+ * FIRST VIEWPORT: Compact navigation, a short left-aligned promise, one macOS action, and a broad product-film stage.
+ * FORM: The user-selected Disposable Window concept, mock 04; wide film staging from seed a5903903.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import Demo from "../components/Demo.astro";
+import Pillars from "../components/Pillars.astro";
+import Destinations from "../components/Destinations.astro";
+import Download from "../components/Download.astro";
+import Footer from "../components/Footer.astro";
+
+const description =
+  "Tortie is a macOS shell for coding agents. Sessions run on a private background server that outlives the window, so quitting the app never stops the work.";
+---
+
+<BaseLayout title="Tortie" description={description} canonicalPath="/">
+    <Nav overlay />
+    <main>
+      <Hero />
+      <div class="home-after-fold">
+        <Demo />
+        <Pillars />
+        <Destinations />
+        <Download />
+      </div>
+    </main>
+    <div class="home-footer"><Footer /></div>
+</BaseLayout>
+
+<style>
+  .home-after-fold,
+  .home-footer {
+    --bg-canvas: var(--bg-marketing);
+    --bg-sidebar: var(--bg-marketing);
+    background: var(--bg-marketing);
+  }
+</style>

@@ -32,24 +32,24 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
-        run: node takes/three/scripts/refresh-open-source-metrics.mjs --loc
+        run: node scripts/refresh-open-source-metrics.mjs --loc
 
       - name: Refresh first-party evidence fingerprints
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node --experimental-strip-types takes/three/scripts/refresh-comparison-evidence.mjs
+        run: node --experimental-strip-types scripts/refresh-comparison-evidence.mjs
 
       - name: Validate refreshed comparison data
-        run: npm --prefix takes/three run audit:freshness
+        run: npm run audit:freshness
 
       - name: Commit changed fallback data
         run: |
-          if git diff --quiet -- takes/three/src/data/open-source-metrics.json takes/three/src/data/comparison-evidence-status.json; then
+          if git diff --quiet -- src/data/open-source-metrics.json src/data/comparison-evidence-status.json; then
             echo "Metrics and source fingerprints are already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add takes/three/src/data/open-source-metrics.json takes/three/src/data/comparison-evidence-status.json
+          git add src/data/open-source-metrics.json src/data/comparison-evidence-status.json
           git commit -m "chore(data): refresh comparison evidence"
           git push

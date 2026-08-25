@@ -1,74 +1,50 @@
-# tortie.sh
+# Tortie.sh
 
-This repo holds the landing page for Tortie, a macOS shell for agentic coding. The product is public at github.com/gregce/tortie under Apache 2.0. Three complete takes on the page live side by side in `takes/`. Each take is a separate static site built with Astro. Every take shares the same ground rules:
+The public website for [Tortie](https://github.com/gregce/tortie), a calm macOS agent multiplexer with familiar IDE features. The site includes the product landing page, searchable documentation, release changelog, and an evidence-backed comparison of developer tools.
 
-- The colors are the app's own 109 tokens from `assets/gmux-tokens.css`, with no new colors added.
-- The wordmark follows the law, with TORTIE in capitals at weight 600 and .sh lowercase at weight 400 at the same size.
-- The durable session demonstration plays as a seekable HyperFrames composition that never makes a request off its own origin.
+Production: [tortie.sh](https://tortie.sh)
 
-## The three takes, ranked
+## Local development
 
-An independent verifier rebuilt each take, served it locally, and drove it in an isolated headless Chrome. Every number below was measured on the built output. Gzip means the compressed size the browser actually downloads.
-
-| Rank | Take | Directory | First paint, gzip | Whole page with live demo, gzip | Gate failures in the first round |
-| --- | --- | --- | --- | --- | --- |
-| 1 | The lockup | `takes/three` | 34.1 KB | about 85 KB | none |
-| 2 | The session | `takes/two` | 24.3 KB | about 156 KB | none |
-| 3 | The quiet monolith | `takes/one` | 5.8 KB | about 113 KB | three, all fixed |
-
-The budget was 120 KB for first paint and 300 KB for the whole page. Every take passes both budgets.
-
-**Take three, the lockup, ranks first.** The giant TORTIE.sh wordmark is the design. It measured 142px with the exact proportions the law requires, being weight 600 with 0.06em tracking on the name and weight 400 with 0.02em tracking on the suffix at the same size. All three visitor goals sit inside one viewport at 1440 and at 390 wide. It ships the lightest whole page of the three at about 85 KB. Verification found no gate failures, only two small cautions, and both were closed in the fix round. Its demo caption states the durability fact in the exact shape the writing rules ask for. The window quits. The session keeps working. The window reopens on the same conversation.
-
-**Take two, the session, ranks second.** The page behaves like the product. The nav is the app's 36px band with its single hairline. Sections read as named sessions with status dots. Scrolling the page scrubs the demo timeline, and the verifier confirmed the mapping is monotonic across six scroll positions, from 0 s at the top to the full 13.0 s at the bottom. It had no gate failures. Its cautions were fixed at the source and re-verified, including a re-render of the MP4:
-
-- The nav dropped the GitHub button on narrow screens. It now keeps both buttons down to 320px.
-- The closing caption overlaid the terminal scrollback at 12.5 s. The composition now dims the window and moves the caption below the last terminal row.
-- The social preview title was the bare product name. It is now the closing line of the demo.
-
-**Take one, the quiet monolith, ranks third.** One narrow column with the demo as the single breakout element. It has the smallest first paint of the three at 5.8 KB. It ranked last because it was the only take that failed verification gates in the first round:
-
-- The demo caption broke the writing rules by packing three facts into one sentence.
-- The hero wordmark overflowed the 320px viewport by 9px.
-- The play button stayed visible but dead with JavaScript off.
-
-All three failures were fixed and shown passing with fresh measurements in the fix round.
-
-## How to run a take
-
-Each take builds with the same two commands. Run them inside the take's directory, e.g. `takes/three`.
-
-```
-npm install
-npm run build
-```
-
-The static site lands in that take's `dist/`. `npm run preview` serves the built output. `npm run dev` serves a live reloading copy. Takes two and three copy the shared token file and brand assets into place before every build, so `assets/gmux-tokens.css` stays the single source of color.
-
-## Where the research lives
-
-The research was done before any take was built and it lives in `docs/research/`.
-
-- `01-exemplars.md` measures ten landing pages for developer tools and states the winning shape. cmux.com, pi.dev, opencode.ai and cursor.com are among the ten.
-- `02-framework-and-graphics.md` picks Astro 7 in static output mode and explains how HyperFrames plays one composition both as a live seekable timeline in the page and as a rendered MP4 fallback.
-- `03-design-brief.md` is the brief all three takes build from. Sections 1 through 8 bind every take. Section 10 names the three directions.
-- `04-comparison-taxonomy.md` defines the original seven-category, 50-product launch model; `09a-agent-traces-core.md` adds Agent Traces as the eighth category with a first-party evidence ledger.
-- `05-matrix-ux-spec.md` specifies the dedicated comparison workspace, native table behavior, filters, accessibility and responsive rules.
-- `06-comparison-evidence-audit.md` records the adversarial evidence review, launch blockers, and the remediation guardrails applied afterward.
-- `07a-core-matrix-evidence.md` and `07b-agent-matrix-evidence.md` add the deeper row model and first-party claim ledger used by the expanded matrices.
-- `07c-harness-closure-ledger.md` records the second-pass harness closures and the two adjacent workbench corrections.
-- `08a-harness-expansion.md` through `08d-code-ide-expansion.md` record the broader 2026 product discovery pass, exact-SKU category rulings, rejected candidates, and implementation-ready first-party claim ledgers.
-
-The operator documentation starts at [`docs/README.md`](docs/README.md). The full data, refresh and deployment guide is [`docs/operations/comparison-data-refresh.md`](docs/operations/comparison-data-refresh.md).
-
-## The comparison workspace
-
-Take three includes a category-aware comparison at `/compare/`. It keeps Code IDEs, IDE extensions, Agent Multiplexers, Agent Orchestrators, coding-agent harnesses, Agent Traces, cloud/background agents, general-purpose agents, and remote tools in separate matrices so unlike products are not forced into one scorecard.
-
-The static product and evidence catalog lives in `takes/three/src/data/comparison-catalog.ts`. Volatile repository facts live in `open-source-metrics.json` and can be refreshed without changing the UI:
+Use Node.js 22 or later.
 
 ```sh
-cd takes/three
+npm install
+npm run dev
+```
+
+Astro serves the site at the URL printed in the terminal. The `predev` hook copies the pinned HyperFrames and GSAP browser bundles into `public/`; those generated files are not committed.
+
+## Verify and build
+
+```sh
+npm run verify
+npm run preview
+```
+
+`npm run verify` validates all comparison data, builds the static site, creates the Pagefind documentation index, verifies full-text search, and checks shared routes and interaction contracts. The production output is written to `dist/`.
+
+## Project structure
+
+```text
+src/
+  components/   Astro UI components
+  data/         Documentation, changelog, comparison catalog, and snapshots
+  layouts/      Shared document shell, metadata, navigation, and analytics
+  pages/        Astro file-based routes
+  scripts/      Browser-side interaction code
+  styles/       Global tokens and page-specific styles
+public/         Versioned static media and comparison identity assets
+scripts/        Validation, synchronization, and evidence-maintenance tools
+docs/           Maintainer operations and manual acceptance checks
+.github/        Scheduled changelog and comparison-data refreshes
+```
+
+## Comparison data
+
+The comparison renders only reviewed data committed to Git. It does not scrape vendors or repositories when a visitor loads a page.
+
+```sh
 npm run validate:data
 npm run audit:freshness
 npm run refresh:metrics
@@ -76,23 +52,24 @@ npm run refresh:evidence
 npm run refresh:assets
 ```
 
-Run `npm run refresh:metrics -- --loc` to measure source lines for repositories that opt in. The scheduled GitHub workflow refreshes the committed fallback weekly. Builds never call GitHub, so the comparison continues to render when the API is unavailable.
+Repository metrics and source fingerprints are refreshed by scheduled GitHub Actions. Capability claims remain tied to first-party evidence and require human review. See [comparison data operations](docs/operations/comparison-data-refresh.md) for the full maintenance contract.
 
-Vendor and platform identity assets are committed locally with first-party provenance in `comparison-assets.json`; `refresh:assets` rebuilds that bundle without introducing runtime image requests. Use `--missing-only` for new catalog entries or repeat `--product <id>` for a targeted vendor refresh.
+## Changelog
 
-The weekly metrics workflow also runs the freshness audit. It requires repository data no older than 14 days, first-party capability evidence no older than 120 days, and reviewed identity assets no older than 180 days. Automated metrics keep moving independently; a stale capability source fails the maintenance check rather than silently changing a product score.
+The public changelog is synchronized from [gregce/tortie](https://github.com/gregce/tortie):
 
-`refresh:evidence` deterministically enumerates every first-party URL used by a scored cell, records HTTP metadata and a normalized content fingerprint, and flags sources that changed since review. The site keeps linking directly to that source; changed documentation enters a human review queue rather than silently rewriting a capability claim. See `EVIDENCE_MONITOR.md` for the review contract.
+```sh
+npm run refresh:changelog
+```
 
-The operator acceptance script is in `docs/acceptance/comparison-workspace.md`.
+The scheduled workflow commits a changed feed so production builds remain deterministic and independent of GitHub availability.
 
-## Shared assets
+## Deployment and analytics
 
-- `assets/gmux-tokens.css` holds the app's color tokens. The takes copy this file verbatim and add no colors of their own.
-- `assets/brand/` holds the cat mark in its dock, macos, menu-bar and master variants.
+Vercel builds the root Astro project with `npm run build`. `@vercel/analytics` is included in the shared layout, so page views are collected by Vercel Web Analytics after the feature is enabled for the project.
 
-## What is not true yet
+Local Vercel project metadata lives in `.vercel/` and is intentionally ignored. GitHub is the source of truth for production deployments.
 
-- The repo has no remote and nothing is deployed. tortie.sh does not serve any of these pages yet.
-- No take has been chosen. The ranking above is the verifier's ordering, not a decision by the operator.
-- The download links point at the latest GitHub release, so they depend on a release existing there.
+## License
+
+Apache License 2.0. See [LICENSE](LICENSE).
