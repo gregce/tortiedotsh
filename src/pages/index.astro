@@ -11,7 +11,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
 import FitCheck from "../components/FitCheck.astro";
-import Demo from "../components/Demo.astro";
 import Pillars from "../components/Pillars.astro";
 import Destinations from "../components/Destinations.astro";
 import Download from "../components/Download.astro";
@@ -47,9 +46,8 @@ const structuredData = {
     <main>
       <Hero />
       <div class="home-after-fold">
-        <FitCheck />
-        <Demo />
         <Pillars />
+        <FitCheck />
         <Destinations />
         <Download />
       </div>

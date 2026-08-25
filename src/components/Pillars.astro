@@ -1,7 +1,38 @@
 ---
 const features = [
+  {
+    id: "one-project-window",
+    kicker: "Every thread has a place",
+    title: "One project window.",
+    copy: "Sessions, files, changes, diffs, and search stay scoped to the project in front of you.",
+    caption: "The whole project stays one coherent workspace.",
+    art: "03-one-project-window-wide",
+    width: 960,
+    height: 588,
+    alt: "Tortie showing several coding-agent sessions inside one project window.",
+    video: {
+      webm: "/demos/one-project-window/one-project-window.webm",
+      mp4: "/demos/one-project-window/one-project-window.mp4",
+      poster: "/demos/one-project-window/poster.webp",
+    },
+  },
+  {
+    id: "intuitive-multiplexing",
+    kicker: "The window is disposable",
+    title: "Intuitive multiplexing.",
+    copy: "Close the window. Exit the app. Your sessions keep running in a private tmux server, separate from the app window.",
+    caption: "The app is a view onto the work, not its owner.",
+    art: "03-one-project-window-wide",
+    width: 960,
+    height: 588,
+    alt: "Tortie switching among several coding-agent sessions from one session rail.",
+    video: {
+      webm: "/demos/intuitive-multiplexing/intuitive-multiplexing.webm",
+      mp4: "/demos/intuitive-multiplexing/intuitive-multiplexing.mp4",
+      poster: "/demos/intuitive-multiplexing/poster.webp",
+    },
+  },
   { id: "restore-conversation", kicker: "Return without reconstruction", title: "Resume the conversation.", copy: "Come back later. Tortie reconnects each agent to its own conversation, not just an empty shell.", caption: "Return to the thread exactly where you left it.", art: "05-restore-conversation-square", width: 1254, height: 1254, alt: "Pixel art of Tortie watching a blue forest trail relight and return an agent to its waiting place.", video: null },
-  { id: "one-project-window", kicker: "Every thread has a place", title: "One project window.", copy: "Sessions, files, changes, diffs, and search stay scoped to the project in front of you.", caption: "The whole project stays one coherent workspace.", art: "03-one-project-window-wide", width: 1672, height: 941, alt: "Pixel art of Tortie overlooking several agent paths gathered into one calm workspace.", video: null },
   {
     id: "needs-you",
     kicker: "Protect human attention",
@@ -29,7 +60,7 @@ const features = [
         <figure class="feature-media" data-capture-slot={feature.id}>
           {feature.video ? (
             <video
-              data-notification-demo
+              data-feature-video
               muted
               loop
               playsinline
@@ -57,8 +88,8 @@ const features = [
 
 <script is:inline>
   (function () {
-    function initNotificationDemos() {
-      document.querySelectorAll("[data-notification-demo]").forEach(function (video) {
+    function initFeatureVideos() {
+      document.querySelectorAll("[data-feature-video]").forEach(function (video) {
         if (video.dataset.playbackReady === "true") return;
         video.dataset.playbackReady = "true";
 
@@ -89,23 +120,26 @@ const features = [
       });
     }
 
-    initNotificationDemos();
-    document.addEventListener("astro:page-load", initNotificationDemos);
+    initFeatureVideos();
+    document.addEventListener("astro:page-load", initFeatureVideos);
   })();
 </script>
 
 <style>
-  .feature-chapter { padding: clamp(36px, 4vw, 56px) 0; border-bottom: 1px solid var(--border); }
+  .feature-chapter { padding: clamp(36px, 4vw, 56px) 0; }
   .feature-chapter-alt { background: var(--bg-sidebar); }
   .feature-layout { display: grid; grid-template-columns: minmax(200px, .55fr) minmax(0, 1.45fr); align-items: center; gap: clamp(40px, 7vw, 96px); }
+  .feature-chapter-alt .feature-layout { grid-template-columns: minmax(0, 1.45fr) minmax(200px, .55fr); }
+  .feature-chapter-alt .feature-copy { grid-column: 2; grid-row: 1; }
+  .feature-chapter-alt .feature-media { grid-column: 1; grid-row: 1; }
   .feature-copy { max-width: 290px; }
   .feature-kicker { margin: 0 0 var(--space-7); color: var(--accent-text); font-size: 12px; }
   .feature-copy h2 { margin: 0; font-size: clamp(28px, 3vw, 42px); font-weight: var(--weight-semibold); line-height: 1.08; letter-spacing: -.025em; text-wrap: balance; }
   .feature-copy > p:last-child { margin: var(--space-6) 0 0; color: var(--text-secondary); line-height: 1.6; }
   .feature-media { margin: 0; }
   .feature-media picture, .feature-media video { display: block; overflow: hidden; border: 1px solid var(--border-strong); border-radius: var(--r-lg); background: var(--bg-marketing); }
-  .feature-media img, .feature-media video { width: 100%; height: clamp(210px, 24vw, 300px); object-fit: cover; object-position: center; }
-  .feature-media img { display: block; }
+  .feature-media img { display: block; width: 100%; height: clamp(210px, 24vw, 300px); object-fit: cover; object-position: center; }
+  .feature-media video { width: 100%; height: auto; object-fit: contain; }
   .feature-media figcaption { margin-top: var(--space-5); color: var(--text-muted); font-size: 12px; text-align: right; }
-  @media (max-width: 780px) { .feature-layout { grid-template-columns: 1fr; } .feature-copy { max-width: 34ch; } .feature-media img, .feature-media video { height: clamp(190px, 56vw, 260px); } }
+  @media (max-width: 780px) { .feature-layout, .feature-chapter-alt .feature-layout { grid-template-columns: 1fr; } .feature-chapter-alt .feature-copy, .feature-chapter-alt .feature-media { grid-column: auto; grid-row: auto; } .feature-copy { max-width: 34ch; } .feature-media img { height: clamp(190px, 56vw, 260px); } }
 </style>

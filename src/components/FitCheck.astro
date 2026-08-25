@@ -29,8 +29,8 @@ const questions = [
   <div class="container">
     <div class="fit-shell" data-fit-check data-result="neutral" data-step="1" data-direction="false">
       <header class="fit-intro">
-        <h2 id="fit-check-title">Is Tortie for me?</h2>
-        <p>Five quick questions. See whether Tortie fits the way you work.</p>
+        <h2 id="fit-check-title">Still wondering if Tortie is for you?</h2>
+        <p>Five quick questions to see whether Tortie fits the way you work.</p>
         <div class="fit-progress" aria-hidden="true">
           {questions.map((_, index) => <i data-progress-node class:list={{ current: index === 0 }}></i>)}
         </div>
@@ -275,7 +275,7 @@ const questions = [
   .fit-check .container { max-width: 1240px; }
   .fit-shell { display: grid; grid-template-columns: minmax(280px, 31%) minmax(0, 1fr); min-height: 440px; background: #020304; }
   .fit-intro { padding: 38px 48px 34px 0; }
-  .fit-intro h2 { max-width: 7ch; margin: 0; font-size: clamp(38px, 3.7vw, 50px); line-height: .98; letter-spacing: -.04em; text-wrap: balance; }
+  .fit-intro h2 { max-width: 11ch; margin: 0; font-size: clamp(32px, 3vw, 40px); line-height: 1; letter-spacing: -.035em; text-wrap: balance; }
   .fit-intro > p:not(.fit-count) { max-width: 26ch; margin: var(--space-6) 0 0; color: var(--text-secondary); font-size: 15px; line-height: 1.5; }
   .fit-progress { display: flex; align-items: center; width: 196px; margin-top: 34px; }
   .fit-progress i { position: relative; z-index: 1; display: block; width: 12px; height: 12px; margin-right: 27px; border: 2px solid var(--border-strong); border-radius: 50%; background: #020304; }
@@ -342,7 +342,7 @@ const questions = [
   @media (max-width: 640px) {
     .fit-check { padding: 44px 0; }
     .fit-intro { display: block; padding: 0 0 22px; }
-    .fit-intro h2 { max-width: 10ch; font-size: 36px; line-height: 1; }
+    .fit-intro h2 { max-width: 12ch; font-size: 30px; line-height: 1.05; }
     .fit-intro > p:not(.fit-count) { max-width: 31ch; margin-top: 12px; font-size: 14px; line-height: 1.45; }
     .fit-progress { display: inline-flex; width: 166px; margin-top: 22px; vertical-align: middle; }
     .fit-progress i { margin-right: 20px; }

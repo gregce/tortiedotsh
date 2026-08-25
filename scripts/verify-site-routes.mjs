@@ -99,7 +99,6 @@ assert.match(
 );
 assert.match(home, /"@type":"SoftwareApplication"/, "The homepage is missing SoftwareApplication structured data.");
 for (const art of [
-  "03-one-project-window-wide",
   "05-restore-conversation-square",
   "09-open-source-grove-wide",
 ]) {
@@ -107,12 +106,30 @@ for (const art of [
   assert.ok(home.includes(`/illustrations/pixel-tortie/${art}.webp`), `The homepage is missing ${art}.webp.`);
 }
 for (const demoAsset of [
+  "/demos/one-project-window/poster.webp",
+  "/demos/one-project-window/one-project-window.webm",
+  "/demos/one-project-window/one-project-window.mp4",
+  "/demos/intuitive-multiplexing/poster.webp",
+  "/demos/intuitive-multiplexing/intuitive-multiplexing.webm",
+  "/demos/intuitive-multiplexing/intuitive-multiplexing.mp4",
   "/demos/notifications/poster.webp",
   "/demos/notifications/notifications.webm",
   "/demos/notifications/notifications.mp4",
 ]) {
-  assert.ok(home.includes(demoAsset), `The homepage is missing the notification demo asset ${demoAsset}.`);
+  assert.ok(home.includes(demoAsset), `The homepage is missing the feature demo asset ${demoAsset}.`);
 }
+const fitCheckPosition = home.indexOf("data-fit-check");
+const projectWindowPosition = home.indexOf('id="one-project-window"');
+const multiplexingPosition = home.indexOf('id="intuitive-multiplexing"');
+const attentionPosition = home.indexOf('id="needs-you"');
+const destinationsPosition = home.indexOf('class="destinations"');
+assert.ok(fitCheckPosition >= 0, "The homepage is missing the Tortie fit check.");
+assert.ok(projectWindowPosition >= 0, "One project window is missing from the homepage.");
+assert.ok(multiplexingPosition > projectWindowPosition, "Intuitive multiplexing does not follow One project window.");
+assert.ok(attentionPosition > multiplexingPosition, "The feature sequence ends before the attention proof.");
+assert.ok(fitCheckPosition > attentionPosition, "The feature sequence is not immediately below the hero and before the fit check.");
+assert.ok(destinationsPosition > fitCheckPosition, "The fit check does not immediately precede the final destination row.");
+assert.doesNotMatch(home, /id="survive-quit"/, "The superseded Survive quit demo is still rendered on the homepage.");
 const routeMarks = [
   ["Compare", canonical, "11-compare-icon-square", ["12-docs-icon-square", "13-changelog-icon-square"]],
   ["Docs", docsHome, "12-docs-icon-square", ["11-compare-icon-square", "13-changelog-icon-square"]],
