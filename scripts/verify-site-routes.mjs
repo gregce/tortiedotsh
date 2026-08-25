@@ -13,8 +13,8 @@ const pages = await Promise.all(files.map(async (file) => ({
 
 const pixelArtDirectory = new URL("../public/illustrations/pixel-tortie/", import.meta.url);
 const pixelArtFiles = (await readdir(pixelArtDirectory)).sort();
-assert.equal(pixelArtFiles.filter((file) => file.endsWith(".avif")).length, 10, "Expected ten AVIF Pixel Tortie assets.");
-assert.equal(pixelArtFiles.filter((file) => file.endsWith(".webp")).length, 10, "Expected ten WebP Pixel Tortie fallbacks.");
+assert.equal(pixelArtFiles.filter((file) => file.endsWith(".avif")).length, 13, "Expected thirteen AVIF Pixel Tortie assets.");
+assert.equal(pixelArtFiles.filter((file) => file.endsWith(".webp")).length, 13, "Expected thirteen WebP Pixel Tortie fallbacks.");
 for (const file of pixelArtFiles) {
   const asset = await stat(new URL(file, pixelArtDirectory));
   assert.ok(asset.size < 500 * 1024, `${file} is too large for the web at ${asset.size} bytes.`);
@@ -72,12 +72,13 @@ for (const { file, html } of sitePages) {
 }
 
 const readPage = (path) => readFile(new URL(path, dist), "utf8");
-const [canonical, compareIndex, legacy, home, docsHome, comparisonScript, comparisonCss] = await Promise.all([
+const [canonical, compareIndex, legacy, home, docsHome, whatTortieIs, comparisonScript, comparisonCss] = await Promise.all([
   readPage("compare/agent-multiplexers/index.html"),
   readPage("compare/index.html"),
   readPage("compare/agent-ides/index.html"),
   readPage("index.html"),
   readPage("docs/index.html"),
+  readPage("docs/what-tortie-is/index.html"),
   readFile(new URL("../src/scripts/comparison.ts", import.meta.url), "utf8"),
   readFile(new URL("../src/styles/comparison.css", import.meta.url), "utf8"),
 ]);
@@ -96,11 +97,20 @@ assert.match(
   "The homepage metadata is missing the concise product position.",
 );
 assert.match(home, /"@type":"SoftwareApplication"/, "The homepage is missing SoftwareApplication structured data.");
-for (const art of ["03-one-project-window-wide", "04-what-needs-you-square", "05-restore-conversation-square", "09-open-source-grove-wide"]) {
+for (const art of [
+  "03-one-project-window-wide",
+  "04-what-needs-you-square",
+  "05-restore-conversation-square",
+  "09-open-source-grove-wide",
+  "11-compare-icon-square",
+  "12-docs-icon-square",
+  "13-changelog-icon-square",
+]) {
   assert.ok(home.includes(`/illustrations/pixel-tortie/${art}.avif`), `The homepage is missing ${art}.avif.`);
   assert.ok(home.includes(`/illustrations/pixel-tortie/${art}.webp`), `The homepage is missing ${art}.webp.`);
 }
-assert.ok(docsHome.includes("/illustrations/pixel-tortie/10-mascot-accent-square.avif"), "The docs rail is missing its small Pixel Tortie accent.");
+assert.ok(whatTortieIs.includes("/illustrations/pixel-tortie/10-mascot-accent-square.avif"), "Behind the name is missing its Pixel Tortie illustration.");
+assert.doesNotMatch(docsHome + whatTortieIs, /docs-sidebar-mascot/, "The Pixel Tortie accent is still trapped in the docs navigation rail.");
 assert.doesNotMatch(home + docsHome, /\/illustrations\/pixel-tortie\/[^\"']+\.png/, "A full-resolution Pixel Tortie master is being served to visitors.");
 assert.match(
   home,
@@ -110,6 +120,9 @@ assert.match(
 assert.match(home, /macOS 15\.7\.9 or later · Apple silicon/);
 assert.match(home, /tortie-hero-1280\.avif 1280w, \/marketing\/tortie-hero-1920\.avif 1920w/);
 assert.match(home, /class="download-actions"/, "The homepage close is missing its shared action row.");
+assert.match(home, /Free under the Apache 2\.0 license and built in public\./, "The open-source close is missing its concise license copy.");
+assert.doesNotMatch(home, /Star on GitHub/, "The open-source close still contains the redundant GitHub button.");
+assert.match(home, /class="footer-github"[^>]*aria-label="Tortie on GitHub, [\d,]+ stars?"/, "The footer is missing the GitHub star count.");
 assert.doesNotMatch(home, /grid-template-areas:"copy blank"/, "The homepage close still uses the fragile named-area layout.");
 assert.ok(
   home.split('href="' + directDownloadUrl + '"').length - 1 >= 3,
@@ -137,4 +150,4 @@ assert.match(
   "Fullscreen and filter actions are not anchored to persistent comparison state.",
 );
 
-console.log(`Site routes verified: ${sitePages.length} shared headers with GitHub stars, direct downloads, and Vercel Analytics; 10 responsive Pixel Tortie illustrations; atomic navigation, canonical comparison redirects, hero copy, stable closing actions, and persistent comparison controls.`);
+console.log(`Site routes verified: ${sitePages.length} shared headers with GitHub stars, direct downloads, and Vercel Analytics; 13 responsive Pixel Tortie illustrations; atomic navigation, canonical comparison redirects, hero copy, stable closing actions, and persistent comparison controls.`);

@@ -23,6 +23,12 @@ export type DocBlock =
 export interface DocSection {
   id: string;
   title: string;
+  illustration?: {
+    asset: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
   blocks: DocBlock[];
 }
 
@@ -233,6 +239,12 @@ export const docsPages: DocPage[] = [
       {
         id: "behind-the-name",
         title: "Behind the name",
+        illustration: {
+          asset: "10-mascot-accent-square",
+          alt: "Pixel-art Tortie mascot watching blue and amber signals.",
+          width: 1536,
+          height: 1024,
+        },
         blocks: [
           { type: "paragraph", html: "Tortie.sh is a name and a shell joke. A tortie is a tortoiseshell cat; <code>.sh</code> is the familiar suffix for a shell script. The name points to both the cat in the mark and the shell sessions Tortie keeps alive." },
           { type: "paragraph", html: "Tortoiseshell cats have a reputation for being deeply loyal, opinionated, and vigilant. Tortie is built with the same character: it stays with your work after the window closes, keeps sessions firmly named and scoped, and watches quietly for the moment an agent needs you." },

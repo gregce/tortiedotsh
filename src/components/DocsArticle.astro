@@ -27,6 +27,7 @@ const next = pageIndex >= 0 && pageIndex < docsNavItems.length - 1 ? docsNavItem
         <a class="docs-heading-anchor" href={`#${section.id}`} aria-label={`Link to ${section.title}`}>#</a>
         <h2 id={section.id} data-pagefind-weight="6">{section.title}</h2>
       </div>
+      <div class:list={["docs-section-body", { "docs-section-body-illustrated": section.illustration }]}>
       <div class="docs-copy">
         {section.blocks.map((block) => (
           block.type === "paragraph" ? <p set:html={block.html} />
@@ -37,6 +38,20 @@ const next = pageIndex >= 0 && pageIndex < docsNavItems.length - 1 ? docsNavItem
           : block.type === "table" ? <div class="docs-table-wrap"><table class="docs-table"><thead><tr>{block.headers.map((header) => <th scope="col">{header}</th>)}</tr></thead><tbody>{block.rows.map((row) => <tr>{row.map((cell) => <td set:html={cell} />)}</tr>)}</tbody></table></div>
           : null
         ))}
+      </div>
+      {section.illustration && (
+        <picture class="docs-section-art">
+          <source srcset={`/illustrations/pixel-tortie/${section.illustration.asset}.avif`} type="image/avif" />
+          <img
+            src={`/illustrations/pixel-tortie/${section.illustration.asset}.webp`}
+            alt={section.illustration.alt}
+            width={section.illustration.width}
+            height={section.illustration.height}
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      )}
       </div>
     </section>
   ))}

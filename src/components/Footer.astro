@@ -1,6 +1,21 @@
 ---
 // The footer. A small lockup and the three places a visitor may still
 // want to go.
+import GitHubMark from "./GitHubMark.astro";
+import openSourceMetrics from "../data/open-source-metrics.json";
+import { TORTIE_REPOSITORY_URL } from "../data/site-links";
+
+const tortieMetrics = openSourceMetrics.projects.find((project) => project.id === "tortie");
+const githubStars = typeof tortieMetrics?.stars === "number" ? tortieMetrics.stars : null;
+const githubStarsLabel = githubStars === null
+  ? null
+  : new Intl.NumberFormat("en-US", {
+      notation: githubStars >= 1_000 ? "compact" : "standard",
+      maximumFractionDigits: 1,
+    }).format(githubStars).toLowerCase();
+const githubAriaLabel = githubStars === null
+  ? "Tortie on GitHub"
+  : `Tortie on GitHub, ${githubStars.toLocaleString("en-US")} ${githubStars === 1 ? "star" : "stars"}`;
 ---
 
 <footer class="footer">
@@ -15,7 +30,10 @@
       <a href="/compare/agent-multiplexers/">Compare</a>
       <a href="/docs/">Docs</a>
       <a href="/docs/changelog/">Changelog</a>
-      <a href="https://github.com/gregce/tortie">GitHub</a>
+      <a class="footer-github" href={TORTIE_REPOSITORY_URL} aria-label={githubAriaLabel} title={githubAriaLabel}>
+        <GitHubMark />
+        {githubStarsLabel && <span aria-hidden="true">{githubStarsLabel}</span>}
+      </a>
       <a href="https://github.com/gregce/tortie/blob/main/LICENSE"
         >License</a
       >
@@ -62,6 +80,18 @@
 
   .footer-links a:hover {
     color: var(--text-primary);
+  }
+
+  .footer-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .footer-github :global(.github-mark) {
+    width: 18px;
+    height: 18px;
   }
 
   @media (max-width: 560px) {
