@@ -99,7 +99,6 @@ assert.match(
 );
 assert.match(home, /"@type":"SoftwareApplication"/, "The homepage is missing SoftwareApplication structured data.");
 for (const art of [
-  "05-restore-conversation-square",
   "09-open-source-grove-wide",
 ]) {
   assert.ok(home.includes(`/illustrations/pixel-tortie/${art}.avif`), `The homepage is missing ${art}.avif.`);
@@ -112,9 +111,15 @@ for (const demoAsset of [
   "/demos/intuitive-multiplexing/poster.webp",
   "/demos/intuitive-multiplexing/intuitive-multiplexing.webm",
   "/demos/intuitive-multiplexing/intuitive-multiplexing.mp4",
+  "/demos/resume-conversation/poster.webp",
+  "/demos/resume-conversation/resume-conversation.webm",
+  "/demos/resume-conversation/resume-conversation.mp4",
   "/demos/notifications/poster.webp",
   "/demos/notifications/notifications.webm",
   "/demos/notifications/notifications.mp4",
+  "/demos/catch-me-up/poster.webp",
+  "/demos/catch-me-up/catch-me-up.webm",
+  "/demos/catch-me-up/catch-me-up.mp4",
 ]) {
   assert.ok(home.includes(demoAsset), `The homepage is missing the feature demo asset ${demoAsset}.`);
 }
@@ -122,12 +127,14 @@ const fitCheckPosition = home.indexOf("data-fit-check");
 const projectWindowPosition = home.indexOf('id="one-project-window"');
 const multiplexingPosition = home.indexOf('id="intuitive-multiplexing"');
 const attentionPosition = home.indexOf('id="needs-you"');
+const catchUpPosition = home.indexOf('id="catch-me-up"');
 const destinationsPosition = home.indexOf('class="destinations"');
 assert.ok(fitCheckPosition >= 0, "The homepage is missing the Tortie fit check.");
 assert.ok(projectWindowPosition >= 0, "One project window is missing from the homepage.");
 assert.ok(multiplexingPosition > projectWindowPosition, "Intuitive multiplexing does not follow One project window.");
 assert.ok(attentionPosition > multiplexingPosition, "The feature sequence ends before the attention proof.");
-assert.ok(fitCheckPosition > attentionPosition, "The feature sequence is not immediately below the hero and before the fit check.");
+assert.ok(catchUpPosition > attentionPosition, "Catch Me Up does not follow the attention proof.");
+assert.ok(fitCheckPosition > catchUpPosition, "The feature sequence is not immediately below the hero and before the fit check.");
 assert.ok(destinationsPosition > fitCheckPosition, "The fit check does not immediately precede the final destination row.");
 assert.doesNotMatch(home, /id="survive-quit"/, "The superseded Survive quit demo is still rendered on the homepage.");
 const routeMarks = [
