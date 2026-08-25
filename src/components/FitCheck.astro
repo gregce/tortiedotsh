@@ -1,0 +1,362 @@
+---
+import { TORTIE_MACOS_DOWNLOAD_URL } from "../data/site-links";
+
+const questions = [
+  {
+    prompt: "Do you work across several projects or coding-agent sessions at once?",
+    choices: ["Several at once", "Usually one"],
+  },
+  {
+    prompt: "Do you prefer terminal agents, but still want files, diffs, search, and Git nearby?",
+    choices: ["Yes, terminal plus IDE conveniences", "I prefer a full editor workflow"],
+  },
+  {
+    prompt: "Do you want to keep using each provider’s own agent?",
+    choices: ["Keep Claude Code, Codex, Gemini CLI, and others", "Give me one unified agent surface"],
+  },
+  {
+    prompt: "Should sessions keep running when the app window closes?",
+    choices: ["Yes, keep them running", "Relaunching them is fine"],
+  },
+  {
+    prompt: "How do you want to work with agents?",
+    choices: ["Steer live sessions with the project beside them", "Delegate tasks and review the results later"],
+  },
+];
+---
+
+<section class="fit-check" aria-labelledby="fit-check-title">
+  <div class="container">
+    <div class="fit-shell" data-fit-check data-result="neutral" data-step="1" data-direction="false">
+      <header class="fit-intro">
+        <h2 id="fit-check-title">Is Tortie for me?</h2>
+        <p>Five quick questions. See whether Tortie fits the way you work.</p>
+        <div class="fit-progress" aria-hidden="true">
+          {questions.map((_, index) => <i data-progress-node class:list={{ current: index === 0 }}></i>)}
+        </div>
+        <p class="fit-count"><strong data-question-number>01</strong> / 05</p>
+      </header>
+
+      <div class="fit-stage">
+      <div class="fit-question" aria-live="polite">
+        <h3 data-question>{questions[0].prompt}</h3>
+        <div class="fit-choices" data-choices>
+          {questions[0].choices.map((choice, index) => (
+            <button type="button" data-choice={index}>
+              <span class="choice-marker" aria-hidden="true"></span>
+              <span>{choice}</span>
+            </button>
+          ))}
+        </div>
+        <div class="fit-controls">
+          <button type="button" class="fit-text-button" data-back disabled aria-label="Go to the previous question">
+            <span aria-hidden="true">←</span> Back
+          </button>
+          <button type="button" class="fit-text-button" data-reset hidden>
+            <span aria-hidden="true">↻</span> Start over
+          </button>
+        </div>
+      </div>
+
+      <div class="fit-map" aria-label="Possible fit check results">
+        <picture class="fit-mascot">
+          <source srcset="/illustrations/pixel-tortie/10-mascot-accent-square.avif" type="image/avif" />
+          <img src="/illustrations/pixel-tortie/10-mascot-accent-square.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
+        </picture>
+        <svg class="fit-routes" viewBox="0 0 800 430" preserveAspectRatio="none" aria-hidden="true">
+          <path class="route route-stem stem-one" data-route-step="1" d="M74 375 H158" />
+          <path class="route route-stem stem-two" data-route-step="2" d="M158 375 H252" />
+          <path class="route route-stem stem-three" data-route-step="3" d="M252 375 H302 L352 325" />
+          <path class="route route-stem stem-four" data-route-step="4" d="M352 325 H430" />
+          <path class="route route-choice route-tortie" d="M352 325 H462 V63 H552" />
+          <path class="route route-choice route-code" d="M352 325 H486 V149 H552" />
+          <path class="route route-choice route-orchestrator" d="M352 325 H510 V235 H552" />
+          <path class="route route-progress route-progress-near progress-tortie" d="M352 325 H462 V180" />
+          <path class="route route-progress route-progress-far progress-tortie" d="M462 180 V63 H552" />
+          <path class="route route-progress route-progress-near progress-code" d="M352 325 H486 V235" />
+          <path class="route route-progress route-progress-far progress-code" d="M486 235 V149 H552" />
+          <path class="route route-progress route-progress-near progress-orchestrator" d="M352 325 H510 V280" />
+          <path class="route route-progress route-progress-far progress-orchestrator" d="M510 280 V235 H552" />
+          <rect class="route-junction" x="343" y="316" width="18" height="18" rx="1" />
+        </svg>
+
+        <div class="fit-destinations">
+          <a class="fit-destination destination-tortie" href="/compare/agent-multiplexers/">
+            <strong>Tortie</strong><span>Agent multiplexer</span>
+          </a>
+          <a class="fit-destination destination-code" href="/compare/editors/">
+            <strong>Code IDE</strong><span>Editor-first workflow</span>
+          </a>
+          <a class="fit-destination destination-orchestrator" href="/compare/orchestrators/">
+            <strong>Agent orchestrator</strong><span>Delegate and review</span>
+          </a>
+        </div>
+
+        <p class="fit-helper" data-helper>Each result is a link. <a href="/compare/agent-multiplexers/">See more options <span aria-hidden="true">→</span></a></p>
+      </div>
+
+      <div class="fit-result" data-result-panel hidden aria-live="polite">
+        <p class="fit-result-label" data-result-label>Agent multiplexer</p>
+        <h3 data-result-title>Tortie is built for this.</h3>
+        <p data-result-copy>Keep provider-specific terminal agents alive across projects, with files, diffs, search, and Git in one window.</p>
+        <div class="fit-result-actions">
+          <a class="btn btn-primary" data-primary-result href={TORTIE_MACOS_DOWNLOAD_URL}>Download Tortie</a>
+          <a data-compare-result href="/compare/agent-multiplexers/">Compare agent multiplexers <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="fit-result-controls">
+          <button type="button" class="fit-text-button" data-back-result><span aria-hidden="true">←</span> Back</button>
+          <button type="button" class="fit-text-button" data-reset-result><span aria-hidden="true">↻</span> Start over</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ questions, downloadUrl: TORTIE_MACOS_DOWNLOAD_URL }} is:inline>
+  (function () {
+    var outcomes = {
+      tortie: {
+        label: "Agent multiplexer",
+        title: "Tortie is built for this.",
+        copy: "Keep provider-specific terminal agents alive across projects, with files, diffs, search, and Git in one window.",
+        primary: "Download Tortie",
+        primaryHref: downloadUrl,
+        compare: "Compare agent multiplexers",
+        compareHref: "/compare/agent-multiplexers/"
+      },
+      code: {
+        label: "Code IDE",
+        title: "A Code IDE may fit better.",
+        copy: "If one editor-centered project is your home base and sessions can follow the window, start with the Code IDE comparison.",
+        primary: "See Code IDE alternatives",
+        primaryHref: "/compare/editors/",
+        compare: "",
+        compareHref: ""
+      },
+      orchestrator: {
+        label: "Agent orchestrator",
+        title: "An orchestrator may fit better.",
+        copy: "Delegate tasks and review completed work instead of steering live sessions.",
+        primary: "See orchestrator alternatives",
+        primaryHref: "/compare/orchestrators/",
+        compare: "",
+        compareHref: ""
+      }
+    };
+
+    function init(root) {
+      if (!root || root.dataset.ready === "true") return;
+      root.dataset.ready = "true";
+      var answers = [];
+      var step = 0;
+      var question = root.querySelector("[data-question]");
+      var choices = root.querySelector("[data-choices]");
+      var number = root.querySelector("[data-question-number]");
+      var nodes = Array.from(root.querySelectorAll("[data-progress-node]"));
+      var back = root.querySelector("[data-back]");
+      var reset = root.querySelector("[data-reset]");
+      var backResult = root.querySelector("[data-back-result]");
+      var resetResult = root.querySelector("[data-reset-result]");
+      var panel = root.querySelector("[data-result-panel]");
+      var choiceButtons = Array.from(choices.querySelectorAll("[data-choice]"));
+      var routeSteps = Array.from(root.querySelectorAll("[data-route-step]"));
+
+      function provisionalResult() {
+        var score = { tortie: 0, code: 0, orchestrator: 0 };
+        answers.forEach(function (answer, index) {
+          if (index === 0) answer === 0 ? (score.tortie += 2, score.orchestrator += 1) : score.code += 2;
+          if (index === 1) answer === 0 ? score.tortie += 2 : score.code += 2;
+          if (index === 2) answer === 0 ? score.tortie += 2 : score.orchestrator += 2;
+          if (index === 3) answer === 0 ? (score.tortie += 2, score.orchestrator += 1) : score.code += 1;
+          if (index === 4) answer === 0 ? (score.tortie += 2, score.code += 1) : score.orchestrator += 3;
+        });
+        return Object.keys(score).sort(function (a, b) { return score[b] - score[a]; })[0];
+      }
+
+      function setRoute() {
+        root.dataset.direction = answers.length >= 2 ? "true" : "false";
+        root.dataset.result = answers.length >= 2 ? provisionalResult() : "neutral";
+      }
+
+      function renderQuestion() {
+        panel.hidden = true;
+        root.classList.remove("is-complete");
+        var item = questions[step];
+        question.textContent = item.prompt;
+        item.choices.forEach(function (label, index) {
+          var button = choiceButtons[index];
+          button.dataset.choice = String(index);
+          button.lastElementChild.textContent = label;
+        });
+        number.textContent = String(step + 1).padStart(2, "0");
+        root.dataset.step = String(step + 1);
+        routeSteps.forEach(function (path) {
+          path.classList.toggle("is-revealed", Number(path.dataset.routeStep) <= answers.length);
+        });
+        nodes.forEach(function (node, index) {
+          node.classList.toggle("complete", index < step);
+          node.classList.toggle("current", index === step);
+        });
+        back.disabled = step === 0;
+        reset.hidden = answers.length === 0;
+        setRoute();
+        var first = choiceButtons[0];
+        if (step > 0 && first) first.focus({ preventScroll: true });
+      }
+
+      function renderResult() {
+        var key = provisionalResult();
+        var result = outcomes[key];
+        root.dataset.result = key;
+        root.dataset.direction = "true";
+        root.dataset.step = "5";
+        routeSteps.forEach(function (path) { path.classList.add("is-revealed"); });
+        root.classList.add("is-complete");
+        question.textContent = "Your path";
+        number.textContent = "05";
+        nodes.forEach(function (node) { node.classList.add("complete"); node.classList.remove("current"); });
+        root.querySelector("[data-result-label]").textContent = result.label;
+        root.querySelector("[data-result-title]").textContent = result.title;
+        root.querySelector("[data-result-copy]").textContent = result.copy;
+        var primary = root.querySelector("[data-primary-result]");
+        primary.textContent = result.primary;
+        primary.href = result.primaryHref;
+        var compare = root.querySelector("[data-compare-result]");
+        compare.hidden = !result.compare;
+        if (result.compare) {
+          compare.innerHTML = result.compare + ' <span aria-hidden="true">→</span>';
+          compare.href = result.compareHref;
+        }
+        panel.hidden = false;
+        panel.focus && panel.focus({ preventScroll: true });
+      }
+
+      choices.addEventListener("click", function (event) {
+        var button = event.target.closest("[data-choice]");
+        if (!button) return;
+        answers[step] = Number(button.dataset.choice);
+        if (step === questions.length - 1) renderResult();
+        else { step += 1; renderQuestion(); }
+      });
+      back.addEventListener("click", function () {
+        if (step === 0) return;
+        if (root.classList.contains("is-complete")) root.classList.remove("is-complete");
+        answers.pop();
+        step -= 1;
+        renderQuestion();
+      });
+      reset.addEventListener("click", function () {
+        answers = [];
+        step = 0;
+        renderQuestion();
+      });
+      backResult.addEventListener("click", function () {
+        answers.pop();
+        step = questions.length - 1;
+        renderQuestion();
+      });
+      resetResult.addEventListener("click", function () {
+        answers = [];
+        step = 0;
+        renderQuestion();
+      });
+      renderQuestion();
+    }
+
+    function initAll() { document.querySelectorAll("[data-fit-check]").forEach(init); }
+    initAll();
+    document.addEventListener("astro:page-load", initAll);
+  })();
+</script>
+
+<style>
+  .fit-check { padding: clamp(56px, 6vw, 80px) 0; border-bottom: 1px solid var(--border); background: var(--bg-marketing); }
+  .fit-check .container { max-width: 1240px; }
+  .fit-shell { display: grid; grid-template-columns: minmax(280px, 31%) minmax(0, 1fr); min-height: 440px; background: #020304; }
+  .fit-intro { padding: 38px 48px 34px 0; }
+  .fit-intro h2 { max-width: 7ch; margin: 0; font-size: clamp(38px, 3.7vw, 50px); line-height: .98; letter-spacing: -.04em; text-wrap: balance; }
+  .fit-intro > p:not(.fit-count) { max-width: 26ch; margin: var(--space-6) 0 0; color: var(--text-secondary); font-size: 15px; line-height: 1.5; }
+  .fit-progress { display: flex; align-items: center; width: 196px; margin-top: 34px; }
+  .fit-progress i { position: relative; z-index: 1; display: block; width: 12px; height: 12px; margin-right: 27px; border: 2px solid var(--border-strong); border-radius: 50%; background: #020304; }
+  .fit-progress i:not(:last-child)::after { position: absolute; top: 3px; left: 10px; width: 31px; height: 2px; content: ""; background: var(--border-strong); }
+  .fit-progress i.complete { border-color: var(--accent); background: var(--accent); }
+  .fit-progress i.complete::after { background: var(--accent); }
+  .fit-progress i.current { border-color: var(--accent); }
+  .fit-count { margin: var(--space-6) 0 0; color: var(--text-muted); font-family: var(--font-mono); font-size: 13px; }
+  .fit-count strong { color: var(--text-primary); font-weight: var(--weight-medium); }
+
+  .fit-stage { position: relative; min-width: 0; min-height: 440px; overflow: hidden; }
+  .fit-question { position: absolute; z-index: 4; top: 32px; left: 24px; width: min(420px, 50%); height: 286px; }
+  .fit-question h3 { display: flex; align-items: flex-start; height: 108px; margin: 0 0 14px; font-size: clamp(21px, 2vw, 27px); line-height: 1.2; letter-spacing: -.02em; text-wrap: balance; }
+  .fit-choices { display: grid; gap: var(--space-5); }
+  .fit-choices button { display: grid; grid-template-columns: 18px 1fr; align-items: center; gap: var(--space-5); height: 54px; padding: 8px 14px; border: 1px solid var(--border-strong); border-radius: var(--r-sm); background: rgba(9, 11, 14, .88); color: var(--text-primary); font: inherit; line-height: 1.3; text-align: left; cursor: pointer; transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out); }
+  .fit-choices button:hover { border-color: var(--accent); background: var(--accent-wash); }
+  .choice-marker { width: 16px; height: 16px; border: 2px solid var(--text-disabled); border-radius: 50%; box-shadow: inset 0 0 0 3px #090b0e; }
+  .fit-choices button:hover .choice-marker { border-color: var(--accent); background: var(--accent); }
+  .fit-controls { display: flex; gap: var(--space-8); margin-top: 16px; }
+  .fit-text-button { padding: 0; border: 0; background: transparent; color: var(--accent-text); font: inherit; cursor: pointer; }
+  .fit-text-button:disabled { color: var(--text-disabled); cursor: default; }
+
+  .fit-map { position: absolute; inset: 0; overflow: hidden; }
+  .fit-mascot { position: absolute; z-index: 2; left: 2%; bottom: 0; width: 86px; height: 86px; }
+  .fit-mascot img { width: 100%; height: 100%; object-fit: cover; }
+  .fit-routes { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .route { fill: none; stroke: var(--border-strong); stroke-width: 4; stroke-dasharray: 5 6; stroke-linejoin: miter; vector-effect: non-scaling-stroke; opacity: .42; transition: stroke var(--dur-panel) var(--ease-out), opacity var(--dur-panel) var(--ease-out); }
+  .route-stem.is-revealed { stroke: var(--accent); opacity: .9; }
+  .route-progress { opacity: 0; }
+  .fit-shell[data-step="4"][data-result="tortie"] .route-progress-near.progress-tortie,
+  .fit-shell[data-step="4"][data-result="code"] .route-progress-near.progress-code,
+  .fit-shell[data-step="4"][data-result="orchestrator"] .route-progress-near.progress-orchestrator,
+  .fit-shell[data-step="5"][data-result="tortie"] .route-progress.progress-tortie,
+  .fit-shell[data-step="5"][data-result="code"] .route-progress.progress-code,
+  .fit-shell[data-step="5"][data-result="orchestrator"] .route-progress.progress-orchestrator { stroke: var(--accent); opacity: .95; }
+  .route-junction { fill: var(--border-strong); opacity: 1; transition: fill var(--dur-panel) var(--ease-out); }
+  .fit-shell[data-step="3"] .route-junction, .fit-shell[data-step="4"] .route-junction, .fit-shell[data-step="5"] .route-junction { fill: var(--status-attention); }
+  .fit-destinations { position: absolute; z-index: 3; top: 22px; right: 0; display: grid; gap: 16px; width: min(240px, 31%); }
+  .fit-destination { display: grid; min-height: 70px; align-content: center; padding: 10px 16px; border-left: 1px solid var(--border-strong); color: var(--text-secondary); background: #020304; }
+  .fit-destination strong { font-size: 15px; letter-spacing: .02em; text-transform: uppercase; }
+  .fit-destination span { margin-top: 2px; color: var(--text-muted); font-size: 12px; }
+  .fit-shell[data-direction="true"][data-result="tortie"] .destination-tortie, .fit-shell[data-direction="true"][data-result="code"] .destination-code, .fit-shell[data-direction="true"][data-result="orchestrator"] .destination-orchestrator { border-color: var(--accent); color: var(--accent-text); background: #0b1824; }
+  .fit-helper { position: absolute; right: 0; bottom: 14px; margin: 0; color: var(--text-muted); font-size: 12px; }
+  .fit-helper a { margin-left: 4px; }
+
+  .fit-result { position: absolute; z-index: 4; top: 28px; left: 24px; width: min(460px, 53%); }
+  .fit-result[hidden] { display: none; }
+  .is-complete .fit-question { display: none; }
+  .fit-result-label { margin: 0 0 var(--space-5); color: var(--accent-text); font-size: 11px; font-weight: var(--weight-semibold); letter-spacing: .04em; text-transform: uppercase; }
+  .fit-result h3 { max-width: 17ch; margin: 0; font-size: clamp(25px, 2.2vw, 32px); line-height: 1.12; letter-spacing: -.02em; text-wrap: balance; }
+  .fit-result > p:not(.fit-result-label) { max-width: 43ch; margin: var(--space-6) 0 0; color: var(--text-secondary); line-height: 1.5; }
+  .fit-result-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-6); margin-top: var(--space-7); }
+  .fit-result-controls { display: flex; gap: var(--space-8); margin-top: var(--space-6); }
+
+  @media (max-width: 900px) {
+    .fit-shell { grid-template-columns: 1fr; }
+    .fit-intro { display: grid; grid-template-columns: 1fr auto; column-gap: 32px; padding: 0 0 28px; }
+    .fit-intro h2 { max-width: none; }
+    .fit-intro > p:not(.fit-eyebrow, .fit-count) { grid-column: 1; }
+    .fit-progress { grid-column: 2; grid-row: 2; align-self: end; margin-top: 0; }
+    .fit-count { grid-column: 2; grid-row: 3; }
+    .fit-stage { min-height: 440px; }
+  }
+  @media (max-width: 640px) {
+    .fit-check { padding: 52px 0; }
+    .fit-intro { display: block; padding-bottom: 30px; }
+    .fit-intro h2 { max-width: none; font-size: 38px; }
+    .fit-intro > p:not(.fit-eyebrow, .fit-count) { max-width: 32ch; }
+    .fit-progress { margin-top: 32px; }
+    .fit-stage { min-height: 690px; }
+    .fit-question, .fit-result { top: 24px; left: 0; width: 100%; }
+    .fit-question { height: 324px; }
+    .fit-question h3 { height: 126px; }
+    .fit-choices button { height: 64px; }
+    .fit-map { top: 370px; height: 320px; }
+    .fit-mascot { left: 0; width: 72px; height: 72px; }
+    .fit-routes { left: -34px; width: calc(100% + 34px); }
+    .fit-destinations { top: 12px; right: 0; gap: 12px; width: 52%; }
+    .fit-destination { min-height: 70px; padding: 9px 12px; }
+    .fit-destination strong { font-size: 13px; }
+    .fit-destination span { font-size: 11px; }
+    .fit-helper { display: none; }
+  }
+</style>
