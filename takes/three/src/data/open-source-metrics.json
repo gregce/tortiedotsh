@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-24T17:15:23.292Z",
-  "manifestSyncedAt": "2026-08-24T17:15:23.292Z",
+  "generatedAt": "2026-08-25T01:18:23.399Z",
+  "manifestSyncedAt": "2026-08-25T01:18:23.399Z",
   "generator": "takes/three/scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -2101,15 +2101,15 @@
       "apiUrl": "https://api.github.com/repos/gregce/tortie",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-23T22:39:41.012Z",
+      "refreshedAt": "2026-08-25T01:18:23.399Z",
       "stars": 4,
       "forks": 0,
       "openIssues": 6,
       "contributors": 1,
-      "repositorySizeKb": 51197,
+      "repositorySizeKb": 61757,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-23T22:35:37Z",
+      "pushedAt": "2026-08-25T01:12:41Z",
       "archived": false,
       "license": {
         "key": "apache-2.0",
@@ -2120,47 +2120,47 @@
       "languages": [
         {
           "name": "TypeScript",
-          "bytes": 15529053,
-          "percent": 81.29
+          "bytes": 16314922,
+          "percent": 81.07
         },
         {
           "name": "JavaScript",
-          "bytes": 3091009,
-          "percent": 16.18
+          "bytes": 3320250,
+          "percent": 16.5
         },
         {
           "name": "CSS",
-          "bytes": 480500,
-          "percent": 2.52
+          "bytes": 485947,
+          "percent": 2.41
         },
         {
           "name": "HTML",
           "bytes": 2882,
-          "percent": 0.02
+          "percent": 0.01
         }
       ],
       "latestRelease": {
-        "tagName": "v0.68.7",
-        "name": "Tortie 0.68.7",
-        "publishedAt": "2026-08-23T05:46:33Z",
-        "url": "https://github.com/gregce/tortie/releases/tag/v0.68.7",
+        "tagName": "v0.70.0",
+        "name": "Tortie 0.70.0",
+        "publishedAt": "2026-08-24T06:57:18Z",
+        "url": "https://github.com/gregce/tortie/releases/tag/v0.70.0",
         "prerelease": false
       },
       "latestTag": null,
-      "version": "v0.68.7",
-      "releaseDate": "2026-08-23T05:46:33Z",
+      "version": "v0.70.0",
+      "releaseDate": "2026-08-24T06:57:18Z",
       "releasePolicy": null,
       "loc": {
         "status": "measured",
-        "code": 336452,
-        "comments": 119269,
-        "blank": 47780,
-        "files": 1648,
-        "measuredAt": "2026-08-23T18:16:37.704Z",
-        "verifiedAt": "2026-08-23T22:39:41.012Z",
-        "measuredRef": "v0.68.7",
+        "code": 272429,
+        "comments": 122809,
+        "blank": 31953,
+        "files": 1584,
+        "measuredAt": "2026-08-25T01:18:23.302Z",
+        "verifiedAt": "2026-08-25T01:18:23.302Z",
+        "measuredRef": "v0.70.0",
         "refType": "stable-release-tag",
-        "commitSha": "91ea9a03bf321dbe3b5fd57529cd9655960bf976",
+        "commitSha": "27f64e30da950d27b45e7ead6c47bee2cbda141d",
         "tool": "cloc 2.06",
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
@@ -2171,27 +2171,27 @@
         {
           "type": "repository",
           "url": "https://api.github.com/repos/gregce/tortie",
-          "fetchedAt": "2026-08-23T22:39:40.598Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/gregce/tortie/releases/latest",
-          "fetchedAt": "2026-08-23T22:39:40.729Z"
+          "fetchedAt": "2026-08-25T01:18:19.394Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/gregce/tortie/languages",
-          "fetchedAt": "2026-08-23T22:39:40.750Z"
+          "fetchedAt": "2026-08-25T01:18:19.615Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/gregce/tortie/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-23T22:39:40.791Z"
+          "fetchedAt": "2026-08-25T01:18:19.693Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/gregce/tortie/releases?per_page=100",
+          "fetchedAt": "2026-08-25T01:18:19.814Z"
         },
         {
           "type": "loc-measurement",
-          "url": "https://github.com/gregce/tortie/tree/v0.68.7",
-          "fetchedAt": "2026-08-23T22:39:41.012Z"
+          "url": "https://github.com/gregce/tortie/tree/v0.70.0",
+          "fetchedAt": "2026-08-25T01:18:23.302Z"
         }
       ],
       "errors": []
@@ -13294,11 +13294,6 @@
           "fetchedAt": "2026-08-24T17:14:18.936Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md",
-          "fetchedAt": "2026-08-24T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent/languages",
           "fetchedAt": "2026-08-24T17:14:19.094Z"
@@ -13317,6 +13312,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/code-yeongyu/oh-my-openagent/tree/v4.19.4",
           "fetchedAt": "2026-08-24T17:15:22.894Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -14226,11 +14226,6 @@
           "fetchedAt": "2026-08-24T17:14:19.035Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
-          "fetchedAt": "2026-08-24T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/Arize-ai/phoenix/languages",
           "fetchedAt": "2026-08-24T17:14:19.231Z"
@@ -14249,6 +14244,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/Arize-ai/phoenix/tree/arize-phoenix-v20.3.0",
           "fetchedAt": "2026-08-24T17:14:29.132Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
         }
       ],
       "errors": []

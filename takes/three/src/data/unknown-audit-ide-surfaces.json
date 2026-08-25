@@ -1539,7 +1539,12 @@
           "productId": "tortie",
           "sourcesChecked": [
             "https://github.com/gregce/tortie",
-            "https://github.com/gregce/tortie#readme"
+            "https://github.com/gregce/tortie#supported-coding-agents",
+            "https://github.com/gregce/tortie#durable-agent-sessions",
+            "https://github.com/gregce/tortie#one-window-pane-for-your-projects",
+            "https://github.com/gregce/tortie#familiar-ide-features",
+            "https://github.com/gregce/tortie/blob/main/docs/DESIGN-SPEC.md",
+            "https://github.com/gregce/tortie#remote-machines-early"
           ],
           "cells": [
             {

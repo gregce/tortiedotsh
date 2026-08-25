@@ -17,12 +17,12 @@
   },
   "summary": {
     "products": 56,
-    "currentUnknownCells": 182,
-    "agentOrchestratorUnknownCells": 107,
+    "currentUnknownCells": 173,
+    "agentOrchestratorUnknownCells": 98,
     "codingAgentHarnessUnknownCells": 75,
     "suggestedClosures": 0,
     "implementedClosures": 8,
-    "remainUnknown": 182
+    "remainUnknown": 173
   },
   "categories": [
     {
@@ -60,58 +60,20 @@
           "productId": "chatgpt-desktop",
           "sourcesChecked": [
             "https://learn.chatgpt.com/docs/app",
-            "https://learn.chatgpt.com/"
+            "https://learn.chatgpt.com/",
+            "https://learn.chatgpt.com/docs/environments/git-worktrees",
+            "https://learn.chatgpt.com/docs/code-review",
+            "https://learn.chatgpt.com/docs/environments/cloud-environment",
+            "https://learn.chatgpt.com/docs/automations",
+            "https://learn.chatgpt.com/docs/environments/modes",
+            "https://learn.chatgpt.com/docs/notifications",
+            "https://learn.chatgpt.com/docs/long-running-work"
           ],
           "cells": [
-            {
-              "rowId": "orchestrator-isolated-workspaces",
-              "result": "remain-unknown",
-              "rationale": "ChatGPT projects and parallel work are documented, but neither source establishes checkout, filesystem, or environment isolation between them."
-            },
             {
               "rowId": "orchestrator-agent-handoff",
               "result": "remain-unknown",
               "rationale": "Choosing ChatGPT or Codex does not establish context-preserving transfer of an active task between distinct harnesses."
-            },
-            {
-              "rowId": "orchestrator-worktrees",
-              "result": "remain-unknown",
-              "rationale": "The app documentation does not claim that ChatGPT desktop creates or manages Git worktrees."
-            },
-            {
-              "rowId": "orchestrator-containers",
-              "result": "remain-unknown",
-              "rationale": "Long-running work is documented without an exact desktop claim of per-task container or VM isolation."
-            },
-            {
-              "rowId": "orchestrator-task-board",
-              "result": "remain-unknown",
-              "rationale": "Projects and parallel work are not documented as a task or Kanban board."
-            },
-            {
-              "rowId": "orchestrator-inline-review",
-              "result": "remain-unknown",
-              "rationale": "The overview establishes reviewable changes, but not line-level diff feedback inside the ChatGPT desktop SKU."
-            },
-            {
-              "rowId": "orchestrator-pr-lifecycle",
-              "result": "remain-unknown",
-              "rationale": "Reviewing and preparing changes to ship does not establish desktop-owned pull-request creation, update, or merge lifecycle."
-            },
-            {
-              "rowId": "orchestrator-remote-execution",
-              "result": "remain-unknown",
-              "rationale": "The sources do not distinguish local desktop execution from a documented remotely hosted worker contract for this SKU."
-            },
-            {
-              "rowId": "orchestrator-attention-signals",
-              "result": "remain-unknown",
-              "rationale": "No fleet-level blocked, waiting, failed, or completed attention signal is documented for parallel desktop work."
-            },
-            {
-              "rowId": "orchestrator-live-steering",
-              "result": "remain-unknown",
-              "rationale": "The app pages do not state that an operator can redirect an already active worker without restarting it."
             },
             {
               "rowId": "orchestrator-programmable",
