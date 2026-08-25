@@ -100,12 +100,18 @@ assert.match(
 assert.match(home, /"@type":"SoftwareApplication"/, "The homepage is missing SoftwareApplication structured data.");
 for (const art of [
   "03-one-project-window-wide",
-  "04-what-needs-you-square",
   "05-restore-conversation-square",
   "09-open-source-grove-wide",
 ]) {
   assert.ok(home.includes(`/illustrations/pixel-tortie/${art}.avif`), `The homepage is missing ${art}.avif.`);
   assert.ok(home.includes(`/illustrations/pixel-tortie/${art}.webp`), `The homepage is missing ${art}.webp.`);
+}
+for (const demoAsset of [
+  "/demos/notifications/poster.webp",
+  "/demos/notifications/notifications.webm",
+  "/demos/notifications/notifications.mp4",
+]) {
+  assert.ok(home.includes(demoAsset), `The homepage is missing the notification demo asset ${demoAsset}.`);
 }
 const routeMarks = [
   ["Compare", canonical, "11-compare-icon-square", ["12-docs-icon-square", "13-changelog-icon-square"]],

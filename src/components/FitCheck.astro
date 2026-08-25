@@ -340,23 +340,38 @@ const questions = [
     .fit-stage { min-height: 440px; }
   }
   @media (max-width: 640px) {
-    .fit-check { padding: 52px 0; }
-    .fit-intro { display: block; padding-bottom: 30px; }
-    .fit-intro h2 { max-width: none; font-size: 38px; }
-    .fit-intro > p:not(.fit-eyebrow, .fit-count) { max-width: 32ch; }
-    .fit-progress { margin-top: 32px; }
-    .fit-stage { min-height: 690px; }
-    .fit-question, .fit-result { top: 24px; left: 0; width: 100%; }
-    .fit-question { height: 324px; }
-    .fit-question h3 { height: 126px; }
-    .fit-choices button { height: 64px; }
-    .fit-map { top: 370px; height: 320px; }
-    .fit-mascot { left: 0; width: 72px; height: 72px; }
-    .fit-routes { left: -34px; width: calc(100% + 34px); }
-    .fit-destinations { top: 12px; right: 0; gap: 12px; width: 52%; }
-    .fit-destination { min-height: 70px; padding: 9px 12px; }
-    .fit-destination strong { font-size: 13px; }
-    .fit-destination span { font-size: 11px; }
-    .fit-helper { display: none; }
+    .fit-check { padding: 44px 0; }
+    .fit-intro { display: block; padding: 0 0 22px; }
+    .fit-intro h2 { max-width: 10ch; font-size: 36px; line-height: 1; }
+    .fit-intro > p:not(.fit-count) { max-width: 31ch; margin-top: 12px; font-size: 14px; line-height: 1.45; }
+    .fit-progress { display: inline-flex; width: 166px; margin-top: 22px; vertical-align: middle; }
+    .fit-progress i { margin-right: 20px; }
+    .fit-progress i:not(:last-child)::after { width: 24px; }
+    .fit-count { display: inline-block; margin: 0 0 0 10px; vertical-align: -3px; }
+
+    .fit-stage { min-height: 535px; }
+    .fit-question, .fit-result { top: 20px; left: 0; width: 100%; }
+    .fit-question { height: 260px; }
+    .fit-question h3 { height: 90px; margin-bottom: 12px; font-size: 22px; }
+    .fit-choices { gap: 8px; }
+    .fit-choices button { height: 56px; }
+    .fit-controls { margin-top: 12px; font-size: 14px; }
+
+    .fit-map { top: 315px; height: 220px; }
+    .fit-mascot { left: 0; bottom: 0; width: 58px; height: 58px; }
+    .fit-routes { left: 0; width: 75%; }
+    .fit-destinations { top: 8px; right: 0; gap: 6px; width: 48%; }
+    .fit-destination { min-height: 44px; padding: 5px 9px; }
+    .fit-destination strong { font-size: 12px; line-height: 1.15; }
+    .fit-destination span { margin-top: 1px; font-size: 10px; line-height: 1.25; }
+    .fit-helper { right: 0; bottom: 2px; display: block; max-width: 70%; font-size: 10px; text-align: right; }
+
+    .fit-result { max-width: 100%; }
+    .fit-result h3 { font-size: 28px; }
+    .fit-result > p:not(.fit-result-label) { max-width: 36ch; font-size: 14px; line-height: 1.45; }
+    .fit-result-actions { gap: 12px; margin-top: 18px; }
+    .fit-result-actions .btn { height: 40px; padding: 0 16px; font-size: 14px; }
+    .fit-result-actions > a:not(.btn) { font-size: 13px; }
+    .fit-result-controls { margin-top: 14px; font-size: 14px; }
   }
 </style>
