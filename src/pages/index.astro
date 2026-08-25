@@ -6,6 +6,7 @@
  * FIRST VIEWPORT: Compact navigation, a short left-aligned promise, one macOS action, and a broad product-film stage.
  * FORM: The user-selected Disposable Window concept, mock 04; wide film staging from seed a5903903.
  */
+import { TORTIE_MACOS_DOWNLOAD_URL, TORTIE_REPOSITORY_URL } from "../data/site-links";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
@@ -16,10 +17,31 @@ import Download from "../components/Download.astro";
 import Footer from "../components/Footer.astro";
 
 const description =
-  "Tortie is a macOS shell for coding agents. Sessions run on a private background server that outlives the window, so quitting the app never stops the work.";
+  "A calm agent multiplexer with familiar IDE features. Keep coding-agent sessions across projects in one window, even after Tortie quits.";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Tortie",
+  url: "https://tortie.sh/",
+  description,
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "macOS 15.7.9 or later",
+  softwareRequirements: "Apple silicon Mac running macOS 15.7.9 or later",
+  downloadUrl: TORTIE_MACOS_DOWNLOAD_URL,
+  sameAs: TORTIE_REPOSITORY_URL,
+  license: "https://www.apache.org/licenses/LICENSE-2.0",
+  isAccessibleForFree: true,
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  image: "https://tortie.sh/og/tortie-og.png",
+};
 ---
 
-<BaseLayout title="Tortie" description={description} canonicalPath="/">
+<BaseLayout title="Tortie | One window for every coding agent" description={description} canonicalPath="/">
+    <Fragment slot="head"><script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script></Fragment>
     <Nav overlay />
     <main>
       <Hero />

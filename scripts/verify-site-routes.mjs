@@ -13,6 +13,7 @@ const pages = await Promise.all(files.map(async (file) => ({
 
 const sitePages = pages.filter(({ html }) => html.includes('aria-label="Primary"'));
 const directDownloadUrl = "https://github.com/gregce/tortie/releases/latest/download/Tortie-arm64.dmg";
+const socialImageUrl = "https://tortie.sh/og/tortie-og.png";
 assert.ok(sitePages.length >= 20, `Expected the shared header on at least 20 pages; found ${sitePages.length}.`);
 
 for (const { file, html } of sitePages) {
@@ -46,6 +47,19 @@ for (const { file, html } of sitePages) {
     `${file} does not use the permanent direct macOS download.`,
   );
   assert.ok(html.includes("<vercel-analytics"), `${file} is missing Vercel Web Analytics.`);
+  assert.match(html, /<meta name="description" content="[^"]+"/, `${file} is missing its search description.`);
+  assert.match(html, /<meta property="og:site_name" content="Tortie"/, `${file} is missing the Tortie social identity.`);
+  assert.ok(
+    html.includes(`<meta property="og:image" content="${socialImageUrl}"`),
+    `${file} is missing the canonical Tortie social image.`,
+  );
+  assert.match(html, /<meta property="og:image:alt" content="[^"]+"/, `${file} is missing social image alt text.`);
+  assert.match(html, /<meta name="twitter:card" content="summary_large_image"/, `${file} is missing its large Twitter card.`);
+  assert.ok(
+    html.includes(`<meta name="twitter:image" content="${socialImageUrl}"`),
+    `${file} is missing the canonical Twitter image.`,
+  );
+  assert.match(html, /<link rel="canonical" href="https:\/\/tortie\.sh\//, `${file} is missing its production canonical URL.`);
 }
 
 const readPage = (path) => readFile(new URL(path, dist), "utf8");
@@ -65,6 +79,13 @@ for (const [name, html] of [["comparison index", compareIndex], ["legacy agent I
   assert.match(html, /name="robots" content="noindex"/, `${name} redirect can be indexed.`);
 }
 
+assert.match(home, /<title>Tortie \| One window for every coding agent<\/title>/);
+assert.match(
+  home,
+  /A calm agent multiplexer with familiar IDE features\. Keep coding-agent sessions across projects in one window, even after Tortie quits\./,
+  "The homepage metadata is missing the concise product position.",
+);
+assert.match(home, /"@type":"SoftwareApplication"/, "The homepage is missing SoftwareApplication structured data.");
 assert.match(
   home,
   /A calm agent multiplexer with familiar IDE features\. Every project and coding-agent session lives in one window, but the work keeps running outside it\./,
