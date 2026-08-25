@@ -77,6 +77,10 @@ const { currentPath, current = "docs" } = Astro.props;
             </section>
           ))}
         </nav>
+        <picture class="docs-sidebar-mascot" aria-hidden="true">
+          <source srcset="/illustrations/pixel-tortie/10-mascot-accent-square.avif" type="image/avif" />
+          <img src="/illustrations/pixel-tortie/10-mascot-accent-square.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async" />
+        </picture>
       </div>
     </details>
   </aside>

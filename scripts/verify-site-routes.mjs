@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile, readdir } from "node:fs/promises";
+import { readFile, readdir, stat } from "node:fs/promises";
 import { join } from "node:path";
 
 const dist = new URL("../dist/", import.meta.url);
@@ -10,6 +10,15 @@ const pages = await Promise.all(files.map(async (file) => ({
   file,
   html: await readFile(join(dist.pathname, file), "utf8"),
 })));
+
+const pixelArtDirectory = new URL("../public/illustrations/pixel-tortie/", import.meta.url);
+const pixelArtFiles = (await readdir(pixelArtDirectory)).sort();
+assert.equal(pixelArtFiles.filter((file) => file.endsWith(".avif")).length, 10, "Expected ten AVIF Pixel Tortie assets.");
+assert.equal(pixelArtFiles.filter((file) => file.endsWith(".webp")).length, 10, "Expected ten WebP Pixel Tortie fallbacks.");
+for (const file of pixelArtFiles) {
+  const asset = await stat(new URL(file, pixelArtDirectory));
+  assert.ok(asset.size < 500 * 1024, `${file} is too large for the web at ${asset.size} bytes.`);
+}
 
 const sitePages = pages.filter(({ html }) => html.includes('aria-label="Primary"'));
 const directDownloadUrl = "https://github.com/gregce/tortie/releases/latest/download/Tortie-arm64.dmg";
@@ -63,11 +72,12 @@ for (const { file, html } of sitePages) {
 }
 
 const readPage = (path) => readFile(new URL(path, dist), "utf8");
-const [canonical, compareIndex, legacy, home, comparisonScript, comparisonCss] = await Promise.all([
+const [canonical, compareIndex, legacy, home, docsHome, comparisonScript, comparisonCss] = await Promise.all([
   readPage("compare/agent-multiplexers/index.html"),
   readPage("compare/index.html"),
   readPage("compare/agent-ides/index.html"),
   readPage("index.html"),
+  readPage("docs/index.html"),
   readFile(new URL("../src/scripts/comparison.ts", import.meta.url), "utf8"),
   readFile(new URL("../src/styles/comparison.css", import.meta.url), "utf8"),
 ]);
@@ -86,6 +96,12 @@ assert.match(
   "The homepage metadata is missing the concise product position.",
 );
 assert.match(home, /"@type":"SoftwareApplication"/, "The homepage is missing SoftwareApplication structured data.");
+for (const art of ["03-one-project-window-wide", "04-what-needs-you-square", "05-restore-conversation-square", "09-open-source-grove-wide"]) {
+  assert.ok(home.includes(`/illustrations/pixel-tortie/${art}.avif`), `The homepage is missing ${art}.avif.`);
+  assert.ok(home.includes(`/illustrations/pixel-tortie/${art}.webp`), `The homepage is missing ${art}.webp.`);
+}
+assert.ok(docsHome.includes("/illustrations/pixel-tortie/10-mascot-accent-square.avif"), "The docs rail is missing its small Pixel Tortie accent.");
+assert.doesNotMatch(home + docsHome, /\/illustrations\/pixel-tortie\/[^\"']+\.png/, "A full-resolution Pixel Tortie master is being served to visitors.");
 assert.match(
   home,
   /A calm agent multiplexer with familiar IDE features\. Every project and coding-agent session lives in one window, but the work keeps running outside it\./,
@@ -121,4 +137,4 @@ assert.match(
   "Fullscreen and filter actions are not anchored to persistent comparison state.",
 );
 
-console.log(`Site routes verified: ${sitePages.length} shared headers with GitHub stars, direct downloads, and Vercel Analytics; atomic navigation, canonical comparison redirects, hero copy, responsive product still, stable closing actions, and persistent comparison controls.`);
+console.log(`Site routes verified: ${sitePages.length} shared headers with GitHub stars, direct downloads, and Vercel Analytics; 10 responsive Pixel Tortie illustrations; atomic navigation, canonical comparison redirects, hero copy, stable closing actions, and persistent comparison controls.`);
