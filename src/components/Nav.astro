@@ -13,6 +13,13 @@ interface Props {
 }
 
 const { current, overlay = false, sectionLabel } = Astro.props;
+const sectionMark = current === "compare"
+  ? "11-compare-icon-square"
+  : current === "docs"
+    ? "12-docs-icon-square"
+    : current === "changelog"
+      ? "13-changelog-icon-square"
+      : null;
 const tortieMetrics = openSourceMetrics.projects.find((project) => project.id === "tortie");
 const githubStars = typeof tortieMetrics?.stars === "number" ? tortieMetrics.stars : null;
 const githubStarsLabel = githubStars === null
@@ -29,7 +36,14 @@ const githubAriaLabel = githubStars === null
 <header class:list={["nav", { "nav-overlay": overlay }]}>
   <div class="container nav-inner">
     <a class="lockup nav-lockup" href="/" aria-label="Tortie.sh, home">
-      <img src="/brand/tortie-mark-560.webp" alt="" width="26" height="26" />
+      {sectionMark ? (
+        <picture class="nav-mark nav-section-mark" aria-hidden="true">
+          <source srcset={`/illustrations/pixel-tortie/${sectionMark}.avif`} type="image/avif" />
+          <img src={`/illustrations/pixel-tortie/${sectionMark}.webp`} alt="" width="384" height="384" decoding="async" />
+        </picture>
+      ) : (
+        <img class="nav-mark nav-default-mark" src="/brand/tortie-mark-560.webp" alt="" width="26" height="26" />
+      )}
       <span class="wordmark" aria-hidden="true"
         ><span class="wm-name">TORTIE</span><span class="wm-suffix">.sh</span></span
       >
@@ -102,10 +116,24 @@ const githubAriaLabel = githubStars === null
     font-size: 15px;
   }
 
-  .nav-lockup img {
+  .nav-mark {
     display: block;
     width: 24px;
     height: 24px;
+    flex: none;
+  }
+
+  .nav-mark img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .nav-section-mark {
+    width: 32px;
+    height: 32px;
+    margin: -4px;
   }
 
   .nav-context {
@@ -167,7 +195,7 @@ const githubAriaLabel = githubStars === null
     height: 56px;
   }
 
-  .nav-overlay .nav-lockup img {
+  .nav-overlay .nav-mark {
     width: 24px;
     height: 24px;
   }

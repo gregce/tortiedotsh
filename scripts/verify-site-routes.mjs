@@ -72,13 +72,14 @@ for (const { file, html } of sitePages) {
 }
 
 const readPage = (path) => readFile(new URL(path, dist), "utf8");
-const [canonical, compareIndex, legacy, home, docsHome, whatTortieIs, comparisonScript, comparisonCss] = await Promise.all([
+const [canonical, compareIndex, legacy, home, docsHome, whatTortieIs, changelogPage, comparisonScript, comparisonCss] = await Promise.all([
   readPage("compare/agent-multiplexers/index.html"),
   readPage("compare/index.html"),
   readPage("compare/agent-ides/index.html"),
   readPage("index.html"),
   readPage("docs/index.html"),
   readPage("docs/what-tortie-is/index.html"),
+  readPage("docs/changelog/index.html"),
   readFile(new URL("../src/scripts/comparison.ts", import.meta.url), "utf8"),
   readFile(new URL("../src/styles/comparison.css", import.meta.url), "utf8"),
 ]);
@@ -102,13 +103,24 @@ for (const art of [
   "04-what-needs-you-square",
   "05-restore-conversation-square",
   "09-open-source-grove-wide",
-  "11-compare-icon-square",
-  "12-docs-icon-square",
-  "13-changelog-icon-square",
 ]) {
   assert.ok(home.includes(`/illustrations/pixel-tortie/${art}.avif`), `The homepage is missing ${art}.avif.`);
   assert.ok(home.includes(`/illustrations/pixel-tortie/${art}.webp`), `The homepage is missing ${art}.webp.`);
 }
+const routeMarks = [
+  ["Compare", canonical, "11-compare-icon-square", ["12-docs-icon-square", "13-changelog-icon-square"]],
+  ["Docs", docsHome, "12-docs-icon-square", ["11-compare-icon-square", "13-changelog-icon-square"]],
+  ["Changelog", changelogPage, "13-changelog-icon-square", ["11-compare-icon-square", "12-docs-icon-square"]],
+];
+for (const [route, html, expectedMark, unexpectedMarks] of routeMarks) {
+  assert.ok(html.includes(`/illustrations/pixel-tortie/${expectedMark}.avif`), `${route} is missing its route-specific AVIF nav mark.`);
+  assert.ok(html.includes(`/illustrations/pixel-tortie/${expectedMark}.webp`), `${route} is missing its route-specific WebP nav mark.`);
+  for (const unexpectedMark of unexpectedMarks) {
+    assert.ok(!html.includes(unexpectedMark), `${route} includes the ${unexpectedMark} mark from another route.`);
+  }
+}
+assert.match(home, /class="nav-mark nav-default-mark"/, "The homepage no longer uses the standard Tortie mark.");
+assert.doesNotMatch(home, /(?:11-compare|12-docs|13-changelog)-icon-square/, "Route-specific marks are still displayed in the homepage destination cards.");
 assert.ok(whatTortieIs.includes("/illustrations/pixel-tortie/10-mascot-accent-square.avif"), "Behind the name is missing its Pixel Tortie illustration.");
 assert.doesNotMatch(docsHome + whatTortieIs, /docs-sidebar-mascot/, "The Pixel Tortie accent is still trapped in the docs navigation rail.");
 assert.doesNotMatch(home + docsHome, /\/illustrations\/pixel-tortie\/[^\"']+\.png/, "A full-resolution Pixel Tortie master is being served to visitors.");
@@ -123,6 +135,7 @@ assert.match(home, /class="download-actions"/, "The homepage close is missing it
 assert.match(home, /Free under the Apache 2\.0 license and built in public\./, "The open-source close is missing its concise license copy.");
 assert.doesNotMatch(home, /Star on GitHub/, "The open-source close still contains the redundant GitHub button.");
 assert.match(home, /class="footer-github"[^>]*aria-label="Tortie on GitHub, [\d,]+ stars?"/, "The footer is missing the GitHub star count.");
+assert.doesNotMatch(home, /footer-lockup/, "The redundant Tortie lockup is still present in the footer.");
 assert.doesNotMatch(home, /grid-template-areas:"copy blank"/, "The homepage close still uses the fragile named-area layout.");
 assert.ok(
   home.split('href="' + directDownloadUrl + '"').length - 1 >= 3,

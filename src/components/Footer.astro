@@ -20,12 +20,6 @@ const githubAriaLabel = githubStars === null
 
 <footer class="footer">
   <div class="container footer-inner">
-    <a class="lockup footer-lockup" href="/" aria-label="Tortie.sh, home">
-      <img src="/brand/tortie-mark-560.webp" alt="" width="22" height="22" />
-      <span class="wordmark" aria-hidden="true"
-        ><span class="wm-name">TORTIE</span><span class="wm-suffix">.sh</span></span
-      >
-    </a>
     <nav class="footer-links" aria-label="Footer">
       <a href="/compare/agent-multiplexers/">Compare</a>
       <a href="/docs/">Docs</a>
@@ -50,21 +44,9 @@ const githubAriaLabel = githubStars === null
   .footer-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: var(--space-6);
     flex-wrap: wrap;
-  }
-
-  .footer-lockup {
-    gap: 7px;
-  }
-
-  .footer-lockup .wordmark {
-    font-size: 14px;
-  }
-
-  .footer-lockup img {
-    display: block;
   }
 
   .footer-links {
@@ -95,7 +77,7 @@ const githubAriaLabel = githubStars === null
   }
 
   @media (max-width: 560px) {
-    .footer-inner { align-items: flex-start; flex-direction: column; }
+    .footer-inner { align-items: flex-start; }
     .footer-links { display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: var(--space-5) var(--space-9); }
   }
 </style>
