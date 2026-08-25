@@ -211,7 +211,7 @@ The GitLab adapter uses the canonical GitLab project API. It uses public GraphQL
 
 GitLab restricts forge-reported repository-size statistics to project members with Reporter access or higher. A public upstream where that membership is unavailable uses a dated `forge-restricted` policy. The matrix displays `Not publicly exposed` instead of a blank or invented checkout size.
 
-An optional `GITLAB_TOKEN` can expose more fields when its account has suitable upstream access. The weekly job does not require a role that the site owner cannot obtain.
+An optional `GITLAB_TOKEN` can expose more fields when its account has suitable upstream access. The daily job does not require a role that the site owner cannot obtain.
 
 ## Source-only CLOC
 
@@ -302,7 +302,7 @@ The monitor detects change. It does not decide what the new wording means.
 
 ### Review a changed source
 
-When the weekly job reports a changed URL:
+When the daily job reports a changed URL:
 
 1. Open the exact first-party source.
 2. Find every catalog field listed in `usedBy`.
@@ -342,7 +342,7 @@ It does not yet discover:
 - a moved page without a redirect
 - a claim documented only in an unmonitored issue or changelog
 
-The exact URLs listed as `sourcesChecked` in Unknown ledgers are also not all fingerprinted today. The ledgers prove that research happened, but the weekly monitor does not yet re-open every negative search surface.
+The exact URLs listed as `sourcesChecked` in Unknown ledgers are also not all fingerprinted today. The ledgers prove that research happened, but the daily monitor does not yet re-open every negative search surface.
 
 The planned discovery service is specified later in this guide.
 
@@ -448,9 +448,9 @@ npm run build
 
 The build writes 11 routes to `takes/three/dist`. It makes no forge or vendor requests.
 
-## Weekly GitHub Actions job
+## Daily GitHub Actions job
 
-The workflow in [`.github/workflows/refresh-open-source-metrics.yml`](../../.github/workflows/refresh-open-source-metrics.yml) runs every Monday at 07:17 UTC. You can also start it with `workflow_dispatch` from the Actions interface.
+The workflow in [`.github/workflows/refresh-open-source-metrics.yml`](../../.github/workflows/refresh-open-source-metrics.yml) runs every day at 07:17 UTC. You can also start it with `workflow_dispatch` from the Actions interface.
 
 It performs these steps in order:
 
@@ -507,7 +507,7 @@ Publish this directory:
 takes/three/dist
 ```
 
-The hosting provider should rebuild after every default-branch commit. The weekly bot commit then becomes the deployment trigger.
+The hosting provider should rebuild after every default-branch commit. The daily bot commit then becomes the deployment trigger.
 
 ### Branch protection choices
 
@@ -538,7 +538,7 @@ The collectors only make read requests to product repositories and documentation
 
 ## Operator runbooks
 
-### Confirm a healthy weekly refresh
+### Confirm a healthy daily refresh
 
 1. Open the latest `Refresh comparison data` Actions run.
 2. Confirm that repository refresh completed without partial or stale records.
@@ -724,9 +724,9 @@ Run discovery monthly and open a pull request containing:
 - unresolved identity conflicts
 - retrieval failures
 
-Keep semantic changes out of the weekly automatic snapshot commit. A reviewer should approve them before they change the catalog.
+Keep semantic changes out of the daily automatic snapshot commit. A reviewer should approve them before they change the catalog.
 
-The discovery workflow should upload its crawl report as a workflow artifact even when validation fails. This gives reviewers a durable change report, unlike the current weekly runner where an uncommitted failed refresh exists only for the life of that runner and its logs.
+The discovery workflow should upload its crawl report as a workflow artifact even when validation fails. This gives reviewers a durable change report, unlike the current daily runner where an uncommitted failed refresh exists only for the life of that runner and its logs.
 
 ### Unknown-source monitoring
 
@@ -763,7 +763,7 @@ Use this operating cadence:
 
 | Frequency | Work |
 | --- | --- |
-| weekly | automatic forge refresh, CLOC, known evidence fingerprints, validation and snapshot commit |
+| daily | automatic forge refresh, CLOC, known evidence fingerprints, validation and snapshot commit |
 | after a failed run | inspect and resolve the named project, source or freshness gate |
 | monthly | review changed and unreachable evidence, run documentation discovery when implemented |
 | quarterly | broader product discovery, taxonomy review and Unknown re-audit |
