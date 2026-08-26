@@ -2,6 +2,207 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.76.1",
+      "date": "2026-08-26",
+      "summary": "This release is about the file tree and the menus. You can now bring files into a project from Finder and take them back out again, every menu row carries an icon and says which key runs it, and a session will tell you which conversation it is and where that conversation lives on disk. Several things you reported along the way no longer go wrong.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "You can now drag a file, several files or a whole folder from Finder onto the file tree and it lands inside the folder row you aimed at, or at the project root over the empty space below the rows. The original stays where it was because this is a copy, a name that already exists asks you first and names every collision at once, and Replace moves the displaced entry to the Trash so it is recoverable. Dragging a folder onto the file tree now brings it into the project instead of opening a new project tab, though a folder dropped anywhere else in the window still opens one, and a project on another machine refuses the drop with a sentence rather than appearing to work",
+              "commits": [
+                {
+                  "hash": "29ff027",
+                  "url": "https://github.com/gregce/tortie/commit/29ff027"
+                }
+              ]
+            },
+            {
+              "text": "Hold Option and drag a row out of the file tree to hand that file to Finder, or to any other app that takes a file",
+              "commits": [
+                {
+                  "hash": "29ff027",
+                  "url": "https://github.com/gregce/tortie/commit/29ff027"
+                }
+              ]
+            },
+            {
+              "text": "A session's actions menu now shows the agent's own conversation id, which is what resume takes, the file that agent keeps the conversation in, and Tortie's own id for the session last. Each one shows its value as well as copying it, so the menu is a place to read an identifier rather than only to copy one, though a shell session has none of these and Factory Droid CLI keeps no record to point at",
+              "commits": [
+                {
+                  "hash": "4b6247d",
+                  "url": "https://github.com/gregce/tortie/commit/4b6247d"
+                }
+              ]
+            },
+            {
+              "text": "Every row in a right click menu now carries the icon its own part of the product already uses",
+              "commits": [
+                {
+                  "hash": "c25d16d",
+                  "url": "https://github.com/gregce/tortie/commit/c25d16d"
+                }
+              ]
+            },
+            {
+              "text": "The menu bar along the top of the screen and the menu behind the cat in the status bar now carry those same icons, and every row that has a keyboard shortcut says what it is",
+              "commits": [
+                {
+                  "hash": "3c3ea84",
+                  "url": "https://github.com/gregce/tortie/commit/3c3ea84"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "A file you drop into the tree now appears immediately, and the Refresh button at the top of the Explorer re-reads the folder every time you press it",
+              "commits": [
+                {
+                  "hash": "f1562d3",
+                  "url": "https://github.com/gregce/tortie/commit/f1562d3"
+                }
+              ]
+            },
+            {
+              "text": "Running a build or a test suite in a project no longer floods Tortie with dropped file events, and when the system does drop a batch Tortie re-reads what it missed instead of quietly showing you a stale tree. A folder the repository ignores is no longer watched at all, so a change inside one will not appear until something else in the project changes",
+              "commits": [
+                {
+                  "hash": "ef1c497",
+                  "url": "https://github.com/gregce/tortie/commit/ef1c497"
+                }
+              ]
+            },
+            {
+              "text": "The icons down the left edge now light up under the pointer, so you can tell what you are about to press",
+              "commits": [
+                {
+                  "hash": "33f5593",
+                  "url": "https://github.com/gregce/tortie/commit/33f5593"
+                }
+              ]
+            },
+            {
+              "text": "Narrowing the session list no longer pushes its add button and chevron off the edge, because the word SESSIONS shortens instead, and at the narrowest width it goes entirely",
+              "commits": [
+                {
+                  "hash": "33f5593",
+                  "url": "https://github.com/gregce/tortie/commit/33f5593"
+                }
+              ]
+            },
+            {
+              "text": "The confirm sheet for installing a skill is now about twice as wide, so the command it is asking you to approve reads on one line instead of three",
+              "commits": [
+                {
+                  "hash": "33f5593",
+                  "url": "https://github.com/gregce/tortie/commit/33f5593"
+                }
+              ]
+            },
+            {
+              "text": "The empty state is quieter, and the Explorer, Source Control and Context views now share one set of text sizes instead of each choosing its own",
+              "commits": [
+                {
+                  "hash": "fa590ea",
+                  "url": "https://github.com/gregce/tortie/commit/fa590ea"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "0.73.0",
+      "date": "2026-08-25",
+      "summary": "This release is about picking work back up and reading it back. An agent that ends inside a surviving shell can be resumed on the spot, and every session's one line summary now keeps a history you can open from its row in the project view. Quitting and cloning a project to a remote machine both got safer along the way.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "End an agent by hand and, if its shell survives, Resume appears on that session's row within about a second, and pressing it types the resume command onto your prompt for you to send, re-adopting the session only when the agent confirms it is the same conversation. Nothing here survives a restart of Tortie, a restored session never shows the verb, Claude Code and Antigravity CLI confirm unaided, every other agent confirms once you send the pasted command, though Pi can never be confirmed and Factory Droid CLI never shows Resume at all",
+              "commits": [
+                {
+                  "hash": "b4f0fc9",
+                  "url": "https://github.com/gregce/tortie/commit/b4f0fc9"
+                }
+              ]
+            },
+            {
+              "text": "You can now press story on a session's row in the project view and read every version of that session's one line summary, newest first, each with its time, and pressing a version shows the turns it covered. Repeated lines collapse into one row, a change of model is named where it happened, and a session whose line never changed shows just that one line, though until you choose a model for the one line summaries the page says there is no story to read",
+              "commits": [
+                {
+                  "hash": "75a5298",
+                  "url": "https://github.com/gregce/tortie/commit/75a5298"
+                }
+              ]
+            },
+            {
+              "text": "The current release's installer is now always available at one download link that never changes, so a page can point at the latest version without naming it. The in-app updater is unaffected",
+              "commits": [
+                {
+                  "hash": "b2442f5",
+                  "url": "https://github.com/gregce/tortie/commit/b2442f5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "The story control is now the one word story at the far right of each session's row in the project view, sitting in one shared column, and it opens that session's timeline in place, one session at a time with no rolled up story for the project. The conversation view no longer carries the story control, so it is purely the word for word record",
+              "commits": [
+                {
+                  "hash": "8443052",
+                  "url": "https://github.com/gregce/tortie/commit/8443052"
+                }
+              ]
+            },
+            {
+              "text": "Your asks in Catch Me Up now carry a light accent glow so your eye finds them among the answers, and the top band's collapse and position controls sit beside the traffic lights while the add button stays at the end of the tabs",
+              "commits": [
+                {
+                  "hash": "7d7c071",
+                  "url": "https://github.com/gregce/tortie/commit/7d7c071"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Once quit starts, no request can reach files, git or your machines mid teardown, so quitting can no longer race a write",
+              "commits": [
+                {
+                  "hash": "f711dac",
+                  "url": "https://github.com/gregce/tortie/commit/f711dac"
+                }
+              ]
+            },
+            {
+              "text": "A clone to a remote machine that cannot record itself durably now refuses to start instead of starting untracked, and a clone cut off partway through the copy is reported once at the next launch",
+              "commits": [
+                {
+                  "hash": "1508c6c",
+                  "url": "https://github.com/gregce/tortie/commit/1508c6c"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.70.0",
       "date": "2026-08-24",
       "summary": "This release adds Catch Me Up, a page that shows the conversation you have been having with every session in a project, taken word for word from each agent's own log. One keyboard chord opens it, and most of the rest of the release makes that page better. A small model can also keep the project view's one line per session current, and that stays off until you pick an agent for it.",
