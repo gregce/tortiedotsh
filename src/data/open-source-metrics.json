@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-26T20:23:00.145Z",
-  "manifestSyncedAt": "2026-08-26T20:23:00.145Z",
+  "generatedAt": "2026-08-26T20:25:12.371Z",
+  "manifestSyncedAt": "2026-08-26T20:25:12.371Z",
   "generator": "scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -17,15 +17,15 @@
       "apiUrl": "https://api.github.com/repos/microsoft/vscode",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:12:05.951Z",
-      "stars": 189624,
+      "refreshedAt": "2026-08-26T20:24:38.595Z",
+      "stars": 189625,
       "forks": 41833,
-      "openIssues": 20142,
+      "openIssues": 20141,
       "contributors": 3208,
       "repositorySizeKb": 1384434,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:10:14Z",
+      "pushedAt": "2026-08-26T20:21:55Z",
       "archived": false,
       "license": {
         "key": "mit",
@@ -36,12 +36,12 @@
       "languages": [
         {
           "name": "TypeScript",
-          "bytes": 156314306,
-          "percent": 95.98
+          "bytes": 156496088,
+          "percent": 95.99
         },
         {
           "name": "CSS",
-          "bytes": 2604443,
+          "bytes": 2604695,
           "percent": 1.6
         },
         {
@@ -300,29 +300,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/microsoft/vscode/tree/1.135.0",
+          "fetchedAt": "2026-08-26T20:12:05.314Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/microsoft/vscode",
-          "fetchedAt": "2026-08-26T20:10:52.013Z"
+          "fetchedAt": "2026-08-26T20:24:38.021Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/microsoft/vscode/languages",
-          "fetchedAt": "2026-08-26T20:10:52.171Z"
+          "fetchedAt": "2026-08-26T20:24:38.223Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/microsoft/vscode/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:10:52.279Z"
+          "fetchedAt": "2026-08-26T20:24:38.431Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/microsoft/vscode/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:10:52.494Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/microsoft/vscode/tree/1.135.0",
-          "fetchedAt": "2026-08-26T20:12:05.314Z"
+          "fetchedAt": "2026-08-26T20:24:38.595Z"
         }
       ],
       "errors": []
@@ -340,7 +340,7 @@
       "apiUrl": "https://api.github.com/repos/eclipse-theia/theia-ide",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:10:53.766Z",
+      "refreshedAt": "2026-08-26T20:24:38.988Z",
       "stars": 606,
       "forks": 248,
       "openIssues": 115,
@@ -417,39 +417,39 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/eclipse-theia/theia-ide/tree/v1.74.100",
+          "fetchedAt": "2026-08-26T20:10:53.755Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/eclipse-theia/theia-ide",
-          "fetchedAt": "2026-08-26T20:10:51.998Z"
+          "fetchedAt": "2026-08-26T20:24:38.038Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/eclipse-theia/theia-ide/languages",
-          "fetchedAt": "2026-08-26T20:10:52.187Z"
+          "fetchedAt": "2026-08-26T20:24:38.236Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/eclipse-theia/theia-ide/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:10:52.235Z"
+          "fetchedAt": "2026-08-26T20:24:38.361Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/eclipse-theia/theia-ide/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:10:52.271Z"
+          "fetchedAt": "2026-08-26T20:24:38.463Z"
         },
         {
           "type": "latest-tag",
           "url": "https://api.github.com/repos/eclipse-theia/theia-ide/tags?per_page=1",
-          "fetchedAt": "2026-08-26T20:10:52.457Z"
+          "fetchedAt": "2026-08-26T20:24:38.688Z"
         },
         {
           "type": "tag-commit",
           "url": "https://api.github.com/repos/eclipse-theia/theia-ide/commits/bcde42be66c9be5ae8c788f0ee4c4d5b39596099",
-          "fetchedAt": "2026-08-26T20:10:52.616Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/eclipse-theia/theia-ide/tree/v1.74.100",
-          "fetchedAt": "2026-08-26T20:10:53.755Z"
+          "fetchedAt": "2026-08-26T20:24:38.988Z"
         }
       ],
       "errors": []
@@ -467,15 +467,15 @@
       "apiUrl": "https://api.github.com/repos/JetBrains/intellij-community",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:14:49.761Z",
+      "refreshedAt": "2026-08-26T20:24:38.413Z",
       "stars": 20488,
       "forks": 6035,
       "openIssues": 155,
       "contributors": 2595,
-      "repositorySizeKb": 5883358,
+      "repositorySizeKb": 5886081,
       "repositorySizePolicy": null,
       "defaultBranch": "master",
-      "pushedAt": "2026-08-26T20:05:50Z",
+      "pushedAt": "2026-08-26T20:23:35Z",
       "archived": false,
       "license": {
         "key": "manifest-verified-mixed",
@@ -808,9 +808,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/JetBrains/intellij-community/tree/master",
+          "fetchedAt": "2026-08-26T20:14:39.337Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/JetBrains/intellij-community",
-          "fetchedAt": "2026-08-26T20:10:51.995Z"
+          "fetchedAt": "2026-08-26T20:24:38.014Z"
         },
         {
           "type": "license-override",
@@ -825,17 +830,12 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/JetBrains/intellij-community/languages",
-          "fetchedAt": "2026-08-26T20:10:52.170Z"
+          "fetchedAt": "2026-08-26T20:24:38.220Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/JetBrains/intellij-community/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:10:58.449Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/JetBrains/intellij-community/tree/master",
-          "fetchedAt": "2026-08-26T20:14:39.337Z"
+          "fetchedAt": "2026-08-26T20:24:38.412Z"
         }
       ],
       "errors": []
@@ -853,7 +853,7 @@
       "apiUrl": "https://api.github.com/repos/posit-dev/positron",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:11:52.009Z",
+      "refreshedAt": "2026-08-26T20:24:39.247Z",
       "stars": 4236,
       "forks": 171,
       "openIssues": 1831,
@@ -1156,9 +1156,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/posit-dev/positron/tree/2026.08.2-4",
+          "fetchedAt": "2026-08-26T20:11:51.198Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/posit-dev/positron",
-          "fetchedAt": "2026-08-26T20:10:53.987Z"
+          "fetchedAt": "2026-08-26T20:24:38.714Z"
         },
         {
           "type": "license-override",
@@ -1168,22 +1173,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/posit-dev/positron/languages",
-          "fetchedAt": "2026-08-26T20:10:54.109Z"
+          "fetchedAt": "2026-08-26T20:24:38.915Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/posit-dev/positron/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:10:54.242Z"
+          "fetchedAt": "2026-08-26T20:24:38.917Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/posit-dev/positron/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:10:54.418Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/posit-dev/positron/tree/2026.08.2-4",
-          "fetchedAt": "2026-08-26T20:11:51.198Z"
+          "fetchedAt": "2026-08-26T20:24:39.246Z"
         }
       ],
       "errors": []
@@ -1201,7 +1201,7 @@
       "apiUrl": "https://api.github.com/repos/onlook-dev/onlook",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:11:58.364Z",
+      "refreshedAt": "2026-08-26T20:24:40.034Z",
       "stars": 26561,
       "forks": 2079,
       "openIssues": 379,
@@ -1279,29 +1279,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/onlook-dev/onlook/tree/v0.2.32",
+          "fetchedAt": "2026-08-26T20:11:58.304Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/onlook-dev/onlook",
-          "fetchedAt": "2026-08-26T20:11:52.258Z"
+          "fetchedAt": "2026-08-26T20:24:38.841Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/onlook-dev/onlook/languages",
-          "fetchedAt": "2026-08-26T20:11:52.399Z"
+          "fetchedAt": "2026-08-26T20:24:39.042Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/onlook-dev/onlook/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:11:52.485Z"
+          "fetchedAt": "2026-08-26T20:24:39.138Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/onlook-dev/onlook/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:11:53.401Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/onlook-dev/onlook/tree/v0.2.32",
-          "fetchedAt": "2026-08-26T20:11:58.304Z"
+          "fetchedAt": "2026-08-26T20:24:40.034Z"
         }
       ],
       "errors": []
@@ -1319,7 +1319,7 @@
       "apiUrl": "https://api.github.com/repos/zed-industries/zed",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:12:23.301Z",
+      "refreshedAt": "2026-08-26T20:24:40.582Z",
       "stars": 89266,
       "forks": 10267,
       "openIssues": 3264,
@@ -1483,9 +1483,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/zed-industries/zed/tree/v1.17.2",
+          "fetchedAt": "2026-08-26T20:12:23.173Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/zed-industries/zed",
-          "fetchedAt": "2026-08-26T20:11:58.591Z"
+          "fetchedAt": "2026-08-26T20:24:39.254Z"
         },
         {
           "type": "license-override",
@@ -1495,22 +1500,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/zed-industries/zed/languages",
-          "fetchedAt": "2026-08-26T20:11:58.760Z"
+          "fetchedAt": "2026-08-26T20:24:39.461Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/zed-industries/zed/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:11:58.858Z"
+          "fetchedAt": "2026-08-26T20:24:39.535Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/zed-industries/zed/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:11:59.779Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/zed-industries/zed/tree/v1.17.2",
-          "fetchedAt": "2026-08-26T20:12:23.173Z"
+          "fetchedAt": "2026-08-26T20:24:40.581Z"
         }
       ],
       "errors": []
@@ -1528,7 +1528,7 @@
       "apiUrl": "https://api.github.com/repos/lapce/lapce",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:12:09.734Z",
+      "refreshedAt": "2026-08-26T20:24:40.068Z",
       "stars": 38775,
       "forks": 1320,
       "openIssues": 897,
@@ -1606,29 +1606,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/lapce/lapce/tree/v0.4.6",
+          "fetchedAt": "2026-08-26T20:12:09.707Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/lapce/lapce",
-          "fetchedAt": "2026-08-26T20:12:06.252Z"
+          "fetchedAt": "2026-08-26T20:24:39.503Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/lapce/lapce/languages",
-          "fetchedAt": "2026-08-26T20:12:06.377Z"
+          "fetchedAt": "2026-08-26T20:24:39.708Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/lapce/lapce/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:12:06.483Z"
+          "fetchedAt": "2026-08-26T20:24:39.750Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/lapce/lapce/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:12:06.776Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/lapce/lapce/tree/v0.4.6",
-          "fetchedAt": "2026-08-26T20:12:09.707Z"
+          "fetchedAt": "2026-08-26T20:24:40.067Z"
         }
       ],
       "errors": []
@@ -1646,7 +1646,7 @@
       "apiUrl": "https://api.github.com/repos/helix-editor/helix",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:12:12.759Z",
+      "refreshedAt": "2026-08-26T20:24:40.723Z",
       "stars": 45941,
       "forks": 3699,
       "openIssues": 1625,
@@ -1739,29 +1739,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/helix-editor/helix/tree/25.07.1",
+          "fetchedAt": "2026-08-26T20:12:12.713Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/helix-editor/helix",
-          "fetchedAt": "2026-08-26T20:12:09.971Z"
+          "fetchedAt": "2026-08-26T20:24:40.304Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/helix-editor/helix/languages",
-          "fetchedAt": "2026-08-26T20:12:10.139Z"
+          "fetchedAt": "2026-08-26T20:24:40.465Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/helix-editor/helix/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:12:10.225Z"
+          "fetchedAt": "2026-08-26T20:24:40.563Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/helix-editor/helix/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:12:10.406Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/helix-editor/helix/tree/25.07.1",
-          "fetchedAt": "2026-08-26T20:12:12.713Z"
+          "fetchedAt": "2026-08-26T20:24:40.723Z"
         }
       ],
       "errors": []
@@ -1779,7 +1779,7 @@
       "apiUrl": "https://api.github.com/repos/voideditor/void",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:12:39.660Z",
+      "refreshedAt": "2026-08-26T20:24:41.040Z",
       "stars": 28825,
       "forks": 2637,
       "openIssues": 307,
@@ -2061,39 +2061,39 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/voideditor/void/tree/v1.3.4",
+          "fetchedAt": "2026-08-26T20:12:39.387Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/voideditor/void",
-          "fetchedAt": "2026-08-26T20:12:12.955Z"
+          "fetchedAt": "2026-08-26T20:24:40.341Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/voideditor/void/languages",
-          "fetchedAt": "2026-08-26T20:12:13.095Z"
+          "fetchedAt": "2026-08-26T20:24:40.541Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/voideditor/void/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:12:13.228Z"
+          "fetchedAt": "2026-08-26T20:24:40.591Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/voideditor/void/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:12:13.178Z"
+          "fetchedAt": "2026-08-26T20:24:40.613Z"
         },
         {
           "type": "latest-tag",
           "url": "https://api.github.com/repos/voideditor/void/tags?per_page=1",
-          "fetchedAt": "2026-08-26T20:12:13.296Z"
+          "fetchedAt": "2026-08-26T20:24:40.791Z"
         },
         {
           "type": "tag-commit",
           "url": "https://api.github.com/repos/voideditor/void/commits/34e3413dca8cf875faaa663e052027bbfc41c4e5",
-          "fetchedAt": "2026-08-26T20:12:13.428Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/voideditor/void/tree/v1.3.4",
-          "fetchedAt": "2026-08-26T20:12:39.387Z"
+          "fetchedAt": "2026-08-26T20:24:41.040Z"
         }
       ],
       "errors": []
@@ -2111,15 +2111,15 @@
       "apiUrl": "https://api.github.com/repos/gregce/tortie",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:12:32.563Z",
-      "stars": 15,
+      "refreshedAt": "2026-08-26T20:24:41.114Z",
+      "stars": 16,
       "forks": 1,
       "openIssues": 6,
       "contributors": 1,
       "repositorySizeKb": 55257,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T19:05:57Z",
+      "pushedAt": "2026-08-26T20:24:02Z",
       "archived": false,
       "license": {
         "key": "apache-2.0",
@@ -2184,29 +2184,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/gregce/tortie/tree/v0.76.1",
+          "fetchedAt": "2026-08-26T20:12:32.499Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/gregce/tortie",
-          "fetchedAt": "2026-08-26T20:12:23.539Z"
+          "fetchedAt": "2026-08-26T20:24:40.801Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/gregce/tortie/languages",
-          "fetchedAt": "2026-08-26T20:12:23.690Z"
+          "fetchedAt": "2026-08-26T20:24:40.998Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/gregce/tortie/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:12:23.698Z"
+          "fetchedAt": "2026-08-26T20:24:41.025Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/gregce/tortie/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:12:23.888Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/gregce/tortie/tree/v0.76.1",
-          "fetchedAt": "2026-08-26T20:12:32.499Z"
+          "fetchedAt": "2026-08-26T20:24:41.114Z"
         }
       ],
       "errors": []
@@ -2224,7 +2224,7 @@
       "apiUrl": "https://api.github.com/repos/0-AI-UG/cate",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:12:40.055Z",
+      "refreshedAt": "2026-08-26T20:24:42.154Z",
       "stars": 2092,
       "forks": 133,
       "openIssues": 11,
@@ -2302,29 +2302,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/0-AI-UG/cate/tree/v1.6.0",
+          "fetchedAt": "2026-08-26T20:12:40.028Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/0-AI-UG/cate",
-          "fetchedAt": "2026-08-26T20:12:32.790Z"
+          "fetchedAt": "2026-08-26T20:24:40.972Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/0-AI-UG/cate/languages",
-          "fetchedAt": "2026-08-26T20:12:32.958Z"
+          "fetchedAt": "2026-08-26T20:24:41.143Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/0-AI-UG/cate/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:12:32.980Z"
+          "fetchedAt": "2026-08-26T20:24:41.196Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/0-AI-UG/cate/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:12:34.020Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/0-AI-UG/cate/tree/v1.6.0",
-          "fetchedAt": "2026-08-26T20:12:40.028Z"
+          "fetchedAt": "2026-08-26T20:24:42.153Z"
         }
       ],
       "errors": []
@@ -2342,7 +2342,7 @@
       "apiUrl": "https://api.github.com/repos/cdesktop-ai/cdesktop",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:12:44.358Z",
+      "refreshedAt": "2026-08-26T20:24:41.575Z",
       "stars": 103,
       "forks": 21,
       "openIssues": 6,
@@ -2435,29 +2435,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/cdesktop-ai/cdesktop/tree/v0.2.3-20260519022845",
+          "fetchedAt": "2026-08-26T20:12:44.248Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/cdesktop-ai/cdesktop",
-          "fetchedAt": "2026-08-26T20:12:39.869Z"
+          "fetchedAt": "2026-08-26T20:24:41.286Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/cdesktop-ai/cdesktop/languages",
-          "fetchedAt": "2026-08-26T20:12:39.978Z"
+          "fetchedAt": "2026-08-26T20:24:41.482Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/cdesktop-ai/cdesktop/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:12:40.050Z"
+          "fetchedAt": "2026-08-26T20:24:41.483Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/cdesktop-ai/cdesktop/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:12:40.122Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/cdesktop-ai/cdesktop/tree/v0.2.3-20260519022845",
-          "fetchedAt": "2026-08-26T20:12:44.248Z"
+          "fetchedAt": "2026-08-26T20:24:41.575Z"
         }
       ],
       "errors": []
@@ -2475,7 +2475,7 @@
       "apiUrl": "https://api.github.com/repos/continuedev/continue",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:12:54.104Z",
+      "refreshedAt": "2026-08-26T20:24:41.643Z",
       "stars": 35643,
       "forks": 5288,
       "openIssues": 940,
@@ -2616,9 +2616,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/continuedev/continue/tree/main",
+          "fetchedAt": "2026-08-26T20:12:53.986Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/continuedev/continue",
-          "fetchedAt": "2026-08-26T20:12:40.246Z"
+          "fetchedAt": "2026-08-26T20:24:41.370Z"
         },
         {
           "type": "release-policy",
@@ -2628,17 +2633,12 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/continuedev/continue/languages",
-          "fetchedAt": "2026-08-26T20:12:40.405Z"
+          "fetchedAt": "2026-08-26T20:24:41.558Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/continuedev/continue/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:12:40.559Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/continuedev/continue/tree/main",
-          "fetchedAt": "2026-08-26T20:12:53.986Z"
+          "fetchedAt": "2026-08-26T20:24:41.643Z"
         }
       ],
       "errors": []
@@ -2656,12 +2656,12 @@
       "apiUrl": "https://api.github.com/repos/cline/cline",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:12:57.407Z",
+      "refreshedAt": "2026-08-26T20:24:42.366Z",
       "stars": 66906,
       "forks": 7228,
       "openIssues": 1116,
       "contributors": 323,
-      "repositorySizeKb": 559518,
+      "repositorySizeKb": 559521,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
       "pushedAt": "2026-08-26T19:18:35Z",
@@ -2744,29 +2744,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/cline/cline/tree/cli-v3.0.60",
+          "fetchedAt": "2026-08-26T20:12:57.325Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/cline/cline",
-          "fetchedAt": "2026-08-26T20:12:44.556Z"
+          "fetchedAt": "2026-08-26T20:24:41.846Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/cline/cline/languages",
-          "fetchedAt": "2026-08-26T20:12:44.692Z"
+          "fetchedAt": "2026-08-26T20:24:42.011Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/cline/cline/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:12:44.791Z"
+          "fetchedAt": "2026-08-26T20:24:42.120Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/cline/cline/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:12:45.032Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/cline/cline/tree/cli-v3.0.60",
-          "fetchedAt": "2026-08-26T20:12:57.325Z"
+          "fetchedAt": "2026-08-26T20:24:42.366Z"
         }
       ],
       "errors": []
@@ -2784,15 +2784,15 @@
       "apiUrl": "https://api.github.com/repos/Kilo-Org/kilocode",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:13:33.917Z",
+      "refreshedAt": "2026-08-26T20:24:43.105Z",
       "stars": 27029,
       "forks": 3092,
-      "openIssues": 602,
+      "openIssues": 601,
       "contributors": 1218,
       "repositorySizeKb": 597153,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:05:31Z",
+      "pushedAt": "2026-08-26T20:20:04Z",
       "archived": false,
       "license": {
         "key": "mit",
@@ -2912,29 +2912,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/Kilo-Org/kilocode/tree/v7.5.5",
+          "fetchedAt": "2026-08-26T20:13:33.599Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/Kilo-Org/kilocode",
-          "fetchedAt": "2026-08-26T20:12:54.373Z"
+          "fetchedAt": "2026-08-26T20:24:41.902Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/Kilo-Org/kilocode/languages",
-          "fetchedAt": "2026-08-26T20:12:54.522Z"
+          "fetchedAt": "2026-08-26T20:24:42.090Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/Kilo-Org/kilocode/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:12:54.627Z"
+          "fetchedAt": "2026-08-26T20:24:42.173Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/Kilo-Org/kilocode/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:12:55.468Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/Kilo-Org/kilocode/tree/v7.5.5",
-          "fetchedAt": "2026-08-26T20:13:33.599Z"
+          "fetchedAt": "2026-08-26T20:24:43.105Z"
         }
       ],
       "errors": []
@@ -2952,7 +2952,7 @@
       "apiUrl": "https://api.github.com/repos/RooCodeInc/Roo-Code",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:13:16.313Z",
+      "refreshedAt": "2026-08-26T20:24:42.935Z",
       "stars": 24324,
       "forks": 3415,
       "openIssues": 1035,
@@ -3030,29 +3030,29 @@
       },
       "sources": [
         {
-          "type": "repository",
-          "url": "https://api.github.com/repos/RooCodeInc/Roo-Code",
-          "fetchedAt": "2026-08-26T20:12:57.608Z"
+          "type": "loc-measurement",
+          "url": "https://github.com/RooCodeInc/Roo-Code/tree/v3.54.0",
+          "fetchedAt": "2026-08-26T20:13:16.191Z"
         },
         {
-          "type": "languages",
-          "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/languages",
-          "fetchedAt": "2026-08-26T20:12:57.748Z"
+          "type": "repository",
+          "url": "https://api.github.com/repos/RooCodeInc/Roo-Code",
+          "fetchedAt": "2026-08-26T20:24:42.377Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:12:57.933Z"
+          "fetchedAt": "2026-08-26T20:24:42.651Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/languages",
+          "fetchedAt": "2026-08-26T20:24:42.681Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/RooCodeInc/Roo-Code/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:12:58.231Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/RooCodeInc/Roo-Code/tree/v3.54.0",
-          "fetchedAt": "2026-08-26T20:13:16.191Z"
+          "fetchedAt": "2026-08-26T20:24:42.935Z"
         }
       ],
       "errors": []
@@ -3070,15 +3070,15 @@
       "apiUrl": "https://api.github.com/repos/stablyai/orca",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:14:04.071Z",
-      "stars": 54218,
+      "refreshedAt": "2026-08-26T20:24:43.964Z",
+      "stars": 54222,
       "forks": 3732,
-      "openIssues": 4634,
+      "openIssues": 4633,
       "contributors": 341,
       "repositorySizeKb": 619090,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:12:09Z",
+      "pushedAt": "2026-08-26T20:22:10Z",
       "archived": false,
       "license": {
         "key": "mit",
@@ -3089,8 +3089,8 @@
       "languages": [
         {
           "name": "TypeScript",
-          "bytes": 118787410,
-          "percent": 96.92
+          "bytes": 118849166,
+          "percent": 96.93
         },
         {
           "name": "JavaScript",
@@ -3124,7 +3124,7 @@
         },
         {
           "name": "Shell",
-          "bytes": 44334,
+          "bytes": 44351,
           "percent": 0.04
         },
         {
@@ -3154,7 +3154,7 @@
         },
         {
           "name": "Batchfile",
-          "bytes": 784,
+          "bytes": 795,
           "percent": 0
         },
         {
@@ -3193,29 +3193,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/stablyai/orca/tree/v1.4.190",
+          "fetchedAt": "2026-08-26T20:14:03.729Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/stablyai/orca",
-          "fetchedAt": "2026-08-26T20:13:16.569Z"
+          "fetchedAt": "2026-08-26T20:24:42.597Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/stablyai/orca/languages",
-          "fetchedAt": "2026-08-26T20:13:16.677Z"
+          "fetchedAt": "2026-08-26T20:24:42.793Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/stablyai/orca/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:13:16.821Z"
+          "fetchedAt": "2026-08-26T20:24:42.869Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/stablyai/orca/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:13:18.110Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/stablyai/orca/tree/v1.4.190",
-          "fetchedAt": "2026-08-26T20:14:03.729Z"
+          "fetchedAt": "2026-08-26T20:24:43.963Z"
         }
       ],
       "errors": []
@@ -3233,15 +3233,15 @@
       "apiUrl": "https://api.github.com/repos/get-bb/bb",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:13:57.065Z",
+      "refreshedAt": "2026-08-26T20:24:43.656Z",
       "stars": 2663,
       "forks": 319,
-      "openIssues": 266,
+      "openIssues": 268,
       "contributors": 52,
       "repositorySizeKb": 192165,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:11:05Z",
+      "pushedAt": "2026-08-26T20:21:54Z",
       "archived": false,
       "license": {
         "key": "mit",
@@ -3252,7 +3252,7 @@
       "languages": [
         {
           "name": "TypeScript",
-          "bytes": 37238677,
+          "bytes": 37238971,
           "percent": 96.89
         },
         {
@@ -3306,29 +3306,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/get-bb/bb/tree/desktop-v0.40.0",
+          "fetchedAt": "2026-08-26T20:13:56.905Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/get-bb/bb",
-          "fetchedAt": "2026-08-26T20:13:34.123Z"
+          "fetchedAt": "2026-08-26T20:24:43.160Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/get-bb/bb/languages",
-          "fetchedAt": "2026-08-26T20:13:34.261Z"
+          "fetchedAt": "2026-08-26T20:24:43.336Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/get-bb/bb/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:13:34.344Z"
+          "fetchedAt": "2026-08-26T20:24:43.394Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/get-bb/bb/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:13:34.585Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/get-bb/bb/tree/desktop-v0.40.0",
-          "fetchedAt": "2026-08-26T20:13:56.905Z"
+          "fetchedAt": "2026-08-26T20:24:43.655Z"
         }
       ],
       "errors": []
@@ -3346,15 +3346,15 @@
       "apiUrl": "https://api.github.com/repos/omnigent-ai/omnigent",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:14:15.965Z",
+      "refreshedAt": "2026-08-26T20:24:43.844Z",
       "stars": 9307,
       "forks": 1431,
-      "openIssues": 1233,
+      "openIssues": 1229,
       "contributors": 218,
       "repositorySizeKb": 132157,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T19:57:57Z",
+      "pushedAt": "2026-08-26T20:16:21Z",
       "archived": false,
       "license": {
         "key": "apache-2.0",
@@ -3464,29 +3464,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/omnigent-ai/omnigent/tree/v0.11.0",
+          "fetchedAt": "2026-08-26T20:14:15.877Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/omnigent-ai/omnigent",
-          "fetchedAt": "2026-08-26T20:13:57.319Z"
+          "fetchedAt": "2026-08-26T20:24:43.436Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/omnigent-ai/omnigent/languages",
-          "fetchedAt": "2026-08-26T20:13:57.464Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/omnigent-ai/omnigent/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:13:57.550Z"
+          "fetchedAt": "2026-08-26T20:24:43.599Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/omnigent-ai/omnigent/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:13:57.552Z"
+          "fetchedAt": "2026-08-26T20:24:43.779Z"
         },
         {
-          "type": "loc-measurement",
-          "url": "https://github.com/omnigent-ai/omnigent/tree/v0.11.0",
-          "fetchedAt": "2026-08-26T20:14:15.877Z"
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/omnigent-ai/omnigent/releases?per_page=100",
+          "fetchedAt": "2026-08-26T20:24:43.844Z"
         }
       ],
       "errors": []
@@ -3504,7 +3504,7 @@
       "apiUrl": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:14:14.682Z",
+      "refreshedAt": "2026-08-26T20:24:44.673Z",
       "stars": 9966,
       "forks": 1420,
       "openIssues": 834,
@@ -3602,29 +3602,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/Untrivial-ai/agent-orchestrator/tree/v0.12.7",
+          "fetchedAt": "2026-08-26T20:14:14.598Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator",
-          "fetchedAt": "2026-08-26T20:14:04.289Z"
+          "fetchedAt": "2026-08-26T20:24:43.876Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator/languages",
-          "fetchedAt": "2026-08-26T20:14:04.411Z"
+          "fetchedAt": "2026-08-26T20:24:44.033Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:14:04.525Z"
+          "fetchedAt": "2026-08-26T20:24:44.135Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/Untrivial-ai/agent-orchestrator/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:14:05.067Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/Untrivial-ai/agent-orchestrator/tree/v0.12.7",
-          "fetchedAt": "2026-08-26T20:14:14.598Z"
+          "fetchedAt": "2026-08-26T20:24:44.672Z"
         }
       ],
       "errors": []
@@ -3642,7 +3642,7 @@
       "apiUrl": "https://api.github.com/repos/generalaction/emdash",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:14:21.114Z",
+      "refreshedAt": "2026-08-26T20:24:45.626Z",
       "stars": 5503,
       "forks": 564,
       "openIssues": 198,
@@ -3730,29 +3730,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/generalaction/emdash/tree/v1.1.40",
+          "fetchedAt": "2026-08-26T20:14:21.039Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/generalaction/emdash",
-          "fetchedAt": "2026-08-26T20:14:14.922Z"
+          "fetchedAt": "2026-08-26T20:24:44.134Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/generalaction/emdash/languages",
-          "fetchedAt": "2026-08-26T20:14:15.040Z"
+          "fetchedAt": "2026-08-26T20:24:44.324Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/generalaction/emdash/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:14:15.156Z"
+          "fetchedAt": "2026-08-26T20:24:44.340Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/generalaction/emdash/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:14:16.003Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/generalaction/emdash/tree/v1.1.40",
-          "fetchedAt": "2026-08-26T20:14:21.039Z"
+          "fetchedAt": "2026-08-26T20:24:45.625Z"
         }
       ],
       "errors": []
@@ -3770,7 +3770,7 @@
       "apiUrl": "https://api.github.com/repos/kdlbs/kandev",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:14:49.757Z",
+      "refreshedAt": "2026-08-26T20:24:45.565Z",
       "stars": 699,
       "forks": 100,
       "openIssues": 76,
@@ -3778,7 +3778,7 @@
       "repositorySizeKb": 200335,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T19:40:09Z",
+      "pushedAt": "2026-08-26T20:19:04Z",
       "archived": false,
       "license": {
         "key": "agpl-3.0",
@@ -3878,29 +3878,29 @@
       },
       "sources": [
         {
-          "type": "repository",
-          "url": "https://api.github.com/repos/kdlbs/kandev",
-          "fetchedAt": "2026-08-26T20:14:16.140Z"
+          "type": "loc-measurement",
+          "url": "https://github.com/kdlbs/kandev/tree/v0.91.0",
+          "fetchedAt": "2026-08-26T20:14:42.514Z"
         },
         {
-          "type": "contributors",
-          "url": "https://api.github.com/repos/kdlbs/kandev/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:14:16.348Z"
+          "type": "repository",
+          "url": "https://api.github.com/repos/kdlbs/kandev",
+          "fetchedAt": "2026-08-26T20:24:44.251Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/kdlbs/kandev/languages",
-          "fetchedAt": "2026-08-26T20:14:16.357Z"
+          "fetchedAt": "2026-08-26T20:24:44.414Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/kdlbs/kandev/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-26T20:24:44.499Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/kdlbs/kandev/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:14:17.443Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/kdlbs/kandev/tree/v0.91.0",
-          "fetchedAt": "2026-08-26T20:14:42.514Z"
+          "fetchedAt": "2026-08-26T20:24:45.564Z"
         }
       ],
       "errors": []
@@ -3918,7 +3918,7 @@
       "apiUrl": "https://api.github.com/repos/getpaseo/paseo",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:14:36.796Z",
+      "refreshedAt": "2026-08-26T20:24:46.642Z",
       "stars": 15142,
       "forks": 1631,
       "openIssues": 1088,
@@ -4026,9 +4026,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/getpaseo/paseo/tree/v0.6.1",
+          "fetchedAt": "2026-08-26T20:14:36.648Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/getpaseo/paseo",
-          "fetchedAt": "2026-08-26T20:14:21.398Z"
+          "fetchedAt": "2026-08-26T20:24:44.934Z"
         },
         {
           "type": "license-override",
@@ -4038,22 +4043,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/getpaseo/paseo/languages",
-          "fetchedAt": "2026-08-26T20:14:21.523Z"
+          "fetchedAt": "2026-08-26T20:24:45.099Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/getpaseo/paseo/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:14:21.627Z"
+          "fetchedAt": "2026-08-26T20:24:45.245Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/getpaseo/paseo/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:14:22.890Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/getpaseo/paseo/tree/v0.6.1",
-          "fetchedAt": "2026-08-26T20:14:36.648Z"
+          "fetchedAt": "2026-08-26T20:24:46.642Z"
         }
       ],
       "errors": []
@@ -4071,7 +4071,7 @@
       "apiUrl": "https://api.github.com/repos/superset-sh/superset",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:14:52.417Z",
+      "refreshedAt": "2026-08-26T20:24:46.900Z",
       "stars": 13387,
       "forks": 1223,
       "openIssues": 567,
@@ -4184,9 +4184,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/superset-sh/superset/tree/desktop-v1.25.0",
+          "fetchedAt": "2026-08-26T20:14:52.175Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/superset-sh/superset",
-          "fetchedAt": "2026-08-26T20:14:37.010Z"
+          "fetchedAt": "2026-08-26T20:24:45.838Z"
         },
         {
           "type": "license-override",
@@ -4196,22 +4201,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/superset-sh/superset/languages",
-          "fetchedAt": "2026-08-26T20:14:37.163Z"
+          "fetchedAt": "2026-08-26T20:24:46.005Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/superset-sh/superset/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:14:37.216Z"
+          "fetchedAt": "2026-08-26T20:24:46.110Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/superset-sh/superset/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:14:37.948Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/superset-sh/superset/tree/desktop-v1.25.0",
-          "fetchedAt": "2026-08-26T20:14:52.175Z"
+          "fetchedAt": "2026-08-26T20:24:46.899Z"
         }
       ],
       "errors": []
@@ -4229,7 +4229,7 @@
       "apiUrl": "https://api.github.com/repos/coder/xum",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:01.330Z",
+      "refreshedAt": "2026-08-26T20:24:46.794Z",
       "stars": 1984,
       "forks": 135,
       "openIssues": 242,
@@ -4237,7 +4237,7 @@
       "repositorySizeKb": 116995,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:06:54Z",
+      "pushedAt": "2026-08-26T20:24:04Z",
       "archived": false,
       "license": {
         "key": "agpl-3.0",
@@ -4322,29 +4322,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/coder/xum/tree/v0.28.2",
+          "fetchedAt": "2026-08-26T20:15:01.257Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/coder/xum",
-          "fetchedAt": "2026-08-26T20:14:50.034Z"
+          "fetchedAt": "2026-08-26T20:24:45.869Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/coder/xum/languages",
-          "fetchedAt": "2026-08-26T20:14:50.188Z"
+          "fetchedAt": "2026-08-26T20:24:46.033Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/coder/xum/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:14:50.354Z"
+          "fetchedAt": "2026-08-26T20:24:46.071Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/coder/xum/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:14:50.801Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/coder/xum/tree/v0.28.2",
-          "fetchedAt": "2026-08-26T20:15:01.257Z"
+          "fetchedAt": "2026-08-26T20:24:46.794Z"
         }
       ],
       "errors": []
@@ -4362,7 +4362,7 @@
       "apiUrl": "https://api.github.com/repos/nimbalyst/nimbalyst",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:01.587Z",
+      "refreshedAt": "2026-08-26T20:24:48.067Z",
       "stars": 1577,
       "forks": 226,
       "openIssues": 571,
@@ -4455,29 +4455,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/nimbalyst/nimbalyst/tree/v0.74.4",
+          "fetchedAt": "2026-08-26T20:15:01.469Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/nimbalyst/nimbalyst",
-          "fetchedAt": "2026-08-26T20:14:49.947Z"
+          "fetchedAt": "2026-08-26T20:24:46.882Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/nimbalyst/nimbalyst/languages",
-          "fetchedAt": "2026-08-26T20:14:50.105Z"
+          "fetchedAt": "2026-08-26T20:24:47.064Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/nimbalyst/nimbalyst/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:14:50.291Z"
+          "fetchedAt": "2026-08-26T20:24:47.102Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/nimbalyst/nimbalyst/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:14:51.094Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/nimbalyst/nimbalyst/tree/v0.74.4",
-          "fetchedAt": "2026-08-26T20:15:01.469Z"
+          "fetchedAt": "2026-08-26T20:24:48.067Z"
         }
       ],
       "errors": []
@@ -4495,7 +4495,7 @@
       "apiUrl": "https://api.github.com/repos/imbue-ai/sculptor",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:14:58.874Z",
+      "refreshedAt": "2026-08-26T20:24:47.360Z",
       "stars": 220,
       "forks": 15,
       "openIssues": 24,
@@ -4593,29 +4593,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/imbue-ai/sculptor/tree/sculptor-v0.45.0",
+          "fetchedAt": "2026-08-26T20:14:58.797Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/imbue-ai/sculptor",
-          "fetchedAt": "2026-08-26T20:14:52.592Z"
+          "fetchedAt": "2026-08-26T20:24:47.053Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/imbue-ai/sculptor/languages",
-          "fetchedAt": "2026-08-26T20:14:52.735Z"
+          "fetchedAt": "2026-08-26T20:24:47.241Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/imbue-ai/sculptor/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:14:52.864Z"
+          "fetchedAt": "2026-08-26T20:24:47.273Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/imbue-ai/sculptor/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:14:52.882Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/imbue-ai/sculptor/tree/sculptor-v0.45.0",
-          "fetchedAt": "2026-08-26T20:14:58.797Z"
+          "fetchedAt": "2026-08-26T20:24:47.360Z"
         }
       ],
       "errors": []
@@ -4633,7 +4633,7 @@
       "apiUrl": "https://api.github.com/repos/smtg-ai/claude-squad",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:00.736Z",
+      "refreshedAt": "2026-08-26T20:24:47.536Z",
       "stars": 8370,
       "forks": 613,
       "openIssues": 53,
@@ -4706,29 +4706,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/smtg-ai/claude-squad/tree/v1.0.20",
+          "fetchedAt": "2026-08-26T20:15:00.731Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/smtg-ai/claude-squad",
-          "fetchedAt": "2026-08-26T20:14:59.125Z"
+          "fetchedAt": "2026-08-26T20:24:47.131Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/smtg-ai/claude-squad/languages",
-          "fetchedAt": "2026-08-26T20:14:59.276Z"
+          "fetchedAt": "2026-08-26T20:24:47.297Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/smtg-ai/claude-squad/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:14:59.338Z"
+          "fetchedAt": "2026-08-26T20:24:47.363Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/smtg-ai/claude-squad/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:14:59.563Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/smtg-ai/claude-squad/tree/v1.0.20",
-          "fetchedAt": "2026-08-26T20:15:00.731Z"
+          "fetchedAt": "2026-08-26T20:24:47.536Z"
         }
       ],
       "errors": []
@@ -4746,7 +4746,7 @@
       "apiUrl": "https://api.github.com/repos/asheshgoplani/agent-deck",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:07.781Z",
+      "refreshedAt": "2026-08-26T20:24:48.249Z",
       "stars": 796,
       "forks": 140,
       "openIssues": 40,
@@ -4844,29 +4844,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/asheshgoplani/agent-deck/tree/v1.15.0",
+          "fetchedAt": "2026-08-26T20:15:07.713Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/asheshgoplani/agent-deck",
-          "fetchedAt": "2026-08-26T20:15:00.928Z"
+          "fetchedAt": "2026-08-26T20:24:47.566Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/asheshgoplani/agent-deck/languages",
-          "fetchedAt": "2026-08-26T20:15:01.067Z"
+          "fetchedAt": "2026-08-26T20:24:47.710Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/asheshgoplani/agent-deck/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:01.189Z"
+          "fetchedAt": "2026-08-26T20:24:47.800Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/asheshgoplani/agent-deck/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:01.599Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/asheshgoplani/agent-deck/tree/v1.15.0",
-          "fetchedAt": "2026-08-26T20:15:07.713Z"
+          "fetchedAt": "2026-08-26T20:24:48.249Z"
         }
       ],
       "errors": []
@@ -4884,7 +4884,7 @@
       "apiUrl": "https://api.github.com/repos/BloopAI/vibe-kanban",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:06.088Z",
+      "refreshedAt": "2026-08-26T20:24:48.560Z",
       "stars": 27926,
       "forks": 2995,
       "openIssues": 533,
@@ -4977,29 +4977,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/BloopAI/vibe-kanban/tree/v0.1.44-20260424091429",
+          "fetchedAt": "2026-08-26T20:15:06.028Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/BloopAI/vibe-kanban",
-          "fetchedAt": "2026-08-26T20:15:01.573Z"
+          "fetchedAt": "2026-08-26T20:24:47.829Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/BloopAI/vibe-kanban/languages",
-          "fetchedAt": "2026-08-26T20:15:01.703Z"
+          "fetchedAt": "2026-08-26T20:24:47.987Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/BloopAI/vibe-kanban/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:01.817Z"
+          "fetchedAt": "2026-08-26T20:24:48.068Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/BloopAI/vibe-kanban/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:02.335Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/BloopAI/vibe-kanban/tree/v0.1.44-20260424091429",
-          "fetchedAt": "2026-08-26T20:15:06.028Z"
+          "fetchedAt": "2026-08-26T20:24:48.559Z"
         }
       ],
       "errors": []
@@ -5017,7 +5017,7 @@
       "apiUrl": "https://api.github.com/repos/manaflow-ai/cmux",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:27.955Z",
+      "refreshedAt": "2026-08-26T20:24:49.356Z",
       "stars": 26503,
       "forks": 2262,
       "openIssues": 4555,
@@ -5025,7 +5025,7 @@
       "repositorySizeKb": 1487408,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:05:23Z",
+      "pushedAt": "2026-08-26T20:23:04Z",
       "archived": false,
       "license": {
         "key": "other",
@@ -5160,29 +5160,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/manaflow-ai/cmux/tree/v0.64.22",
+          "fetchedAt": "2026-08-26T20:15:27.657Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/manaflow-ai/cmux",
-          "fetchedAt": "2026-08-26T20:15:01.839Z"
+          "fetchedAt": "2026-08-26T20:24:48.287Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/manaflow-ai/cmux/languages",
-          "fetchedAt": "2026-08-26T20:15:01.962Z"
+          "fetchedAt": "2026-08-26T20:24:48.478Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/manaflow-ai/cmux/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:02.065Z"
+          "fetchedAt": "2026-08-26T20:24:48.509Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/manaflow-ai/cmux/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:02.955Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/manaflow-ai/cmux/tree/v0.64.22",
-          "fetchedAt": "2026-08-26T20:15:27.657Z"
+          "fetchedAt": "2026-08-26T20:24:49.356Z"
         }
       ],
       "errors": []
@@ -5200,8 +5200,8 @@
       "apiUrl": "https://api.github.com/repos/herdrdev/herdr",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:14.306Z",
-      "stars": 32591,
+      "refreshedAt": "2026-08-26T20:24:49.023Z",
+      "stars": 32593,
       "forks": 2351,
       "openIssues": 236,
       "contributors": 79,
@@ -5313,29 +5313,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/herdrdev/herdr/tree/v0.8.2",
+          "fetchedAt": "2026-08-26T20:15:14.226Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/herdrdev/herdr",
-          "fetchedAt": "2026-08-26T20:15:06.332Z"
+          "fetchedAt": "2026-08-26T20:24:48.499Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/herdrdev/herdr/languages",
-          "fetchedAt": "2026-08-26T20:15:06.475Z"
+          "fetchedAt": "2026-08-26T20:24:48.685Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/herdrdev/herdr/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:06.565Z"
+          "fetchedAt": "2026-08-26T20:24:48.689Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/herdrdev/herdr/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:06.879Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/herdrdev/herdr/tree/v0.8.2",
-          "fetchedAt": "2026-08-26T20:15:14.226Z"
+          "fetchedAt": "2026-08-26T20:24:49.023Z"
         }
       ],
       "errors": []
@@ -5353,7 +5353,7 @@
       "apiUrl": "https://api.github.com/repos/openwong2kim/wmux",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:15.383Z",
+      "refreshedAt": "2026-08-26T20:24:49.720Z",
       "stars": 356,
       "forks": 61,
       "openIssues": 16,
@@ -5436,29 +5436,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/openwong2kim/wmux/tree/v3.47.1",
+          "fetchedAt": "2026-08-26T20:15:15.329Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/openwong2kim/wmux",
-          "fetchedAt": "2026-08-26T20:15:07.969Z"
+          "fetchedAt": "2026-08-26T20:24:48.769Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/openwong2kim/wmux/languages",
-          "fetchedAt": "2026-08-26T20:15:08.097Z"
+          "fetchedAt": "2026-08-26T20:24:48.926Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/openwong2kim/wmux/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:08.165Z"
+          "fetchedAt": "2026-08-26T20:24:48.944Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/openwong2kim/wmux/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:08.836Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/openwong2kim/wmux/tree/v3.47.1",
-          "fetchedAt": "2026-08-26T20:15:15.329Z"
+          "fetchedAt": "2026-08-26T20:24:49.720Z"
         }
       ],
       "errors": []
@@ -5476,7 +5476,7 @@
       "apiUrl": "https://api.github.com/repos/wavetermdev/waveterm",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:20.231Z",
+      "refreshedAt": "2026-08-26T20:24:50.704Z",
       "stars": 22112,
       "forks": 1107,
       "openIssues": 559,
@@ -5564,29 +5564,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/wavetermdev/waveterm/tree/v0.14.5",
+          "fetchedAt": "2026-08-26T20:15:20.181Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/wavetermdev/waveterm",
-          "fetchedAt": "2026-08-26T20:15:14.556Z"
+          "fetchedAt": "2026-08-26T20:24:49.272Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/wavetermdev/waveterm/languages",
-          "fetchedAt": "2026-08-26T20:15:14.757Z"
+          "fetchedAt": "2026-08-26T20:24:49.448Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/wavetermdev/waveterm/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:14.776Z"
+          "fetchedAt": "2026-08-26T20:24:49.550Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/wavetermdev/waveterm/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:15.853Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/wavetermdev/waveterm/tree/v0.14.5",
-          "fetchedAt": "2026-08-26T20:15:20.181Z"
+          "fetchedAt": "2026-08-26T20:24:50.704Z"
         }
       ],
       "errors": []
@@ -5604,7 +5604,7 @@
       "apiUrl": "https://api.github.com/repos/standardagents/dmux",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:19.676Z",
+      "refreshedAt": "2026-08-26T20:24:49.965Z",
       "stars": 1753,
       "forks": 138,
       "openIssues": 31,
@@ -5687,29 +5687,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/standardagents/dmux/tree/v5.11.1",
+          "fetchedAt": "2026-08-26T20:15:19.640Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/standardagents/dmux",
-          "fetchedAt": "2026-08-26T20:15:15.613Z"
+          "fetchedAt": "2026-08-26T20:24:49.618Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/standardagents/dmux/languages",
-          "fetchedAt": "2026-08-26T20:15:15.789Z"
+          "fetchedAt": "2026-08-26T20:24:49.786Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/standardagents/dmux/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:15.861Z"
+          "fetchedAt": "2026-08-26T20:24:49.844Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/standardagents/dmux/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:15.896Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/standardagents/dmux/tree/v5.11.1",
-          "fetchedAt": "2026-08-26T20:15:19.640Z"
+          "fetchedAt": "2026-08-26T20:24:49.965Z"
         }
       ],
       "errors": []
@@ -5727,7 +5727,7 @@
       "apiUrl": "https://api.github.com/repos/warpdotdev/warp",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:35.196Z",
+      "refreshedAt": "2026-08-26T20:24:50.231Z",
       "stars": 64546,
       "forks": 5471,
       "openIssues": 5111,
@@ -5735,7 +5735,7 @@
       "repositorySizeKb": 352228,
       "repositorySizePolicy": null,
       "defaultBranch": "master",
-      "pushedAt": "2026-08-26T20:01:59Z",
+      "pushedAt": "2026-08-26T20:16:24Z",
       "archived": false,
       "license": {
         "key": "agpl-3.0",
@@ -5868,9 +5868,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/warpdotdev/warp/tree/master",
+          "fetchedAt": "2026-08-26T20:15:34.965Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/warpdotdev/warp",
-          "fetchedAt": "2026-08-26T20:15:19.923Z"
+          "fetchedAt": "2026-08-26T20:24:49.978Z"
         },
         {
           "type": "release-policy",
@@ -5880,17 +5885,12 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/warpdotdev/warp/languages",
-          "fetchedAt": "2026-08-26T20:15:20.051Z"
+          "fetchedAt": "2026-08-26T20:24:50.138Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/warpdotdev/warp/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:20.153Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/warpdotdev/warp/tree/master",
-          "fetchedAt": "2026-08-26T20:15:34.965Z"
+          "fetchedAt": "2026-08-26T20:24:50.230Z"
         }
       ],
       "errors": []
@@ -5908,7 +5908,7 @@
       "apiUrl": "https://api.github.com/repos/openai/codex",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:39.828Z",
+      "refreshedAt": "2026-08-26T20:24:56.769Z",
       "stars": 118747,
       "forks": 18109,
       "openIssues": 13968,
@@ -6031,29 +6031,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/openai/codex/tree/rust-v0.150.0",
+          "fetchedAt": "2026-08-26T20:15:39.704Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/openai/codex",
-          "fetchedAt": "2026-08-26T20:15:20.451Z"
+          "fetchedAt": "2026-08-26T20:24:50.265Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/openai/codex/languages",
-          "fetchedAt": "2026-08-26T20:15:20.632Z"
+          "fetchedAt": "2026-08-26T20:24:50.434Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/openai/codex/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:20.685Z"
+          "fetchedAt": "2026-08-26T20:24:50.514Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/openai/codex/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:28.233Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/openai/codex/tree/rust-v0.150.0",
-          "fetchedAt": "2026-08-26T20:15:39.704Z"
+          "fetchedAt": "2026-08-26T20:24:56.769Z"
         }
       ],
       "errors": []
@@ -6071,7 +6071,7 @@
       "apiUrl": "https://api.github.com/repos/google-gemini/gemini-cli",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:15:44.032Z",
+      "refreshedAt": "2026-08-26T20:24:51.069Z",
       "stars": 106693,
       "forks": 14489,
       "openIssues": 868,
@@ -6159,29 +6159,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/google-gemini/gemini-cli/tree/v0.57.0",
+          "fetchedAt": "2026-08-26T20:15:43.970Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/google-gemini/gemini-cli",
-          "fetchedAt": "2026-08-26T20:15:28.270Z"
+          "fetchedAt": "2026-08-26T20:24:50.594Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/google-gemini/gemini-cli/languages",
-          "fetchedAt": "2026-08-26T20:15:28.403Z"
+          "fetchedAt": "2026-08-26T20:24:50.775Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/google-gemini/gemini-cli/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:28.554Z"
+          "fetchedAt": "2026-08-26T20:24:50.826Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/google-gemini/gemini-cli/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:28.770Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/google-gemini/gemini-cli/tree/v0.57.0",
-          "fetchedAt": "2026-08-26T20:15:43.970Z"
+          "fetchedAt": "2026-08-26T20:24:51.068Z"
         }
       ],
       "errors": []
@@ -6199,10 +6199,10 @@
       "apiUrl": "https://api.github.com/repos/Hmbown/CodeWhale",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:16:22.281Z",
+      "refreshedAt": "2026-08-26T20:24:52.261Z",
       "stars": 40860,
       "forks": 3538,
-      "openIssues": 112,
+      "openIssues": 111,
       "contributors": 214,
       "repositorySizeKb": 136381,
       "repositorySizePolicy": null,
@@ -6312,29 +6312,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/Hmbown/CodeWhale/tree/v0.9.11",
+          "fetchedAt": "2026-08-26T20:16:22.195Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/Hmbown/CodeWhale",
-          "fetchedAt": "2026-08-26T20:15:35.421Z"
+          "fetchedAt": "2026-08-26T20:24:50.985Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/Hmbown/CodeWhale/languages",
-          "fetchedAt": "2026-08-26T20:15:35.584Z"
+          "fetchedAt": "2026-08-26T20:24:51.139Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/Hmbown/CodeWhale/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:35.592Z"
+          "fetchedAt": "2026-08-26T20:24:51.273Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/Hmbown/CodeWhale/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:36.789Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/Hmbown/CodeWhale/tree/v0.9.11",
-          "fetchedAt": "2026-08-26T20:16:22.195Z"
+          "fetchedAt": "2026-08-26T20:24:52.261Z"
         }
       ],
       "errors": []
@@ -6352,15 +6352,15 @@
       "apiUrl": "https://api.github.com/repos/QwenLM/qwen-code",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:17:24.949Z",
-      "stars": 27403,
+      "refreshedAt": "2026-08-26T20:24:52.151Z",
+      "stars": 27404,
       "forks": 2946,
       "openIssues": 1264,
       "contributors": 538,
       "repositorySizeKb": 1094199,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:10:24Z",
+      "pushedAt": "2026-08-26T20:16:55Z",
       "archived": false,
       "license": {
         "key": "apache-2.0",
@@ -6485,29 +6485,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/QwenLM/qwen-code/tree/v0.22.2",
+          "fetchedAt": "2026-08-26T20:17:24.767Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/QwenLM/qwen-code",
-          "fetchedAt": "2026-08-26T20:15:40.061Z"
+          "fetchedAt": "2026-08-26T20:24:51.283Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/QwenLM/qwen-code/languages",
-          "fetchedAt": "2026-08-26T20:15:40.209Z"
+          "fetchedAt": "2026-08-26T20:24:51.486Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/QwenLM/qwen-code/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:40.302Z"
+          "fetchedAt": "2026-08-26T20:24:51.585Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:40.812Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/QwenLM/qwen-code/tree/v0.22.2",
-          "fetchedAt": "2026-08-26T20:17:24.767Z"
+          "fetchedAt": "2026-08-26T20:24:52.151Z"
         }
       ],
       "errors": []
@@ -6525,7 +6525,7 @@
       "apiUrl": "https://api.github.com/repos/xai-org/grok-build",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:16:41.850Z",
+      "refreshedAt": "2026-08-26T20:24:52.844Z",
       "stars": 26095,
       "forks": 4909,
       "openIssues": 0,
@@ -6597,34 +6597,34 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/xai-org/grok-build/tree/main",
+          "fetchedAt": "2026-08-26T20:16:41.727Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/xai-org/grok-build",
-          "fetchedAt": "2026-08-26T20:15:44.231Z"
+          "fetchedAt": "2026-08-26T20:24:52.365Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/xai-org/grok-build/languages",
-          "fetchedAt": "2026-08-26T20:15:44.354Z"
+          "fetchedAt": "2026-08-26T20:24:52.528Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/xai-org/grok-build/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:15:44.382Z"
+          "fetchedAt": "2026-08-26T20:24:52.589Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/xai-org/grok-build/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:15:44.419Z"
+          "fetchedAt": "2026-08-26T20:24:52.638Z"
         },
         {
           "type": "latest-tag",
           "url": "https://api.github.com/repos/xai-org/grok-build/tags?per_page=1",
-          "fetchedAt": "2026-08-26T20:15:44.590Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/xai-org/grok-build/tree/main",
-          "fetchedAt": "2026-08-26T20:16:41.727Z"
+          "fetchedAt": "2026-08-26T20:24:52.844Z"
         }
       ],
       "errors": []
@@ -6642,15 +6642,15 @@
       "apiUrl": "https://api.github.com/repos/anomalyco/opencode",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:16:57.877Z",
-      "stars": 201679,
-      "forks": 26158,
-      "openIssues": 5530,
+      "refreshedAt": "2026-08-26T20:24:54.721Z",
+      "stars": 201680,
+      "forks": 26159,
+      "openIssues": 5529,
       "contributors": 1004,
       "repositorySizeKb": 481882,
       "repositorySizePolicy": null,
       "defaultBranch": "dev",
-      "pushedAt": "2026-08-26T20:14:40Z",
+      "pushedAt": "2026-08-26T20:23:17Z",
       "archived": false,
       "license": {
         "key": "mit",
@@ -6740,29 +6740,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/anomalyco/opencode/tree/v1.18.23",
+          "fetchedAt": "2026-08-26T20:16:57.747Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/anomalyco/opencode",
-          "fetchedAt": "2026-08-26T20:16:22.544Z"
+          "fetchedAt": "2026-08-26T20:24:52.479Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/anomalyco/opencode/languages",
-          "fetchedAt": "2026-08-26T20:16:22.705Z"
+          "fetchedAt": "2026-08-26T20:24:52.675Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/anomalyco/opencode/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:16:22.807Z"
+          "fetchedAt": "2026-08-26T20:24:52.740Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/anomalyco/opencode/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:16:24.426Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/anomalyco/opencode/tree/v1.18.23",
-          "fetchedAt": "2026-08-26T20:16:57.747Z"
+          "fetchedAt": "2026-08-26T20:24:54.721Z"
         }
       ],
       "errors": []
@@ -6780,9 +6780,9 @@
       "apiUrl": "https://api.github.com/repos/earendil-works/pi",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:16:48.826Z",
-      "stars": 97732,
-      "forks": 12087,
+      "refreshedAt": "2026-08-26T20:24:53.813Z",
+      "stars": 97733,
+      "forks": 12089,
       "openIssues": 136,
       "contributors": 283,
       "repositorySizeKb": 66854,
@@ -6868,29 +6868,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/earendil-works/pi/tree/v0.84.3",
+          "fetchedAt": "2026-08-26T20:16:48.787Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/earendil-works/pi",
-          "fetchedAt": "2026-08-26T20:16:42.065Z"
+          "fetchedAt": "2026-08-26T20:24:53.059Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/earendil-works/pi/languages",
-          "fetchedAt": "2026-08-26T20:16:42.230Z"
+          "fetchedAt": "2026-08-26T20:24:53.215Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/earendil-works/pi/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:16:42.297Z"
+          "fetchedAt": "2026-08-26T20:24:53.284Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/earendil-works/pi/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:16:42.805Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/earendil-works/pi/tree/v0.84.3",
-          "fetchedAt": "2026-08-26T20:16:48.787Z"
+          "fetchedAt": "2026-08-26T20:24:53.813Z"
         }
       ],
       "errors": []
@@ -6908,7 +6908,7 @@
       "apiUrl": "https://api.github.com/repos/Aider-AI/aider",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:16:57.285Z",
+      "refreshedAt": "2026-08-26T20:24:54.400Z",
       "stars": 48511,
       "forks": 4891,
       "openIssues": 1825,
@@ -7006,29 +7006,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/Aider-AI/aider/tree/v0.86.0",
+          "fetchedAt": "2026-08-26T20:16:57.245Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/Aider-AI/aider",
-          "fetchedAt": "2026-08-26T20:16:49.058Z"
+          "fetchedAt": "2026-08-26T20:24:54.034Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/Aider-AI/aider/languages",
-          "fetchedAt": "2026-08-26T20:16:49.195Z"
+          "fetchedAt": "2026-08-26T20:24:54.202Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/Aider-AI/aider/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:16:49.303Z"
+          "fetchedAt": "2026-08-26T20:24:54.224Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/Aider-AI/aider/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:16:49.439Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/Aider-AI/aider/tree/v0.86.0",
-          "fetchedAt": "2026-08-26T20:16:57.245Z"
+          "fetchedAt": "2026-08-26T20:24:54.400Z"
         }
       ],
       "errors": []
@@ -7046,15 +7046,15 @@
       "apiUrl": "https://api.github.com/repos/aaif-goose/goose",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:05.798Z",
-      "stars": 53526,
+      "refreshedAt": "2026-08-26T20:24:55.905Z",
+      "stars": 53527,
       "forks": 6117,
-      "openIssues": 190,
+      "openIssues": 185,
       "contributors": 619,
       "repositorySizeKb": 966233,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:13:47Z",
+      "pushedAt": "2026-08-26T20:22:11Z",
       "archived": false,
       "license": {
         "key": "apache-2.0",
@@ -7164,29 +7164,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/aaif-goose/goose/tree/v1.47.0",
+          "fetchedAt": "2026-08-26T20:22:05.665Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/aaif-goose/goose",
-          "fetchedAt": "2026-08-26T20:16:57.514Z"
+          "fetchedAt": "2026-08-26T20:24:54.620Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/aaif-goose/goose/languages",
-          "fetchedAt": "2026-08-26T20:16:57.665Z"
+          "fetchedAt": "2026-08-26T20:24:54.803Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/aaif-goose/goose/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:16:57.818Z"
+          "fetchedAt": "2026-08-26T20:24:54.854Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/aaif-goose/goose/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:16:58.768Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/aaif-goose/goose/tree/v1.47.0",
-          "fetchedAt": "2026-08-26T20:22:05.665Z"
+          "fetchedAt": "2026-08-26T20:24:55.905Z"
         }
       ],
       "errors": []
@@ -7204,9 +7204,9 @@
       "apiUrl": "https://api.github.com/repos/deepseek-ai/deepseek-harness",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:17:11.302Z",
-      "stars": 197788,
-      "forks": 22477,
+      "refreshedAt": "2026-08-26T20:24:55.657Z",
+      "stars": 197796,
+      "forks": 22479,
       "openIssues": 0,
       "contributors": 38,
       "repositorySizeKb": 108918,
@@ -7296,39 +7296,39 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/deepseek-ai/deepseek-harness/tree/dsh-v0.1.1-rc.2",
+          "fetchedAt": "2026-08-26T20:17:11.125Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness",
-          "fetchedAt": "2026-08-26T20:16:58.104Z"
+          "fetchedAt": "2026-08-26T20:24:54.940Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/languages",
-          "fetchedAt": "2026-08-26T20:16:58.221Z"
+          "fetchedAt": "2026-08-26T20:24:55.093Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:16:58.283Z"
+          "fetchedAt": "2026-08-26T20:24:55.197Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:16:58.373Z"
+          "fetchedAt": "2026-08-26T20:24:55.205Z"
         },
         {
           "type": "latest-tag",
           "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/tags?per_page=1",
-          "fetchedAt": "2026-08-26T20:16:58.536Z"
+          "fetchedAt": "2026-08-26T20:24:55.365Z"
         },
         {
           "type": "tag-commit",
           "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/commits/b150a551b8d465e31e418e1b2eaf5e79bbb7d28e",
-          "fetchedAt": "2026-08-26T20:16:58.794Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/deepseek-ai/deepseek-harness/tree/dsh-v0.1.1-rc.2",
-          "fetchedAt": "2026-08-26T20:17:11.125Z"
+          "fetchedAt": "2026-08-26T20:24:55.657Z"
         }
       ],
       "errors": []
@@ -7346,9 +7346,9 @@
       "apiUrl": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:17:18.669Z",
-      "stars": 18615,
-      "forks": 2004,
+      "refreshedAt": "2026-08-26T20:24:56.361Z",
+      "stars": 18616,
+      "forks": 2005,
       "openIssues": 92,
       "contributors": 222,
       "repositorySizeKb": 49928,
@@ -7429,29 +7429,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/PrimeIntellect-ai/prime-agent/tree/v0.8.1",
+          "fetchedAt": "2026-08-26T20:17:18.635Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent",
-          "fetchedAt": "2026-08-26T20:17:11.597Z"
+          "fetchedAt": "2026-08-26T20:24:55.907Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent/languages",
-          "fetchedAt": "2026-08-26T20:17:11.715Z"
+          "fetchedAt": "2026-08-26T20:24:56.087Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:17:11.778Z"
+          "fetchedAt": "2026-08-26T20:24:56.198Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/PrimeIntellect-ai/prime-agent/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:17:12.114Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/PrimeIntellect-ai/prime-agent/tree/v0.8.1",
-          "fetchedAt": "2026-08-26T20:17:18.635Z"
+          "fetchedAt": "2026-08-26T20:24:56.361Z"
         }
       ],
       "errors": []
@@ -7469,7 +7469,7 @@
       "apiUrl": "https://api.github.com/repos/MoonshotAI/kimi-code",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:17:50.098Z",
+      "refreshedAt": "2026-08-26T20:24:56.949Z",
       "stars": 7089,
       "forks": 1131,
       "openIssues": 1189,
@@ -7562,29 +7562,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/MoonshotAI/kimi-code/tree/%40moonshot-ai%2Fkimi-code%400.38.0",
+          "fetchedAt": "2026-08-26T20:17:49.990Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/MoonshotAI/kimi-code",
-          "fetchedAt": "2026-08-26T20:17:18.914Z"
+          "fetchedAt": "2026-08-26T20:24:56.155Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/MoonshotAI/kimi-code/languages",
-          "fetchedAt": "2026-08-26T20:17:19.099Z"
+          "fetchedAt": "2026-08-26T20:24:56.299Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/MoonshotAI/kimi-code/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:17:19.110Z"
+          "fetchedAt": "2026-08-26T20:24:56.420Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/MoonshotAI/kimi-code/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:17:19.659Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/MoonshotAI/kimi-code/tree/%40moonshot-ai%2Fkimi-code%400.38.0",
-          "fetchedAt": "2026-08-26T20:17:49.990Z"
+          "fetchedAt": "2026-08-26T20:24:56.949Z"
         }
       ],
       "errors": []
@@ -7602,7 +7602,7 @@
       "apiUrl": "https://api.github.com/repos/mistralai/mistral-vibe",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:17:29.373Z",
+      "refreshedAt": "2026-08-26T20:24:57.316Z",
       "stars": 4876,
       "forks": 656,
       "openIssues": 282,
@@ -7665,29 +7665,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/mistralai/mistral-vibe/tree/v2.24.4",
+          "fetchedAt": "2026-08-26T20:17:29.337Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/mistralai/mistral-vibe",
-          "fetchedAt": "2026-08-26T20:17:25.196Z"
+          "fetchedAt": "2026-08-26T20:24:56.581Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/mistralai/mistral-vibe/languages",
-          "fetchedAt": "2026-08-26T20:17:25.390Z"
+          "fetchedAt": "2026-08-26T20:24:56.771Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/mistralai/mistral-vibe/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:17:25.404Z"
+          "fetchedAt": "2026-08-26T20:24:56.774Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/mistralai/mistral-vibe/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:17:25.830Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/mistralai/mistral-vibe/tree/v2.24.4",
-          "fetchedAt": "2026-08-26T20:17:29.337Z"
+          "fetchedAt": "2026-08-26T20:24:57.315Z"
         }
       ],
       "errors": []
@@ -7705,12 +7705,12 @@
       "apiUrl": "https://api.github.com/repos/microsoft/amplifier-agent",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:17:31.801Z",
+      "refreshedAt": "2026-08-26T20:24:57.289Z",
       "stars": 7,
       "forks": 6,
-      "openIssues": 5,
+      "openIssues": 6,
       "contributors": 8,
-      "repositorySizeKb": 56061,
+      "repositorySizeKb": 56318,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
       "pushedAt": "2026-08-26T20:17:28Z",
@@ -7778,29 +7778,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/microsoft/amplifier-agent/tree/v0.16.0",
+          "fetchedAt": "2026-08-26T20:17:31.775Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/microsoft/amplifier-agent",
-          "fetchedAt": "2026-08-26T20:17:29.597Z"
+          "fetchedAt": "2026-08-26T20:24:56.989Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/microsoft/amplifier-agent/languages",
-          "fetchedAt": "2026-08-26T20:17:29.722Z"
+          "fetchedAt": "2026-08-26T20:24:57.166Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/microsoft/amplifier-agent/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:17:29.818Z"
+          "fetchedAt": "2026-08-26T20:24:57.185Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/microsoft/amplifier-agent/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:17:29.867Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/microsoft/amplifier-agent/tree/v0.16.0",
-          "fetchedAt": "2026-08-26T20:17:31.775Z"
+          "fetchedAt": "2026-08-26T20:24:57.289Z"
         }
       ],
       "errors": []
@@ -7818,7 +7818,7 @@
       "apiUrl": "https://api.github.com/repos/gptme/gptme",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:17:37.831Z",
+      "refreshedAt": "2026-08-26T20:24:58.155Z",
       "stars": 4399,
       "forks": 418,
       "openIssues": 23,
@@ -7916,29 +7916,29 @@
       },
       "sources": [
         {
-          "type": "repository",
-          "url": "https://api.github.com/repos/gptme/gptme",
-          "fetchedAt": "2026-08-26T20:17:31.989Z"
+          "type": "loc-measurement",
+          "url": "https://github.com/gptme/gptme/tree/v0.33.0",
+          "fetchedAt": "2026-08-26T20:17:37.793Z"
         },
         {
-          "type": "contributors",
-          "url": "https://api.github.com/repos/gptme/gptme/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:17:32.169Z"
+          "type": "repository",
+          "url": "https://api.github.com/repos/gptme/gptme",
+          "fetchedAt": "2026-08-26T20:24:57.193Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/gptme/gptme/languages",
-          "fetchedAt": "2026-08-26T20:17:32.187Z"
+          "fetchedAt": "2026-08-26T20:24:57.358Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/gptme/gptme/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-26T20:24:57.407Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/gptme/gptme/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:17:32.902Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/gptme/gptme/tree/v0.33.0",
-          "fetchedAt": "2026-08-26T20:17:37.793Z"
+          "fetchedAt": "2026-08-26T20:24:58.154Z"
         }
       ],
       "errors": []
@@ -7956,7 +7956,7 @@
       "apiUrl": "https://api.github.com/repos/slopus/happy",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:17:42.527Z",
+      "refreshedAt": "2026-08-26T20:24:57.757Z",
       "stars": 23509,
       "forks": 1981,
       "openIssues": 969,
@@ -8057,9 +8057,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/slopus/happy/tree/main",
+          "fetchedAt": "2026-08-26T20:17:42.475Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/slopus/happy",
-          "fetchedAt": "2026-08-26T20:17:38.080Z"
+          "fetchedAt": "2026-08-26T20:24:57.551Z"
         },
         {
           "type": "release-policy",
@@ -8069,17 +8074,12 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/slopus/happy/languages",
-          "fetchedAt": "2026-08-26T20:17:38.232Z"
+          "fetchedAt": "2026-08-26T20:24:57.708Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/slopus/happy/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:17:38.291Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/slopus/happy/tree/main",
-          "fetchedAt": "2026-08-26T20:17:42.475Z"
+          "fetchedAt": "2026-08-26T20:24:57.757Z"
         }
       ],
       "errors": []
@@ -8097,7 +8097,7 @@
       "apiUrl": "https://api.github.com/repos/amantus-ai/vibetunnel",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:17:47.028Z",
+      "refreshedAt": "2026-08-26T20:24:58.320Z",
       "stars": 4637,
       "forks": 332,
       "openIssues": 0,
@@ -8199,39 +8199,39 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/amantus-ai/vibetunnel/tree/v1.0.0-beta.18",
+          "fetchedAt": "2026-08-26T20:17:46.997Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/amantus-ai/vibetunnel",
-          "fetchedAt": "2026-08-26T20:17:42.772Z"
+          "fetchedAt": "2026-08-26T20:24:57.552Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/amantus-ai/vibetunnel/languages",
-          "fetchedAt": "2026-08-26T20:17:42.924Z"
+          "fetchedAt": "2026-08-26T20:24:57.723Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/amantus-ai/vibetunnel/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:17:42.995Z"
+          "fetchedAt": "2026-08-26T20:24:57.742Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/amantus-ai/vibetunnel/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:17:43.080Z"
+          "fetchedAt": "2026-08-26T20:24:57.852Z"
         },
         {
           "type": "latest-tag",
           "url": "https://api.github.com/repos/amantus-ai/vibetunnel/tags?per_page=1",
-          "fetchedAt": "2026-08-26T20:17:43.277Z"
+          "fetchedAt": "2026-08-26T20:24:58.068Z"
         },
         {
           "type": "tag-commit",
           "url": "https://api.github.com/repos/amantus-ai/vibetunnel/commits/a0744c467de86368ab5604316af7d46cafbb69d2",
-          "fetchedAt": "2026-08-26T20:17:43.524Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/amantus-ai/vibetunnel/tree/v1.0.0-beta.18",
-          "fetchedAt": "2026-08-26T20:17:46.997Z"
+          "fetchedAt": "2026-08-26T20:24:58.320Z"
         }
       ],
       "errors": []
@@ -8249,7 +8249,7 @@
       "apiUrl": "https://api.github.com/repos/TabbyML/pochi",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:18:01.651Z",
+      "refreshedAt": "2026-08-26T20:24:58.510Z",
       "stars": 124,
       "forks": 53,
       "openIssues": 26,
@@ -8332,29 +8332,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/TabbyML/pochi/tree/vscode%400.66.0",
+          "fetchedAt": "2026-08-26T20:18:01.598Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/TabbyML/pochi",
-          "fetchedAt": "2026-08-26T20:17:47.242Z"
+          "fetchedAt": "2026-08-26T20:24:57.997Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/TabbyML/pochi/languages",
-          "fetchedAt": "2026-08-26T20:17:47.388Z"
+          "fetchedAt": "2026-08-26T20:24:58.165Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/TabbyML/pochi/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:17:47.739Z"
+          "fetchedAt": "2026-08-26T20:24:58.184Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/TabbyML/pochi/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:17:47.860Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/TabbyML/pochi/tree/vscode%400.66.0",
-          "fetchedAt": "2026-08-26T20:18:01.598Z"
+          "fetchedAt": "2026-08-26T20:24:58.509Z"
         }
       ],
       "errors": []
@@ -8372,7 +8372,7 @@
       "apiUrl": "https://api.github.com/repos/TabbyML/tabby",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:17:56.065Z",
+      "refreshedAt": "2026-08-26T20:24:59.096Z",
       "stars": 33838,
       "forks": 1785,
       "openIssues": 332,
@@ -8485,9 +8485,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/TabbyML/tabby/tree/v0.32.0",
+          "fetchedAt": "2026-08-26T20:17:56.012Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/TabbyML/tabby",
-          "fetchedAt": "2026-08-26T20:17:50.277Z"
+          "fetchedAt": "2026-08-26T20:24:58.376Z"
         },
         {
           "type": "license-override",
@@ -8497,22 +8502,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/TabbyML/tabby/languages",
-          "fetchedAt": "2026-08-26T20:17:50.412Z"
+          "fetchedAt": "2026-08-26T20:24:58.548Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/TabbyML/tabby/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:17:50.487Z"
+          "fetchedAt": "2026-08-26T20:24:58.571Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/TabbyML/tabby/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:17:50.933Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/TabbyML/tabby/tree/v0.32.0",
-          "fetchedAt": "2026-08-26T20:17:56.012Z"
+          "fetchedAt": "2026-08-26T20:24:59.095Z"
         }
       ],
       "errors": []
@@ -8530,7 +8530,7 @@
       "apiUrl": "https://api.github.com/repos/olimorris/codecompanion.nvim",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:17:59.399Z",
+      "refreshedAt": "2026-08-26T20:24:58.946Z",
       "stars": 6824,
       "forks": 446,
       "openIssues": 11,
@@ -8618,29 +8618,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/olimorris/codecompanion.nvim/tree/v19.23.0",
+          "fetchedAt": "2026-08-26T20:17:59.373Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/olimorris/codecompanion.nvim",
-          "fetchedAt": "2026-08-26T20:17:56.230Z"
+          "fetchedAt": "2026-08-26T20:24:58.529Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/languages",
-          "fetchedAt": "2026-08-26T20:17:56.337Z"
+          "fetchedAt": "2026-08-26T20:24:58.674Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:17:56.456Z"
+          "fetchedAt": "2026-08-26T20:24:58.750Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:17:56.647Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/olimorris/codecompanion.nvim/tree/v19.23.0",
-          "fetchedAt": "2026-08-26T20:17:59.373Z"
+          "fetchedAt": "2026-08-26T20:24:58.946Z"
         }
       ],
       "errors": []
@@ -8658,7 +8658,7 @@
       "apiUrl": "https://api.github.com/repos/avante-corp/avante.nvim",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:18:01.653Z",
+      "refreshedAt": "2026-08-26T20:24:59.194Z",
       "stars": 18137,
       "forks": 848,
       "openIssues": 43,
@@ -8666,7 +8666,7 @@
       "repositorySizeKb": 4869,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:13:13Z",
+      "pushedAt": "2026-08-26T20:21:56Z",
       "archived": false,
       "license": {
         "key": "apache-2.0",
@@ -8761,29 +8761,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/avante-corp/avante.nvim/tree/release-v0.2",
+          "fetchedAt": "2026-08-26T20:18:01.645Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/avante-corp/avante.nvim",
-          "fetchedAt": "2026-08-26T20:17:59.599Z"
+          "fetchedAt": "2026-08-26T20:24:58.718Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/avante-corp/avante.nvim/languages",
-          "fetchedAt": "2026-08-26T20:17:59.731Z"
+          "fetchedAt": "2026-08-26T20:24:58.891Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/avante-corp/avante.nvim/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:18:00.008Z"
+          "fetchedAt": "2026-08-26T20:24:58.998Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/avante-corp/avante.nvim/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:18:00.070Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/avante-corp/avante.nvim/tree/release-v0.2",
-          "fetchedAt": "2026-08-26T20:18:01.645Z"
+          "fetchedAt": "2026-08-26T20:24:59.194Z"
         }
       ],
       "errors": []
@@ -8801,7 +8801,7 @@
       "apiUrl": "https://api.github.com/repos/smallcloudai/refact",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:18:14.823Z",
+      "refreshedAt": "2026-08-26T20:24:59.455Z",
       "stars": 3540,
       "forks": 318,
       "openIssues": 2,
@@ -8909,29 +8909,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/smallcloudai/refact/tree/release%2Fv8.0.4",
+          "fetchedAt": "2026-08-26T20:18:14.772Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/smallcloudai/refact",
-          "fetchedAt": "2026-08-26T20:18:01.869Z"
+          "fetchedAt": "2026-08-26T20:24:59.160Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/smallcloudai/refact/languages",
-          "fetchedAt": "2026-08-26T20:18:01.993Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/smallcloudai/refact/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:18:02.230Z"
+          "fetchedAt": "2026-08-26T20:24:59.324Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/smallcloudai/refact/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:18:02.242Z"
+          "fetchedAt": "2026-08-26T20:24:59.384Z"
         },
         {
-          "type": "loc-measurement",
-          "url": "https://github.com/smallcloudai/refact/tree/release%2Fv8.0.4",
-          "fetchedAt": "2026-08-26T20:18:14.772Z"
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/smallcloudai/refact/releases?per_page=100",
+          "fetchedAt": "2026-08-26T20:24:59.455Z"
         }
       ],
       "errors": []
@@ -8949,7 +8949,7 @@
       "apiUrl": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab",
       "metricScope": "Whole GitLab monorepo; GitLab Duo Developer Flow is one feature within it.",
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:27.830Z",
+      "refreshedAt": "2026-08-26T20:25:01.698Z",
       "stars": 6129,
       "forks": 12363,
       "openIssues": 0,
@@ -8962,7 +8962,7 @@
         "sourceUrl": "https://docs.gitlab.com/api/projects/"
       },
       "defaultBranch": "master",
-      "pushedAt": "2026-08-26T16:11:27.000-04:00",
+      "pushedAt": "2026-08-26T20:18:58.000+00:00",
       "archived": false,
       "license": {
         "key": "manifest-verified-mixed",
@@ -9052,29 +9052,34 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://gitlab.com/gitlab-org/gitlab/-/tree/v19.1.7-ee",
+          "fetchedAt": "2026-08-26T20:19:25.332Z"
+        },
+        {
           "type": "repository",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab?statistics=true&license=true",
-          "fetchedAt": "2026-08-26T20:18:01.801Z"
+          "fetchedAt": "2026-08-26T20:25:00.754Z"
         },
         {
           "type": "open-issues",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/issues?state=opened&per_page=1",
-          "fetchedAt": "2026-08-26T20:18:02.107Z"
+          "fetchedAt": "2026-08-26T20:25:00.985Z"
         },
         {
           "type": "last-commit",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/repository/commits?per_page=1",
-          "fetchedAt": "2026-08-26T20:18:01.961Z"
+          "fetchedAt": "2026-08-26T20:25:01.006Z"
         },
         {
           "type": "archive-status",
           "url": "https://gitlab.com/api/graphql",
-          "fetchedAt": "2026-08-26T20:18:01.920Z"
+          "fetchedAt": "2026-08-26T20:25:00.953Z"
         },
         {
           "type": "repository-size-policy",
           "url": "https://docs.gitlab.com/api/projects/",
-          "fetchedAt": "2026-08-26T20:18:01.948Z"
+          "fetchedAt": "2026-08-26T20:25:00.890Z"
         },
         {
           "type": "license-override",
@@ -9084,22 +9089,17 @@
         {
           "type": "languages",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/languages",
-          "fetchedAt": "2026-08-26T20:18:02.234Z"
+          "fetchedAt": "2026-08-26T20:25:01.146Z"
         },
         {
           "type": "latest-tag",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/repository/tags?per_page=1",
-          "fetchedAt": "2026-08-26T20:18:02.673Z"
+          "fetchedAt": "2026-08-26T20:25:01.551Z"
         },
         {
           "type": "contributors",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/repository/contributors?per_page=1",
-          "fetchedAt": "2026-08-26T20:18:02.726Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://gitlab.com/gitlab-org/gitlab/-/tree/v19.1.7-ee",
-          "fetchedAt": "2026-08-26T20:19:25.332Z"
+          "fetchedAt": "2026-08-26T20:25:01.698Z"
         }
       ],
       "errors": []
@@ -9117,15 +9117,15 @@
       "apiUrl": "https://api.github.com/repos/coder/coder",
       "metricScope": "Whole Coder platform monorepo, not only Coder Agents.",
       "status": "current",
-      "refreshedAt": "2026-08-26T20:18:35.125Z",
+      "refreshedAt": "2026-08-26T20:25:00.975Z",
       "stars": 14258,
       "forks": 1454,
-      "openIssues": 978,
+      "openIssues": 979,
       "contributors": 271,
       "repositorySizeKb": 469233,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:18:10Z",
+      "pushedAt": "2026-08-26T20:18:46Z",
       "archived": false,
       "license": {
         "key": "manifest-verified-mixed",
@@ -9156,7 +9156,7 @@
         },
         {
           "name": "TypeScript",
-          "bytes": 9842967,
+          "bytes": 9842730,
           "percent": 22.89
         },
         {
@@ -9265,9 +9265,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/coder/coder/tree/v2.36.3",
+          "fetchedAt": "2026-08-26T20:18:34.849Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/coder/coder",
-          "fetchedAt": "2026-08-26T20:18:15.046Z"
+          "fetchedAt": "2026-08-26T20:24:59.434Z"
         },
         {
           "type": "license-override",
@@ -9282,22 +9287,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/coder/coder/languages",
-          "fetchedAt": "2026-08-26T20:18:15.162Z"
+          "fetchedAt": "2026-08-26T20:24:59.594Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/coder/coder/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:18:15.537Z"
+          "fetchedAt": "2026-08-26T20:24:59.643Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/coder/coder/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:18:16.772Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/coder/coder/tree/v2.36.3",
-          "fetchedAt": "2026-08-26T20:18:34.849Z"
+          "fetchedAt": "2026-08-26T20:25:00.975Z"
         }
       ],
       "errors": []
@@ -9315,7 +9315,7 @@
       "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands-Cloud",
       "metricScope": "OpenHands Cloud deployment charts and control-plane source, not the separate core agent repository.",
       "status": "current",
-      "refreshedAt": "2026-08-26T20:18:37.415Z",
+      "refreshedAt": "2026-08-26T20:25:00.052Z",
       "stars": 72,
       "forks": 44,
       "openIssues": 103,
@@ -9323,7 +9323,7 @@
       "repositorySizeKb": 4238,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:16:06Z",
+      "pushedAt": "2026-08-26T20:18:54Z",
       "archived": false,
       "license": {
         "key": "manifest-verified",
@@ -9393,9 +9393,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/OpenHands/OpenHands-Cloud/tree/openhands%2F0.55.0",
+          "fetchedAt": "2026-08-26T20:18:37.404Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud",
-          "fetchedAt": "2026-08-26T20:18:35.357Z"
+          "fetchedAt": "2026-08-26T20:24:59.710Z"
         },
         {
           "type": "license-override",
@@ -9405,22 +9410,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud/languages",
-          "fetchedAt": "2026-08-26T20:18:35.520Z"
+          "fetchedAt": "2026-08-26T20:24:59.881Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:18:35.537Z"
+          "fetchedAt": "2026-08-26T20:24:59.914Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:18:35.702Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/OpenHands/OpenHands-Cloud/tree/openhands%2F0.55.0",
-          "fetchedAt": "2026-08-26T20:18:37.404Z"
+          "fetchedAt": "2026-08-26T20:25:00.051Z"
         }
       ],
       "errors": []
@@ -9438,7 +9438,7 @@
       "apiUrl": "https://api.github.com/repos/coder/code-server",
       "metricScope": "code-server checked-in source; shallow checkout excludes the uninitialized VS Code submodule.",
       "status": "current",
-      "refreshedAt": "2026-08-26T20:18:39.803Z",
+      "refreshedAt": "2026-08-26T20:25:01.232Z",
       "stars": 79079,
       "forks": 6825,
       "openIssues": 151,
@@ -9531,29 +9531,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/coder/code-server/tree/v4.134.0",
+          "fetchedAt": "2026-08-26T20:18:39.791Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/coder/code-server",
-          "fetchedAt": "2026-08-26T20:18:37.627Z"
+          "fetchedAt": "2026-08-26T20:25:00.293Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/coder/code-server/languages",
-          "fetchedAt": "2026-08-26T20:18:37.794Z"
+          "fetchedAt": "2026-08-26T20:25:00.481Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/coder/code-server/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:18:37.850Z"
+          "fetchedAt": "2026-08-26T20:25:00.526Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/coder/code-server/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:18:38.640Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/coder/code-server/tree/v4.134.0",
-          "fetchedAt": "2026-08-26T20:18:39.791Z"
+          "fetchedAt": "2026-08-26T20:25:01.231Z"
         }
       ],
       "errors": []
@@ -9571,7 +9571,7 @@
       "apiUrl": "https://api.github.com/repos/gitpod-io/openvscode-server",
       "metricScope": "Full Code OSS fork; contributor count covers this fork rather than all upstream VS Code authors.",
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:11.683Z",
+      "refreshedAt": "2026-08-26T20:25:01.868Z",
       "stars": 6156,
       "forks": 598,
       "openIssues": 140,
@@ -9849,29 +9849,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/gitpod-io/openvscode-server/tree/openvscode-server-v1.109.5",
+          "fetchedAt": "2026-08-26T20:19:11.417Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/gitpod-io/openvscode-server",
-          "fetchedAt": "2026-08-26T20:18:40.067Z"
+          "fetchedAt": "2026-08-26T20:25:01.304Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/gitpod-io/openvscode-server/languages",
-          "fetchedAt": "2026-08-26T20:18:40.191Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/gitpod-io/openvscode-server/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:18:40.518Z"
+          "fetchedAt": "2026-08-26T20:25:01.473Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/gitpod-io/openvscode-server/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:18:42.042Z"
+          "fetchedAt": "2026-08-26T20:25:01.548Z"
         },
         {
-          "type": "loc-measurement",
-          "url": "https://github.com/gitpod-io/openvscode-server/tree/openvscode-server-v1.109.5",
-          "fetchedAt": "2026-08-26T20:19:11.417Z"
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/gitpod-io/openvscode-server/releases?per_page=100",
+          "fetchedAt": "2026-08-26T20:25:01.868Z"
         }
       ],
       "errors": []
@@ -9889,7 +9889,7 @@
       "apiUrl": "https://api.github.com/repos/ekzhang/sshx",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:13.414Z",
+      "refreshedAt": "2026-08-26T20:25:01.699Z",
       "stars": 7653,
       "forks": 299,
       "openIssues": 26,
@@ -9977,29 +9977,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/ekzhang/sshx/tree/v0.4.1",
+          "fetchedAt": "2026-08-26T20:19:13.409Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/ekzhang/sshx",
-          "fetchedAt": "2026-08-26T20:19:11.884Z"
+          "fetchedAt": "2026-08-26T20:25:01.466Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/ekzhang/sshx/languages",
-          "fetchedAt": "2026-08-26T20:19:12.062Z"
+          "fetchedAt": "2026-08-26T20:25:01.627Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/ekzhang/sshx/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:12.071Z"
+          "fetchedAt": "2026-08-26T20:25:01.676Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/ekzhang/sshx/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:12.209Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/ekzhang/sshx/tree/v0.4.1",
-          "fetchedAt": "2026-08-26T20:19:13.409Z"
+          "fetchedAt": "2026-08-26T20:25:01.699Z"
         }
       ],
       "errors": []
@@ -10017,7 +10017,7 @@
       "apiUrl": "https://api.github.com/repos/owenthereal/upterm",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:16.331Z",
+      "refreshedAt": "2026-08-26T20:25:02.527Z",
       "stars": 1284,
       "forks": 81,
       "openIssues": 53,
@@ -10100,29 +10100,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/owenthereal/upterm/tree/v0.24.0",
+          "fetchedAt": "2026-08-26T20:19:16.324Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/owenthereal/upterm",
-          "fetchedAt": "2026-08-26T20:19:13.576Z"
+          "fetchedAt": "2026-08-26T20:25:01.917Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/owenthereal/upterm/languages",
-          "fetchedAt": "2026-08-26T20:19:13.683Z"
+          "fetchedAt": "2026-08-26T20:25:02.076Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/owenthereal/upterm/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:13.778Z"
+          "fetchedAt": "2026-08-26T20:25:02.096Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/owenthereal/upterm/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:14.085Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/owenthereal/upterm/tree/v0.24.0",
-          "fetchedAt": "2026-08-26T20:19:16.324Z"
+          "fetchedAt": "2026-08-26T20:25:02.527Z"
         }
       ],
       "errors": []
@@ -10140,8 +10140,8 @@
       "apiUrl": "https://api.github.com/repos/Termix-SSH/Termix",
       "metricScope": "Whole Termix monorepo, including server and desktop/mobile/web clients.",
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:20.992Z",
-      "stars": 14923,
+      "refreshedAt": "2026-08-26T20:25:02.513Z",
+      "stars": 14924,
       "forks": 690,
       "openIssues": 6,
       "contributors": 11,
@@ -10233,9 +10233,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/Termix-SSH/Termix/tree/release-2.7.1-tag",
+          "fetchedAt": "2026-08-26T20:19:20.954Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/Termix-SSH/Termix",
-          "fetchedAt": "2026-08-26T20:19:16.587Z"
+          "fetchedAt": "2026-08-26T20:25:01.941Z"
         },
         {
           "type": "license-override",
@@ -10245,22 +10250,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/Termix-SSH/Termix/languages",
-          "fetchedAt": "2026-08-26T20:19:16.750Z"
+          "fetchedAt": "2026-08-26T20:25:02.109Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/Termix-SSH/Termix/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:16.779Z"
+          "fetchedAt": "2026-08-26T20:25:02.141Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/Termix-SSH/Termix/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:17.094Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/Termix-SSH/Termix/tree/release-2.7.1-tag",
-          "fetchedAt": "2026-08-26T20:19:20.954Z"
+          "fetchedAt": "2026-08-26T20:25:02.512Z"
         }
       ],
       "errors": []
@@ -10278,7 +10278,7 @@
       "apiUrl": "https://api.github.com/repos/tsl0922/ttyd",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:22.769Z",
+      "refreshedAt": "2026-08-26T20:25:02.576Z",
       "stars": 12266,
       "forks": 1198,
       "openIssues": 113,
@@ -10366,29 +10366,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/tsl0922/ttyd/tree/1.7.7",
+          "fetchedAt": "2026-08-26T20:19:22.764Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/tsl0922/ttyd",
-          "fetchedAt": "2026-08-26T20:19:21.215Z"
+          "fetchedAt": "2026-08-26T20:25:02.070Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/tsl0922/ttyd/languages",
-          "fetchedAt": "2026-08-26T20:19:21.322Z"
+          "fetchedAt": "2026-08-26T20:25:02.222Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/tsl0922/ttyd/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:21.405Z"
+          "fetchedAt": "2026-08-26T20:25:02.380Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/tsl0922/ttyd/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:21.598Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/tsl0922/ttyd/tree/1.7.7",
-          "fetchedAt": "2026-08-26T20:19:22.764Z"
+          "fetchedAt": "2026-08-26T20:25:02.576Z"
         }
       ],
       "errors": []
@@ -10406,7 +10406,7 @@
       "apiUrl": "https://api.github.com/repos/specstoryai/getspecstory",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:30.232Z",
+      "refreshedAt": "2026-08-26T20:25:03.275Z",
       "stars": 1311,
       "forks": 85,
       "openIssues": 60,
@@ -10474,29 +10474,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/specstoryai/getspecstory/tree/v2.10.0",
+          "fetchedAt": "2026-08-26T20:19:30.212Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/specstoryai/getspecstory",
-          "fetchedAt": "2026-08-26T20:19:23.031Z"
+          "fetchedAt": "2026-08-26T20:25:02.750Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/specstoryai/getspecstory/languages",
-          "fetchedAt": "2026-08-26T20:19:23.183Z"
+          "fetchedAt": "2026-08-26T20:25:02.905Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/specstoryai/getspecstory/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:23.233Z"
+          "fetchedAt": "2026-08-26T20:25:02.935Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/specstoryai/getspecstory/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:23.669Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/specstoryai/getspecstory/tree/v2.10.0",
-          "fetchedAt": "2026-08-26T20:19:30.212Z"
+          "fetchedAt": "2026-08-26T20:25:03.275Z"
         }
       ],
       "errors": []
@@ -10514,7 +10514,7 @@
       "apiUrl": "https://api.github.com/repos/entireio/cli",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:37.251Z",
+      "refreshedAt": "2026-08-26T20:25:03.637Z",
       "stars": 5011,
       "forks": 395,
       "openIssues": 210,
@@ -10582,29 +10582,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/entireio/cli/tree/v0.10.2",
+          "fetchedAt": "2026-08-26T20:19:37.217Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/entireio/cli",
-          "fetchedAt": "2026-08-26T20:19:28.263Z"
+          "fetchedAt": "2026-08-26T20:25:02.785Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/entireio/cli/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:28.465Z"
+          "fetchedAt": "2026-08-26T20:25:02.982Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/entireio/cli/languages",
-          "fetchedAt": "2026-08-26T20:19:28.471Z"
+          "fetchedAt": "2026-08-26T20:25:02.991Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/entireio/cli/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:28.995Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/entireio/cli/tree/v0.10.2",
-          "fetchedAt": "2026-08-26T20:19:37.217Z"
+          "fetchedAt": "2026-08-26T20:25:03.637Z"
         }
       ],
       "errors": []
@@ -10622,7 +10622,7 @@
       "apiUrl": "https://api.github.com/repos/papercomputeco/tapes",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:39.478Z",
+      "refreshedAt": "2026-08-26T20:25:03.469Z",
       "stars": 317,
       "forks": 26,
       "openIssues": 12,
@@ -10710,29 +10710,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/papercomputeco/tapes/tree/v0.38.0",
+          "fetchedAt": "2026-08-26T20:19:39.455Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/papercomputeco/tapes",
-          "fetchedAt": "2026-08-26T20:19:30.449Z"
+          "fetchedAt": "2026-08-26T20:25:02.804Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/papercomputeco/tapes/languages",
-          "fetchedAt": "2026-08-26T20:19:30.600Z"
+          "fetchedAt": "2026-08-26T20:25:02.966Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/papercomputeco/tapes/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:30.672Z"
+          "fetchedAt": "2026-08-26T20:25:02.997Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/papercomputeco/tapes/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:31.298Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/papercomputeco/tapes/tree/v0.38.0",
-          "fetchedAt": "2026-08-26T20:19:39.455Z"
+          "fetchedAt": "2026-08-26T20:25:03.469Z"
         }
       ],
       "errors": []
@@ -10750,7 +10750,7 @@
       "apiUrl": "https://api.github.com/repos/kenn-io/agentsview",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:44.444Z",
+      "refreshedAt": "2026-08-26T20:25:04.299Z",
       "stars": 5279,
       "forks": 613,
       "openIssues": 111,
@@ -10873,29 +10873,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/kenn-io/agentsview/tree/v0.41.1",
+          "fetchedAt": "2026-08-26T20:19:44.394Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/kenn-io/agentsview",
-          "fetchedAt": "2026-08-26T20:19:37.495Z"
+          "fetchedAt": "2026-08-26T20:25:03.534Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/kenn-io/agentsview/languages",
-          "fetchedAt": "2026-08-26T20:19:37.641Z"
+          "fetchedAt": "2026-08-26T20:25:03.703Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/kenn-io/agentsview/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:37.695Z"
+          "fetchedAt": "2026-08-26T20:25:03.819Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/kenn-io/agentsview/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:38.327Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/kenn-io/agentsview/tree/v0.41.1",
-          "fetchedAt": "2026-08-26T20:19:44.394Z"
+          "fetchedAt": "2026-08-26T20:25:04.298Z"
         }
       ],
       "errors": []
@@ -10913,7 +10913,7 @@
       "apiUrl": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:43.174Z",
+      "refreshedAt": "2026-08-26T20:25:04.417Z",
       "stars": 2101,
       "forks": 210,
       "openIssues": 9,
@@ -11001,29 +11001,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/jhlee0409/claude-code-history-viewer/tree/v1.26.0",
+          "fetchedAt": "2026-08-26T20:19:43.147Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer",
-          "fetchedAt": "2026-08-26T20:19:39.666Z"
+          "fetchedAt": "2026-08-26T20:25:03.700Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer/languages",
-          "fetchedAt": "2026-08-26T20:19:39.827Z"
+          "fetchedAt": "2026-08-26T20:25:03.852Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:39.854Z"
+          "fetchedAt": "2026-08-26T20:25:03.884Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/jhlee0409/claude-code-history-viewer/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:40.340Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/jhlee0409/claude-code-history-viewer/tree/v1.26.0",
-          "fetchedAt": "2026-08-26T20:19:43.147Z"
+          "fetchedAt": "2026-08-26T20:25:04.417Z"
         }
       ],
       "errors": []
@@ -11041,7 +11041,7 @@
       "apiUrl": "https://api.github.com/repos/jazzyalex/agent-sessions",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:46.651Z",
+      "refreshedAt": "2026-08-26T20:25:04.279Z",
       "stars": 816,
       "forks": 52,
       "openIssues": 3,
@@ -11114,29 +11114,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/jazzyalex/agent-sessions/tree/v5.0.2",
+          "fetchedAt": "2026-08-26T20:19:46.620Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/jazzyalex/agent-sessions",
-          "fetchedAt": "2026-08-26T20:19:43.385Z"
+          "fetchedAt": "2026-08-26T20:25:03.860Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/jazzyalex/agent-sessions/languages",
-          "fetchedAt": "2026-08-26T20:19:43.540Z"
+          "fetchedAt": "2026-08-26T20:25:04.031Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/jazzyalex/agent-sessions/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:43.698Z"
+          "fetchedAt": "2026-08-26T20:25:04.039Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/jazzyalex/agent-sessions/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:43.812Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/jazzyalex/agent-sessions/tree/v5.0.2",
-          "fetchedAt": "2026-08-26T20:19:46.620Z"
+          "fetchedAt": "2026-08-26T20:25:04.279Z"
         }
       ],
       "errors": []
@@ -11154,7 +11154,7 @@
       "apiUrl": "https://api.github.com/repos/git-ai-project/git-ai",
       "metricScope": "Apache-licensed Git AI CLI and open attribution standard; the hosted Teams service is outside repository metrics.",
       "status": "current",
-      "refreshedAt": "2026-08-26T20:19:58.040Z",
+      "refreshedAt": "2026-08-26T20:25:05.428Z",
       "stars": 2506,
       "forks": 275,
       "openIssues": 148,
@@ -11247,29 +11247,29 @@
       },
       "sources": [
         {
-          "type": "repository",
-          "url": "https://api.github.com/repos/git-ai-project/git-ai",
-          "fetchedAt": "2026-08-26T20:19:44.628Z"
+          "type": "loc-measurement",
+          "url": "https://github.com/git-ai-project/git-ai/tree/v1.7.0",
+          "fetchedAt": "2026-08-26T20:19:58.002Z"
         },
         {
-          "type": "contributors",
-          "url": "https://api.github.com/repos/git-ai-project/git-ai/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:44.792Z"
+          "type": "repository",
+          "url": "https://api.github.com/repos/git-ai-project/git-ai",
+          "fetchedAt": "2026-08-26T20:25:04.503Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/git-ai-project/git-ai/languages",
-          "fetchedAt": "2026-08-26T20:19:44.807Z"
+          "fetchedAt": "2026-08-26T20:25:04.658Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/git-ai-project/git-ai/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-26T20:25:04.718Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/git-ai-project/git-ai/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:45.524Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/git-ai-project/git-ai/tree/v1.7.0",
-          "fetchedAt": "2026-08-26T20:19:58.002Z"
+          "fetchedAt": "2026-08-26T20:25:05.428Z"
         }
       ],
       "errors": []
@@ -11287,15 +11287,15 @@
       "apiUrl": "https://api.github.com/repos/openclaw/openclaw",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:21:26.462Z",
-      "stars": 387709,
-      "forks": 81403,
-      "openIssues": 5748,
+      "refreshedAt": "2026-08-26T20:25:05.841Z",
+      "stars": 387708,
+      "forks": 81404,
+      "openIssues": 5751,
       "contributors": 3162,
       "repositorySizeKb": 2895125,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:19:00Z",
+      "pushedAt": "2026-08-26T20:24:37Z",
       "archived": false,
       "license": {
         "key": "manifest-verified",
@@ -11415,9 +11415,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/openclaw/openclaw/tree/v2026.6.34",
+          "fetchedAt": "2026-08-26T20:21:26.072Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/openclaw/openclaw",
-          "fetchedAt": "2026-08-26T20:19:46.871Z"
+          "fetchedAt": "2026-08-26T20:25:04.532Z"
         },
         {
           "type": "license-override",
@@ -11427,22 +11432,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/openclaw/openclaw/languages",
-          "fetchedAt": "2026-08-26T20:19:47.034Z"
+          "fetchedAt": "2026-08-26T20:25:04.696Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/openclaw/openclaw/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:47.108Z"
+          "fetchedAt": "2026-08-26T20:25:04.783Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/openclaw/openclaw/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:48.047Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/openclaw/openclaw/tree/v2026.6.34",
-          "fetchedAt": "2026-08-26T20:21:26.072Z"
+          "fetchedAt": "2026-08-26T20:25:05.840Z"
         }
       ],
       "errors": []
@@ -11460,10 +11460,10 @@
       "apiUrl": "https://api.github.com/repos/NousResearch/hermes-agent",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:20:19.621Z",
-      "stars": 236841,
-      "forks": 47886,
-      "openIssues": 36179,
+      "refreshedAt": "2026-08-26T20:25:05.143Z",
+      "stars": 236842,
+      "forks": 47887,
+      "openIssues": 36180,
       "contributors": 3086,
       "repositorySizeKb": 771502,
       "repositorySizePolicy": null,
@@ -11643,29 +11643,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/NousResearch/hermes-agent/tree/v2026.8.19",
+          "fetchedAt": "2026-08-26T20:20:19.412Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/NousResearch/hermes-agent",
-          "fetchedAt": "2026-08-26T20:19:58.237Z"
+          "fetchedAt": "2026-08-26T20:25:04.655Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/NousResearch/hermes-agent/languages",
-          "fetchedAt": "2026-08-26T20:19:58.370Z"
+          "fetchedAt": "2026-08-26T20:25:04.820Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/NousResearch/hermes-agent/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:19:58.468Z"
+          "fetchedAt": "2026-08-26T20:25:04.924Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/NousResearch/hermes-agent/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:19:58.628Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/NousResearch/hermes-agent/tree/v2026.8.19",
-          "fetchedAt": "2026-08-26T20:20:19.412Z"
+          "fetchedAt": "2026-08-26T20:25:05.143Z"
         }
       ],
       "errors": []
@@ -11683,7 +11683,7 @@
       "apiUrl": "https://api.github.com/repos/HKUDS/nanobot",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:20:23.630Z",
+      "refreshedAt": "2026-08-26T20:25:05.742Z",
       "stars": 47424,
       "forks": 8369,
       "openIssues": 741,
@@ -11771,29 +11771,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/HKUDS/nanobot/tree/v0.3.0",
+          "fetchedAt": "2026-08-26T20:20:23.601Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/HKUDS/nanobot",
-          "fetchedAt": "2026-08-26T20:20:19.828Z"
+          "fetchedAt": "2026-08-26T20:25:05.412Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/HKUDS/nanobot/languages",
-          "fetchedAt": "2026-08-26T20:20:19.983Z"
+          "fetchedAt": "2026-08-26T20:25:05.566Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/HKUDS/nanobot/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:20:20.076Z"
+          "fetchedAt": "2026-08-26T20:25:05.720Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/HKUDS/nanobot/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:20:20.150Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/HKUDS/nanobot/tree/v0.3.0",
-          "fetchedAt": "2026-08-26T20:20:23.601Z"
+          "fetchedAt": "2026-08-26T20:25:05.741Z"
         }
       ],
       "errors": []
@@ -11811,7 +11811,7 @@
       "apiUrl": "https://api.github.com/repos/agent0ai/agent-zero",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:20:27.814Z",
+      "refreshedAt": "2026-08-26T20:25:06.066Z",
       "stars": 18977,
       "forks": 3761,
       "openIssues": 145,
@@ -11889,9 +11889,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/agent0ai/agent-zero/tree/v2.10",
+          "fetchedAt": "2026-08-26T20:20:27.749Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/agent0ai/agent-zero",
-          "fetchedAt": "2026-08-26T20:20:23.821Z"
+          "fetchedAt": "2026-08-26T20:25:05.647Z"
         },
         {
           "type": "license-override",
@@ -11901,22 +11906,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/agent0ai/agent-zero/languages",
-          "fetchedAt": "2026-08-26T20:20:23.985Z"
+          "fetchedAt": "2026-08-26T20:25:05.818Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/agent0ai/agent-zero/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:20:24.002Z"
+          "fetchedAt": "2026-08-26T20:25:05.848Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/agent0ai/agent-zero/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:20:24.173Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/agent0ai/agent-zero/tree/v2.10",
-          "fetchedAt": "2026-08-26T20:20:27.749Z"
+          "fetchedAt": "2026-08-26T20:25:06.066Z"
         }
       ],
       "errors": []
@@ -11934,7 +11934,7 @@
       "apiUrl": "https://api.github.com/repos/zeroclaw-labs/zeroclaw",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:20:41.810Z",
+      "refreshedAt": "2026-08-26T20:25:06.668Z",
       "stars": 32661,
       "forks": 4914,
       "openIssues": 815,
@@ -11987,29 +11987,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/zeroclaw-labs/zeroclaw/tree/v0.8.4",
+          "fetchedAt": "2026-08-26T20:20:41.760Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/zeroclaw-labs/zeroclaw",
-          "fetchedAt": "2026-08-26T20:20:28.010Z"
+          "fetchedAt": "2026-08-26T20:25:05.960Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/zeroclaw-labs/zeroclaw/languages",
-          "fetchedAt": "2026-08-26T20:20:28.148Z"
+          "fetchedAt": "2026-08-26T20:25:06.165Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/zeroclaw-labs/zeroclaw/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:20:28.255Z"
+          "fetchedAt": "2026-08-26T20:25:06.190Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/zeroclaw-labs/zeroclaw/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:20:28.753Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/zeroclaw-labs/zeroclaw/tree/v0.8.4",
-          "fetchedAt": "2026-08-26T20:20:41.760Z"
+          "fetchedAt": "2026-08-26T20:25:06.668Z"
         }
       ],
       "errors": []
@@ -12027,7 +12027,7 @@
       "apiUrl": "https://api.github.com/repos/nearai/ironclaw",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:21:12.722Z",
+      "refreshedAt": "2026-08-26T20:25:07.092Z",
       "stars": 12607,
       "forks": 1488,
       "openIssues": 1528,
@@ -12125,29 +12125,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/nearai/ironclaw/tree/ironclaw-v1.3.0",
+          "fetchedAt": "2026-08-26T20:21:12.612Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/nearai/ironclaw",
-          "fetchedAt": "2026-08-26T20:20:42.080Z"
+          "fetchedAt": "2026-08-26T20:25:06.095Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/nearai/ironclaw/languages",
-          "fetchedAt": "2026-08-26T20:20:42.231Z"
+          "fetchedAt": "2026-08-26T20:25:06.253Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/nearai/ironclaw/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:20:42.247Z"
+          "fetchedAt": "2026-08-26T20:25:06.340Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/nearai/ironclaw/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:20:43.164Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/nearai/ironclaw/tree/ironclaw-v1.3.0",
-          "fetchedAt": "2026-08-26T20:21:12.612Z"
+          "fetchedAt": "2026-08-26T20:25:07.092Z"
         }
       ],
       "errors": []
@@ -12165,7 +12165,7 @@
       "apiUrl": "https://api.github.com/repos/sipeed/picoclaw",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:21:34.790Z",
+      "refreshedAt": "2026-08-26T20:25:06.808Z",
       "stars": 29911,
       "forks": 4445,
       "openIssues": 37,
@@ -12258,29 +12258,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/sipeed/picoclaw/tree/v0.3.1",
+          "fetchedAt": "2026-08-26T20:21:34.759Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/sipeed/picoclaw",
-          "fetchedAt": "2026-08-26T20:21:12.941Z"
+          "fetchedAt": "2026-08-26T20:25:06.312Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/sipeed/picoclaw/languages",
-          "fetchedAt": "2026-08-26T20:21:13.060Z"
+          "fetchedAt": "2026-08-26T20:25:06.470Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/sipeed/picoclaw/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:21:13.252Z"
+          "fetchedAt": "2026-08-26T20:25:06.561Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/sipeed/picoclaw/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:21:13.483Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/sipeed/picoclaw/tree/v0.3.1",
-          "fetchedAt": "2026-08-26T20:21:34.759Z"
+          "fetchedAt": "2026-08-26T20:25:06.808Z"
         }
       ],
       "errors": []
@@ -12298,7 +12298,7 @@
       "apiUrl": "https://api.github.com/repos/RightNow-AI/openfang",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:21:42.634Z",
+      "refreshedAt": "2026-08-26T20:25:08.283Z",
       "stars": 18136,
       "forks": 2286,
       "openIssues": 115,
@@ -12396,29 +12396,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/RightNow-AI/openfang/tree/v0.6.9",
+          "fetchedAt": "2026-08-26T20:21:42.604Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/RightNow-AI/openfang",
-          "fetchedAt": "2026-08-26T20:21:26.688Z"
+          "fetchedAt": "2026-08-26T20:25:06.909Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/RightNow-AI/openfang/languages",
-          "fetchedAt": "2026-08-26T20:21:26.878Z"
+          "fetchedAt": "2026-08-26T20:25:07.071Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/RightNow-AI/openfang/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:21:26.885Z"
+          "fetchedAt": "2026-08-26T20:25:07.146Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/RightNow-AI/openfang/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:21:28.343Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/RightNow-AI/openfang/tree/v0.6.9",
-          "fetchedAt": "2026-08-26T20:21:42.604Z"
+          "fetchedAt": "2026-08-26T20:25:08.283Z"
         }
       ],
       "errors": []
@@ -12436,7 +12436,7 @@
       "apiUrl": "https://api.github.com/repos/bytedance/UI-TARS-desktop",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:21:42.208Z",
+      "refreshedAt": "2026-08-26T20:25:07.560Z",
       "stars": 38709,
       "forks": 3909,
       "openIssues": 426,
@@ -12524,29 +12524,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/bytedance/UI-TARS-desktop/tree/v0.3.0",
+          "fetchedAt": "2026-08-26T20:21:42.135Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/bytedance/UI-TARS-desktop",
-          "fetchedAt": "2026-08-26T20:21:35.029Z"
+          "fetchedAt": "2026-08-26T20:25:07.037Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/bytedance/UI-TARS-desktop/languages",
-          "fetchedAt": "2026-08-26T20:21:35.205Z"
+          "fetchedAt": "2026-08-26T20:25:07.202Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/bytedance/UI-TARS-desktop/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:21:35.243Z"
+          "fetchedAt": "2026-08-26T20:25:07.273Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/bytedance/UI-TARS-desktop/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:21:35.531Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/bytedance/UI-TARS-desktop/tree/v0.3.0",
-          "fetchedAt": "2026-08-26T20:21:42.135Z"
+          "fetchedAt": "2026-08-26T20:25:07.559Z"
         }
       ],
       "errors": []
@@ -12564,7 +12564,7 @@
       "apiUrl": "https://api.github.com/repos/stagewise-io/stagewise",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:21:49.520Z",
+      "refreshedAt": "2026-08-26T20:25:08.418Z",
       "stars": 6788,
       "forks": 508,
       "openIssues": 17,
@@ -12652,29 +12652,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/stagewise-io/stagewise/tree/stagewise%401.29.0",
+          "fetchedAt": "2026-08-26T20:21:49.452Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/stagewise-io/stagewise",
-          "fetchedAt": "2026-08-26T20:21:42.458Z"
+          "fetchedAt": "2026-08-26T20:25:07.317Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/stagewise-io/stagewise/languages",
-          "fetchedAt": "2026-08-26T20:21:42.622Z"
+          "fetchedAt": "2026-08-26T20:25:07.470Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/stagewise-io/stagewise/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:21:42.750Z"
+          "fetchedAt": "2026-08-26T20:25:07.515Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/stagewise-io/stagewise/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:21:43.535Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/stagewise-io/stagewise/tree/stagewise%401.29.0",
-          "fetchedAt": "2026-08-26T20:21:49.452Z"
+          "fetchedAt": "2026-08-26T20:25:08.418Z"
         }
       ],
       "errors": []
@@ -12692,7 +12692,7 @@
       "apiUrl": "https://api.github.com/repos/openai/symphony",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:21:44.414Z",
+      "refreshedAt": "2026-08-26T20:25:08.024Z",
       "stars": 26870,
       "forks": 2755,
       "openIssues": 8,
@@ -12770,29 +12770,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/openai/symphony/tree/v0.0.2",
+          "fetchedAt": "2026-08-26T20:21:44.403Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/openai/symphony",
-          "fetchedAt": "2026-08-26T20:21:42.856Z"
+          "fetchedAt": "2026-08-26T20:25:07.781Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/openai/symphony/languages",
-          "fetchedAt": "2026-08-26T20:21:42.960Z"
+          "fetchedAt": "2026-08-26T20:25:07.992Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/openai/symphony/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:21:43.030Z"
+          "fetchedAt": "2026-08-26T20:25:07.995Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/openai/symphony/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:21:43.103Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/openai/symphony/tree/v0.0.2",
-          "fetchedAt": "2026-08-26T20:21:44.403Z"
+          "fetchedAt": "2026-08-26T20:25:08.024Z"
         }
       ],
       "errors": []
@@ -12810,7 +12810,7 @@
       "apiUrl": "https://api.github.com/repos/iOfficeAI/AionUi",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:09.077Z",
+      "refreshedAt": "2026-08-26T20:25:09.771Z",
       "stars": 32312,
       "forks": 3320,
       "openIssues": 861,
@@ -12908,29 +12908,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/iOfficeAI/AionUi/tree/v2.1.61",
+          "fetchedAt": "2026-08-26T20:22:08.966Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/iOfficeAI/AionUi",
-          "fetchedAt": "2026-08-26T20:21:44.681Z"
+          "fetchedAt": "2026-08-26T20:25:08.259Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/iOfficeAI/AionUi/languages",
-          "fetchedAt": "2026-08-26T20:21:44.820Z"
+          "fetchedAt": "2026-08-26T20:25:08.426Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/iOfficeAI/AionUi/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:21:44.866Z"
+          "fetchedAt": "2026-08-26T20:25:08.489Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/iOfficeAI/AionUi/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:21:46.340Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/iOfficeAI/AionUi/tree/v2.1.61",
-          "fetchedAt": "2026-08-26T20:22:08.966Z"
+          "fetchedAt": "2026-08-26T20:25:09.771Z"
         }
       ],
       "errors": []
@@ -12948,7 +12948,7 @@
       "apiUrl": "https://api.github.com/repos/OpenHands/OpenHands",
       "metricScope": "Whole OpenHands repository; Agent Canvas is the current visual control surface inside the main product.",
       "status": "current",
-      "refreshedAt": "2026-08-26T20:21:54.328Z",
+      "refreshedAt": "2026-08-26T20:25:09.013Z",
       "stars": 85188,
       "forks": 11136,
       "openIssues": 570,
@@ -13036,29 +13036,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/OpenHands/OpenHands/tree/v1.15.0",
+          "fetchedAt": "2026-08-26T20:21:54.278Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/OpenHands/OpenHands",
-          "fetchedAt": "2026-08-26T20:21:49.753Z"
+          "fetchedAt": "2026-08-26T20:25:08.503Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/OpenHands/OpenHands/languages",
-          "fetchedAt": "2026-08-26T20:21:49.940Z"
+          "fetchedAt": "2026-08-26T20:25:08.690Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/OpenHands/OpenHands/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:21:50.013Z"
+          "fetchedAt": "2026-08-26T20:25:08.783Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/OpenHands/OpenHands/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:21:50.180Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/OpenHands/OpenHands/tree/v1.15.0",
-          "fetchedAt": "2026-08-26T20:21:54.278Z"
+          "fetchedAt": "2026-08-26T20:25:09.013Z"
         }
       ],
       "errors": []
@@ -13076,7 +13076,7 @@
       "apiUrl": "https://api.github.com/repos/kortix-ai/suna",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:27.215Z",
+      "refreshedAt": "2026-08-26T20:25:09.804Z",
       "stars": 20140,
       "forks": 3433,
       "openIssues": 44,
@@ -13204,9 +13204,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/kortix-ai/suna/tree/v0.13.5",
+          "fetchedAt": "2026-08-26T20:22:26.983Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/kortix-ai/suna",
-          "fetchedAt": "2026-08-26T20:21:54.558Z"
+          "fetchedAt": "2026-08-26T20:25:08.639Z"
         },
         {
           "type": "license-override",
@@ -13216,22 +13221,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/kortix-ai/suna/languages",
-          "fetchedAt": "2026-08-26T20:21:54.680Z"
+          "fetchedAt": "2026-08-26T20:25:08.799Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/kortix-ai/suna/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:21:54.982Z"
+          "fetchedAt": "2026-08-26T20:25:08.876Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/kortix-ai/suna/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:21:55.739Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/kortix-ai/suna/tree/v0.13.5",
-          "fetchedAt": "2026-08-26T20:22:26.983Z"
+          "fetchedAt": "2026-08-26T20:25:09.804Z"
         }
       ],
       "errors": []
@@ -13249,7 +13249,7 @@
       "apiUrl": "https://api.github.com/repos/code-yeongyu/oh-my-openagent",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:21.800Z",
+      "refreshedAt": "2026-08-26T20:25:09.874Z",
       "stars": 68396,
       "forks": 5597,
       "openIssues": 980,
@@ -13347,9 +13347,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/code-yeongyu/oh-my-openagent/tree/v4.19.4",
+          "fetchedAt": "2026-08-26T20:22:21.635Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent",
-          "fetchedAt": "2026-08-26T20:22:06.003Z"
+          "fetchedAt": "2026-08-26T20:25:09.238Z"
         },
         {
           "type": "license-override",
@@ -13359,22 +13364,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent/languages",
-          "fetchedAt": "2026-08-26T20:22:06.120Z"
+          "fetchedAt": "2026-08-26T20:25:09.386Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:22:06.222Z"
+          "fetchedAt": "2026-08-26T20:25:09.489Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:22:06.627Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/code-yeongyu/oh-my-openagent/tree/v4.19.4",
-          "fetchedAt": "2026-08-26T20:22:21.635Z"
+          "fetchedAt": "2026-08-26T20:25:09.874Z"
         }
       ],
       "errors": []
@@ -13392,10 +13392,10 @@
       "apiUrl": "https://api.github.com/repos/can1357/oh-my-pi",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:43.715Z",
+      "refreshedAt": "2026-08-26T20:25:10.994Z",
       "stars": 27664,
       "forks": 2737,
-      "openIssues": 1767,
+      "openIssues": 1768,
       "contributors": 554,
       "repositorySizeKb": 571643,
       "repositorySizePolicy": null,
@@ -13510,29 +13510,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/can1357/oh-my-pi/tree/v18.0.6",
+          "fetchedAt": "2026-08-26T20:22:43.537Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/can1357/oh-my-pi",
-          "fetchedAt": "2026-08-26T20:22:09.279Z"
+          "fetchedAt": "2026-08-26T20:25:09.971Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/can1357/oh-my-pi/languages",
-          "fetchedAt": "2026-08-26T20:22:09.489Z"
+          "fetchedAt": "2026-08-26T20:25:10.120Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/can1357/oh-my-pi/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:22:09.718Z"
+          "fetchedAt": "2026-08-26T20:25:10.242Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/can1357/oh-my-pi/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:22:10.270Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/can1357/oh-my-pi/tree/v18.0.6",
-          "fetchedAt": "2026-08-26T20:22:43.537Z"
+          "fetchedAt": "2026-08-26T20:25:10.993Z"
         }
       ],
       "errors": []
@@ -13550,7 +13550,7 @@
       "apiUrl": "https://api.github.com/repos/openinterpreter/openinterpreter",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:34.500Z",
+      "refreshedAt": "2026-08-26T20:25:10.510Z",
       "stars": 68160,
       "forks": 5867,
       "openIssues": 6,
@@ -13678,29 +13678,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/openinterpreter/openinterpreter/tree/rust-v0.0.40",
+          "fetchedAt": "2026-08-26T20:22:34.364Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/openinterpreter/openinterpreter",
-          "fetchedAt": "2026-08-26T20:22:22.008Z"
+          "fetchedAt": "2026-08-26T20:25:10.041Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/openinterpreter/openinterpreter/languages",
-          "fetchedAt": "2026-08-26T20:22:22.175Z"
+          "fetchedAt": "2026-08-26T20:25:10.209Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/openinterpreter/openinterpreter/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:22:22.264Z"
+          "fetchedAt": "2026-08-26T20:25:10.260Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/openinterpreter/openinterpreter/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:22:22.448Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/openinterpreter/openinterpreter/tree/rust-v0.0.40",
-          "fetchedAt": "2026-08-26T20:22:34.364Z"
+          "fetchedAt": "2026-08-26T20:25:10.510Z"
         }
       ],
       "errors": []
@@ -13718,7 +13718,7 @@
       "apiUrl": "https://api.github.com/repos/SWE-agent/SWE-agent",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:29.770Z",
+      "refreshedAt": "2026-08-26T20:25:10.473Z",
       "stars": 20146,
       "forks": 2206,
       "openIssues": 81,
@@ -13811,29 +13811,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/SWE-agent/SWE-agent/tree/v1.1.0",
+          "fetchedAt": "2026-08-26T20:22:29.740Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/SWE-agent/SWE-agent",
-          "fetchedAt": "2026-08-26T20:22:27.412Z"
+          "fetchedAt": "2026-08-26T20:25:10.093Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/SWE-agent/SWE-agent/languages",
-          "fetchedAt": "2026-08-26T20:22:27.537Z"
+          "fetchedAt": "2026-08-26T20:25:10.266Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/SWE-agent/SWE-agent/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:22:27.654Z"
+          "fetchedAt": "2026-08-26T20:25:10.427Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/SWE-agent/SWE-agent/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:22:27.702Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/SWE-agent/SWE-agent/tree/v1.1.0",
-          "fetchedAt": "2026-08-26T20:22:29.740Z"
+          "fetchedAt": "2026-08-26T20:25:10.473Z"
         }
       ],
       "errors": []
@@ -13851,7 +13851,7 @@
       "apiUrl": "https://api.github.com/repos/langchain-ai/open-swe",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:33.478Z",
+      "refreshedAt": "2026-08-26T20:25:11.107Z",
       "stars": 10620,
       "forks": 1242,
       "openIssues": 42,
@@ -13859,7 +13859,7 @@
       "repositorySizeKb": 44973,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T20:19:34Z",
+      "pushedAt": "2026-08-26T20:23:35Z",
       "archived": false,
       "license": {
         "key": "mit",
@@ -13943,34 +13943,34 @@
       },
       "sources": [
         {
-          "type": "repository",
-          "url": "https://api.github.com/repos/langchain-ai/open-swe",
-          "fetchedAt": "2026-08-26T20:22:29.967Z"
+          "type": "loc-measurement",
+          "url": "https://github.com/langchain-ai/open-swe/tree/main",
+          "fetchedAt": "2026-08-26T20:22:33.448Z"
         },
         {
-          "type": "contributors",
-          "url": "https://api.github.com/repos/langchain-ai/open-swe/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:22:30.149Z"
+          "type": "repository",
+          "url": "https://api.github.com/repos/langchain-ai/open-swe",
+          "fetchedAt": "2026-08-26T20:25:10.721Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/langchain-ai/open-swe/languages",
-          "fetchedAt": "2026-08-26T20:22:30.158Z"
+          "fetchedAt": "2026-08-26T20:25:10.890Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/langchain-ai/open-swe/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-26T20:25:10.962Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/langchain-ai/open-swe/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:22:30.153Z"
+          "fetchedAt": "2026-08-26T20:25:10.933Z"
         },
         {
           "type": "latest-tag",
           "url": "https://api.github.com/repos/langchain-ai/open-swe/tags?per_page=1",
-          "fetchedAt": "2026-08-26T20:22:30.330Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/langchain-ai/open-swe/tree/main",
-          "fetchedAt": "2026-08-26T20:22:33.448Z"
+          "fetchedAt": "2026-08-26T20:25:11.107Z"
         }
       ],
       "errors": []
@@ -13988,12 +13988,12 @@
       "apiUrl": "https://api.github.com/repos/langfuse/langfuse",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:47.592Z",
+      "refreshedAt": "2026-08-26T20:25:11.183Z",
       "stars": 33766,
       "forks": 3649,
       "openIssues": 831,
       "contributors": 202,
-      "repositorySizeKb": 216773,
+      "repositorySizeKb": 216776,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
       "pushedAt": "2026-08-26T19:25:36Z",
@@ -14096,9 +14096,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/langfuse/langfuse/tree/v4.21.0",
+          "fetchedAt": "2026-08-26T20:22:47.402Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/langfuse/langfuse",
-          "fetchedAt": "2026-08-26T20:22:33.702Z"
+          "fetchedAt": "2026-08-26T20:25:10.744Z"
         },
         {
           "type": "license-override",
@@ -14108,22 +14113,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/langfuse/langfuse/languages",
-          "fetchedAt": "2026-08-26T20:22:33.844Z"
+          "fetchedAt": "2026-08-26T20:25:10.906Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/langfuse/langfuse/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:22:33.915Z"
+          "fetchedAt": "2026-08-26T20:25:10.956Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/langfuse/langfuse/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:22:34.113Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/langfuse/langfuse/tree/v4.21.0",
-          "fetchedAt": "2026-08-26T20:22:47.402Z"
+          "fetchedAt": "2026-08-26T20:25:11.183Z"
         }
       ],
       "errors": []
@@ -14141,15 +14141,15 @@
       "apiUrl": "https://api.github.com/repos/Arize-ai/phoenix",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:48.060Z",
+      "refreshedAt": "2026-08-26T20:25:11.582Z",
       "stars": 11204,
       "forks": 1080,
-      "openIssues": 889,
+      "openIssues": 890,
       "contributors": 220,
       "repositorySizeKb": 512794,
       "repositorySizePolicy": null,
       "defaultBranch": "main",
-      "pushedAt": "2026-08-26T19:30:10Z",
+      "pushedAt": "2026-08-26T20:23:39Z",
       "archived": false,
       "license": {
         "key": "manifest-verified",
@@ -14275,9 +14275,14 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/Arize-ai/phoenix/tree/arize-phoenix-v20.4.0",
+          "fetchedAt": "2026-08-26T20:22:47.912Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/Arize-ai/phoenix",
-          "fetchedAt": "2026-08-26T20:22:34.711Z"
+          "fetchedAt": "2026-08-26T20:25:11.225Z"
         },
         {
           "type": "license-override",
@@ -14287,22 +14292,17 @@
         {
           "type": "languages",
           "url": "https://api.github.com/repos/Arize-ai/phoenix/languages",
-          "fetchedAt": "2026-08-26T20:22:34.832Z"
-        },
-        {
-          "type": "latest-release",
-          "url": "https://api.github.com/repos/Arize-ai/phoenix/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:22:35.045Z"
+          "fetchedAt": "2026-08-26T20:25:11.399Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/Arize-ai/phoenix/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:22:35.138Z"
+          "fetchedAt": "2026-08-26T20:25:11.465Z"
         },
         {
-          "type": "loc-measurement",
-          "url": "https://github.com/Arize-ai/phoenix/tree/arize-phoenix-v20.4.0",
-          "fetchedAt": "2026-08-26T20:22:47.912Z"
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/Arize-ai/phoenix/releases?per_page=100",
+          "fetchedAt": "2026-08-26T20:25:11.582Z"
         }
       ],
       "errors": []
@@ -14320,7 +14320,7 @@
       "apiUrl": "https://api.github.com/repos/AgentOps-AI/agentops",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:50.417Z",
+      "refreshedAt": "2026-08-26T20:25:11.724Z",
       "stars": 5797,
       "forks": 615,
       "openIssues": 175,
@@ -14423,29 +14423,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/AgentOps-AI/agentops/tree/0.4.21",
+          "fetchedAt": "2026-08-26T20:22:50.367Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/AgentOps-AI/agentops",
-          "fetchedAt": "2026-08-26T20:22:43.965Z"
+          "fetchedAt": "2026-08-26T20:25:11.342Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/AgentOps-AI/agentops/languages",
-          "fetchedAt": "2026-08-26T20:22:44.132Z"
+          "fetchedAt": "2026-08-26T20:25:11.530Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/AgentOps-AI/agentops/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:22:44.147Z"
+          "fetchedAt": "2026-08-26T20:25:11.557Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/AgentOps-AI/agentops/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:22:44.378Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/AgentOps-AI/agentops/tree/0.4.21",
-          "fetchedAt": "2026-08-26T20:22:50.367Z"
+          "fetchedAt": "2026-08-26T20:25:11.724Z"
         }
       ],
       "errors": []
@@ -14463,7 +14463,7 @@
       "apiUrl": "https://api.github.com/repos/eigent-ai/eigent",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:23:00.144Z",
+      "refreshedAt": "2026-08-26T20:25:12.166Z",
       "stars": 15126,
       "forks": 1795,
       "openIssues": 213,
@@ -14571,29 +14571,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/eigent-ai/eigent/tree/v1.0.2",
+          "fetchedAt": "2026-08-26T20:23:00.100Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/eigent-ai/eigent",
-          "fetchedAt": "2026-08-26T20:22:47.824Z"
+          "fetchedAt": "2026-08-26T20:25:11.403Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/eigent-ai/eigent/languages",
-          "fetchedAt": "2026-08-26T20:22:47.961Z"
+          "fetchedAt": "2026-08-26T20:25:11.561Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/eigent-ai/eigent/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:22:48.021Z"
+          "fetchedAt": "2026-08-26T20:25:11.605Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/eigent-ai/eigent/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:22:48.399Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/eigent-ai/eigent/tree/v1.0.2",
-          "fetchedAt": "2026-08-26T20:23:00.100Z"
+          "fetchedAt": "2026-08-26T20:25:12.166Z"
         }
       ],
       "errors": []
@@ -14611,7 +14611,7 @@
       "apiUrl": "https://api.github.com/repos/netease-youdao/LobsterAI",
       "metricScope": null,
       "status": "current",
-      "refreshedAt": "2026-08-26T20:22:53.388Z",
+      "refreshedAt": "2026-08-26T20:25:12.371Z",
       "stars": 5952,
       "forks": 942,
       "openIssues": 654,
@@ -14704,29 +14704,29 @@
       },
       "sources": [
         {
+          "type": "loc-measurement",
+          "url": "https://github.com/netease-youdao/LobsterAI/tree/2026.8.25",
+          "fetchedAt": "2026-08-26T20:22:53.341Z"
+        },
+        {
           "type": "repository",
           "url": "https://api.github.com/repos/netease-youdao/LobsterAI",
-          "fetchedAt": "2026-08-26T20:22:48.279Z"
+          "fetchedAt": "2026-08-26T20:25:11.864Z"
         },
         {
           "type": "languages",
           "url": "https://api.github.com/repos/netease-youdao/LobsterAI/languages",
-          "fetchedAt": "2026-08-26T20:22:48.389Z"
+          "fetchedAt": "2026-08-26T20:25:12.015Z"
         },
         {
           "type": "contributors",
           "url": "https://api.github.com/repos/netease-youdao/LobsterAI/contributors?anon=true&per_page=1",
-          "fetchedAt": "2026-08-26T20:22:48.454Z"
+          "fetchedAt": "2026-08-26T20:25:12.066Z"
         },
         {
           "type": "latest-release",
           "url": "https://api.github.com/repos/netease-youdao/LobsterAI/releases?per_page=100",
-          "fetchedAt": "2026-08-26T20:22:48.750Z"
-        },
-        {
-          "type": "loc-measurement",
-          "url": "https://github.com/netease-youdao/LobsterAI/tree/2026.8.25",
-          "fetchedAt": "2026-08-26T20:22:53.341Z"
+          "fetchedAt": "2026-08-26T20:25:12.370Z"
         }
       ],
       "errors": []
