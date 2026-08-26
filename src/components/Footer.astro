@@ -80,7 +80,24 @@ const githubAriaLabel = githubStars === null
   }
 
   @media (max-width: 560px) {
-    .footer-inner { align-items: flex-end; }
-    .footer-links { display: grid; grid-template-columns: repeat(2, max-content); justify-content: end; justify-items: end; width: auto; gap: var(--space-5) var(--space-9); }
+    .footer {
+      padding-block: var(--space-6);
+      padding-bottom: max(var(--space-6), env(safe-area-inset-bottom));
+    }
+
+    .footer-inner {
+      align-items: flex-end;
+    }
+
+    .footer-links {
+      width: 100%;
+      gap: 0 var(--space-6);
+    }
+
+    .footer-links a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+    }
   }
 </style>
