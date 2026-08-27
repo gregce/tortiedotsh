@@ -316,6 +316,25 @@
   line-height: 1.65;
 }
 
+.docs-hero-media {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 32px 0 0 32px;
+  overflow: hidden;
+  border: 1px solid #292c32;
+  border-radius: 10px;
+  background: #0d0e10;
+}
+
+.docs-hero-media img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: min(68svh, 620px);
+  height: auto;
+  margin-inline: auto;
+}
+
 .docs-section {
   margin-top: 72px;
   scroll-margin-top: 88px;
@@ -759,12 +778,17 @@
   }
 
   .docs-lead,
+  .docs-hero-media,
   .docs-copy,
   .docs-section-body-illustrated,
   .docs-pagination,
   .changelog-source,
   .release-list {
     margin-left: 0;
+  }
+
+  .docs-hero-media {
+    width: 100%;
   }
 
   .docs-section-body-illustrated {

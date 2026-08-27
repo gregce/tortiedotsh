@@ -38,6 +38,12 @@ export interface DocPage {
   title: string;
   description: string;
   lead: string;
+  hero?: {
+    asset: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
   sections: DocSection[];
 }
 
@@ -157,6 +163,12 @@ export const docsPages: DocPage[] = [
     title: "Getting started",
     description: "Install Tortie, open a project, and start a durable coding-agent session.",
     lead: "Open a project. Start an agent. Close Tortie whenever you like—your session keeps running.",
+    hero: {
+      asset: "getting_started",
+      alt: "Tortie welcome screen for opening, creating, or cloning a project.",
+      width: 1600,
+      height: 1014,
+    },
     sections: [
       {
         id: "requirements",
@@ -322,6 +334,12 @@ export const docsPages: DocPage[] = [
     title: "Projects and sessions",
     description: "Understand how Tortie keeps projects, named sessions, and splits coherent.",
     lead: "Projects are folders. Sessions are named terminals. Splits only change how sessions are arranged.",
+    hero: {
+      asset: "sessions",
+      alt: "A Tortie project with named coding-agent sessions arranged beside project files.",
+      width: 1600,
+      height: 1021,
+    },
     sections: [
       {
         id: "projects",
@@ -437,6 +455,12 @@ export const docsPages: DocPage[] = [
     title: "Attention and Catch Me Up",
     description: "Find blocked sessions and review completed agent conversations without supervising every terminal.",
     lead: "Tortie keeps routine work quiet. It raises the sessions that need a person and preserves the rest until you return.",
+    hero: {
+      asset: "catch_me_up",
+      alt: "Catch Me Up summarizing coding-agent conversations across a Tortie project.",
+      width: 1600,
+      height: 1021,
+    },
     sections: [
       {
         id: "needs-input",
@@ -487,6 +511,12 @@ export const docsPages: DocPage[] = [
     title: "Session tools and menus",
     description: "Use Tortie's native context menus, terminal captures, scrollback tools, split actions, and safe session controls.",
     lead: "Right-click the thing you are working with. Tortie uses native macOS menus and changes the available actions to match that surface and its current state.",
+    hero: {
+      asset: "sessions_menu",
+      alt: "A Tortie session context menu with actions for managing a coding-agent session.",
+      width: 1600,
+      height: 1021,
+    },
     sections: [
       {
         id: "menu-model",
@@ -581,6 +611,12 @@ export const docsPages: DocPage[] = [
     title: "Files, search, and previews",
     description: "Browse, edit, search, and preview the files involved in agent work.",
     lead: "Follow the files an agent changed without switching to a second application for routine review.",
+    hero: {
+      asset: "find",
+      alt: "Tortie searching project files with results beside a live coding-agent session.",
+      width: 1600,
+      height: 1021,
+    },
     sections: [
       {
         id: "explorer",
@@ -656,6 +692,12 @@ export const docsPages: DocPage[] = [
     title: "Source control",
     description: "Review changes, stage work, commit, inspect branches and history, and check GitHub Actions.",
     lead: "The source-control sidebar keeps the repository record beside the sessions changing it.",
+    hero: {
+      asset: "source_control",
+      alt: "Tortie's source-control view showing changes, commit history, and a project diff.",
+      width: 1600,
+      height: 1021,
+    },
     sections: [
       {
         id: "changes",
@@ -730,6 +772,12 @@ export const docsPages: DocPage[] = [
     title: "Agent context and skills",
     description: "Inspect the skills, MCP servers, hooks, plugins, and instruction files an agent will load.",
     lead: "The Context view answers a practical question: what will this agent load here, and which definition wins when several copies exist?",
+    hero: {
+      asset: "context",
+      alt: "Tortie's Context view inspecting the skills and configuration available to an agent.",
+      width: 1600,
+      height: 1032,
+    },
     sections: [
       {
         id: "open-context",
@@ -788,6 +836,12 @@ export const docsPages: DocPage[] = [
     title: "Settings and customization",
     description: "Configure Tortie's agents, launch behavior, appearance, scrollback, machines, capture, updates, summaries, and diagnostics.",
     lead: "Press ⌘, to open Settings. Tortie keeps routine choices together and makes actions with wider consequences ask for explicit agreement.",
+    hero: {
+      asset: "settings",
+      alt: "Tortie settings for configuring agents, sessions, appearance, and application behavior.",
+      width: 1600,
+      height: 1304,
+    },
     sections: [
       {
         id: "settings-map",
@@ -868,6 +922,12 @@ export const docsPages: DocPage[] = [
     title: "Remote machines",
     description: "Run sessions and work with projects on another Mac through explicit SSH and write boundaries.",
     lead: "Remote support is shipped and labelled Early. It has been verified between Macs, with every write kept behind explicit consent.",
+    hero: {
+      asset: "machines",
+      alt: "Tortie's remote-machine view for connecting to another Mac over SSH.",
+      width: 1600,
+      height: 1448,
+    },
     sections: [
       {
         id: "requirements",

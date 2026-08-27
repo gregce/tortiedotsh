@@ -19,6 +19,31 @@ const next = pageIndex >= 0 && pageIndex < docsNavItems.length - 1 ? docsNavItem
       <h1 id="top" data-pagefind-meta="title" data-pagefind-weight="10">{page.title}</h1>
     </div>
     <p class="docs-lead">{page.lead}</p>
+    {page.hero && (
+      <picture class="docs-hero-media" data-pagefind-ignore>
+        <source
+          srcset={`/docs/media/${page.hero.asset}-800.avif 800w, /docs/media/${page.hero.asset}-1600.avif 1600w`}
+          sizes="(max-width: 560px) calc(100vw - 40px), (max-width: 900px) calc(100vw - 48px), 828px"
+          type="image/avif"
+        />
+        <source
+          srcset={`/docs/media/${page.hero.asset}-800.webp 800w, /docs/media/${page.hero.asset}-1600.webp 1600w`}
+          sizes="(max-width: 560px) calc(100vw - 40px), (max-width: 900px) calc(100vw - 48px), 828px"
+          type="image/webp"
+        />
+        <img
+          src={`/docs/media/${page.hero.asset}-800.webp`}
+          srcset={`/docs/media/${page.hero.asset}-800.webp 800w, /docs/media/${page.hero.asset}-1600.webp 1600w`}
+          sizes="(max-width: 560px) calc(100vw - 40px), (max-width: 900px) calc(100vw - 48px), 828px"
+          alt={page.hero.alt}
+          width={page.hero.width}
+          height={page.hero.height}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+    )}
   </header>
 
   {page.sections.map((section) => (
