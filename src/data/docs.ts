@@ -136,7 +136,7 @@ export const docsNavGroups: DocsNavGroup[] = [
         title: "Supported agents",
         href: "/docs/supported-agents/",
         description: "See built-in agents, launch settings, custom definitions, and resume support.",
-        searchTerms: "claude codex cursor gemini qwen muse pi grok droid",
+        searchTerms: "claude codex cursor gemini qwen muse pi omp grok droid",
       },
       {
         title: "Keyboard shortcuts",
@@ -493,7 +493,7 @@ export const docsPages: DocPage[] = [
         title: "Model-written summaries are optional",
         blocks: [
           { type: "paragraph", html: "By default, Tortie builds the project overview without calling a model. You can choose an agent and model in Settings to write one short line after a turn finishes." },
-          { type: "note", title: "Off until you choose it", html: "The optional writer currently supports Claude Code, Codex CLI, Cursor CLI, Pi, and Grok. Tortie rejects a model sentence that makes unsafe claims about files, numbers, or session state." },
+          { type: "note", title: "Off until you choose it", html: "The optional writer currently supports Claude Code, Codex CLI, Cursor CLI, Pi, Oh My Pi, and Grok. Tortie rejects a model sentence that makes unsafe claims about files, numbers, or session state." },
         ],
       },
       {
@@ -996,6 +996,7 @@ export const docsPages: DocPage[] = [
             ["Muse Code", "Launchable terminal agent."],
             ["Qwen Code", "Launchable; safe resume depends on the original project directory."],
             ["Pi", "Launchable; safe resume depends on the original project directory."],
+            ["Oh My Pi", "Launchable; the pi successor. Resumes from any directory, and joins Catch Me Up."],
             ["Grok", "Launch and Catch Me Up integration; no SpecStory capture provider."],
           ] },
           { type: "paragraph", html: "Tortie also supports ordinary shell sessions. Cursor IDE and VS Code Copilot are capture-only observers, not terminal agents Tortie can launch." },
