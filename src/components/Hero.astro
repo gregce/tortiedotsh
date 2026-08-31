@@ -56,7 +56,7 @@ import { TORTIE_MACOS_DOWNLOAD_URL } from "../data/site-links";
   .hero::after { content: ""; position: absolute; z-index: 0; inset: auto 0 0; height: clamp(72px, 10vw, 132px); pointer-events: none; background: linear-gradient(to bottom, transparent, var(--bg-marketing)); }
   .hero-backdrop { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
   .hero-backdrop img { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; opacity: .9; filter: brightness(.82) contrast(1.06); }
-  .hero-layout { position: relative; z-index: 1; max-width: none; display: grid; grid-template-columns: clamp(220px, 24vw, 300px) minmax(0, 1fr); align-items: center; gap: clamp(44px, 6vw, 88px); padding-inline: clamp(20px, 2.5vw, 40px); }
+  .hero-layout { position: relative; z-index: 1; width: 100%; max-width: none; display: grid; grid-template-columns: clamp(220px, 24vw, 300px) minmax(0, 1fr); align-items: center; gap: clamp(44px, 6vw, 88px); padding-inline: clamp(20px, 2.5vw, 40px); }
   .hero-copy { position: relative; z-index: 1; }
   .hero-copy h1 { max-width: 8ch; margin: 0; font-size: clamp(44px, 5vw, 72px); font-weight: var(--weight-semibold); line-height: 1.02; letter-spacing: -.035em; text-wrap: balance; }
   .hero-copy > p:first-of-type { max-width: 33ch; margin: var(--space-8) 0 0; color: var(--text-secondary); font-size: 17px; line-height: 1.55; }
