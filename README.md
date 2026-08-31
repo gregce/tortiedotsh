@@ -24,6 +24,38 @@ npm run preview
 
 `npm run verify` validates all comparison data, builds the static site, creates the Pagefind documentation index, verifies full-text search, and checks shared routes and interaction contracts. The production output is written to `dist/`.
 
+## Site optimization loop
+
+Run a complete operator-acceptance pass against the production site:
+
+```sh
+npm run optimize:site -- --label operator-acceptance
+```
+
+The loop:
+
+1. Runs the full `npm run verify` suite.
+2. Searches GitHub for promising comparison candidates and writes the review queue to `.audit/site-quality/<label>/comparison-candidates/`.
+3. Audits built pages for titles, descriptions, canonical URLs, headings, crawl directives, sitemaps, structured answer-engine surfaces, and the custom 404.
+4. Runs `npx is-agentic` against the deployed site.
+5. Requests Google PageSpeed Insights for mobile and desktop, then runs local Lighthouse audits as a deterministic fallback.
+6. Writes raw reports and an iteration summary to `.audit/site-quality/<label>/`, with the latest result at `.audit/site-quality/latest.json`.
+
+The default target is `https://tortie.sh`. Useful options include:
+
+```sh
+# Audit another deployment without running candidate discovery
+npm run optimize:site -- --label preview --url https://preview.example.com --skip-discovery
+
+# Fail when the static audit or Lighthouse thresholds regress
+npm run optimize:site -- --label release-gate --enforce
+
+# Avoid anonymous PageSpeed API quota limits
+PAGESPEED_API_KEY=your-key npm run optimize:site -- --label operator-acceptance
+```
+
+The reports in `.audit/` are local evidence and are intentionally ignored by Git.
+
 ## Project structure
 
 ```text
