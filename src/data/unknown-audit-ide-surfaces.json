@@ -18,14 +18,14 @@
     "platformHeaders": "Platform-header support is outside this rendered-cell ledger. An omitted OS in a known platform list is not treated as Unknown."
   },
   "summary": {
-    "products": 52,
-    "currentUnknownCells": 278,
+    "products": 50,
+    "currentUnknownCells": 265,
     "codeEditorUnknownCells": 92,
     "ideExtensionUnknownCells": 117,
-    "agentMultiplexerUnknownCells": 69,
+    "agentMultiplexerUnknownCells": 56,
     "appliedClosures": 14,
     "changedSourceCorrections": 14,
-    "remainUnknown": 278
+    "remainUnknown": 265
   },
   "categories": [
     {
@@ -1869,90 +1869,6 @@
               "rowId": "workbench-programmable-control",
               "result": "remain-unknown",
               "rationale": "claude-squad's canonical repository establishes its tmux-managed coding-agent sessions, worktree isolation, Git workflow, attention states, session recovery, and change review without inheriting editor, browser, remote-host, or programmable-control capabilities. It does not establish a supported CLI, socket, API, or event contract for external workspace control."
-            }
-          ]
-        },
-        {
-          "productId": "cc-haha",
-          "sourcesChecked": [
-            "https://github.com/NanmiCoder/cc-haha",
-            "https://github.com/NanmiCoder/cc-haha#readme"
-          ],
-          "cells": [
-            {
-              "rowId": "workbench-arbitrary-cli",
-              "result": "remain-unknown",
-              "rationale": "Claude Code Haha's canonical repository establishes its desktop multi-session workspace, global search, diff review, browser preview, worktrees, attention surfaces, remote web access, and multi-agent workflows without claiming arbitrary CLI support or live-process survival after desktop exit. It does not establish admission of arbitrary operator-chosen CLI agents beyond the explicitly integrated set."
-            },
-            {
-              "rowId": "workbench-agent-handoff",
-              "result": "remain-unknown",
-              "rationale": "Claude Code Haha's canonical repository establishes its desktop multi-session workspace, global search, diff review, browser preview, worktrees, attention surfaces, remote web access, and multi-agent workflows without claiming arbitrary CLI support or live-process survival after desktop exit. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
-            },
-            {
-              "rowId": "workbench-pty-survives-ui",
-              "result": "remain-unknown",
-              "rationale": "Claude Code Haha's canonical repository establishes its desktop multi-session workspace, global search, diff review, browser preview, worktrees, attention surfaces, remote web access, and multi-agent workflows without claiming arbitrary CLI support or live-process survival after desktop exit. Persisted scrollback, layout, or conversation resume does not establish that the original live PTY process survives UI exit."
-            },
-            {
-              "rowId": "workbench-editor",
-              "result": "remain-unknown",
-              "rationale": "Claude Code Haha's canonical repository establishes its desktop multi-session workspace, global search, diff review, browser preview, worktrees, attention surfaces, remote web access, and multi-agent workflows without claiming arbitrary CLI support or live-process survival after desktop exit. File preview, a diff viewer, or launching an external editor does not establish an editable in-product code surface."
-            },
-            {
-              "rowId": "workbench-scm",
-              "result": "remain-unknown",
-              "rationale": "Claude Code Haha's canonical repository establishes its desktop multi-session workspace, global search, diff review, browser preview, worktrees, attention surfaces, remote web access, and multi-agent workflows without claiming arbitrary CLI support or live-process survival after desktop exit. It does not establish a first-party source-control workflow rather than terminal access to Git."
-            },
-            {
-              "rowId": "workbench-splits",
-              "result": "remain-unknown",
-              "rationale": "Claude Code Haha's canonical repository establishes its desktop multi-session workspace, global search, diff review, browser preview, worktrees, attention surfaces, remote web access, and multi-agent workflows without claiming arbitrary CLI support or live-process survival after desktop exit. It does not establish multiple first-class panes or splits that keep distinct agent or terminal sessions visible together."
-            },
-            {
-              "rowId": "workbench-session-recovery",
-              "result": "remain-unknown",
-              "rationale": "Claude Code Haha's canonical repository establishes its desktop multi-session workspace, global search, diff review, browser preview, worktrees, attention surfaces, remote web access, and multi-agent workflows without claiming arbitrary CLI support or live-process survival after desktop exit. It does not establish recovery of the same durable agent or terminal session after interruption or application restart."
-            },
-            {
-              "rowId": "workbench-remote-host",
-              "result": "remain-unknown",
-              "rationale": "Claude Code Haha's canonical repository establishes its desktop multi-session workspace, global search, diff review, browser preview, worktrees, attention surfaces, remote web access, and multi-agent workflows without claiming arbitrary CLI support or live-process survival after desktop exit. It does not establish a supported SSH or remote-host execution workflow for the workbench."
-            },
-            {
-              "rowId": "workbench-programmable-control",
-              "result": "remain-unknown",
-              "rationale": "Claude Code Haha's canonical repository establishes its desktop multi-session workspace, global search, diff review, browser preview, worktrees, attention surfaces, remote web access, and multi-agent workflows without claiming arbitrary CLI support or live-process survival after desktop exit. It does not establish a supported CLI, socket, API, or event contract for external workspace control."
-            }
-          ]
-        },
-        {
-          "productId": "codeg",
-          "sourcesChecked": [
-            "https://docs.codeg.app/",
-            "https://github.com/xintaofei/codeg",
-            "https://github.com/xintaofei/codeg#readme"
-          ],
-          "cells": [
-            {
-              "rowId": "workbench-agent-handoff",
-              "result": "remain-unknown",
-              "rationale": "Codeg's canonical repository establishes its aggregated multi-agent sessions, ACP agents, editor, file tree, Git client, worktrees, review queue, splits, server deployment, and mobile clients without treating server-mode durability as proof that the desktop process survives application exit. Running or launching multiple harnesses does not establish context-preserving transfer of the same active task or conversation between them."
-            },
-            {
-              "rowId": "workbench-attention-signals",
-              "result": "remain-unknown",
-              "rationale": "Codeg's canonical repository establishes its aggregated multi-agent sessions, ACP agents, editor, file tree, Git client, worktrees, review queue, splits, server deployment, and mobile clients without treating server-mode durability as proof that the desktop process survives application exit. It does not establish explicit cross-session waiting, blocked, failed, or completed attention states."
-            },
-            {
-              "rowId": "workbench-browser",
-              "result": "remain-unknown",
-              "rationale": "Codeg's canonical repository establishes its aggregated multi-agent sessions, ACP agents, editor, file tree, Git client, worktrees, review queue, splits, server deployment, and mobile clients without treating server-mode durability as proof that the desktop process survives application exit. It does not establish an embedded interactive browser owned by the workbench."
-            },
-            {
-              "rowId": "workbench-programmable-control",
-              "result": "remain-unknown",
-              "rationale": "Codeg's canonical repository establishes its aggregated multi-agent sessions, ACP agents, editor, file tree, Git client, worktrees, review queue, splits, server deployment, and mobile clients without treating server-mode durability as proof that the desktop process survives application exit. It does not establish a supported CLI, socket, API, or event contract for external workspace control."
             }
           ]
         },

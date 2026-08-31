@@ -1231,7 +1231,7 @@
     {
       "id": "cc-haha",
       "name": "Claude Code Haha",
-      "category": "agent-workbenches",
+      "category": "agent-orchestrators",
       "owner": "NanmiCoder",
       "repo": "cc-haha",
       "githubUrl": "https://github.com/NanmiCoder/cc-haha",
@@ -1241,7 +1241,7 @@
     {
       "id": "codeg",
       "name": "Codeg",
-      "category": "agent-workbenches",
+      "category": "agent-orchestrators",
       "owner": "xintaofei",
       "repo": "codeg",
       "githubUrl": "https://github.com/xintaofei/codeg",

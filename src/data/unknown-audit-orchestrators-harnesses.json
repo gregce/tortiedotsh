@@ -16,13 +16,13 @@
     "platformHeaders": "Products whose complete platform fact is Unknown are audited separately below. An omitted OS in a known platform list is not rendered as an Unknown table cell."
   },
   "summary": {
-    "products": 56,
-    "currentUnknownCells": 173,
-    "agentOrchestratorUnknownCells": 98,
+    "products": 58,
+    "currentUnknownCells": 180,
+    "agentOrchestratorUnknownCells": 105,
     "codingAgentHarnessUnknownCells": 75,
     "suggestedClosures": 0,
     "implementedClosures": 8,
-    "remainUnknown": 173
+    "remainUnknown": 180
   },
   "categories": [
     {
@@ -736,6 +736,60 @@
               "rowId": "orchestrator-inline-review",
               "result": "remain-unknown",
               "rationale": "Kortix's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Inline diff feedback” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "cc-haha",
+          "sourcesChecked": [
+            "https://github.com/NanmiCoder/cc-haha",
+            "https://github.com/NanmiCoder/cc-haha#readme"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-multi-harness",
+              "result": "remain-unknown",
+              "rationale": "Claude Code Haha's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Multiple agent harnesses” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "Claude Code Haha's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Cross-harness task handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-containers",
+              "result": "remain-unknown",
+              "rationale": "Claude Code Haha's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Container or VM isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-pr-lifecycle",
+              "result": "remain-unknown",
+              "rationale": "Claude Code Haha's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Pull-request workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-programmable",
+              "result": "remain-unknown",
+              "rationale": "Claude Code Haha's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Programmable control plane” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "codeg",
+          "sourcesChecked": [
+            "https://docs.codeg.app/",
+            "https://github.com/xintaofei/codeg",
+            "https://github.com/xintaofei/codeg#readme"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-containers",
+              "result": "remain-unknown",
+              "rationale": "Codeg's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Container or VM isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-pr-lifecycle",
+              "result": "remain-unknown",
+              "rationale": "Codeg's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Pull-request workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         }
