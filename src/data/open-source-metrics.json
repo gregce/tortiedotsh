@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T00:11:53.192Z",
-  "manifestSyncedAt": "2026-08-31T00:11:53.192Z",
+  "generatedAt": "2026-08-31T02:36:17.587Z",
+  "manifestSyncedAt": "2026-08-31T02:36:17.587Z",
   "generator": "scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
