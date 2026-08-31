@@ -13,6 +13,7 @@
     "site:verify": "node scripts/verify-site-routes.mjs",
     "audit:site": "node scripts/audit-site-quality.mjs",
     "discover:comparison": "node --experimental-strip-types scripts/discover-comparison-candidates.ts",
+    "optimize:site": "node scripts/run-site-optimization-loop.mjs",
     "validate:data": "node --experimental-strip-types scripts/validate-comparison-data.mjs",
     "audit:freshness": "node --experimental-strip-types scripts/validate-comparison-data.mjs --freshness",
     "refresh:metrics": "node scripts/refresh-open-source-metrics.mjs",

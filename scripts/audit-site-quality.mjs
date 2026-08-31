@@ -63,6 +63,16 @@ const runJson = (command, commandArgs, filename) => {
   }
 };
 
+const readJsonIfExists = (filename) => {
+  const path = join(outputRoot, filename);
+  if (!existsSync(path)) return null;
+  try {
+    return JSON.parse(readFileSync(path, "utf8"));
+  } catch {
+    return null;
+  }
+};
+
 const remote = {};
 if (!has("--skip-remote")) {
   remote.agentic = runJson("npx", ["--yes", "is-agentic@1.0.1", siteUrl, "--json"], "is-agentic.json");
@@ -94,7 +104,39 @@ if (!has("--skip-lighthouse")) {
   }
 }
 
-const summary = { siteUrl, label, outputRoot, static: staticChecks, remote };
+const agenticReport = readJsonIfExists("is-agentic.json");
+const lighthouseScores = Object.fromEntries(["mobile", "desktop"].map((formFactor) => {
+  const report = readJsonIfExists(`lighthouse-${formFactor}.json`);
+  return [formFactor, report ? {
+    performance: report.categories?.performance?.score ?? null,
+    seo: report.categories?.seo?.score ?? null,
+    accessibility: report.categories?.accessibility?.score ?? null,
+    bestPractices: report.categories?.["best-practices"]?.score ?? null,
+    fcpMs: report.audits?.["first-contentful-paint"]?.numericValue ?? null,
+    lcpMs: report.audits?.["largest-contentful-paint"]?.numericValue ?? null,
+    tbtMs: report.audits?.["total-blocking-time"]?.numericValue ?? null,
+    cls: report.audits?.["cumulative-layout-shift"]?.numericValue ?? null,
+  } : null];
+}));
+const pageSpeedScores = Object.fromEntries(["mobile", "desktop"].map((strategy) => {
+  const report = readJsonIfExists(`pagespeed-${strategy}.json`);
+  return [strategy, report?.lighthouseResult?.categories ? {
+    performance: report.lighthouseResult.categories.performance?.score ?? null,
+    seo: report.lighthouseResult.categories.seo?.score ?? null,
+  } : null];
+}));
+const summary = {
+  siteUrl,
+  label,
+  outputRoot,
+  static: staticChecks,
+  scores: {
+    agentic: typeof agenticReport?.score === "number" ? agenticReport.score : null,
+    lighthouse: lighthouseScores,
+    pageSpeed: pageSpeedScores,
+  },
+  remote,
+};
 writeFileSync(join(outputRoot, "summary.json"), JSON.stringify(summary, null, 2));
 process.stdout.write(`${JSON.stringify(summary, null, 2)}\n`);
 
