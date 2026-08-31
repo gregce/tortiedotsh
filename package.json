@@ -12,6 +12,7 @@
     "search:verify": "node scripts/verify-docs-search.mjs",
     "site:verify": "node scripts/verify-site-routes.mjs",
     "audit:site": "node scripts/audit-site-quality.mjs",
+    "discover:comparison": "node --experimental-strip-types scripts/discover-comparison-candidates.ts",
     "validate:data": "node --experimental-strip-types scripts/validate-comparison-data.mjs",
     "audit:freshness": "node --experimental-strip-types scripts/validate-comparison-data.mjs --freshness",
     "refresh:metrics": "node scripts/refresh-open-source-metrics.mjs",
