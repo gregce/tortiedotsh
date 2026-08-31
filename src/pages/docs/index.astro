@@ -7,9 +7,19 @@ import { docsPageByPath } from "../../data/docs";
 
 const page = docsPageByPath.get("/docs/");
 if (!page) throw new Error("Getting started documentation is missing.");
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  headline: page.title,
+  description: page.description,
+  url: "https://tortie.sh/docs/",
+  isPartOf: { "@type": "WebSite", name: "Tortie docs", url: "https://tortie.sh/docs/" },
+  author: { "@type": "Organization", name: "Tortie", url: "https://tortie.sh/" },
+};
 ---
 
 <BaseLayout title={page.title + " — Tortie docs"} description={page.description} canonicalPath={page.path} bodyClass="docs-body" themeColor="#000000">
+    <Fragment slot="head"><script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script></Fragment>
     <DocsShell currentPath={page.path}>
       <DocsArticle page={page} />
     </DocsShell>

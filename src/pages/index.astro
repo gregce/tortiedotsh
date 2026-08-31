@@ -18,7 +18,7 @@ import Footer from "../components/Footer.astro";
 
 const description =
   "A calm agent multiplexer with familiar IDE features. Keep coding-agent sessions across projects in one window, even after Tortie quits.";
-const structuredData = {
+const softwareApplication = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Tortie",
@@ -38,10 +38,22 @@ const structuredData = {
   },
   image: "https://tortie.sh/og/tortie-og.png",
 };
+const organizationData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://tortie.sh/#organization",
+  name: "Tortie",
+  url: "https://tortie.sh/",
+  logo: "https://tortie.sh/brand/apple-touch-icon-180.png",
+  sameAs: [TORTIE_REPOSITORY_URL],
+};
 ---
 
 <BaseLayout title="Tortie | One window for every coding agent" description={description} canonicalPath="/">
-    <Fragment slot="head"><script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script></Fragment>
+    <Fragment slot="head">
+      <script type="application/ld+json" set:html={JSON.stringify(softwareApplication)}></script>
+      <script type="application/ld+json" set:html={JSON.stringify(organizationData)}></script>
+    </Fragment>
     <Nav overlay />
     <main>
       <Hero />

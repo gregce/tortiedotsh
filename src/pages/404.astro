@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Page not found · Tortie"
+  description="The page you requested does not exist. Return to Tortie, browse the docs, or explore coding-agent comparisons."
+  noIndex
+>
+  <Nav context="404" />
+  <main class="not-found">
+    <p class="not-found__code">404</p>
+    <h1>This trail ends here.</h1>
+    <p>The page may have moved. Pick up from one of Tortie's main paths.</p>
+    <nav aria-label="Page recovery">
+      <a class="button button--primary" href="/">Return home</a>
+      <a href="/docs/">Read the docs</a>
+      <a href="/compare/agent-multiplexers/">Compare tools</a>
+    </nav>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .not-found {
+    width: min(100% - 40px, 1120px);
+    min-height: calc(100svh - 190px);
+    margin: 0 auto;
+    display: grid;
+    align-content: center;
+    justify-items: start;
+    gap: 20px;
+    padding: 96px 0;
+  }
+
+  .not-found__code {
+    margin: 0;
+    color: var(--blue-300);
+    font: 600 0.82rem/1 var(--font-mono);
+    letter-spacing: 0.12em;
+  }
+
+  h1,
+  p {
+    margin: 0;
+  }
+
+  h1 {
+    max-width: 12ch;
+    font-size: clamp(2.5rem, 5vw, 4.75rem);
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+  }
+
+  .not-found > p:not(.not-found__code) {
+    max-width: 52ch;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 12px;
+  }
+
+  nav > a:not(.button) {
+    color: var(--blue-300);
+  }
+</style>

@@ -11,6 +11,7 @@
     "search:index": "pagefind --site dist --glob \"docs/**/*.html\" --force-language en",
     "search:verify": "node scripts/verify-docs-search.mjs",
     "site:verify": "node scripts/verify-site-routes.mjs",
+    "audit:site": "node scripts/audit-site-quality.mjs",
     "validate:data": "node --experimental-strip-types scripts/validate-comparison-data.mjs",
     "audit:freshness": "node --experimental-strip-types scripts/validate-comparison-data.mjs --freshness",
     "refresh:metrics": "node scripts/refresh-open-source-metrics.mjs",
@@ -30,6 +31,7 @@
     "gsap": "3.15.0"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "pagefind": "^1.5.2"
   }
 }

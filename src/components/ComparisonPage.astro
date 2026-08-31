@@ -169,6 +169,36 @@ const groupedRows = Array.from(
 );
 
 const description = `Compare ${currentCategory.label.toLowerCase()} across platforms, source model, execution boundary, workflow, and current open-source project data.`;
+const comparisonStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: `${currentCategory.label} comparison`,
+  description,
+  url: new URL(currentCategory.route, Astro.site).href,
+  isPartOf: { "@type": "WebSite", name: "Tortie", url: "https://tortie.sh/" },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: products.length,
+    itemListElement: products.map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "SoftwareApplication",
+        name: product.name,
+        url: product.officialUrl ?? product.repository?.url,
+        applicationCategory: currentCategory.label,
+      },
+    })),
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Tortie", item: "https://tortie.sh/" },
+      { "@type": "ListItem", position: 2, name: "Compare", item: "https://tortie.sh/compare/agent-multiplexers/" },
+      { "@type": "ListItem", position: 3, name: currentCategory.label, item: new URL(currentCategory.route, Astro.site).href },
+    ],
+  },
+};
 
 const formatNumber = (value: number): string =>
   new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 }).format(value);
@@ -380,7 +410,10 @@ const basisLabel = (source: EvidenceSource): string => {
 ---
 
 <BaseLayout title={currentCategory.label + " comparison · Tortie"} description={description} canonicalPath={currentCategory.route}>
-    <Fragment slot="head"><script is:inline>document.documentElement.classList.add("js");</script></Fragment>
+    <Fragment slot="head">
+      <script is:inline>document.documentElement.classList.add("js");</script>
+      <script type="application/ld+json" set:html={JSON.stringify(comparisonStructuredData)}></script>
+    </Fragment>
     <Nav current="compare" sectionLabel="compare" />
     <main class="compare-page" data-comparison-root>
       <div class="category-shell">

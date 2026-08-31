@@ -16,9 +16,19 @@ interface Props {
 }
 
 const { page } = Astro.props;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  headline: page.title,
+  description: page.description,
+  url: new URL(page.path, Astro.site).href,
+  isPartOf: { "@type": "WebSite", name: "Tortie docs", url: "https://tortie.sh/docs/" },
+  author: { "@type": "Organization", name: "Tortie", url: "https://tortie.sh/" },
+};
 ---
 
 <BaseLayout title={page.title + " — Tortie docs"} description={page.description} canonicalPath={page.path} bodyClass="docs-body" themeColor="#000000">
+    <Fragment slot="head"><script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script></Fragment>
     <DocsShell currentPath={page.path}>
       <DocsArticle page={page} />
     </DocsShell>
