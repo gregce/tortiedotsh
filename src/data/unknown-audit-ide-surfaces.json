@@ -18,14 +18,14 @@
     "platformHeaders": "Platform-header support is outside this rendered-cell ledger. An omitted OS in a known platform list is not treated as Unknown."
   },
   "summary": {
-    "products": 50,
-    "currentUnknownCells": 265,
+    "products": 51,
+    "currentUnknownCells": 267,
     "codeEditorUnknownCells": 92,
     "ideExtensionUnknownCells": 117,
-    "agentMultiplexerUnknownCells": 56,
+    "agentMultiplexerUnknownCells": 58,
     "appliedClosures": 14,
     "changedSourceCorrections": 14,
-    "remainUnknown": 265
+    "remainUnknown": 267
   },
   "categories": [
     {
@@ -1938,6 +1938,26 @@
               "rowId": "workbench-remote-host",
               "result": "remain-unknown",
               "rationale": "CCManager's canonical repository establishes its cross-project CLI session manager, supported agent launchers, state monitoring, worktree operations, resume configuration, and status hooks without inheriting editor, file-tree, browser, split-pane, or detached-process capabilities. It does not establish a supported SSH or remote-host execution workflow for the workbench."
+            }
+          ]
+        },
+        {
+          "productId": "tty7",
+          "sourcesChecked": [
+            "https://tty7.io/",
+            "https://github.com/l0ng-ai/tty7",
+            "https://github.com/l0ng-ai/tty7#readme"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-editor",
+              "result": "remain-unknown",
+              "rationale": "tty7's canonical repository establishes its server-owned persistent terminal sessions, agent handoff, cross-project status, notifications, Git and diff surfaces, worktrees, remote workspaces, and programmable CLI without treating editor-grade terminal input as a code editor or implying an embedded browser. File preview, a diff viewer, or launching an external editor does not establish an editable in-product code surface."
+            },
+            {
+              "rowId": "workbench-browser",
+              "result": "remain-unknown",
+              "rationale": "tty7's canonical repository establishes its server-owned persistent terminal sessions, agent handoff, cross-project status, notifications, Git and diff surfaces, worktrees, remote workspaces, and programmable CLI without treating editor-grade terminal input as a code editor or implying an embedded browser. It does not establish an embedded interactive browser owned by the workbench."
             }
           ]
         }

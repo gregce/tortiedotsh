@@ -76,6 +76,7 @@ const productNotes = {
   codeg: "Codeg's canonical repository establishes its aggregated multi-agent sessions, ACP agents, editor, file tree, Git client, worktrees, review queue, splits, server deployment, and mobile clients without treating server-mode durability as proof that the desktop process survives application exit.",
   nodeterm: "nodeterm's canonical repository establishes its tmux-backed terminal canvas, persistent sessions, editors, diffs, Git, worktrees, attention states, remote SSH, browser server, and mobile client while preserving the distinction between its spatial canvas and conventional split panes.",
   ccmanager: "CCManager's canonical repository establishes its cross-project CLI session manager, supported agent launchers, state monitoring, worktree operations, resume configuration, and status hooks without inheriting editor, file-tree, browser, split-pane, or detached-process capabilities.",
+  tty7: "tty7's canonical repository establishes its server-owned persistent terminal sessions, agent handoff, cross-project status, notifications, Git and diff surfaces, worktrees, remote workspaces, and programmable CLI without treating editor-grade terminal input as a code editor or implying an embedded browser.",
 };
 
 const rowBoundaries = {

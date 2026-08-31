@@ -1309,6 +1309,46 @@
       "sourceUrl": "https://github.com/kbwo/ccmanager",
       "sourceType": "official-project-owner-avatar",
       "checkedAt": "2026-08-24"
+    },
+    "tty7": {
+      "name": "tty7",
+      "alt": "tty7 logo",
+      "src": "/compare/logos/tty7.png",
+      "sourceUrl": "https://github.com/l0ng-ai/tty7",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "cli-agent-orchestrator": {
+      "name": "AWS CLI Agent Orchestrator",
+      "alt": "AWS CLI Agent Orchestrator logo",
+      "src": "/compare/logos/cli-agent-orchestrator.png",
+      "sourceUrl": "https://github.com/awslabs/cli-agent-orchestrator",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "oh-my-claudecode": {
+      "name": "Oh My ClaudeCode",
+      "alt": "Oh My ClaudeCode logo",
+      "src": "/compare/logos/oh-my-claudecode.jpg",
+      "sourceUrl": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "reasonix": {
+      "name": "Reasonix",
+      "alt": "Reasonix logo",
+      "src": "/compare/logos/reasonix.jpg",
+      "sourceUrl": "https://github.com/esengine/DeepSeek-Reasonix",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "happier": {
+      "name": "Happier",
+      "alt": "Happier logo",
+      "src": "/compare/logos/happier.png",
+      "sourceUrl": "https://github.com/happier-dev/happier",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-08-24"
     }
   },
   "platforms": {

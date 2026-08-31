@@ -1273,6 +1273,68 @@
       "githubUrl": "https://github.com/kbwo/ccmanager",
       "apiUrl": "https://api.github.com/repos/kbwo/ccmanager",
       "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "tty7",
+      "name": "tty7",
+      "category": "agent-workbenches",
+      "owner": "l0ng-ai",
+      "repo": "tty7",
+      "githubUrl": "https://github.com/l0ng-ai/tty7",
+      "apiUrl": "https://api.github.com/repos/l0ng-ai/tty7",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "cli-agent-orchestrator",
+      "name": "AWS CLI Agent Orchestrator",
+      "category": "agent-orchestrators",
+      "owner": "awslabs",
+      "repo": "cli-agent-orchestrator",
+      "githubUrl": "https://github.com/awslabs/cli-agent-orchestrator",
+      "apiUrl": "https://api.github.com/repos/awslabs/cli-agent-orchestrator",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "oh-my-claudecode",
+      "name": "Oh My ClaudeCode",
+      "category": "agent-orchestrators",
+      "owner": "Yeachan-Heo",
+      "repo": "oh-my-claudecode",
+      "githubUrl": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+      "apiUrl": "https://api.github.com/repos/Yeachan-Heo/oh-my-claudecode",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "reasonix",
+      "name": "Reasonix",
+      "category": "coding-agent-harnesses",
+      "owner": "esengine",
+      "repo": "DeepSeek-Reasonix",
+      "githubUrl": "https://github.com/esengine/DeepSeek-Reasonix",
+      "apiUrl": "https://api.github.com/repos/esengine/DeepSeek-Reasonix",
+      "release": {
+        "mode": "tag-prefix",
+        "tagPrefix": "v",
+        "reason": "Reasonix publishes separate CLI and Desktop releases at the same product version; the unprefixed v tags are the canonical local engine and CLI release line evaluated in the harness category.",
+        "checkedAt": "2026-08-31"
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "happier",
+      "name": "Happier",
+      "category": "remote-companions",
+      "owner": "happier-dev",
+      "repo": "happier",
+      "githubUrl": "https://github.com/happier-dev/happier",
+      "apiUrl": "https://api.github.com/repos/happier-dev/happier",
+      "release": {
+        "mode": "tag-prefix",
+        "tagPrefix": "stack-v",
+        "reason": "Happier publishes component-scoped web, mobile, desktop, and stack releases; stack-v is the closest release line for the cross-device product as a whole.",
+        "checkedAt": "2026-08-31"
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
     }
   ]
 }

@@ -10,10 +10,10 @@ This ledger resolves every non-platform row through `getComparisonClaim()` for C
 | --- | ---: | ---: | ---: |
 | Code IDEs | 19 | 92 | 92 |
 | IDE extensions | 19 | 117 | 117 |
-| Agent Multiplexers | 12 | 56 | 56 |
-| **Total** | **50** | **265** | **265** |
+| Agent Multiplexers | 13 | 58 | 58 |
+| **Total** | **51** | **267** | **267** |
 
-The generated ledger has exact key parity with all 265 current rendered Unknown cells. Every cell has a product-and-row-specific rationale and every product has an exact-SKU first-party `sourcesChecked` list. The generator rejects missing, extra, or duplicate keys.
+The generated ledger has exact key parity with all 267 current rendered Unknown cells. Every cell has a product-and-row-specific rationale and every product has an exact-SKU first-party `sourcesChecked` list. The generator rejects missing, extra, or duplicate keys.
 
 ## Changed-source corrections preserved
 
@@ -123,6 +123,7 @@ These previously Unknown cells now resolve from the catalog to the audited state
 | `claude-squad` | 7 | 7 |
 | `nodeterm` | 2 | 2 |
 | `ccmanager` | 8 | 8 |
+| `tty7` | 2 | 2 |
 
 ## Evidence boundaries preserved
 

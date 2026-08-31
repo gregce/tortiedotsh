@@ -1050,6 +1050,17 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       ...limitedClaims("https://github.com/kbwo/ccmanager#readme", "CCManager README", ["workbench-scm"], "CCManager creates, merges, and deletes Git worktrees; it is not documented as a full source-control client.", "repository-derived"),
     },
   }),
+  product({
+    id: "tty7", name: "tty7", categoryId: "agent-workbenches", editorialOrder: 15, officialUrl: "https://tty7.io/", repository: repo("l0ng-ai/tty7"), repoMetricId: "tty7",
+    tags: ["terminal", "persistent-server", "multi-agent", "multi-project", "notifications", "scm", "worktrees", "remote-ssh", "agent-cli", "oss"],
+    platform: ["macos", "windows", "linux"], platformNote: "The release page publishes native macOS, Windows, and Linux packages.",
+    platformSource: { url: "https://github.com/l0ng-ai/tty7#install", title: "tty7 installation matrix" },
+    source: "open-source", execution: ["local-daemon", "ssh-host"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/l0ng-ai/tty7#readme", "tty7 README", ["workbench-arbitrary-cli", "workbench-agent-handoff", "workbench-named-sessions", "workbench-pty-survives-ui", "workbench-cross-project-attention", "workbench-scm", "workbench-change-review", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery", "workbench-remote-host", "workbench-programmable-control", "workbench-worktrees"], undefined, "repository-derived"),
+      "workbench-file-tree": capability("limited", "https://github.com/l0ng-ai/tty7#readme", "tty7 README", "Remote workspaces expose remote files and repositories; the README does not establish a full local project editor tree.", "repository-derived"),
+    },
+  }),
 
   // 3. Agent orchestrators
   product({
@@ -1244,6 +1255,32 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       "orchestrator-inline-review": capability("limited", "https://github.com/xintaofei/codeg#readme", "Codeg README", "Finished tasks wait in review with a visual diff and another-pass or accept controls; line-comment feedback is not documented.", "repository-derived"),
       "orchestrator-live-steering": capability("limited", "https://github.com/xintaofei/codeg#readme", "Codeg README", "A finished task can be sent back for another pass, but redirecting an actively running unattended worker is not documented.", "repository-derived"),
       "orchestrator-programmable": capability("built-in", "https://github.com/xintaofei/codeg#readme", "Codeg README", "Reusable automations run headlessly on a cron schedule or on demand, creating sessions or reviewable to-do tasks.", "repository-derived"),
+    },
+  }),
+  product({
+    id: "cli-agent-orchestrator", name: "AWS CLI Agent Orchestrator", categoryId: "agent-orchestrators", editorialOrder: 26,
+    officialUrl: "https://awslabs.github.io/cli-agent-orchestrator/", repository: repo("awslabs/cli-agent-orchestrator"), repoMetricId: "cli-agent-orchestrator",
+    tags: ["supervisor", "multi-harness", "parallel-workers", "tmux", "web-ui", "mcp", "workflows", "worktrees", "oss"],
+    platform: ["macos", "linux"], platformNote: "CAO requires tmux; its first-party setup is documented for Unix-like hosts rather than native Windows.",
+    platformSource: { url: "https://github.com/awslabs/cli-agent-orchestrator#prerequisites", title: "CLI Agent Orchestrator prerequisites" },
+    source: "open-source", execution: ["local-daemon", "local-process", "container"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/awslabs/cli-agent-orchestrator#readme", "CLI Agent Orchestrator README", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-agent-handoff", "orchestrator-worktrees", "orchestrator-attention-signals", "orchestrator-live-steering", "orchestrator-programmable"], undefined, "repository-derived"),
+      "orchestrator-containers": capability("limited", "https://github.com/awslabs/cli-agent-orchestrator#readme", "CLI Agent Orchestrator README", "A devcontainer installation is documented, but per-worker container isolation is not the default execution contract.", "repository-derived"),
+    },
+  }),
+  product({
+    id: "oh-my-claudecode", name: "Oh My ClaudeCode", categoryId: "agent-orchestrators", editorialOrder: 27,
+    officialUrl: "https://oh-my-claudecode.dev/", repository: repo("Yeachan-Heo/oh-my-claudecode"), repoMetricId: "oh-my-claudecode",
+    tags: ["claude-code", "teams", "multi-harness", "parallel-workers", "tmux", "verification-loop", "worktrees", "sdk", "oss"],
+    platform: ["macos", "windows", "linux"], platformNote: "OMC runs through Claude Code's plugin surface or its Node.js CLI; named workflow profiles have an additional Linux-only flock requirement.",
+    platformSource: { url: "https://github.com/Yeachan-Heo/oh-my-claudecode#readme", title: "Oh My ClaudeCode README" },
+    source: "open-source", execution: ["local-process"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/Yeachan-Heo/oh-my-claudecode#readme", "Oh My ClaudeCode README", ["orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-agent-handoff", "orchestrator-review-delivery", "orchestrator-attention-signals", "orchestrator-programmable"], undefined, "repository-derived"),
+      "orchestrator-isolated-workspaces": capability("limited", "https://github.com/Yeachan-Heo/oh-my-claudecode#readme", "Oh My ClaudeCode README", "Native team worktrees are documented behind an opt-in configuration gate rather than as the default worker boundary.", "repository-derived"),
+      "orchestrator-worktrees": capability("limited", "https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/docs/TEAM-WORKTREE-MODE.md", "Oh My ClaudeCode team worktree mode", "Native team worktrees are opt-in and the README describes the mode as being added behind a configuration gate.", "repository-derived"),
+      "orchestrator-task-board": capability("limited", "https://github.com/Yeachan-Heo/oh-my-claudecode#readme", "Oh My ClaudeCode README", "Team execution has explicit plan, execute, verify, and fix stages with live HUD status; a conventional Kanban board is not documented.", "repository-derived"),
     },
   }),
 
@@ -1519,6 +1556,18 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       ...builtInClaims("https://github.com/SWE-agent/SWE-agent", "SWE-agent repository", ["harness-headless", "harness-multi-provider", "harness-project-instructions", "harness-sandbox", "harness-structured-output", "harness-git-workflow"], undefined, "repository-derived"),
       "harness-interactive-cli": capability("limited", "https://github.com/SWE-agent/SWE-agent", "SWE-agent repository", "SWE-agent is primarily an issue-driven research and automation harness rather than a conversational TUI.", "repository-derived"),
       "harness-session-resume": capability("limited", "https://github.com/SWE-agent/SWE-agent", "SWE-agent repository", "Runs emit trajectories and artifacts, but named conversational resume is not its primary contract.", "repository-derived"),
+    },
+  }),
+  product({
+    id: "reasonix", name: "Reasonix", categoryId: "coding-agent-harnesses", editorialOrder: 34,
+    officialUrl: "https://reasonix.io/", repository: repo("esengine/DeepSeek-Reasonix"), repoMetricId: "reasonix",
+    tags: ["cli", "tui", "desktop", "browser", "acp", "multi-provider", "mcp", "sandbox", "checkpoints", "oss"],
+    platform: ["macos", "windows", "linux", "web"], platformNote: "Reasonix publishes native CLI and desktop packages for macOS, Windows, and Linux; the browser is another client for the same local engine.",
+    platformSource: { url: "https://github.com/esengine/DeepSeek-Reasonix#install", title: "Reasonix installation matrix" },
+    source: "open-source", execution: ["local-process", "local-daemon"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/esengine/DeepSeek-Reasonix#readme", "Reasonix README", ["harness-interactive-cli", "harness-headless", "harness-multi-provider", "harness-extension-protocol", "harness-project-instructions", "harness-permission-controls", "harness-sandbox", "harness-checkpoints", "harness-subagents"], undefined, "repository-derived"),
+      "harness-session-resume": capability("built-in", "https://github.com/esengine/DeepSeek-Reasonix/blob/main/docs/RECOVERY.md", "Reasonix recovery documentation", "The local engine preserves workspace sessions and documents recovery behavior.", "repository-derived"),
     },
   }),
 
@@ -2159,7 +2208,22 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-transport-security": factClaim("End-to-end encrypted session content", "https://github.com/slopus/happy-server", "Happy Server security model", undefined, "source-inspected"),
     "remote-session-durability": factClaim("Survives client disconnect while host session runs", "https://github.com/slopus/happy", "Happy repository", undefined, "repository-derived"),
   } }),
-  product({ id: "vibetunnel", name: "VibeTunnel", categoryId: "remote-companions", editorialOrder: 2, officialUrl: "https://github.com/amantus-ai/vibetunnel", repository: repo("amantus-ai/vibetunnel"), repoMetricId: "vibetunnel", tags: ["browser-terminal", "mobile-web", "server-owned-pty", "oss"], platform: ["macos", "web"], source: "open-source", execution: ["local-daemon", "paired-machine"], status: "active", claims: {
+  product({
+    id: "happier", name: "Happier", categoryId: "remote-companions", editorialOrder: 2, officialUrl: "https://happier.dev/", repository: repo("happier-dev/happier"), repoMetricId: "happier",
+    tags: ["mobile", "desktop", "web", "multi-harness", "existing-sessions", "notifications", "e2e-encryption", "self-hosted", "oss", "alpha"],
+    platform: ["macos", "windows", "linux", "web", "ios", "android"], platformNote: "Happier combines a cross-platform host CLI with mobile, browser, and desktop clients.",
+    platformSource: { url: "https://github.com/happier-dev/happier#installation", title: "Happier installation guide" },
+    source: "open-source", execution: ["local-daemon", "paired-machine", "vendor-cloud", "user-cloud"], status: "beta",
+    claims: {
+      ...builtInClaims("https://github.com/happier-dev/happier#key-features", "Happier key features", ["remote-client-reach", "remote-existing-session", "remote-approvals", "remote-encryption", "remote-native-ios", "remote-native-android", "remote-browser-pwa", "remote-supported-harnesses", "remote-terminal-input", "remote-notifications", "remote-hosting-boundary", "remote-session-history", "remote-agent-aware"], undefined, "repository-derived"),
+      "remote-input-model": factClaim("Agent messages, approvals, steering, and embedded terminal input", "https://github.com/happier-dev/happier#key-features", "Happier key features", undefined, "repository-derived"),
+      "remote-host-ownership": factClaim("Existing or Happier-launched session on a connected machine", "https://github.com/happier-dev/happier#key-features", "Happier key features", undefined, "repository-derived"),
+      "remote-relay-deployment": factClaim("Happier Cloud or self-hosted relay", "https://github.com/happier-dev/happier#key-features", "Happier key features", undefined, "repository-derived"),
+      "remote-transport-security": factClaim("End-to-end encrypted by default; configurable self-hosted storage policy", "https://github.com/happier-dev/happier#key-features", "Happier key features", undefined, "repository-derived"),
+      "remote-session-durability": factClaim("Persistent host sessions with restart resume and tmux-backed terminal resume", "https://github.com/happier-dev/happier#key-features", "Happier key features", undefined, "repository-derived"),
+    },
+  }),
+  product({ id: "vibetunnel", name: "VibeTunnel", categoryId: "remote-companions", editorialOrder: 3, officialUrl: "https://github.com/amantus-ai/vibetunnel", repository: repo("amantus-ai/vibetunnel"), repoMetricId: "vibetunnel", tags: ["browser-terminal", "mobile-web", "server-owned-pty", "oss"], platform: ["macos", "web"], source: "open-source", execution: ["local-daemon", "paired-machine"], status: "active", claims: {
     ...builtInClaims("https://github.com/amantus-ai/vibetunnel", "VibeTunnel repository", ["remote-client-reach", "remote-existing-session"], undefined, "repository-derived"),
     "remote-native-ios": capability("limited", "https://github.com/amantus-ai/vibetunnel", "VibeTunnel repository", "Native iOS app is work in progress and not recommended for production.", "repository-derived"),
     "remote-browser-pwa": capability("built-in", "https://github.com/amantus-ai/vibetunnel", "VibeTunnel repository", "Responsive browser interface works from phones and tablets.", "repository-derived"),
@@ -2174,8 +2238,8 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-transport-security": factClaim("Deployment-dependent", "https://github.com/amantus-ai/vibetunnel", "VibeTunnel repository", "Tailscale, SSH, and tunnel options are documented; product-level E2EE is not established.", "repository-derived"),
     "remote-session-durability": factClaim("Browser reconnect + recorded PTY; host process must remain", "https://github.com/amantus-ai/vibetunnel", "VibeTunnel repository", undefined, "repository-derived"),
   } }),
-  product({ id: "omnara", name: "Omnara", categoryId: "remote-companions", editorialOrder: 3, officialUrl: "https://github.com/omnara-ai/omnara", repository: repo("omnara-ai/omnara", "deprecated-predecessor"), tags: ["web", "mobile", "durable-agent-api", "pivoted", "oss"], source: "open-source", execution: ["vendor-cloud"], status: "pivoted" }),
-  product({ id: "shunt", name: "Shunt", categoryId: "remote-companions", editorialOrder: 4, officialUrl: "https://shunt.app/", tags: ["remote-tmux", "permissions", "mobile"], platform: ["macos", "linux", "web", "ios"], platformNote: "macOS and Linux daemon; embedded web/PWA client; native iOS client is preview/TestFlight.", source: "unknown", execution: ["paired-machine"], status: "active", claims: {
+  product({ id: "omnara", name: "Omnara", categoryId: "remote-companions", editorialOrder: 4, officialUrl: "https://github.com/omnara-ai/omnara", repository: repo("omnara-ai/omnara", "deprecated-predecessor"), tags: ["web", "mobile", "durable-agent-api", "pivoted", "oss"], source: "open-source", execution: ["vendor-cloud"], status: "pivoted" }),
+  product({ id: "shunt", name: "Shunt", categoryId: "remote-companions", editorialOrder: 5, officialUrl: "https://shunt.app/", tags: ["remote-tmux", "permissions", "mobile"], platform: ["macos", "linux", "web", "ios"], platformNote: "macOS and Linux daemon; embedded web/PWA client; native iOS client is preview/TestFlight.", source: "unknown", execution: ["paired-machine"], status: "active", claims: {
     ...builtInClaims("https://shunt.app/", "Shunt product documentation", ["remote-client-reach", "remote-existing-session", "remote-approvals"]),
     "remote-native-ios": capability("limited", "https://shunt.app/", "Shunt product documentation", "Native SwiftUI client is distributed through TestFlight in the documented initial release."),
     "remote-browser-pwa": capability("built-in", "https://shunt.app/", "Shunt product documentation", "Embedded web client plus standalone mobile and iPad PWA support."),
@@ -2188,7 +2252,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-host-ownership": factClaim("Existing tmux session on paired machine", "https://shunt.app/", "Shunt product documentation"),
     "remote-session-durability": factClaim("Owned by tmux; survives browser and client exit", "https://shunt.app/", "Shunt product documentation"),
   } }),
-  product({ id: "claude-code-remote-control", name: "Claude Code Remote Control", categoryId: "remote-companions", editorialOrder: 5, officialUrl: "https://code.claude.com/docs/en/remote-control", tags: ["claude-code", "browser", "mobile", "approvals", "research-preview"], platform: ["web", "ios", "android"], source: "proprietary", execution: ["paired-machine", "vendor-cloud"], status: "beta", claims: {
+  product({ id: "claude-code-remote-control", name: "Claude Code Remote Control", categoryId: "remote-companions", editorialOrder: 6, officialUrl: "https://code.claude.com/docs/en/remote-control", tags: ["claude-code", "browser", "mobile", "approvals", "research-preview"], platform: ["web", "ios", "android"], source: "proprietary", execution: ["paired-machine", "vendor-cloud"], status: "beta", claims: {
     ...builtInClaims("https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation", ["remote-client-reach", "remote-existing-session", "remote-approvals", "remote-native-ios", "remote-native-android", "remote-browser-pwa", "remote-supported-harnesses", "remote-notifications", "remote-agent-aware"]),
     "remote-encryption": capability("limited", "https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation", "TLS and scoped credentials are documented; end-to-end or zero-knowledge encryption is not claimed."),
     "remote-terminal-input": capability("limited", "https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation", "Remote Control sends Claude Code follow-ups and approvals rather than exposing an arbitrary raw terminal."),
@@ -2200,7 +2264,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-transport-security": factClaim("Outbound HTTPS with scoped credentials", "https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation"),
     "remote-session-durability": factClaim("Survives remote client disconnect; local session must remain", "https://code.claude.com/docs/en/remote-control", "Claude Code Remote Control documentation"),
   } }),
-  product({ id: "code-server", name: "code-server", categoryId: "remote-companions", editorialOrder: 6, officialUrl: "https://github.com/coder/code-server", repository: repo("coder/code-server"), repoMetricId: "code-server", tags: ["browser-ide", "self-hosted", "vscode-compatible", "oss"], platform: ["macos", "linux", "web"], source: "open-source", execution: ["local-daemon", "user-cloud"], status: "active", claims: {
+  product({ id: "code-server", name: "code-server", categoryId: "remote-companions", editorialOrder: 7, officialUrl: "https://github.com/coder/code-server", repository: repo("coder/code-server"), repoMetricId: "code-server", tags: ["browser-ide", "self-hosted", "vscode-compatible", "oss"], platform: ["macos", "linux", "web"], source: "open-source", execution: ["local-daemon", "user-cloud"], status: "active", claims: {
     ...builtInClaims("https://github.com/coder/code-server", "code-server repository", ["remote-client-reach", "remote-browser-pwa", "remote-terminal-input", "remote-hosting-boundary"], undefined, "repository-derived"),
     "remote-existing-session": capability("limited", "https://github.com/coder/code-server/blob/main/docs/FAQ.md", "code-server FAQ", "Reconnects to a server-owned editor workspace, not an agent conversation.", "source-inspected"),
     "remote-agent-aware": capability("limited", "https://github.com/coder/code-server/blob/main/docs/FAQ.md", "code-server FAQ", "This baseline exposes a remote VS Code-compatible workspace rather than a normalized agent-session protocol.", "source-inspected"),
@@ -2210,7 +2274,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-transport-security": factClaim("Deployment-dependent TLS or secure tunnel", "https://github.com/coder/code-server/blob/main/docs/FAQ.md", "code-server FAQ", undefined, "source-inspected"),
     "remote-session-durability": factClaim("Server workspace survives browser close", "https://github.com/coder/code-server", "code-server repository", undefined, "repository-derived"),
   } }),
-  product({ id: "openvscode-server", name: "OpenVSCode Server", categoryId: "remote-companions", editorialOrder: 7, officialUrl: "https://github.com/gitpod-io/openvscode-server", repository: repo("gitpod-io/openvscode-server"), repoMetricId: "openvscode-server", tags: ["browser-ide", "self-hosted", "code-oss", "oss"], platform: ["linux", "web"], source: "open-source", execution: ["local-daemon", "user-cloud"], status: "active", claims: {
+  product({ id: "openvscode-server", name: "OpenVSCode Server", categoryId: "remote-companions", editorialOrder: 8, officialUrl: "https://github.com/gitpod-io/openvscode-server", repository: repo("gitpod-io/openvscode-server"), repoMetricId: "openvscode-server", tags: ["browser-ide", "self-hosted", "code-oss", "oss"], platform: ["linux", "web"], source: "open-source", execution: ["local-daemon", "user-cloud"], status: "active", claims: {
     ...builtInClaims("https://github.com/gitpod-io/openvscode-server", "OpenVSCode Server repository", ["remote-client-reach", "remote-browser-pwa", "remote-terminal-input", "remote-hosting-boundary"], undefined, "repository-derived"),
     "remote-existing-session": capability("limited", "https://github.com/gitpod-io/openvscode-server", "OpenVSCode Server repository", "Reconnects to a server-owned Code OSS workspace, not an agent conversation.", "repository-derived"),
     "remote-agent-aware": capability("limited", "https://github.com/gitpod-io/openvscode-server", "OpenVSCode Server repository", "This baseline exposes Code OSS in a browser rather than a normalized agent-session protocol.", "repository-derived"),
@@ -2220,7 +2284,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-transport-security": factClaim("Deployment-dependent", "https://github.com/gitpod-io/openvscode-server", "OpenVSCode Server repository", undefined, "repository-derived"),
     "remote-session-durability": factClaim("Server workspace survives browser close", "https://github.com/gitpod-io/openvscode-server", "OpenVSCode Server repository", undefined, "repository-derived"),
   } }),
-  product({ id: "vscode-remote-development", name: "VS Code Remote Development extensions", categoryId: "remote-companions", editorialOrder: 8, officialUrl: "https://code.visualstudio.com/docs/remote/remote-overview", tags: ["vscode", "ssh", "containers", "wsl", "tunnels"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["ssh-host", "container", "user-cloud"], status: "active", claims: {
+  product({ id: "vscode-remote-development", name: "VS Code Remote Development extensions", categoryId: "remote-companions", editorialOrder: 9, officialUrl: "https://code.visualstudio.com/docs/remote/remote-overview", tags: ["vscode", "ssh", "containers", "wsl", "tunnels"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["ssh-host", "container", "user-cloud"], status: "active", claims: {
     "remote-existing-session": capability("limited", "https://code.visualstudio.com/docs/remote/remote-overview", "VS Code Remote Development overview", "Connects to a remote development workspace, not an agent conversation."),
     "remote-client-reach": capability("built-in", "https://code.visualstudio.com/docs/remote/tunnels", "VS Code Remote Tunnels", "Connects from VS Code desktop or from a vscode.dev URL on a client of the operator's choosing."),
     "remote-browser-pwa": capability("built-in", "https://code.visualstudio.com/docs/remote/tunnels", "VS Code Remote Tunnels", "The official tunnel workflow emits a vscode.dev browser URL with the Remote Tunnels extension preinstalled."),
@@ -2232,7 +2296,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-transport-security": factClaim("Selected transport", "https://code.visualstudio.com/docs/remote/remote-overview", "VS Code Remote Development overview"),
     "remote-session-durability": factClaim("Remote workspace persists; IDE connection can reconnect", "https://code.visualstudio.com/docs/remote/remote-overview", "VS Code Remote Development overview"),
   } }),
-  product({ id: "sshx", name: "sshx", categoryId: "remote-companions", editorialOrder: 9, officialUrl: "https://github.com/ekzhang/sshx", repository: repo("ekzhang/sshx"), repoMetricId: "sshx", tags: ["collaborative-terminal", "browser", "e2e-encryption", "oss"], platform: ["macos", "linux", "web"], source: "open-source", execution: ["local-daemon", "paired-machine", "vendor-cloud"], status: "active", claims: {
+  product({ id: "sshx", name: "sshx", categoryId: "remote-companions", editorialOrder: 10, officialUrl: "https://github.com/ekzhang/sshx", repository: repo("ekzhang/sshx"), repoMetricId: "sshx", tags: ["collaborative-terminal", "browser", "e2e-encryption", "oss"], platform: ["macos", "linux", "web"], source: "open-source", execution: ["local-daemon", "paired-machine", "vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://github.com/ekzhang/sshx", "sshx repository", ["remote-client-reach", "remote-browser-pwa", "remote-terminal-input", "remote-encryption"], undefined, "repository-derived"),
     "remote-existing-session": capability("limited", "https://github.com/ekzhang/sshx", "sshx repository", "Shares the command launched under sshx rather than attaching to any arbitrary existing agent conversation.", "repository-derived"),
     "remote-agent-aware": capability("limited", "https://github.com/ekzhang/sshx", "sshx repository", "sshx is a generic collaborative terminal rather than a normalized agent-session protocol.", "repository-derived"),
@@ -2243,7 +2307,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-transport-security": factClaim("Argon2-derived AES end-to-end encryption", "https://github.com/ekzhang/sshx", "sshx repository", undefined, "source-inspected"),
     "remote-session-durability": factClaim("Host command must remain running", "https://github.com/ekzhang/sshx", "sshx repository", undefined, "repository-derived"),
   } }),
-  product({ id: "upterm", name: "Upterm", categoryId: "remote-companions", editorialOrder: 10, officialUrl: "https://github.com/owenthereal/upterm", repository: repo("owenthereal/upterm"), repoMetricId: "upterm", tags: ["ssh", "terminal-sharing", "self-hosted-relay", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-daemon", "paired-machine", "vendor-cloud", "user-cloud"], status: "active", claims: {
+  product({ id: "upterm", name: "Upterm", categoryId: "remote-companions", editorialOrder: 11, officialUrl: "https://github.com/owenthereal/upterm", repository: repo("owenthereal/upterm"), repoMetricId: "upterm", tags: ["ssh", "terminal-sharing", "self-hosted-relay", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-daemon", "paired-machine", "vendor-cloud", "user-cloud"], status: "active", claims: {
     ...builtInClaims("https://github.com/owenthereal/upterm", "Upterm repository", ["remote-client-reach", "remote-terminal-input", "remote-hosting-boundary"], undefined, "repository-derived"),
     "remote-existing-session": capability("limited", "https://github.com/owenthereal/upterm", "Upterm repository", "Hosts a command or tmux attachment; it is not an agent-session protocol.", "repository-derived"),
     "remote-encryption": capability("limited", "https://github.com/owenthereal/upterm", "Upterm repository", "SSH transport is documented, not a zero-knowledge relay claim.", "repository-derived"),
@@ -2254,7 +2318,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-transport-security": factClaim("SSH transport", "https://github.com/owenthereal/upterm", "Upterm repository", undefined, "repository-derived"),
     "remote-session-durability": factClaim("Host command or tmux attachment must remain", "https://github.com/owenthereal/upterm", "Upterm repository", undefined, "repository-derived"),
   } }),
-  product({ id: "termix", name: "Termix", categoryId: "remote-companions", editorialOrder: 11, officialUrl: "https://github.com/Termix-SSH/Termix", repository: repo("Termix-SSH/Termix"), repoMetricId: "termix", tags: ["ssh", "rdp", "vnc", "web", "desktop", "mobile", "self-hosted", "oss"], platform: ["macos", "windows", "linux", "web", "ios", "android"], source: "open-source", execution: ["local-daemon", "user-cloud", "paired-machine"], status: "active", claims: {
+  product({ id: "termix", name: "Termix", categoryId: "remote-companions", editorialOrder: 12, officialUrl: "https://github.com/Termix-SSH/Termix", repository: repo("Termix-SSH/Termix"), repoMetricId: "termix", tags: ["ssh", "rdp", "vnc", "web", "desktop", "mobile", "self-hosted", "oss"], platform: ["macos", "windows", "linux", "web", "ios", "android"], source: "open-source", execution: ["local-daemon", "user-cloud", "paired-machine"], status: "active", claims: {
     ...builtInClaims("https://github.com/Termix-SSH/Termix", "Termix repository", ["remote-client-reach", "remote-existing-session", "remote-native-ios", "remote-native-android", "remote-browser-pwa", "remote-terminal-input", "remote-hosting-boundary", "remote-session-history"], undefined, "repository-derived"),
     "remote-approvals": capability("limited", "https://github.com/Termix-SSH/Termix", "Termix repository", "The optional AI Assistant proposes infrastructure changes for explicit user approval instead of applying them directly; this does not establish approvals for arbitrary external harnesses.", "repository-derived"),
     "remote-agent-aware": capability("limited", "https://github.com/Termix-SSH/Termix", "Termix repository", "Termix manages generic SSH, RDP, VNC, and Telnet sessions rather than a normalized coding-agent protocol.", "repository-derived"),
@@ -2265,7 +2329,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-transport-security": factClaim("Protocol and deployment-dependent", "https://github.com/Termix-SSH/Termix", "Termix repository", undefined, "repository-derived"),
     "remote-session-durability": factClaim("Saved connection and shared-session history", "https://github.com/Termix-SSH/Termix", "Termix repository", undefined, "repository-derived"),
   } }),
-  product({ id: "ttyd", name: "ttyd", categoryId: "remote-companions", editorialOrder: 12, officialUrl: "https://github.com/tsl0922/ttyd", repository: repo("tsl0922/ttyd"), repoMetricId: "ttyd", tags: ["browser-terminal", "websocket", "minimal-relay", "oss"], platform: ["macos", "linux", "web"], source: "open-source", execution: ["local-daemon", "paired-machine"], status: "active", claims: {
+  product({ id: "ttyd", name: "ttyd", categoryId: "remote-companions", editorialOrder: 13, officialUrl: "https://github.com/tsl0922/ttyd", repository: repo("tsl0922/ttyd"), repoMetricId: "ttyd", tags: ["browser-terminal", "websocket", "minimal-relay", "oss"], platform: ["macos", "linux", "web"], source: "open-source", execution: ["local-daemon", "paired-machine"], status: "active", claims: {
     ...builtInClaims("https://github.com/tsl0922/ttyd", "ttyd repository", ["remote-client-reach", "remote-browser-pwa", "remote-terminal-input", "remote-hosting-boundary"], undefined, "repository-derived"),
     "remote-existing-session": capability("limited", "https://github.com/tsl0922/ttyd", "ttyd repository", "Shares the command or PTY launched by ttyd, not a normalized existing agent conversation.", "repository-derived"),
     "remote-agent-aware": capability("limited", "https://github.com/tsl0922/ttyd", "ttyd repository", "ttyd is a generic terminal-to-WebSocket bridge rather than an agent-session protocol.", "repository-derived"),
@@ -2275,7 +2339,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "remote-transport-security": factClaim("Deployment-dependent TLS", "https://github.com/tsl0922/ttyd", "ttyd repository", undefined, "repository-derived"),
     "remote-session-durability": factClaim("Host command must remain running", "https://github.com/tsl0922/ttyd", "ttyd repository", undefined, "repository-derived"),
   } }),
-  product({ id: "sshhip", name: "SSHHIP", categoryId: "remote-companions", editorialOrder: 13, officialUrl: "https://sshhip.com/", tags: ["ssh", "ios", "ipad", "tmux", "sftp", "direct-connection"], platform: ["ios"], platformNote: "SSHHIP is a native iPhone and iPad SSH client.", platformSource: { url: "https://apps.apple.com/us/app/sshhip/id6785186457", title: "SSHHIP on the App Store" }, source: "proprietary", execution: ["paired-machine"], status: "active", claims: {
+  product({ id: "sshhip", name: "SSHHIP", categoryId: "remote-companions", editorialOrder: 14, officialUrl: "https://sshhip.com/", tags: ["ssh", "ios", "ipad", "tmux", "sftp", "direct-connection"], platform: ["ios"], platformNote: "SSHHIP is a native iPhone and iPad SSH client.", platformSource: { url: "https://apps.apple.com/us/app/sshhip/id6785186457", title: "SSHHIP on the App Store" }, source: "proprietary", execution: ["paired-machine"], status: "active", claims: {
     "remote-client-reach": capability("built-in", "https://sshhip.com/", "SSHHIP", "The native iOS client connects directly to operator-owned SSH hosts."),
     "remote-existing-session": capability("built-in", "https://sshhip.com/tmux/", "SSHHIP tmux guide", "SSHHIP attaches to existing tmux sessions and documents reconnecting to persistent coding-agent work."),
     "remote-encryption": capability("limited", "https://sshhip.com/", "SSHHIP", "Transport uses direct SSH encryption; end-to-end application-layer encryption beyond SSH is not documented."),
