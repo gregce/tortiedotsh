@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-30T08:51:37.711Z",
+  "generatedAt": "2026-08-31T02:43:11.610Z",
   "sources": [
     {
       "id": "69c685f410104791dcf5",
@@ -4513,6 +4513,53 @@
       ],
       "etag": null,
       "lastModified": "Wed, 26 Aug 2026 23:31:34 GMT",
+      "error": null
+    },
+    {
+      "id": "d25105d4d9b861286a54",
+      "url": "https://docs.codeg.app/",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "codeg",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://docs.codeg.app/",
+      "resolvedUrl": "https://docs.codeg.app/",
+      "lastCheckedAt": "2026-08-31T02:43:10.957Z",
+      "firstObservedAt": "2026-08-31T02:43:10.957Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 30816,
+      "contentHash": "6313831b4dbbdddbbfddc7113979fbc57666ecc55c531e4da0caf4d9e8864fb0",
+      "reviewedHash": "6313831b4dbbdddbbfddc7113979fbc57666ecc55c531e4da0caf4d9e8864fb0",
+      "reviews": [],
+      "etag": "W/\"6a8fd652-7860\"",
+      "lastModified": "Thu, 27 Aug 2026 06:16:50 GMT",
       "error": null
     },
     {
@@ -12812,6 +12859,136 @@
       "error": null
     },
     {
+      "id": "c0f8668eb5b3327f2fe5",
+      "url": "https://github.com/eneskirca/nodeterm/blob/main/LICENSE",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "nodeterm",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://raw.githubusercontent.com/eneskirca/nodeterm/main/LICENSE",
+      "resolvedUrl": "https://raw.githubusercontent.com/eneskirca/nodeterm/main/LICENSE",
+      "lastCheckedAt": "2026-08-31T02:40:52.617Z",
+      "firstObservedAt": "2026-08-31T02:40:52.617Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "contentLength": 4607,
+      "contentHash": "d1381345794ac62e126c66085c8cc8cdb282e54d8b2c3bab0d3d75f4fe051829",
+      "reviewedHash": "d1381345794ac62e126c66085c8cc8cdb282e54d8b2c3bab0d3d75f4fe051829",
+      "reviews": [],
+      "etag": "W/\"ec894bdad1831edb84c45ebe98ac9b92d566636de81f11baa2260ee506d2b0ff\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "c2b83c926ffa0eb3a800",
+      "url": "https://github.com/eneskirca/nodeterm#readme",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "nodeterm",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-arbitrary-cli",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-attention-signals",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-browser",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-change-review",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-cross-project-attention",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-editor",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-file-tree",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-named-sessions",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-pty-survives-ui",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-remote-host",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-scm",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-session-recovery",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-splits",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "workbench-worktrees",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://api.github.com/repos/eneskirca/nodeterm/readme",
+      "resolvedUrl": "https://api.github.com/repos/eneskirca/nodeterm/readme",
+      "lastCheckedAt": "2026-08-31T02:40:52.638Z",
+      "firstObservedAt": "2026-08-31T02:40:52.638Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "application/vnd.github.raw+json; charset=utf-8",
+      "contentLength": 16535,
+      "contentHash": "7a1c139fbd858a9fb5b326812a217facc5ff8c6864d0f0a2d98bd87045f415f2",
+      "reviewedHash": "7a1c139fbd858a9fb5b326812a217facc5ff8c6864d0f0a2d98bd87045f415f2",
+      "reviews": [],
+      "etag": "\"1224a26ab3ec674da5d55a6e73b7ee5826b279c2\"",
+      "lastModified": "Sun, 30 Aug 2026 23:02:50 GMT",
+      "error": null
+    },
+    {
       "id": "aac1f011eca37900c74c",
       "url": "https://github.com/entireio",
       "bases": [
@@ -14934,6 +15111,123 @@
       "error": null
     },
     {
+      "id": "c5f7b2c8f51db4d179cf",
+      "url": "https://github.com/kbwo/ccmanager",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "ccmanager",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "ccmanager",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "ccmanager",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "ccmanager",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://api.github.com/repos/kbwo/ccmanager/readme",
+      "resolvedUrl": "https://api.github.com/repos/kbwo/ccmanager/readme",
+      "lastCheckedAt": "2026-08-31T02:43:10.980Z",
+      "firstObservedAt": "2026-08-31T02:43:10.980Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "application/vnd.github.raw+json; charset=utf-8",
+      "contentLength": 15744,
+      "contentHash": "59f07f1deaba7bdc3ce35574d73064ee2269e6e2746847cf6e16693511cf14da",
+      "reviewedHash": "59f07f1deaba7bdc3ce35574d73064ee2269e6e2746847cf6e16693511cf14da",
+      "reviews": [],
+      "etag": "\"de463d5917ac98635409f6e51641ebbbaecbbde8\"",
+      "lastModified": "Sun, 30 Aug 2026 13:11:24 GMT",
+      "error": null
+    },
+    {
+      "id": "5a29fb730c6e6f87bf5a",
+      "url": "https://github.com/kbwo/ccmanager#readme",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "ccmanager",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "ccmanager",
+          "field": "workbench-arbitrary-cli",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "ccmanager",
+          "field": "workbench-attention-signals",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "ccmanager",
+          "field": "workbench-cross-project-attention",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "ccmanager",
+          "field": "workbench-named-sessions",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "ccmanager",
+          "field": "workbench-programmable-control",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "ccmanager",
+          "field": "workbench-scm",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "ccmanager",
+          "field": "workbench-session-recovery",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "ccmanager",
+          "field": "workbench-worktrees",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://api.github.com/repos/kbwo/ccmanager/readme",
+      "resolvedUrl": "https://api.github.com/repos/kbwo/ccmanager/readme",
+      "lastCheckedAt": "2026-08-31T02:40:52.639Z",
+      "firstObservedAt": "2026-08-31T02:40:52.639Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "application/vnd.github.raw+json; charset=utf-8",
+      "contentLength": 15744,
+      "contentHash": "59f07f1deaba7bdc3ce35574d73064ee2269e6e2746847cf6e16693511cf14da",
+      "reviewedHash": "59f07f1deaba7bdc3ce35574d73064ee2269e6e2746847cf6e16693511cf14da",
+      "reviews": [],
+      "etag": "\"de463d5917ac98635409f6e51641ebbbaecbbde8\"",
+      "lastModified": "Sun, 30 Aug 2026 13:11:24 GMT",
+      "error": null
+    },
+    {
       "id": "6df3a07a1585b18a922d",
       "url": "https://github.com/kdlbs/kandev/blob/main/docs/features.md",
       "bases": [
@@ -16305,6 +16599,118 @@
       "reviews": [],
       "etag": "W/\"261f3941af1af0a62cce3445de3c9b201c92536e125b8443c8b3169541dacc14\"",
       "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "6ad48d2a4bc1fdcce102",
+      "url": "https://github.com/NanmiCoder/cc-haha",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "cc-haha",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://api.github.com/repos/NanmiCoder/cc-haha/readme",
+      "resolvedUrl": "https://api.github.com/repos/NanmiCoder/cc-haha/readme",
+      "lastCheckedAt": "2026-08-31T02:43:10.981Z",
+      "firstObservedAt": "2026-08-31T02:43:10.981Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "application/vnd.github.raw+json; charset=utf-8",
+      "contentLength": 15987,
+      "contentHash": "96fd69a208aadf95db00d7441180928bd0f09c5267f09adeb2cc8582072e6bf6",
+      "reviewedHash": "96fd69a208aadf95db00d7441180928bd0f09c5267f09adeb2cc8582072e6bf6",
+      "reviews": [],
+      "etag": "\"efb257c36086776486743f9eca4f41214d3220fb\"",
+      "lastModified": "Sun, 23 Aug 2026 11:57:27 GMT",
+      "error": null
+    },
+    {
+      "id": "b235a97b53f1b24c9c11",
+      "url": "https://github.com/NanmiCoder/cc-haha#readme",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "cc-haha",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "workbench-attention-signals",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "workbench-browser",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "workbench-change-review",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "workbench-cross-project-attention",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "workbench-file-tree",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "workbench-named-sessions",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "workbench-worktrees",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://api.github.com/repos/NanmiCoder/cc-haha/readme",
+      "resolvedUrl": "https://api.github.com/repos/NanmiCoder/cc-haha/readme",
+      "lastCheckedAt": "2026-08-31T02:40:52.639Z",
+      "firstObservedAt": "2026-08-31T02:40:52.639Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "application/vnd.github.raw+json; charset=utf-8",
+      "contentLength": 15987,
+      "contentHash": "96fd69a208aadf95db00d7441180928bd0f09c5267f09adeb2cc8582072e6bf6",
+      "reviewedHash": "96fd69a208aadf95db00d7441180928bd0f09c5267f09adeb2cc8582072e6bf6",
+      "reviews": [],
+      "etag": "\"efb257c36086776486743f9eca4f41214d3220fb\"",
+      "lastModified": "Sun, 23 Aug 2026 11:57:27 GMT",
       "error": null
     },
     {
@@ -20933,6 +21339,96 @@
       "error": null
     },
     {
+      "id": "7785e78f94d290282a93",
+      "url": "https://github.com/xintaofei/codeg#readme",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "codeg",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-arbitrary-cli",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-change-review",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-cross-project-attention",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-editor",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-file-tree",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-named-sessions",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-pty-survives-ui",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-remote-host",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-scm",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-session-recovery",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-splits",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "workbench-worktrees",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://api.github.com/repos/xintaofei/codeg/readme",
+      "resolvedUrl": "https://api.github.com/repos/xintaofei/codeg/readme",
+      "lastCheckedAt": "2026-08-31T02:40:52.640Z",
+      "firstObservedAt": "2026-08-31T02:40:52.640Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "application/vnd.github.raw+json; charset=utf-8",
+      "contentLength": 22083,
+      "contentHash": "94023671b1c2afb7e972b35e60d67a9ea82e527a1bf7e7618237bf2bfee4c7fc",
+      "reviewedHash": "94023671b1c2afb7e972b35e60d67a9ea82e527a1bf7e7618237bf2bfee4c7fc",
+      "reviews": [],
+      "etag": "\"8550797d877b21599988e3a9e9d0aff8345df73c\"",
+      "lastModified": "Sat, 29 Aug 2026 08:25:40 GMT",
+      "error": null
+    },
+    {
       "id": "69bdfd293baf1122ff74",
       "url": "https://github.com/zeroclaw-labs/zeroclaw",
       "bases": [
@@ -24046,6 +24542,47 @@
       "etag": null,
       "lastModified": "Tue, 28 Jul 2026 05:51:44 GMT",
       "error": "HTTP 403"
+    },
+    {
+      "id": "3f3d1bc9a8122e4b1ebb",
+      "url": "https://nodeterm.dev/",
+      "bases": [
+        "repository-derived",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "nodeterm",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "nodeterm",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://nodeterm.dev/",
+      "resolvedUrl": "https://nodeterm.dev/",
+      "lastCheckedAt": "2026-08-31T02:43:10.982Z",
+      "firstObservedAt": "2026-08-31T02:43:10.982Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "contentLength": 15921,
+      "contentHash": "0a2cff81c4129a5f6a955bf850cf1214d0b282a5053105c27c1e62fbc840c253",
+      "reviewedHash": "0a2cff81c4129a5f6a955bf850cf1214d0b282a5053105c27c1e62fbc840c253",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
     },
     {
       "id": "137d40aa7be34cf3f409",

@@ -12,7 +12,7 @@ import {
 const checkedAt = "2026-08-24";
 const root = resolve(import.meta.dirname, "..");
 const ledgerPath = resolve(root, "src/data/unknown-audit-ide-surfaces.json");
-const reportPath = resolve(root, "../../docs/research/13b-unknown-ledger-ide-surfaces.md");
+const reportPath = resolve(root, "docs/operations/comparison-unknown-ledger.md");
 const checkOnly = process.argv.includes("--check");
 const allowedArgs = new Set(["--check"]);
 for (const argument of process.argv.slice(2)) {
@@ -72,6 +72,10 @@ const productNotes = {
   "wave-terminal": "Wave Terminal's canonical repository and exact workspace documentation establish its saved workspaces, terminal blocks, graphical editor, browser, remote connections, durable SSH sessions, and wsh control surface.",
   dmux: "dmux's canonical README establishes its tmux panes, supported agent launchers, worktree isolation, file and diff browser, notifications, multi-project navigation, merge, and pull-request workflow.",
   "claude-squad": "claude-squad's canonical repository establishes its tmux-managed coding-agent sessions, worktree isolation, Git workflow, attention states, session recovery, and change review without inheriting editor, browser, remote-host, or programmable-control capabilities.",
+  "cc-haha": "Claude Code Haha's canonical repository establishes its desktop multi-session workspace, global search, diff review, browser preview, worktrees, attention surfaces, remote web access, and multi-agent workflows without claiming arbitrary CLI support or live-process survival after desktop exit.",
+  codeg: "Codeg's canonical repository establishes its aggregated multi-agent sessions, ACP agents, editor, file tree, Git client, worktrees, review queue, splits, server deployment, and mobile clients without treating server-mode durability as proof that the desktop process survives application exit.",
+  nodeterm: "nodeterm's canonical repository establishes its tmux-backed terminal canvas, persistent sessions, editors, diffs, Git, worktrees, attention states, remote SSH, browser server, and mobile client while preserving the distinction between its spatial canvas and conventional split panes.",
+  ccmanager: "CCManager's canonical repository establishes its cross-project CLI session manager, supported agent launchers, state monitoring, worktree operations, resume configuration, and status hooks without inheriting editor, file-tree, browser, split-pane, or detached-process capabilities.",
 };
 
 const rowBoundaries = {
@@ -412,7 +416,7 @@ if (checkOnly) {
     readFile(reportPath, "utf8"),
   ]);
   if (existingJson !== json) throw new Error("unknown-audit-ide-surfaces.json is stale; rerun the generator.");
-  if (existingReport !== reportLines) throw new Error("13b-unknown-ledger-ide-surfaces.md is stale; rerun the generator.");
+  if (existingReport !== reportLines) throw new Error("comparison-unknown-ledger.md is stale; rerun the generator.");
   console.log(`Unknown audit is current: ${summary.currentUnknownCells} exact rendered keys, ${summary.appliedClosures} applied closures, ${summary.changedSourceCorrections} changed-source corrections, ${summary.remainUnknown} remain Unknown.`);
 } else {
   await Promise.all([

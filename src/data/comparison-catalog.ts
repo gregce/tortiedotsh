@@ -1027,6 +1027,53 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       "workbench-cross-project-attention": capability("limited", "https://github.com/smtg-ai/claude-squad", "claude-squad repository", "The session list shows worker state across managed worktrees; a dedicated multi-project attention inbox is not documented.", "repository-derived"),
     },
   }),
+  product({
+    id: "cc-haha", name: "Claude Code Haha", categoryId: "agent-workbenches", editorialOrder: 13, officialUrl: "https://github.com/NanmiCoder/cc-haha", repository: repo("NanmiCoder/cc-haha"), repoMetricId: "cc-haha",
+    tags: ["desktop", "multi-session", "global-search", "worktrees", "diff-review", "browser", "attention", "remote-mobile", "multi-agent", "oss"],
+    platform: ["macos", "windows", "linux", "web"], platformNote: "The web surface is H5 remote access to the desktop workspace rather than an independent execution host.",
+    platformSource: { url: "https://github.com/NanmiCoder/cc-haha#readme", title: "Claude Code Haha README" },
+    source: "open-source", execution: ["local-process"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/NanmiCoder/cc-haha#readme", "Claude Code Haha README", ["workbench-named-sessions", "workbench-cross-project-attention", "workbench-attention-signals", "workbench-browser", "workbench-worktrees"], undefined, "repository-derived"),
+      "workbench-change-review": capability("built-in", "https://github.com/NanmiCoder/cc-haha#readme", "Claude Code Haha README", "The workspace lists each turn's changed files and opens syntax-highlighted diffs with whole-turn undo.", "repository-derived"),
+      "workbench-file-tree": capability("limited", "https://github.com/NanmiCoder/cc-haha#readme", "Claude Code Haha README", "Project switching, changed-file lists, and global session search are documented; a complete project file tree is not established.", "repository-derived"),
+    },
+  }),
+  product({
+    id: "codeg", name: "Codeg", categoryId: "agent-workbenches", editorialOrder: 14, officialUrl: "https://docs.codeg.app/", repository: repo("xintaofei/codeg"), repoMetricId: "codeg",
+    tags: ["desktop", "server", "docker", "multi-agent", "multi-session", "editor", "scm", "worktrees", "diff-review", "mobile", "acp", "oss"],
+    platform: ["macos", "windows", "linux", "web", "ios", "android"], platformNote: "The iOS and Android apps are clients for a desktop or self-hosted Codeg server.",
+    platformSource: { url: "https://github.com/xintaofei/codeg#readme", title: "Codeg README" },
+    source: "open-source", execution: ["local-process", "local-daemon", "user-cloud"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/xintaofei/codeg#readme", "Codeg README", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-cross-project-attention", "workbench-editor", "workbench-file-tree", "workbench-scm", "workbench-change-review", "workbench-splits", "workbench-session-recovery", "workbench-worktrees"], undefined, "repository-derived"),
+      "workbench-pty-survives-ui": capability("limited", "https://github.com/xintaofei/codeg#readme", "Codeg README", "Server and Docker modes keep the execution service separate from browser and mobile clients; equivalent desktop-app-exit behavior is not explicitly documented.", "repository-derived"),
+      "workbench-remote-host": capability("built-in", "https://github.com/xintaofei/codeg#readme", "Codeg README", "A standalone or Docker-hosted Codeg server exposes the workspace to browsers and native mobile clients with token authentication.", "repository-derived"),
+    },
+  }),
+  product({
+    id: "nodeterm", name: "nodeterm", categoryId: "agent-workbenches", editorialOrder: 15, officialUrl: "https://nodeterm.dev/", repository: repo("eneskirca/nodeterm"), repoMetricId: "nodeterm",
+    tags: ["terminal", "tmux", "infinite-canvas", "multi-agent", "session-durability", "attention", "editor", "scm", "worktrees", "remote-ssh", "mobile", "source-available"],
+    platform: ["macos", "linux", "web", "ios"], platformNote: "iOS is a companion client. The browser Server Edition is a self-hosted surface over the same live sessions.",
+    platformSource: { url: "https://github.com/eneskirca/nodeterm#readme", title: "nodeterm README" },
+    source: "source-available", sourceSource: { url: "https://github.com/eneskirca/nodeterm/blob/main/LICENSE", title: "nodeterm Business Source License 1.1", basis: "repository-derived" },
+    execution: ["local-daemon", "ssh-host", "user-cloud"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/eneskirca/nodeterm#readme", "nodeterm README", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-pty-survives-ui", "workbench-cross-project-attention", "workbench-editor", "workbench-file-tree", "workbench-scm", "workbench-change-review", "workbench-attention-signals", "workbench-session-recovery", "workbench-browser", "workbench-remote-host", "workbench-worktrees"], undefined, "repository-derived"),
+      "workbench-splits": capability("limited", "https://github.com/eneskirca/nodeterm#readme", "nodeterm README", "Terminals, agents, editors, diffs, and browser nodes share an infinite canvas rather than a conventional split-pane tree.", "repository-derived"),
+    },
+  }),
+  product({
+    id: "ccmanager", name: "CCManager", categoryId: "agent-workbenches", editorialOrder: 16, officialUrl: "https://github.com/kbwo/ccmanager", repository: repo("kbwo/ccmanager"), repoMetricId: "ccmanager",
+    tags: ["tui", "multi-agent", "multi-project", "worktrees", "attention", "session-resume", "hooks", "oss"],
+    platform: ["macos", "windows", "linux"], platformNote: "The cross-platform Node.js CLI is self-contained and has no tmux dependency.",
+    platformSource: { url: "https://github.com/kbwo/ccmanager#readme", title: "CCManager README" },
+    source: "open-source", execution: ["local-process"], status: "active",
+    claims: {
+      ...builtInClaims("https://github.com/kbwo/ccmanager#readme", "CCManager README", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-cross-project-attention", "workbench-attention-signals", "workbench-session-recovery", "workbench-worktrees", "workbench-programmable-control"], undefined, "repository-derived"),
+      ...limitedClaims("https://github.com/kbwo/ccmanager#readme", "CCManager README", ["workbench-scm"], "CCManager creates, merges, and deletes Git worktrees; it is not documented as a full source-control client.", "repository-derived"),
+    },
+  }),
 
   // 3. Agent orchestrators
   product({

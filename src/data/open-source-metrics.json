@@ -9122,11 +9122,6 @@
           "fetchedAt": "2026-08-31T00:10:37.388Z"
         },
         {
-          "type": "license-override",
-          "url": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/languages",
           "fetchedAt": "2026-08-31T00:10:38.010Z"
@@ -14781,6 +14776,503 @@
           "type": "loc-measurement",
           "url": "https://github.com/netease-youdao/LobsterAI/tree/2026.8.28",
           "fetchedAt": "2026-08-31T00:11:52.767Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "cc-haha",
+      "name": "Claude Code Haha",
+      "category": "agent-workbenches",
+      "owner": "NanmiCoder",
+      "repo": "cc-haha",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/NanmiCoder/cc-haha",
+      "cloneUrl": "https://github.com/NanmiCoder/cc-haha.git",
+      "githubUrl": "https://github.com/NanmiCoder/cc-haha",
+      "apiUrl": "https://api.github.com/repos/NanmiCoder/cc-haha",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-31T02:36:16.592Z",
+      "stars": 14250,
+      "forks": 8546,
+      "openIssues": 175,
+      "contributors": 31,
+      "repositorySizeKb": 151741,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-23T18:32:30Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 48552040,
+          "percent": 98.66
+        },
+        {
+          "name": "CSS",
+          "bytes": 140194,
+          "percent": 0.28
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 126257,
+          "percent": 0.26
+        },
+        {
+          "name": "Rust",
+          "bytes": 102399,
+          "percent": 0.21
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 84350,
+          "percent": 0.17
+        },
+        {
+          "name": "Shell",
+          "bytes": 83817,
+          "percent": 0.17
+        },
+        {
+          "name": "Python",
+          "bytes": 82420,
+          "percent": 0.17
+        },
+        {
+          "name": "NSIS",
+          "bytes": 15078,
+          "percent": 0.03
+        },
+        {
+          "name": "HTML",
+          "bytes": 14607,
+          "percent": 0.03
+        },
+        {
+          "name": "Objective-C",
+          "bytes": 9337,
+          "percent": 0.02
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.5.5",
+        "name": "Claude Code Haha v0.5.5",
+        "publishedAt": "2026-08-22T18:43:42Z",
+        "url": "https://github.com/NanmiCoder/cc-haha/releases/tag/v0.5.5",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.5.5",
+      "releaseDate": "2026-08-22T18:43:42Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "verifiedAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/NanmiCoder/cc-haha",
+          "fetchedAt": "2026-08-31T02:36:15.710Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/NanmiCoder/cc-haha/languages",
+          "fetchedAt": "2026-08-31T02:36:15.811Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/NanmiCoder/cc-haha/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-31T02:36:15.830Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/NanmiCoder/cc-haha/releases?per_page=100",
+          "fetchedAt": "2026-08-31T02:36:16.592Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "codeg",
+      "name": "Codeg",
+      "category": "agent-workbenches",
+      "owner": "xintaofei",
+      "repo": "codeg",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/xintaofei/codeg",
+      "cloneUrl": "https://github.com/xintaofei/codeg.git",
+      "githubUrl": "https://github.com/xintaofei/codeg",
+      "apiUrl": "https://api.github.com/repos/xintaofei/codeg",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-31T02:36:17.586Z",
+      "stars": 3069,
+      "forks": 396,
+      "openIssues": 203,
+      "contributors": 28,
+      "repositorySizeKb": 85960,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-29T08:32:43Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 11940376,
+          "percent": 49.28
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 11626156,
+          "percent": 47.98
+        },
+        {
+          "name": "Python",
+          "bytes": 396398,
+          "percent": 1.64
+        },
+        {
+          "name": "CSS",
+          "bytes": 116462,
+          "percent": 0.48
+        },
+        {
+          "name": "Shell",
+          "bytes": 44818,
+          "percent": 0.18
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 44068,
+          "percent": 0.18
+        },
+        {
+          "name": "TeX",
+          "bytes": 36974,
+          "percent": 0.15
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 13724,
+          "percent": 0.06
+        },
+        {
+          "name": "HTML",
+          "bytes": 8094,
+          "percent": 0.03
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2551,
+          "percent": 0.01
+        },
+        {
+          "name": "NSIS",
+          "bytes": 1885,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.29.0",
+        "name": "codeg v0.29.0",
+        "publishedAt": "2026-08-29T09:17:29Z",
+        "url": "https://github.com/xintaofei/codeg/releases/tag/v0.29.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.29.0",
+      "releaseDate": "2026-08-29T09:17:29Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "verifiedAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/xintaofei/codeg",
+          "fetchedAt": "2026-08-31T02:36:15.714Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/xintaofei/codeg/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-31T02:36:15.910Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/xintaofei/codeg/languages",
+          "fetchedAt": "2026-08-31T02:36:15.938Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/xintaofei/codeg/releases?per_page=100",
+          "fetchedAt": "2026-08-31T02:36:17.586Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "nodeterm",
+      "name": "nodeterm",
+      "category": "agent-workbenches",
+      "owner": "eneskirca",
+      "repo": "nodeterm",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/eneskirca/nodeterm",
+      "cloneUrl": "https://github.com/eneskirca/nodeterm.git",
+      "githubUrl": "https://github.com/eneskirca/nodeterm",
+      "apiUrl": "https://api.github.com/repos/eneskirca/nodeterm",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-31T02:36:16.425Z",
+      "stars": 1358,
+      "forks": 141,
+      "openIssues": 53,
+      "contributors": 32,
+      "repositorySizeKb": 66216,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-30T23:04:11Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified",
+        "name": "Business Source License 1.1",
+        "spdxId": "BUSL-1.1",
+        "url": "https://github.com/eneskirca/nodeterm/blob/main/LICENSE"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 13943460,
+          "percent": 97.02
+        },
+        {
+          "name": "CSS",
+          "bytes": 305049,
+          "percent": 2.12
+        },
+        {
+          "name": "Shell",
+          "bytes": 55234,
+          "percent": 0.38
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 48718,
+          "percent": 0.34
+        },
+        {
+          "name": "HTML",
+          "bytes": 10012,
+          "percent": 0.07
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 4573,
+          "percent": 0.03
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 4303,
+          "percent": 0.03
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.3.4",
+        "name": "v0.3.4",
+        "publishedAt": "2026-08-30T16:01:20Z",
+        "url": "https://github.com/eneskirca/nodeterm/releases/tag/v0.3.4",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.3.4",
+      "releaseDate": "2026-08-30T16:01:20Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "verifiedAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/eneskirca/nodeterm",
+          "fetchedAt": "2026-08-31T02:36:15.992Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/eneskirca/nodeterm/blob/main/LICENSE",
+          "fetchedAt": "2026-08-30T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/eneskirca/nodeterm/languages",
+          "fetchedAt": "2026-08-31T02:36:16.082Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/eneskirca/nodeterm/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-31T02:36:16.227Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/eneskirca/nodeterm/releases?per_page=100",
+          "fetchedAt": "2026-08-31T02:36:16.425Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "ccmanager",
+      "name": "CCManager",
+      "category": "agent-workbenches",
+      "owner": "kbwo",
+      "repo": "ccmanager",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/kbwo/ccmanager",
+      "cloneUrl": "https://github.com/kbwo/ccmanager.git",
+      "githubUrl": "https://github.com/kbwo/ccmanager",
+      "apiUrl": "https://api.github.com/repos/kbwo/ccmanager",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-08-31T02:36:16.995Z",
+      "stars": 1230,
+      "forks": 93,
+      "openIssues": 11,
+      "contributors": 21,
+      "repositorySizeKb": 1972,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-30T13:11:24Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 1136011,
+          "percent": 98.88
+        },
+        {
+          "name": "Shell",
+          "bytes": 6359,
+          "percent": 0.55
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 4376,
+          "percent": 0.38
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 2170,
+          "percent": 0.19
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v4.3.2",
+        "name": "v4.3.2",
+        "publishedAt": "2026-08-30T13:08:35Z",
+        "url": "https://github.com/kbwo/ccmanager/releases/tag/v4.3.2",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v4.3.2",
+      "releaseDate": "2026-08-30T13:08:35Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "not-measured",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "verifiedAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/kbwo/ccmanager",
+          "fetchedAt": "2026-08-31T02:36:16.634Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/kbwo/ccmanager/languages",
+          "fetchedAt": "2026-08-31T02:36:16.742Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/kbwo/ccmanager/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-08-31T02:36:16.790Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/kbwo/ccmanager/releases?per_page=100",
+          "fetchedAt": "2026-08-31T02:36:16.995Z"
         }
       ],
       "errors": []

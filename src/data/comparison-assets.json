@@ -1277,6 +1277,38 @@
       "sourceUrl": "https://github.com/netease-youdao/LobsterAI",
       "sourceType": "official-vendor-organization-avatar",
       "checkedAt": "2026-08-24"
+    },
+    "cc-haha": {
+      "name": "Claude Code Haha",
+      "alt": "Claude Code Haha logo",
+      "src": "/compare/logos/cc-haha.jpg",
+      "sourceUrl": "https://github.com/NanmiCoder/cc-haha",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "codeg": {
+      "name": "Codeg",
+      "alt": "Codeg logo",
+      "src": "/compare/logos/codeg.jpg",
+      "sourceUrl": "https://github.com/xintaofei/codeg",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "nodeterm": {
+      "name": "nodeterm",
+      "alt": "nodeterm logo",
+      "src": "/compare/logos/nodeterm.jpg",
+      "sourceUrl": "https://github.com/eneskirca/nodeterm",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-08-24"
+    },
+    "ccmanager": {
+      "name": "CCManager",
+      "alt": "CCManager logo",
+      "src": "/compare/logos/ccmanager.jpg",
+      "sourceUrl": "https://github.com/kbwo/ccmanager",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-08-24"
     }
   },
   "platforms": {

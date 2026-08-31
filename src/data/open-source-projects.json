@@ -1227,6 +1227,52 @@
       "githubUrl": "https://github.com/netease-youdao/LobsterAI",
       "apiUrl": "https://api.github.com/repos/netease-youdao/LobsterAI",
       "loc": { "enabled": true }
+    },
+    {
+      "id": "cc-haha",
+      "name": "Claude Code Haha",
+      "category": "agent-workbenches",
+      "owner": "NanmiCoder",
+      "repo": "cc-haha",
+      "githubUrl": "https://github.com/NanmiCoder/cc-haha",
+      "apiUrl": "https://api.github.com/repos/NanmiCoder/cc-haha",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "codeg",
+      "name": "Codeg",
+      "category": "agent-workbenches",
+      "owner": "xintaofei",
+      "repo": "codeg",
+      "githubUrl": "https://github.com/xintaofei/codeg",
+      "apiUrl": "https://api.github.com/repos/xintaofei/codeg",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "nodeterm",
+      "name": "nodeterm",
+      "category": "agent-workbenches",
+      "owner": "eneskirca",
+      "repo": "nodeterm",
+      "githubUrl": "https://github.com/eneskirca/nodeterm",
+      "apiUrl": "https://api.github.com/repos/eneskirca/nodeterm",
+      "license": {
+        "spdxId": "BUSL-1.1",
+        "name": "Business Source License 1.1",
+        "sourceUrl": "https://github.com/eneskirca/nodeterm/blob/main/LICENSE",
+        "checkedAt": "2026-08-30"
+      },
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "ccmanager",
+      "name": "CCManager",
+      "category": "agent-workbenches",
+      "owner": "kbwo",
+      "repo": "ccmanager",
+      "githubUrl": "https://github.com/kbwo/ccmanager",
+      "apiUrl": "https://api.github.com/repos/kbwo/ccmanager",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
     }
   ]
 }
