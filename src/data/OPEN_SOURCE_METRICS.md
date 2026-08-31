@@ -67,8 +67,8 @@ repository:
 | `apiUrl` | URL | Exact official forge project/repository API URL. |
 | `cloneUrl` | URL? | Exact HTTPS clone URL. Required for GitLab; derived for GitHub. |
 | `metricScope` | string? | Visible boundary for what whole-repository statistics and CLOC actually cover. |
-| `loc.enabled` | boolean | Whether scheduled shallow-clone LOC runs; this is `true` for every current public-source repository. |
-| `loc.reason` | string? | Exceptional justification when LOC cannot be measured. |
+| `loc.enabled` | boolean | Whether scheduled shallow-clone LOC runs. Disable it when whole-repository CLOC would misrepresent the product or impose disproportionate upstream load. |
+| `loc.reason` | string? | Required reviewed justification when LOC is disabled. |
 | `release.mode` | `default-branch`? | Reviewed exception for repositories whose GitHub Releases feed contains non-product artifacts. |
 | `release.reason` | string? | Required explanation for a release-policy exception. |
 | `release.checkedAt` | date? | Human review date for the exceptional release policy; recheck within 120 days. |
@@ -228,10 +228,13 @@ instead of silently replacing a known value with zero.
   of source LOC. Pointer files are not recognized source languages by CLOC.
 - Before repeating an unchanged LOC measurement, the collector queries the
   installed `cloc --version` and resolves the remote release/tag/branch ref with
-  `git ls-remote`. It reuses a count only when the exact commit SHA, methodology,
-  and recorded `cloc` version all match. Otherwise it reclones and reruns CLOC,
-  recording the exact queried tool version. The `source-code-v2` extension and
-  directory exclusions remain unchanged.
+  the forge API when it already returned an exact tag SHA, or with
+  `git ls-remote` otherwise. It reuses a count only when the exact commit SHA,
+  methodology, and recorded `cloc` version all match. Otherwise it reclones and
+  reruns CLOC, recording the exact queried tool version. Transient checkout
+  failures receive two bounded retries; permanent failures remain explicit and
+  block the LOC snapshot. The `source-code-v2` extension and directory
+  exclusions remain unchanged.
 
 GitHub API documentation: <https://docs.github.com/en/rest>
 

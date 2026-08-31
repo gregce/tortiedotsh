@@ -11,6 +11,8 @@ const execFileAsync = promisify(execFile);
 const LOC_METHODOLOGY = "source-code-v2";
 const LOC_EXCLUDED_EXTENSIONS = "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock";
 const LOC_EXCLUDED_DIRECTORIES = ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool";
+const LOC_CLONE_MAX_ATTEMPTS = 3;
+const LOC_CLONE_RETRY_DELAYS_MS = [5_000, 15_000];
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const takeRoot = resolve(scriptDirectory, "..");
 const defaultManifest = resolve(takeRoot, "src/data/open-source-projects.json");
@@ -504,13 +506,79 @@ async function currentClocTool() {
   return `cloc ${version}`;
 }
 
-async function measureLoc(project, measuredRef, refType, previousLoc = null) {
+function commandErrorText(error) {
+  return [error?.stderr, error?.stdout, error?.message]
+    .filter((value) => typeof value === "string" && value.trim() !== "")
+    .join("\n")
+    .trim();
+}
+
+function isTransientCloneFailure(error) {
+  if (["EAI_AGAIN", "ECONNRESET", "ECONNREFUSED", "ENETUNREACH"].includes(error?.code)) return true;
+  const detail = commandErrorText(error);
+  return /unable to handle this request due to load|(?:http|url).*\b(?:429|500|502|503|504)\b|rpc failed|remote end hung up unexpectedly|early eof|unexpected disconnect|connection (?:reset|closed|timed out)|failed to connect|could not resolve host|temporary failure|service unavailable|internal server error/i.test(detail);
+}
+
+function oneLine(value, maximumLength = 700) {
+  const normalized = String(value || "Unknown error").replace(/\s+/g, " ").trim();
+  return normalized.length > maximumLength ? `${normalized.slice(0, maximumLength - 1)}…` : normalized;
+}
+
+function githubActionsEscape(value, property = false) {
+  const escaped = String(value).replace(/%/g, "%25").replace(/\r/g, "%0D").replace(/\n/g, "%0A");
+  return property ? escaped.replace(/:/g, "%3A").replace(/,/g, "%2C") : escaped;
+}
+
+function reportProjectError(project, error) {
+  const title = `${project.id} ${error.section} refresh failed`;
+  const detail = oneLine(error.message);
+  if (process.env.GITHUB_ACTIONS === "true") {
+    console.warn(`::warning title=${githubActionsEscape(title, true)}::${githubActionsEscape(detail)}`);
+  } else {
+    console.warn(`  ! ${title}: ${detail}`);
+  }
+}
+
+async function cloneForLoc(project, measuredRef, checkout, locTimeout) {
+  let lastError = null;
+  for (let attempt = 1; attempt <= LOC_CLONE_MAX_ATTEMPTS; attempt += 1) {
+    await rm(checkout, { recursive: true, force: true });
+    try {
+      await execFileAsync("git", [
+        "clone",
+        "--depth=1",
+        "--single-branch",
+        `--branch=${measuredRef}`,
+        "--quiet",
+        projectCloneUrl(project),
+        checkout,
+      ], {
+        timeout: locTimeout,
+        maxBuffer: 4 * 1024 * 1024,
+        env: { ...process.env, GIT_LFS_SKIP_SMUDGE: "1" },
+      });
+      return;
+    } catch (error) {
+      lastError = error;
+      const canRetry = attempt < LOC_CLONE_MAX_ATTEMPTS && isTransientCloneFailure(error);
+      if (!canRetry) break;
+      const retryDelay = LOC_CLONE_RETRY_DELAYS_MS[attempt - 1];
+      console.warn(`- ${project.name} (${project.id}): transient LOC checkout failure; retrying in ${retryDelay / 1_000}s (${attempt}/${LOC_CLONE_MAX_ATTEMPTS}) — ${oneLine(commandErrorText(error), 300)}`);
+      await new Promise((resolveDelay) => setTimeout(resolveDelay, retryDelay));
+    }
+  }
+
+  const attempts = isTransientCloneFailure(lastError) ? ` after ${LOC_CLONE_MAX_ATTEMPTS} attempts` : "";
+  throw new Error(`git clone failed${attempts}: ${oneLine(commandErrorText(lastError))}`, { cause: lastError });
+}
+
+async function measureLoc(project, measuredRef, refType, previousLoc = null, expectedCommitSha = null) {
   if (!project.loc.enabled) return nullLoc("disabled", project.loc.reason || "Disabled in manifest");
   const locTimeout = (project.loc.timeoutMinutes || 10) * 60_000;
   const clocTool = await currentClocTool();
 
   try {
-    const currentCommitSha = await resolveRemoteRefSha(project, measuredRef, refType);
+    const currentCommitSha = expectedCommitSha || await resolveRemoteRefSha(project, measuredRef, refType);
     if (
       currentCommitSha &&
       previousLoc?.status === "measured" &&
@@ -534,19 +602,7 @@ async function measureLoc(project, measuredRef, refType, previousLoc = null) {
   const tempRoot = await mkdtemp(resolve(tmpdir(), `tortie-loc-${project.id}-`));
   const checkout = resolve(tempRoot, "repo");
   try {
-    await execFileAsync("git", [
-      "clone",
-      "--depth=1",
-      "--single-branch",
-      `--branch=${measuredRef}`,
-      "--quiet",
-      projectCloneUrl(project),
-      checkout,
-    ], {
-      timeout: locTimeout,
-      maxBuffer: 4 * 1024 * 1024,
-      env: { ...process.env, GIT_LFS_SKIP_SMUDGE: "1" },
-    });
+    await cloneForLoc(project, measuredRef, checkout, locTimeout);
 
     const { stdout } = await execFileAsync("cloc", [
       "--json",
@@ -1008,7 +1064,13 @@ async function refreshProject(project, previous, includeLoc) {
           : versionCurrent && record.latestTag?.name
             ? "repository-tag"
             : "default-branch";
-        record.loc = await measureLoc(project, measuredRef, refType, previous?.loc);
+        record.loc = await measureLoc(
+          project,
+          measuredRef,
+          refType,
+          previous?.loc,
+          record.latestTag?.commitSha || null,
+        );
         if (record.loc.status === "measured") {
           currentSources.push({
             type: "loc-measurement",
@@ -1102,9 +1164,10 @@ async function main() {
   const credentials = [githubToken ? "GITHUB_TOKEN" : null, gitlabToken ? "GITLAB_TOKEN" : null].filter(Boolean);
   console.log(`Refreshing ${selected.length} project(s)${credentials.length ? ` with ${credentials.join(" and ")}` : " anonymously"}${options.includeLoc ? ", including eligible LOC" : ""}.`);
   const refreshed = await mapWithConcurrency(selected, options.concurrency, async (project) => {
-    process.stdout.write(`- ${project.name} ... `);
+    console.log(`- ${project.name} (${project.id}): refreshing`);
     const result = await refreshProject(project, previousById.get(project.id), options.includeLoc);
-    console.log(`${result.status}${result.errors.length ? ` (${result.errors.length} issue(s))` : ""}`);
+    console.log(`- ${project.name} (${project.id}): ${result.status}${result.errors.length ? ` (${result.errors.length} issue(s))` : ""}`);
+    result.errors.forEach((error) => reportProjectError(project, error));
     return result;
   });
 

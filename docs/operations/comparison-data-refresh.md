@@ -215,7 +215,7 @@ An optional `GITLAB_TOKEN` can expose more fields when its account has suitable 
 
 ## Source-only CLOC
 
-Every tracked public-source repository currently enables CLOC. The collector measures a shallow checkout at the resolved release or tag. If no release or tag is suitable, it uses the reviewed default branch.
+Eligible public-source repositories enable CLOC. A reviewed manifest entry can disable it when a whole-repository count would misrepresent the product or impose disproportionate load; the generated record then carries an explicit disabled reason instead of a blank measurement. The collector measures enabled repositories from a shallow checkout at the resolved release or tag. If no release or tag is suitable, it uses the reviewed default branch.
 
 Each result records:
 
@@ -249,7 +249,7 @@ The collector can reuse a previous count only when all of these still match:
 - ref type
 - remote commit SHA
 
-If one value changes, it clones and counts again.
+If one value changes, it clones and counts again. Exact tag SHAs returned by a forge API can satisfy ref verification without an additional `git ls-remote` request. Transient clone failures receive two bounded retries before the record is marked partial; the job never hides a permanent failure.
 
 ## Documentation evidence monitor
 

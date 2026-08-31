@@ -742,7 +742,10 @@
           }
         ]
       },
-      "loc": { "enabled": true, "timeoutMinutes": 60 }
+      "loc": {
+        "enabled": false,
+        "reason": "GitLab Duo Developer Flow is one feature within the roughly 10-million-line GitLab monorepo; whole-repository CLOC is not a meaningful product measurement and repeatedly cloning that upstream creates avoidable load and refresh failures."
+      }
     },
     {
       "id": "coder",

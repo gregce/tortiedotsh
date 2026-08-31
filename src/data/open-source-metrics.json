@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-30T07:25:45.792Z",
-  "manifestSyncedAt": "2026-08-30T07:25:45.792Z",
+  "generatedAt": "2026-08-31T00:05:25.300Z",
+  "manifestSyncedAt": "2026-08-31T00:05:25.300Z",
   "generator": "scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -818,16 +818,6 @@
           "fetchedAt": "2026-08-30T07:25:15.763Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
-          "type": "release-policy",
-          "url": "https://github.com/JetBrains/intellij-community/releases",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/JetBrains/intellij-community/languages",
           "fetchedAt": "2026-08-30T07:25:15.951Z"
@@ -836,6 +826,16 @@
           "type": "contributors",
           "url": "https://api.github.com/repos/JetBrains/intellij-community/contributors?anon=true&per_page=1",
           "fetchedAt": "2026-08-30T07:25:15.977Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/JetBrains/intellij-community/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -1166,11 +1166,6 @@
           "fetchedAt": "2026-08-30T07:25:16.153Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/posit-dev/positron/blob/main/LICENSE.txt",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/posit-dev/positron/languages",
           "fetchedAt": "2026-08-30T07:25:16.311Z"
@@ -1184,6 +1179,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/posit-dev/positron/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:16.512Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/posit-dev/positron/blob/main/LICENSE.txt",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -1493,11 +1493,6 @@
           "fetchedAt": "2026-08-30T07:25:16.620Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/zed-industries/zed#licensing",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/zed-industries/zed/languages",
           "fetchedAt": "2026-08-30T07:25:16.772Z"
@@ -1511,6 +1506,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/zed-industries/zed/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:17.612Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/zed-industries/zed#licensing",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -2626,11 +2626,6 @@
           "fetchedAt": "2026-08-30T07:25:18.472Z"
         },
         {
-          "type": "release-policy",
-          "url": "https://github.com/continuedev/continue/releases",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/continuedev/continue/languages",
           "fetchedAt": "2026-08-30T07:25:18.605Z"
@@ -2639,6 +2634,11 @@
           "type": "contributors",
           "url": "https://api.github.com/repos/continuedev/continue/contributors?anon=true&per_page=1",
           "fetchedAt": "2026-08-30T07:25:18.898Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/continuedev/continue/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -4046,11 +4046,6 @@
           "fetchedAt": "2026-08-30T07:25:21.427Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/getpaseo/paseo/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/getpaseo/paseo/languages",
           "fetchedAt": "2026-08-30T07:25:21.537Z"
@@ -4064,6 +4059,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/getpaseo/paseo/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:22.863Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/getpaseo/paseo/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -4204,11 +4204,6 @@
           "fetchedAt": "2026-08-30T07:25:21.990Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/superset-sh/superset/blob/main/LICENSE.md",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/superset-sh/superset/languages",
           "fetchedAt": "2026-08-30T07:25:22.109Z"
@@ -4222,6 +4217,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/superset-sh/superset/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:22.836Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/superset-sh/superset/blob/main/LICENSE.md",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -5893,11 +5893,6 @@
           "fetchedAt": "2026-08-30T07:25:25.634Z"
         },
         {
-          "type": "release-policy",
-          "url": "https://github.com/warpdotdev/warp/releases",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/warpdotdev/warp/languages",
           "fetchedAt": "2026-08-30T07:25:25.751Z"
@@ -5906,6 +5901,11 @@
           "type": "contributors",
           "url": "https://api.github.com/repos/warpdotdev/warp/contributors?anon=true&per_page=1",
           "fetchedAt": "2026-08-30T07:25:25.851Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/warpdotdev/warp/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -8102,11 +8102,6 @@
           "fetchedAt": "2026-08-30T07:25:32.363Z"
         },
         {
-          "type": "release-policy",
-          "url": "https://github.com/slopus/happy/releases",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/slopus/happy/languages",
           "fetchedAt": "2026-08-30T07:25:32.474Z"
@@ -8115,6 +8110,11 @@
           "type": "contributors",
           "url": "https://api.github.com/repos/slopus/happy/contributors?anon=true&per_page=1",
           "fetchedAt": "2026-08-30T07:25:32.559Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/slopus/happy/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -8530,11 +8530,6 @@
           "fetchedAt": "2026-08-30T07:25:33.531Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/TabbyML/tabby/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/TabbyML/tabby/languages",
           "fetchedAt": "2026-08-30T07:25:33.663Z"
@@ -8548,6 +8543,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/TabbyML/tabby/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:34.135Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/TabbyML/tabby/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -8984,11 +8984,11 @@
       "apiUrl": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab",
       "metricScope": "Whole GitLab monorepo; GitLab Duo Developer Flow is one feature within it.",
       "status": "current",
-      "refreshedAt": "2026-08-30T07:25:35.618Z",
+      "refreshedAt": "2026-08-31T00:05:25.300Z",
       "stars": 6127,
       "forks": 12347,
       "openIssues": 0,
-      "contributors": 407,
+      "contributors": 409,
       "repositorySizeKb": null,
       "repositorySizePolicy": {
         "mode": "forge-restricted",
@@ -8997,7 +8997,7 @@
         "sourceUrl": "https://docs.gitlab.com/api/projects/"
       },
       "defaultBranch": "master",
-      "pushedAt": "2026-08-30T06:32:26.000+00:00",
+      "pushedAt": "2026-08-31T09:35:59.000+10:00",
       "archived": false,
       "license": {
         "key": "manifest-verified-mixed",
@@ -9035,7 +9035,7 @@
         {
           "name": "JavaScript",
           "bytes": null,
-          "percent": 20.1
+          "percent": 20.11
         },
         {
           "name": "Vue",
@@ -9065,25 +9065,25 @@
       "releasePolicy": {
         "mode": "forge-tag-fallback",
         "reason": "GitLab does not expose this public upstream project's Releases feed to anonymous API clients; the newest official repository tag is retained as a tag, not promoted to a verified stable release.",
-        "checkedAt": "2026-08-30",
+        "checkedAt": "2026-08-31",
         "rejectedCandidate": null
       },
       "loc": {
-        "status": "measured",
-        "code": 10014598,
-        "comments": 224447,
-        "blank": 3272873,
-        "files": 71481,
-        "measuredAt": "2026-08-26T20:19:25.332Z",
-        "verifiedAt": "2026-08-26T20:19:25.332Z",
-        "measuredRef": "v19.1.7-ee",
-        "refType": "repository-tag",
-        "commitSha": "23b2045861177bbf757b871b586c9484417efd4b",
-        "tool": "cloc 1.98",
+        "status": "disabled",
+        "code": null,
+        "comments": null,
+        "blank": null,
+        "files": null,
+        "measuredAt": null,
+        "verifiedAt": null,
+        "measuredRef": null,
+        "refType": null,
+        "commitSha": null,
+        "tool": null,
         "methodology": "source-code-v2",
         "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
         "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
-        "reason": null
+        "reason": "GitLab Duo Developer Flow is one feature within the roughly 10-million-line GitLab monorepo; whole-repository CLOC is not a meaningful product measurement and repeatedly cloning that upstream creates avoidable load and refresh failures."
       },
       "sources": [
         {
@@ -9094,27 +9094,27 @@
         {
           "type": "repository",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab?statistics=true&license=true",
-          "fetchedAt": "2026-08-30T07:25:34.759Z"
+          "fetchedAt": "2026-08-31T00:05:24.439Z"
         },
         {
           "type": "open-issues",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/issues?state=opened&per_page=1",
-          "fetchedAt": "2026-08-30T07:25:35.187Z"
+          "fetchedAt": "2026-08-31T00:05:24.731Z"
         },
         {
           "type": "last-commit",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/repository/commits?per_page=1",
-          "fetchedAt": "2026-08-30T07:25:34.940Z"
+          "fetchedAt": "2026-08-31T00:05:24.616Z"
         },
         {
           "type": "archive-status",
           "url": "https://gitlab.com/api/graphql",
-          "fetchedAt": "2026-08-30T07:25:34.939Z"
+          "fetchedAt": "2026-08-31T00:05:24.618Z"
         },
         {
           "type": "repository-size-policy",
           "url": "https://docs.gitlab.com/api/projects/",
-          "fetchedAt": "2026-08-30T07:25:34.937Z"
+          "fetchedAt": "2026-08-31T00:05:24.567Z"
         },
         {
           "type": "license-override",
@@ -9124,17 +9124,17 @@
         {
           "type": "languages",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/languages",
-          "fetchedAt": "2026-08-30T07:25:35.271Z"
-        },
-        {
-          "type": "contributors",
-          "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/repository/contributors?per_page=1",
-          "fetchedAt": "2026-08-30T07:25:35.603Z"
+          "fetchedAt": "2026-08-31T00:05:24.835Z"
         },
         {
           "type": "latest-tag",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/repository/tags?per_page=1",
-          "fetchedAt": "2026-08-30T07:25:35.618Z"
+          "fetchedAt": "2026-08-31T00:05:25.211Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/repository/contributors?per_page=1",
+          "fetchedAt": "2026-08-31T00:05:25.300Z"
         }
       ],
       "errors": []
@@ -9310,16 +9310,6 @@
           "fetchedAt": "2026-08-30T07:25:34.940Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/coder/coder/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
-          "type": "license-override",
-          "url": "https://github.com/coder/coder/blob/main/LICENSE.enterprise",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/coder/coder/languages",
           "fetchedAt": "2026-08-30T07:25:35.084Z"
@@ -9333,6 +9323,16 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/coder/coder/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:36.335Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/coder/coder/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/coder/coder/blob/main/LICENSE.enterprise",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -9438,11 +9438,6 @@
           "fetchedAt": "2026-08-30T07:25:35.119Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/OpenHands/OpenHands-Cloud/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud/languages",
           "fetchedAt": "2026-08-30T07:25:35.242Z"
@@ -9456,6 +9451,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:35.473Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/OpenHands/OpenHands-Cloud/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -10278,11 +10278,6 @@
           "fetchedAt": "2026-08-30T07:25:36.964Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/Termix-SSH/Termix/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/Termix-SSH/Termix/languages",
           "fetchedAt": "2026-08-30T07:25:37.084Z"
@@ -10296,6 +10291,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/Termix-SSH/Termix/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:37.443Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/Termix-SSH/Termix/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -11465,11 +11465,6 @@
           "fetchedAt": "2026-08-30T07:25:39.437Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/openclaw/openclaw/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/openclaw/openclaw/languages",
           "fetchedAt": "2026-08-30T07:25:39.572Z"
@@ -11483,6 +11478,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/openclaw/openclaw/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:40.576Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/openclaw/openclaw/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -11944,11 +11944,6 @@
           "fetchedAt": "2026-08-30T07:25:40.309Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/agent0ai/agent-zero/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/agent0ai/agent-zero/languages",
           "fetchedAt": "2026-08-30T07:25:40.417Z"
@@ -11962,6 +11957,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/agent0ai/agent-zero/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:40.659Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/agent0ai/agent-zero/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -13259,11 +13259,6 @@
           "fetchedAt": "2026-08-30T07:25:42.935Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/kortix-ai/suna/blob/main/LICENSE",
-          "fetchedAt": "2026-08-24T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/kortix-ai/suna/languages",
           "fetchedAt": "2026-08-30T07:25:43.049Z"
@@ -13277,6 +13272,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/kortix-ai/suna/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:44.049Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/kortix-ai/suna/blob/main/LICENSE",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -13402,11 +13402,6 @@
           "fetchedAt": "2026-08-30T07:25:43.370Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md",
-          "fetchedAt": "2026-08-24T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent/languages",
           "fetchedAt": "2026-08-30T07:25:43.508Z"
@@ -13420,6 +13415,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:43.969Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -14151,11 +14151,6 @@
           "fetchedAt": "2026-08-30T07:25:44.799Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/langfuse/langfuse/blob/main/LICENSE",
-          "fetchedAt": "2026-08-24T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/langfuse/langfuse/languages",
           "fetchedAt": "2026-08-30T07:25:44.907Z"
@@ -14169,6 +14164,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/langfuse/langfuse/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:45.117Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/langfuse/langfuse/blob/main/LICENSE",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -14334,11 +14334,6 @@
           "fetchedAt": "2026-08-30T07:25:44.934Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
-          "fetchedAt": "2026-08-24T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/Arize-ai/phoenix/languages",
           "fetchedAt": "2026-08-30T07:25:45.052Z"
@@ -14352,6 +14347,11 @@
           "type": "latest-release",
           "url": "https://api.github.com/repos/Arize-ai/phoenix/releases?per_page=100",
           "fetchedAt": "2026-08-30T07:25:45.238Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
         }
       ],
       "errors": []
