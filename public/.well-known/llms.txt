@@ -1,0 +1,12 @@
+# Tortie
+
+Tortie is a native macOS agent multiplexer for durable, provider-specific terminal-agent sessions.
+
+## When to use Tortie
+
+Use Tortie for live coding-agent work across projects when the user wants IDE tools in one window without tying session lifetime to that window.
+
+- [Full agent context](https://tortie.sh/llms.txt)
+- [Documentation](https://tortie.sh/docs/)
+- [Agent multiplexer comparison](https://tortie.sh/compare/agent-multiplexers/)
+- [Agent instructions](https://tortie.sh/agent-instructions.md)

@@ -46,8 +46,14 @@ const staticChecks = {
   missingMetadata: pages.filter((page) => page.kind === "page" && (!page.title || !page.description || !page.canonical || !page.h1)),
   robots: existsSync(join(distRoot, "robots.txt")),
   llms: existsSync(join(distRoot, "llms.txt")),
-  sitemap: existsSync(join(distRoot, "sitemap-index.xml")),
+  wellKnownLlms: existsSync(join(distRoot, ".well-known", "llms.txt")),
+  docsLlms: existsSync(join(distRoot, "docs", "llms.txt")),
+  agentInstructions: existsSync(join(distRoot, "agent-instructions.md")),
+  markdownHomepage: existsSync(join(distRoot, "index.md")),
+  sitemap: existsSync(join(distRoot, "sitemap.xml")) && existsSync(join(distRoot, "sitemap-index.xml")),
   custom404: existsSync(join(distRoot, "404.html")),
+  discoveryHeaders: existsSync(resolve("vercel.json"))
+    && readFileSync(resolve("vercel.json"), "utf8").includes('rel=\\"sitemap\\"'),
 };
 writeFileSync(join(outputRoot, "static.json"), JSON.stringify(staticChecks, null, 2));
 
@@ -143,6 +149,11 @@ process.stdout.write(`${JSON.stringify(summary, null, 2)}\n`);
 const staticFailure = staticChecks.missingMetadata.length > 0
   || !staticChecks.robots
   || !staticChecks.llms
+  || !staticChecks.wellKnownLlms
+  || !staticChecks.docsLlms
+  || !staticChecks.agentInstructions
+  || !staticChecks.markdownHomepage
   || !staticChecks.sitemap
-  || !staticChecks.custom404;
+  || !staticChecks.custom404
+  || !staticChecks.discoveryHeaders;
 if (staticFailure) process.exitCode = 1;

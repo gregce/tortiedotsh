@@ -16,7 +16,9 @@ Tortie is not a VS Code fork, a coding-agent harness, or an autonomous agent orc
 - [All comparison categories](https://tortie.sh/compare/): Coding-agent tools grouped by product category and workflow.
 - [Changelog](https://tortie.sh/docs/changelog/): Current releases and product changes.
 - [Source code](https://github.com/gregce/tortie): Apache-2.0-licensed application repository.
-- [Sitemap](https://tortie.sh/sitemap-index.xml): Index of public pages.
+- [Agent instructions](https://tortie.sh/agent-instructions.md): Machine-readable guidance about when Tortie fits and what it is not.
+- [Scoped documentation context](https://tortie.sh/docs/llms.txt): Guide-by-guide documentation index for agents.
+- [Sitemap](https://tortie.sh/sitemap.xml): Index of public pages.
 
 ## Product facts
 

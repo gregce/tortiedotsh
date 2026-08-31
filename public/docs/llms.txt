@@ -1,0 +1,18 @@
+# Tortie documentation
+
+Use these public guides to answer questions about Tortie. Prefer the guide closest to the question and distinguish documented behavior from comparison claims.
+
+- [What Tortie is](https://tortie.sh/docs/what-tortie-is/): Product model, intended users, architecture, libraries, and name.
+- [Getting started](https://tortie.sh/docs/): Install Tortie and start the first session.
+- [Projects and sessions](https://tortie.sh/docs/projects-and-sessions/): Projects, sessions, surfaces, and the one-window model.
+- [Durability and recovery](https://tortie.sh/docs/durability-and-recovery/): tmux ownership, restoration, and recovery.
+- [Attention and Catch Me Up](https://tortie.sh/docs/attention-and-catch-me-up/): Human-attention signals and conversation review.
+- [Session tools and menus](https://tortie.sh/docs/session-tools-and-menus/): Context menus and session actions.
+- [Files, search, and previews](https://tortie.sh/docs/files-search-and-previews/): Project navigation and content tools.
+- [Source control](https://tortie.sh/docs/source-control/): Git workflows and read-only GitHub Actions visibility.
+- [Agent context and skills](https://tortie.sh/docs/agent-context-and-skills/): Agent context and reusable skills.
+- [Settings and customization](https://tortie.sh/docs/settings-and-customization/): Preferences and launch behavior.
+- [Remote machines](https://tortie.sh/docs/remote-machines/): Working with sessions on another Mac.
+- [Supported agents](https://tortie.sh/docs/supported-agents/): Built-in and custom terminal agents.
+- [Keyboard shortcuts](https://tortie.sh/docs/keyboard-shortcuts/): Navigation and command reference.
+- [Changelog](https://tortie.sh/docs/changelog/): Releases and product changes.
