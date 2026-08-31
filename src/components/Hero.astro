@@ -23,8 +23,8 @@ import { TORTIE_MACOS_DOWNLOAD_URL } from "../data/site-links";
       </div>
     </div>
     <figure class="hero-stage">
-      <div class="hero-window">
-        <picture>
+      <div class="hero-window" id="hero-demo">
+        <picture class="hero-poster">
           <source
             type="image/avif"
             srcset="/marketing/tortie-hero-1280.avif 1280w, /marketing/tortie-hero-1920.avif 1920w"
@@ -45,18 +45,46 @@ import { TORTIE_MACOS_DOWNLOAD_URL } from "../data/site-links";
             fetchpriority="high"
           />
         </picture>
+        <button class="hero-demo-activate" type="button" aria-label="Try the interactive Tortie demo">
+          <span class="hero-demo-hint"><span class="hero-demo-dot" aria-hidden="true"></span>Click to try it. Live demo, nothing touches your machine.</span>
+        </button>
       </div>
-      <figcaption class="visually-hidden">The product-film area uses a current Tortie still until the final video is captured.</figcaption>
+      <div class="hero-stage-spacer" id="hero-demo-spacer" aria-hidden="true" hidden></div>
+      <figcaption class="visually-hidden">An interactive demo of the current Tortie build. Nothing here touches your machine.</figcaption>
     </figure>
+  </div>
+
+  <div class="demo-backdrop" id="demo-backdrop" hidden></div>
+  <div class="demo-chrome" id="demo-chrome" hidden>
+    <div class="demo-window-controls" role="group" aria-label="Demo window controls">
+      <button class="demo-traffic demo-traffic-close" id="demo-close" type="button" aria-label="Close the demo"></button>
+      <button class="demo-traffic demo-traffic-minimize" id="demo-minimize" type="button" aria-label="Return the demo to the hero"></button>
+      <button class="demo-traffic demo-traffic-maximize" id="demo-maximize" type="button" aria-label="Enter full screen and enable Command T" aria-pressed="false"></button>
+    </div>
+    <div class="demo-caption">
+      <span class="demo-caption-note">A live demo of the current build. Nothing here touches your machine.</span>
+      <span class="demo-caption-chips" role="group" aria-label="Things to try">
+        <button type="button" data-directive="restore">Restore the saved session</button>
+        <button type="button" data-directive="new-session">Start a new session</button>
+        <button type="button" data-directive="open-diff">Open the diff</button>
+      </span>
+    </div>
   </div>
 </section>
 
 <style>
   .hero { position: relative; isolation: isolate; min-height: min(720px, 100svh); display: grid; align-items: center; padding: 58px 0 32px; overflow: hidden; background: #090a0c; }
+  /* Theater open: lift the whole section above the sticky nav (--z-titlebar
+     100), and drop .hero-layout's stacking context so the fixed window's
+     z-index competes with the backdrop's directly (with z-index:1 the layout
+     would trap the window BELOW the backdrop). position:fixed descendants
+     escape the section's overflow:hidden on their own. */
+  .hero.theater-open { z-index: 900; }
+  .hero.theater-open .hero-layout { z-index: auto; }
   .hero::after { content: ""; position: absolute; z-index: 0; inset: auto 0 0; height: clamp(72px, 10vw, 132px); pointer-events: none; background: linear-gradient(to bottom, transparent, var(--bg-marketing)); }
   .hero-backdrop { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
   .hero-backdrop img { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; opacity: .9; filter: brightness(.82) contrast(1.06); }
-  .hero-layout { position: relative; z-index: 1; width: 100%; max-width: none; display: grid; grid-template-columns: clamp(220px, 24vw, 300px) minmax(0, 1fr); align-items: center; gap: clamp(44px, 6vw, 88px); padding-inline: clamp(20px, 2.5vw, 40px); }
+  .hero-layout { position: relative; z-index: 1; width: 100%; max-width: 1520px; display: grid; grid-template-columns: minmax(220px, 300px) minmax(0, 880px); justify-content: center; align-items: center; gap: clamp(44px, 6vw, 88px); padding-inline: clamp(20px, 2.5vw, 40px); }
   .hero-copy { position: relative; z-index: 1; }
   .hero-copy h1 { max-width: 8ch; margin: 0; font-size: clamp(44px, 5vw, 72px); font-weight: var(--weight-semibold); line-height: 1.02; letter-spacing: -.035em; text-wrap: balance; }
   .hero-copy > p:first-of-type { max-width: 33ch; margin: var(--space-8) 0 0; color: var(--text-secondary); font-size: 17px; line-height: 1.55; }
@@ -64,12 +92,279 @@ import { TORTIE_MACOS_DOWNLOAD_URL } from "../data/site-links";
   .hero-actions { margin-top: var(--space-9); }
   .hero-actions .btn { gap: var(--space-5); }
   .hero-meta { margin: var(--space-5) 0 0; color: var(--text-muted); font-size: 12px; text-align: center; }
-  .hero-stage { position: relative; width: 100%; max-width: 880px; margin: 0; transform: translateY(-24px); }
-  .hero-window { overflow: hidden; border: 1px solid rgba(168, 173, 184, 0.26); border-radius: var(--r-lg); background: var(--bg-surface); box-shadow: 0 22px 50px rgba(0, 0, 0, 0.42), 0 3px 10px rgba(0, 0, 0, 0.32); }
+  /* Lifted with margin, NOT transform: a transformed ancestor would become
+     the containing block for the theater's position:fixed window. */
+  .hero-stage { position: relative; width: 100%; max-width: 880px; margin: -24px 0 0; }
+
+  /* The product window: poster by default, the live app when activated.
+     In "theater" it goes position:fixed and expands over the dimmed page;
+     the spacer keeps its footprint in the hero so nothing reflows. */
+  .hero-window { position: relative; overflow: hidden; aspect-ratio: 1920 / 1118; border: 1px solid rgba(168, 173, 184, 0.26); border-radius: var(--r-lg); background: var(--bg-surface); box-shadow: 0 22px 50px rgba(0, 0, 0, 0.42), 0 3px 10px rgba(0, 0, 0, 0.32); transition: translate .25s ease, box-shadow .25s ease; }
+  .hero-window:not(.is-theater):has(.hero-demo-activate:hover) { translate: 0 -3px; box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.34); }
   .hero-window picture, .hero-window img { display: block; width: 100%; }
   .hero-window img { height: auto; aspect-ratio: 1920 / 1118; }
+  .hero-poster { position: relative; z-index: 2; transition: opacity .45s ease; }
+  .hero-window.is-live .hero-poster { opacity: 0; pointer-events: none; }
+  .hero-window.is-theater { position: fixed; z-index: 1001; margin: 0; aspect-ratio: auto; transform-origin: top left; }
+  .hero-window.is-theater .hero-demo-activate { display: none; }
+  .hero-stage-spacer { width: 100%; }
+
+  /* Whole-window affordance: invisible until hover/focus, then a quiet
+     bottom line. Always visible where hover does not exist. */
+  .hero-demo-activate { position: absolute; inset: 0; z-index: 3; display: grid; place-items: end center; padding-bottom: clamp(12px, 3%, 26px); border: 0; background: transparent; cursor: pointer; }
+  .hero-demo-hint { display: inline-flex; align-items: center; gap: 8px; padding: 8px 15px; border: 1px solid rgba(168, 173, 184, 0.3); border-radius: 999px; background: rgba(15, 16, 19, 0.86); backdrop-filter: blur(8px); color: #dfe2e9; font-size: 12.5px; font-weight: var(--weight-semibold); letter-spacing: .01em; opacity: 0; translate: 0 6px; transition: opacity .25s ease, translate .25s ease; }
+  .hero-demo-activate:hover .hero-demo-hint, .hero-demo-activate:focus-visible .hero-demo-hint { opacity: 1; translate: 0 0; }
+  @media (hover: none) { .hero-demo-hint { opacity: 1; translate: 0 0; } }
+  .hero-demo-dot { width: 7px; height: 7px; border-radius: 50%; background: #3fb64f; box-shadow: 0 0 6px rgba(63, 182, 79, 0.8); }
+
+  /* :global because the iframe is created at runtime, so it never receives Astro's
+     scoping attribute and a scoped selector would miss it. */
+  .hero-window :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; transition: opacity .45s ease; }
+  .hero-window.is-live :global(iframe) { opacity: 1; }
+
+  /* Theater dressing: the dimmer behind, the close + caption around. */
+  .demo-backdrop { position: fixed; inset: 0; z-index: 1000; background: rgba(5, 6, 8, 0.8); backdrop-filter: blur(5px); opacity: 0; transition: opacity .32s ease; }
+  .demo-backdrop.is-open { opacity: 1; }
+  .demo-chrome { position: fixed; z-index: 1002; pointer-events: none; opacity: 0; transition: opacity .28s ease .18s; }
+  .demo-chrome.is-open { opacity: 1; }
+  .demo-window-controls { pointer-events: auto; position: absolute; z-index: 1; top: 14px; left: 14px; display: flex; align-items: center; gap: 8px; }
+  .demo-traffic { width: 13px; height: 13px; padding: 0; border: 0; border-radius: 50%; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .18); transition: filter .16s ease, scale .16s ease; }
+  .demo-traffic:hover { filter: brightness(1.12); scale: 1.08; }
+  .demo-traffic:focus-visible { outline: 2px solid var(--action-blue); outline-offset: 3px; }
+  .demo-traffic-close { background: #ff5f57; }
+  .demo-traffic-minimize { background: #febc2e; }
+  .demo-traffic-maximize { background: #28c840; }
+  .demo-caption { position: absolute; top: 100%; left: 0; right: 0; margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .demo-caption-note { color: rgba(223, 226, 233, 0.62); font-size: 12.5px; }
+  .demo-caption-chips { display: inline-flex; gap: 8px; flex-wrap: wrap; }
+  .demo-caption-chips button { pointer-events: auto; padding: 6px 13px; border: 1px solid rgba(168, 173, 184, 0.3); border-radius: 999px; background: rgba(19, 20, 23, 0.85); color: #dfe2e9; font-size: 12.5px; cursor: pointer; transition: border-color .2s ease, background .2s ease; }
+  .demo-caption-chips button:hover { border-color: rgba(168, 173, 184, 0.6); background: rgba(29, 31, 36, 0.95); }
+
   .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
   @media (max-width: 1020px) { .hero { min-height: auto; } .hero-layout { grid-template-columns: 1fr; } .hero-stage { width: 100%; } .hero-copy h1 { max-width: 10ch; } }
-  @media (max-width: 700px) { .hero { padding-top: 108px; } .hero-backdrop img { object-position: center bottom; opacity: .7; filter: brightness(.62) contrast(1.08); } .hero-stage { transform: none; } }
+  @media (max-width: 700px) { .hero { padding-top: 108px; } .hero-backdrop img { object-position: center bottom; opacity: .7; filter: brightness(.62) contrast(1.08); } .hero-stage { margin-top: 0; } }
   @media (max-width: 520px) { .hero-cta, .hero-actions .btn { width: 100%; } }
 </style>
+
+<script>
+  // The hero demo: preload behind the poster, expand to a theater on click.
+  // The iframe is NEVER reparented because that reloads its document. The window
+  // element itself switches to position:fixed and animates (FLIP) between
+  // its hero footprint and the centered stage.
+  const win = document.getElementById("hero-demo");
+  const spacer = document.getElementById("hero-demo-spacer");
+  const backdrop = document.getElementById("demo-backdrop");
+  const chrome = document.getElementById("demo-chrome");
+  const closeBtn = document.getElementById("demo-close");
+  const minimizeBtn = document.getElementById("demo-minimize");
+  const maximizeBtn = document.getElementById("demo-maximize");
+  const activate = win?.querySelector<HTMLButtonElement>(".hero-demo-activate");
+  const hero = win?.closest("section.hero") as HTMLElement | null;
+
+  const RATIO = 1920 / 1118;
+  const CAPTION_SPACE = 64; // caption bar + margin below the window
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let theaterOpen = false;
+  let frameReady = false;
+  let demoOwnsFullscreen = false;
+
+  // The poster yields to the live app only while the theater is open and the
+  // frame is ready. Closing always restores the still, while the preloaded app
+  // remains mounted invisibly so a later reopen does not reload it.
+  function maybeReveal(): void {
+    win?.classList.toggle("is-live", frameReady && theaterOpen);
+  }
+
+  function ensureFrame(): HTMLIFrameElement | null {
+    if (!win) return null;
+    let frame = win.querySelector("iframe");
+    if (frame) return frame;
+    frame = document.createElement("iframe");
+    frame.src = "/demos/app/index.html";
+    frame.title = "Interactive Tortie demo";
+    frame.addEventListener("load", () => {
+      frameReady = true;
+      maybeReveal();
+      frame?.contentWindow?.addEventListener("keydown", handleDemoShortcut, { capture: true });
+      if (theaterOpen) frame?.focus();
+    });
+    win.appendChild(frame);
+    return frame;
+  }
+
+  // Warm the demo only when the visitor shows intent. This keeps the app
+  // bundle off the homepage's initial network path while preserving a quick
+  // reveal for pointer and keyboard users. A click still creates it on demand.
+  if (win && !("connection" in navigator && (navigator as any).connection?.saveData)) {
+    const warmFrame = (): void => { ensureFrame(); };
+    win.addEventListener("pointerenter", warmFrame, { once: true, passive: true });
+    activate?.addEventListener("focus", warmFrame, { once: true });
+  }
+
+  function finalRect(): { left: number; top: number; width: number; height: number } {
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const narrow = vw < 700;
+    let width = Math.min(vw * (narrow ? 0.96 : 0.92), 1520);
+    let height = width / RATIO;
+    const availableHeight = vh - CAPTION_SPACE - 72;
+    if (height > availableHeight) {
+      height = availableHeight;
+      width = height * RATIO;
+    }
+    return {
+      left: (vw - width) / 2,
+      top: Math.max(28, (vh - height - CAPTION_SPACE) / 2 + 8),
+      width,
+      height
+    };
+  }
+
+  function applyGeometry(rect: ReturnType<typeof finalRect>): void {
+    if (!win || !chrome) return;
+    win.style.left = `${rect.left}px`;
+    win.style.top = `${rect.top}px`;
+    win.style.width = `${rect.width}px`;
+    win.style.height = `${rect.height}px`;
+    chrome.style.left = `${rect.left}px`;
+    chrome.style.top = `${rect.top}px`;
+    chrome.style.width = `${rect.width}px`;
+    chrome.style.height = `${rect.height}px`;
+  }
+
+  function openTheater(): void {
+    if (theaterOpen || !win || !spacer || !backdrop || !chrome) return;
+    theaterOpen = true;
+    const frame = ensureFrame();
+    maybeReveal();
+    const first = win.getBoundingClientRect();
+    spacer.style.height = `${first.height}px`;
+    spacer.hidden = false;
+    const fin = finalRect();
+    win.closest("section.hero")?.classList.add("theater-open");
+    win.classList.add("is-theater");
+    applyGeometry(fin);
+    if (!reducedMotion) {
+      const dx = first.left - fin.left;
+      const dy = first.top - fin.top;
+      const scale = first.width / fin.width;
+      win.animate(
+        [
+          { transform: `translate(${dx}px, ${dy}px) scale(${scale})` },
+          { transform: "none" }
+        ],
+        { duration: 380, easing: "cubic-bezier(.22,.9,.26,1)" }
+      );
+    }
+    backdrop.hidden = false;
+    chrome.hidden = false;
+    requestAnimationFrame(() => {
+      backdrop.classList.add("is-open");
+      chrome.classList.add("is-open");
+    });
+    document.body.style.overflow = "hidden";
+    setTimeout(() => frame?.focus(), reducedMotion ? 0 : 400);
+  }
+
+  function closeTheater(): void {
+    if (!theaterOpen || !win || !spacer || !backdrop || !chrome) return;
+    theaterOpen = false;
+    maybeReveal();
+    demoOwnsFullscreen = false;
+    (navigator as any).keyboard?.unlock?.();
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    backdrop.classList.remove("is-open");
+    chrome.classList.remove("is-open");
+    document.body.style.overflow = "";
+    const finish = (): void => {
+      win.closest("section.hero")?.classList.remove("theater-open");
+      win.classList.remove("is-theater");
+      win.style.left = win.style.top = win.style.width = win.style.height = "";
+      spacer.hidden = true;
+      spacer.style.height = "";
+      backdrop.hidden = true;
+      chrome.hidden = true;
+      activate?.focus({ preventScroll: true });
+    };
+    if (reducedMotion) {
+      finish();
+      return;
+    }
+    const current = win.getBoundingClientRect();
+    const target = spacer.getBoundingClientRect();
+    const dx = target.left - current.left;
+    const dy = target.top - current.top;
+    const scale = target.width / current.width;
+    const anim = win.animate(
+      [
+        { transform: "none" },
+        { transform: `translate(${dx}px, ${dy}px) scale(${scale})` }
+      ],
+      { duration: 320, easing: "cubic-bezier(.4,.05,.55,.95)" }
+    );
+    anim.addEventListener("finish", finish);
+  }
+
+  function sendDirective(action: string): void {
+    const frame = win?.querySelector("iframe");
+    frame?.contentWindow?.postMessage({ type: "tortie-demo-directive", action }, "*");
+    frame?.focus();
+  }
+
+  function handleDemoShortcut(event: KeyboardEvent): void {
+    if (!theaterOpen || !(event.metaKey || event.ctrlKey) || event.altKey || event.shiftKey || event.key.toLowerCase() !== "t") return;
+    event.preventDefault();
+    event.stopPropagation();
+    sendDirective("new-session");
+  }
+
+  async function toggleMaximize(): Promise<void> {
+    if (!theaterOpen || !hero || !maximizeBtn) return;
+    if (document.fullscreenElement) {
+      demoOwnsFullscreen = false;
+      (navigator as any).keyboard?.unlock?.();
+      await document.exitFullscreen().catch(() => {});
+      return;
+    }
+    try {
+      await hero.requestFullscreen();
+      demoOwnsFullscreen = true;
+      await (navigator as any).keyboard?.lock?.(["KeyT"]);
+    } catch {
+      demoOwnsFullscreen = false;
+    }
+  }
+
+  activate?.addEventListener("click", openTheater);
+  closeBtn?.addEventListener("click", closeTheater);
+  minimizeBtn?.addEventListener("click", closeTheater);
+  maximizeBtn?.addEventListener("click", toggleMaximize);
+  backdrop?.addEventListener("click", closeTheater);
+  window.addEventListener("keydown", handleDemoShortcut, { capture: true });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && theaterOpen) closeTheater();
+  });
+  window.addEventListener("resize", () => {
+    if (theaterOpen) applyGeometry(finalRect());
+  });
+  document.addEventListener("fullscreenchange", () => {
+    const maximized = document.fullscreenElement === hero;
+    maximizeBtn?.setAttribute("aria-pressed", String(maximized));
+    maximizeBtn?.setAttribute("aria-label", maximized ? "Exit full screen" : "Enter full screen and enable Command T");
+    if (!maximized && demoOwnsFullscreen && theaterOpen) {
+      demoOwnsFullscreen = false;
+      closeTheater();
+      return;
+    }
+    if (theaterOpen) requestAnimationFrame(() => applyGeometry(finalRect()));
+  });
+
+  // The suggestion chips steer the demo to its best moments; the demo's
+  // directives module (gmux demo/directives.ts) receives these.
+  chrome?.addEventListener("click", (e) => {
+    const chip = (e.target as HTMLElement).closest("[data-directive]");
+    if (!chip) return;
+    const action = chip.getAttribute("data-directive");
+    if (action) sendDirective(action);
+  });
+</script>

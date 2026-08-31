@@ -72,14 +72,16 @@ for (const { file, html } of sitePages) {
 }
 
 const readPage = (path) => readFile(new URL(path, dist), "utf8");
-const [canonical, compareIndex, legacy, home, docsHome, whatTortieIs, changelogPage, comparisonScript, comparisonCss] = await Promise.all([
+const [canonical, compareIndex, legacy, home, demoPage, docsHome, whatTortieIs, changelogPage, heroSource, comparisonScript, comparisonCss] = await Promise.all([
   readPage("compare/agent-multiplexers/index.html"),
   readPage("compare/index.html"),
   readPage("compare/agent-ides/index.html"),
   readPage("index.html"),
+  readPage("demo/index.html"),
   readPage("docs/index.html"),
   readPage("docs/what-tortie-is/index.html"),
   readPage("docs/changelog/index.html"),
+  readFile(new URL("../src/components/Hero.astro", import.meta.url), "utf8"),
   readFile(new URL("../src/scripts/comparison.ts", import.meta.url), "utf8"),
   readFile(new URL("../src/styles/comparison.css", import.meta.url), "utf8"),
 ]);
@@ -161,6 +163,24 @@ assert.match(
 );
 assert.match(home, /macOS 15\.7\.9 or later · Apple silicon/);
 assert.match(home, /tortie-hero-1280\.avif 1280w, \/marketing\/tortie-hero-1920\.avif 1920w/);
+assert.match(
+  heroSource,
+  /classList\.toggle\("is-live", frameReady && theaterOpen\)/,
+  "The hero demo can remain live after its theater closes.",
+);
+assert.match(
+  heroSource,
+  /theaterOpen = false;\s+maybeReveal\(\);/,
+  "Closing the hero demo does not restore the static poster.",
+);
+for (const control of ["demo-close", "demo-minimize", "demo-maximize"]) {
+  assert.ok(home.includes(`id="${control}"`), `The hero demo is missing its ${control} window control.`);
+}
+assert.match(heroSource, /sendDirective\("new-session"\)/, "The hero demo does not route its new-session shortcut into Tortie.");
+assert.match(heroSource, /keyboard\?\.lock\?\.\(\["KeyT"\]\)/, "The full-screen hero demo does not request Command T keyboard lock.");
+assert.match(heroSource, /e\.key === "Escape" && theaterOpen\) closeTheater\(\)/, "Escape does not close the hero demo.");
+assert.match(heroSource, /fullscreenchange[\s\S]+closeTheater\(\)/, "Leaving full screen does not close the hero demo.");
+assert.doesNotMatch(home + demoPage, /—/, "The live demo surfaces still contain an em dash.");
 assert.match(home, /class="download-actions"/, "The homepage close is missing its shared action row.");
 assert.match(home, /Free under the Apache 2\.0 license and built in public\./, "The open-source close is missing its concise license copy.");
 assert.doesNotMatch(home, /Star on GitHub/, "The open-source close still contains the redundant GitHub button.");

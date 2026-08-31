@@ -1,0 +1,44 @@
+---
+/**
+ * The live demo, full-screen: the same static bundle the hero embeds
+ * (public/demos/app, the real Tortie renderer against a fixture bridge),
+ * given the whole viewport and a one-line frame around it. Shareable in a
+ * way a hero widget never is; docs and compare can point here.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { TORTIE_MACOS_DOWNLOAD_URL } from "../data/site-links";
+---
+
+<BaseLayout
+  title="Tortie | Live demo"
+  description="Try Tortie in your browser: projects, durable coding-agent sessions, restore after a reboot, diffs, and splits in a live demo of the current build."
+  canonicalPath="/demo"
+  bodyClass="demo-page"
+>
+  <div class="demo-shell">
+    <header class="demo-bar">
+      <a class="demo-back" href="/">← <span class="demo-wordmark">TORTIE<span>.sh</span></span></a>
+      <span class="demo-note">A live demo of the current build. Nothing here touches your machine.</span>
+      <a class="demo-download" href={TORTIE_MACOS_DOWNLOAD_URL}>Download for macOS</a>
+    </header>
+    <main class="demo-main">
+      <iframe src="/demos/app/index.html" title="Interactive Tortie demo"></iframe>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  :global(body.demo-page) { overflow: hidden; }
+  .demo-shell { display: grid; grid-template-rows: auto 1fr; height: 100svh; background: #090a0c; }
+  .demo-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px clamp(14px, 2vw, 24px); border-bottom: 1px solid rgba(168, 173, 184, 0.16); }
+  .demo-back { display: inline-flex; align-items: center; gap: 10px; color: var(--text-secondary); text-decoration: none; font-size: 13px; }
+  .demo-back:hover { color: var(--text-primary, #fff); }
+  .demo-wordmark { font-weight: var(--weight-semibold); letter-spacing: .06em; }
+  .demo-wordmark span { color: var(--text-muted); }
+  .demo-note { color: var(--text-muted); font-size: 12.5px; text-align: center; }
+  .demo-download { color: var(--text-secondary); font-size: 13px; text-decoration: none; border: 1px solid rgba(168, 173, 184, 0.3); border-radius: 999px; padding: 6px 14px; transition: border-color .2s ease; }
+  .demo-download:hover { border-color: rgba(168, 173, 184, 0.6); }
+  .demo-main { min-height: 0; }
+  .demo-main iframe { display: block; width: 100%; height: 100%; border: 0; }
+  @media (max-width: 700px) { .demo-note { display: none; } }
+</style>
