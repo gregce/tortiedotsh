@@ -99,6 +99,7 @@ const features = [
               poster={feature.video.poster}
               width={feature.width}
               height={feature.height}
+              style={`aspect-ratio: ${feature.width} / ${feature.height};`}
               aria-label={feature.alt}
             >
               <source src={feature.video.webm} type="video/webm" />
