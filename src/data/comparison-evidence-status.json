@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-31T08:54:01.646Z",
+  "generatedAt": "2026-08-31T15:02:08.675Z",
   "sources": [
     {
       "id": "69c685f410104791dcf5",
@@ -734,6 +734,52 @@
       "reviews": [],
       "etag": "W/\"6a95050e-906f\"",
       "lastModified": "Mon, 31 Aug 2026 04:37:34 GMT",
+      "error": null
+    },
+    {
+      "id": "c6d62bea611936fab135",
+      "url": "https://awslabs.github.io/cli-agent-orchestrator/",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://awslabs.github.io/cli-agent-orchestrator/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -11230,6 +11276,104 @@
       "error": null
     },
     {
+      "id": "dcd672c8ab5dcc61c63a",
+      "url": "https://github.com/awslabs/cli-agent-orchestrator#prerequisites",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/awslabs/cli-agent-orchestrator/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "dddc3de7521cfd5443a2",
+      "url": "https://github.com/awslabs/cli-agent-orchestrator#readme",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "orchestrator-agent-handoff",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "orchestrator-attention-signals",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "orchestrator-containers",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "orchestrator-isolated-workspaces",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "orchestrator-live-steering",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "orchestrator-multi-harness",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "orchestrator-parallel-workers",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "orchestrator-programmable",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cli-agent-orchestrator",
+          "field": "orchestrator-worktrees",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/awslabs/cli-agent-orchestrator/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "18ccedbf973d29d94d31",
       "url": "https://github.com/BloopAI/vibe-kanban",
       "bases": [
@@ -13160,6 +13304,133 @@
       "error": null
     },
     {
+      "id": "25cf74e2c8010bbc4bc2",
+      "url": "https://github.com/esengine/DeepSeek-Reasonix/blob/main/docs/RECOVERY.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "reasonix",
+          "field": "harness-session-resume",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/esengine/DeepSeek-Reasonix/main/docs/RECOVERY.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "db228ab2151e576858e5",
+      "url": "https://github.com/esengine/DeepSeek-Reasonix#install",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "reasonix",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/esengine/DeepSeek-Reasonix/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "4b372a74a78ab0512edf",
+      "url": "https://github.com/esengine/DeepSeek-Reasonix#readme",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "reasonix",
+          "field": "harness-checkpoints",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "reasonix",
+          "field": "harness-extension-protocol",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "reasonix",
+          "field": "harness-headless",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "reasonix",
+          "field": "harness-interactive-cli",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "reasonix",
+          "field": "harness-multi-provider",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "reasonix",
+          "field": "harness-permission-controls",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "reasonix",
+          "field": "harness-project-instructions",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "reasonix",
+          "field": "harness-sandbox",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "reasonix",
+          "field": "harness-subagents",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/esengine/DeepSeek-Reasonix/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "5296c7a0f81cc1ae4bd6",
       "url": "https://github.com/get-bb/bb",
       "bases": [
@@ -14261,6 +14532,149 @@
       "reviews": [],
       "etag": "\"581f13be40692de79a3b729276072f9e087eb7e1\"",
       "lastModified": "Mon, 31 Aug 2026 06:40:55 GMT",
+      "error": null
+    },
+    {
+      "id": "f3fc498827e8ed35913a",
+      "url": "https://github.com/happier-dev/happier#installation",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "happier",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/happier-dev/happier/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "28ed301b178594c3142f",
+      "url": "https://github.com/happier-dev/happier#key-features",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "happier",
+          "field": "remote-agent-aware",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-approvals",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-browser-pwa",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-client-reach",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-encryption",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-existing-session",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-host-ownership",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-hosting-boundary",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-input-model",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-native-android",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-native-ios",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-notifications",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-relay-deployment",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-session-durability",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-session-history",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-supported-harnesses",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-terminal-input",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "remote-transport-security",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/happier-dev/happier/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -15548,6 +15962,129 @@
       "error": null
     },
     {
+      "id": "77835c2c07204f245f70",
+      "url": "https://github.com/l0ng-ai/tty7#install",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "tty7",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/l0ng-ai/tty7/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "0b823ac94e20985b112c",
+      "url": "https://github.com/l0ng-ai/tty7#readme",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "tty7",
+          "field": "workbench-agent-handoff",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-arbitrary-cli",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-attention-signals",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-change-review",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-cross-project-attention",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-file-tree",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-named-sessions",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-programmable-control",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-pty-survives-ui",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-remote-host",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-scm",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-session-recovery",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-splits",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "workbench-worktrees",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/l0ng-ai/tty7/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "1dbbd80bcea9bd4ac720",
       "url": "https://github.com/langchain-ai/open-swe",
       "bases": [
@@ -16657,42 +17194,52 @@
       "usedBy": [
         {
           "productId": "cc-haha",
+          "field": "orchestrator-attention-signals",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "orchestrator-inline-review",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "orchestrator-isolated-workspaces",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "orchestrator-live-steering",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "orchestrator-parallel-workers",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "orchestrator-remote-execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "orchestrator-review-delivery",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "orchestrator-task-board",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
+          "field": "orchestrator-worktrees",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "cc-haha",
           "field": "profile.platform",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "cc-haha",
-          "field": "workbench-attention-signals",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "cc-haha",
-          "field": "workbench-browser",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "cc-haha",
-          "field": "workbench-change-review",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "cc-haha",
-          "field": "workbench-cross-project-attention",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "cc-haha",
-          "field": "workbench-file-tree",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "cc-haha",
-          "field": "workbench-named-sessions",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "cc-haha",
-          "field": "workbench-worktrees",
           "checkedAt": "2026-08-24"
         }
       ],
@@ -21347,67 +21894,67 @@
       "usedBy": [
         {
           "productId": "codeg",
+          "field": "orchestrator-agent-handoff",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "orchestrator-attention-signals",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "orchestrator-inline-review",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "orchestrator-isolated-workspaces",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "orchestrator-live-steering",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "orchestrator-multi-harness",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "orchestrator-parallel-workers",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "orchestrator-programmable",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "orchestrator-remote-execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "orchestrator-review-delivery",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "orchestrator-task-board",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
+          "field": "orchestrator-worktrees",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "codeg",
           "field": "profile.platform",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-arbitrary-cli",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-change-review",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-cross-project-attention",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-editor",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-file-tree",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-named-sessions",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-pty-survives-ui",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-remote-host",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-scm",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-session-recovery",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-splits",
-          "checkedAt": "2026-08-24"
-        },
-        {
-          "productId": "codeg",
-          "field": "workbench-worktrees",
           "checkedAt": "2026-08-24"
         }
       ],
@@ -21426,6 +21973,104 @@
       "reviews": [],
       "etag": "\"8550797d877b21599988e3a9e9d0aff8345df73c\"",
       "lastModified": "Sat, 29 Aug 2026 08:25:40 GMT",
+      "error": null
+    },
+    {
+      "id": "cc7c9e4ea88843a6399d",
+      "url": "https://github.com/Yeachan-Heo/oh-my-claudecode/blob/main/docs/TEAM-WORKTREE-MODE.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "oh-my-claudecode",
+          "field": "orchestrator-worktrees",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://raw.githubusercontent.com/Yeachan-Heo/oh-my-claudecode/main/docs/TEAM-WORKTREE-MODE.md",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "43aa9fa85f1768832343",
+      "url": "https://github.com/Yeachan-Heo/oh-my-claudecode#readme",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "oh-my-claudecode",
+          "field": "orchestrator-agent-handoff",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "oh-my-claudecode",
+          "field": "orchestrator-attention-signals",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "oh-my-claudecode",
+          "field": "orchestrator-isolated-workspaces",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "oh-my-claudecode",
+          "field": "orchestrator-multi-harness",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "oh-my-claudecode",
+          "field": "orchestrator-parallel-workers",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "oh-my-claudecode",
+          "field": "orchestrator-programmable",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "oh-my-claudecode",
+          "field": "orchestrator-review-delivery",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "oh-my-claudecode",
+          "field": "orchestrator-task-board",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "oh-my-claudecode",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/Yeachan-Heo/oh-my-claudecode/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -21628,6 +22273,52 @@
       "reviews": [],
       "etag": "W/\"6a94d22e-1467e\"",
       "lastModified": "Mon, 31 Aug 2026 01:00:30 GMT",
+      "error": null
+    },
+    {
+      "id": "24941c8196de203455b0",
+      "url": "https://happier.dev/",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "happier",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "happier",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://happier.dev/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -24585,6 +25276,52 @@
       "error": null
     },
     {
+      "id": "5cc9f684068ed3b845c3",
+      "url": "https://oh-my-claudecode.dev/",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "oh-my-claudecode",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "oh-my-claudecode",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "oh-my-claudecode",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "oh-my-claudecode",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://oh-my-claudecode.dev/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "137d40aa7be34cf3f409",
       "url": "https://onorca.dev/",
       "bases": [
@@ -25912,6 +26649,52 @@
       "reviewedHash": "651a826083893f7915016b94a5177c2d8e4d428919ca0afe3cc4644ee6784e95",
       "reviews": [],
       "etag": "W/\"04f29a85327fffdcb1cc709efae41c771a61a875d67d6280f6271fefde2c3eb3\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "a436edf3b32c657dbd91",
+      "url": "https://reasonix.io/",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "reasonix",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "reasonix",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "reasonix",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "reasonix",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://reasonix.io/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
@@ -27472,6 +28255,52 @@
       "reviewedHash": "4578d357e0cc3f002347b024b7ab8d71810dd332b3176478acc0fd4cc7306ed5",
       "reviews": [],
       "etag": "W/\"6njtcdsgd02ksi\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "161c572447673c723f06",
+      "url": "https://tty7.io/",
+      "bases": [
+        "repository-derived",
+        "source-inspected",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "tty7",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "tty7",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://tty7.io/",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
       "lastModified": null,
       "error": null
     },
