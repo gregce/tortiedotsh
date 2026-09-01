@@ -2,6 +2,219 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.97.0",
+      "date": "2026-09-01",
+      "summary": "This release is about knowing what your agents are doing and what they are costing you. Oh My Pi joins the supported agents, the diagnostics report answers at a glance instead of making you read it, and a meter on the sessions pane shows how much of your Claude and Codex plans you have used. Tortie also starts fewer things at launch, holds less memory under load, and lets you choose the font it writes your code in.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Oh My Pi is now a supported agent. It launches, restores and resumes like every other agent, wears its own mark everywhere agents appear, and Catch Me Up reads its sessions. Contributed by jakehildreth in #12",
+              "commits": [
+                {
+                  "hash": "d0e80a2",
+                  "url": "https://github.com/gregce/tortie/commit/d0e80a2"
+                }
+              ]
+            },
+            {
+              "text": "A meter at the foot of the sessions pane now shows how much of your Claude and Codex subscription you have used, in both the five hour and the weekly window, with the detail on hover and a control to ask again. Each provider is off until you turn it on in Settings then Agents, and while a meter is off nothing is read and nothing is sent",
+              "commits": [
+                {
+                  "hash": "16281b3",
+                  "url": "https://github.com/gregce/tortie/commit/16281b3"
+                }
+              ]
+            },
+            {
+              "text": "The bar can track whichever window you care about, and it follows the number you read first unless you say otherwise. The card names the plan each login is on, and it no longer hides behind the tabs when your sessions sit along the top",
+              "commits": [
+                {
+                  "hash": "1ea852c",
+                  "url": "https://github.com/gregce/tortie/commit/1ea852c"
+                }
+              ]
+            },
+            {
+              "text": "You can now choose the font Tortie writes your code in, for the terminal and the editor together, either from three bundled faces or by naming any family installed on your Mac. Typing suggests the families you actually have, and a captured session still renders in Menlo. Contributed by jakehildreth in #13",
+              "commits": [
+                {
+                  "hash": "4b350cd",
+                  "url": "https://github.com/gregce/tortie/commit/4b350cd"
+                },
+                {
+                  "hash": "9a19ddd",
+                  "url": "https://github.com/gregce/tortie/commit/9a19ddd"
+                }
+              ]
+            },
+            {
+              "text": "The diagnostics report tells you what Tortie is costing in processes, memory, CPU and disk, and opens with a strip that totals it and ranks it against everything else running on your Mac",
+              "commits": [
+                {
+                  "hash": "30222a1",
+                  "url": "https://github.com/gregce/tortie/commit/30222a1"
+                },
+                {
+                  "hash": "c05e99b",
+                  "url": "https://github.com/gregce/tortie/commit/c05e99b"
+                }
+              ]
+            },
+            {
+              "text": "Every row in that report is now read rather than left blank, every table sorts by any column, and the numbers keep moving while you are looking at them",
+              "commits": [
+                {
+                  "hash": "c01c013",
+                  "url": "https://github.com/gregce/tortie/commit/c01c013"
+                }
+              ]
+            },
+            {
+              "text": "A diff now draws changes the way you want to read them. Choose whether a change is marked by word, by phrase, by character or not at all, and turn the full width colour on or off, from a row of controls in the diff itself. The choice is remembered",
+              "commits": [
+                {
+                  "hash": "0a31afb",
+                  "url": "https://github.com/gregce/tortie/commit/0a31afb"
+                }
+              ]
+            },
+            {
+              "text": "Architecture draws a map of a codebase, keeps a contract of what may depend on what, and can hand a part of it to a session as context. It ships turned off, and Settings then Architecture is where you turn it on, because most agents cannot fill in a contract yet",
+              "commits": [
+                {
+                  "hash": "0586263",
+                  "url": "https://github.com/gregce/tortie/commit/0586263"
+                },
+                {
+                  "hash": "9b8a667",
+                  "url": "https://github.com/gregce/tortie/commit/9b8a667"
+                },
+                {
+                  "hash": "31f0afd",
+                  "url": "https://github.com/gregce/tortie/commit/31f0afd"
+                }
+              ]
+            },
+            {
+              "text": "Architecture reads imports in Rust, Python, Ruby, Swift, Kotlin and Objective-C as well as the languages it already knew. Swift resolves between targets rather than between files, because a Swift target's files see each other with no import to read",
+              "commits": [
+                {
+                  "hash": "b0f8c6e",
+                  "url": "https://github.com/gregce/tortie/commit/b0f8c6e"
+                },
+                {
+                  "hash": "5a75b54",
+                  "url": "https://github.com/gregce/tortie/commit/5a75b54"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "Tortie starts less at launch. A project you are not looking at no longer reads its git status until you look, and agent discovery waits for a surface that needs it",
+              "commits": [
+                {
+                  "hash": "c32b9ef",
+                  "url": "https://github.com/gregce/tortie/commit/c32b9ef"
+                }
+              ]
+            },
+            {
+              "text": "Screens you have not opened no longer load with the app, so the first window paints sooner",
+              "commits": [
+                {
+                  "hash": "60a7093",
+                  "url": "https://github.com/gregce/tortie/commit/60a7093"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Catch Me Up no longer wedges if your screen locks while it is opening, which used to leave the chord dead until the window came back",
+              "commits": [
+                {
+                  "hash": "e26ecaf",
+                  "url": "https://github.com/gregce/tortie/commit/e26ecaf"
+                }
+              ]
+            },
+            {
+              "text": "A large uncommitted change no longer floods the Source Control view or the memory it holds",
+              "commits": [
+                {
+                  "hash": "ad3de97",
+                  "url": "https://github.com/gregce/tortie/commit/ad3de97"
+                }
+              ]
+            },
+            {
+              "text": "Sessions no longer leak a file handle each time one closes, which used to eat the machine's supply over a long day",
+              "commits": [
+                {
+                  "hash": "ad3de97",
+                  "url": "https://github.com/gregce/tortie/commit/ad3de97"
+                }
+              ]
+            },
+            {
+              "text": "Tortie no longer lets its own browser cache grow without a limit during development",
+              "commits": [
+                {
+                  "hash": "ee02531",
+                  "url": "https://github.com/gregce/tortie/commit/ee02531"
+                }
+              ]
+            },
+            {
+              "text": "Boxes in the Architecture map are clickable again, and clicking one drills into it",
+              "commits": [
+                {
+                  "hash": "7efd14f",
+                  "url": "https://github.com/gregce/tortie/commit/7efd14f"
+                }
+              ]
+            },
+            {
+              "text": "A file under a project's contract directory that Tortie cannot read is now skipped with one calm line instead of a wall of errors",
+              "commits": [
+                {
+                  "hash": "6032c94",
+                  "url": "https://github.com/gregce/tortie/commit/6032c94"
+                }
+              ]
+            },
+            {
+              "text": "The Architecture panel says plainly when it can read only part of a repository, and it no longer counts checks as promises when there are none",
+              "commits": [
+                {
+                  "hash": "cde6566",
+                  "url": "https://github.com/gregce/tortie/commit/cde6566"
+                }
+              ]
+            },
+            {
+              "text": "Remote machines are covered by their fault tests again, after those tests had been red long enough to stop meaning anything",
+              "commits": [
+                {
+                  "hash": "4b8427b",
+                  "url": "https://github.com/gregce/tortie/commit/4b8427b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.76.1",
       "date": "2026-08-26",
       "summary": "This release is about the file tree and the menus. You can now bring files into a project from Finder and take them back out again, every menu row carries an icon and says which key runs it, and a session will tell you which conversation it is and where that conversation lives on disk. Several things you reported along the way no longer go wrong.",

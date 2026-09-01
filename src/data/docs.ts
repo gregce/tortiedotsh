@@ -116,10 +116,16 @@ export const docsNavGroups: DocsNavGroup[] = [
         searchTerms: "context skills skills.sh mcp hooks plugins instructions precedence shadowed enable disable update",
       },
       {
+        title: "Architecture",
+        href: "/docs/architecture/",
+        description: "Draw a map of a codebase, keep a contract of what may depend on what, and aim a session at one part.",
+        searchTerms: "arch map contract promises docs/arch modules drill imports skeleton aim promise scope off by default early",
+      },
+      {
         title: "Settings and customization",
         href: "/docs/settings-and-customization/",
         description: "Configure agents, launches, appearance, capture, updates, and diagnostics.",
-        searchTerms: "preferences command comma general agents keyboard hotkeys appearance font contrast scrollback specstory automatic update updater restart install diagnostics",
+        searchTerms: "preferences command comma general agents keyboard hotkeys appearance font custom family menlo jetbrains source code pro contrast scrollback usage meter claude codex plan quota specstory automatic update updater restart install diagnostics",
       },
       {
         title: "Remote machines",
@@ -713,6 +719,15 @@ export const docsPages: DocPage[] = [
         ],
       },
       {
+        id: "diff-controls",
+        title: "Choose how a diff is drawn",
+        blocks: [
+          { type: "paragraph", html: "Every diff carries a row of controls at its head, wherever you opened it from. Inline chooses how much of a changed line is picked out inside the row: <strong>Off</strong> marks the row and nothing inside it, <strong>Words</strong> picks out each changed word, <strong>Phrases</strong> picks out a run of changed words as one, and <strong>Characters</strong> picks out only the characters that differ." },
+          { type: "paragraph", html: "The paint control beside it turns the full-width colour on a changed row on or off. The change bars and the inline marks stay either way, so the diff still says which side is which." },
+          { type: "note", title: "One answer for every diff", html: "Both choices are remembered for the whole app rather than for one file or one project, so the next diff opens drawn the way the last one was, and a diff already on screen follows the moment you click." },
+        ],
+      },
+      {
         id: "branches",
         title: "Work with branches",
         blocks: [
@@ -831,6 +846,72 @@ export const docsPages: DocPage[] = [
     ],
   },
   {
+    path: "/docs/architecture/",
+    slug: "architecture",
+    title: "Architecture",
+    description: "Draw a map of a codebase, keep a contract of promises about how its parts may touch, and hand one part of it to a session.",
+    lead: "Architecture ships turned off. Settings, then Architecture, is where you turn it on.",
+    sections: [
+      {
+        id: "turn-it-on",
+        title: "Turn Architecture on",
+        blocks: [
+          { type: "paragraph", html: "Architecture is off in a new install, so nothing about it appears until you ask for it. Open Settings, choose Architecture, and switch on <strong>Show Architecture</strong>. That puts Architecture on the sidebar and in the View menu." },
+          { type: "paragraph", html: "The Architecture page in Settings stays visible whether the switch is on or off, so turning it off never hides the way back in." },
+          { type: "note", title: "Off means off", html: "While the switch is off there is no Architecture icon on the sidebar, no Architecture row in the View menu, and the map tab will not open." },
+        ],
+      },
+      {
+        id: "the-map",
+        title: "Read the map",
+        blocks: [
+          { type: "paragraph", html: "Open the map and Tortie draws the repository as a small map in a full-size tab, grouped by the folders the codebase grew into. Click a box to drill into it. No contract is needed, nothing is written, and every later open reuses the reading." },
+          { type: "paragraph", html: "The map is drawn from what the imports prove. Tortie reads imports in TypeScript, JavaScript, Go, Python, Rust, Ruby, Swift, Kotlin, and Objective-C. Swift resolves between targets rather than between files, because a Swift target's files see each other with no import to read." },
+          { type: "note", title: "Some repositories have nothing to draw", html: "A repository whose tracked files all sit at the top level draws no boxes, because the map draws the folders a codebase grows into. The panel says plainly when it could read only part of a repository instead of implying it read all of it." },
+        ],
+      },
+      {
+        id: "the-contract",
+        title: "Keep a contract of promises",
+        blocks: [
+          { type: "paragraph", html: "A contract is a small set of promises about how the parts of a project are allowed to touch. Tortie checks them against the code and says which ones hold, which ones broke and at which line, and which ones it cannot check. A healthy set is 5 to 10 promises: fewer says nothing, and more is a second codebase to keep current." },
+          { type: "paragraph", html: "<strong>Draft the contract</strong> writes a small deterministic skeleton into <code>docs/arch</code>, drawn from the code alone. It lands as an ordinary uncommitted change, so Source Control shows every line and you commit it or throw it away." },
+          { type: "paragraph", html: "A promise you decide to live with can be accepted on its failing row, with your reason. Accepted promises stay counted and stay visible in your own words, and that control is the one way Tortie ever writes that file." },
+        ],
+      },
+      {
+        id: "who-fills-it-in",
+        title: "Choose who fills in the contract",
+        blocks: [
+          { type: "paragraph", html: "The skeleton comes from the imports, and an agent fills in what each part is for, which promises must hold, and what is missing. None is the shipped answer, and every project keeps the drafted skeleton without an agent." },
+          { type: "paragraph", html: "Claude Code is the only agent Tortie has measured for this work, so most agents cannot fill in a contract yet. Pick the agent and one of its models in Settings, then Architecture." },
+          { type: "note", title: "The agent runs when you ask", html: "The agent runs only when you ask from the Architecture view, under your own account, and never because a file changed on its own. It writes the contract files in your repository, and the changes wait in Source Control for your review." },
+        ],
+      },
+      {
+        id: "aim-a-session",
+        title: "Aim a session at one part",
+        blocks: [
+          { type: "paragraph", html: "With a session open, choose <strong>Aim at a Promise</strong> in the Session menu to put a scope into that session's prompt. The text lands in the prompt and nothing is sent until you press Return." },
+          { type: "paragraph", html: "A shell session, a session Tortie did not start, and a project with no contract each refuse with one sentence naming what would fix it." },
+        ],
+      },
+      {
+        id: "limits",
+        title: "Know the current limits",
+        blocks: [
+          { type: "list", items: [
+            "Architecture is off until you turn it on, on every Mac you install Tortie on.",
+            "Claude Code is the only agent that can fill in a contract today.",
+            "A contract is read on the computer its repository is on, so a project on a remote machine cannot be read from here.",
+            "The description an agent writes is the author's own words, and Tortie never checks them.",
+            "A promise backed by quoted code is partly checked: the quoted code is still there, and what it does when it runs is unproven.",
+          ] },
+        ],
+      },
+    ],
+  },
+  {
     path: "/docs/settings-and-customization/",
     slug: "settings-and-customization",
     title: "Settings and customization",
@@ -849,13 +930,14 @@ export const docsPages: DocPage[] = [
         blocks: [
           { type: "table", headers: ["Section", "What it controls"], rows: [
             ["General", "Open at login, default agent, split-exit focus, the optional <code>tortie</code> shell command, updates, live scrollback, and saved scrollback."],
-            ["Agents", "Installed-agent detection on this Mac and configured machines, version and path details, custom definitions, and re-scan."],
+            ["Agents", "Installed-agent detection on this Mac and configured machines, version and path details, custom definitions, re-scan, and the Claude and Codex usage meters."],
             ["Keyboard", "The complete built-in keymap and your per-agent new-session shortcuts."],
             ["Launch defaults", "Per-agent launch flags applied to each new session."],
             ["SpecStory", "Local conversation capture defaults and optional SpecStory Cloud sign-in."],
-            ["Appearance", "Highlight colour, contrast, and the terminal and editor font."],
+            ["Appearance", "Highlight colour, contrast, and the terminal and editor font, including a family of your own."],
             ["Machines", "SSH connections, keys, remote capabilities, agent availability, and the one approved write root per machine."],
             ["Catch Me Up", "The optional agent and model that write one-line project summaries."],
+            ["Architecture", "The switch that shows Architecture at all, and the agent and model that fill in a contract."],
             ["Diagnostics", "Temporary debug logging and a readable support report."],
           ] },
         ],
@@ -867,6 +949,21 @@ export const docsPages: DocPage[] = [
           { type: "paragraph", html: "Agents shows what Tortie can actually launch on each machine. Re-scan after installing or updating a CLI. A missing agent keeps its installation command visible for you to copy; Tortie does not run it automatically." },
           { type: "paragraph", html: "Launch defaults are preselected in the new-session sheet. Turning off one option there changes only that session. Options marked as dangerous can only become defaults after you confirm them in Settings; editing the settings file alone does not bypass that agreement." },
           { type: "paragraph", html: "The Keyboard section lets you record a dedicated new-session shortcut for an agent. Tortie's built-in shortcuts are fixed in the current release." },
+        ],
+      },
+      {
+        id: "usage-meters",
+        title: "See how much of your plan is used",
+        blocks: [
+          { type: "paragraph", html: "A usage meter sits at the foot of the session dock, on the collapsed rail, and at the control end of the top strip. It reads the login your agent already stored on this Mac, asks that vendor how much of your plan you have used, and draws the last five hours and the week beside a bar." },
+          { type: "paragraph", html: "Claude and Codex are the only providers Tortie can read, and each one stays off until you turn it on in Settings, then Agents, then Usage. While a meter is off nothing is read and nothing is sent." },
+          { type: "list", items: [
+            "Hover a meter for both windows in full, when each one resets, and the plan the login is on.",
+            "Bar shows chooses which window the bar fills to: the last five hours, this week, or whichever window is further along.",
+            "A meter asks again every fifteen minutes, and only while the Tortie window is in front. The refresh control asks now.",
+            "A provider that reports only one window draws that number whichever choice you made.",
+          ] },
+          { type: "note", title: "Your login is read, never changed", html: "Tortie reads the login and never writes, refreshes or copies it, so an expired login asks you to run the agent once instead of signing you in again. Nothing is stored: the numbers stay in memory until you quit, and no part of a login reaches a log or a file. A plan billed by API key has no plan window to draw." },
         ],
       },
       {
@@ -882,6 +979,8 @@ export const docsPages: DocPage[] = [
         title: "Change appearance and text size",
         blocks: [
           { type: "paragraph", html: "Appearance changes the highlight scheme, interface contrast, and work-area font. Font size is contextual instead of global: <kbd>⌘+</kbd>, <kbd>⌘-</kbd>, and <kbd>⌘0</kbd> change the focused terminal, sidebar, or editor. Use <kbd>⇧⌘0</kbd> to reset every region." },
+          { type: "paragraph", html: "The terminal and the editor share one font. Choose System, which is Menlo, or one of the two bundled faces, JetBrains Mono and Source Code Pro. Choose Custom to type the name of any family installed on your Mac: Tortie suggests the families you actually have, says when a family is not installed on this Mac, and applies the change at once with Menlo underneath as the fallback. Your choice covers the terminal and the editor only: the sidebar and the rest of the app keep the face they already had." },
+          { type: "note", title: "A capture keeps a bundled face, not a custom one", html: "JetBrains Mono and Source Code Pro are carried into a captured session, so a capture looks like your screen. A custom family is a font on your Mac rather than one Tortie carries, so a capture made under Custom falls back to Menlo." },
         ],
       },
       {
@@ -979,7 +1078,7 @@ export const docsPages: DocPage[] = [
     slug: "supported-agents",
     title: "Supported agents",
     description: "See which agents Tortie can launch and how resume, history, and attachments vary.",
-    lead: "Tortie launches 11 coding-agent CLIs and plain shells. Resume and conversation history are separate capabilities and vary by agent.",
+    lead: "Tortie launches 12 coding-agent CLIs and plain shells. Resume and conversation history are separate capabilities and vary by agent.",
     sections: [
       {
         id: "launchable-agents",
