@@ -2,6 +2,113 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.98.0",
+      "date": "2026-09-01",
+      "summary": "This release is about reading a change the way you would read a document, and about the small things that make the window easier to live in. A changed text file can be read as a redline on its own, the usage meter follows your own turns, and a row of project tabs stays readable however many you open. A remote tab you close now stays closed.",
+      "contributors": [],
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "A changed text or markdown file can now be read as a redline. Choose Redline beside Diff and File and the whole document reads as prose, with the words that were removed struck through and the words that replaced them right after, and copying gives you the new text. It is for prose files, so a source file gets no Redline option",
+              "commits": [
+                {
+                  "hash": "fe76ecd",
+                  "url": "https://github.com/gregce/tortie/commit/fe76ecd"
+                },
+                {
+                  "hash": "e238ff1",
+                  "url": "https://github.com/gregce/tortie/commit/e238ff1"
+                }
+              ]
+            },
+            {
+              "text": "The usage meter now moves on every one of your Claude Code turns, at no cost to your plan, rather than only on its fifteen minute check. If you already have a status line of your own anywhere, Tortie leaves it alone and keeps the check",
+              "commits": [
+                {
+                  "hash": "650b5b3",
+                  "url": "https://github.com/gregce/tortie/commit/650b5b3"
+                },
+                {
+                  "hash": "d878070",
+                  "url": "https://github.com/gregce/tortie/commit/d878070"
+                }
+              ]
+            },
+            {
+              "text": "The sessions table in Diagnostics now names the project each session belongs to and how long ago it started and was last seen, so two sessions with the same name can be told apart",
+              "commits": [
+                {
+                  "hash": "06fbe2c",
+                  "url": "https://github.com/gregce/tortie/commit/06fbe2c"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "Open more projects than fit along the top and the tabs scroll at a width you can still read, with a menu at the end that lists every project and its shortcut, rather than squeezing each name down to a letter",
+              "commits": [
+                {
+                  "hash": "f7d131f",
+                  "url": "https://github.com/gregce/tortie/commit/f7d131f"
+                }
+              ]
+            },
+            {
+              "text": "The Install a skill sheet is narrower, and its preview of the skill grows with a tall window instead of stopping at six lines",
+              "commits": [
+                {
+                  "hash": "2742c9e",
+                  "url": "https://github.com/gregce/tortie/commit/2742c9e"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Closing a remote machine tab now closes it for good. It used to come back at least once",
+              "commits": [
+                {
+                  "hash": "2e9650c",
+                  "url": "https://github.com/gregce/tortie/commit/2e9650c"
+                },
+                {
+                  "hash": "87e5533",
+                  "url": "https://github.com/gregce/tortie/commit/87e5533"
+                }
+              ]
+            },
+            {
+              "text": "The custom font field in Settings sits level with the dropdown beside it",
+              "commits": [
+                {
+                  "hash": "7917485",
+                  "url": "https://github.com/gregce/tortie/commit/7917485"
+                }
+              ]
+            },
+            {
+              "text": "A session with an impossible timestamp in its record can no longer stop the live diagnostics report",
+              "commits": [
+                {
+                  "hash": "18a516b",
+                  "url": "https://github.com/gregce/tortie/commit/18a516b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.97.0",
       "date": "2026-09-01",
       "summary": "This release is about knowing what your agents are doing and what they are costing you. Oh My Pi joins the supported agents, the diagnostics report answers at a glance instead of making you read it, and a meter on the sessions pane shows how much of your Claude and Codex plans you have used. Tortie also starts fewer things at launch, holds less memory under load, and lets you choose the font it writes your code in.",
