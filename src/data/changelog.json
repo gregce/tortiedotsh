@@ -5,6 +5,14 @@
       "version": "0.97.0",
       "date": "2026-09-01",
       "summary": "This release is about knowing what your agents are doing and what they are costing you. Oh My Pi joins the supported agents, the diagnostics report answers at a glance instead of making you read it, and a meter on the sessions pane shows how much of your Claude and Codex plans you have used. Tortie also starts fewer things at launch, holds less memory under load, and lets you choose the font it writes your code in.",
+      "contributors": [
+        {
+          "login": "jakehildreth",
+          "name": "jakehildreth",
+          "url": "https://github.com/jakehildreth",
+          "avatarUrl": "https://github.com/jakehildreth.png?size=64"
+        }
+      ],
       "sections": [
         {
           "title": "Added",
@@ -37,7 +45,7 @@
               ]
             },
             {
-              "text": "You can now choose the font Tortie writes your code in, for the terminal and the editor together, either from three bundled faces or by naming any family installed on your Mac. Typing suggests the families you actually have, and a captured session still renders in Menlo. Contributed by jakehildreth in #13",
+              "text": "You can now choose the font Tortie writes your code in, for the terminal and the editor together, either from three bundled faces or by naming any family installed on your Mac. Typing suggests the families you actually have, and a captured session still renders in Menlo. Contributed by jakehildreth in #13, suggestions",
               "commits": [
                 {
                   "hash": "4b350cd",

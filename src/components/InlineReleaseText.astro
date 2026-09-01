@@ -1,13 +1,20 @@
 ---
 interface Props {
   text: string;
+  links?: Array<{ label: string; url: string }>;
 }
 
-const { text } = Astro.props;
-const parts = text.split(/(`[^`]+`)/g).filter(Boolean);
+const { text, links = [] } = Astro.props;
+const escapePattern = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const linkLabels = links.map(({ label }) => label).sort((a, b) => b.length - a.length);
+const tokenPattern = linkLabels.length > 0
+  ? new RegExp(`(\`[^\`]+\`|${linkLabels.map(escapePattern).join("|")})`, "g")
+  : /(`[^`]+`)/g;
+const parts = text.split(tokenPattern).filter(Boolean);
 ---
 
-{parts.map((part) => part.startsWith("`") && part.endsWith("`")
-  ? <code>{part.slice(1, -1)}</code>
-  : part
-)}
+{parts.map((part) => {
+  if (part.startsWith("`") && part.endsWith("`")) return <code>{part.slice(1, -1)}</code>;
+  const link = links.find(({ label }) => label === part);
+  return link ? <a class="release-person-link" href={link.url}>{part}</a> : part;
+})}

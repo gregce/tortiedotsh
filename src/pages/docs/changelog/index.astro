@@ -12,6 +12,13 @@ const formatDate = (date: string) => new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   timeZone: "UTC",
 }).format(new Date(`${date}T00:00:00Z`));
+type Contributor = { login: string; name: string; url: string; avatarUrl: string };
+const releases = changelog.releases.map((release) => ({
+  ...release,
+  contributors: "contributors" in release
+    ? release.contributors as Contributor[]
+    : [],
+}));
 ---
 
 <BaseLayout title="Changelog — Tortie docs" description={description} canonicalPath="/docs/changelog/" bodyClass="docs-body" themeColor="#000000">
@@ -25,7 +32,7 @@ const formatDate = (date: string) => new Intl.DateTimeFormat("en-US", {
         </header>
 
         <div class="release-list">
-          {changelog.releases.map((release) => (
+          {releases.map((release) => (
             <article class="release">
               <header class="release-head">
                 <h2 id={`v${release.version}`} data-pagefind-weight="6"><a class="release-version" href={`#v${release.version}`}>{release.version}</a></h2>
@@ -39,7 +46,7 @@ const formatDate = (date: string) => new Intl.DateTimeFormat("en-US", {
                     <ul>
                       {section.items.map((item) => (
                         <li class="release-item">
-                          <span><InlineReleaseText text={item.text} /></span>
+                          <span><InlineReleaseText text={item.text} links={release.contributors.map(({ login, url }) => ({ label: login, url }))} /></span>
                           {item.commits.length > 0 && (
                             <span class="release-commits" aria-label="Related commits">
                               {item.commits.map((commit) => (
@@ -59,6 +66,26 @@ const formatDate = (date: string) => new Intl.DateTimeFormat("en-US", {
                   </section>
                 ))}
               </div>
+              {release.contributors.length > 0 && (
+                <section class="release-contributors" aria-labelledby={`v${release.version}-contributors`}>
+                  <h3 id={`v${release.version}-contributors`}>
+                    <span class="release-label release-label-contributors">Contributors</span>
+                  </h3>
+                  <ul class="release-contributor-list">
+                    {release.contributors.map((contributor) => (
+                      <li>
+                        <a href={contributor.url} aria-label={contributor.name === contributor.login ? `${contributor.login} on GitHub` : `${contributor.name} (${contributor.login}) on GitHub`}>
+                          <img src={contributor.avatarUrl} alt="" width="24" height="24" loading="lazy" decoding="async" />
+                          <span>{contributor.login}</span>
+                          <svg viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M6 3h7v7M13 3 5 11"></path>
+                          </svg>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
             </article>
           ))}
         </div>

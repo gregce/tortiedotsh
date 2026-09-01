@@ -154,6 +154,9 @@ for (const [route, html, expectedMark, unexpectedMarks] of routeMarks) {
 assert.match(home, /class="nav-mark nav-default-mark"/, "The homepage no longer uses the standard Tortie mark.");
 assert.doesNotMatch(home, /(?:11-compare|12-docs|13-changelog)-icon-square/, "Route-specific marks are still displayed in the homepage destination cards.");
 assert.ok(whatTortieIs.includes("/illustrations/pixel-tortie/10-mascot-accent-square.avif"), "Behind the name is missing its Pixel Tortie illustration.");
+assert.match(changelogPage, /class="release-contributors"/, "The changelog is missing its contributor section.");
+assert.match(changelogPage, /href="https:\/\/github\.com\/jakehildreth"/, "The changelog does not link its named contributor to GitHub.");
+assert.match(changelogPage, /jakehildreth\.png\?size=64/, "The changelog contributor does not carry a sized GitHub avatar.");
 assert.doesNotMatch(docsHome + whatTortieIs, /docs-sidebar-mascot/, "The Pixel Tortie accent is still trapped in the docs navigation rail.");
 assert.doesNotMatch(home + docsHome, /\/illustrations\/pixel-tortie\/[^\"']+\.png/, "A full-resolution Pixel Tortie master is being served to visitors.");
 assert.match(

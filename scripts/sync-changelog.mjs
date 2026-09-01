@@ -20,17 +20,37 @@ for (let index = 0; index < matches.length; index += 1) {
   const sectionMatches = [...body.matchAll(/^###\s+(.+)$/gm)];
   const summary = body.slice(0, sectionMatches[0]?.index ?? body.length).replace(/\s+/g, " ").trim();
   const sections = [];
+  const contributors = new Map();
   for (let sectionIndex = 0; sectionIndex < sectionMatches.length; sectionIndex += 1) {
     const sectionMatch = sectionMatches[sectionIndex];
     const sectionBody = body.slice(sectionMatch.index + sectionMatch[0].length, sectionMatches[sectionIndex + 1]?.index ?? body.length);
     const items = sectionBody.split("\n").filter((line) => line.startsWith("- ")).map((line) => {
       const commits = [...line.matchAll(/\[`([^`]+)`\]\((https:\/\/github\.com\/gregce\/tortie\/commit\/[^)]+)\)/g)].map((commit) => ({ hash: commit[1], url: commit[2] }));
-      const text = line.slice(2).replace(/\s*\((?:\[`[^`]+`\]\([^)]+\)(?:,\s*)?)+\)\s*$/, "").trim();
+      for (const profile of line.matchAll(/\[([^\]]+)\]\((https:\/\/github\.com\/([A-Za-z0-9-]+)\/?)\)/g)) {
+        const login = profile[3];
+        contributors.set(login.toLowerCase(), {
+          login,
+          name: profile[1],
+          url: profile[2],
+          avatarUrl: `https://github.com/${login}.png?size=64`,
+        });
+      }
+      const text = line
+        .slice(2)
+        .replace(/\[`[^`]+`\]\(https:\/\/github\.com\/gregce\/tortie\/commit\/[^)]+\)/g, "")
+        .replace(/\s*\((?:\s*,?\s*)*\)/g, "")
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+        .replace(/,\s*,+/g, ",")
+        .replace(/,\s*$/, "")
+        .replace(/\s+/g, " ")
+        .trim();
       return { text, commits };
     });
     if (items.length) sections.push({ title: sectionMatch[1].trim(), items });
   }
-  releases.push({ version: match[1], date: match[2], summary, sections });
+  const release = { version: match[1], date: match[2], summary };
+  if (contributors.size > 0) release.contributors = [...contributors.values()];
+  releases.push({ ...release, sections });
 }
 if (!releases.length) throw new Error("No release headings found in CHANGELOG.md");
 await writeFile(outputPath, `${JSON.stringify({ sourceUrl: SOURCE_URL, releases }, null, 2)}\n`);
