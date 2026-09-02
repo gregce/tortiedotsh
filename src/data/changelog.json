@@ -152,7 +152,7 @@
               ]
             },
             {
-              "text": "You can now choose the font Tortie writes your code in, for the terminal and the editor together, either from three bundled faces or by naming any family installed on your Mac. Typing suggests the families you actually have, and a captured session still renders in Menlo. Contributed by jakehildreth in #13, suggestions",
+              "text": "You can now choose the font Tortie writes your code in, for the terminal and the editor together, either from three bundled faces or by naming any family installed on your Mac. Typing suggests the families you actually have. A captured session keeps a bundled face, and falls back to Menlo for the system font or for a family of your own. Contributed by jakehildreth in #13, suggestions",
               "commits": [
                 {
                   "hash": "4b350cd",
