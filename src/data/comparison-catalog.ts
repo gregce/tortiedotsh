@@ -1283,6 +1283,23 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       "orchestrator-task-board": capability("limited", "https://github.com/Yeachan-Heo/oh-my-claudecode#readme", "Oh My ClaudeCode README", "Team execution has explicit plan, execute, verify, and fix stages with live HUD status; a conventional Kanban board is not documented.", "repository-derived"),
     },
   }),
+  product({
+    id: "jetbrains-air", name: "JetBrains Air", categoryId: "agent-orchestrators", editorialOrder: 28,
+    officialUrl: "https://air.dev/",
+    tags: ["agentic-development-environment", "multi-harness", "acp", "parallel-workers", "worktrees", "docker", "diff-review", "proprietary"],
+    platform: ["macos", "windows", "linux"], platformNote: "The current download page provides native macOS and Windows builds plus Linux installation through JetBrains Toolbox or the first-party install script.",
+    platformSource: { url: "https://air.dev/download", title: "JetBrains Air downloads" },
+    source: "proprietary", sourceSource: { url: "https://www.jetbrains.com/legal/docs/terms/jetbrains-air/", title: "JetBrains Air user agreement" },
+    execution: ["local-process", "container"], executionSource: { url: "https://blog.jetbrains.com/air/2026/03/air-launches-as-public-preview-a-new-wave-of-dev-tooling-built-on-26-years-of-experience/", title: "JetBrains Air public preview" },
+    status: "beta", statusSource: { url: "https://air.dev/download", title: "JetBrains Air downloads" },
+    claims: {
+      ...builtInClaims("https://blog.jetbrains.com/air/2026/03/air-launches-as-public-preview-a-new-wave-of-dev-tooling-built-on-26-years-of-experience/", "JetBrains Air public preview", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-containers", "orchestrator-attention-signals"]),
+      "orchestrator-agent-handoff": capability("limited", "https://air.dev/changelog", "JetBrains Air changelog", "Agent Review can launch a fresh agent to review another agent's changes; the documentation does not establish full conversation-state transfer between harnesses."),
+      "orchestrator-task-board": capability("limited", "https://air.dev/changelog", "JetBrains Air changelog", "Air maintains a task list across projects and lets operators switch among running and completed tasks, but it is not documented as a conventional Kanban board."),
+      "orchestrator-inline-review": capability("built-in", "https://blog.jetbrains.com/air/2026/06/jetbrains-air-lands-on-windows/", "JetBrains Air for Windows", "Air provides diff review with inline comments and can send review feedback back to an agent."),
+      "orchestrator-live-steering": capability("limited", "https://air.dev/changelog", "JetBrains Air changelog", "The Questions widget supports structured answers while an agent is working; unrestricted free-form redirection of every active harness is not established."),
+    },
+  }),
 
   // 4. Coding-agent harnesses
   product({ id: "claude-code", name: "Claude Code", categoryId: "coding-agent-harnesses", editorialOrder: 1, officialUrl: "https://code.claude.com/docs/en/getting-started", tags: ["cli", "vendor-model", "resume", "subagents"], platform: ["macos", "windows", "linux"], platformNote: "Current requirements list native Windows and named Linux distributions.", source: "proprietary", execution: ["local-process"], status: "active", claims: {
@@ -1570,6 +1587,25 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       "harness-session-resume": capability("built-in", "https://github.com/esengine/DeepSeek-Reasonix/blob/main/docs/RECOVERY.md", "Reasonix recovery documentation", "The local engine preserves workspace sessions and documents recovery behavior.", "repository-derived"),
     },
   }),
+  product({
+    id: "junie-cli", name: "Junie CLI", categoryId: "coding-agent-harnesses", editorialOrder: 35,
+    officialUrl: "https://junie.jetbrains.com/docs/junie-cli.html", repository: repo("JetBrains/junie", "metadata-only"),
+    tags: ["cli", "tui", "headless", "multi-model", "byok", "mcp", "skills", "subagents", "worktrees", "jetbrains", "proprietary"],
+    platform: ["macos", "windows", "linux"], platformNote: "Junie's current quickstart provides shell, PowerShell, npm, and Homebrew installation paths for macOS, Windows, and Linux.",
+    platformSource: { url: "https://junie.jetbrains.com/docs/junie-cli.html", title: "Junie CLI quickstart" },
+    source: "proprietary", sourceSource: { url: "https://github.com/JetBrains/junie/blob/main/LICENSE.md", title: "Junie repository license", basis: "repository-derived" },
+    execution: ["local-process"], executionSource: { url: "https://junie.jetbrains.com/docs/junie-cli.html", title: "Junie CLI quickstart" },
+    status: "active", statusSource: { url: "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/", title: "Junie leaves beta" },
+    claims: {
+      ...builtInClaims("https://junie.jetbrains.com/docs/junie-cli.html", "Junie CLI quickstart", ["harness-interactive-cli", "harness-multi-provider", "harness-session-resume", "harness-git-workflow", "harness-multimodal-input"]),
+      "harness-headless": capability("built-in", "https://junie.jetbrains.com/docs/junie-headless.html", "Junie CLI headless mode", "Junie accepts one-shot prompts and runs in CI/CD environments and build pipelines."),
+      "harness-extension-protocol": capability("built-in", "https://junie.jetbrains.com/docs/junie-cli-mcp-configuration.html", "Junie CLI MCP configuration", "Junie supports MCP servers alongside agent skills, custom commands, and custom subagents."),
+      "harness-project-instructions": capability("built-in", "https://junie.jetbrains.com/docs/guidelines-and-memory.html", "Junie guidelines and memory", "Junie reads project and user AGENTS.md files, playbooks, rules, and legacy guideline files."),
+      "harness-permission-controls": capability("built-in", "https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html", "Junie CLI action allowlist", "Default ask behavior, allow and deny rules, command patterns, MCP-tool rules, and Brave modes govern sensitive actions."),
+      "harness-subagents": capability("built-in", "https://junie.jetbrains.com/docs/junie-cli-subagents.html", "Junie CLI subagents", "Junie discovers project and user subagent definitions, delegates subtasks automatically, and can run independent work in parallel."),
+      "harness-structured-output": capability("built-in", "https://junie.jetbrains.com/docs/parameters.html", "Junie CLI reference", "Print mode supports text, JSON, and streaming JSON output, plus JSON input and output files."),
+    },
+  }),
 
   // 5. IDE extensions
   product({ id: "github-copilot-vscode", name: "GitHub Copilot for IDEs", categoryId: "ide-extensions", editorialOrder: 1, officialUrl: "https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-extension?tool=vscode", tags: ["vscode", "visual-studio", "jetbrains", "eclipse", "xcode", "neovim", "autocomplete", "agent-panel", "background-agent-client"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["host-ide-process", "vendor-cloud"], status: "active", claims: {
@@ -1753,6 +1789,25 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       "extension-install-channel": factClaim("VS Code and JetBrains marketplaces", "https://sourcegraph.com/docs/cody", "Sourcegraph Cody documentation"),
       "extension-tool-execution-boundary": factClaim("Host IDE with Sourcegraph Enterprise service", "https://sourcegraph.com/docs/cody", "Sourcegraph Cody Enterprise documentation"),
       "extension-byok-local-model": capability("built-in", "https://sourcegraph.com/docs/cody/enterprise/model-configuration", "Cody Enterprise model configuration", "Enterprise deployments can configure supported model providers and self-hosted inference endpoints."),
+    },
+  }),
+  product({
+    id: "junie-ide", name: "Junie for JetBrains IDEs", categoryId: "ide-extensions", editorialOrder: 20,
+    officialUrl: "https://junie.jetbrains.com/docs/junie-ide-plugin.html", repository: repo("JetBrains/junie", "metadata-only"),
+    tags: ["jetbrains", "android-studio", "agent-panel", "mcp", "byok", "local-models", "diff-review", "proprietary"],
+    platform: ["macos", "windows", "linux"], platformNote: "Junie runs in the documented JetBrains IDE family and Android Studio on the desktop operating systems supported by those hosts.",
+    platformSources: [{ url: "https://junie.jetbrains.com/docs/junie-ide-plugin.html", title: "Junie IDE plugin" }, { url: "https://www.jetbrains.com/help/idea/installation-guide.html", title: "IntelliJ IDEA installation guide" }],
+    source: "proprietary", sourceSource: { url: "https://github.com/JetBrains/junie/blob/main/LICENSE.md", title: "Junie repository license", basis: "repository-derived" },
+    execution: ["host-ide-process", "local-process", "vendor-cloud"], executionSource: { url: "https://www.jetbrains.com/help/ai-assistant/junie-agent.html", title: "Junie by JetBrains" },
+    status: "active", statusSource: { url: "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/", title: "Junie leaves beta" },
+    claims: {
+      ...builtInClaims("https://junie.jetbrains.com/docs/junie-ide-plugin.html", "Junie IDE plugin", ["extension-hosts", "extension-agent-panel", "extension-host-jetbrains", "extension-mcp", "extension-permissions", "extension-codebase-context"]),
+      "extension-background-delegation": capability("built-in", "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/", "Junie leaves beta", "Junie runs long tasks while the operator focuses elsewhere and reports progress in the IDE."),
+      "extension-provider-choice": capability("built-in", "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/", "Junie leaves beta", "Junie supports JetBrains-managed models, BYOK providers, and local model runtimes."),
+      "extension-checkpoints": capability("limited", "https://junie.jetbrains.com/docs/junie-ide-plugin.html", "Junie IDE plugin", "The Done panel supports file-by-file review and selective rollback; the documentation does not describe general task-scoped workspace snapshots."),
+      "extension-install-channel": factClaim("Bundled AI Chat / JetBrains Marketplace", "https://junie.jetbrains.com/docs/junie-ide-plugin.html", "Junie IDE plugin", "Junie downloads automatically from AI Chat or can be installed as a separate tool-window plugin from JetBrains Marketplace."),
+      "extension-tool-execution-boundary": factClaim("Host JetBrains IDE + local Junie engine", "https://www.jetbrains.com/help/ai-assistant/junie-agent.html", "Junie by JetBrains", "Junie can edit project files, run tests and terminal commands, and invoke approved IDE or MCP tools."),
+      "extension-byok-local-model": capability("built-in", "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/", "Junie leaves beta", "Junie supports Anthropic, OpenAI, Google, and other BYOK providers plus LiteLLM, LM Studio, and Ollama runtimes."),
     },
   }),
 

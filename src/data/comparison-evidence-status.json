@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-02T08:53:05.833Z",
+  "generatedAt": "2026-09-03T01:48:01.370Z",
   "sources": [
     {
       "id": "69c685f410104791dcf5",
@@ -148,6 +148,111 @@
       "reviewedHash": "4badd1ed67d7fda95b3005b80737151839d718db236a004b7e0ad9f945285939",
       "etag": "W/\"69ecefa3-7f00\"",
       "lastModified": "Sat, 25 Apr 2026 16:45:23 GMT",
+      "error": null
+    },
+    {
+      "id": "cbd66756ca391bc4b461",
+      "url": "https://air.dev/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "jetbrains-air",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://air.dev/",
+      "resolvedUrl": "https://air.dev/",
+      "lastCheckedAt": "2026-09-03T01:48:00.162Z",
+      "firstObservedAt": "2026-09-03T01:48:00.162Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 3257,
+      "contentHash": "ece12d6ccf7aae563c3b9b4a3c11693ce9502242c9b9ae98d8af70b6d36e6152",
+      "reviewedHash": "ece12d6ccf7aae563c3b9b4a3c11693ce9502242c9b9ae98d8af70b6d36e6152",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "eba39185b8825fa2c211",
+      "url": "https://air.dev/changelog",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "jetbrains-air",
+          "field": "orchestrator-agent-handoff",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "jetbrains-air",
+          "field": "orchestrator-live-steering",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "jetbrains-air",
+          "field": "orchestrator-task-board",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://air.dev/changelog",
+      "resolvedUrl": "https://air.dev/changelog",
+      "lastCheckedAt": "2026-09-03T01:48:00.175Z",
+      "firstObservedAt": "2026-09-03T01:48:00.175Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 3257,
+      "contentHash": "ece12d6ccf7aae563c3b9b4a3c11693ce9502242c9b9ae98d8af70b6d36e6152",
+      "reviewedHash": "ece12d6ccf7aae563c3b9b4a3c11693ce9502242c9b9ae98d8af70b6d36e6152",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "e2246df0b14c79b3f21b",
+      "url": "https://air.dev/download",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "jetbrains-air",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "jetbrains-air",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://air.dev/download",
+      "resolvedUrl": "https://air.dev/download",
+      "lastCheckedAt": "2026-09-03T01:48:00.175Z",
+      "firstObservedAt": "2026-09-03T01:48:00.175Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 3257,
+      "contentHash": "ece12d6ccf7aae563c3b9b4a3c11693ce9502242c9b9ae98d8af70b6d36e6152",
+      "reviewedHash": "ece12d6ccf7aae563c3b9b4a3c11693ce9502242c9b9ae98d8af70b6d36e6152",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -820,6 +925,152 @@
       "reviewedHash": "a08c89cf5e6d394004f891bfd049d6ded3b89a6dcb2fc148687108e3c8da331e",
       "etag": "W/\"69d4e2f1-1f2\"",
       "lastModified": "Tue, 07 Apr 2026 10:56:49 GMT",
+      "error": null
+    },
+    {
+      "id": "270f94e2b018263966f2",
+      "url": "https://blog.jetbrains.com/air/2026/03/air-launches-as-public-preview-a-new-wave-of-dev-tooling-built-on-26-years-of-experience/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "jetbrains-air",
+          "field": "orchestrator-attention-signals",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "jetbrains-air",
+          "field": "orchestrator-containers",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "jetbrains-air",
+          "field": "orchestrator-isolated-workspaces",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "jetbrains-air",
+          "field": "orchestrator-multi-harness",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "jetbrains-air",
+          "field": "orchestrator-parallel-workers",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "jetbrains-air",
+          "field": "orchestrator-review-delivery",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "jetbrains-air",
+          "field": "orchestrator-worktrees",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "jetbrains-air",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://blog.jetbrains.com/air/2026/03/air-launches-as-public-preview-a-new-wave-of-dev-tooling-built-on-26-years-of-experience/",
+      "resolvedUrl": "https://blog.jetbrains.com/air/2026/03/air-launches-as-public-preview-a-new-wave-of-dev-tooling-built-on-26-years-of-experience/",
+      "lastCheckedAt": "2026-09-03T01:48:00.176Z",
+      "firstObservedAt": "2026-09-03T01:48:00.176Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 138131,
+      "contentHash": "cef7c44190029af8171641e0f5122f39fb84d736cd1ef3d54ea565e8012f4a9d",
+      "reviewedHash": "cef7c44190029af8171641e0f5122f39fb84d736cd1ef3d54ea565e8012f4a9d",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "26a7e6c200fbeeff46bc",
+      "url": "https://blog.jetbrains.com/air/2026/06/jetbrains-air-lands-on-windows/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "jetbrains-air",
+          "field": "orchestrator-inline-review",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://blog.jetbrains.com/air/2026/06/jetbrains-air-lands-on-windows/",
+      "resolvedUrl": "https://blog.jetbrains.com/air/2026/06/jetbrains-air-lands-on-windows/",
+      "lastCheckedAt": "2026-09-03T01:48:00.176Z",
+      "firstObservedAt": "2026-09-03T01:48:00.176Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 128689,
+      "contentHash": "d4da49146a8aee85b6fde958dbf08beacb23e602421422589ab483a0e9275698",
+      "reviewedHash": "d4da49146a8aee85b6fde958dbf08beacb23e602421422589ab483a0e9275698",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "35684af2d712980fcce4",
+      "url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+      "bases": [
+        "repository-derived",
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-cli",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "extension-background-delegation",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "extension-byok-local-model",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "extension-provider-choice",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "profile.status",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+      "resolvedUrl": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+      "lastCheckedAt": "2026-09-03T01:48:00.176Z",
+      "firstObservedAt": "2026-09-03T01:48:00.176Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 136973,
+      "contentHash": "11d814662787b7c8969bbd5af1766f149c49b82eee98a11aa1e0ca45b49599c9",
+      "reviewedHash": "11d814662787b7c8969bbd5af1766f149c49b82eee98a11aa1e0ca45b49599c9",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -15433,6 +15684,41 @@
       "error": null
     },
     {
+      "id": "64f092b2be225ad1c04f",
+      "url": "https://github.com/JetBrains/junie/blob/main/LICENSE.md",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-cli",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://raw.githubusercontent.com/JetBrains/junie/main/LICENSE.md",
+      "resolvedUrl": "https://raw.githubusercontent.com/JetBrains/junie/main/LICENSE.md",
+      "lastCheckedAt": "2026-09-03T01:48:00.572Z",
+      "firstObservedAt": "2026-09-03T01:48:00.572Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "contentLength": 166,
+      "contentHash": "fe386c46d6a75885b90e402876464b4664787c907e08cee1f48dcf4616f1c02a",
+      "reviewedHash": "fe386c46d6a75885b90e402876464b4664787c907e08cee1f48dcf4616f1c02a",
+      "reviews": [],
+      "etag": "W/\"7c6edf5b0c26398ea004a56d11fa400a2395ca7d966a3899eb1bd7f005244c01\"",
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "2dbed305c9600201ceca",
       "url": "https://github.com/jhlee0409/claude-code-history-viewer",
       "bases": [
@@ -23326,6 +23612,326 @@
       "error": null
     },
     {
+      "id": "f2787bd8c25c896c7146",
+      "url": "https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-cli",
+          "field": "harness-permission-controls",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html",
+      "resolvedUrl": "https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html",
+      "lastCheckedAt": "2026-09-03T01:48:00.575Z",
+      "firstObservedAt": "2026-09-03T01:48:00.575Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "contentLength": 15719,
+      "contentHash": "ed5299a67ed4996e7a6503cd6cb2ba5c234e995e8cc6cf2273f0c8f0475ef0dd",
+      "reviewedHash": "ed5299a67ed4996e7a6503cd6cb2ba5c234e995e8cc6cf2273f0c8f0475ef0dd",
+      "reviews": [],
+      "etag": "\"6a96cc9c-3d67\"",
+      "lastModified": "Tue, 01 Sep 2026 13:01:16 GMT",
+      "error": null
+    },
+    {
+      "id": "983d079b08cac636081d",
+      "url": "https://junie.jetbrains.com/docs/guidelines-and-memory.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-cli",
+          "field": "harness-project-instructions",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://junie.jetbrains.com/docs/guidelines-and-memory.html",
+      "resolvedUrl": "https://junie.jetbrains.com/docs/guidelines-and-memory.html",
+      "lastCheckedAt": "2026-09-03T01:48:00.577Z",
+      "firstObservedAt": "2026-09-03T01:48:00.577Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "contentLength": 12727,
+      "contentHash": "580af0fca07bf5bc93c85e1ebeefa97f338689aa886cc4f4b0335bec95809313",
+      "reviewedHash": "580af0fca07bf5bc93c85e1ebeefa97f338689aa886cc4f4b0335bec95809313",
+      "reviews": [],
+      "etag": "\"6a96cc9c-31b7\"",
+      "lastModified": "Tue, 01 Sep 2026 13:01:16 GMT",
+      "error": null
+    },
+    {
+      "id": "2f6ea8f60d7309d099dd",
+      "url": "https://junie.jetbrains.com/docs/junie-cli-mcp-configuration.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-cli",
+          "field": "harness-extension-protocol",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://junie.jetbrains.com/docs/junie-cli-mcp-configuration.html",
+      "resolvedUrl": "https://junie.jetbrains.com/docs/junie-cli-mcp-configuration.html",
+      "lastCheckedAt": "2026-09-03T01:48:00.677Z",
+      "firstObservedAt": "2026-09-03T01:48:00.677Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "contentLength": 17059,
+      "contentHash": "2415ddc4a668592e1544bc3f5e9517f3f910615c79f4723a1fd4351d470874e5",
+      "reviewedHash": "2415ddc4a668592e1544bc3f5e9517f3f910615c79f4723a1fd4351d470874e5",
+      "reviews": [],
+      "etag": "\"6a96cc9c-42a3\"",
+      "lastModified": "Tue, 01 Sep 2026 13:01:16 GMT",
+      "error": null
+    },
+    {
+      "id": "e6558d23dde163055451",
+      "url": "https://junie.jetbrains.com/docs/junie-cli-subagents.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-cli",
+          "field": "harness-subagents",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://junie.jetbrains.com/docs/junie-cli-subagents.html",
+      "resolvedUrl": "https://junie.jetbrains.com/docs/junie-cli-subagents.html",
+      "lastCheckedAt": "2026-09-03T01:48:00.847Z",
+      "firstObservedAt": "2026-09-03T01:48:00.847Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "contentLength": 25562,
+      "contentHash": "d597c15a053389cc9157824d599fba7617c652624b100411b3def71f6084b5e8",
+      "reviewedHash": "d597c15a053389cc9157824d599fba7617c652624b100411b3def71f6084b5e8",
+      "reviews": [],
+      "etag": "\"6a96cc9c-63da\"",
+      "lastModified": "Tue, 01 Sep 2026 13:01:16 GMT",
+      "error": null
+    },
+    {
+      "id": "6387a4e5bdb3eda59b93",
+      "url": "https://junie.jetbrains.com/docs/junie-cli.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-cli",
+          "field": "harness-git-workflow",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-cli",
+          "field": "harness-interactive-cli",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-cli",
+          "field": "harness-multi-provider",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-cli",
+          "field": "harness-multimodal-input",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-cli",
+          "field": "harness-session-resume",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-cli",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-cli",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-cli",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://junie.jetbrains.com/docs/junie-cli.html",
+      "resolvedUrl": "https://junie.jetbrains.com/docs/junie-cli.html",
+      "lastCheckedAt": "2026-09-03T01:48:00.848Z",
+      "firstObservedAt": "2026-09-03T01:48:00.848Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "contentLength": 34240,
+      "contentHash": "e0f3c4cb03194da7eb411b0a08ce6479e7943084eeb59bdadf2bac58dffd2705",
+      "reviewedHash": "e0f3c4cb03194da7eb411b0a08ce6479e7943084eeb59bdadf2bac58dffd2705",
+      "reviews": [],
+      "etag": "\"6a96cc9c-85c0\"",
+      "lastModified": "Tue, 01 Sep 2026 13:01:16 GMT",
+      "error": null
+    },
+    {
+      "id": "bd3ab5db683170cabac2",
+      "url": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-cli",
+          "field": "harness-headless",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "resolvedUrl": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "lastCheckedAt": "2026-09-03T01:48:00.891Z",
+      "firstObservedAt": "2026-09-03T01:48:00.891Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "contentLength": 8621,
+      "contentHash": "75ea71540dda0460a35bf0038ec57c64e4b90bba362df071fc0d579458838c13",
+      "reviewedHash": "75ea71540dda0460a35bf0038ec57c64e4b90bba362df071fc0d579458838c13",
+      "reviews": [],
+      "etag": "\"6a96cc9c-21ad\"",
+      "lastModified": "Tue, 01 Sep 2026 13:01:16 GMT",
+      "error": null
+    },
+    {
+      "id": "4fe1bfaafe8245c78fdd",
+      "url": "https://junie.jetbrains.com/docs/junie-ide-plugin.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-ide",
+          "field": "extension-agent-panel",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "extension-checkpoints",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "extension-codebase-context",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "extension-host-jetbrains",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "extension-hosts",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "extension-install-channel",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "extension-mcp",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "extension-permissions",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "profile.primaryObject",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://junie.jetbrains.com/docs/junie-ide-plugin.html",
+      "resolvedUrl": "https://junie.jetbrains.com/docs/junie-ide-plugin.html",
+      "lastCheckedAt": "2026-09-03T01:48:01.040Z",
+      "firstObservedAt": "2026-09-03T01:48:01.040Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "contentLength": 42918,
+      "contentHash": "e665dd8940994a3b991052788bd05aab517e3b01d03da83b219f52ca455c7ef5",
+      "reviewedHash": "e665dd8940994a3b991052788bd05aab517e3b01d03da83b219f52ca455c7ef5",
+      "reviews": [],
+      "etag": "\"6a96cc9c-a7a6\"",
+      "lastModified": "Tue, 01 Sep 2026 13:01:16 GMT",
+      "error": null
+    },
+    {
+      "id": "5d394624f2a0a976f8a5",
+      "url": "https://junie.jetbrains.com/docs/parameters.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-cli",
+          "field": "harness-structured-output",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://junie.jetbrains.com/docs/parameters.html",
+      "resolvedUrl": "https://junie.jetbrains.com/docs/parameters.html",
+      "lastCheckedAt": "2026-09-03T01:48:01.042Z",
+      "firstObservedAt": "2026-09-03T01:48:01.042Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "contentLength": 29614,
+      "contentHash": "7f793dc8782fc1f81218250969bb4eb3c5d2e789bb8ae27532ae5dde89d499da",
+      "reviewedHash": "7f793dc8782fc1f81218250969bb4eb3c5d2e789bb8ae27532ae5dde89d499da",
+      "reviews": [],
+      "etag": "\"6a96cc9c-73ae\"",
+      "lastModified": "Tue, 01 Sep 2026 13:01:16 GMT",
+      "error": null
+    },
+    {
       "id": "1c2155d4ef86e1ffaba3",
       "url": "https://kandev.ai/docs/",
       "bases": [
@@ -29198,6 +29804,41 @@
       "error": null
     },
     {
+      "id": "0bfb723fa3859cabe284",
+      "url": "https://www.jetbrains.com/help/ai-assistant/junie-agent.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-ide",
+          "field": "extension-tool-execution-boundary",
+          "checkedAt": "2026-08-24"
+        },
+        {
+          "productId": "junie-ide",
+          "field": "profile.execution",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://www.jetbrains.com/help/ai-assistant/junie-agent.html",
+      "resolvedUrl": "https://www.jetbrains.com/help/ai-assistant/junie-agent.html",
+      "lastCheckedAt": "2026-09-03T01:48:01.057Z",
+      "firstObservedAt": "2026-09-03T01:48:01.057Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "contentLength": 31385,
+      "contentHash": "c8d01409d1ea1b636abd8db23d0367bda189db3fbeb879640b044c1a2fd4097d",
+      "reviewedHash": "c8d01409d1ea1b636abd8db23d0367bda189db3fbeb879640b044c1a2fd4097d",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
       "id": "35620c163b878b3b030d",
       "url": "https://www.jetbrains.com/help/ai-assistant/use-custom-models.html",
       "bases": [
@@ -29322,6 +29963,36 @@
       "contentLength": 12563,
       "contentHash": "f1a10fdfb0d1ac83ae5cb809996abd42d2fa1e1395b2b101bc564e110ef31d9d",
       "reviewedHash": "f1a10fdfb0d1ac83ae5cb809996abd42d2fa1e1395b2b101bc564e110ef31d9d",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
+      "error": null
+    },
+    {
+      "id": "c56eb6eecaf6fe9d747f",
+      "url": "https://www.jetbrains.com/help/idea/installation-guide.html",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "junie-ide",
+          "field": "profile.platform",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://www.jetbrains.com/help/idea/installation-guide.html",
+      "resolvedUrl": "https://www.jetbrains.com/help/idea/installation-guide.html",
+      "lastCheckedAt": "2026-09-03T01:48:01.063Z",
+      "firstObservedAt": "2026-09-03T01:48:01.063Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "contentLength": 38245,
+      "contentHash": "98d0a409ffba343dd75b1be3ebbd893619e37aedf3dcfde09b5de79803333aa5",
+      "reviewedHash": "98d0a409ffba343dd75b1be3ebbd893619e37aedf3dcfde09b5de79803333aa5",
       "reviews": [],
       "etag": null,
       "lastModified": null,
@@ -29562,6 +30233,36 @@
       "reviews": [],
       "etag": "W/\"6a96f064-65340\"",
       "lastModified": "Tue, 01 Sep 2026 15:33:56 GMT",
+      "error": null
+    },
+    {
+      "id": "23a16314e52a258089e5",
+      "url": "https://www.jetbrains.com/legal/docs/terms/jetbrains-air/",
+      "bases": [
+        "vendor-documented"
+      ],
+      "usedBy": [
+        {
+          "productId": "jetbrains-air",
+          "field": "profile.source",
+          "checkedAt": "2026-08-24"
+        }
+      ],
+      "latestReviewAt": "2026-08-24",
+      "status": "current",
+      "fetchUrl": "https://www.jetbrains.com/legal/docs/terms/jetbrains-air/",
+      "resolvedUrl": "https://www.jetbrains.com/legal/docs/terms/jetbrains-air/",
+      "lastCheckedAt": "2026-09-03T01:48:01.168Z",
+      "firstObservedAt": "2026-09-03T01:48:01.168Z",
+      "changeDetectedAt": null,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "contentLength": 66440,
+      "contentHash": "a71659a60b5a3b814b307c7c198fb5db11ed58d25431cb707fa50360f762ce96",
+      "reviewedHash": "a71659a60b5a3b814b307c7c198fb5db11ed58d25431cb707fa50360f762ce96",
+      "reviews": [],
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {

@@ -9,11 +9,11 @@ This ledger resolves every non-platform row through `getComparisonClaim()` for C
 | Category | Public products | Current rendered Unknowns | Remain Unknown |
 | --- | ---: | ---: | ---: |
 | Code IDEs | 19 | 92 | 92 |
-| IDE extensions | 19 | 117 | 117 |
+| IDE extensions | 20 | 121 | 121 |
 | Agent Multiplexers | 13 | 58 | 58 |
-| **Total** | **51** | **267** | **267** |
+| **Total** | **52** | **271** | **271** |
 
-The generated ledger has exact key parity with all 267 current rendered Unknown cells. Every cell has a product-and-row-specific rationale and every product has an exact-SKU first-party `sourcesChecked` list. The generator rejects missing, extra, or duplicate keys.
+The generated ledger has exact key parity with all 271 current rendered Unknown cells. Every cell has a product-and-row-specific rationale and every product has an exact-SKU first-party `sourcesChecked` list. The generator rejects missing, extra, or duplicate keys.
 
 ## Changed-source corrections preserved
 
@@ -106,6 +106,7 @@ These previously Unknown cells now resolve from the catalog to the audited state
 | `tabnine-agent` | 7 | 7 |
 | `windsurf-plugins` | 7 | 7 |
 | `sourcegraph-cody-enterprise` | 6 | 6 |
+| `junie-ide` | 4 | 4 |
 
 ### Agent Multiplexers
 

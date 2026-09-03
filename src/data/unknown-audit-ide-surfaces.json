@@ -18,14 +18,14 @@
     "platformHeaders": "Platform-header support is outside this rendered-cell ledger. An omitted OS in a known platform list is not treated as Unknown."
   },
   "summary": {
-    "products": 51,
-    "currentUnknownCells": 267,
+    "products": 52,
+    "currentUnknownCells": 271,
     "codeEditorUnknownCells": 92,
-    "ideExtensionUnknownCells": 117,
+    "ideExtensionUnknownCells": 121,
     "agentMultiplexerUnknownCells": 58,
     "appliedClosures": 14,
     "changedSourceCorrections": 14,
-    "remainUnknown": 267
+    "remainUnknown": 271
   },
   "categories": [
     {
@@ -1527,6 +1527,37 @@
               "rowId": "extension-remote-session-client",
               "result": "remain-unknown",
               "rationale": "Sourcegraph's current Cody Enterprise documentation establishes the supported IDE clients, codebase context, model configuration, and enterprise service boundary after the consumer Cody product ended. It does not establish a client for observing or steering a separately owned cloud or background session."
+            }
+          ]
+        },
+        {
+          "productId": "junie-ide",
+          "sourcesChecked": [
+            "https://junie.jetbrains.com/docs/junie-ide-plugin.html",
+            "https://github.com/JetBrains/junie",
+            "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+            "https://www.jetbrains.com/help/ai-assistant/junie-agent.html"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-inline-completion",
+              "result": "remain-unknown",
+              "rationale": "Junie's current JetBrains IDE documentation establishes its exact host family, agent panel, local tool execution, MCP, approvals, review flow, and model choices without inheriting Junie CLI worktree or CI behavior. It does not establish inline completion as a capability of this exact extension rather than the host editor or a sibling plugin."
+            },
+            {
+              "rowId": "extension-host-vscode",
+              "result": "remain-unknown",
+              "rationale": "Junie's current JetBrains IDE documentation establishes its exact host family, agent panel, local tool execution, MCP, approvals, review flow, and model choices without inheriting Junie CLI worktree or CI behavior. It does not establish a first-party VS Code or compatible-fork package for this exact extension SKU."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Junie's current JetBrains IDE documentation establishes its exact host family, agent panel, local tool execution, MCP, approvals, review flow, and model choices without inheriting Junie CLI worktree or CI behavior. It does not establish multiple concurrent extension agents with separate filesystem or Git worktree isolation."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Junie's current JetBrains IDE documentation establishes its exact host family, agent panel, local tool execution, MCP, approvals, review flow, and model choices without inheriting Junie CLI worktree or CI behavior. It does not establish a client for observing or steering a separately owned cloud or background session."
             }
           ]
         }

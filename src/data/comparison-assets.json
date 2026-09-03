@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-24",
+  "checkedAt": "2026-09-02",
   "products": {
     "visual-studio-code": {
       "name": "Visual Studio Code",
@@ -1349,6 +1349,30 @@
       "sourceUrl": "https://github.com/happier-dev/happier",
       "sourceType": "official-organization-avatar",
       "checkedAt": "2026-08-24"
+    },
+    "jetbrains-air": {
+      "name": "JetBrains Air",
+      "alt": "JetBrains Air logo",
+      "src": "/compare/logos/jetbrains-air.svg",
+      "sourceUrl": "https://github.com/JetBrains/logos/blob/HEAD/web/air/air.svg",
+      "sourceType": "official-vendor-brand-asset",
+      "checkedAt": "2026-09-02"
+    },
+    "junie-cli": {
+      "name": "Junie CLI",
+      "alt": "Junie CLI logo",
+      "src": "/compare/logos/junie-cli.svg",
+      "sourceUrl": "https://github.com/JetBrains/logos/blob/HEAD/web/junie/junie.svg",
+      "sourceType": "official-vendor-brand-asset",
+      "checkedAt": "2026-09-02"
+    },
+    "junie-ide": {
+      "name": "Junie for JetBrains IDEs",
+      "alt": "Junie for JetBrains IDEs logo",
+      "src": "/compare/logos/junie-ide.svg",
+      "sourceUrl": "https://github.com/JetBrains/logos/blob/HEAD/web/junie/junie.svg",
+      "sourceType": "official-vendor-brand-asset",
+      "checkedAt": "2026-09-02"
     }
   },
   "platforms": {
@@ -1390,7 +1414,7 @@
       "src": "/compare/platforms/ios.svg",
       "sourceUrl": "https://www.apple.com/ios/",
       "sourceType": "original-interface-glyph",
-      "checkedAt": "2026-08-24"
+      "checkedAt": "2026-09-02"
     },
     "web": {
       "name": "Web",
@@ -1398,7 +1422,7 @@
       "src": "/compare/platforms/web.svg",
       "sourceUrl": "https://www.w3.org/standards/",
       "sourceType": "original-interface-glyph",
-      "checkedAt": "2026-08-24"
+      "checkedAt": "2026-09-02"
     }
   }
 }

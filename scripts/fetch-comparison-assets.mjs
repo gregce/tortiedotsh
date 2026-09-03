@@ -3,7 +3,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
 
-const checkedAt = "2026-08-24";
+const checkedAt = "2026-09-02";
 const root = resolve(import.meta.dirname, "..");
 const publicRoot = resolve(root, "public/compare");
 const manifestPath = resolve(root, "src/data/comparison-assets.json");
@@ -61,6 +61,7 @@ const products = {
   "wave-terminal": ["Wave Terminal", avatar("wavetermdev"), "https://github.com/wavetermdev", "official-organization-avatar"],
   orca: ["Orca", raw("stablyai/orca", "resources/icon.png"), "https://github.com/stablyai/orca/blob/HEAD/resources/icon.png", "official-repository-asset"],
   conductor: ["Conductor", "https://www.conductor.build/icon.png?icon.7d575655.png", "https://www.conductor.build/", "official-site-icon"],
+  "jetbrains-air": ["JetBrains Air", raw("JetBrains/logos", "web/air/air.svg"), "https://github.com/JetBrains/logos/blob/HEAD/web/air/air.svg", "official-vendor-brand-asset"],
   "claude-code-desktop": ["Claude Code on desktop", avatar("anthropics"), "https://github.com/anthropics", "official-organization-avatar"],
   "poolside-desktop-assistant": ["Poolside Desktop Assistant", avatar("poolsideai"), "https://github.com/poolsideai", "official-organization-avatar"],
   bb: ["bb", raw("get-bb/bb", "apps/desktop/assets/icon.png"), "https://github.com/get-bb/bb/blob/HEAD/apps/desktop/assets/icon.png", "official-repository-asset"],
@@ -85,6 +86,7 @@ const products = {
   "cli-agent-orchestrator": ["AWS CLI Agent Orchestrator", avatar("awslabs"), "https://github.com/awslabs/cli-agent-orchestrator", "official-organization-avatar"],
   "oh-my-claudecode": ["Oh My ClaudeCode", avatar("Yeachan-Heo"), "https://github.com/Yeachan-Heo/oh-my-claudecode", "official-project-owner-avatar"],
   reasonix: ["Reasonix", avatar("esengine"), "https://github.com/esengine/DeepSeek-Reasonix", "official-project-owner-avatar"],
+  "junie-cli": ["Junie CLI", raw("JetBrains/logos", "web/junie/junie.svg"), "https://github.com/JetBrains/logos/blob/HEAD/web/junie/junie.svg", "official-vendor-brand-asset"],
   "agent-deck": ["agent-deck", raw("asheshgoplani/agent-deck", "site/logo.svg"), "https://github.com/asheshgoplani/agent-deck/blob/HEAD/site/logo.svg", "official-repository-asset"],
   "claude-code": ["Claude Code", avatar("anthropics"), "https://github.com/anthropics", "official-organization-avatar"],
   "codex-cli": ["Codex CLI", avatar("openai"), "https://github.com/openai", "official-organization-avatar"],
@@ -123,6 +125,7 @@ const products = {
   "amazon-q-developer-ide": ["Amazon Q Developer IDE extension", avatar("aws"), "https://github.com/aws", "official-organization-avatar"],
   "gemini-code-assist": ["Gemini Code Assist Standard / Enterprise extensions", avatar("google-gemini"), "https://github.com/google-gemini", "official-organization-avatar"],
   "jetbrains-ai-assistant": ["JetBrains AI Assistant", avatar("JetBrains"), "https://github.com/JetBrains", "official-organization-avatar"],
+  "junie-ide": ["Junie for JetBrains IDEs", raw("JetBrains/logos", "web/junie/junie.svg"), "https://github.com/JetBrains/logos/blob/HEAD/web/junie/junie.svg", "official-vendor-brand-asset"],
   cline: ["Cline extension", raw("cline/cline", "assets/icons/icon.svg"), "https://github.com/cline/cline/blob/HEAD/assets/icons/icon.svg", "official-repository-asset"],
   continue: ["Continue extension", raw("continuedev/continue", "extensions/vscode/media/icon.png"), "https://github.com/continuedev/continue/blob/HEAD/extensions/vscode/media/icon.png", "official-repository-asset"],
   "kilo-code": ["Kilo Code extension", raw("Kilo-Org/kilocode", "packages/kilo-vscode/assets/icons/kilo-dark.png"), "https://github.com/Kilo-Org/kilocode/blob/HEAD/packages/kilo-vscode/assets/icons/kilo-dark.png", "official-repository-asset"],

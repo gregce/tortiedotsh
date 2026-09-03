@@ -16,13 +16,13 @@
     "platformHeaders": "Products whose complete platform fact is Unknown are audited separately below. An omitted OS in a known platform list is not rendered as an Unknown table cell."
   },
   "summary": {
-    "products": 61,
-    "currentUnknownCells": 193,
-    "agentOrchestratorUnknownCells": 115,
-    "codingAgentHarnessUnknownCells": 78,
+    "products": 63,
+    "currentUnknownCells": 198,
+    "agentOrchestratorUnknownCells": 118,
+    "codingAgentHarnessUnknownCells": 80,
     "suggestedClosures": 0,
     "implementedClosures": 8,
-    "remainUnknown": 193
+    "remainUnknown": 198
   },
   "categories": [
     {
@@ -863,6 +863,34 @@
               "rationale": "Oh My ClaudeCode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Live steering and follow-ups” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
+        },
+        {
+          "productId": "jetbrains-air",
+          "sourcesChecked": [
+            "https://air.dev/",
+            "https://air.dev/download",
+            "https://air.dev/changelog",
+            "https://blog.jetbrains.com/air/2026/03/air-launches-as-public-preview-a-new-wave-of-dev-tooling-built-on-26-years-of-experience/",
+            "https://blog.jetbrains.com/air/2026/06/jetbrains-air-lands-on-windows/",
+            "https://www.jetbrains.com/legal/docs/terms/jetbrains-air/"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-pr-lifecycle",
+              "result": "remain-unknown",
+              "rationale": "Air's current first-party product pages establish local review, applying changes, and commits, but do not establish a complete product-owned pull-request lifecycle."
+            },
+            {
+              "rowId": "orchestrator-remote-execution",
+              "result": "remain-unknown",
+              "rationale": "Air currently documents local, Git-worktree, and Docker execution; planned cloud execution is not treated as a shipped remote-execution capability."
+            },
+            {
+              "rowId": "orchestrator-programmable",
+              "result": "remain-unknown",
+              "rationale": "The checked Air pages do not establish an external API, CLI, webhook, or automation contract for controlling Air tasks."
+            }
+          ]
         }
       ]
     },
@@ -1642,6 +1670,33 @@
               "rowId": "harness-multimodal-input",
               "result": "remain-unknown",
               "rationale": "Reasonix's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Image or web-page input” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "junie-cli",
+          "sourcesChecked": [
+            "https://junie.jetbrains.com/docs/junie-cli.html",
+            "https://github.com/JetBrains/junie",
+            "https://github.com/JetBrains/junie/blob/main/LICENSE.md",
+            "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+            "https://junie.jetbrains.com/docs/junie-headless.html",
+            "https://junie.jetbrains.com/docs/junie-cli-mcp-configuration.html",
+            "https://junie.jetbrains.com/docs/guidelines-and-memory.html",
+            "https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html",
+            "https://junie.jetbrains.com/docs/junie-cli-subagents.html",
+            "https://junie.jetbrains.com/docs/parameters.html"
+          ],
+          "cells": [
+            {
+              "rowId": "harness-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Junie documents project trust, action approvals, and optional Git worktrees, but the checked exact CLI sources do not establish a built-in process, filesystem, network, container, or VM sandbox."
+            },
+            {
+              "rowId": "harness-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Junie documents saved sessions, transcripts, Git worktrees, and review, but the checked exact CLI sources do not establish task checkpoints that rewind code or conversation state."
             }
           ]
         }
