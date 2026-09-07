@@ -19,17 +19,24 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # A queued refresh must start from the previous job's data commit,
+          # not the older event SHA captured when it was dispatched.
+          ref: ${{ github.ref_name }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
+      - name: Test refresh failure handling
+        run: npm run test:metrics
+
       - name: Refresh official forge metrics
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
-        run: node scripts/refresh-open-source-metrics.mjs
+        run: node scripts/refresh-open-source-metrics.mjs --allow-partial --report "${{ runner.temp }}/repository-refresh.json"
 
       - name: Validate refreshed repository data
         run: npm run validate:data
@@ -44,5 +51,22 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/data/open-source-metrics.json
           git commit -m "chore(data): refresh repository metrics"
-          git pull --rebase origin main
-          git push
+          for attempt in 1 2 3; do
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            npm run validate:data
+            if git push origin "HEAD:$GITHUB_REF_NAME"; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed; checking for concurrent commits."
+          done
+          echo "Could not publish repository metrics after 3 attempts."
+          exit 1
+
+      - name: Upload refresh diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: repository-metrics-refresh-report
+          path: ${{ runner.temp }}/repository-refresh.json
+          retention-days: 14
+          if-no-files-found: warn

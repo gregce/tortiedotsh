@@ -22,19 +22,18 @@ Repository collector                 Evidence monitor
        v                                      v
 Metrics and source-only CLOC       Content fingerprints
        |                                      |
+       v                                      v
+Structural validation              Structural validation
+       |                                      |
+       v                                      v
+Commit metrics snapshot            Commit evidence snapshot
+       |                                      |
        +------------------+-------------------+
-                          |
                           v
-                 Strict freshness audit
-                          |
-                  pass ---+--- fail
-                    |           |
-                    v           v
-             Commit snapshots   Keep last reviewed snapshot
-                    |
-                    v
-             Hosting rebuilds site
+                  Hosting rebuilds site
 ```
+
+The jobs run independently. Collection failures retain the affected fields and their original source timestamps; structural validation failures prevent publication. `audit:freshness` remains a separate strict completeness and age check, not a prerequisite for publishing healthy automated updates.
 
 ## Data ownership
 
@@ -424,7 +423,7 @@ This checks:
 - exact Unknown-ledger parity across all categories
 - exact evidence-registry coverage for known claim URLs
 
-Run the deployment gate before publishing:
+Run the strict completeness and age audit when reviewing data health:
 
 ```sh
 npm run audit:freshness
@@ -448,37 +447,42 @@ npm run build
 
 The build writes 11 routes to `dist`. It makes no forge or vendor requests.
 
-## Daily GitHub Actions job
+## Scheduled GitHub Actions jobs
 
-The workflow in [`.github/workflows/refresh-open-source-metrics.yml`](../../.github/workflows/refresh-open-source-metrics.yml) runs every day at 07:17 UTC. You can also start it with `workflow_dispatch` from the Actions interface.
+The daily [repository metrics workflow](../../.github/workflows/refresh-open-source-metrics.yml) runs at 07:17 UTC, with a 30-minute timeout. The weekly [LOC workflow](../../.github/workflows/refresh-repository-loc.yml) runs on Sunday at 09:17 UTC, with a 90-minute timeout. Both support `workflow_dispatch`.
 
-It performs these steps in order:
+Each job follows these steps.
 
 1. Checks out the repository.
 2. Installs Node.js 22.
-3. Installs CLOC.
-4. Refreshes every official forge record with CLOC enabled.
-5. Refreshes every known catalog evidence fingerprint.
-6. Runs the strict freshness audit.
-7. Commits the 2 generated snapshots when they changed.
-8. Pushes the bot commit to the checked-out branch.
+3. Runs `npm run test:metrics`, including simulated outages and repository identity changes.
+4. Refreshes official forge records with `--allow-partial`. Only the weekly job installs CLOC and adds `--loc`.
+5. Runs `npm run validate:data` to reject invalid identities and malformed comparison data.
+6. Commits and pushes the changed metrics snapshot.
+7. Uploads a JSON diagnostic report even when a later step fails. Reports are retained for 14 days.
 
-The workflow uses one concurrency group and does not cancel an active refresh. This prevents 2 jobs from writing competing snapshots.
+The jobs share one concurrency group and do not cancel an active refresh. Queued jobs check out the branch's latest commit when they start. Each push rebases and revalidates the data, with up to 3 attempts if another commit wins the race. Rebase conflicts fail safely without force-pushing. Manifest-specific CLOC timeouts can be up to 60 minutes.
 
-The job has a 90-minute timeout. Large repositories can set a manifest-specific CLOC timeout up to 60 minutes.
+The independent [evidence monitor](../../.github/workflows/refresh-comparison-evidence.yml) runs daily at 08:47 UTC. Changed documentation needs human review but does not block star counts or LOC updates.
 
 ### Failure behaviour
 
-The workflow does not commit when refresh or validation fails.
+Read-only HTTP requests retry transient network failures and HTTP 408/500/502/503/504 responses up to three attempts, each with a fresh 30-second timeout. Retries use backoff and jitter. Rate limits respect `Retry-After` and GitHub reset headers; limits requiring more than one minute stop that request instead of retrying too early. Permanent permission and not-found errors fail immediately. LOC clones also have bounded transient-error retries.
 
-This means:
+GitHub repository identities are compared case-insensitively, including clone URLs. A casing change such as `Hmbown/CodeWhale` to `Hmbown/Codewhale` is the same repository. A real rename or transfer requires manifest review before new facts are accepted.
 
-- the deployed site keeps serving its last reviewed snapshot
-- the failed run identifies the affected project or URL in its log
-- no partial snapshot reaches the default branch
-- the next deployment can be blocked by `audit:freshness` when the committed snapshot ages past its limit
+When retries are exhausted:
 
-The generated files on a failed runner are temporary. Reproduce the failure locally or rerun the workflow after fixing the source.
+- successful fields update; failed fields retain their last successful values and source timestamps
+- affected records are marked `partial` or `stale`, with explicit section errors
+- failed version lookups retain the previous LOC measurement instead of counting a different ref
+- daily metadata refreshes cannot clear an unresolved LOC error; LOC must be successfully verified again
+- a complete repository collection failure preserves the committed file and fails the job
+- structural validation failures block the commit, even with `--allow-partial`
+
+Job summaries show current/partial/stale counts and each failed section. The `repository-metrics-refresh-report` and `repository-loc-refresh-report` artifacts include per-source retrieval dates and LOC verification dates. A green run with warnings means valid partial progress, not that every field is fresh. Inspect its summary and use `npm run audit:freshness` for the strict health check.
+
+Local refreshes remain strict by default: exit code 2 means non-current records were written for inspection. Opt into partial progress with `--allow-partial`. Use `--report <path>` for JSON diagnostics and `--dry-run` to leave the snapshot unchanged.
 
 ## First deployment
 
@@ -489,15 +493,14 @@ Set up the repository before deploying the site.
 3. Give Actions read and write access to repository contents.
 4. Confirm that the workflow retains `permissions: contents: write`.
 5. Decide how the bot will work with branch protection.
-6. Run the `Refresh comparison data` workflow manually.
-7. Confirm that the strict audit passes.
+6. Run `Refresh repository metrics`, `Refresh repository LOC` and `Monitor comparison evidence` manually.
+7. Confirm structural validation passes and review each run's summary.
 8. Connect the hosting provider to the default branch.
 9. Configure the production build gate and output directory.
 
-Use this production build command from the repository root:
+The current production build command from the repository root is:
 
 ```sh
-npm run audit:freshness && \
 npm run build
 ```
 
@@ -540,10 +543,10 @@ The collectors only make read requests to product repositories and documentation
 
 ### Confirm a healthy daily refresh
 
-1. Open the latest `Refresh comparison data` Actions run.
-2. Confirm that repository refresh completed without partial or stale records.
-3. Confirm that the evidence registry reported its status counts.
-4. Confirm that `audit:freshness` passed.
+1. Open the latest `Refresh repository metrics` Actions run, and the latest `Refresh repository LOC` run for source counts.
+2. Read the job summary. Investigate any partial or stale records; a successful job can publish healthy fields while retaining explicit failures.
+3. Download the diagnostic artifact when you need per-source dates or exact section errors.
+4. Confirm that `Validate refreshed repository data` passed. Use `npm run audit:freshness` separately to check strict completeness and age.
 5. Confirm that the job either committed a snapshot or reported no changes.
 6. Confirm that the hosting provider deployed the resulting commit.
 
@@ -726,7 +729,7 @@ Run discovery monthly and open a pull request containing:
 
 Keep semantic changes out of the daily automatic snapshot commit. A reviewer should approve them before they change the catalog.
 
-The discovery workflow should upload its crawl report as a workflow artifact even when validation fails. This gives reviewers a durable change report, unlike the current daily runner where an uncommitted failed refresh exists only for the life of that runner and its logs.
+The discovery workflow should upload its crawl report as a workflow artifact even when validation fails, following the diagnostic-report pattern used by the repository refresh jobs.
 
 ### Unknown-source monitoring
 
@@ -763,7 +766,8 @@ Use this operating cadence:
 
 | Frequency | Work |
 | --- | --- |
-| daily | automatic forge refresh, CLOC, known evidence fingerprints, validation and snapshot commit |
+| daily | automatic forge refresh, known evidence fingerprints, validation and snapshot commits |
+| weekly | CLOC refresh and verification at resolved release/tag refs |
 | after a failed run | inspect and resolve the named project, source or freshness gate |
 | monthly | review changed and unreachable evidence, run documentation discovery when implemented |
 | quarterly | broader product discovery, taxonomy review and Unknown re-audit |
@@ -780,8 +784,8 @@ Before treating the deployed refresh system as accepted, confirm these observabl
 4. The production matrix shows the new `generatedAt` time.
 5. A test branch with an intentionally stale metric fails `audit:freshness`.
 6. A test branch with an intentionally changed evidence hash fails `audit:freshness`.
-7. A failed refresh does not commit partial data.
-8. The next successful run replaces the failed snapshot cleanly.
+7. An exhausted request preserves its field values and dates, appears in the summary and report, and does not block valid updates to other fields. A total outage or structural validation failure cannot publish.
+8. The next successful refresh clears the corresponding errors. Daily metadata updates leave unresolved LOC errors visible.
 9. Product pages load without third-party image or data requests.
 10. Branch protection does not prevent the chosen bot or pull-request model.
 
@@ -794,9 +798,11 @@ Run these commands from the repository root unless stated otherwise.
 | Command | Purpose |
 | --- | --- |
 | `npm run validate:data` | check structural data, evidence, assets and Unknown parity |
-| `npm run audit:freshness` | run the production completeness and age gate |
+| `npm run audit:freshness` | run the strict completeness and age audit |
+| `npm run test:metrics` | test identity rules, retry limits, partial progress and total-outage preservation without network access |
 | `npm run refresh:metrics` | refresh forge metrics without running CLOC |
 | `npm run refresh:metrics -- --loc` | refresh forge metrics and source-only CLOC |
+| `npm run refresh:metrics -- --allow-partial --report /tmp/repository-refresh.json` | publish healthy fields with explicit failure diagnostics |
 | `npm run refresh:metrics -- --project <id>` | refresh one metrics record |
 | `npm run refresh:metrics -- --sync-only` | reconcile the manifest without network access |
 | `npm run refresh:evidence` | refresh every known catalog evidence fingerprint |

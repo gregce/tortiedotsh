@@ -2,6 +2,7 @@
 
 import { access, readFile, readdir } from "node:fs/promises";
 import { resolve } from "node:path";
+import { repositoryIdentityMatches } from "./lib/repository-refresh.mjs";
 import {
   comparisonCategories,
   comparisonProducts,
@@ -322,12 +323,7 @@ for (const record of metrics.projects) {
   const project = manifestById.get(record.id);
   if (!project) continue;
   check(
-    record.owner.toLowerCase() === project.owner.toLowerCase() &&
-      record.repo.toLowerCase() === project.repo.toLowerCase() &&
-      (record.forge || "github") === manifestForge(project) &&
-      (record.repositoryUrl || record.githubUrl).toLowerCase() === manifestRepositoryUrl(project).toLowerCase() &&
-      record.cloneUrl === (project.cloneUrl || `${manifestRepositoryUrl(project)}.git`) &&
-      record.metricScope === (project.metricScope || null),
+    repositoryIdentityMatches(project, record),
     `${record.id} generated metrics identity is stale relative to the manifest.`,
   );
   if (project.license?.components) {

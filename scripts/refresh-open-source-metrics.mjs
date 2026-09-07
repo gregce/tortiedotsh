@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
 import { execFile } from "node:child_process";
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { appendFile, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { promisify } from "node:util";
+import { fetchWithRetry, repositoryIdentityMatches } from "./lib/repository-refresh.mjs";
 
 const execFileAsync = promisify(execFile);
 const LOC_METHODOLOGY = "source-code-v2";
@@ -58,6 +59,8 @@ Options:
   --manifest <path>     Override the manifest path
   --output <path>       Override the generated output path
   --concurrency <n>     Concurrent forge refreshes (default: 3)
+  --allow-partial       Publish valid updates with explicit stale-field warnings
+  --report <path>       Write a JSON refresh diagnostic report
   --sync-only           Add/remove manifest records without network access
   --dry-run             Fetch and validate without writing
   --help                Show this help
@@ -77,6 +80,8 @@ function parseArguments(argv) {
     concurrency: 3,
     dryRun: false,
     syncOnly: false,
+    allowPartial: false,
+    report: null,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -84,16 +89,18 @@ function parseArguments(argv) {
     if (argument === "--loc") options.includeLoc = true;
     else if (argument === "--dry-run") options.dryRun = true;
     else if (argument === "--sync-only") options.syncOnly = true;
+    else if (argument === "--allow-partial") options.allowPartial = true;
     else if (argument === "--help") {
       usage();
       process.exit(0);
-    } else if (["--project", "--manifest", "--output", "--concurrency"].includes(argument)) {
+    } else if (["--project", "--manifest", "--output", "--concurrency", "--report"].includes(argument)) {
       const value = argv[index + 1];
       if (!value || value.startsWith("--")) throw new Error(`${argument} requires a value`);
       index += 1;
       if (argument === "--project") options.projectIds.push(value);
       if (argument === "--manifest") options.manifest = resolve(process.cwd(), value);
       if (argument === "--output") options.output = resolve(process.cwd(), value);
+      if (argument === "--report") options.report = resolve(process.cwd(), value);
       if (argument === "--concurrency") options.concurrency = Number(value);
     } else {
       throw new Error(`Unknown argument: ${argument}`);
@@ -105,6 +112,9 @@ function parseArguments(argv) {
   }
   if (options.syncOnly && (options.includeLoc || options.projectIds.length > 0)) {
     throw new Error("--sync-only cannot be combined with --loc or --project");
+  }
+  if (options.report && [options.output, options.manifest].includes(options.report)) {
+    throw new Error("--report must not overwrite the manifest or metrics snapshot");
   }
   return options;
 }
@@ -312,7 +322,7 @@ async function githubRequest(path, { allow404 = false } = {}) {
   };
   if (githubToken) headers.Authorization = `Bearer ${githubToken}`;
 
-  const response = await fetch(url, { headers, signal: AbortSignal.timeout(30_000) });
+  const response = await fetchWithRetry(url, { headers });
   if (allow404 && response.status === 404) return null;
   if (!response.ok) {
     const body = await response.text();
@@ -344,7 +354,7 @@ async function gitlabRequest(url, { allow404 = false } = {}) {
   };
   if (gitlabToken) headers["PRIVATE-TOKEN"] = gitlabToken;
 
-  const response = await fetch(url, { headers, signal: AbortSignal.timeout(30_000) });
+  const response = await fetchWithRetry(url, { headers });
   if (allow404 && response.status === 404) return null;
   if (!response.ok) {
     const body = await response.text();
@@ -372,11 +382,10 @@ async function gitlabGraphqlRequest(query, variables) {
     "User-Agent": "tortie-open-source-metrics",
   };
   if (gitlabToken) headers.Authorization = `Bearer ${gitlabToken}`;
-  const response = await fetch(gitlabGraphqlApi, {
+  const response = await fetchWithRetry(gitlabGraphqlApi, {
     method: "POST",
     headers,
     body: JSON.stringify({ query, variables }),
-    signal: AbortSignal.timeout(30_000),
   });
   if (!response.ok) {
     const body = await response.text();
@@ -404,13 +413,12 @@ async function gitlabGraphqlRequest(query, variables) {
 }
 
 async function verifyPublicSource(url) {
-  const response = await fetch(url, {
+  const response = await fetchWithRetry(url, {
     headers: {
       Accept: "text/html,application/xhtml+xml",
       "User-Agent": "tortie-open-source-metrics",
     },
     redirect: "follow",
-    signal: AbortSignal.timeout(30_000),
   });
   if (!response.ok) {
     throw new Error(`Policy source returned ${response.status} for ${url}`);
@@ -833,13 +841,9 @@ async function latestVersion(project) {
 }
 
 function baseRecord(project, previous) {
-  const prior =
-    previous?.owner?.toLowerCase() === project.owner.toLowerCase() &&
-    previous?.repo?.toLowerCase() === project.repo.toLowerCase()
-      ? previous
-      : null;
+  const prior = repositoryIdentityMatches(project, previous) ? previous : null;
   const priorErrors = prior?.errors || [];
-  const policyResolvesVersionError = project.release?.mode === "default-branch" && priorErrors.every((error) => error.section === "version");
+  const policyResolvesVersionError = project.release?.mode === "default-branch" && priorErrors.length > 0 && priorErrors.every((error) => error.section === "version");
   const record = {
     id: project.id,
     name: project.name,
@@ -906,9 +910,13 @@ function baseRecord(project, previous) {
   return record;
 }
 
-async function refreshProject(project, previous, includeLoc) {
+export async function refreshProject(project, previous, includeLoc) {
   const record = baseRecord(project, previous);
-  record.errors = [];
+  const priorLoc = record.loc;
+  // The daily metadata job cannot clear an unresolved weekly LOC failure.
+  record.errors = project.loc.enabled
+    ? record.errors.filter((error) => error.section === "loc")
+    : [];
   const currentSources = [];
   let repositoryCurrent = false;
 
@@ -917,6 +925,11 @@ async function refreshProject(project, previous, includeLoc) {
     const repository = forge === "gitlab"
       ? await gitlabRequest(`${project.apiUrl}?statistics=true&license=true`)
       : await githubRequest(`/repos/${project.owner}/${project.repo}`);
+    const repositoryUrl = forge === "gitlab" ? repository.data.web_url : repository.data.html_url;
+    const cloneUrl = forge === "gitlab" ? repository.data.http_url_to_repo : repository.data.clone_url;
+    if (!repositoryUrl || !cloneUrl || !repositoryIdentityMatches(project, { ...record, repositoryUrl, cloneUrl })) {
+      throw new Error(`Repository identity changed to ${repositoryUrl}; review the manifest before accepting a rename or transfer`);
+    }
     repositoryCurrent = true;
     record.stars = forge === "gitlab" ? repository.data.star_count ?? null : repository.data.stargazers_count ?? null;
     record.forks = repository.data.forks_count ?? null;
@@ -1056,6 +1069,9 @@ async function refreshProject(project, previous, includeLoc) {
 
     if (includeLoc) {
       try {
+        if (project.loc.enabled && !versionCurrent) {
+          throw new Error("Version lookup failed; retaining the previous LOC measurement and verification date");
+        }
         const measuredRef = versionCurrent
           ? record.latestRelease?.tagName || record.latestTag?.name || record.defaultBranch
           : record.defaultBranch;
@@ -1068,9 +1084,10 @@ async function refreshProject(project, previous, includeLoc) {
           project,
           measuredRef,
           refType,
-          previous?.loc,
+          priorLoc,
           record.latestTag?.commitSha || null,
         );
+        record.errors = record.errors.filter((error) => error.section !== "loc");
         if (record.loc.status === "measured") {
           currentSources.push({
             type: "loc-measurement",
@@ -1079,8 +1096,9 @@ async function refreshProject(project, previous, includeLoc) {
           });
         }
       } catch (error) {
+        record.errors = record.errors.filter((item) => item.section !== "loc");
         record.errors.push({ section: "loc", message: error.message });
-        record.loc = previous?.loc || nullLoc("failed", error.message);
+        record.loc = priorLoc.status === "measured" ? priorLoc : nullLoc("failed", error.message);
       }
     } else if (!project.loc.enabled) {
       record.loc = nullLoc("disabled", project.loc.reason || "Disabled in manifest");
@@ -1098,7 +1116,7 @@ async function refreshProject(project, previous, includeLoc) {
       replacedTypes.add("loc-checkout");
       replacedTypes.add("loc-ref-verification");
     }
-    const retainedSources = (previous?.sources || []).filter((item) => !replacedTypes.has(item.type));
+    const retainedSources = record.sources.filter((item) => !replacedTypes.has(item.type));
     record.sources = [...retainedSources, ...currentSources];
   }
   record.refreshedAt = repositoryCurrent ? new Date().toISOString() : record.refreshedAt;
@@ -1122,8 +1140,32 @@ async function mapWithConcurrency(items, limit, mapper) {
   return output;
 }
 
-async function main() {
-  const options = parseArguments(process.argv.slice(2));
+async function reportRefresh(options, refreshed) {
+  const report = {
+    checkedAt: new Date().toISOString(),
+    includeLoc: options.includeLoc,
+    allowPartial: options.allowPartial,
+    counts: Object.fromEntries(["current", "partial", "stale"].map((status) => [status, refreshed.filter((project) => project.status === status).length])),
+    projects: refreshed.map(({ id, status, refreshedAt, loc, sources, errors }) => ({
+      id, status, refreshedAt, locVerifiedAt: loc?.verifiedAt || loc?.measuredAt || null, sources, errors,
+    })),
+  };
+  if (options.report) await writeFile(options.report, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    const escape = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("|", "&#124;").replace(/[\r\n]+/g, " ");
+    const issues = refreshed.flatMap((project) => project.errors.map((error) =>
+      `| ${escape(project.id)} | ${escape(error.section)} | ${escape(error.message)} |`));
+    await appendFile(process.env.GITHUB_STEP_SUMMARY, [
+      `## Repository ${options.includeLoc ? "metrics and LOC" : "metrics"} refresh`, "",
+      `${report.counts.current} current, ${report.counts.partial} partial, ${report.counts.stale} stale.`, "",
+      "Failed fields retain their last successful values and source timestamps. Structural validation must pass before publication.", "",
+      ...(issues.length ? ["| Project | Section | Issue |", "| --- | --- | --- |", ...issues] : ["All selected repositories refreshed successfully."]), "",
+    ].join("\n"));
+  }
+}
+
+export async function main(argv = process.argv.slice(2)) {
+  const options = parseArguments(argv);
   const manifest = await readJson(options.manifest);
   validateManifest(manifest);
 
@@ -1151,7 +1193,7 @@ async function main() {
       await writeFile(options.output, `${JSON.stringify(output, null, 2)}\n`, "utf8");
       console.log(`Synced ${output.projects.length} manifest record(s) to ${options.output} without network access.`);
     }
-    return;
+    return 0;
   }
   const requestedIds = new Set(options.projectIds);
   const unknownIds = options.projectIds.filter((id) => !manifest.projects.some((project) => project.id === id));
@@ -1174,6 +1216,7 @@ async function main() {
   const refreshedById = new Map(refreshed.map((project) => [project.id, project]));
   const projects = manifest.projects.map((project) => refreshedById.get(project.id) || baseRecord(project, previousById.get(project.id)));
   const successful = refreshed.filter((project) => project.status !== "stale").length;
+  await reportRefresh(options, refreshed);
   if (selected.length > 0 && successful === 0) {
     throw new Error("Every selected repository refresh failed; preserving the committed fallback file");
   }
@@ -1196,11 +1239,14 @@ async function main() {
   const partial = refreshed.filter((project) => project.status !== "current");
   if (partial.length > 0) {
     console.warn(`Completed with non-current records: ${partial.map((project) => project.id).join(", ")}`);
-    process.exitCode = 2;
+    return options.allowPartial ? 0 : 2;
   }
+  return 0;
 }
 
-main().catch((error) => {
-  console.error(error.message);
-  process.exitCode = 1;
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  main().then((code) => { process.exitCode = code; }).catch((error) => {
+    console.error(error.message);
+    process.exitCode = 1;
+  });
+}

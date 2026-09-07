@@ -84,7 +84,7 @@ npm run refresh:evidence
 npm run refresh:assets
 ```
 
-Repository metrics and source fingerprints are refreshed by scheduled GitHub Actions. Capability claims remain tied to first-party evidence and require human review. See [comparison data operations](docs/operations/comparison-data-refresh.md) for the full maintenance contract.
+Repository metrics refresh daily; source-line counts refresh weekly. Both jobs retry temporary errors and publish valid updates while retaining failed fields with their original source dates and explicit warnings. Run summaries and diagnostic artifacts identify anything still stale. `npm run test:metrics` tests this failure handling without network access; `npm run audit:freshness` remains the strict health check. Source fingerprints refresh independently, and capability claims require human review. See [comparison data operations](docs/operations/comparison-data-refresh.md) for the full maintenance contract.
 
 ## Changelog
 
