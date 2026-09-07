@@ -913,6 +913,11 @@ function baseRecord(project, previous) {
 export async function refreshProject(project, previous, includeLoc) {
   const record = baseRecord(project, previous);
   const priorLoc = record.loc;
+  const priorSupplemental = {
+    openIssues: record.openIssues,
+    pushedAt: record.pushedAt,
+    archived: record.archived,
+  };
   // The daily metadata job cannot clear an unresolved weekly LOC failure.
   record.errors = project.loc.enabled
     ? record.errors.filter((error) => error.section === "loc")
@@ -976,18 +981,21 @@ export async function refreshProject(project, previous, includeLoc) {
         record.openIssues = parseGitlabTotal(supplemental[0].value, supplemental[0].value.data.length);
         currentSources.push(source("open-issues", supplemental[0].value));
       } else if (!Number.isInteger(record.openIssues)) {
+        record.openIssues = priorSupplemental.openIssues;
         record.errors.push({ section: "open-issues", message: supplemental[0].reason.message });
       }
       if (supplemental[1].status === "fulfilled") {
         record.pushedAt = supplemental[1].value.data[0]?.committed_date || record.pushedAt;
         currentSources.push(source("last-commit", supplemental[1].value));
       } else {
+        record.pushedAt = priorSupplemental.pushedAt;
         record.errors.push({ section: "last-commit", message: supplemental[1].reason.message });
       }
       if (supplemental[2].status === "fulfilled" && typeof supplemental[2].value.data?.project?.archived === "boolean") {
         record.archived = supplemental[2].value.data.project.archived;
         currentSources.push(source("archive-status", supplemental[2].value));
       } else if (typeof record.archived !== "boolean") {
+        record.archived = priorSupplemental.archived;
         const message = supplemental[2].status === "rejected"
           ? supplemental[2].reason.message
           : "GitLab GraphQL omitted archive status";

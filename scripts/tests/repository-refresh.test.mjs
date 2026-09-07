@@ -149,6 +149,41 @@ test("a failed version lookup retains release-tag LOC instead of counting main",
   assert.equal(record.sources.find((source) => source.type === "loc-measurement").fetchedAt, priorDate);
 });
 
+test("GitLab supplemental outages retain prior values and per-field dates", async (t) => {
+  const gitlab = {
+    ...project, forge: "gitlab", owner: "example", repo: "app",
+    repositoryUrl: "https://gitlab.com/example/app", cloneUrl: "https://gitlab.com/example/app.git",
+    apiUrl: "https://gitlab.com/api/v4/projects/example%2Fapp",
+    release: { mode: "default-branch", reason: "No stable releases", checkedAt: "2026-08-30" },
+  };
+  const prior = {
+    ...previous, ...gitlab, loc: previous.loc,
+    openIssues: 5, pushedAt: priorDate, archived: false,
+    sources: ["open-issues", "last-commit", "archive-status"].map((type) => ({ type, url: gitlab.apiUrl, fetchedAt: priorDate })),
+  };
+  t.mock.method(globalThis, "fetch", async (url) => {
+    if (url.includes("?statistics=")) return json({
+      web_url: gitlab.repositoryUrl, http_url_to_repo: gitlab.cloneUrl,
+      default_branch: "main", star_count: 42, statistics: { repository_size: 2000 },
+      last_activity_at: "2026-09-01T00:00:00.000Z",
+    });
+    if (url.endsWith("/languages")) return json({ JavaScript: 100 });
+    if (url.includes("/contributors?")) return json([]);
+    if (url.includes("/issues?") || url.includes("/commits?") || url.endsWith("/graphql")) return json({}, 401);
+    throw new Error(`Unexpected request: ${url}`);
+  });
+  const record = await refreshProject(gitlab, prior, false);
+  assert.equal(record.status, "partial");
+  assert.equal(record.stars, 42);
+  assert.equal(record.openIssues, 5);
+  assert.equal(record.pushedAt, priorDate);
+  assert.equal(record.archived, false);
+  assert.deepEqual(record.errors.map((error) => error.section), ["open-issues", "last-commit", "archive-status"]);
+  for (const type of ["open-issues", "last-commit", "archive-status"]) {
+    assert.equal(record.sources.find((source) => source.type === type).fetchedAt, priorDate);
+  }
+});
+
 test("daily metadata refresh cannot clear a weekly LOC failure", async (t) => {
   mockForge(t);
   const record = await refreshProject(project, { ...previous, errors: [{ section: "loc", message: "clone failed" }] }, false);
