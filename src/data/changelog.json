@@ -2,6 +2,172 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.101.0",
+      "date": "2026-09-07",
+      "summary": "This release is about light mode. The whole app can now sit on paper rather than graphite, terminal and editor and diffs included, and the frame controls work the same way on both. A codex session you restore after a reboot now opens instead of refusing, and a development build no longer disagrees with the installed app about which tmux to use.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Tortie can run light. Settings then Appearance offers Light, Dark or Match the Mac, and the terminal, the editor, the diff view, the Architecture map and the window itself all follow. Switching is a crossfade, and it is instant if you have reduced motion turned on",
+              "commits": [
+                {
+                  "hash": "4ab4400",
+                  "url": "https://github.com/gregce/tortie/commit/4ab4400"
+                },
+                {
+                  "hash": "419bc5f",
+                  "url": "https://github.com/gregce/tortie/commit/419bc5f"
+                },
+                {
+                  "hash": "4564106",
+                  "url": "https://github.com/gregce/tortie/commit/4564106"
+                }
+              ]
+            },
+            {
+              "text": "The colour and depth controls work on light as they do on dark, and a control that cannot move on the base you are using is simply not shown. A shade you chose on dark comes back when you choose Dark again",
+              "commits": [
+                {
+                  "hash": "a5a846a",
+                  "url": "https://github.com/gregce/tortie/commit/a5a846a"
+                }
+              ]
+            },
+            {
+              "text": "Settings now says why the Claude usage meter is polling, so a meter that is working is not mistaken for one that is stuck",
+              "commits": [
+                {
+                  "hash": "2f96be2",
+                  "url": "https://github.com/gregce/tortie/commit/2f96be2"
+                }
+              ]
+            },
+            {
+              "text": "The repository carries a costing of what shipping Tortie on Linux and Windows would take, written to be read rather than filed",
+              "commits": [
+                {
+                  "hash": "4e1b98c",
+                  "url": "https://github.com/gregce/tortie/commit/4e1b98c"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Restoring a codex session after a reboot now opens the conversation you actually had. It could name one of that session's sub-agents instead, which codex refuses to resume; rows already stored that way are repaired once, and a row whose parent cannot be found is left alone rather than guessed at",
+              "commits": [
+                {
+                  "hash": "ac13925",
+                  "url": "https://github.com/gregce/tortie/commit/ac13925"
+                },
+                {
+                  "hash": "f2acc9e",
+                  "url": "https://github.com/gregce/tortie/commit/f2acc9e"
+                }
+              ]
+            },
+            {
+              "text": "A development build and the installed app now run the same tmux, so they can no longer disagree about a session server after a restart. If they ever do, the message says which app started the server and what to run",
+              "commits": [
+                {
+                  "hash": "1bd4094",
+                  "url": "https://github.com/gregce/tortie/commit/1bd4094"
+                },
+                {
+                  "hash": "dfea858",
+                  "url": "https://github.com/gregce/tortie/commit/dfea858"
+                }
+              ]
+            },
+            {
+              "text": "The idle and ended session dots are readable on every frame colour you can choose. On some of them they were too faint against the selected row",
+              "commits": [
+                {
+                  "hash": "c38b4d4",
+                  "url": "https://github.com/gregce/tortie/commit/c38b4d4"
+                }
+              ]
+            },
+            {
+              "text": "In the git graph on light, six branches side by side stay distinguishable to a colour-blind reader",
+              "commits": [
+                {
+                  "hash": "065d41e",
+                  "url": "https://github.com/gregce/tortie/commit/065d41e"
+                }
+              ]
+            },
+            {
+              "text": "Clearing a session while text is selected no longer copies nothing in silence — the selection goes with the history",
+              "commits": [
+                {
+                  "hash": "4564106",
+                  "url": "https://github.com/gregce/tortie/commit/4564106"
+                }
+              ]
+            },
+            {
+              "text": "One very long session name no longer stretches the diagnostics table, and the live capture window is the interval it says it is",
+              "commits": [
+                {
+                  "hash": "c7b9b8b",
+                  "url": "https://github.com/gregce/tortie/commit/c7b9b8b"
+                },
+                {
+                  "hash": "91212ae",
+                  "url": "https://github.com/gregce/tortie/commit/91212ae"
+                }
+              ]
+            },
+            {
+              "text": "Adding a login refuses a folder reached through a link, and a login record Tortie did not write no longer authorises anything to be swept away",
+              "commits": [
+                {
+                  "hash": "4a4823d",
+                  "url": "https://github.com/gregce/tortie/commit/4a4823d"
+                },
+                {
+                  "hash": "9a94ff9",
+                  "url": "https://github.com/gregce/tortie/commit/9a94ff9"
+                }
+              ]
+            },
+            {
+              "text": "Choosing another account now reports what actually happened, including when a running session could not be checked. Quitting settles credential work rather than abandoning it mid-write, and removing a login during a quit no longer stops half-done",
+              "commits": [
+                {
+                  "hash": "e1a1359",
+                  "url": "https://github.com/gregce/tortie/commit/e1a1359"
+                },
+                {
+                  "hash": "ff60e49",
+                  "url": "https://github.com/gregce/tortie/commit/ff60e49"
+                },
+                {
+                  "hash": "2ff1c5d",
+                  "url": "https://github.com/gregce/tortie/commit/2ff1c5d"
+                }
+              ]
+            },
+            {
+              "text": "Migrating a stored credential says why it refused when it refuses, and counts only the deletions that really happened",
+              "commits": [
+                {
+                  "hash": "b3c3a80",
+                  "url": "https://github.com/gregce/tortie/commit/b3c3a80"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.100.0",
       "date": "2026-09-03",
       "summary": "This release is about the account a session runs on and the frame around it. Choosing another account now reaches a session that is already running, and signing in inside a session is noticed the moment it finishes. The frame can take a colour of your own, darker or lighter, and a selection you scrolled through now copies all of it.",
