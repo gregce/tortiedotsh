@@ -2,6 +2,391 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.102.0",
+      "date": "2026-09-09",
+      "summary": "This release is about the redline you can rewind, accept and now type in. Every edit to a prose file shows up as a marking against what the file was, whether git has noticed it or not, and a change you point at either goes back with one key or stops being marked with another, without the file being touched. The editor answers a right click now too, and saving a file somebody else has written to asks you first.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "The Redline tab for a Markdown or text file now marks every change since the last commit, or since you opened the file when it is not in git. It redraws by itself when an agent writes to the file, and it waits while you have unsaved edits",
+              "commits": [
+                {
+                  "hash": "8e036fc",
+                  "url": "https://github.com/gregce/tortie/commit/8e036fc"
+                },
+                {
+                  "hash": "f41a5e3",
+                  "url": "https://github.com/gregce/tortie/commit/f41a5e3"
+                },
+                {
+                  "hash": "94e21c6",
+                  "url": "https://github.com/gregce/tortie/commit/94e21c6"
+                }
+              ]
+            },
+            {
+              "text": "Point at a change in the redline with Option-Down and Option-Up, press Option-Delete, and that one phrase goes back to what it was while every other edit in the file stands. Your own paragraph carries the same control as an agent's, so a rewind can be undone with Shift-Option-Delete for as long as the tab is open",
+              "commits": [
+                {
+                  "hash": "fd7ea6c",
+                  "url": "https://github.com/gregce/tortie/commit/fd7ea6c"
+                },
+                {
+                  "hash": "d9590ea",
+                  "url": "https://github.com/gregce/tortie/commit/d9590ea"
+                },
+                {
+                  "hash": "1cb818e",
+                  "url": "https://github.com/gregce/tortie/commit/1cb818e"
+                },
+                {
+                  "hash": "d9ac372",
+                  "url": "https://github.com/gregce/tortie/commit/d9ac372"
+                }
+              ]
+            },
+            {
+              "text": "A rewind is written only if the file still holds exactly what Tortie read when you pressed. If something wrote to it in between, or the phrase is no longer there, nothing is written and the redline says which, though a write of exactly the same size landing in the same instant as the rewind can still be written over",
+              "commits": [
+                {
+                  "hash": "71fa4f8",
+                  "url": "https://github.com/gregce/tortie/commit/71fa4f8"
+                },
+                {
+                  "hash": "389a47f",
+                  "url": "https://github.com/gregce/tortie/commit/389a47f"
+                }
+              ]
+            },
+            {
+              "text": "The redline now says what its keys are. Point at a change, or step to it, and a small panel appears beside it offering Rewind with the keys written next to it, and the Edit menu shows the same keys and is available only while a redline is open, though Undo there always means the last rewind in the tab rather than the change you are pointing at",
+              "commits": [
+                {
+                  "hash": "74a3a79",
+                  "url": "https://github.com/gregce/tortie/commit/74a3a79"
+                },
+                {
+                  "hash": "c7948fa",
+                  "url": "https://github.com/gregce/tortie/commit/c7948fa"
+                },
+                {
+                  "hash": "dd2c8a2",
+                  "url": "https://github.com/gregce/tortie/commit/dd2c8a2"
+                },
+                {
+                  "hash": "7b9e090",
+                  "url": "https://github.com/gregce/tortie/commit/7b9e090"
+                }
+              ]
+            },
+            {
+              "text": "A redline with nothing marked now says so, and says what it is being compared against — the last commit, or for a file git does not know about, the time you opened it — so an empty page is no longer mistaken for one that has not loaded",
+              "commits": [
+                {
+                  "hash": "4de50a2",
+                  "url": "https://github.com/gregce/tortie/commit/4de50a2"
+                }
+              ]
+            },
+            {
+              "text": "You can type in the redline now, so a typo you notice while reading a file no longer means switching to Source to fix it and switching back. What you type is drawn as an insertion like any other change, Command-Z takes it back, and Command-S writes the file — though a save writes what is in front of you over anything an agent wrote to that file while you were typing",
+              "commits": [
+                {
+                  "hash": "0722478",
+                  "url": "https://github.com/gregce/tortie/commit/0722478"
+                },
+                {
+                  "hash": "fd70048",
+                  "url": "https://github.com/gregce/tortie/commit/fd70048"
+                },
+                {
+                  "hash": "ff9d817",
+                  "url": "https://github.com/gregce/tortie/commit/ff9d817"
+                },
+                {
+                  "hash": "cbf192d",
+                  "url": "https://github.com/gregce/tortie/commit/cbf192d"
+                }
+              ]
+            },
+            {
+              "text": "A change you agree with can now be accepted instead of rewound. Press Option-Return on it, or Accept all at the top of the redline, and it stops being marked without a byte of the file being written — though accepting ends the undo of any rewind you made before it",
+              "commits": [
+                {
+                  "hash": "7a91726",
+                  "url": "https://github.com/gregce/tortie/commit/7a91726"
+                },
+                {
+                  "hash": "eea8ec8",
+                  "url": "https://github.com/gregce/tortie/commit/eea8ec8"
+                },
+                {
+                  "hash": "f044001",
+                  "url": "https://github.com/gregce/tortie/commit/f044001"
+                },
+                {
+                  "hash": "225958d",
+                  "url": "https://github.com/gregce/tortie/commit/225958d"
+                }
+              ]
+            },
+            {
+              "text": "Right-clicking in the editor now opens a menu, where it used to do nothing at all. It carries the ordinary editing rows along with Find, Change All Occurrences, Go to Line, Fold and Unfold, and History, Copy Path, Copy Relative Path and Save for the file you are in",
+              "commits": [
+                {
+                  "hash": "808da33",
+                  "url": "https://github.com/gregce/tortie/commit/808da33"
+                },
+                {
+                  "hash": "80b32c7",
+                  "url": "https://github.com/gregce/tortie/commit/80b32c7"
+                }
+              ]
+            },
+            {
+              "text": "What you accept in a redline now outlasts the tab. Close the file, reload the window, or quit and come back, and the marking is still narrowed to what changed since you accepted, with the day it was taken written beside it — what is kept is the marking and never a copy of your text, and it lasts until the file's committed version changes, or a week after you accepted, when the redline goes back to marking every change since the commit",
+              "commits": [
+                {
+                  "hash": "b6307d3",
+                  "url": "https://github.com/gregce/tortie/commit/b6307d3"
+                },
+                {
+                  "hash": "51d9029",
+                  "url": "https://github.com/gregce/tortie/commit/51d9029"
+                },
+                {
+                  "hash": "8a6c3a1",
+                  "url": "https://github.com/gregce/tortie/commit/8a6c3a1"
+                },
+                {
+                  "hash": "d5adb0b",
+                  "url": "https://github.com/gregce/tortie/commit/d5adb0b"
+                }
+              ]
+            },
+            {
+              "text": "A markdown table under your cursor can be tidied from that menu, and a wall of one-line JSON pretty-printed or squashed back onto one line, over what you have selected or wherever the cursor is, and one Command-Z takes any of them back. A table with a row wider than its header is refused with the line named rather than reflowed, and JSON is left alone if formatting it would change anything other than the spacing",
+              "commits": [
+                {
+                  "hash": "ebdaab6",
+                  "url": "https://github.com/gregce/tortie/commit/ebdaab6"
+                },
+                {
+                  "hash": "7701c0c",
+                  "url": "https://github.com/gregce/tortie/commit/7701c0c"
+                },
+                {
+                  "hash": "bee4e01",
+                  "url": "https://github.com/gregce/tortie/commit/bee4e01"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "The redline's controls now belong to the change you are on rather than to your pointer: they stay put while you read, while you type in that change, and while an agent writes to the file, and they move with the change when the file reflows underneath them. Clicking anywhere else in the text puts them away, and Undo has left the panel for the line that already says it means the last rewind in the tab",
+              "commits": [
+                {
+                  "hash": "e8bfa9a",
+                  "url": "https://github.com/gregce/tortie/commit/e8bfa9a"
+                },
+                {
+                  "hash": "6799432",
+                  "url": "https://github.com/gregce/tortie/commit/6799432"
+                },
+                {
+                  "hash": "9bcdfaf",
+                  "url": "https://github.com/gregce/tortie/commit/9bcdfaf"
+                },
+                {
+                  "hash": "10c4093",
+                  "url": "https://github.com/gregce/tortie/commit/10c4093"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Saving a file that changed on disk while you were typing no longer writes over it in silence. Tortie says so and offers three answers: Compare, which opens the two versions side by side, Cancel, or Overwrite, which is never the default. Overwriting is checked again as you press it, so a write that arrives while the question is on screen is caught as well",
+              "commits": [
+                {
+                  "hash": "2a219236",
+                  "url": "https://github.com/gregce/tortie/commit/2a219236"
+                },
+                {
+                  "hash": "06e5e909",
+                  "url": "https://github.com/gregce/tortie/commit/06e5e909"
+                },
+                {
+                  "hash": "3b738bfa",
+                  "url": "https://github.com/gregce/tortie/commit/3b738bfa"
+                }
+              ]
+            },
+            {
+              "text": "A file that is a symbolic link, and a file outside your open projects such as a global CLAUDE.md, are asked about too. They are checked a moment before they are written rather than as they are written, so a write that lands in that moment is still lost",
+              "commits": [
+                {
+                  "hash": "f89284f2",
+                  "url": "https://github.com/gregce/tortie/commit/f89284f2"
+                }
+              ]
+            },
+            {
+              "text": "A save that cannot happen now says why, whether the file is read-only, gone, too large, in a project you have closed or not text Tortie can rewrite without damaging it. It used to say the same sentence twice and name no cause",
+              "commits": [
+                {
+                  "hash": "3b738bfa",
+                  "url": "https://github.com/gregce/tortie/commit/3b738bfa"
+                },
+                {
+                  "hash": "f89284f2",
+                  "url": "https://github.com/gregce/tortie/commit/f89284f2"
+                }
+              ]
+            },
+            {
+              "text": "A file that is not plain UTF-8 text is no longer told that something wrote to it when nothing did. It says the file is not text Tortie can rewrite, and it leaves every byte where it was",
+              "commits": [
+                {
+                  "hash": "f89284f2",
+                  "url": "https://github.com/gregce/tortie/commit/f89284f2"
+                }
+              ]
+            },
+            {
+              "text": "Every kind of file now gets the same question and the same second look: a file in a project, a symbolic link, a file outside your open projects, or one that grew too large to read while you were typing. Overwrite is checked again as you press it whichever kind it is, though a write of exactly the same size landing in the same instant as the save can still be written over",
+              "commits": [
+                {
+                  "hash": "a40282ed",
+                  "url": "https://github.com/gregce/tortie/commit/a40282ed"
+                }
+              ]
+            },
+            {
+              "text": "Tortie now signs in to your machines side by side when it starts, so a machine that is off or asleep no longer holds up the one that answers, though a fifth machine waiting behind four that do not answer still waits for them. A machine that did not answer at launch is asked again on its own, first after half a minute and then less often up to every five minutes, and at once when it starts answering",
+              "commits": [
+                {
+                  "hash": "2df65516",
+                  "url": "https://github.com/gregce/tortie/commit/2df65516"
+                },
+                {
+                  "hash": "039cc213",
+                  "url": "https://github.com/gregce/tortie/commit/039cc213"
+                }
+              ]
+            },
+            {
+              "text": "The bar saying a machine could not be reached now appears on that machine's own tab only, and no longer on another machine's tab or on a local one",
+              "commits": [
+                {
+                  "hash": "87783605",
+                  "url": "https://github.com/gregce/tortie/commit/87783605"
+                }
+              ]
+            },
+            {
+              "text": "A tab whose machine did not answer now carries Prepare this machine, the same control Settings has, so you can reconnect from where you are",
+              "commits": [
+                {
+                  "hash": "882b3484",
+                  "url": "https://github.com/gregce/tortie/commit/882b3484"
+                },
+                {
+                  "hash": "da18d0a6",
+                  "url": "https://github.com/gregce/tortie/commit/da18d0a6"
+                }
+              ]
+            },
+            {
+              "text": "A symbolic link inside the folder you let Tortie save under is no longer a way out of it. A save, a new folder or a rename aimed through one is refused and says so, where before it could replace a file outside that folder and tell you it had saved — and the Stage and Commit buttons refuse through one too, where before they acted on whatever the link really pointed at and said the work was done — though a link that points back inside that folder is refused as well",
+              "commits": [
+                {
+                  "hash": "61cb66aa",
+                  "url": "https://github.com/gregce/tortie/commit/61cb66aa"
+                },
+                {
+                  "hash": "fa89813f",
+                  "url": "https://github.com/gregce/tortie/commit/fa89813f"
+                }
+              ]
+            },
+            {
+              "text": "The two messages you get when Tortie cannot write on a machine now send you to the right place. They used to tell you to confirm a machine you had already confirmed, when what was missing was the folder",
+              "commits": [
+                {
+                  "hash": "44d01573",
+                  "url": "https://github.com/gregce/tortie/commit/44d01573"
+                }
+              ]
+            },
+            {
+              "text": "The Architecture map now says when the picture it drew is only part of a folder. A repository too large to read in one pass was drawn as though it were the whole thing, with nothing on the picture to say otherwise",
+              "commits": [
+                {
+                  "hash": "69a14370",
+                  "url": "https://github.com/gregce/tortie/commit/69a14370"
+                }
+              ]
+            },
+            {
+              "text": "A picture opened from a machine no longer offers Reveal in Finder. The file is on that machine, so the row could only ever have opened a folder on this one",
+              "commits": [
+                {
+                  "hash": "3d17478f",
+                  "url": "https://github.com/gregce/tortie/commit/3d17478f"
+                }
+              ]
+            },
+            {
+              "text": "Dropping a picture into an agent on a machine now always lands in Tortie's own folder there. A name planted in that folder beforehand could send the picture somewhere else on that machine while Tortie reported it had arrived",
+              "commits": [
+                {
+                  "hash": "29ee53c4",
+                  "url": "https://github.com/gregce/tortie/commit/29ee53c4"
+                }
+              ]
+            },
+            {
+              "text": "Reopening a prose file no longer carries the last opening's rewind with it. Undo in a freshly opened tab could put back text from a session you had already closed, over what was in the file",
+              "commits": [
+                {
+                  "hash": "c043c2b5",
+                  "url": "https://github.com/gregce/tortie/commit/c043c2b5"
+                }
+              ]
+            },
+            {
+              "text": "Architecture on a machine now notices an edit that leaves a file the same size within the same second. Such a change was invisible for as long as the file stayed that way, so the picture could keep describing code that had already changed",
+              "commits": [
+                {
+                  "hash": "c8a836bb",
+                  "url": "https://github.com/gregce/tortie/commit/c8a836bb"
+                }
+              ]
+            },
+            {
+              "text": "Inserting a paragraph above one you had edited no longer makes the paragraph below look rewritten. The redline marks the word that moved and draws the new paragraph once, where before it struck the whole paragraph through and then repeated it in green with nothing marked at all — though a paragraph you rewrote rather than edited still shows as the old one struck through and the new one after it, because there is no single word left to mark",
+              "commits": [
+                {
+                  "hash": "ea2e6750",
+                  "url": "https://github.com/gregce/tortie/commit/ea2e6750"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.101.0",
       "date": "2026-09-07",
       "summary": "This release is about light mode. The whole app can now sit on paper rather than graphite, terminal and editor and diffs included, and the frame controls work the same way on both. A codex session you restore after a reboot now opens instead of refusing, and a development build no longer disagrees with the installed app about which tmux to use.",
