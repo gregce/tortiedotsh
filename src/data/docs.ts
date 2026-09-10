@@ -95,13 +95,13 @@ export const docsNavGroups: DocsNavGroup[] = [
         title: "Session tools and menus",
         href: "/docs/session-tools-and-menus/",
         description: "Use native context menus, captures, scrollback, splits, and session actions.",
-        searchTerms: "right click context menu terminal capture screen selection scrollback split copy paste end restore",
+        searchTerms: "right click context menu terminal capture screen selection scrollback split copy paste end restore click path link file open relative filename",
       },
       {
         title: "Files, search, and previews",
         href: "/docs/files-search-and-previews/",
         description: "Browse, find, edit, and preview files across open projects.",
-        searchTerms: "explorer quick open pierre trees ripgrep tree sitter markdown html image monaco editor shiki react markdown",
+        searchTerms: "explorer quick open pierre trees ripgrep tree sitter markdown html image monaco editor shiki react markdown wide table large file",
       },
       {
         title: "Redline",
@@ -575,6 +575,21 @@ export const docsPages: DocPage[] = [
         ],
       },
       {
+        id: "path-links",
+        title: "Click a file an agent names",
+        blocks: [
+          { type: "paragraph", html: "A file named in a session is a link. Point at it and it underlines, and click it to open it where it belongs: prose and code in the editor, a picture in the image view, and a PDF in whatever your Mac opens PDFs with. A web address opens in your default browser." },
+          { type: "list", items: [
+            "An absolute path, anywhere on this Mac.",
+            "A path relative to the project, opened under the project that session is in.",
+            "A bare filename such as <code>README.md</code> or <code>Makefile</code>, opened under the project that session is in. A name that matches no file there underlines nothing.",
+            "A path with its line written the way tools write it, such as <code>path:12</code>, grep's <code>path:12:</code> or a compiler's <code>path(12,34)</code>. Only the path and its line are underlined, never the text after them.",
+          ] },
+          { type: "note", title: "Nothing that could run is offered", html: "A file with the executable bit set, an application, a folder wearing a picture's name, and a file whose name says it holds a secret are never links. A relative name is never handed to your Mac, so a PDF named that way opens nothing." },
+          { type: "note", title: "Where a path stays plain", html: "A path wrapped onto a second row of the pane stays plain, because the pane cannot say where it began. A plain word, a version number and a dotfile are never links, and a session on another machine offers no file links at all." },
+        ],
+      },
+      {
         id: "splits",
         title: "Arrange sessions without restarting them",
         blocks: [
@@ -679,6 +694,8 @@ export const docsPages: DocPage[] = [
         title: "Edit and preview safely",
         blocks: [
           { type: "paragraph", html: "Use <kbd>⌘E</kbd> to show or hide the editor and <kbd>⌘S</kbd> to save. Markdown, HTML, images, and other supported formats open in purpose-built previews." },
+          { type: "paragraph", html: "A wide table or code block in a Markdown preview breaks out of the reading column and takes the width its content needs, up to the width of the pane. A short block fills the reading column as before, and a table too wide even for the pane scrolls sideways in its own box." },
+          { type: "paragraph", html: "A large Markdown file opens at once. Past about a quarter of a megabyte it opens in Source, with Preview one click away on the mode chip, which says what that click will cost." },
           { type: "note", title: "Sensitive files stay plain", html: "Tortie does not render key files or content that looks like a secret as a friendly preview. Untrusted HTML opens without scripts or network access." },
         ],
       },
@@ -729,6 +746,8 @@ export const docsPages: DocPage[] = [
         title: "Open a redline",
         blocks: [
           { type: "paragraph", html: "Open a Markdown or text file and choose <strong>Redline</strong> beside Diff and File. The whole document reads as prose, with the words that were removed struck through and the words that replaced them right after. Copying gives you the new text." },
+          { type: "paragraph", html: "The page reads like a marked-up document. The column is wide enough for prose, a marking that wraps onto a second line is drawn as one passage, and the change you are on is shown by a bar in the margin. <strong>Accept all</strong> and the count of changes line up with your text." },
+          { type: "paragraph", html: "A Markdown table is marked row against row, so renaming a column shows the words that changed rather than the whole table struck through and repeated." },
           { type: "paragraph", html: "Redline is for prose. A source file gets no Redline option, because a diff already reads the way code is read." },
         ],
       },
@@ -784,6 +803,8 @@ export const docsPages: DocPage[] = [
             "Accept all cannot be undone, which is why it has no keyboard shortcut.",
             "Undoing a rewind lasts as long as the tab is open, and ends the moment you accept anything.",
             "A paragraph you rewrote rather than edited still shows as the old one struck through and the new one after it, because there is no single word left to mark.",
+            "A table over about four thousand characters gets no redline at all.",
+            "On a narrow pane the controls sit over the prose, because there is no room beside it.",
             "A write of exactly the same size, landing in the same instant as your rewind or save, can still be written over.",
           ] },
         ],
