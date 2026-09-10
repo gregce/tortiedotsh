@@ -2,6 +2,168 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.103.0",
+      "date": "2026-09-10",
+      "summary": "This release is about clicking a file an agent named. A path printed into a session underlines when you point at it and opens when you click it — absolute or relative, mid-sentence or at the end of the line, and a bare filename too. The redline has been given the room to read like a marked-up document rather than a stack of tiles, a wide table in a preview takes the room its content needs, and a large prose file opens at once instead of after seconds.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "A file an agent names in a session is now a link: point at it and it underlines, click it and it opens where it belongs — prose and code in the editor, a picture in the image view, and a PDF, which Tortie cannot draw, in whatever your Mac opens PDFs with. A path that runs off the right edge of the pane is left alone, because where it ends is not known, and a session running on another machine offers no file links at all",
+              "commits": [
+                {
+                  "hash": "b3d042e",
+                  "url": "https://github.com/gregce/tortie/commit/b3d042e"
+                },
+                {
+                  "hash": "d461678",
+                  "url": "https://github.com/gregce/tortie/commit/d461678"
+                },
+                {
+                  "hash": "4094a36",
+                  "url": "https://github.com/gregce/tortie/commit/4094a36"
+                },
+                {
+                  "hash": "7d1a9c2",
+                  "url": "https://github.com/gregce/tortie/commit/7d1a9c2"
+                },
+                {
+                  "hash": "28876d5",
+                  "url": "https://github.com/gregce/tortie/commit/28876d5"
+                }
+              ]
+            },
+            {
+              "text": "Nothing that could run is ever offered, whatever it is called: a file with the executable bit set, an application, or a folder wearing a picture's name. Neither is a file whose name says it holds a secret, which now covers auth.json, .npmrc, .git-credentials and their family as well as the dotenv and key files it already covered",
+              "commits": [
+                {
+                  "hash": "4094a36",
+                  "url": "https://github.com/gregce/tortie/commit/4094a36"
+                },
+                {
+                  "hash": "110de49",
+                  "url": "https://github.com/gregce/tortie/commit/110de49"
+                }
+              ]
+            },
+            {
+              "text": "A path printed at the end of a line is a link too. It used to be left alone along with paths that run off the right edge of the pane, and the end of a line is where an agent almost always writes one; a path that really does run off the edge is still left alone",
+              "commits": [
+                {
+                  "hash": "d810c33f",
+                  "url": "https://github.com/gregce/tortie/commit/d810c33f"
+                }
+              ]
+            },
+            {
+              "text": "So is a path written relative to the project, which is most of what an agent prints: it opens the file under the project that session is in. A name that resolves outside that project is left alone, a relative name is never handed to your Mac so a PDF named that way opens nothing, a session running on another machine still offers no file links at all, and a name printed by an agent working in another copy of the same project can open that file in the wrong copy",
+              "commits": [
+                {
+                  "hash": "286f7eec",
+                  "url": "https://github.com/gregce/tortie/commit/286f7eec"
+                }
+              ]
+            },
+            {
+              "text": "A path with its line written the ways tools actually write it now clicks too: grep's path:12:matched text, a compiler's path(12,34) or path[12], and a name with square brackets in it such as pages/[slug].tsx. Only the path and its line are underlined, never the matched text after them",
+              "commits": [
+                {
+                  "hash": "b62e277c",
+                  "url": "https://github.com/gregce/tortie/commit/b62e277c"
+                }
+              ]
+            },
+            {
+              "text": "A bare filename with no slash in it — README.md, Makefile, package.json — is a link as well now, opened under the project that session is in. A plain word, a version number and a dotfile are never links, a name that matches no file there underlines nothing, and a path wrapped onto a second line of the pane is still left alone, because the pane cannot say where it began",
+              "commits": [
+                {
+                  "hash": "b62e277c",
+                  "url": "https://github.com/gregce/tortie/commit/b62e277c"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "A redline now reads in a column wide enough for prose, and a marking that wraps onto a second line is drawn as one continuous passage instead of a row of separate tiles. The change you are standing on is shown by a bar in the margin rather than an outline around every fragment of it, and Accept all and the count of changes line up with your text — on a narrow pane the controls go back over the prose, because there is nowhere beside it for them to sit",
+              "commits": [
+                {
+                  "hash": "08d1dc38",
+                  "url": "https://github.com/gregce/tortie/commit/08d1dc38"
+                },
+                {
+                  "hash": "87eace90",
+                  "url": "https://github.com/gregce/tortie/commit/87eace90"
+                }
+              ]
+            },
+            {
+              "text": "A table in a redline is marked row against row now, so renaming a column shows the words that changed instead of striking the whole table through and repeating it. A table over about four thousand characters still gets no redline at all",
+              "commits": [
+                {
+                  "hash": "01fca241",
+                  "url": "https://github.com/gregce/tortie/commit/01fca241"
+                },
+                {
+                  "hash": "553117a0",
+                  "url": "https://github.com/gregce/tortie/commit/553117a0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "A wide table in a Markdown preview now takes the width of the pane rather than the width of the reading column, so columns that used to be cut off with nothing on the page to say they were there can be read. Code blocks do the same, and a table too wide even for that still scrolls sideways in its own box, with a scrollbar you can now see",
+              "commits": [
+                {
+                  "hash": "b3c11951",
+                  "url": "https://github.com/gregce/tortie/commit/b3c11951"
+                },
+                {
+                  "hash": "8ff5ca1d",
+                  "url": "https://github.com/gregce/tortie/commit/8ff5ca1d"
+                }
+              ]
+            },
+            {
+              "text": "A wide block in a preview now takes only the width its content needs, where before it always took the widest box the pane allowed and drew mostly empty inside its own border. A short block still fills the reading column exactly as before",
+              "commits": [
+                {
+                  "hash": "56c754ef",
+                  "url": "https://github.com/gregce/tortie/commit/56c754ef"
+                }
+              ]
+            },
+            {
+              "text": "A blank line added or removed in a redline is now marked. It used to be drawn as nothing at all, while still offering Rewind and Accept on a change there was no way to see",
+              "commits": [
+                {
+                  "hash": "08d1dc38",
+                  "url": "https://github.com/gregce/tortie/commit/08d1dc38"
+                }
+              ]
+            },
+            {
+              "text": "A large Markdown file now opens at once, where it used to hang for seconds while the whole rendered page was built before anything appeared. Past about a quarter of a megabyte the file opens in Source with Preview one click away on the mode chip, which says what that click will cost; a smaller file still opens rendered exactly as before",
+              "commits": [
+                {
+                  "hash": "f163d942",
+                  "url": "https://github.com/gregce/tortie/commit/f163d942"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.102.0",
       "date": "2026-09-09",
       "summary": "This release is about the redline you can rewind, accept and now type in. Every edit to a prose file shows up as a marking against what the file was, whether git has noticed it or not, and a change you point at either goes back with one key or stops being marked with another, without the file being touched. The editor answers a right click now too, and saving a file somebody else has written to asks you first.",
