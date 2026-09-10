@@ -104,6 +104,12 @@ export const docsNavGroups: DocsNavGroup[] = [
         searchTerms: "explorer quick open pierre trees ripgrep tree sitter markdown html image monaco editor shiki react markdown",
       },
       {
+        title: "Redline",
+        href: "/docs/redline/",
+        description: "Read a changed prose file as a document, and rewind or accept one change at a time.",
+        searchTerms: "redline prose markdown text review rewind accept undo baseline strikethrough insertion typing option delete option return marking commit",
+      },
+      {
         title: "Source control",
         href: "/docs/source-control/",
         description: "Review changes, stage work, commit, inspect history, and check actions.",
@@ -677,6 +683,25 @@ export const docsPages: DocPage[] = [
         ],
       },
       {
+        id: "saving",
+        title: "Save without writing over somebody else",
+        blocks: [
+          { type: "paragraph", html: "<kbd>⌘S</kbd> writes the file. If the file changed on disk while you were typing, because an agent wrote to it or another application did, Tortie says so instead of writing over it. It offers three answers: <strong>Compare</strong>, which opens the two versions side by side, <strong>Cancel</strong>, or <strong>Overwrite</strong>." },
+          { type: "paragraph", html: "Overwrite is never the default, and it is checked again as you press it, so a third write arriving while the question is on screen is caught as well." },
+          { type: "paragraph", html: "Every kind of file gets the same question: a file inside a project, a symbolic link, a file outside your open projects such as a global <code>CLAUDE.md</code>, and one that grew too large to read while you were typing." },
+          { type: "note", title: "A refused save says which cause", html: "A save that cannot happen names the reason, whether the file is read-only, gone, too large, in a project you have closed, or not text Tortie can rewrite without damaging it. A write of exactly the same size landing in the same instant as your save can still be written over." },
+        ],
+      },
+      {
+        id: "editor-menu",
+        title: "Use the editor's own menu",
+        blocks: [
+          { type: "paragraph", html: "Right-click inside the editor for the ordinary editing rows along with Find, Change All Occurrences, Go to Line, Fold and Unfold, and History, Copy Path, Copy Relative Path and Save for the file you are in." },
+          { type: "paragraph", html: "A Markdown table under your cursor can be tidied from that menu, and a wall of one-line JSON pretty-printed or squashed back onto one line, over what you have selected or wherever the cursor is. One <kbd>⌘Z</kbd> takes any of them back." },
+          { type: "note", title: "Formatting refuses rather than guesses", html: "A table with a row wider than its header is refused with the line named instead of being reflowed, and JSON is left alone if formatting it would change anything other than the spacing." },
+        ],
+      },
+      {
         id: "libraries",
         title: "The parts behind files and search",
         blocks: [
@@ -688,6 +713,79 @@ export const docsPages: DocPage[] = [
             ["Previews", "<a href=\"https://github.com/remarkjs/react-markdown\">react-markdown</a> renders Markdown as structured content, while <a href=\"https://shiki.style/\">Shiki</a> keeps code highlighting consistent."],
           ] },
           { type: "note", title: "A focused work surface", html: "These are maintained libraries inside Tortie's own product shell. Tortie does not include the VS Code workbench or extension system." },
+        ],
+      },
+    ],
+  },
+  {
+    path: "/docs/redline/",
+    slug: "redline",
+    title: "Redline",
+    description: "Read a changed prose file as a document, and rewind or accept one change at a time without leaving it.",
+    lead: "A redline reads a changed prose file the way you would read a document, not as two columns you compare by eye.",
+    sections: [
+      {
+        id: "open-a-redline",
+        title: "Open a redline",
+        blocks: [
+          { type: "paragraph", html: "Open a Markdown or text file and choose <strong>Redline</strong> beside Diff and File. The whole document reads as prose, with the words that were removed struck through and the words that replaced them right after. Copying gives you the new text." },
+          { type: "paragraph", html: "Redline is for prose. A source file gets no Redline option, because a diff already reads the way code is read." },
+        ],
+      },
+      {
+        id: "what-it-marks-against",
+        title: "Know what it is marking against",
+        blocks: [
+          { type: "paragraph", html: "A file Git tracks is marked against its last commit. A file Git does not know about is marked against what it held when you opened it. The redline says which of the two it is using, so a page with nothing on it is never mistaken for one that has not loaded." },
+          { type: "paragraph", html: "It redraws by itself when an agent writes to the file. While you have unsaved edits it waits, so a redraw never takes your own typing away." },
+        ],
+      },
+      {
+        id: "rewind",
+        title: "Put one change back",
+        blocks: [
+          { type: "paragraph", html: "Point at a change, or step to it with <kbd>⌥↓</kbd> and <kbd>⌥↑</kbd>. Press <kbd>⌥⌫</kbd> and that one phrase goes back to what it was, while every other edit in the file stands. A small panel appears beside the change with the same keys written on it, and the Edit menu carries the same rows while a redline is open." },
+          { type: "paragraph", html: "Your own paragraph carries the same control as an agent's. <kbd>⇧⌥⌫</kbd> undoes the last rewind you made, for as long as the tab is open." },
+          { type: "note", title: "A rewind is checked before it is written", html: "A rewind is written only if the file still holds exactly what Tortie read when you pressed. If something wrote to it in between, or the phrase is no longer there, nothing is written and the redline says which of those happened." },
+        ],
+      },
+      {
+        id: "accept",
+        title: "Stop marking a change you agree with",
+        blocks: [
+          { type: "paragraph", html: "Press <kbd>⌥↩</kbd> on a change and it stops being marked, without a byte of the file being written. From then on the redline is measured from that point, so what stays marked is what you have not read yet." },
+          { type: "paragraph", html: "<strong>Accept all</strong> sits at the top of the redline and clears everything marked at once. It has no keyboard shortcut on purpose, so nothing is one keystroke away from accepting a whole file, and there is no undo for it." },
+          { type: "note", title: "Accepting ends the undo of a rewind", html: "Accepting moves what the redline is measured against, so a rewind you made before it can no longer be undone. The redline says so and puts the control away, rather than offering one that would refuse." },
+        ],
+      },
+      {
+        id: "type-in-it",
+        title: "Type in the redline",
+        blocks: [
+          { type: "paragraph", html: "A typo you notice while reading no longer means switching to Source to fix it and switching back. Type in the redline and what you type is drawn as an insertion like any other change. <kbd>⌘Z</kbd> takes it back, and <kbd>⌘S</kbd> writes the file." },
+          { type: "paragraph", html: "The controls belong to the change you are on rather than to your pointer. They stay put while you read, while you type in that change, and while an agent writes to the file, and they move with the change when the text reflows underneath them. Clicking anywhere else in the text puts them away." },
+        ],
+      },
+      {
+        id: "what-is-kept",
+        title: "What a redline keeps",
+        blocks: [
+          { type: "paragraph", html: "What you accept outlasts the tab. Close the file, reload the window, or quit and come back, and the marking is still narrowed to what you accepted, with the day it was taken written beside it." },
+          { type: "paragraph", html: "It lasts until the file's committed version changes, or a week after you accepted, whichever comes first. After that the redline goes back to marking every change since the commit." },
+          { type: "note", title: "This is not a backup", html: "What Tortie keeps is the marking and never a copy of your text. The current state of the file is on disk and its committed state is in Git, so losing this narrows nothing except the redline. It is not a history you can walk." },
+        ],
+      },
+      {
+        id: "limits",
+        title: "Know the current limits",
+        blocks: [
+          { type: "list", items: [
+            "Redline is for Markdown and text files. A source file opens as a diff instead.",
+            "Accept all cannot be undone, which is why it has no keyboard shortcut.",
+            "Undoing a rewind lasts as long as the tab is open, and ends the moment you accept anything.",
+            "A paragraph you rewrote rather than edited still shows as the old one struck through and the new one after it, because there is no single word left to mark.",
+            "A write of exactly the same size, landing in the same instant as your rewind or save, can still be written over.",
+          ] },
         ],
       },
     ],
@@ -740,6 +838,16 @@ export const docsPages: DocPage[] = [
         blocks: [
           { type: "paragraph", html: "History combines a commit list with a branch graph. Open a commit to inspect its message, references, changed files, and per-file diffs. Scope history to the repository, a folder, or a file when you need a narrower record." },
           { type: "paragraph", html: "Right-click a commit to open all its changes, open it on GitHub, check it out detached, create a branch or tag, cherry-pick it, or copy its full ID and message. Tortie only shows actions supported by the current repository and installed Git capabilities." },
+        ],
+      },
+      {
+        id: "file-history",
+        title: "Follow one file back through its renames",
+        blocks: [
+          { type: "paragraph", html: "Right-click a file and choose <strong>History</strong>, or use View then File History, to see every commit that touched the file you have open, followed back through the names it used to have. Choosing a row shows that commit's change to the file." },
+          { type: "paragraph", html: "A field at the head of the History section narrows the commit list as you type. A bare word searches messages, and <code>author:</code>, <code>message:</code>, <code>commit:</code> and <code>file:</code> narrow further." },
+          { type: "paragraph", html: "<code>change:</code> searches inside the changes themselves rather than the messages. It waits for you to press Search, because it is slow on a large repository." },
+          { type: "note", title: "Merge commits are not listed", html: "A file history lists the commits that changed the file, so a merge that only brought those changes together does not appear as a row of its own." },
         ],
       },
       {
@@ -963,7 +1071,18 @@ export const docsPages: DocPage[] = [
             "A meter asks again every fifteen minutes, and only while the Tortie window is in front. The refresh control asks now.",
             "A provider that reports only one window draws that number whichever choice you made.",
           ] },
-          { type: "note", title: "Your login is read, never changed", html: "Tortie reads the login and never writes, refreshes or copies it, so an expired login asks you to run the agent once instead of signing you in again. Nothing is stored: the numbers stay in memory until you quit, and no part of a login reaches a log or a file. A plan billed by API key has no plan window to draw." },
+          { type: "note", title: "The meter only reads", html: "The meter reads the login your agent already stored and asks that vendor for numbers. It never refreshes or rotates a login, so an expired login asks you to run the agent once rather than being signed in again. The numbers stay in memory until you quit, and no part of a login reaches a log or a file. A plan billed by API key has no plan window to draw." },
+        ],
+      },
+      {
+        id: "logins",
+        title: "Keep more than one account",
+        blocks: [
+          { type: "paragraph", html: "You can add a second Claude or Codex account and choose which one a session runs under, from the usage meter or from Settings, then Agents. Adding one opens a session running the vendor's own sign-in. Tortie never asks you for a password or a token." },
+          { type: "paragraph", html: "Each login is drawn as the account it is, by email address, with your own sign-in marked as the one Tortie does not own." },
+          { type: "paragraph", html: "An account you have signed into is one you can go back to. Switch away, or sign in as somebody else inside a session with the vendor's own <code>/login</code>, and the account you left is still on the list and one click away. Tortie notices that sign-in the moment it finishes and refreshes the card, the menu, the list and the meter on their own." },
+          { type: "paragraph", html: "Choosing another account reaches a session that is already running. Claude Code picks the change up by itself within about half a minute, and <strong>Restart now</strong> beside the card restarts the session with its conversation kept if you want it at once." },
+          { type: "note", title: "No agent ever signs you in", html: "The vendor's own command is the only thing that authenticates. Tortie keeps a copy of the account a store is about to lose so that signing in as somebody else does not throw the previous account away, and it never refreshes or rotates one. Claude and Codex are the only providers, and a session already running keeps the account it started with until you switch it." },
         ],
       },
       {
@@ -978,7 +1097,10 @@ export const docsPages: DocPage[] = [
         id: "appearance-and-zoom",
         title: "Change appearance and text size",
         blocks: [
-          { type: "paragraph", html: "Appearance changes the highlight scheme, interface contrast, and work-area font. Font size is contextual instead of global: <kbd>⌘+</kbd>, <kbd>⌘-</kbd>, and <kbd>⌘0</kbd> change the focused terminal, sidebar, or editor. Use <kbd>⇧⌘0</kbd> to reset every region." },
+          { type: "paragraph", html: "Tortie can sit on paper as well as on graphite. Appearance offers <strong>Light</strong>, <strong>Dark</strong> or <strong>Match the Mac</strong>, and the terminal, the editor, the diff view, the Architecture map and the window itself all follow. Switching is a crossfade, and it is instant if you have reduced motion turned on." },
+          { type: "paragraph", html: "The frame around your work takes a colour of your own. Eight named colours are each drawn as the frame it will produce. Beside them, <strong>Shade</strong> moves the whole frame darker or lighter and <strong>Depth</strong> sets how far the panels and hairlines stand apart from the background." },
+          { type: "paragraph", html: "Appearance also changes the highlight scheme, interface contrast, and work-area font. Font size is contextual instead of global: <kbd>⌘+</kbd>, <kbd>⌘-</kbd>, and <kbd>⌘0</kbd> change the focused terminal, sidebar, or editor. Use <kbd>⇧⌘0</kbd> to reset every region." },
+          { type: "note", title: "A control stops rather than making text unreadable", html: "When a step would take text or the file colours below what can be read, the slider stops and says which other control would allow it. A control that cannot move on the base you are using is not shown at all, and a shade you chose on dark comes back when you choose Dark again." },
           { type: "paragraph", html: "The terminal and the editor share one font. Choose System, which is Menlo, or one of the two bundled faces, JetBrains Mono and Source Code Pro. Choose Custom to type the name of any family installed on your Mac: Tortie suggests the families you actually have, says when a family is not installed on this Mac, and applies the change at once with Menlo underneath as the fallback. Your choice covers the terminal and the editor only: the sidebar and the rest of the app keep the face they already had." },
           { type: "note", title: "A capture keeps a bundled face, not a custom one", html: "JetBrains Mono and Source Code Pro are carried into a captured session, so a capture looks like your screen. A custom family is a font on your Mac rather than one Tortie carries, so a capture made under Custom falls back to Menlo." },
         ],
@@ -1193,6 +1315,20 @@ export const docsPages: DocPage[] = [
             ["<kbd>⌫</kbd>", "Ask to move the selected local item to Trash", "Explorer"],
           ] },
           { type: "note", title: "Command W is deliberately narrow", html: "<kbd>⌘W</kbd> closes the front editor tab. It does not close a project, end a session, or close the Tortie window." },
+        ],
+      },
+      {
+        id: "redline",
+        title: "Redline",
+        blocks: [
+          { type: "table", headers: ["Shortcut", "Action", "Where"], rows: [
+            ["<kbd>⌥↓</kbd> / <kbd>⌥↑</kbd>", "Step to the next or previous change", "Redline"],
+            ["<kbd>⌥⌫</kbd>", "Put the change you are on back to what it was", "Redline"],
+            ["<kbd>⇧⌥⌫</kbd>", "Undo the last rewind in this tab", "Redline"],
+            ["<kbd>⌥↩</kbd>", "Accept the change you are on and stop marking it", "Redline"],
+            ["<kbd>⌘Z</kbd>", "Take back what you typed, which is not the same as undoing a rewind", "Redline"],
+          ] },
+          { type: "note", title: "Accept all has no shortcut", html: "Accept all clears every marking in the file and cannot be undone, so it is a button at the top of the redline and a row in the Edit menu, and never a keystroke." },
         ],
       },
       {

@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const pagefindEntry = new URL("../dist/pagefind/pagefind.js", import.meta.url);
@@ -88,9 +89,10 @@ const changelogResults = await search("0.62.1");
 const changelogPage = assertPage(changelogResults, "/docs/changelog/", "0.62.1");
 assertSection(changelogPage, "#v0.62.1", "0.62.1");
 
-// Avoid a token ending in a single shortcut letter such as Q. Pagefind's
-// tokenizer can legitimately reduce that to the documented keycap.
-const impossibleResults = await search("zzzzzzzzzzzzzzzzzzzzzzzz");
+// Avoid a token ending in a single shortcut letter such as Q, and avoid a run
+// of one letter, because Pagefind's tokenizer reduces both to the documented
+// keycap. A run of z began matching the moment the redline documented Command Z.
+const impossibleResults = await search("xhqvbnmwlkgrtpysdfjz");
 assert.equal(
   impossibleResults.length,
   0,
@@ -113,4 +115,12 @@ assert.ok(
 );
 assert.match(css, /\.docs-search-result\[aria-selected="true"\]/, "Selected search results have no visible state.");
 
-console.log("Docs search verified: 14-page index, product positioning and name, navigation order, tmux and library architecture, automatic updates, read-only GitHub Actions, context menus, section anchors, excerpts, changelog, empty state, and inline rail semantics.");
+// The page count is COUNTED rather than written down. It read "14-page index"
+// as a hardcoded string while the tree had 15, which is a sentence that reads
+// as a measurement and is not one.
+const docPageCount = (await readdir(new URL("../dist/docs/", import.meta.url), { withFileTypes: true }))
+  .filter((entry) => entry.isDirectory() && existsSync(new URL(`../dist/docs/${entry.name}/index.html`, import.meta.url)))
+  .length;
+assert.ok(docPageCount > 0, "No built docs pages were found.");
+
+console.log(`Docs search verified: ${docPageCount}-page index, product positioning and name, navigation order, tmux and library architecture, automatic updates, read-only GitHub Actions, context menus, section anchors, excerpts, changelog, empty state, and inline rail semantics.`);
