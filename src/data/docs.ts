@@ -695,7 +695,7 @@ export const docsPages: DocPage[] = [
         blocks: [
           { type: "paragraph", html: "Use <kbd>⌘E</kbd> to show or hide the editor and <kbd>⌘S</kbd> to save. Markdown, HTML, images, and other supported formats open in purpose-built previews." },
           { type: "paragraph", html: "A wide table or code block in a Markdown preview breaks out of the reading column and takes the width its content needs, up to the width of the pane. A short block fills the reading column as before, and a table too wide even for the pane scrolls sideways in its own box." },
-          { type: "paragraph", html: "A large Markdown file opens at once. Past about a quarter of a megabyte it opens in Source, with Preview one click away on the mode chip, which says what that click will cost." },
+          { type: "paragraph", html: "A large Markdown file opens at once, and it opens rendered: the preview shows its first screen straight away and fills in the rest while you read. A file that begins with one enormous table, and a large one with footnotes, still opens in Source with Preview one click away on the mode chip, which says what that click will cost. A jump to a heading far down a long page reaches it once the page has finished filling in." },
           { type: "note", title: "Sensitive files stay plain", html: "Tortie does not render key files or content that looks like a secret as a friendly preview. Untrusted HTML opens without scripts or network access." },
         ],
       },
@@ -978,7 +978,7 @@ export const docsPages: DocPage[] = [
     path: "/docs/architecture/",
     slug: "architecture",
     title: "Architecture",
-    description: "Draw a map of a codebase, keep a contract of promises about how its parts may touch, and hand one part of it to a session.",
+    description: "Draw a map of a codebase from what it builds and starts, see how far each part is proven, ask an agent what each part is for, keep a contract of promises, and hand one part of it to a session.",
     lead: "Architecture ships turned off. Settings, then Architecture, is where you turn it on.",
     sections: [
       {
@@ -994,9 +994,30 @@ export const docsPages: DocPage[] = [
         id: "the-map",
         title: "Read the map",
         blocks: [
-          { type: "paragraph", html: "Open the map and Tortie draws the repository as a small map in a full-size tab, grouped by the folders the codebase grew into. Click a box to drill into it. No contract is needed, nothing is written, and every later open reuses the reading." },
-          { type: "paragraph", html: "The map is drawn from what the imports prove. Tortie reads imports in TypeScript, JavaScript, Go, Python, Rust, Ruby, Swift, Kotlin, and Objective-C. Swift resolves between targets rather than between files, because a Swift target's files see each other with no import to read." },
-          { type: "note", title: "Some repositories have nothing to draw", html: "A repository whose tracked files all sit at the top level draws no boxes, because the map draws the folders a codebase grows into. The panel says plainly when it could read only part of a repository instead of implying it read all of it." },
+          { type: "paragraph", html: "Open the map and Tortie draws the repository as a small map in a full-size tab, grouped by what the repository <strong>builds and starts</strong>. Each package, program or service gets its own frame, rather than a box per folder. Click a part to drill into it. No contract is needed, nothing is written, and every later open reuses the reading." },
+          { type: "paragraph", html: "The lines between parts are named for what carries the traffic, so you can see at a glance whether two parts talk over an internal call, a channel, a socket or a network request." },
+          { type: "paragraph", html: "Every part also wears a mark saying how far it is proven, and the marks are counted from the code rather than asserted: <strong>declared</strong> means the code says it exists, <strong>composed</strong> means something wires it up, <strong>reached</strong> means something that actually starts can get to it, and <strong>tested</strong> means a test exercises it. A part with no tracked files at all reads off-repo." },
+          { type: "paragraph", html: "The map is read from the code in TypeScript, JavaScript, Go, Python, Rust, Ruby, Swift, Kotlin, and Objective-C. Swift resolves between targets rather than between files, because a Swift target's files see each other with no import to read." },
+          { type: "note", title: "The map says what a part is, not what it is for", html: "Everything above is counted from the code with no agent involved, so it can tell you a part exists, what reaches it and how far it is proven. It cannot tell you why the part is there. That is the model reading below, and it is a separate, opt-in step." },
+        ],
+      },
+      {
+        id: "look-inside",
+        title: "Look inside a part",
+        blocks: [
+          { type: "paragraph", html: "Click a part and the panel below the map says what it exposes, what it writes, and what guards it. Each line points at the code it was read from, so you can follow it rather than take it on trust." },
+          { type: "paragraph", html: "A <strong>Surfaces</strong> tab lists every route, command and channel the code declares, which is the honest answer to \u201cwhat can reach this from outside\u201d. A <strong>Gates</strong> worksheet counts the checks standing in front of those surfaces, so a surface with nothing in front of it is visible instead of implied." },
+        ],
+      },
+      {
+        id: "ask-what-it-is-for",
+        title: "Ask what a part is for",
+        blocks: [
+          { type: "paragraph", html: "With an agent confirmed in Settings, you can ask it to read the repository and say what each part is <strong>for</strong>, a sentence per part, along with the steps a piece of work takes through the system and the reasons work stops." },
+          { type: "paragraph", html: "Every sentence carries the lines it was found at. Each citation says what actually sits at that line and how rare a match like it is to hit by chance, so a sentence backed by something common reads differently from one backed by something specific. A sentence whose line has since moved is marked stale rather than quietly redrawn." },
+          { type: "paragraph", html: "The reading is drawn beside the same count taken with no model at all, so you can see what the agent added over what the code already showed." },
+          { type: "note", title: "A citation is a location, not a proof", html: "A mark says a fact was found near a claim. It never says the claim is true. Tortie runs seven deliberately false readings against its own checker and the checker catches five of them; the two it misses are what a confident wrong answer really looks like \u2014 a false purpose written over citations that are genuinely correct, and an invented check whose cited line really is a check. Read the sentences as a lead worth following, not as a verdict." },
+          { type: "note", title: "One agent is measured for this today", html: "Codex, with GPT-6-Astra, is the only agent Tortie has measured for the model reading, so it is the only one offered. The reading runs only when you ask, under your own account, and never because a file changed." },
         ],
       },
       {
@@ -1031,7 +1052,9 @@ export const docsPages: DocPage[] = [
         blocks: [
           { type: "list", items: [
             "Architecture is off until you turn it on, on every Mac you install Tortie on.",
-            "Claude Code is the only agent that can fill in a contract today.",
+            "Claude Code is the only agent that can fill in a contract today, and Codex is the only one measured for the model reading.",
+            "The map is read from the computer the repository is on, so a project on a remote machine cannot be mapped from here.",
+            "A sentence an agent writes is a lead, not a verdict: a citation says a fact was found near a claim and never that the claim is true.",
             "A contract is read on the computer its repository is on, so a project on a remote machine cannot be read from here.",
             "The description an agent writes is the author's own words, and Tortie never checks them.",
             "A promise backed by quoted code is partly checked: the quoted code is still there, and what it does when it runs is unproven.",
