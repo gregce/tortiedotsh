@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-02",
+  "checkedAt": "2026-09-13",
   "products": {
     "visual-studio-code": {
       "name": "Visual Studio Code",
@@ -1373,6 +1373,199 @@
       "sourceUrl": "https://github.com/JetBrains/logos/blob/HEAD/web/junie/junie.svg",
       "sourceType": "official-vendor-brand-asset",
       "checkedAt": "2026-09-02"
+    },
+    "xcode": {
+      "name": "Xcode",
+      "alt": "Xcode logo",
+      "src": "/compare/logos/xcode.png",
+      "sourceUrl": "https://apps.apple.com/us/app/xcode/id497799835",
+      "sourceType": "official-app-store-artwork",
+      "resolvedAssetUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4c/6d/8c/4c6d8c86-803d-e46c-d5a1-e41da9147ebc/Xcode-0-85-220-0-6-0-0-2x-P3-0-0.png/512x512bb.png",
+      "checkedAt": "2026-09-13"
+    },
+    "ibm-bob-ide": {
+      "name": "IBM Bob IDE",
+      "alt": "IBM Bob IDE logo",
+      "src": "/compare/logos/ibm-bob-ide.ico",
+      "sourceUrl": "https://bob.ibm.com/docs/ide",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-09-13"
+    },
+    "zcode": {
+      "name": "ZCode",
+      "alt": "ZCode logo",
+      "src": "/compare/logos/zcode.ico",
+      "sourceUrl": "https://zcode.z.ai/en",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-09-13"
+    },
+    "augment-code": {
+      "name": "Augment Code",
+      "alt": "Augment Code logo",
+      "src": "/compare/logos/augment-code.png",
+      "sourceUrl": "https://github.com/augmentcode",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "qodo-ide-plugin": {
+      "name": "Qodo IDE plugin",
+      "alt": "Qodo IDE plugin logo",
+      "src": "/compare/logos/qodo-ide-plugin.png",
+      "sourceUrl": "https://github.com/qodo-ai",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "ccb": {
+      "name": "Claude Codex Bridge",
+      "alt": "Claude Codex Bridge logo",
+      "src": "/compare/logos/ccb.png",
+      "sourceUrl": "https://github.com/SeemSeam/claude_codex_bridge",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "agent-of-empires": {
+      "name": "Agent of Empires",
+      "alt": "Agent of Empires logo",
+      "src": "/compare/logos/agent-of-empires.png",
+      "sourceUrl": "https://github.com/agent-of-empires/agent-of-empires",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "github-copilot-app": {
+      "name": "GitHub Copilot app",
+      "alt": "GitHub Copilot app logo",
+      "src": "/compare/logos/github-copilot-app.png",
+      "sourceUrl": "https://github.com/features/copilot",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "augment-intent": {
+      "name": "Augment Intent",
+      "alt": "Augment Intent logo",
+      "src": "/compare/logos/augment-intent.ico",
+      "sourceUrl": "https://www.augmentcode.com/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-09-13"
+    },
+    "yao-agents": {
+      "name": "Yao Agents",
+      "alt": "Yao Agents logo",
+      "src": "/compare/logos/yao-agents.png",
+      "sourceUrl": "https://github.com/YaoApp/yao",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "jcode": {
+      "name": "jcode",
+      "alt": "jcode logo",
+      "src": "/compare/logos/jcode.jpg",
+      "sourceUrl": "https://github.com/1jehuang/jcode",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "deepcode": {
+      "name": "DeepCode",
+      "alt": "DeepCode logo",
+      "src": "/compare/logos/deepcode.jpg",
+      "sourceUrl": "https://github.com/HKUDS/DeepCode",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "ibm-bob-shell": {
+      "name": "IBM Bob Shell",
+      "alt": "IBM Bob Shell logo",
+      "src": "/compare/logos/ibm-bob-shell.ico",
+      "sourceUrl": "https://bob.ibm.com/docs/shell",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-09-13"
+    },
+    "langsmith": {
+      "name": "LangSmith",
+      "alt": "LangSmith logo",
+      "src": "/compare/logos/langsmith.png",
+      "sourceUrl": "https://github.com/langchain-ai",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "braintrust": {
+      "name": "Braintrust",
+      "alt": "Braintrust logo",
+      "src": "/compare/logos/braintrust.png",
+      "sourceUrl": "https://github.com/braintrustdata",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "wandb-weave": {
+      "name": "W&B Weave",
+      "alt": "W&B Weave logo",
+      "src": "/compare/logos/wandb-weave.png",
+      "sourceUrl": "https://github.com/wandb/weave",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "warp-oz": {
+      "name": "Warp Oz",
+      "alt": "Warp Oz logo",
+      "src": "/compare/logos/warp-oz.png",
+      "sourceUrl": "https://www.warp.dev/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-09-13"
+    },
+    "ona": {
+      "name": "Ona",
+      "alt": "Ona logo",
+      "src": "/compare/logos/ona.ico",
+      "sourceUrl": "https://ona.com/",
+      "sourceType": "official-site-icon",
+      "checkedAt": "2026-09-13"
+    },
+    "autogpt-platform": {
+      "name": "AutoGPT Platform",
+      "alt": "AutoGPT Platform logo",
+      "src": "/compare/logos/autogpt-platform.png",
+      "sourceUrl": "https://github.com/Significant-Gravitas/AutoGPT",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "openmanus": {
+      "name": "OpenManus",
+      "alt": "OpenManus logo",
+      "src": "/compare/logos/openmanus.png",
+      "sourceUrl": "https://github.com/FoundationAgents/OpenManus",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "kun": {
+      "name": "Kun",
+      "alt": "Kun logo",
+      "src": "/compare/logos/kun.png",
+      "sourceUrl": "https://github.com/KunAgent/Kun",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "open-cowork": {
+      "name": "OpenCowork",
+      "alt": "OpenCowork logo",
+      "src": "/compare/logos/open-cowork.png",
+      "sourceUrl": "https://github.com/OpenCoworkAI/open-cowork",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "cc-pocket": {
+      "name": "CC Pocket",
+      "alt": "CC Pocket logo",
+      "src": "/compare/logos/cc-pocket.png",
+      "sourceUrl": "https://github.com/K9i-0/ccpocket",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-09-13"
+    },
+    "tmate": {
+      "name": "tmate",
+      "alt": "tmate logo",
+      "src": "/compare/logos/tmate.png",
+      "sourceUrl": "https://github.com/tmate-io/tmate",
+      "sourceType": "official-project-organization-avatar",
+      "checkedAt": "2026-09-13"
     }
   },
   "platforms": {
@@ -1414,7 +1607,7 @@
       "src": "/compare/platforms/ios.svg",
       "sourceUrl": "https://www.apple.com/ios/",
       "sourceType": "original-interface-glyph",
-      "checkedAt": "2026-09-02"
+      "checkedAt": "2026-09-13"
     },
     "web": {
       "name": "Web",
@@ -1422,7 +1615,7 @@
       "src": "/compare/platforms/web.svg",
       "sourceUrl": "https://www.w3.org/standards/",
       "sourceType": "original-interface-glyph",
-      "checkedAt": "2026-09-02"
+      "checkedAt": "2026-09-13"
     }
   }
 }

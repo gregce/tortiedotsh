@@ -17,11 +17,11 @@
     "parityRule": "cells must exactly equal the current rendered non-platform Unknown keys. Implemented closures are recorded separately and are no longer Unknown catalog state."
   },
   "summary": {
-    "products": 17,
-    "currentUnknownCells": 45,
+    "products": 21,
+    "currentUnknownCells": 70,
     "suggestedClosures": 0,
     "implementedClosures": 8,
-    "remainUnknown": 45
+    "remainUnknown": 70
   },
   "categories": [
     {
@@ -86,6 +86,163 @@
               "rowId": "general-model-freedom",
               "result": "remain-unknown",
               "rationale": "The Grok Bot pages describe the hosted xAI product but do not expose operator-selectable third-party providers, local models, or an OpenAI-compatible model endpoint for this SKU."
+            }
+          ]
+        },
+        {
+          "productId": "autogpt-platform",
+          "sourcesChecked": [
+            "https://github.com/Significant-Gravitas/AutoGPT"
+          ],
+          "cells": [
+            {
+              "rowId": "general-long-term-memory",
+              "result": "remain-unknown",
+              "rationale": "AutoGPT Platform's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Long-term memory and recall” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-computer-use",
+              "result": "remain-unknown",
+              "rationale": "AutoGPT Platform's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Desktop or GUI computer use” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-communications",
+              "result": "remain-unknown",
+              "rationale": "AutoGPT Platform's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Communications channels” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-human-approvals",
+              "result": "remain-unknown",
+              "rationale": "AutoGPT Platform's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Human action approvals” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-isolation",
+              "result": "remain-unknown",
+              "rationale": "AutoGPT Platform's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Isolation and security boundary” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "openmanus",
+          "sourcesChecked": [
+            "https://github.com/FoundationAgents/OpenManus"
+          ],
+          "cells": [
+            {
+              "rowId": "general-long-term-memory",
+              "result": "remain-unknown",
+              "rationale": "OpenManus's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Long-term memory and recall” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-computer-use",
+              "result": "remain-unknown",
+              "rationale": "OpenManus's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Desktop or GUI computer use” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-communications",
+              "result": "remain-unknown",
+              "rationale": "OpenManus's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Communications channels” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-scheduled-automation",
+              "result": "remain-unknown",
+              "rationale": "OpenManus's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Scheduled/background automation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-event-triggers",
+              "result": "remain-unknown",
+              "rationale": "OpenManus's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Event or webhook triggers” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-human-approvals",
+              "result": "remain-unknown",
+              "rationale": "OpenManus's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Human action approvals” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "kun",
+          "sourcesChecked": [
+            "https://github.com/KunAgent/Kun"
+          ],
+          "cells": [
+            {
+              "rowId": "general-long-term-memory",
+              "result": "remain-unknown",
+              "rationale": "Kun's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Long-term memory and recall” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-communications",
+              "result": "remain-unknown",
+              "rationale": "Kun's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Communications channels” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-scheduled-automation",
+              "result": "remain-unknown",
+              "rationale": "Kun's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Scheduled/background automation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-event-triggers",
+              "result": "remain-unknown",
+              "rationale": "Kun's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Event or webhook triggers” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-multi-agent",
+              "result": "remain-unknown",
+              "rationale": "Kun's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Multi-agent delegation or handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-human-approvals",
+              "result": "remain-unknown",
+              "rationale": "Kun's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Human action approvals” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-isolation",
+              "result": "remain-unknown",
+              "rationale": "Kun's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Isolation and security boundary” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "open-cowork",
+          "sourcesChecked": [
+            "https://github.com/OpenCoworkAI/open-cowork"
+          ],
+          "cells": [
+            {
+              "rowId": "general-long-term-memory",
+              "result": "remain-unknown",
+              "rationale": "OpenCowork's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Long-term memory and recall” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-communications",
+              "result": "remain-unknown",
+              "rationale": "OpenCowork's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Communications channels” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-scheduled-automation",
+              "result": "remain-unknown",
+              "rationale": "OpenCowork's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Scheduled/background automation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-event-triggers",
+              "result": "remain-unknown",
+              "rationale": "OpenCowork's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Event or webhook triggers” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-multi-agent",
+              "result": "remain-unknown",
+              "rationale": "OpenCowork's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Multi-agent delegation or handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-human-approvals",
+              "result": "remain-unknown",
+              "rationale": "OpenCowork's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Human action approvals” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-isolation",
+              "result": "remain-unknown",
+              "rationale": "OpenCowork's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Isolation and security boundary” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },

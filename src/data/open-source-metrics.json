@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-13T10:05:12.488Z",
-  "manifestSyncedAt": "2026-09-13T10:05:12.488Z",
+  "generatedAt": "2026-09-14T00:12:04.483Z",
+  "manifestSyncedAt": "2026-09-14T00:12:04.483Z",
   "generator": "scripts/refresh-open-source-metrics.mjs",
   "projects": [
     {
@@ -813,16 +813,6 @@
           "fetchedAt": "2026-09-13T09:55:24.183Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
-          "type": "release-policy",
-          "url": "https://github.com/JetBrains/intellij-community/releases",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/JetBrains/intellij-community/languages",
           "fetchedAt": "2026-09-13T09:55:24.408Z"
@@ -836,6 +826,16 @@
           "type": "loc-measurement",
           "url": "https://github.com/JetBrains/intellij-community/tree/master",
           "fetchedAt": "2026-09-13T09:58:54.248Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/JetBrains/intellij-community/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -1161,11 +1161,6 @@
           "fetchedAt": "2026-09-13T09:55:26.465Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/posit-dev/positron/blob/main/LICENSE.txt",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/posit-dev/positron/languages",
           "fetchedAt": "2026-09-13T09:55:26.697Z"
@@ -1184,6 +1179,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/posit-dev/positron/tree/2026.09.1-2",
           "fetchedAt": "2026-09-13T09:55:27.483Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/posit-dev/positron/blob/main/LICENSE.txt",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -1488,11 +1488,6 @@
           "fetchedAt": "2026-09-13T09:55:29.781Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/zed-industries/zed#licensing",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "contributors",
           "url": "https://api.github.com/repos/zed-industries/zed/contributors?anon=true&per_page=1",
           "fetchedAt": "2026-09-13T09:55:30.066Z"
@@ -1511,6 +1506,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/zed-industries/zed/tree/v1.19.2",
           "fetchedAt": "2026-09-13T09:55:47.894Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/zed-industries/zed#licensing",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -2661,11 +2661,6 @@
           "fetchedAt": "2026-09-13T09:56:09.383Z"
         },
         {
-          "type": "release-policy",
-          "url": "https://github.com/continuedev/continue/releases",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/continuedev/continue/languages",
           "fetchedAt": "2026-09-13T09:56:09.596Z"
@@ -2679,6 +2674,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/continuedev/continue/tree/main",
           "fetchedAt": "2026-09-13T09:56:10.291Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/continuedev/continue/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -4126,11 +4126,6 @@
           "fetchedAt": "2026-09-13T09:57:56.467Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/getpaseo/paseo/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/getpaseo/paseo/languages",
           "fetchedAt": "2026-09-13T09:57:56.589Z"
@@ -4149,6 +4144,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/getpaseo/paseo/tree/v0.8.0",
           "fetchedAt": "2026-09-13T09:58:11.073Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/getpaseo/paseo/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -4289,11 +4289,6 @@
           "fetchedAt": "2026-09-13T09:58:11.513Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/superset-sh/superset/blob/main/LICENSE.md",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/superset-sh/superset/languages",
           "fetchedAt": "2026-09-13T09:58:11.675Z"
@@ -4312,6 +4307,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/superset-sh/superset/tree/desktop-v1.28.0",
           "fetchedAt": "2026-09-13T09:58:24.222Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/superset-sh/superset/blob/main/LICENSE.md",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -5978,11 +5978,6 @@
           "fetchedAt": "2026-09-13T09:58:51.764Z"
         },
         {
-          "type": "release-policy",
-          "url": "https://github.com/warpdotdev/warp/releases",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/warpdotdev/warp/languages",
           "fetchedAt": "2026-09-13T09:58:52.017Z"
@@ -5996,6 +5991,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/warpdotdev/warp/tree/master",
           "fetchedAt": "2026-09-13T09:59:11.175Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/warpdotdev/warp/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -6307,9 +6307,9 @@
       "owner": "Hmbown",
       "repo": "CodeWhale",
       "forge": "github",
-      "repositoryUrl": "https://github.com/Hmbown/Codewhale",
-      "cloneUrl": "https://github.com/Hmbown/Codewhale.git",
-      "githubUrl": "https://github.com/Hmbown/Codewhale",
+      "repositoryUrl": "https://github.com/Hmbown/CodeWhale",
+      "cloneUrl": "https://github.com/Hmbown/CodeWhale.git",
+      "githubUrl": "https://github.com/Hmbown/CodeWhale",
       "apiUrl": "https://api.github.com/repos/Hmbown/CodeWhale",
       "metricScope": null,
       "status": "current",
@@ -8231,11 +8231,6 @@
           "fetchedAt": "2026-09-13T10:00:34.997Z"
         },
         {
-          "type": "release-policy",
-          "url": "https://github.com/slopus/happy/releases",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/slopus/happy/languages",
           "fetchedAt": "2026-09-13T10:00:35.217Z"
@@ -8249,6 +8244,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/slopus/happy/tree/main",
           "fetchedAt": "2026-09-13T10:00:41.108Z"
+        },
+        {
+          "type": "release-policy",
+          "url": "https://github.com/slopus/happy/releases",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -8659,11 +8659,6 @@
           "fetchedAt": "2026-09-13T10:00:52.561Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/TabbyML/tabby/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/TabbyML/tabby/languages",
           "fetchedAt": "2026-09-13T10:00:52.765Z"
@@ -8682,6 +8677,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/TabbyML/tabby/tree/v0.32.0",
           "fetchedAt": "2026-09-13T10:00:54.202Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/TabbyML/tabby/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -9251,11 +9251,6 @@
           "fetchedAt": "2026-09-13T10:00:56.865Z"
         },
         {
-          "type": "license-override",
-          "url": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/languages",
           "fetchedAt": "2026-09-13T10:00:57.386Z"
@@ -9269,6 +9264,11 @@
           "type": "latest-tag",
           "url": "https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab/repository/tags?per_page=1",
           "fetchedAt": "2026-09-13T10:00:57.687Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://gitlab.com/gitlab-org/gitlab/-/blob/master/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -9439,16 +9439,6 @@
           "fetchedAt": "2026-09-13T10:00:57.505Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/coder/coder/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
-          "type": "license-override",
-          "url": "https://github.com/coder/coder/blob/main/LICENSE.enterprise",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/coder/coder/languages",
           "fetchedAt": "2026-09-13T10:00:57.695Z"
@@ -9467,6 +9457,16 @@
           "type": "loc-measurement",
           "url": "https://github.com/coder/coder/tree/v2.36.5",
           "fetchedAt": "2026-09-13T10:01:17.708Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/coder/coder/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/coder/coder/blob/main/LICENSE.enterprise",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -9567,11 +9567,6 @@
           "fetchedAt": "2026-09-13T10:00:57.918Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/OpenHands/OpenHands-Cloud/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/OpenHands/OpenHands-Cloud/languages",
           "fetchedAt": "2026-09-13T10:00:58.155Z"
@@ -9590,6 +9585,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/OpenHands/OpenHands-Cloud/tree/openhands%2F0.67.0",
           "fetchedAt": "2026-09-13T10:00:59.783Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/OpenHands/OpenHands-Cloud/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -10412,11 +10412,6 @@
           "fetchedAt": "2026-09-13T10:01:02.749Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/Termix-SSH/Termix/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/Termix-SSH/Termix/languages",
           "fetchedAt": "2026-09-13T10:01:02.936Z"
@@ -10435,6 +10430,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/Termix-SSH/Termix/tree/release-2.7.1-tag",
           "fetchedAt": "2026-09-13T10:01:04.080Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/Termix-SSH/Termix/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -11614,11 +11614,6 @@
           "fetchedAt": "2026-09-13T10:01:16.476Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/openclaw/openclaw/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/openclaw/openclaw/languages",
           "fetchedAt": "2026-09-13T10:01:16.665Z"
@@ -11637,6 +11632,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/openclaw/openclaw/tree/v2026.9.4",
           "fetchedAt": "2026-09-13T10:04:43.311Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/openclaw/openclaw/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -12103,11 +12103,6 @@
           "fetchedAt": "2026-09-13T10:01:27.512Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/agent0ai/agent-zero/blob/main/LICENSE",
-          "fetchedAt": "2026-08-23T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/agent0ai/agent-zero/languages",
           "fetchedAt": "2026-09-13T10:01:27.730Z"
@@ -12126,6 +12121,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/agent0ai/agent-zero/tree/v2.12",
           "fetchedAt": "2026-09-13T10:01:32.501Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/agent0ai/agent-zero/blob/main/LICENSE",
+          "fetchedAt": "2026-08-23T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -13418,11 +13418,6 @@
           "fetchedAt": "2026-09-13T10:01:53.207Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/kortix-ai/suna/blob/main/LICENSE",
-          "fetchedAt": "2026-08-24T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/kortix-ai/suna/languages",
           "fetchedAt": "2026-09-13T10:01:53.393Z"
@@ -13441,6 +13436,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/kortix-ai/suna/tree/v0.13.14",
           "fetchedAt": "2026-09-13T10:02:28.396Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/kortix-ai/suna/blob/main/LICENSE",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -13561,11 +13561,6 @@
           "fetchedAt": "2026-09-13T10:02:00.821Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md",
-          "fetchedAt": "2026-08-24T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/code-yeongyu/oh-my-openagent/languages",
           "fetchedAt": "2026-09-13T10:02:01.026Z"
@@ -13584,6 +13579,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/code-yeongyu/oh-my-openagent/tree/v4.19.4",
           "fetchedAt": "2026-09-13T10:02:02.484Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/code-yeongyu/oh-my-openagent/blob/dev/LICENSE.md",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -14316,11 +14316,6 @@
           "fetchedAt": "2026-09-13T10:02:46.158Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/langfuse/langfuse/blob/main/LICENSE",
-          "fetchedAt": "2026-08-24T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/langfuse/langfuse/languages",
           "fetchedAt": "2026-09-13T10:02:46.394Z"
@@ -14339,6 +14334,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/langfuse/langfuse/tree/v4.35.0",
           "fetchedAt": "2026-09-13T10:02:59.880Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/langfuse/langfuse/blob/main/LICENSE",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -14495,11 +14495,6 @@
           "fetchedAt": "2026-09-13T10:02:50.030Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
-          "fetchedAt": "2026-08-24T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/Arize-ai/phoenix/languages",
           "fetchedAt": "2026-09-13T10:02:50.267Z"
@@ -14518,6 +14513,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/Arize-ai/phoenix/tree/arize-phoenix-v20.11.0",
           "fetchedAt": "2026-09-13T10:03:03.014Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
+          "fetchedAt": "2026-08-24T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -15338,11 +15338,6 @@
           "fetchedAt": "2026-09-13T10:03:20.039Z"
         },
         {
-          "type": "license-override",
-          "url": "https://github.com/eneskirca/nodeterm/blob/main/LICENSE",
-          "fetchedAt": "2026-08-30T00:00:00.000Z"
-        },
-        {
           "type": "languages",
           "url": "https://api.github.com/repos/eneskirca/nodeterm/languages",
           "fetchedAt": "2026-09-13T10:03:20.258Z"
@@ -15361,6 +15356,11 @@
           "type": "loc-measurement",
           "url": "https://github.com/eneskirca/nodeterm/tree/v0.3.5",
           "fetchedAt": "2026-09-13T10:03:26.124Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/eneskirca/nodeterm/blob/main/LICENSE",
+          "fetchedAt": "2026-08-30T00:00:00.000Z"
         }
       ],
       "errors": []
@@ -16170,6 +16170,1637 @@
           "type": "loc-measurement",
           "url": "https://github.com/happier-dev/happier/tree/stack-v0.2.12",
           "fetchedAt": "2026-09-13T10:05:12.028Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "ccb",
+      "name": "Claude Codex Bridge",
+      "category": "agent-workbenches",
+      "owner": "SeemSeam",
+      "repo": "claude_codex_bridge",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/SeemSeam/claude_codex_bridge",
+      "cloneUrl": "https://github.com/SeemSeam/claude_codex_bridge.git",
+      "githubUrl": "https://github.com/SeemSeam/claude_codex_bridge",
+      "apiUrl": "https://api.github.com/repos/SeemSeam/claude_codex_bridge",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:11:36.433Z",
+      "stars": 3494,
+      "forks": 343,
+      "openIssues": 101,
+      "contributors": 65,
+      "repositorySizeKb": 48195,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-09-09T09:05:21Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified",
+        "name": "GNU Affero General Public License v3.0",
+        "spdxId": "AGPL-3.0",
+        "url": "https://github.com/SeemSeam/claude_codex_bridge/blob/main/LICENSE"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 21290846,
+          "percent": 85.73
+        },
+        {
+          "name": "Dart",
+          "bytes": 2738534,
+          "percent": 11.03
+        },
+        {
+          "name": "Rust",
+          "bytes": 292451,
+          "percent": 1.18
+        },
+        {
+          "name": "Shell",
+          "bytes": 213122,
+          "percent": 0.86
+        },
+        {
+          "name": "HTML",
+          "bytes": 179141,
+          "percent": 0.72
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 87323,
+          "percent": 0.35
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 22295,
+          "percent": 0.09
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 11019,
+          "percent": 0.04
+        },
+        {
+          "name": "Swift",
+          "bytes": 900,
+          "percent": 0
+        },
+        {
+          "name": "Makefile",
+          "bytes": 229,
+          "percent": 0
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 130,
+          "percent": 0
+        },
+        {
+          "name": "Objective-C",
+          "bytes": 38,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v8.6.16",
+        "name": "v8.6.16",
+        "publishedAt": "2026-09-09T08:32:12Z",
+        "url": "https://github.com/SeemSeam/claude_codex_bridge/releases/tag/v8.6.16",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v8.6.16",
+      "releaseDate": "2026-09-09T08:32:12Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 604032,
+        "comments": 10531,
+        "blank": 83400,
+        "files": 2805,
+        "measuredAt": "2026-09-14T00:11:31.498Z",
+        "verifiedAt": "2026-09-14T00:11:31.498Z",
+        "measuredRef": "v8.6.16",
+        "refType": "stable-release-tag",
+        "commitSha": "2f6767ad6b24cc90b23f40f892eceff846d558da",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/SeemSeam/claude_codex_bridge",
+          "fetchedAt": "2026-09-14T00:11:16.228Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/SeemSeam/claude_codex_bridge/blob/main/LICENSE",
+          "fetchedAt": "2026-09-13T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/SeemSeam/claude_codex_bridge/languages",
+          "fetchedAt": "2026-09-14T00:11:16.344Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/SeemSeam/claude_codex_bridge/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:16.495Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/SeemSeam/claude_codex_bridge/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:17.076Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/SeemSeam/claude_codex_bridge/tree/v8.6.16",
+          "fetchedAt": "2026-09-14T00:11:31.498Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "agent-of-empires",
+      "name": "Agent of Empires",
+      "category": "agent-workbenches",
+      "owner": "agent-of-empires",
+      "repo": "agent-of-empires",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/agent-of-empires/agent-of-empires",
+      "cloneUrl": "https://github.com/agent-of-empires/agent-of-empires.git",
+      "githubUrl": "https://github.com/agent-of-empires/agent-of-empires",
+      "apiUrl": "https://api.github.com/repos/agent-of-empires/agent-of-empires",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:11:33.177Z",
+      "stars": 3227,
+      "forks": 350,
+      "openIssues": 103,
+      "contributors": 115,
+      "repositorySizeKb": 56440,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-09-13T20:22:13Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 19031470,
+          "percent": 73.6
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 6501263,
+          "percent": 25.14
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 131998,
+          "percent": 0.51
+        },
+        {
+          "name": "Astro",
+          "bytes": 62282,
+          "percent": 0.24
+        },
+        {
+          "name": "CSS",
+          "bytes": 46570,
+          "percent": 0.18
+        },
+        {
+          "name": "Python",
+          "bytes": 34706,
+          "percent": 0.13
+        },
+        {
+          "name": "Shell",
+          "bytes": 33390,
+          "percent": 0.13
+        },
+        {
+          "name": "Nix",
+          "bytes": 8125,
+          "percent": 0.03
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 4985,
+          "percent": 0.02
+        },
+        {
+          "name": "HTML",
+          "bytes": 1539,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v1.16.0",
+        "name": "Agent of Empires v1.16.0",
+        "publishedAt": "2026-09-10T13:12:07Z",
+        "url": "https://github.com/agent-of-empires/agent-of-empires/releases/tag/v1.16.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v1.16.0",
+      "releaseDate": "2026-09-10T13:12:07Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 486392,
+        "comments": 108418,
+        "blank": 50911,
+        "files": 1624,
+        "measuredAt": "2026-09-14T00:11:30.083Z",
+        "verifiedAt": "2026-09-14T00:11:30.083Z",
+        "measuredRef": "v1.16.0",
+        "refType": "stable-release-tag",
+        "commitSha": "1f671f3c9bc8f5ac46872017d437df68b61b0aa9",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/agent-of-empires/agent-of-empires",
+          "fetchedAt": "2026-09-14T00:11:16.223Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/agent-of-empires/agent-of-empires/languages",
+          "fetchedAt": "2026-09-14T00:11:16.318Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/agent-of-empires/agent-of-empires/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:16.508Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/agent-of-empires/agent-of-empires/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:17.268Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/agent-of-empires/agent-of-empires/tree/v1.16.0",
+          "fetchedAt": "2026-09-14T00:11:30.083Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "yao-agents",
+      "name": "Yao Agents",
+      "category": "agent-orchestrators",
+      "owner": "YaoApp",
+      "repo": "yao",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/YaoApp/yao",
+      "cloneUrl": "https://github.com/YaoApp/yao.git",
+      "githubUrl": "https://github.com/YaoApp/yao",
+      "apiUrl": "https://api.github.com/repos/YaoApp/yao",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:11:21.032Z",
+      "stars": 7934,
+      "forks": 708,
+      "openIssues": 7,
+      "contributors": 12,
+      "repositorySizeKb": 63919,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-09-10T14:58:19Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified",
+        "name": "Modified Apache License 2.0 with commercial restrictions",
+        "spdxId": "LicenseRef-Yao-Modified-Apache-2.0",
+        "url": "https://github.com/YaoApp/yao/blob/main/LICENSE"
+      },
+      "languages": [
+        {
+          "name": "Go",
+          "bytes": 13812367,
+          "percent": 98.63
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 113884,
+          "percent": 0.81
+        },
+        {
+          "name": "Makefile",
+          "bytes": 40039,
+          "percent": 0.29
+        },
+        {
+          "name": "Shell",
+          "bytes": 20914,
+          "percent": 0.15
+        },
+        {
+          "name": "Go Template",
+          "bytes": 13374,
+          "percent": 0.1
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 3417,
+          "percent": 0.02
+        },
+        {
+          "name": "HTML",
+          "bytes": 365,
+          "percent": 0
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 142,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.10.3",
+        "name": "v0.10.3",
+        "publishedAt": "2023-05-18T10:40:46Z",
+        "url": "https://github.com/YaoApp/yao/releases/tag/v0.10.3",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.10.3",
+      "releaseDate": "2023-05-18T10:40:46Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 27665,
+        "comments": 2644,
+        "blank": 5778,
+        "files": 324,
+        "measuredAt": "2026-09-14T00:11:20.861Z",
+        "verifiedAt": "2026-09-14T00:11:20.861Z",
+        "measuredRef": "v0.10.3",
+        "refType": "stable-release-tag",
+        "commitSha": "1176938ed1bfa28c6e4bd8f51613cd3918af1126",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/YaoApp/yao",
+          "fetchedAt": "2026-09-14T00:11:16.241Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/YaoApp/yao/blob/main/LICENSE",
+          "fetchedAt": "2026-09-13T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/YaoApp/yao/languages",
+          "fetchedAt": "2026-09-14T00:11:16.342Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/YaoApp/yao/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:16.496Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/YaoApp/yao/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:17.147Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/YaoApp/yao/tree/v0.10.3",
+          "fetchedAt": "2026-09-14T00:11:20.861Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "jcode",
+      "name": "jcode",
+      "category": "coding-agent-harnesses",
+      "owner": "1jehuang",
+      "repo": "jcode",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/1jehuang/jcode",
+      "cloneUrl": "https://github.com/1jehuang/jcode.git",
+      "githubUrl": "https://github.com/1jehuang/jcode",
+      "apiUrl": "https://api.github.com/repos/1jehuang/jcode",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:11:47.429Z",
+      "stars": 19640,
+      "forks": 2270,
+      "openIssues": 453,
+      "contributors": 15,
+      "repositorySizeKb": 451463,
+      "repositorySizePolicy": null,
+      "defaultBranch": "master",
+      "pushedAt": "2026-09-13T23:18:15Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Rust",
+          "bytes": 25813752,
+          "percent": 91.34
+        },
+        {
+          "name": "Python",
+          "bytes": 1425912,
+          "percent": 5.05
+        },
+        {
+          "name": "Shell",
+          "bytes": 356505,
+          "percent": 1.26
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 239073,
+          "percent": 0.85
+        },
+        {
+          "name": "Swift",
+          "bytes": 172618,
+          "percent": 0.61
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 143452,
+          "percent": 0.51
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 104563,
+          "percent": 0.37
+        },
+        {
+          "name": "CSS",
+          "bytes": 3347,
+          "percent": 0.01
+        },
+        {
+          "name": "HTML",
+          "bytes": 1031,
+          "percent": 0
+        },
+        {
+          "name": "RenderScript",
+          "bytes": 1,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.84.0",
+        "name": "v0.84.0",
+        "publishedAt": "2026-09-07T04:10:27Z",
+        "url": "https://github.com/1jehuang/jcode/releases/tag/v0.84.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.84.0",
+      "releaseDate": "2026-09-07T04:10:27Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 636179,
+        "comments": 58312,
+        "blank": 63803,
+        "files": 1506,
+        "measuredAt": "2026-09-14T00:11:47.203Z",
+        "verifiedAt": "2026-09-14T00:11:47.203Z",
+        "measuredRef": "v0.84.0",
+        "refType": "stable-release-tag",
+        "commitSha": "57d58789970f4fe2405ca861c49275519df08147",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/1jehuang/jcode",
+          "fetchedAt": "2026-09-14T00:11:21.248Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/1jehuang/jcode/languages",
+          "fetchedAt": "2026-09-14T00:11:21.335Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/1jehuang/jcode/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:21.433Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/1jehuang/jcode/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:22.043Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/1jehuang/jcode/tree/v0.84.0",
+          "fetchedAt": "2026-09-14T00:11:47.203Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "deepcode",
+      "name": "DeepCode",
+      "category": "coding-agent-harnesses",
+      "owner": "HKUDS",
+      "repo": "DeepCode",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/HKUDS/DeepCode",
+      "cloneUrl": "https://github.com/HKUDS/DeepCode.git",
+      "githubUrl": "https://github.com/HKUDS/DeepCode",
+      "apiUrl": "https://api.github.com/repos/HKUDS/DeepCode",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:11:42.766Z",
+      "stars": 16530,
+      "forks": 2152,
+      "openIssues": 43,
+      "contributors": 27,
+      "repositorySizeKb": 87014,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-09-09T11:58:41Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 6011550,
+          "percent": 83.68
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 940690,
+          "percent": 13.09
+        },
+        {
+          "name": "CSS",
+          "bytes": 163201,
+          "percent": 2.27
+        },
+        {
+          "name": "Rust",
+          "bytes": 31073,
+          "percent": 0.43
+        },
+        {
+          "name": "Astro",
+          "bytes": 23685,
+          "percent": 0.33
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 11949,
+          "percent": 0.17
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 1593,
+          "percent": 0.02
+        },
+        {
+          "name": "HTML",
+          "bytes": 345,
+          "percent": 0
+        },
+        {
+          "name": "Shell",
+          "bytes": 105,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v2.2.0",
+        "name": "v2.2.0",
+        "publishedAt": "2026-09-06T10:17:59Z",
+        "url": "https://github.com/HKUDS/DeepCode/releases/tag/v2.2.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v2.2.0",
+      "releaseDate": "2026-09-06T10:17:59Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 148578,
+        "comments": 15269,
+        "blank": 22774,
+        "files": 694,
+        "measuredAt": "2026-09-14T00:11:42.194Z",
+        "verifiedAt": "2026-09-14T00:11:42.194Z",
+        "measuredRef": "v2.2.0",
+        "refType": "stable-release-tag",
+        "commitSha": "949c688b13c86b1d0b27fe96cfb6cbee41ad961e",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/HKUDS/DeepCode",
+          "fetchedAt": "2026-09-14T00:11:34.872Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/HKUDS/DeepCode/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:35.861Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/HKUDS/DeepCode/languages",
+          "fetchedAt": "2026-09-14T00:11:35.888Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/HKUDS/DeepCode/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:36.376Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/HKUDS/DeepCode/tree/v2.2.0",
+          "fetchedAt": "2026-09-14T00:11:42.194Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "wandb-weave",
+      "name": "W&B Weave source tree",
+      "category": "agent-traces",
+      "owner": "wandb",
+      "repo": "weave",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/wandb/weave",
+      "cloneUrl": "https://github.com/wandb/weave.git",
+      "githubUrl": "https://github.com/wandb/weave",
+      "apiUrl": "https://api.github.com/repos/wandb/weave",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:11:45.729Z",
+      "stars": 1128,
+      "forks": 168,
+      "openIssues": 223,
+      "contributors": 122,
+      "repositorySizeKb": 1623111,
+      "repositorySizePolicy": null,
+      "defaultBranch": "master",
+      "pushedAt": "2026-09-12T19:55:51Z",
+      "archived": false,
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdxId": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 11030359,
+          "percent": 89.21
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 1296379,
+          "percent": 10.48
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 18718,
+          "percent": 0.15
+        },
+        {
+          "name": "Shell",
+          "bytes": 18188,
+          "percent": 0.15
+        },
+        {
+          "name": "Makefile",
+          "bytes": 791,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.53.7",
+        "name": "v0.53.7",
+        "publishedAt": "2026-08-27T21:35:08Z",
+        "url": "https://github.com/wandb/weave/releases/tag/v0.53.7",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.53.7",
+      "releaseDate": "2026-08-27T21:35:08Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 239986,
+        "comments": 54381,
+        "blank": 49629,
+        "files": 1092,
+        "measuredAt": "2026-09-14T00:11:45.521Z",
+        "verifiedAt": "2026-09-14T00:11:45.521Z",
+        "measuredRef": "v0.53.7",
+        "refType": "stable-release-tag",
+        "commitSha": "f00cd7a0ff9d81897906d825e9d2444cc7246028",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/wandb/weave",
+          "fetchedAt": "2026-09-14T00:11:36.591Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/wandb/weave/languages",
+          "fetchedAt": "2026-09-14T00:11:36.670Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/wandb/weave/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:36.942Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/wandb/weave/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:37.004Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/wandb/weave/tree/v0.53.7",
+          "fetchedAt": "2026-09-14T00:11:45.521Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "autogpt-platform",
+      "name": "AutoGPT Platform source tree",
+      "category": "general-purpose-agents",
+      "owner": "Significant-Gravitas",
+      "repo": "AutoGPT",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/Significant-Gravitas/AutoGPT",
+      "cloneUrl": "https://github.com/Significant-Gravitas/AutoGPT.git",
+      "githubUrl": "https://github.com/Significant-Gravitas/AutoGPT",
+      "apiUrl": "https://api.github.com/repos/Significant-Gravitas/AutoGPT",
+      "metricScope": "Repository-wide metrics include the split-license AutoGPT Platform and the classic agent/framework source tree.",
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:11:48.743Z",
+      "stars": 187311,
+      "forks": 46016,
+      "openIssues": 566,
+      "contributors": 842,
+      "repositorySizeKb": 621673,
+      "repositorySizePolicy": null,
+      "defaultBranch": "master",
+      "pushedAt": "2026-09-13T20:09:37Z",
+      "archived": false,
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdxId": "NOASSERTION",
+        "url": null
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 23306725,
+          "percent": 66.74
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 11026363,
+          "percent": 31.57
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 157906,
+          "percent": 0.45
+        },
+        {
+          "name": "PLpgSQL",
+          "bytes": 133088,
+          "percent": 0.38
+        },
+        {
+          "name": "Shell",
+          "bytes": 111142,
+          "percent": 0.32
+        },
+        {
+          "name": "Jinja",
+          "bytes": 110160,
+          "percent": 0.32
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 23715,
+          "percent": 0.07
+        },
+        {
+          "name": "CSS",
+          "bytes": 18823,
+          "percent": 0.05
+        },
+        {
+          "name": "C",
+          "bytes": 15892,
+          "percent": 0.05
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 14881,
+          "percent": 0.04
+        },
+        {
+          "name": "Makefile",
+          "bytes": 1889,
+          "percent": 0.01
+        },
+        {
+          "name": "Elixir",
+          "bytes": 1068,
+          "percent": 0
+        },
+        {
+          "name": "HCL",
+          "bytes": 440,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "autogpt-v0.5.1",
+        "name": "AutoGPT v0.5.1",
+        "publishedAt": "2024-04-26T20:15:57Z",
+        "url": "https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-v0.5.1",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "autogpt-v0.5.1",
+      "releaseDate": "2024-04-26T20:15:57Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 31506,
+        "comments": 6428,
+        "blank": 7054,
+        "files": 474,
+        "measuredAt": "2026-09-14T00:11:48.448Z",
+        "verifiedAt": "2026-09-14T00:11:48.448Z",
+        "measuredRef": "autogpt-v0.5.1",
+        "refType": "stable-release-tag",
+        "commitSha": "26324f29849967fa72c207da929af612f1740669",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/Significant-Gravitas/AutoGPT",
+          "fetchedAt": "2026-09-14T00:11:42.942Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/Significant-Gravitas/AutoGPT/languages",
+          "fetchedAt": "2026-09-14T00:11:43.046Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/Significant-Gravitas/AutoGPT/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:43.235Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/Significant-Gravitas/AutoGPT/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:43.337Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/Significant-Gravitas/AutoGPT/tree/autogpt-v0.5.1",
+          "fetchedAt": "2026-09-14T00:11:48.448Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "openmanus",
+      "name": "OpenManus",
+      "category": "general-purpose-agents",
+      "owner": "FoundationAgents",
+      "repo": "OpenManus",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/FoundationAgents/OpenManus",
+      "cloneUrl": "https://github.com/FoundationAgents/OpenManus.git",
+      "githubUrl": "https://github.com/FoundationAgents/OpenManus",
+      "apiUrl": "https://api.github.com/repos/FoundationAgents/OpenManus",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:11:47.435Z",
+      "stars": 58300,
+      "forks": 10115,
+      "openIssues": 455,
+      "contributors": 62,
+      "repositorySizeKb": 4572,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-08-22T07:53:07Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Python",
+          "bytes": 447068,
+          "percent": 97.77
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 9898,
+          "percent": 2.16
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 305,
+          "percent": 0.07
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.3.0",
+        "name": null,
+        "publishedAt": "2025-04-10T02:47:41Z",
+        "url": "https://github.com/FoundationAgents/OpenManus/releases/tag/v0.3.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.3.0",
+      "releaseDate": "2025-04-10T02:47:41Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 6507,
+        "comments": 1530,
+        "blank": 1617,
+        "files": 66,
+        "measuredAt": "2026-09-14T00:11:47.389Z",
+        "verifiedAt": "2026-09-14T00:11:47.389Z",
+        "measuredRef": "v0.3.0",
+        "refType": "stable-release-tag",
+        "commitSha": "f616c5d43d02d93ccc6e55f11666726d6645fdc2",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/FoundationAgents/OpenManus",
+          "fetchedAt": "2026-09-14T00:11:45.862Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/FoundationAgents/OpenManus/languages",
+          "fetchedAt": "2026-09-14T00:11:45.986Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/FoundationAgents/OpenManus/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:45.994Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/FoundationAgents/OpenManus/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:46.004Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/FoundationAgents/OpenManus/tree/v0.3.0",
+          "fetchedAt": "2026-09-14T00:11:47.389Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "kun",
+      "name": "Kun",
+      "category": "general-purpose-agents",
+      "owner": "KunAgent",
+      "repo": "Kun",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/KunAgent/Kun",
+      "cloneUrl": "https://github.com/KunAgent/Kun.git",
+      "githubUrl": "https://github.com/KunAgent/Kun",
+      "apiUrl": "https://api.github.com/repos/KunAgent/Kun",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:12:04.482Z",
+      "stars": 6310,
+      "forks": 594,
+      "openIssues": 7,
+      "contributors": 35,
+      "repositorySizeKb": 285462,
+      "repositorySizePolicy": null,
+      "defaultBranch": "master",
+      "pushedAt": "2026-09-12T06:51:34Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified",
+        "name": "PolyForm Noncommercial License 1.0.0",
+        "spdxId": "PolyForm-Noncommercial-1.0.0",
+        "url": "https://github.com/KunAgent/Kun/blob/main/LICENSE"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 45398491,
+          "percent": 95.16
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 1466895,
+          "percent": 3.07
+        },
+        {
+          "name": "CSS",
+          "bytes": 466196,
+          "percent": 0.98
+        },
+        {
+          "name": "Python",
+          "bytes": 165046,
+          "percent": 0.35
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 127318,
+          "percent": 0.27
+        },
+        {
+          "name": "NSIS",
+          "bytes": 47339,
+          "percent": 0.1
+        },
+        {
+          "name": "Shell",
+          "bytes": 28972,
+          "percent": 0.06
+        },
+        {
+          "name": "HTML",
+          "bytes": 3927,
+          "percent": 0.01
+        },
+        {
+          "name": "Swift",
+          "bytes": 1637,
+          "percent": 0
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 1297,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v0.3.10",
+        "name": "Kun 0.3.10",
+        "publishedAt": "2026-09-10T18:28:43Z",
+        "url": "https://github.com/KunAgent/Kun/releases/tag/v0.3.10",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v0.3.10",
+      "releaseDate": "2026-09-10T18:28:43Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 1245175,
+        "comments": 26670,
+        "blank": 88840,
+        "files": 5944,
+        "measuredAt": "2026-09-14T00:12:03.881Z",
+        "verifiedAt": "2026-09-14T00:12:03.881Z",
+        "measuredRef": "v0.3.10",
+        "refType": "stable-release-tag",
+        "commitSha": "e67f656bca573d5e6a4970a5094a30f3afd09011",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/KunAgent/Kun",
+          "fetchedAt": "2026-09-14T00:11:47.584Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/KunAgent/Kun/blob/main/LICENSE",
+          "fetchedAt": "2026-09-13T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/KunAgent/Kun/languages",
+          "fetchedAt": "2026-09-14T00:11:47.675Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/KunAgent/Kun/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:47.817Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/KunAgent/Kun/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:48.787Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/KunAgent/Kun/tree/v0.3.10",
+          "fetchedAt": "2026-09-14T00:12:03.881Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "open-cowork",
+      "name": "OpenCowork",
+      "category": "general-purpose-agents",
+      "owner": "OpenCoworkAI",
+      "repo": "open-cowork",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/OpenCoworkAI/open-cowork",
+      "cloneUrl": "https://github.com/OpenCoworkAI/open-cowork.git",
+      "githubUrl": "https://github.com/OpenCoworkAI/open-cowork",
+      "apiUrl": "https://api.github.com/repos/OpenCoworkAI/open-cowork",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:11:53.000Z",
+      "stars": 2139,
+      "forks": 291,
+      "openIssues": 96,
+      "contributors": 22,
+      "repositorySizeKb": 79005,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-09-13T13:43:50Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "TypeScript",
+          "bytes": 3193604,
+          "percent": 87.82
+        },
+        {
+          "name": "Python",
+          "bytes": 332280,
+          "percent": 9.14
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 83283,
+          "percent": 2.29
+        },
+        {
+          "name": "CSS",
+          "bytes": 13246,
+          "percent": 0.36
+        },
+        {
+          "name": "PowerShell",
+          "bytes": 6303,
+          "percent": 0.17
+        },
+        {
+          "name": "Shell",
+          "bytes": 3889,
+          "percent": 0.11
+        },
+        {
+          "name": "NSIS",
+          "bytes": 2923,
+          "percent": 0.08
+        },
+        {
+          "name": "HTML",
+          "bytes": 732,
+          "percent": 0.02
+        },
+        {
+          "name": "Batchfile",
+          "bytes": 238,
+          "percent": 0.01
+        }
+      ],
+      "latestRelease": {
+        "tagName": "v3.3.1",
+        "name": "v3.3.1",
+        "publishedAt": "2026-05-23T16:43:09Z",
+        "url": "https://github.com/OpenCoworkAI/open-cowork/releases/tag/v3.3.1",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "v3.3.1",
+      "releaseDate": "2026-05-23T16:43:09Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 97024,
+        "comments": 10630,
+        "blank": 11403,
+        "files": 422,
+        "measuredAt": "2026-09-14T00:11:52.946Z",
+        "verifiedAt": "2026-09-14T00:11:52.946Z",
+        "measuredRef": "v3.3.1",
+        "refType": "stable-release-tag",
+        "commitSha": "7f435141ed2da5e799efe03ab2044803498cc8e0",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/OpenCoworkAI/open-cowork",
+          "fetchedAt": "2026-09-14T00:11:47.576Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/OpenCoworkAI/open-cowork/languages",
+          "fetchedAt": "2026-09-14T00:11:47.659Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/OpenCoworkAI/open-cowork/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:47.705Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/OpenCoworkAI/open-cowork/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:47.820Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/OpenCoworkAI/open-cowork/tree/v3.3.1",
+          "fetchedAt": "2026-09-14T00:11:52.946Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "cc-pocket",
+      "name": "CC Pocket",
+      "category": "remote-companions",
+      "owner": "K9i-0",
+      "repo": "ccpocket",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/K9i-0/ccpocket",
+      "cloneUrl": "https://github.com/K9i-0/ccpocket.git",
+      "githubUrl": "https://github.com/K9i-0/ccpocket",
+      "apiUrl": "https://api.github.com/repos/K9i-0/ccpocket",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:11:56.815Z",
+      "stars": 1067,
+      "forks": 108,
+      "openIssues": 24,
+      "contributors": 16,
+      "repositorySizeKb": 611803,
+      "repositorySizePolicy": null,
+      "defaultBranch": "main",
+      "pushedAt": "2026-09-12T11:35:54Z",
+      "archived": false,
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdxId": "MIT",
+        "url": "https://api.github.com/licenses/mit"
+      },
+      "languages": [
+        {
+          "name": "Dart",
+          "bytes": 5677587,
+          "percent": 69.93
+        },
+        {
+          "name": "TypeScript",
+          "bytes": 1992205,
+          "percent": 24.54
+        },
+        {
+          "name": "Swift",
+          "bytes": 158090,
+          "percent": 1.95
+        },
+        {
+          "name": "JavaScript",
+          "bytes": 99821,
+          "percent": 1.23
+        },
+        {
+          "name": "Shell",
+          "bytes": 94324,
+          "percent": 1.16
+        },
+        {
+          "name": "C++",
+          "bytes": 29295,
+          "percent": 0.36
+        },
+        {
+          "name": "CMake",
+          "bytes": 20356,
+          "percent": 0.25
+        },
+        {
+          "name": "HTML",
+          "bytes": 14657,
+          "percent": 0.18
+        },
+        {
+          "name": "Ruby",
+          "bytes": 13510,
+          "percent": 0.17
+        },
+        {
+          "name": "Python",
+          "bytes": 12507,
+          "percent": 0.15
+        },
+        {
+          "name": "Kotlin",
+          "bytes": 4049,
+          "percent": 0.05
+        },
+        {
+          "name": "C",
+          "bytes": 1488,
+          "percent": 0.02
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 478,
+          "percent": 0.01
+        },
+        {
+          "name": "Objective-C",
+          "bytes": 38,
+          "percent": 0
+        }
+      ],
+      "latestRelease": {
+        "tagName": "android/v1.130.0+247",
+        "name": "Android 1.130.0+247",
+        "publishedAt": "2026-09-12T10:32:53Z",
+        "url": "https://github.com/K9i-0/ccpocket/releases/tag/android/v1.130.0%2B247",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "android/v1.130.0+247",
+      "releaseDate": "2026-09-12T10:32:53Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 230312,
+        "comments": 11914,
+        "blank": 28622,
+        "files": 753,
+        "measuredAt": "2026-09-14T00:11:56.740Z",
+        "verifiedAt": "2026-09-14T00:11:56.740Z",
+        "measuredRef": "android/v1.130.0+247",
+        "refType": "stable-release-tag",
+        "commitSha": "b6f2d3c14cc06be4ddab6a91d112a7c9fb2dcfe5",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/K9i-0/ccpocket",
+          "fetchedAt": "2026-09-14T00:11:48.869Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/K9i-0/ccpocket/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:49.084Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/K9i-0/ccpocket/languages",
+          "fetchedAt": "2026-09-14T00:11:49.084Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/K9i-0/ccpocket/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:49.277Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/K9i-0/ccpocket/tree/android%2Fv1.130.0%2B247",
+          "fetchedAt": "2026-09-14T00:11:56.740Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "tmate",
+      "name": "tmate",
+      "category": "remote-companions",
+      "owner": "tmate-io",
+      "repo": "tmate",
+      "forge": "github",
+      "repositoryUrl": "https://github.com/tmate-io/tmate",
+      "cloneUrl": "https://github.com/tmate-io/tmate.git",
+      "githubUrl": "https://github.com/tmate-io/tmate",
+      "apiUrl": "https://api.github.com/repos/tmate-io/tmate",
+      "metricScope": null,
+      "status": "current",
+      "refreshedAt": "2026-09-14T00:11:55.015Z",
+      "stars": 6124,
+      "forks": 335,
+      "openIssues": 129,
+      "contributors": 49,
+      "repositorySizeKb": 7963,
+      "repositorySizePolicy": null,
+      "defaultBranch": "master",
+      "pushedAt": "2026-07-29T06:22:06Z",
+      "archived": false,
+      "license": {
+        "key": "manifest-verified",
+        "name": "ISC-style per-file licenses",
+        "spdxId": "ISC",
+        "url": "https://github.com/tmate-io/tmate/blob/master/COPYING"
+      },
+      "languages": [
+        {
+          "name": "C",
+          "bytes": 1313619,
+          "percent": 90.63
+        },
+        {
+          "name": "Roff",
+          "bytes": 103036,
+          "percent": 7.11
+        },
+        {
+          "name": "M4",
+          "bytes": 14000,
+          "percent": 0.97
+        },
+        {
+          "name": "Awk",
+          "bytes": 8608,
+          "percent": 0.59
+        },
+        {
+          "name": "Makefile",
+          "bytes": 5680,
+          "percent": 0.39
+        },
+        {
+          "name": "Perl",
+          "bytes": 1660,
+          "percent": 0.11
+        },
+        {
+          "name": "Shell",
+          "bytes": 1551,
+          "percent": 0.11
+        },
+        {
+          "name": "Dockerfile",
+          "bytes": 1308,
+          "percent": 0.09
+        }
+      ],
+      "latestRelease": {
+        "tagName": "2.4.0",
+        "name": "tmate 2.4.0",
+        "publishedAt": "2019-11-16T22:14:17Z",
+        "url": "https://github.com/tmate-io/tmate/releases/tag/2.4.0",
+        "prerelease": false
+      },
+      "latestTag": null,
+      "version": "2.4.0",
+      "releaseDate": "2019-11-16T22:14:17Z",
+      "releasePolicy": null,
+      "loc": {
+        "status": "measured",
+        "code": 39529,
+        "comments": 5973,
+        "blank": 7694,
+        "files": 183,
+        "measuredAt": "2026-09-14T00:11:55.005Z",
+        "verifiedAt": "2026-09-14T00:11:55.005Z",
+        "measuredRef": "2.4.0",
+        "refType": "stable-release-tag",
+        "commitSha": "5e00bfa5e137e76c81888727712ced2b3fd99f5b",
+        "tool": "cloc 2.06",
+        "methodology": "source-code-v2",
+        "excludedExtensions": "md,markdown,mdx,json,jsonc,yaml,yml,toml,xml,csv,tsv,txt,lock",
+        "excludedDirectories": ".git,node_modules,vendor,vendors,third_party,third-party,dist,build,.build,target,coverage,.next,out,generated,.generated,Pods,DerivedData,.dart_tool",
+        "reason": null
+      },
+      "sources": [
+        {
+          "type": "repository",
+          "url": "https://api.github.com/repos/tmate-io/tmate",
+          "fetchedAt": "2026-09-14T00:11:53.310Z"
+        },
+        {
+          "type": "license-override",
+          "url": "https://github.com/tmate-io/tmate/blob/master/COPYING",
+          "fetchedAt": "2026-09-13T00:00:00.000Z"
+        },
+        {
+          "type": "languages",
+          "url": "https://api.github.com/repos/tmate-io/tmate/languages",
+          "fetchedAt": "2026-09-14T00:11:53.412Z"
+        },
+        {
+          "type": "contributors",
+          "url": "https://api.github.com/repos/tmate-io/tmate/contributors?anon=true&per_page=1",
+          "fetchedAt": "2026-09-14T00:11:53.721Z"
+        },
+        {
+          "type": "latest-release",
+          "url": "https://api.github.com/repos/tmate-io/tmate/releases?per_page=100",
+          "fetchedAt": "2026-09-14T00:11:53.734Z"
+        },
+        {
+          "type": "loc-measurement",
+          "url": "https://github.com/tmate-io/tmate/tree/2.4.0",
+          "fetchedAt": "2026-09-14T00:11:55.005Z"
         }
       ],
       "errors": []

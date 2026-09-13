@@ -3,7 +3,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
 
-const checkedAt = "2026-09-02";
+const checkedAt = "2026-09-13";
 const root = resolve(import.meta.dirname, "..");
 const publicRoot = resolve(root, "public/compare");
 const manifestPath = resolve(root, "src/data/comparison-assets.json");
@@ -206,6 +206,30 @@ const products = {
   "chatgpt-work": ["ChatGPT Work", avatar("openai"), "https://github.com/openai", "official-vendor-organization-avatar"],
   eigent: ["Eigent", avatar("eigent-ai"), "https://github.com/eigent-ai/eigent", "official-project-organization-avatar"],
   lobsterai: ["LobsterAI", avatar("netease-youdao"), "https://github.com/netease-youdao/LobsterAI", "official-vendor-organization-avatar"],
+  xcode: ["Xcode", appleArtwork(497799835, "Xcode"), "https://apps.apple.com/us/app/xcode/id497799835", "official-app-store-artwork"],
+  "ibm-bob-ide": ["IBM Bob IDE", "https://bob.ibm.com/favicon.ico", "https://bob.ibm.com/docs/ide", "official-site-icon"],
+  zcode: ["ZCode", "https://zcode.z.ai/favicon.ico", "https://zcode.z.ai/en", "official-site-icon"],
+  "augment-code": ["Augment Code", "https://docs.augmentcode.com/favicon.ico", "https://docs.augmentcode.com/", "official-site-icon"],
+  "qodo-ide-plugin": ["Qodo IDE plugin", avatar("qodo-ai"), "https://github.com/qodo-ai", "official-vendor-organization-avatar"],
+  ccb: ["Claude Codex Bridge", avatar("SeemSeam"), "https://github.com/SeemSeam/claude_codex_bridge", "official-project-owner-avatar"],
+  "agent-of-empires": ["Agent of Empires", avatar("agent-of-empires"), "https://github.com/agent-of-empires/agent-of-empires", "official-project-organization-avatar"],
+  "github-copilot-app": ["GitHub Copilot app", avatar("github"), "https://github.com/features/copilot", "official-vendor-organization-avatar"],
+  "augment-intent": ["Augment Intent", "https://www.augmentcode.com/favicon.ico", "https://www.augmentcode.com/", "official-site-icon"],
+  "yao-agents": ["Yao Agents", avatar("YaoApp"), "https://github.com/YaoApp/yao", "official-project-organization-avatar"],
+  jcode: ["jcode", avatar("1jehuang"), "https://github.com/1jehuang/jcode", "official-project-owner-avatar"],
+  deepcode: ["DeepCode", avatar("HKUDS"), "https://github.com/HKUDS/DeepCode", "official-project-organization-avatar"],
+  "ibm-bob-shell": ["IBM Bob Shell", "https://bob.ibm.com/favicon.ico", "https://bob.ibm.com/docs/shell", "official-site-icon"],
+  langsmith: ["LangSmith", avatar("langchain-ai"), "https://github.com/langchain-ai", "official-vendor-organization-avatar"],
+  braintrust: ["Braintrust", avatar("braintrustdata"), "https://github.com/braintrustdata", "official-vendor-organization-avatar"],
+  "wandb-weave": ["W&B Weave", avatar("wandb"), "https://github.com/wandb/weave", "official-vendor-organization-avatar"],
+  "warp-oz": ["Warp Oz", "https://www.warp.dev/favicon-196x196.png", "https://www.warp.dev/", "official-site-icon"],
+  ona: ["Ona", "https://ona.com/favicon.ico", "https://ona.com/", "official-site-icon"],
+  "autogpt-platform": ["AutoGPT Platform", avatar("Significant-Gravitas"), "https://github.com/Significant-Gravitas/AutoGPT", "official-project-organization-avatar"],
+  openmanus: ["OpenManus", avatar("FoundationAgents"), "https://github.com/FoundationAgents/OpenManus", "official-project-organization-avatar"],
+  kun: ["Kun", avatar("KunAgent"), "https://github.com/KunAgent/Kun", "official-project-organization-avatar"],
+  "open-cowork": ["OpenCowork", avatar("OpenCoworkAI"), "https://github.com/OpenCoworkAI/open-cowork", "official-project-organization-avatar"],
+  "cc-pocket": ["CC Pocket", avatar("K9i-0"), "https://github.com/K9i-0/ccpocket", "official-project-owner-avatar"],
+  tmate: ["tmate", avatar("tmate-io"), "https://github.com/tmate-io/tmate", "official-project-organization-avatar"],
 };
 
 const platforms = {
@@ -216,6 +240,8 @@ const platforms = {
 };
 
 const productFallbacks = {
+  "augment-code": [avatar("augmentcode"), "https://github.com/augmentcode", "official-vendor-organization-avatar"],
+  "augment-intent": [avatar("augmentcode"), "https://github.com/augmentcode", "official-vendor-organization-avatar"],
   "eclipse-theia-ide": [avatar("eclipse-theia"), "https://github.com/eclipse-theia", "official-organization-avatar"],
   lapce: [avatar("lapce"), "https://github.com/lapce", "official-project-organization-avatar-fallback"],
   helix: [avatar("helix-editor"), "https://github.com/helix-editor", "official-project-organization-avatar-fallback"],

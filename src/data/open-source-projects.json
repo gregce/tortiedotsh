@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-23T00:00:00.000Z",
+  "updatedAt": "2026-09-13T00:00:00.000Z",
   "source": "Curated from each project's official GitHub repository",
   "projects": [
     {
@@ -1335,6 +1335,131 @@
         "checkedAt": "2026-08-31"
       },
       "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "ccb",
+      "name": "Claude Codex Bridge",
+      "category": "agent-workbenches",
+      "owner": "SeemSeam",
+      "repo": "claude_codex_bridge",
+      "githubUrl": "https://github.com/SeemSeam/claude_codex_bridge",
+      "apiUrl": "https://api.github.com/repos/SeemSeam/claude_codex_bridge",
+      "license": { "spdxId": "AGPL-3.0", "name": "GNU Affero General Public License v3.0", "sourceUrl": "https://github.com/SeemSeam/claude_codex_bridge/blob/main/LICENSE", "checkedAt": "2026-09-13" },
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "agent-of-empires",
+      "name": "Agent of Empires",
+      "category": "agent-workbenches",
+      "owner": "agent-of-empires",
+      "repo": "agent-of-empires",
+      "githubUrl": "https://github.com/agent-of-empires/agent-of-empires",
+      "apiUrl": "https://api.github.com/repos/agent-of-empires/agent-of-empires",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "yao-agents",
+      "name": "Yao Agents",
+      "category": "agent-orchestrators",
+      "owner": "YaoApp",
+      "repo": "yao",
+      "githubUrl": "https://github.com/YaoApp/yao",
+      "apiUrl": "https://api.github.com/repos/YaoApp/yao",
+      "license": { "spdxId": "LicenseRef-Yao-Modified-Apache-2.0", "name": "Modified Apache License 2.0 with commercial restrictions", "sourceUrl": "https://github.com/YaoApp/yao/blob/main/LICENSE", "checkedAt": "2026-09-13" },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "jcode",
+      "name": "jcode",
+      "category": "coding-agent-harnesses",
+      "owner": "1jehuang",
+      "repo": "jcode",
+      "githubUrl": "https://github.com/1jehuang/jcode",
+      "apiUrl": "https://api.github.com/repos/1jehuang/jcode",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "deepcode",
+      "name": "DeepCode",
+      "category": "coding-agent-harnesses",
+      "owner": "HKUDS",
+      "repo": "DeepCode",
+      "githubUrl": "https://github.com/HKUDS/DeepCode",
+      "apiUrl": "https://api.github.com/repos/HKUDS/DeepCode",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "wandb-weave",
+      "name": "W&B Weave source tree",
+      "category": "agent-traces",
+      "owner": "wandb",
+      "repo": "weave",
+      "githubUrl": "https://github.com/wandb/weave",
+      "apiUrl": "https://api.github.com/repos/wandb/weave",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "autogpt-platform",
+      "name": "AutoGPT Platform source tree",
+      "category": "general-purpose-agents",
+      "owner": "Significant-Gravitas",
+      "repo": "AutoGPT",
+      "githubUrl": "https://github.com/Significant-Gravitas/AutoGPT",
+      "apiUrl": "https://api.github.com/repos/Significant-Gravitas/AutoGPT",
+      "metricScope": "Repository-wide metrics include the split-license AutoGPT Platform and the classic agent/framework source tree.",
+      "loc": { "enabled": true, "timeoutMinutes": 45 }
+    },
+    {
+      "id": "openmanus",
+      "name": "OpenManus",
+      "category": "general-purpose-agents",
+      "owner": "FoundationAgents",
+      "repo": "OpenManus",
+      "githubUrl": "https://github.com/FoundationAgents/OpenManus",
+      "apiUrl": "https://api.github.com/repos/FoundationAgents/OpenManus",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "kun",
+      "name": "Kun",
+      "category": "general-purpose-agents",
+      "owner": "KunAgent",
+      "repo": "Kun",
+      "githubUrl": "https://github.com/KunAgent/Kun",
+      "apiUrl": "https://api.github.com/repos/KunAgent/Kun",
+      "license": { "spdxId": "PolyForm-Noncommercial-1.0.0", "name": "PolyForm Noncommercial License 1.0.0", "sourceUrl": "https://github.com/KunAgent/Kun/blob/main/LICENSE", "checkedAt": "2026-09-13" },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "open-cowork",
+      "name": "OpenCowork",
+      "category": "general-purpose-agents",
+      "owner": "OpenCoworkAI",
+      "repo": "open-cowork",
+      "githubUrl": "https://github.com/OpenCoworkAI/open-cowork",
+      "apiUrl": "https://api.github.com/repos/OpenCoworkAI/open-cowork",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "cc-pocket",
+      "name": "CC Pocket",
+      "category": "remote-companions",
+      "owner": "K9i-0",
+      "repo": "ccpocket",
+      "githubUrl": "https://github.com/K9i-0/ccpocket",
+      "apiUrl": "https://api.github.com/repos/K9i-0/ccpocket",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "tmate",
+      "name": "tmate",
+      "category": "remote-companions",
+      "owner": "tmate-io",
+      "repo": "tmate",
+      "githubUrl": "https://github.com/tmate-io/tmate",
+      "apiUrl": "https://api.github.com/repos/tmate-io/tmate",
+      "license": { "spdxId": "ISC", "name": "ISC-style per-file licenses", "sourceUrl": "https://github.com/tmate-io/tmate/blob/master/COPYING", "checkedAt": "2026-09-13" },
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
     }
   ]
 }

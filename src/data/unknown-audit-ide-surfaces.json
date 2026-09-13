@@ -18,14 +18,14 @@
     "platformHeaders": "Platform-header support is outside this rendered-cell ledger. An omitted OS in a known platform list is not treated as Unknown."
   },
   "summary": {
-    "products": 52,
-    "currentUnknownCells": 271,
+    "products": 59,
+    "currentUnknownCells": 326,
     "codeEditorUnknownCells": 92,
     "ideExtensionUnknownCells": 121,
     "agentMultiplexerUnknownCells": 58,
     "appliedClosures": 14,
     "changedSourceCorrections": 14,
-    "remainUnknown": 271
+    "remainUnknown": 326
   },
   "categories": [
     {
@@ -163,6 +163,154 @@
               "rowId": "editor-browser-tools",
               "result": "remain-unknown",
               "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
+            }
+          ]
+        },
+        {
+          "productId": "xcode",
+          "sourcesChecked": [
+            "https://developer.apple.com/xcode/",
+            "https://developer.apple.com/documentation/xcode/setting-up-coding-intelligence",
+            "https://www.apple.com/newsroom/2026/02/xcode-26-3-unlocks-the-power-of-agentic-coding/",
+            "https://www.apple.com/uk/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "Xcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Background agent jobs” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-inline-prediction",
+              "result": "remain-unknown",
+              "rationale": "Xcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Inline code prediction” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "Xcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Parallel agent sessions” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "Xcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Git worktree isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-remote-workspaces",
+              "result": "remain-unknown",
+              "rationale": "Xcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Remote workspace execution” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "Xcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent permission model” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "Xcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent sandbox” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "Xcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Browser and preview tools” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "ibm-bob-ide",
+          "sourcesChecked": [
+            "https://bob.ibm.com/docs/ide"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob IDE's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Background agent jobs” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-mcp",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob IDE's exact first-party product page, repository, and cited capability sources were checked. They do not establish “MCP tools” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob IDE's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Parallel agent sessions” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob IDE's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Git worktree isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-remote-workspaces",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob IDE's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Remote workspace execution” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob IDE's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent permission model” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob IDE's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent sandbox” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob IDE's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Browser and preview tools” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "zcode",
+          "sourcesChecked": [
+            "https://zcode.z.ai/en",
+            "https://zcode.z.ai/en/docs/agents"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-background-jobs",
+              "result": "remain-unknown",
+              "rationale": "ZCode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Background agent jobs” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-parallel-sessions",
+              "result": "remain-unknown",
+              "rationale": "ZCode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Parallel agent sessions” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-worktree-isolation",
+              "result": "remain-unknown",
+              "rationale": "ZCode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Git worktree isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-remote-workspaces",
+              "result": "remain-unknown",
+              "rationale": "ZCode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Remote workspace execution” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-agent-permissions",
+              "result": "remain-unknown",
+              "rationale": "ZCode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent permission model” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-agent-sandbox",
+              "result": "remain-unknown",
+              "rationale": "ZCode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent sandbox” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-browser-tools",
+              "result": "remain-unknown",
+              "rationale": "ZCode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Browser and preview tools” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "editor-verification-loop",
+              "result": "remain-unknown",
+              "rationale": "ZCode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent verification loop” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },
@@ -780,6 +928,92 @@
               "rowId": "extension-byok-local-model",
               "result": "remain-unknown",
               "rationale": "GitHub's IDE feature matrix and installation pages establish the multi-host Copilot extension family; host-specific VS Code behavior and the separately owned cloud coding agent are not automatically universal to every host. It does not establish operator-supplied provider credentials, a local model, or a self-hosted inference endpoint for this exact extension."
+            }
+          ]
+        },
+        {
+          "productId": "augment-code",
+          "sourcesChecked": [
+            "https://docs.augmentcode.com/quickstart",
+            "https://docs.augmentcode.com/using-augment/agent"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "Augment Code's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Background delegation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "extension-provider-choice",
+              "result": "remain-unknown",
+              "rationale": "Augment Code's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Provider and model choice” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Augment Code's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Workspace checkpoints” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Augment Code's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Isolated parallel agents” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "extension-byok-local-model",
+              "result": "remain-unknown",
+              "rationale": "Augment Code's exact first-party product page, repository, and cited capability sources were checked. They do not establish “BYOK, local, or self-hosted models” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Augment Code's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Cloud or background session client” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "qodo-ide-plugin",
+          "sourcesChecked": [
+            "https://docs.qodo.ai/qodo-documentation/qodo-merge/getting-started/installing-qodo-merge/ide-plugin",
+            "https://docs.qodo.ai/qodo-ide",
+            "https://docs.qodo.ai/qodo-ide/agent/what-is-an-agent",
+            "https://docs.qodo.ai/qodo-ide/code-intelligence/code-completion",
+            "https://docs.qodo.ai/qodo-ide/getting-started/setup-and-installation"
+          ],
+          "cells": [
+            {
+              "rowId": "extension-background-delegation",
+              "result": "remain-unknown",
+              "rationale": "Qodo IDE plugin's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Background delegation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "extension-provider-choice",
+              "result": "remain-unknown",
+              "rationale": "Qodo IDE plugin's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Provider and model choice” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "extension-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "Qodo IDE plugin's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Workspace checkpoints” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "extension-isolated-parallel",
+              "result": "remain-unknown",
+              "rationale": "Qodo IDE plugin's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Isolated parallel agents” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "extension-tool-execution-boundary",
+              "result": "remain-unknown",
+              "rationale": "Qodo IDE plugin's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Tool execution boundary” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "extension-byok-local-model",
+              "result": "remain-unknown",
+              "rationale": "Qodo IDE plugin's exact first-party product page, repository, and cited capability sources were checked. They do not establish “BYOK, local, or self-hosted models” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "extension-remote-session-client",
+              "result": "remain-unknown",
+              "rationale": "Qodo IDE plugin's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Cloud or background session client” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },
@@ -1592,6 +1826,112 @@
               "rowId": "workbench-worktrees",
               "result": "remain-unknown",
               "rationale": "Tortie's canonical repository and shipped acceptance documentation establish its tmux-owned sessions, recovery, cross-project attention, editor, file tree, SCM, review, and current macOS product boundary. It does not establish product-managed creation, isolation, review, and cleanup of Git worktrees."
+            }
+          ]
+        },
+        {
+          "productId": "ccb",
+          "sourcesChecked": [
+            "https://github.com/SeemSeam/claude_codex_bridge"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-pty-survives-ui",
+              "result": "remain-unknown",
+              "rationale": "Claude Codex Bridge's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Live PTY survives UI exit” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-editor",
+              "result": "remain-unknown",
+              "rationale": "Claude Codex Bridge's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Code editor” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-file-tree",
+              "result": "remain-unknown",
+              "rationale": "Claude Codex Bridge's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Project file tree” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-scm",
+              "result": "remain-unknown",
+              "rationale": "Claude Codex Bridge's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Source control workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-change-review",
+              "result": "remain-unknown",
+              "rationale": "Claude Codex Bridge's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Visual change review” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-splits",
+              "result": "remain-unknown",
+              "rationale": "Claude Codex Bridge's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Tabs and split panes” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-browser",
+              "result": "remain-unknown",
+              "rationale": "Claude Codex Bridge's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Embedded browser” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-remote-host",
+              "result": "remain-unknown",
+              "rationale": "Claude Codex Bridge's exact first-party product page, repository, and cited capability sources were checked. They do not establish “SSH or remote host” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-worktrees",
+              "result": "remain-unknown",
+              "rationale": "Claude Codex Bridge's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Git worktree workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "agent-of-empires",
+          "sourcesChecked": [
+            "https://github.com/agent-of-empires/agent-of-empires"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "Agent of Empires's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Cross-harness session handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-pty-survives-ui",
+              "result": "remain-unknown",
+              "rationale": "Agent of Empires's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Live PTY survives UI exit” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-editor",
+              "result": "remain-unknown",
+              "rationale": "Agent of Empires's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Code editor” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-file-tree",
+              "result": "remain-unknown",
+              "rationale": "Agent of Empires's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Project file tree” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-scm",
+              "result": "remain-unknown",
+              "rationale": "Agent of Empires's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Source control workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-change-review",
+              "result": "remain-unknown",
+              "rationale": "Agent of Empires's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Visual change review” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-browser",
+              "result": "remain-unknown",
+              "rationale": "Agent of Empires's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Embedded browser” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-remote-host",
+              "result": "remain-unknown",
+              "rationale": "Agent of Empires's exact first-party product page, repository, and cited capability sources were checked. They do not establish “SSH or remote host” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-programmable-control",
+              "result": "remain-unknown",
+              "rationale": "Agent of Empires's exact first-party product page, repository, and cited capability sources were checked. They do not establish “CLI or socket control” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },

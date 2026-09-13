@@ -14,6 +14,10 @@ const checkedAt = COMPARISON_SNAPSHOT;
 const evidenceBacklog = new Set(["mosaic-terminal", "airport", "omnara"]);
 const files = [
   {
+    name: "unknown-audit-ide-surfaces.json",
+    categoryIds: ["code-editors", "ide-extensions", "agent-workbenches"],
+  },
+  {
     name: "unknown-audit-general-purpose-agents.json",
     categoryIds: ["general-purpose-agents"],
   },
@@ -24,6 +28,10 @@ const files = [
   {
     name: "unknown-audit-traces-cloud.json",
     categoryIds: ["agent-traces", "cloud-agents"],
+  },
+  {
+    name: "unknown-audit-remote-companions.json",
+    categoryIds: ["remote-companions"],
   },
 ];
 

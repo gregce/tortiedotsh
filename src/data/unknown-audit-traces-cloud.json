@@ -17,14 +17,14 @@
     "platformRows": "Excluded from this ledger. Platform header facts and platform filter rows require a separate exact-SKU host audit; an omitted platform is not inferred to be unsupported."
   },
   "summary": {
-    "productsInScope": 26,
-    "productsWithUnknownCells": 18,
-    "currentUnknownCells": 42,
-    "agentTraceUnknownCells": 8,
-    "cloudAgentUnknownCells": 34,
+    "productsInScope": 31,
+    "productsWithUnknownCells": 23,
+    "currentUnknownCells": 61,
+    "agentTraceUnknownCells": 16,
+    "cloudAgentUnknownCells": 45,
     "suggestedClosures": 0,
     "implementedClosures": 27,
-    "remainUnknown": 42
+    "remainUnknown": 61
   },
   "categories": [
     {
@@ -125,6 +125,80 @@
           "cells": []
         },
         {
+          "productId": "git-ai",
+          "sourcesChecked": [
+            "https://github.com/git-ai-project/git-ai"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "langsmith",
+          "sourcesChecked": [
+            "https://docs.langchain.com/langsmith/observability-concepts"
+          ],
+          "cells": [
+            {
+              "rowId": "trace-git-linkage",
+              "result": "remain-unknown",
+              "rationale": "LangSmith's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Commit, branch, and worktree linkage” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "braintrust",
+          "sourcesChecked": [
+            "https://www.braintrust.dev/docs/tracing-quickstart",
+            "https://www.braintrust.dev/docs/observe/examine-traces"
+          ],
+          "cells": [
+            {
+              "rowId": "trace-git-linkage",
+              "result": "remain-unknown",
+              "rationale": "Braintrust's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Commit, branch, and worktree linkage” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "trace-redaction-privacy",
+              "result": "remain-unknown",
+              "rationale": "Braintrust's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Redaction and privacy controls” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "trace-self-hosting",
+              "result": "remain-unknown",
+              "rationale": "Braintrust's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Self-hosting” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "wandb-weave",
+          "sourcesChecked": [
+            "https://weave-docs.wandb.ai/",
+            "https://github.com/wandb/weave",
+            "https://weave-docs.wandb.ai/guides/tracking/tracing"
+          ],
+          "cells": [
+            {
+              "rowId": "trace-git-linkage",
+              "result": "remain-unknown",
+              "rationale": "W&B Weave's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Commit, branch, and worktree linkage” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "trace-replay-resume",
+              "result": "remain-unknown",
+              "rationale": "W&B Weave's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Replay or session reconstruction” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "trace-redaction-privacy",
+              "result": "remain-unknown",
+              "rationale": "W&B Weave's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Redaction and privacy controls” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "trace-self-hosting",
+              "result": "remain-unknown",
+              "rationale": "W&B Weave's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Self-hosting” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
           "productId": "claude-code-history-viewer",
           "sourcesChecked": [
             "https://jhlee0409.github.io/claude-code-history-viewer/",
@@ -150,13 +224,6 @@
               "rationale": "The exact Agent Sessions product is local-only and says it has no telemetry. The checked first-party sources do not document share links, team workspaces, repository publishing, or another collaboration workflow."
             }
           ]
-        },
-        {
-          "productId": "git-ai",
-          "sourcesChecked": [
-            "https://github.com/git-ai-project/git-ai"
-          ],
-          "cells": []
         },
         {
           "productId": "langfuse",
@@ -288,6 +355,79 @@
               "rowId": "cloud-task-limit",
               "result": "remain-unknown",
               "rationale": "Cursor documents spend limits, capacity management, and unrestricted parallel agent starts, but the checked Cloud Agent pages do not publish a maximum run duration or exact per-task execution ceiling."
+            }
+          ]
+        },
+        {
+          "productId": "warp-oz",
+          "sourcesChecked": [
+            "https://docs.warp.dev/knowledge-and-collaboration/oz",
+            "https://docs.warp.dev/agent-platform/cloud-agents/oz-web-app",
+            "https://docs.warp.dev/reference/cli"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-code-hosts",
+              "result": "remain-unknown",
+              "rationale": "Warp Oz's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Supported code hosts” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-network-policy",
+              "result": "remain-unknown",
+              "rationale": "Warp Oz's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent network policy” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-live-steering",
+              "result": "remain-unknown",
+              "rationale": "Warp Oz's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Live steering or takeover” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Warp Oz's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Documented run limit” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-isolation-unit",
+              "result": "remain-unknown",
+              "rationale": "Warp Oz's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Isolation unit” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-human-takeover",
+              "result": "remain-unknown",
+              "rationale": "Warp Oz's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Human takeover or local handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "ona",
+          "sourcesChecked": [
+            "https://ona.com/docs/ona/agents"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-code-hosts",
+              "result": "remain-unknown",
+              "rationale": "Ona's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Supported code hosts” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-network-policy",
+              "result": "remain-unknown",
+              "rationale": "Ona's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent network policy” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-live-steering",
+              "result": "remain-unknown",
+              "rationale": "Ona's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Live steering or takeover” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Ona's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Documented run limit” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "cloud-human-takeover",
+              "result": "remain-unknown",
+              "rationale": "Ona's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Human takeover or local handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },

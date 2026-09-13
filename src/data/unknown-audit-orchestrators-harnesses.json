@@ -16,13 +16,13 @@
     "platformHeaders": "Products whose complete platform fact is Unknown are audited separately below. An omitted OS in a known platform list is not rendered as an Unknown table cell."
   },
   "summary": {
-    "products": 63,
-    "currentUnknownCells": 198,
-    "agentOrchestratorUnknownCells": 118,
-    "codingAgentHarnessUnknownCells": 80,
+    "products": 69,
+    "currentUnknownCells": 223,
+    "agentOrchestratorUnknownCells": 133,
+    "codingAgentHarnessUnknownCells": 90,
     "suggestedClosures": 0,
     "implementedClosures": 8,
-    "remainUnknown": 198
+    "remainUnknown": 223
   },
   "categories": [
     {
@@ -79,6 +79,105 @@
               "rowId": "orchestrator-programmable",
               "result": "remain-unknown",
               "rationale": "No ChatGPT desktop control API, CLI, webhook, or automation surface is established by the checked app pages."
+            }
+          ]
+        },
+        {
+          "productId": "github-copilot-app",
+          "sourcesChecked": [
+            "https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "GitHub Copilot app's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Cross-harness task handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-containers",
+              "result": "remain-unknown",
+              "rationale": "GitHub Copilot app's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Container or VM isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-task-board",
+              "result": "remain-unknown",
+              "rationale": "GitHub Copilot app's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Task or Kanban board” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-attention-signals",
+              "result": "remain-unknown",
+              "rationale": "GitHub Copilot app's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Fleet attention signals” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-programmable",
+              "result": "remain-unknown",
+              "rationale": "GitHub Copilot app's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Programmable control plane” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "augment-intent",
+          "sourcesChecked": [
+            "https://www.augmentcode.com/blog/intent-a-workspace-for-agent-orchestration"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-containers",
+              "result": "remain-unknown",
+              "rationale": "Augment Intent's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Container or VM isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-pr-lifecycle",
+              "result": "remain-unknown",
+              "rationale": "Augment Intent's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Pull-request workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-remote-execution",
+              "result": "remain-unknown",
+              "rationale": "Augment Intent's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Remote execution” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-attention-signals",
+              "result": "remain-unknown",
+              "rationale": "Augment Intent's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Fleet attention signals” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-programmable",
+              "result": "remain-unknown",
+              "rationale": "Augment Intent's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Programmable control plane” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "yao-agents",
+          "sourcesChecked": [
+            "https://github.com/YaoApp/yao"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "Yao Agents's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Cross-harness task handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-containers",
+              "result": "remain-unknown",
+              "rationale": "Yao Agents's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Container or VM isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-inline-review",
+              "result": "remain-unknown",
+              "rationale": "Yao Agents's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Inline diff feedback” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-pr-lifecycle",
+              "result": "remain-unknown",
+              "rationale": "Yao Agents's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Pull-request workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-attention-signals",
+              "result": "remain-unknown",
+              "rationale": "Yao Agents's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Fleet attention signals” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },
@@ -1108,6 +1207,80 @@
               "rowId": "harness-checkpoints",
               "result": "remain-unknown",
               "rationale": "Crash-safe event-log resume is documented, but restoring workspace mutations to a prior checkpoint is not established."
+            }
+          ]
+        },
+        {
+          "productId": "jcode",
+          "sourcesChecked": [
+            "https://github.com/1jehuang/jcode"
+          ],
+          "cells": [
+            {
+              "rowId": "harness-extension-protocol",
+              "result": "remain-unknown",
+              "rationale": "jcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “MCP, plugins, or extensions” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "harness-sandbox",
+              "result": "remain-unknown",
+              "rationale": "jcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Built-in sandbox boundary” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "harness-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "jcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Checkpoint and rollback” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "harness-subagents",
+              "result": "remain-unknown",
+              "rationale": "jcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Subagents or agent teams” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "deepcode",
+          "sourcesChecked": [
+            "https://github.com/HKUDS/DeepCode"
+          ],
+          "cells": [
+            {
+              "rowId": "harness-sandbox",
+              "result": "remain-unknown",
+              "rationale": "DeepCode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Built-in sandbox boundary” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "harness-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "DeepCode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Checkpoint and rollback” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "ibm-bob-shell",
+          "sourcesChecked": [
+            "https://bob.ibm.com/docs/shell"
+          ],
+          "cells": [
+            {
+              "rowId": "harness-sandbox",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob Shell's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Built-in sandbox boundary” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "harness-checkpoints",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob Shell's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Checkpoint and rollback” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "harness-subagents",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob Shell's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Subagents or agent teams” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "harness-multimodal-input",
+              "result": "remain-unknown",
+              "rationale": "IBM Bob Shell's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Image or web-page input” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },

@@ -8,6 +8,7 @@
  */
 
 export const COMPARISON_SNAPSHOT = "2026-08-24" as const;
+const PRODUCT_EXPANSION_SNAPSHOT = "2026-09-13" as const;
 
 export type CategoryId =
   | "code-editors"
@@ -165,7 +166,8 @@ const evidence = (
   url: string,
   title: string,
   basis: EvidenceBasis = "vendor-documented",
-): EvidenceSource => ({ url, title, basis, checkedAt: COMPARISON_SNAPSHOT });
+  checkedAt: string = COMPARISON_SNAPSHOT,
+): EvidenceSource => ({ url, title, basis, checkedAt });
 
 const known = <T>(
   value: T,
@@ -173,11 +175,12 @@ const known = <T>(
   title: string,
   basis: EvidenceBasis = "vendor-documented",
   note?: string,
+  checkedAt: string = COMPARISON_SNAPSHOT,
 ): KnownFact<T> => ({
   state: "known",
   value,
   ...(note ? { note } : {}),
-  evidence: [evidence(url, title, basis)],
+  evidence: [evidence(url, title, basis, checkedAt)],
 });
 
 const unknown = (note: string): UnknownFact => ({
@@ -462,6 +465,7 @@ interface ProductInput {
   executionSource?: { url: string; title: string; basis?: EvidenceBasis };
   status?: ProductStatus;
   statusSource?: { url: string; title: string; basis?: EvidenceBasis };
+  checkedAt?: string;
   claims?: Readonly<Record<string, ComparisonClaim>>;
 }
 
@@ -497,6 +501,7 @@ const product = (input: ProductInput): ComparisonProduct => {
                 source.url,
                 source.title,
                 source.url.includes("github.com") ? "repository-derived" : "vendor-documented",
+                input.checkedAt,
               )),
             }
           : unknown("Platform support is not yet verified from a primary source at row level."),
@@ -507,6 +512,8 @@ const product = (input: ProductInput): ComparisonProduct => {
               input.sourceSource?.url ?? sourceUrl,
               input.sourceSource?.title ?? sourceTitle,
               input.sourceSource?.basis ?? (input.repository ? "source-inspected" : "vendor-documented"),
+              undefined,
+              input.checkedAt,
             )
           : unknown("The shipped product's source model is not yet established by primary evidence."),
       execution:
@@ -516,10 +523,12 @@ const product = (input: ProductInput): ComparisonProduct => {
               input.executionSource?.url ?? sourceUrl,
               input.executionSource?.title ?? sourceTitle,
               input.executionSource?.basis ?? "vendor-documented",
+              undefined,
+              input.checkedAt,
             )
           : unknown(profileUnknown),
       primaryObject: sourceUrl
-        ? known(objectForCategory[input.categoryId], sourceUrl, sourceTitle, "vendor-documented")
+        ? known(objectForCategory[input.categoryId], sourceUrl, sourceTitle, "vendor-documented", undefined, input.checkedAt)
         : unknown("No public first-party product source has been established."),
       status:
         input.status && sourceUrl
@@ -528,6 +537,8 @@ const product = (input: ProductInput): ComparisonProduct => {
               input.statusSource?.url ?? sourceUrl,
               input.statusSource?.title ?? sourceTitle,
               input.statusSource?.basis ?? (input.repository ? "repository-derived" : "vendor-documented"),
+              undefined,
+              input.checkedAt,
             )
           : unknown("Current lifecycle status has not been reviewed from a status-specific primary source."),
     },
@@ -570,6 +581,37 @@ const factClaim = (
   ...(note ? { note } : {}),
   evidence: [evidence(url, title, basis)],
 });
+
+const expansionCapability = (
+  state: Exclude<CapabilityState, "unknown">,
+  url: string,
+  title: string,
+  note?: string,
+  basis: EvidenceBasis = "vendor-documented",
+): ComparisonClaim => ({
+  ...capability(state, url, title, note, basis),
+  evidence: [evidence(url, title, basis, PRODUCT_EXPANSION_SNAPSHOT)],
+});
+
+const expansionFactClaim = (
+  displayValue: string,
+  url: string,
+  title: string,
+  note?: string,
+  basis: EvidenceBasis = "vendor-documented",
+): ComparisonClaim => ({
+  ...factClaim(displayValue, url, title, note, basis),
+  evidence: [evidence(url, title, basis, PRODUCT_EXPANSION_SNAPSHOT)],
+});
+
+const expansionBuiltInClaims = (
+  url: string,
+  title: string,
+  ids: readonly string[],
+  note?: string,
+  basis: EvidenceBasis = "vendor-documented",
+): Readonly<Record<string, ComparisonClaim>> =>
+  Object.fromEntries(ids.map((id) => [id, expansionCapability("built-in", url, title, note, basis)]));
 
 export const comparisonProducts: readonly ComparisonProduct[] = [
   // 1. Code editors and IDEs
@@ -1830,7 +1872,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "cloud-triggered-automation": capability("built-in", "https://learn.chatgpt.com/docs/cloud", "Codex cloud documentation", "Tasks can start from GitHub, GitLab, Linear, Slack, and first-party automation surfaces."),
     "cloud-result-type": factClaim("Patch, branch, or pull request", "https://learn.chatgpt.com/docs/cloud", "Codex cloud documentation"),
   } }),
-  product({ id: "github-copilot-coding-agent", name: "GitHub Copilot coding agent", categoryId: "cloud-agents", editorialOrder: 2, officialUrl: "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent", tags: ["issue-to-pr", "github", "background", "vendor-service"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "active", claims: {
+  product({ id: "github-copilot-coding-agent", name: "GitHub Copilot cloud agent", categoryId: "cloud-agents", editorialOrder: 2, officialUrl: "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent", tags: ["issue-to-pr", "github", "background", "vendor-service"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "active", claims: {
     ...builtInClaims("https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent", "GitHub Copilot coding agent documentation", ["cloud-repo-intake", "cloud-sandbox", "cloud-live-observability", "cloud-durable-result"]),
     "cloud-intake-surfaces": capability("built-in", "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation", "GitHub agents panel, issues, VS Code, PR comments, API, schedules, and event automations."),
     "cloud-code-hosts": capability("built-in", "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent", "GitHub Copilot cloud agent documentation", "GitHub repositories only. Treat this positive scope as a fact, not a negative score."),
@@ -2553,46 +2595,173 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     "trace-replay-resume": capability("limited", "https://github.com/AgentOps-AI/agentops", "AgentOps repository", "Session replay visualizes recorded runs; it does not establish resuming the original agent process.", "repository-derived"),
     "trace-self-hosting": capability("limited", "https://github.com/AgentOps-AI/agentops", "AgentOps repository", "The SDK is open source; the cited product does not establish a complete self-hosted dashboard distribution.", "repository-derived"),
   } }),
+
+  // 10. High-confidence additions reviewed 2026-09-13
+  product({ id: "xcode", name: "Xcode", categoryId: "code-editors", editorialOrder: 100, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://developer.apple.com/xcode/", tags: ["apple", "swift", "coding-intelligence", "agentic-coding", "proprietary"], platform: ["macos"], source: "proprietary", execution: ["local-process"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://developer.apple.com/documentation/xcode/setting-up-coding-intelligence", "Xcode coding intelligence documentation", ["editor-project-tree", "editor-terminal", "editor-agent-mode", "editor-agent-shell-tools", "editor-mcp", "editor-change-review", "editor-verification-loop"]),
+    "editor-model-access": expansionFactClaim("Apple models plus configured coding agents", "https://developer.apple.com/documentation/xcode/setting-up-coding-intelligence", "Xcode coding intelligence documentation"),
+    "editor-specialization": expansionFactClaim("Apple-platform development", "https://developer.apple.com/xcode/", "Xcode product page"),
+    "editor-ai-feature-boundary": expansionFactClaim("Built in", "https://www.apple.com/uk/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/", "Xcode 26.3 announcement"),
+    "editor-release-channel": expansionFactClaim("Active", "https://developer.apple.com/xcode/", "Xcode product page"),
+  } }),
+  product({ id: "ibm-bob-ide", name: "IBM Bob IDE", categoryId: "code-editors", editorialOrder: 101, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://bob.ibm.com/docs/ide", tags: ["ibm", "agentic-ide", "proprietary"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://bob.ibm.com/docs/ide", "IBM Bob IDE documentation", ["editor-project-tree", "editor-terminal", "editor-agent-mode", "editor-inline-prediction", "editor-agent-shell-tools", "editor-change-review", "editor-verification-loop"]),
+    "editor-model-access": expansionFactClaim("IBM-managed models", "https://bob.ibm.com/docs/ide", "IBM Bob IDE documentation"),
+    "editor-specialization": expansionFactClaim("Enterprise software development", "https://bob.ibm.com/docs/ide", "IBM Bob IDE documentation"),
+    "editor-ai-feature-boundary": expansionFactClaim("Built in", "https://bob.ibm.com/docs/ide", "IBM Bob IDE documentation"),
+    "editor-release-channel": expansionFactClaim("Active", "https://bob.ibm.com/docs/ide", "IBM Bob IDE documentation"),
+  } }),
+  product({ id: "zcode", name: "ZCode", categoryId: "code-editors", editorialOrder: 102, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://zcode.z.ai/en", tags: ["z-ai", "agentic-ide", "proprietary"], platform: ["macos", "windows", "linux"], platformSource: { url: "https://zcode.z.ai/en/docs/install", title: "ZCode installation documentation" }, source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://zcode.z.ai/en/docs/agents", "ZCode agent documentation", ["editor-project-tree", "editor-terminal", "editor-agent-mode", "editor-inline-prediction", "editor-agent-shell-tools", "editor-mcp", "editor-change-review"]),
+    "editor-model-access": expansionFactClaim("Z.ai-managed models", "https://zcode.z.ai/en/docs/agents", "ZCode agent documentation"),
+    "editor-specialization": expansionFactClaim("General software", "https://zcode.z.ai/en", "ZCode product page"),
+    "editor-ai-feature-boundary": expansionFactClaim("Built in", "https://zcode.z.ai/en", "ZCode product page"),
+    "editor-release-channel": expansionFactClaim("Active", "https://zcode.z.ai/en", "ZCode product page"),
+  } }),
+
+  product({ id: "augment-code", name: "Augment Code", categoryId: "ide-extensions", editorialOrder: 100, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://docs.augmentcode.com/quickstart", tags: ["vscode", "jetbrains", "agent", "context-engine", "proprietary"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["host-ide-process", "vendor-cloud"], status: "active", claims: {
+    "extension-hosts": expansionFactClaim("VS Code and JetBrains IDEs", "https://docs.augmentcode.com/quickstart", "Augment quickstart"),
+    ...expansionBuiltInClaims("https://docs.augmentcode.com/using-augment/agent", "Augment Agent documentation", ["extension-inline-completion", "extension-agent-panel", "extension-host-vscode", "extension-host-jetbrains", "extension-mcp", "extension-permissions", "extension-codebase-context"]),
+    "extension-install-channel": expansionFactClaim("Editor marketplace or vendor download", "https://docs.augmentcode.com/quickstart", "Augment quickstart"),
+    "extension-tool-execution-boundary": expansionFactClaim("Host editor and local workspace", "https://docs.augmentcode.com/using-augment/agent", "Augment Agent documentation"),
+  } }),
+  product({ id: "qodo-ide-plugin", name: "Qodo IDE plugin", categoryId: "ide-extensions", editorialOrder: 101, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://docs.qodo.ai/qodo-ide", tags: ["vscode", "jetbrains", "visual-studio", "agent", "code-review", "proprietary"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["host-ide-process", "vendor-cloud"], status: "active", claims: {
+    "extension-hosts": expansionFactClaim("VS Code, JetBrains IDEs, and Visual Studio", "https://docs.qodo.ai/qodo-ide", "Qodo IDE plugin overview"),
+    ...expansionBuiltInClaims("https://docs.qodo.ai/qodo-ide/agent/what-is-an-agent", "Qodo IDE agent documentation", ["extension-agent-panel", "extension-host-vscode", "extension-host-jetbrains", "extension-mcp", "extension-permissions", "extension-codebase-context"]),
+    "extension-inline-completion": expansionCapability("limited", "https://docs.qodo.ai/qodo-ide/code-intelligence/code-completion", "Qodo code completion documentation", "Qodo documents code completion while also stating that code-generation features are being deprecated."),
+    "extension-install-channel": expansionFactClaim("VS Code, JetBrains, or Visual Studio marketplace", "https://docs.qodo.ai/qodo-ide/getting-started/setup-and-installation", "Qodo installation documentation"),
+  } }),
+
+  product({ id: "ccb", name: "Claude Codex Bridge", categoryId: "agent-workbenches", editorialOrder: 100, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.com/SeemSeam/claude_codex_bridge", repository: repo("SeemSeam/claude_codex_bridge"), repoMetricId: "ccb", tags: ["claude-code", "codex", "gemini", "multi-agent", "agpl", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.com/SeemSeam/claude_codex_bridge", "Claude Codex Bridge repository", ["workbench-agent-handoff", "workbench-named-sessions", "workbench-cross-project-attention", "workbench-attention-signals", "workbench-session-recovery", "workbench-programmable-control"], undefined, "repository-derived"),
+    "workbench-arbitrary-cli": expansionCapability("limited", "https://github.com/SeemSeam/claude_codex_bridge", "Claude Codex Bridge repository", "The bridge explicitly supports Claude Code, Codex, and Gemini rather than arbitrary CLI programs.", "repository-derived"),
+  } }),
+  product({ id: "agent-of-empires", name: "Agent of Empires", categoryId: "agent-workbenches", editorialOrder: 101, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.com/agent-of-empires/agent-of-empires", repository: repo("agent-of-empires/agent-of-empires"), repoMetricId: "agent-of-empires", tags: ["terminal", "sessions", "multi-agent", "worktrees", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.com/agent-of-empires/agent-of-empires", "Agent of Empires repository", ["workbench-arbitrary-cli", "workbench-named-sessions", "workbench-cross-project-attention", "workbench-splits", "workbench-attention-signals", "workbench-session-recovery", "workbench-worktrees"], undefined, "repository-derived"),
+  } }),
+
+  product({ id: "github-copilot-app", name: "GitHub Copilot app", categoryId: "agent-orchestrators", editorialOrder: 100, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/", tags: ["github", "desktop", "parallel-agents", "worktrees", "proprietary"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/", "GitHub Copilot app GA announcement", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-inline-review", "orchestrator-pr-lifecycle", "orchestrator-remote-execution", "orchestrator-live-steering"]),
+    "orchestrator-multi-harness": expansionCapability("limited", "https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/", "GitHub Copilot app GA announcement", "The app coordinates Copilot agents; support for unrelated harness runtimes is not established."),
+  } }),
+  product({ id: "augment-intent", name: "Augment Intent", categoryId: "agent-orchestrators", editorialOrder: 101, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://www.augmentcode.com/blog/intent-a-workspace-for-agent-orchestration", tags: ["multi-agent", "worktrees", "desktop", "public-beta", "proprietary"], platform: ["macos"], platformNote: "The cited public-beta announcement documents macOS; Windows was a waitlist item at review time.", source: "proprietary", execution: ["local-process"], status: "beta", claims: {
+    ...expansionBuiltInClaims("https://www.augmentcode.com/blog/intent-a-workspace-for-agent-orchestration", "Augment Intent announcement", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-agent-handoff", "orchestrator-review-delivery", "orchestrator-worktrees", "orchestrator-task-board", "orchestrator-inline-review", "orchestrator-live-steering"]),
+  } }),
+  product({ id: "yao-agents", name: "Yao Agents", categoryId: "agent-orchestrators", editorialOrder: 102, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.com/YaoApp/yao", repository: repo("YaoApp/yao"), repoMetricId: "yao-agents", tags: ["multi-agent", "task-board", "self-hosted", "source-available"], platform: ["macos", "windows", "linux", "web", "ios", "android"], source: "source-available", execution: ["local-daemon", "user-cloud", "paired-machine"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.com/YaoApp/yao", "Yao repository", ["orchestrator-isolated-workspaces", "orchestrator-parallel-workers", "orchestrator-multi-harness", "orchestrator-review-delivery", "orchestrator-task-board", "orchestrator-remote-execution", "orchestrator-live-steering", "orchestrator-programmable"], undefined, "repository-derived"),
+    "orchestrator-worktrees": expansionCapability("limited", "https://github.com/YaoApp/yao", "Yao repository", "Yao documents isolated workspaces; Git worktrees are not the only or universal isolation unit.", "repository-derived"),
+  } }),
+
+  product({ id: "jcode", name: "jcode", categoryId: "coding-agent-harnesses", editorialOrder: 100, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.com/1jehuang/jcode", repository: repo("1jehuang/jcode"), repoMetricId: "jcode", tags: ["terminal", "coding-agent", "multi-model", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.com/1jehuang/jcode", "jcode repository", ["harness-interactive-cli", "harness-headless", "harness-multi-provider", "harness-session-resume", "harness-project-instructions", "harness-permission-controls", "harness-structured-output", "harness-git-workflow", "harness-multimodal-input"], undefined, "repository-derived"),
+  } }),
+  product({ id: "deepcode", name: "DeepCode", categoryId: "coding-agent-harnesses", editorialOrder: 101, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.com/HKUDS/DeepCode", repository: repo("HKUDS/DeepCode"), repoMetricId: "deepcode", tags: ["tui", "desktop", "web", "multi-agent", "automations", "oss"], platform: ["macos", "windows", "linux", "web"], source: "open-source", execution: ["local-process", "local-daemon"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.com/HKUDS/DeepCode", "DeepCode repository", ["harness-interactive-cli", "harness-headless", "harness-multi-provider", "harness-session-resume", "harness-extension-protocol", "harness-project-instructions", "harness-permission-controls", "harness-subagents", "harness-structured-output", "harness-git-workflow", "harness-multimodal-input"], undefined, "repository-derived"),
+  } }),
+  product({ id: "ibm-bob-shell", name: "IBM Bob Shell", categoryId: "coding-agent-harnesses", editorialOrder: 102, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://bob.ibm.com/docs/shell", tags: ["ibm", "cli", "automation", "mcp", "proprietary"], platform: ["macos", "windows", "linux"], source: "proprietary", execution: ["local-process", "vendor-cloud"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://bob.ibm.com/docs/shell", "IBM Bob Shell documentation", ["harness-interactive-cli", "harness-headless", "harness-session-resume", "harness-extension-protocol", "harness-project-instructions", "harness-permission-controls", "harness-structured-output", "harness-git-workflow"]),
+    "harness-multi-provider": expansionCapability("limited", "https://bob.ibm.com/docs/shell", "IBM Bob Shell documentation", "The cited product documentation establishes IBM-managed model access, not arbitrary provider selection."),
+  } }),
+
+  product({ id: "langsmith", name: "LangSmith", categoryId: "agent-traces", editorialOrder: 100, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://docs.langchain.com/langsmith/observability-concepts", tags: ["opentelemetry", "tracing", "evals", "hosted-service"], platform: ["web"], source: "hosted-service", execution: ["local-process", "vendor-cloud"], status: "active", claims: {
+    "trace-capture-coverage": expansionFactClaim("SDK, OpenTelemetry, and framework integrations", "https://docs.langchain.com/langsmith/observability-concepts", "LangSmith observability concepts"),
+    "trace-storage-boundary": expansionFactClaim("LangSmith service or self-hosted enterprise deployment", "https://docs.langchain.com/langsmith/observability-concepts", "LangSmith observability concepts"),
+    ...expansionBuiltInClaims("https://docs.langchain.com/langsmith/observability-concepts", "LangSmith observability concepts", ["trace-search-timeline", "trace-multi-harness", "trace-transcript-coverage", "trace-tool-call-coverage", "trace-artifact-coverage", "trace-export-api", "trace-redaction-privacy", "trace-sharing", "trace-ci-analytics"]),
+    "trace-replay-resume": expansionCapability("limited", "https://docs.langchain.com/langsmith/observability-concepts", "LangSmith observability concepts", "Runs can be inspected and used in evaluation workflows; resuming the original coding-agent process is not established."),
+    "trace-self-hosting": expansionCapability("limited", "https://docs.langchain.com/langsmith/observability-concepts", "LangSmith observability concepts", "Self-hosting is an enterprise deployment option, not the default distribution."),
+  } }),
+  product({ id: "braintrust", name: "Braintrust", categoryId: "agent-traces", editorialOrder: 101, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://www.braintrust.dev/docs/tracing-quickstart", tags: ["tracing", "evals", "datasets", "hosted-service"], platform: ["web"], source: "hosted-service", execution: ["local-process", "vendor-cloud"], status: "active", claims: {
+    "trace-capture-coverage": expansionFactClaim("SDK, OpenTelemetry, and framework integrations", "https://www.braintrust.dev/docs/tracing-quickstart", "Braintrust tracing quickstart"),
+    "trace-storage-boundary": expansionFactClaim("Braintrust data plane and web application", "https://www.braintrust.dev/docs/tracing-quickstart", "Braintrust tracing quickstart"),
+    ...expansionBuiltInClaims("https://www.braintrust.dev/docs/observe/examine-traces", "Braintrust trace inspection documentation", ["trace-search-timeline", "trace-multi-harness", "trace-transcript-coverage", "trace-tool-call-coverage", "trace-artifact-coverage", "trace-export-api", "trace-sharing", "trace-ci-analytics"]),
+    "trace-replay-resume": expansionCapability("limited", "https://www.braintrust.dev/docs/observe/examine-traces", "Braintrust trace inspection documentation", "Experiments can replay evaluation inputs; resuming the original agent process is not established."),
+  } }),
+  product({ id: "wandb-weave", name: "W&B Weave", categoryId: "agent-traces", editorialOrder: 102, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://weave-docs.wandb.ai/", repository: repo("wandb/weave", "source-tree"), repoMetricId: "wandb-weave", tags: ["tracing", "evals", "opentelemetry", "split-source"], platform: ["web"], source: "split-source", execution: ["local-process", "vendor-cloud"], status: "active", claims: {
+    "trace-capture-coverage": expansionFactClaim("SDK and framework integrations capture model and agent calls", "https://weave-docs.wandb.ai/guides/tracking/tracing", "W&B Weave tracing documentation"),
+    "trace-storage-boundary": expansionFactClaim("W&B-hosted project with open-source SDK components", "https://github.com/wandb/weave", "W&B Weave repository", undefined, "repository-derived"),
+    ...expansionBuiltInClaims("https://weave-docs.wandb.ai/guides/tracking/tracing", "W&B Weave tracing documentation", ["trace-search-timeline", "trace-multi-harness", "trace-transcript-coverage", "trace-tool-call-coverage", "trace-artifact-coverage", "trace-export-api", "trace-sharing", "trace-ci-analytics"]),
+  } }),
+
+  product({ id: "warp-oz", name: "Warp Oz", categoryId: "cloud-agents", editorialOrder: 100, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://docs.warp.dev/agent-platform/cloud-agents/oz-web-app", tags: ["warp", "cloud-agent", "background", "proprietary"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://docs.warp.dev/agent-platform/cloud-agents/oz-web-app", "Warp Oz web app documentation", ["cloud-repo-intake", "cloud-sandbox", "cloud-live-observability", "cloud-durable-result", "cloud-parallel-tasks", "cloud-environment-config", "cloud-project-instructions", "cloud-triggered-automation"]),
+    "cloud-intake-surfaces": expansionFactClaim("Web, mobile web, CLI, API, Slack, and Linear", "https://docs.warp.dev/agent-platform/cloud-agents/oz-web-app", "Warp Oz web app documentation"),
+    "cloud-execution-owner": expansionFactClaim("Warp or self-hosted runner", "https://docs.warp.dev/reference/cli", "Warp Oz CLI documentation"),
+    "cloud-result-type": expansionFactClaim("Tracked agent run with repository changes", "https://docs.warp.dev/agent-platform/cloud-agents/oz-web-app", "Warp Oz web app documentation"),
+  } }),
+  product({ id: "ona", name: "Ona", categoryId: "cloud-agents", editorialOrder: 101, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://ona.com/docs/ona/agents", tags: ["cloud-agent", "environments", "automations", "hosted-service"], platform: ["web"], source: "hosted-service", execution: ["vendor-cloud"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://ona.com/docs/ona/agents", "Ona agents documentation", ["cloud-repo-intake", "cloud-sandbox", "cloud-live-observability", "cloud-durable-result", "cloud-parallel-tasks", "cloud-environment-config", "cloud-project-instructions", "cloud-triggered-automation"]),
+    "cloud-intake-surfaces": expansionFactClaim("Ona task interface and automations", "https://ona.com/docs/ona/agents", "Ona agents documentation"),
+    "cloud-execution-owner": expansionFactClaim("Ona", "https://ona.com/docs/ona/agents", "Ona agents documentation"),
+    "cloud-isolation-unit": expansionFactClaim("Cloud development environment", "https://ona.com/docs/ona/agents", "Ona agents documentation"),
+    "cloud-result-type": expansionFactClaim("Pull request", "https://ona.com/docs/ona/agents", "Ona agents documentation"),
+  } }),
+
+  product({ id: "autogpt-platform", name: "AutoGPT Platform", categoryId: "general-purpose-agents", editorialOrder: 100, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.com/Significant-Gravitas/AutoGPT", repository: repo("Significant-Gravitas/AutoGPT", "source-tree"), repoMetricId: "autogpt-platform", tags: ["workflow-builder", "automation", "marketplace", "split-source"], platform: ["web"], source: "split-source", execution: ["container", "user-cloud", "vendor-cloud"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.com/Significant-Gravitas/AutoGPT", "AutoGPT repository", ["general-durable-identity", "general-browser-control", "general-terminal-files", "general-scheduled-automation", "general-event-triggers", "general-skills-integrations", "general-multi-agent", "general-self-hosting", "general-model-freedom"], undefined, "repository-derived"),
+    "general-operator-surfaces": expansionFactClaim("Web application and marketplace", "https://github.com/Significant-Gravitas/AutoGPT", "AutoGPT repository", undefined, "repository-derived"),
+    "general-execution-owner": expansionFactClaim("Operator or AutoGPT cloud", "https://github.com/Significant-Gravitas/AutoGPT", "AutoGPT repository", undefined, "repository-derived"),
+  } }),
+  product({ id: "openmanus", name: "OpenManus", categoryId: "general-purpose-agents", editorialOrder: 101, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.com/FoundationAgents/OpenManus", repository: repo("FoundationAgents/OpenManus"), repoMetricId: "openmanus", tags: ["general-agent", "browser", "terminal", "multi-agent", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.com/FoundationAgents/OpenManus", "OpenManus repository", ["general-durable-identity", "general-browser-control", "general-terminal-files", "general-skills-integrations", "general-multi-agent", "general-self-hosting", "general-model-freedom"], undefined, "repository-derived"),
+    "general-operator-surfaces": expansionFactClaim("Command line", "https://github.com/FoundationAgents/OpenManus", "OpenManus repository", undefined, "repository-derived"),
+    "general-execution-owner": expansionFactClaim("Operator machine", "https://github.com/FoundationAgents/OpenManus", "OpenManus repository", undefined, "repository-derived"),
+    "general-isolation": expansionFactClaim("Local process; optional Docker sandbox", "https://github.com/FoundationAgents/OpenManus", "OpenManus repository", undefined, "repository-derived"),
+  } }),
+  product({ id: "kun", name: "Kun", categoryId: "general-purpose-agents", editorialOrder: 102, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.com/KunAgent/Kun", repository: repo("KunAgent/Kun"), repoMetricId: "kun", tags: ["general-agent", "computer-use", "desktop", "source-available"], platform: ["macos", "windows", "linux"], source: "source-available", execution: ["local-process"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.com/KunAgent/Kun", "Kun repository", ["general-durable-identity", "general-browser-control", "general-terminal-files", "general-computer-use", "general-skills-integrations", "general-self-hosting", "general-model-freedom"], undefined, "repository-derived"),
+    "general-operator-surfaces": expansionFactClaim("Desktop application", "https://github.com/KunAgent/Kun", "Kun repository", undefined, "repository-derived"),
+    "general-execution-owner": expansionFactClaim("Operator machine", "https://github.com/KunAgent/Kun", "Kun repository", undefined, "repository-derived"),
+  } }),
+  product({ id: "open-cowork", name: "OpenCowork", categoryId: "general-purpose-agents", editorialOrder: 103, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.com/OpenCoworkAI/open-cowork", repository: repo("OpenCoworkAI/open-cowork"), repoMetricId: "open-cowork", tags: ["cowork", "desktop", "browser", "terminal", "oss"], platform: ["macos", "windows", "linux"], source: "open-source", execution: ["local-process"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.com/OpenCoworkAI/open-cowork", "OpenCowork repository", ["general-durable-identity", "general-browser-control", "general-terminal-files", "general-computer-use", "general-skills-integrations", "general-self-hosting", "general-model-freedom"], undefined, "repository-derived"),
+    "general-operator-surfaces": expansionFactClaim("Desktop application", "https://github.com/OpenCoworkAI/open-cowork", "OpenCowork repository", undefined, "repository-derived"),
+    "general-execution-owner": expansionFactClaim("Operator machine", "https://github.com/OpenCoworkAI/open-cowork", "OpenCowork repository", undefined, "repository-derived"),
+  } }),
+
+  product({ id: "cc-pocket", name: "CC Pocket", categoryId: "remote-companions", editorialOrder: 100, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.com/K9i-0/ccpocket", repository: repo("K9i-0/ccpocket"), repoMetricId: "cc-pocket", tags: ["claude-code", "mobile", "remote", "oss"], platform: ["web", "ios", "android"], source: "open-source", execution: ["paired-machine"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.com/K9i-0/ccpocket", "CC Pocket repository", ["remote-client-reach", "remote-existing-session", "remote-approvals", "remote-browser-pwa", "remote-terminal-input", "remote-notifications", "remote-session-history", "remote-agent-aware"], undefined, "repository-derived"),
+    "remote-supported-harnesses": expansionFactClaim("Claude Code", "https://github.com/K9i-0/ccpocket", "CC Pocket repository", undefined, "repository-derived"),
+    "remote-input-model": expansionFactClaim("Agent-aware chat and approval controls", "https://github.com/K9i-0/ccpocket", "CC Pocket repository", undefined, "repository-derived"),
+    "remote-host-ownership": expansionFactClaim("Operator machine", "https://github.com/K9i-0/ccpocket", "CC Pocket repository", undefined, "repository-derived"),
+  } }),
+  product({ id: "tmate", name: "tmate", categoryId: "remote-companions", editorialOrder: 101, checkedAt: PRODUCT_EXPANSION_SNAPSHOT, officialUrl: "https://github.com/tmate-io/tmate", repository: repo("tmate-io/tmate"), repoMetricId: "tmate", tags: ["terminal", "ssh", "sharing", "self-hosted", "oss"], platform: ["macos", "linux"], source: "open-source", execution: ["local-process", "ssh-host"], status: "active", claims: {
+    ...expansionBuiltInClaims("https://github.com/tmate-io/tmate", "tmate repository", ["remote-client-reach", "remote-existing-session", "remote-terminal-input", "remote-relay-deployment", "remote-session-durability"], undefined, "repository-derived"),
+    "remote-encryption": expansionCapability("built-in", "https://github.com/tmate-io/tmate", "tmate repository", "tmate exposes SSH connections to the shared terminal.", "repository-derived"),
+    "remote-supported-harnesses": expansionFactClaim("Any terminal program", "https://github.com/tmate-io/tmate", "tmate repository", undefined, "repository-derived"),
+    "remote-input-model": expansionFactClaim("Live terminal", "https://github.com/tmate-io/tmate", "tmate repository", undefined, "repository-derived"),
+    "remote-host-ownership": expansionFactClaim("Operator machine", "https://github.com/tmate-io/tmate", "tmate repository", undefined, "repository-derived"),
+    "remote-hosting-boundary": expansionFactClaim("tmate relay or self-hosted server", "https://github.com/tmate-io/tmate", "tmate repository", undefined, "repository-derived"),
+    "remote-transport-security": expansionFactClaim("SSH", "https://github.com/tmate-io/tmate", "tmate repository", undefined, "repository-derived"),
+  } }),
 ];
 
-const harnessFieldGuideOrder = [
-  "claude-code",
-  "codex-cli",
-  "grok-build",
-  "pi-coding-agent",
-  "cursor-cli",
-  "amp",
-  "antigravity-cli",
-  "opencode",
-  "muse-code",
-  "github-copilot-cli",
-  "gemini-cli",
-  "prime-agent",
-  "deepseek-harness",
-  "poolside-pool",
-  "kimi-code-cli",
-  "kilo-code-cli",
-  "mistral-vibe",
-  "continue-cli",
-  "crush",
-  "auggie-cli",
-  "kiro-cli",
-  "amplifier-agent",
-  "gptme",
-  "factory-droid-cli",
-  "codewhale",
-  "qwen-code",
-  "goose",
-  "aider",
-  "rovo-dev-cli",
-] as const;
+const fieldGuideLeads: Partial<Record<CategoryId, readonly string[]>> = {
+  "code-editors": ["visual-studio-code", "cursor-ide", "windsurf", "zed", "intellij-idea", "xcode", "ibm-bob-ide", "zcode"],
+  "ide-extensions": ["github-copilot-vscode", "augment-code", "qodo-ide-plugin"],
+  "agent-workbenches": ["tortie", "ccb", "agent-of-empires"],
+  "agent-orchestrators": ["claude-code-desktop", "chatgpt-desktop", "github-copilot-app", "augment-intent", "yao-agents"],
+  "coding-agent-harnesses": ["claude-code", "codex-cli", "grok-build", "pi-coding-agent", "cursor-cli", "amp", "antigravity-cli", "opencode", "muse-code", "jcode", "deepcode", "ibm-bob-shell"],
+  "agent-traces": ["specstory", "entire", "tapes", "traces-com", "agentsview", "git-ai", "langsmith", "braintrust", "wandb-weave"],
+  "cloud-agents": ["openai-codex-cloud", "github-copilot-coding-agent", "devin", "jules", "claude-code-web", "cursor-cloud-agents", "warp-oz", "ona"],
+  "general-purpose-agents": ["openclaw", "hermes-agent", "grok-bot", "autogpt-platform", "openmanus", "kun", "open-cowork"],
+  "remote-companions": ["happy", "happier", "cc-pocket"],
+};
 
-for (const [index, productId] of harnessFieldGuideOrder.entries()) {
-  const product = comparisonProducts.find((item) => item.id === productId);
-  if (!product || product.categoryId !== "coding-agent-harnesses") {
-    throw new Error(`Harness field-guide product is missing or misclassified: ${productId}`);
-  }
-  product.editorialOrder = index + 1;
+for (const category of comparisonCategories) {
+  const inCategory = comparisonProducts
+    .filter((item) => item.categoryId === category.id)
+    .sort((left, right) => left.editorialOrder - right.editorialOrder);
+  const preferred = fieldGuideLeads[category.id] ?? [];
+  const preferredSet = new Set(preferred);
+  const ordered = [
+    ...preferred.map((productId) => {
+      const item = inCategory.find((product) => product.id === productId);
+      if (!item) throw new Error(`Field-guide product is missing or misclassified: ${productId}`);
+      return item;
+    }),
+    ...inCategory.filter((item) => !preferredSet.has(item.id)),
+  ];
+  ordered.forEach((item, index) => { item.editorialOrder = index + 1; });
 }
 
 export const comparisonProductById = new Map(
