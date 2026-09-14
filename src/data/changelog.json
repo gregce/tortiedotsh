@@ -2,6 +2,35 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.105.0",
+      "date": "2026-09-14",
+      "summary": "This release adds opencode as a supported agent, sitting alongside the others in the new-session picker with launch, resume and restore. It also fixes two things that could bite over a long session: creating the very first file or folder in a brand-new empty project now works from the buttons, and splitting and closing terminals no longer leaves memory behind.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "opencode is now a supported agent: launch it, resume a conversation, and have it come back after a quit or reboot, the same as every other agent Tortie knows. Its conversation is not captured yet, because the bundled recorder does not know opencode, and two opencode sessions started in one folder cannot be told apart when they come back.",
+              "commits": []
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Creating a file or folder in a brand-new empty project now works from the New File and New Folder buttons. It used to do nothing and show an error until the folder already had a file in it.",
+              "commits": []
+            },
+            {
+              "text": "Splitting and closing terminals over a long session no longer leaves memory behind. Each pane's scheduled redraw and its cursor blink now stop the moment the pane goes away, so the app stays as light after a day of rearranging panes as it was at launch.",
+              "commits": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.104.0",
       "date": "2026-09-12",
       "summary": "This release is mostly about Architecture. With it on, the map is now drawn from the repository itself, grouped by what it builds and starts, with what each part exposes and how far each part is proven, and an agent you have confirmed can be asked to say what each part is for. Alongside it, the files you open now belong to the project you opened them in, so switching projects switches what is in front of you without closing anything, and a large Markdown document shows its first screen at once and fills in the rest while you read.",

@@ -1244,7 +1244,7 @@ export const docsPages: DocPage[] = [
     slug: "supported-agents",
     title: "Supported agents",
     description: "See which agents Tortie can launch and how resume, history, and attachments vary.",
-    lead: "Tortie launches 12 coding-agent CLIs and plain shells. Resume and conversation history are separate capabilities and vary by agent.",
+    lead: "Tortie launches 13 coding-agent CLIs and plain shells. Resume and conversation history are separate capabilities and vary by agent.",
     sections: [
       {
         id: "launchable-agents",
@@ -1263,6 +1263,7 @@ export const docsPages: DocPage[] = [
             ["Pi", "Launchable; safe resume depends on the original project directory."],
             ["Oh My Pi", "Launchable; the pi successor. Resumes from any directory, and joins Catch Me Up."],
             ["Grok", "Launch and Catch Me Up integration; no SpecStory capture provider."],
+            ["opencode", "Launch, resume, and restore. No SpecStory capture provider yet, and safe resume depends on the project directory."],
           ] },
           { type: "paragraph", html: "Tortie also supports ordinary shell sessions. Cursor IDE and VS Code Copilot are capture-only observers, not terminal agents Tortie can launch." },
         ],
