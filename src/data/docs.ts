@@ -707,6 +707,8 @@ export const docsPages: DocPage[] = [
           { type: "paragraph", html: "Overwrite is never the default, and it is checked again as you press it, so a third write arriving while the question is on screen is caught as well." },
           { type: "paragraph", html: "Every kind of file gets the same question: a file inside a project, a symbolic link, a file outside your open projects such as a global <code>CLAUDE.md</code>, and one that grew too large to read while you were typing." },
           { type: "note", title: "A refused save says which cause", html: "A save that cannot happen names the reason, whether the file is read-only, gone, too large, in a project you have closed, or not text Tortie can rewrite without damaging it. A write of exactly the same size landing in the same instant as your save can still be written over." },
+          { type: "paragraph", html: "Tortie can also save for you. Turn on <strong>Auto Save</strong> in the File menu and a file saves a moment after you stop typing, or when you click away from it. It is off until you turn it on, and Settings lets you choose the delay." },
+          { type: "note", title: "Auto save steps aside", html: "Auto save takes the same care <kbd>⌘S</kbd> does. If something else wrote to the file while you were typing, it keeps your edits, stops saving that file, and tells you once, leaving the choice to you. It never saves a file outside an open project, a read-only file, or one you have not named yet." },
         ],
       },
       {
@@ -1084,7 +1086,7 @@ export const docsPages: DocPage[] = [
             ["General", "Open at login, default agent, split-exit focus, the optional <code>tortie</code> shell command, updates, live scrollback, and saved scrollback."],
             ["Agents", "Installed-agent detection on this Mac and configured machines, version and path details, custom definitions, re-scan, and the Claude and Codex usage meters."],
             ["Keyboard", "The complete built-in keymap and your per-agent new-session shortcuts."],
-            ["Launch defaults", "Per-agent launch flags applied to each new session."],
+            ["Launch defaults", "Per-agent launch flags applied to each new session, and the shell variables each agent is given."],
             ["SpecStory", "Local conversation capture defaults and optional SpecStory Cloud sign-in."],
             ["Appearance", "Highlight colour, contrast, and the terminal and editor font, including a family of your own."],
             ["Machines", "SSH connections, keys, remote capabilities, agent availability, and the one approved write root per machine."],
@@ -1100,6 +1102,9 @@ export const docsPages: DocPage[] = [
         blocks: [
           { type: "paragraph", html: "Agents shows what Tortie can actually launch on each machine. Re-scan after installing or updating a CLI. A missing agent keeps its installation command visible for you to copy; Tortie does not run it automatically." },
           { type: "paragraph", html: "Launch defaults are preselected in the new-session sheet. Turning off one option there changes only that session. Options marked as dangerous can only become defaults after you confirm them in Settings; editing the settings file alone does not bypass that agreement." },
+          { type: "paragraph", html: "Launch defaults is also where you name the shell variables an agent needs — an API key for a provider, say. Tortie reads their current value from your login shell each time a session starts, so changing a key takes effect on the next session you start, with nothing to restart. It offers the names your own shell exports so you can pick one rather than type it." },
+          { type: "note", title: "Names are kept, values never are", html: "Tortie stores the name and reads the value fresh at every launch. A name applies to sessions you start after adding it, not to ones already running. A name only counts if you added it here: one written into the settings file by hand is ignored, because the agents you run can write that file too." },
+          { type: "note", title: "On another machine, the value comes from that machine", html: "When the agent runs on a machine you have added, the value is read from that machine's own login shell rather than from this one, so a key that lives only over there is the one that session gets and nothing of yours is sent across. If that machine has no value for a name, Tortie says which one." },
           { type: "paragraph", html: "The Keyboard section lets you record a dedicated new-session shortcut for an agent. Tortie's built-in shortcuts are fixed in the current release." },
         ],
       },

@@ -2,6 +2,30 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.106.0",
+      "date": "2026-09-14",
+      "summary": "This release is about two things you tell Tortie to do for you. It can save a file a moment after you stop typing, stepping aside rather than overwriting when something else has changed that file underneath you. And you can name the shell variables an agent needs — an API key for a provider, say — beside that agent's launch flags, including for an agent running on another machine, where the value comes from that machine's own shell rather than from this one.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Tortie can now save a file for you a moment after you stop typing, or when you click away from it. It is off until you turn it on under File > Auto Save, and if something else wrote to the file while you were typing it steps aside rather than overwriting — it stops saving that file on its own, says so once, and leaves it to you to save.",
+              "commits": []
+            },
+            {
+              "text": "You can now tell Tortie which variables from your shell an agent needs — an API key for a provider, say — beside that agent's launch flags in Settings, and it reads their current value from your login shell each time a session starts, so rotating a key takes effect on the next session you start with nothing to restart. Tortie keeps the names and never the values, a name applies to sessions you start after adding it rather than to ones already running, and a name only counts if you added it in Settings, because one written into the settings file by hand is ignored.",
+              "commits": []
+            },
+            {
+              "text": "The shell variables you name for an agent now work when that agent runs on another machine, and the value comes from that machine's own login shell rather than from this one, so a key that lives over there is the one the session gets and nothing of yours is sent across. If that machine has no value for one of them, Tortie now names it instead of leaving you to find out from the agent minutes later.",
+              "commits": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.105.0",
       "date": "2026-09-14",
       "summary": "This release adds opencode as a supported agent, sitting alongside the others in the new-session picker with launch, resume and restore. It also fixes two things that could bite over a long session: creating the very first file or folder in a brand-new empty project now works from the buttons, and splitting and closing terminals no longer leaves memory behind.",
