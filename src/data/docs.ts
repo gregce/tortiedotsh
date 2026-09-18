@@ -765,7 +765,7 @@ export const docsPages: DocPage[] = [
         id: "rewind",
         title: "Put one change back",
         blocks: [
-          { type: "paragraph", html: "Point at a change, or step to it with <kbd>⌥↓</kbd> and <kbd>⌥↑</kbd>. Press <kbd>⌥⌫</kbd> and that one phrase goes back to what it was, while every other edit in the file stands. A small panel appears beside the change with the same keys written on it, and the Edit menu carries the same rows while a redline is open." },
+          { type: "paragraph", html: "Point at a change, or step to it with <kbd>⌥↓</kbd> and <kbd>⌥↑</kbd>. Press <kbd>⌥⌫</kbd> and that one phrase goes back to what it was, while every other edit in the file stands. The redline then moves to the change that came next, and <kbd>⌥↓</kbd> and <kbd>⌥↑</kbd> come round at the ends, so a run of changes is one key pressed again and again. A small panel appears beside the change with the same keys written on it, and the Edit menu carries the same rows while a redline is open." },
           { type: "paragraph", html: "Your own paragraph carries the same control as an agent's. <kbd>⇧⌥⌫</kbd> undoes the last rewind you made, for as long as the tab is open." },
           { type: "note", title: "A rewind is checked before it is written", html: "A rewind is written only if the file still holds exactly what Tortie read when you pressed. If something wrote to it in between, or the phrase is no longer there, nothing is written and the redline says which of those happened." },
         ],
@@ -774,7 +774,7 @@ export const docsPages: DocPage[] = [
         id: "accept",
         title: "Stop marking a change you agree with",
         blocks: [
-          { type: "paragraph", html: "Press <kbd>⌥↩</kbd> on a change and it stops being marked, without a byte of the file being written. From then on the redline is measured from that point, so what stays marked is what you have not read yet." },
+          { type: "paragraph", html: "Press <kbd>⌥↩</kbd> on a change and it stops being marked, without a byte of the file being written, and the redline moves on to the next change. From then on the redline is measured from that point, so what stays marked is what you have not read yet." },
           { type: "paragraph", html: "<strong>Accept all</strong> sits at the top of the redline and clears everything marked at once. It has no keyboard shortcut on purpose, so nothing is one keystroke away from accepting a whole file, and there is no undo for it." },
           { type: "note", title: "Accepting ends the undo of a rewind", html: "Accepting moves what the redline is measured against, so a rewind you made before it can no longer be undone. The redline says so and puts the control away, rather than offering one that would refuse." },
         ],
@@ -1374,10 +1374,10 @@ export const docsPages: DocPage[] = [
         title: "Redline",
         blocks: [
           { type: "table", headers: ["Shortcut", "Action", "Where"], rows: [
-            ["<kbd>⌥↓</kbd> / <kbd>⌥↑</kbd>", "Step to the next or previous change", "Redline"],
-            ["<kbd>⌥⌫</kbd>", "Put the change you are on back to what it was", "Redline"],
+            ["<kbd>⌥↓</kbd> / <kbd>⌥↑</kbd>", "Step to the next or previous change, coming round at the ends", "Redline"],
+            ["<kbd>⌥⌫</kbd>", "Put the change you are on back to what it was, and move to the next", "Redline"],
             ["<kbd>⇧⌥⌫</kbd>", "Undo the last rewind in this tab", "Redline"],
-            ["<kbd>⌥↩</kbd>", "Accept the change you are on and stop marking it", "Redline"],
+            ["<kbd>⌥↩</kbd>", "Accept the change you are on, stop marking it, and move to the next", "Redline"],
             ["<kbd>⌘Z</kbd>", "Take back what you typed, which is not the same as undoing a rewind", "Redline"],
           ] },
           { type: "note", title: "Accept all has no shortcut", html: "Accept all clears every marking in the file and cannot be undone, so it is a button at the top of the redline and a row in the Edit menu, and never a keystroke." },
@@ -1424,7 +1424,7 @@ export const docsPages: DocPage[] = [
             ["<kbd>⇧⌘U</kbd>", "Open Catch Me Up for the session, split, or project", "Anywhere"],
             ["<kbd>⌘B</kbd>", "Collapse or restore the sidebar", "Anywhere"],
             ["<kbd>⇧⌘B</kbd>", "Let the open file fill the window", "Anywhere"],
-            ["<kbd>⇧⌘Return</kbd>", "Let the focused session, split, or file fill the window", "Anywhere"],
+            ["<kbd>⇧⌘Return</kbd>", "Let the focused session, split, or file fill the window; press it again to go back", "Anywhere"],
             ["<kbd>⌘+</kbd> / <kbd>⌘-</kbd>", "Enlarge or reduce text in the focused region", "Anywhere"],
             ["<kbd>⌘0</kbd>", "Reset zoom in the focused region", "Anywhere"],
             ["<kbd>⇧⌘0</kbd>", "Reset zoom in every region", "Anywhere"],
