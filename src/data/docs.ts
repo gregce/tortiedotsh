@@ -555,6 +555,22 @@ export const docsPages: DocPage[] = [
         ],
       },
       {
+        id: "manage-sessions",
+        title: "See every session in one place",
+        blocks: [
+          { type: "paragraph", html: "Session &gt; Manage Sessions… opens one sheet over every session Tortie is running, across every project and every machine — including projects whose tab you have closed. It is the place to find a session you have lost track of, and to clear out the ones you are finished with." },
+          { type: "paragraph", html: "Each row carries the session's state, the folder it runs in, when it was created, how many messages its conversation holds, and how long ago the last one arrived. Sort by any of those, filter by project or by state, or search by name." },
+          { type: "list", items: [
+            "End a live session, or restore a saved one, from its own row.",
+            "Tick several rows and end them together. Tortie names every session in the confirmation and reports the outcome row by row.",
+            "Rename a session, open its saved output, or read why a restore is unavailable.",
+            "Switch to the Past tab for sessions you have removed, newest first. Session &gt; Past Sessions… opens the sheet on that tab directly.",
+          ] },
+          { type: "note", title: "Tortie never ends a session by itself", html: "There is no timer, no idle limit, and nothing is suspended when a project's tab closes. Sessions live in a private tmux server so that they survive the app, and Tortie cannot know whether a long-running session still matters to you. Ending one is always your decision, which is why this sheet exists." },
+          { type: "note", title: "A session on another machine shows a dash for its messages", html: "Message counts are read from the agent's own records on the machine that holds them. Tortie does not copy those records across, so a remote row reports its state and its age but not its counts." },
+        ],
+      },
+      {
         id: "terminal-menu",
         title: "Use the terminal menu",
         blocks: [
