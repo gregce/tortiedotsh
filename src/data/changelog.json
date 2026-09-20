@@ -2,6 +2,76 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.109.0",
+      "date": "2026-09-20",
+      "summary": "This release is about managing every session from one place. Session > Manage Sessions… opens a sheet over every session Tortie is running, across every project and machine, and it is built at the same density as the rest of the app. Alongside it, scrolling back in a session stays where you put it, and typing in one file can no longer overwrite another.",
+      "contributors": [
+        {
+          "login": "JnBrymn",
+          "name": "John Berryman",
+          "url": "https://github.com/JnBrymn",
+          "avatarUrl": "https://github.com/JnBrymn.png?size=64"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Session > Manage Sessions… shows every session Tortie manages in one sheet, across every project and machine and including projects whose tab is closed, with each one's state, when it was created, how many messages its conversation holds and how long ago the last one was. You can end a session or restore an ended one from there, or tick several and end them together after one confirmation that names each, and Past Sessions… opens the same sheet on its second tab; a session on another machine shows a dash for its messages",
+              "commits": [
+                {
+                  "hash": "f6c11f57",
+                  "url": "https://github.com/gregce/tortie/commit/f6c11f57"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "The Manage Sessions sheet now shows about twice as many sessions at once — seventeen rows where it showed nine in the same window — because a session takes one line rather than two, and it reads like the rest of Tortie, with the same type and icon sizes and a row that fills under the pointer the way the session list does. No column was dropped and nothing on a row is smaller to click, and a message that appears while the sheet is open now sits above its footer instead of over the End button on the lowest rows",
+              "commits": [
+                {
+                  "hash": "4f08e8f0",
+                  "url": "https://github.com/gregce/tortie/commit/4f08e8f0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Scrolling back in a session and reading stays where you put it while the agent keeps writing, when you resize the window and when you look at another session and come back, and the scrollbar shows how far back you really are. It used to slide away from you, a line for every line printed, until it reached the top, and a resize or a trip to another session could throw you back to the bottom. Contributed by John Berryman in #30",
+              "commits": [
+                {
+                  "hash": "6414ab2c",
+                  "url": "https://github.com/gregce/tortie/commit/6414ab2c"
+                },
+                {
+                  "hash": "3f0f0f54",
+                  "url": "https://github.com/gregce/tortie/commit/3f0f0f54"
+                }
+              ]
+            },
+            {
+              "text": "Typing in one file in the Redline view and then clicking another tab no longer puts the first file's text into the second. That tab used to turn unsaved with its whole file shown as deleted, and saving it wrote the first file's text over it with nothing asked, which auto save did with no key pressed",
+              "commits": [
+                {
+                  "hash": "0f0cdc6f",
+                  "url": "https://github.com/gregce/tortie/commit/0f0cdc6f"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.108.0",
       "date": "2026-09-18",
       "summary": "This release is about the keyboard ending up where you are. Entering session focus, closing Catch Me Up and coming back from the editor could each leave it on nothing until you clicked, and in a split it went to the first pane rather than the one that is outlined; it now stays with you, and the session focus chord no longer sends Enter to your agent on the way. Alongside that, a save or a rewind no longer loses what you typed at the wrong moment, the Redline chords move on to the next change by themselves, the window goes quiet around a single outline, and the Claude usage meter stops telling you to sign in when you already are.",
