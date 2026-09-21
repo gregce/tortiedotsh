@@ -559,7 +559,7 @@ export const docsPages: DocPage[] = [
         title: "See every session in one place",
         blocks: [
           { type: "paragraph", html: "Session &gt; Manage Sessions… opens one sheet over every session Tortie is running, across every project and every machine — including projects whose tab you have closed. It is the place to find a session you have lost track of, and to clear out the ones you are finished with." },
-          { type: "paragraph", html: "Each row carries the session's state, the folder it runs in, when it was created, how many messages its conversation holds, and how long ago the last one arrived. Sort by any of those, filter by project or by state, or search by name." },
+          { type: "paragraph", html: "Each row carries the session's state, the folder it runs in, when it was created, how many messages its conversation holds, and how long ago the last one arrived. Sort by any of those, filter by project or by state, or search by name. Before the state filter, All, Active and Ended answer the simpler question on the face: Active is every session that is alive, including one Tortie cannot reach this moment, and Ended is every session you can restore." },
           { type: "list", items: [
             "End a live session, or restore a saved one, from its own row.",
             "Tick several rows and end them together. Tortie names every session in the confirmation and reports the outcome row by row.",

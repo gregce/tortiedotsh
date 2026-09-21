@@ -2,6 +2,68 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.110.0",
+      "date": "2026-09-21",
+      "summary": "This release is about the sign ins Tortie keeps for you and the sheet that lists your sessions. A Codex account you sign out of can be offered back for the first time, choosing one of your other sign ins can no longer destroy the one you were using, and the Manage Sessions sheet says whether a session is alive or over without opening anything and stops searching every project folder each time you open it. The first time you open the sheet after this release, each session is read again from the beginning, which takes a moment on a long one.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "The Manage Sessions sheet now says whether a session is alive or over without opening anything: All, Active and Ended sit before the State dropdown, and State refines inside the one you pick, so every option it had is still there. A session Tortie cannot reach counts as Active, since it cannot be restored, and one whose process has just ended can read Active for a moment",
+              "commits": [
+                {
+                  "hash": "7240406b",
+                  "url": "https://github.com/gregce/tortie/commit/7240406b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Choosing one of your other sign ins no longer writes over the sign in you were already using, and a login whose sign in has grown too large for the agent's own keychain entry can be chosen again. When that entry cannot take the sign in, Tortie says so and the session already running keeps its current sign in until you press Restart now",
+              "commits": [
+                {
+                  "hash": "09c2ff56",
+                  "url": "https://github.com/gregce/tortie/commit/09c2ff56"
+                }
+              ]
+            },
+            {
+              "text": "A sign in of any size is kept, so a Codex account you sign out of can be offered back, which never once worked. Tortie now keeps its copies of your sign ins in a sealed file of its own instead of your keychain and moves the copies already there over on their own; a Claude sign in that has grown larger than Tortie can write into the agent's keychain entry in one line still cannot be put back, and going back to an earlier version of Tortie hides the sign ins it is holding until you come forward again, so do not sign into a different account in your own location while you are back there",
+              "commits": [
+                {
+                  "hash": "09c2ff56",
+                  "url": "https://github.com/gregce/tortie/commit/09c2ff56"
+                }
+              ]
+            },
+            {
+              "text": "The number of messages a session shows, on the Manage Sessions sheet and in Catch Me Up, is now that session's own: about 8 percent of Codex replies were missing from it, and a slash command typed with no arguments was not counted as your message and let the reply to it stand in for the previous reply. The first time you open the sheet after this release each Claude Code and Codex session is read again from the beginning, which takes a moment on a long one; a session Tortie has matched to a conversation from another folder can still show that conversation's numbers, and that is next",
+              "commits": [
+                {
+                  "hash": "b6f04ab0",
+                  "url": "https://github.com/gregce/tortie/commit/b6f04ab0"
+                }
+              ]
+            },
+            {
+              "text": "Manage Sessions no longer searches every one of your Claude Code project folders each time it asks about a session you have not sent a message to yet: within half a minute the answer is remembered, so filling the sheet again over such sessions takes about a hundredth of what the first fill took. A very large conversation still holds the window on the sheet's first open exactly as before",
+              "commits": [
+                {
+                  "hash": "7b64efa5",
+                  "url": "https://github.com/gregce/tortie/commit/7b64efa5"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.109.0",
       "date": "2026-09-20",
       "summary": "This release is about managing every session from one place. Session > Manage Sessions… opens a sheet over every session Tortie is running, across every project and machine, and it is built at the same density as the rest of the app. Alongside it, scrolling back in a session stays where you put it, and typing in one file can no longer overwrite another.",
