@@ -645,7 +645,11 @@ Use a normal revert commit. Do not reset or rewrite shared history.
 5. Run a targeted refresh.
 6. Run the strict audit before publishing the replacement.
 
-## Adding full documentation discovery
+## Candidate discovery and full documentation discovery
+
+The [comparison candidate workflow](../../.github/workflows/discover-comparison-candidates.yml) runs every Wednesday at 10:17 UTC and can also be dispatched manually. It executes the category-specific GitHub searches in [`scripts/discover-comparison-candidates.ts`](../../scripts/discover-comparison-candidates.ts), removes repositories already attached to catalog products, ranks the remaining projects by category signal, popularity and recent activity, and uploads both JSON and Markdown review queues as a 30-day workflow artifact.
+
+This job is deliberately advisory. It never inserts a product, assigns a category, or scores a capability. A reviewer must still establish the product boundary and cite first-party evidence before changing the live catalog. Adding a catalog repository automatically removes that exact GitHub identity from subsequent review queues.
 
 The current system monitors known claim sources. A separate discovery service should search official documentation for new evidence and products.
 
@@ -769,7 +773,8 @@ Use this operating cadence:
 | daily | automatic forge refresh, known evidence fingerprints, validation and snapshot commits |
 | weekly | CLOC refresh and verification at resolved release/tag refs |
 | after a failed run | inspect and resolve the named project, source or freshness gate |
-| monthly | review changed and unreachable evidence, run documentation discovery when implemented |
+| weekly | inspect the generated GitHub product-candidate artifact for notable uncataloged projects |
+| monthly | review changed and unreachable evidence; run broader documentation discovery when implemented |
 | quarterly | broader product discovery, taxonomy review and Unknown re-audit |
 | within 120 days | re-review capability evidence and exceptional policies |
 | within 180 days | re-review identity assets |

@@ -1,0 +1,37 @@
+name: Discover comparison candidates
+
+on:
+  schedule:
+    - cron: "17 10 * * 3"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Search for uncataloged projects
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: npm run discover:comparison -- --min-stars 200 --limit 25
+
+      - name: Upload review queue
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: comparison-candidates
+          path: .audit/comparison-candidates
+          if-no-files-found: error
+          retention-days: 30

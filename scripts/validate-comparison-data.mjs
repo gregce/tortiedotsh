@@ -78,6 +78,16 @@ const manifestIdSet = new Set(manifestIds);
 const manifestById = new Map(manifest.projects.map((project) => [project.id, project]));
 const manifestForge = (project) => project.forge || "github";
 const manifestRepositoryUrl = (project) => project.repositoryUrl || project.githubUrl;
+const categoryRowIds = new Map(
+  comparisonCategories.map((category) => [category.id, new Set(category.rows.map((row) => row.id))]),
+);
+const productsByMetricId = new Map();
+for (const product of comparisonProducts) {
+  if (!product.repoMetricId) continue;
+  const products = productsByMetricId.get(product.repoMetricId) || [];
+  products.push(product);
+  productsByMetricId.set(product.repoMetricId, products);
+}
 const evidenceBacklog = new Set(["mosaic-terminal", "airport", "omnara"]);
 const publicProductIds = comparisonProducts
   .filter((product) => !evidenceBacklog.has(product.id))
@@ -206,6 +216,13 @@ for (const project of manifest.projects) {
     );
   }
   check(typeof project.loc?.enabled === "boolean", `${project.id} must declare whether LOC is enabled.`);
+  const joinedProducts = productsByMetricId.get(project.id) || [];
+  if (joinedProducts.length > 0) {
+    check(
+      joinedProducts.some((product) => product.categoryId === project.category),
+      `${project.id} metrics category must match at least one joined catalog product category.`,
+    );
+  }
   if (project.loc?.enabled === false) {
     check(
       typeof project.loc.reason === "string" && project.loc.reason.trim().length > 0,
@@ -273,6 +290,14 @@ for (const product of comparisonProducts) {
     } else {
       check(fact.evidence.length === 0, `${product.id}.${field} is unknown but carries scoring evidence.`);
     }
+  }
+
+  const validClaimIds = categoryRowIds.get(product.categoryId) || new Set();
+  for (const rowId of Object.keys(product.claims)) {
+    check(
+      validClaimIds.has(rowId),
+      `${product.id}.${rowId} does not belong to ${product.categoryId}.`,
+    );
   }
 
   const source = product.profile.source;
