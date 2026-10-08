@@ -16,13 +16,13 @@
     "platformHeaders": "Products whose complete platform fact is Unknown are audited separately below. An omitted OS in a known platform list is not rendered as an Unknown table cell."
   },
   "summary": {
-    "products": 69,
-    "currentUnknownCells": 223,
-    "agentOrchestratorUnknownCells": 133,
+    "products": 83,
+    "currentUnknownCells": 244,
+    "agentOrchestratorUnknownCells": 154,
     "codingAgentHarnessUnknownCells": 90,
     "suggestedClosures": 0,
     "implementedClosures": 8,
-    "remainUnknown": 223
+    "remainUnknown": 244
   },
   "categories": [
     {
@@ -112,6 +112,227 @@
               "rowId": "orchestrator-programmable",
               "result": "remain-unknown",
               "rationale": "GitHub Copilot app's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Programmable control plane” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "antigravity-2",
+          "sourcesChecked": [
+            "https://www.antigravity.google/docs/overview",
+            "https://antigravity.google/docs/features",
+            "https://antigravity.google/docs/subagents",
+            "https://antigravity.google/docs/artifact-review",
+            "https://www.antigravity.google/docs/settings?tab=ide",
+            "https://antigravity.google/docs/slash-commands",
+            "https://antigravity.google/docs/remote-control/",
+            "https://www.antigravity.google/blog/introducing-google-antigravity-2"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-multi-harness",
+              "result": "remain-unknown",
+              "rationale": "Antigravity 2.0's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Multiple agent harnesses” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "Antigravity 2.0's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Cross-harness task handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-pr-lifecycle",
+              "result": "remain-unknown",
+              "rationale": "Antigravity 2.0's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Pull-request workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "orchestrator-inc",
+          "sourcesChecked": [
+            "https://github.com/OrchestratorInc/agent-orchestrator",
+            "https://github.com/OrchestratorInc/agent-orchestrator#readme"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-containers",
+              "result": "remain-unknown",
+              "rationale": "Orchestrator's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Container or VM isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-remote-execution",
+              "result": "remain-unknown",
+              "rationale": "Orchestrator's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Remote execution” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "opcode",
+          "sourcesChecked": [
+            "https://github.com/winfunc/opcode",
+            "https://github.com/winfunc/opcode#security",
+            "https://github.com/winfunc/opcode#features",
+            "https://github.com/winfunc/opcode#readme"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "Opcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Cross-harness task handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-worktrees",
+              "result": "remain-unknown",
+              "rationale": "Opcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Git worktree isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-containers",
+              "result": "remain-unknown",
+              "rationale": "Opcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Container or VM isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-task-board",
+              "result": "remain-unknown",
+              "rationale": "Opcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Task or Kanban board” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-pr-lifecycle",
+              "result": "remain-unknown",
+              "rationale": "Opcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Pull-request workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-remote-execution",
+              "result": "remain-unknown",
+              "rationale": "Opcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Remote execution” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-programmable",
+              "result": "remain-unknown",
+              "rationale": "Opcode's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Programmable control plane” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "pi-desktop",
+          "sourcesChecked": [
+            "https://github.com/vastsa/PI-Desktop",
+            "https://github.com/vastsa/PI-Desktop#when-one-agent-is-not-enough",
+            "https://github.com/vastsa/PI-Desktop#readme",
+            "https://github.com/vastsa/PI-Desktop#built-for-work-that-lasts",
+            "https://github.com/vastsa/PI-Desktop/blob/main/docs/guide/automations.md",
+            "https://github.com/vastsa/PI-Desktop/blob/main/docs/plugin-development.md"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-worktrees",
+              "result": "remain-unknown",
+              "rationale": "PI Desktop's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Git worktree isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-containers",
+              "result": "remain-unknown",
+              "rationale": "PI Desktop's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Container or VM isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-pr-lifecycle",
+              "result": "remain-unknown",
+              "rationale": "PI Desktop's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Pull-request workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-remote-execution",
+              "result": "remain-unknown",
+              "rationale": "PI Desktop's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Remote execution” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "tutti",
+          "sourcesChecked": [
+            "https://tutti.sh/en",
+            "https://github.com/tutti-os/tutti",
+            "https://github.com/tutti-os/tutti#1-a-real-time-shared-workspace",
+            "https://github.com/tutti-os/tutti#tutti-vs-tutti--vm",
+            "https://github.com/tutti-os/tutti#3-less-work-about-work",
+            "https://github.com/tutti-os/tutti#what-can-you-do-with-tutti--vm"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-worktrees",
+              "result": "remain-unknown",
+              "rationale": "Tutti's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Git worktree isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-inline-review",
+              "result": "remain-unknown",
+              "rationale": "Tutti's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Inline diff feedback” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-pr-lifecycle",
+              "result": "remain-unknown",
+              "rationale": "Tutti's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Pull-request workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "orchestrator-programmable",
+              "result": "remain-unknown",
+              "rationale": "Tutti's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Programmable control plane” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "proliferate",
+          "sourcesChecked": [
+            "https://proliferate.com",
+            "https://github.com/proliferate-ai/proliferate",
+            "https://github.com/proliferate-ai/proliferate#features",
+            "https://github.com/proliferate-ai/proliferate/blob/main/specs/systems/subagents/delegated-work.md",
+            "https://github.com/proliferate-ai/proliferate/blob/main/specs/systems/workspaces/README.md",
+            "https://github.com/proliferate-ai/proliferate/blob/main/specs/systems/chat/composer.md"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "pane",
+          "sourcesChecked": [
+            "https://runpane.com",
+            "https://github.com/greenfield-inc/Pane",
+            "https://github.com/greenfield-inc/Pane#what-flying-feels-like",
+            "https://github.com/greenfield-inc/Pane#hand-off-a-task",
+            "https://github.com/greenfield-inc/Pane#readme",
+            "https://github.com/greenfield-inc/Pane#remote-pane",
+            "https://github.com/greenfield-inc/Pane#agent-operable-cli"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-containers",
+              "result": "remain-unknown",
+              "rationale": "Pane's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Container or VM isolation” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "parallel-code",
+          "sourcesChecked": [
+            "https://parallelcode.app",
+            "https://github.com/johannesjo/parallel-code",
+            "https://github.com/johannesjo/parallel-code#features",
+            "https://github.com/johannesjo/parallel-code/blob/main/docs/design-doc.md",
+            "https://github.com/johannesjo/parallel-code#phone-notifications"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "vicoa",
+          "sourcesChecked": [
+            "https://vicoa.ai",
+            "https://github.com/vicoa-ai/vicoa",
+            "https://github.com/vicoa-ai/vicoa#run-a-team-of-coding-agents",
+            "https://github.com/vicoa-ai/vicoa/blob/main/apps/web/content/docs/changelog/desktop-app.mdx",
+            "https://github.com/vicoa-ai/vicoa/blob/main/SELF_HOSTING.md",
+            "https://github.com/vicoa-ai/vicoa#steer-from-any-device"
+          ],
+          "cells": [
+            {
+              "rowId": "orchestrator-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "Vicoa's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Cross-harness task handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },
@@ -971,18 +1192,15 @@
             "https://air.dev/changelog",
             "https://blog.jetbrains.com/air/2026/03/air-launches-as-public-preview-a-new-wave-of-dev-tooling-built-on-26-years-of-experience/",
             "https://blog.jetbrains.com/air/2026/06/jetbrains-air-lands-on-windows/",
-            "https://www.jetbrains.com/legal/docs/terms/jetbrains-air/"
+            "https://www.jetbrains.com/legal/docs/terms/jetbrains-air/",
+            "https://www.jetbrains.com/help/air/install-the-air-app.html",
+            "https://www.jetbrains.com/help/air/air-app.html"
           ],
           "cells": [
             {
               "rowId": "orchestrator-pr-lifecycle",
               "result": "remain-unknown",
               "rationale": "Air's current first-party product pages establish local review, applying changes, and commits, but do not establish a complete product-owned pull-request lifecycle."
-            },
-            {
-              "rowId": "orchestrator-remote-execution",
-              "result": "remain-unknown",
-              "rationale": "Air currently documents local, Git-worktree, and Docker execution; planned cloud execution is not treated as a shipped remote-execution capability."
             },
             {
               "rowId": "orchestrator-programmable",
@@ -1190,7 +1408,8 @@
             "https://github.com/meta-models/meta-model-cookbook/blob/main/04_muse_code/03_staged_approvals/README.md",
             "https://github.com/meta-models/meta-model-cookbook/blob/main/04_muse_code/04_contained_execution/README.md",
             "https://github.com/meta-models/meta-model-cookbook/blob/main/04_muse_code/06_subagent_fanout/README.md",
-            "https://github.com/meta-models/meta-model-cookbook/blob/main/04_muse_code/README.md"
+            "https://github.com/meta-models/meta-model-cookbook/blob/main/04_muse_code/README.md",
+            "https://dev.meta.ai/products/muse-code"
           ],
           "cells": [
             {
@@ -1619,7 +1838,9 @@
           "productId": "codewhale",
           "sourcesChecked": [
             "https://github.com/Hmbown/CodeWhale",
-            "https://github.com/Hmbown/CodeWhale/blob/main/docs/CONFIGURATION.md"
+            "https://github.com/Hmbown/CodeWhale/blob/main/docs/CONFIGURATION.md",
+            "https://github.com/codewhale-hq/Codewhale",
+            "https://github.com/codewhale-hq/Codewhale/blob/main/docs/CONFIGURATION.md"
           ],
           "cells": [
             {
@@ -1872,6 +2093,53 @@
               "rationale": "Junie documents saved sessions, transcripts, Git worktrees, and review, but the checked exact CLI sources do not establish task checkpoints that rewind code or conversation state."
             }
           ]
+        },
+        {
+          "productId": "minimax-code",
+          "sourcesChecked": [
+            "https://github.com/MiniMax-AI/minimax-code",
+            "https://github.com/MiniMax-AI/minimax-code/blob/main/docs/tui-capabilities.md"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "kimchi",
+          "sourcesChecked": [
+            "https://kimchi.dev/",
+            "https://github.com/getkimchi/kimchi",
+            "https://github.com/getkimchi/kimchi#readme",
+            "https://github.com/getkimchi/kimchi/blob/master/docs/teleport.md"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "fuxi",
+          "sourcesChecked": [
+            "https://www.fuxicode.com",
+            "https://github.com/fuxicodex/Fuxi/blob/main/docs/usage.md"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "nanocoder",
+          "sourcesChecked": [
+            "https://docs.nanocollective.org/nanocoder/docs",
+            "https://github.com/Nano-Collective/nanocoder",
+            "https://github.com/Nano-Collective/nanocoder/blob/main/docs/features/index.md"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "anus",
+          "sourcesChecked": [
+            "https://anus.dev/",
+            "https://github.com/anus-dev/ANUS",
+            "https://github.com/anus-dev/ANUS#commands",
+            "https://github.com/anus-dev/ANUS/blob/main/extension/anus.mjs",
+            "https://github.com/anus-dev/ANUS/blob/main/lib/main.mjs",
+            "https://github.com/anus-dev/ANUS#credit-in-commits"
+          ],
+          "cells": []
         }
       ]
     }

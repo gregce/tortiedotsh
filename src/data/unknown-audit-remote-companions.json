@@ -17,11 +17,11 @@
     "parityRule": "cells must exactly equal the current rendered non-platform Unknown keys. Implemented closures are recorded separately and are no longer Unknown catalog state."
   },
   "summary": {
-    "products": 15,
-    "currentUnknownCells": 72,
+    "products": 18,
+    "currentUnknownCells": 75,
     "suggestedClosures": 0,
     "implementedClosures": 7,
-    "remainUnknown": 72
+    "remainUnknown": 75
   },
   "categories": [
     {
@@ -44,6 +44,18 @@
             "https://happier.dev/",
             "https://github.com/happier-dev/happier",
             "https://github.com/happier-dev/happier#key-features"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "collie",
+          "sourcesChecked": [
+            "https://colliepwa.dev/",
+            "https://github.com/AltanS/collie",
+            "https://github.com/AltanS/collie#readme",
+            "https://github.com/AltanS/collie/blob/main/docs/security.md",
+            "https://github.com/AltanS/collie/blob/main/docs/multiplexers.md",
+            "https://github.com/AltanS/collie/blob/main/docs/claude-code-on-your-phone.md"
           ],
           "cells": []
         },
@@ -87,6 +99,47 @@
               "rowId": "remote-session-durability",
               "result": "remain-unknown",
               "rationale": "CC Pocket's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Session durability boundary” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "lucarne",
+          "sourcesChecked": [
+            "https://github.com/tuchg/Lucarne",
+            "https://github.com/tuchg/Lucarne#readme",
+            "https://github.com/tuchg/Lucarne#agent-capability-matrix",
+            "https://github.com/tuchg/Lucarne/blob/main/docs/commands.md",
+            "https://github.com/tuchg/Lucarne/blob/main/examples/lucarned.yaml"
+          ],
+          "cells": [
+            {
+              "rowId": "remote-browser-pwa",
+              "result": "remain-unknown",
+              "rationale": "Lucarne's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Browser or PWA client” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "pi-agent-dashboard",
+          "sourcesChecked": [
+            "https://pi-dashboard.dev/",
+            "https://github.com/BlackBeltTechnology/pi-agent-dashboard",
+            "https://github.com/BlackBeltTechnology/pi-agent-dashboard#features",
+            "https://github.com/BlackBeltTechnology/pi-agent-dashboard#authentication-optional",
+            "https://github.com/BlackBeltTechnology/pi-agent-dashboard#readme",
+            "https://github.com/BlackBeltTechnology/pi-agent-dashboard#tunnel-zrok",
+            "https://github.com/BlackBeltTechnology/pi-agent-dashboard/blob/develop/docs/user-features.md"
+          ],
+          "cells": [
+            {
+              "rowId": "remote-native-ios",
+              "result": "remain-unknown",
+              "rationale": "PI Dashboard's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Native iOS client” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "remote-native-android",
+              "result": "remain-unknown",
+              "rationale": "PI Dashboard's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Native Android client” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },

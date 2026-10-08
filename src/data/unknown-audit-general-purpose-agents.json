@@ -17,11 +17,11 @@
     "parityRule": "cells must exactly equal the current rendered non-platform Unknown keys. Implemented closures are recorded separately and are no longer Unknown catalog state."
   },
   "summary": {
-    "products": 21,
-    "currentUnknownCells": 70,
+    "products": 24,
+    "currentUnknownCells": 75,
     "suggestedClosures": 0,
     "implementedClosures": 8,
-    "remainUnknown": 70
+    "remainUnknown": 75
   },
   "categories": [
     {
@@ -86,6 +86,63 @@
               "rowId": "general-model-freedom",
               "result": "remain-unknown",
               "rationale": "The Grok Bot pages describe the hosted xAI product but do not expose operator-selectable third-party providers, local models, or an OpenAI-compatible model endpoint for this SKU."
+            }
+          ]
+        },
+        {
+          "productId": "openai-dots",
+          "sourcesChecked": [
+            "https://openai.com/index/introducing-dots/",
+            "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+            "https://help.openai.com/en/articles/20001554-manage-dots-in-chatgpt-workspaces"
+          ],
+          "cells": [
+            {
+              "rowId": "general-self-hosting",
+              "result": "remain-unknown",
+              "rationale": "OpenAI dots's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Self-hosting” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-model-freedom",
+              "result": "remain-unknown",
+              "rationale": "OpenAI dots's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Model/provider freedom” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "copilot-autopilot",
+          "sourcesChecked": [
+            "https://www.microsoft.com/en-us/copilot",
+            "https://learn.microsoft.com/en-us/microsoft-scout/overview",
+            "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+            "https://learn.microsoft.com/en-us/microsoft-scout/use-microsoft-scout"
+          ],
+          "cells": [
+            {
+              "rowId": "general-self-hosting",
+              "result": "remain-unknown",
+              "rationale": "Copilot Autopilot's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Self-hosting” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "meta-muse",
+          "sourcesChecked": [
+            "https://ai.meta.com/muse/",
+            "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+            "https://ai.meta.com/muse/productivity/",
+            "https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse"
+          ],
+          "cells": [
+            {
+              "rowId": "general-self-hosting",
+              "result": "remain-unknown",
+              "rationale": "Muse's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Self-hosting” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "general-model-freedom",
+              "result": "remain-unknown",
+              "rationale": "Muse's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Model/provider freedom” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },

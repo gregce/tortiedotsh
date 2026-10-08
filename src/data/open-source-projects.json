@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-13T00:00:00.000Z",
+  "updatedAt": "2026-10-08T00:00:00.000Z",
   "source": "Curated from each project's official GitHub repository",
   "projects": [
     {
@@ -477,10 +477,10 @@
       "id": "codewhale",
       "name": "CodeWhale",
       "category": "coding-agent-harnesses",
-      "owner": "Hmbown",
-      "repo": "CodeWhale",
-      "githubUrl": "https://github.com/Hmbown/CodeWhale",
-      "apiUrl": "https://api.github.com/repos/Hmbown/CodeWhale",
+      "owner": "codewhale-hq",
+      "repo": "Codewhale",
+      "githubUrl": "https://github.com/codewhale-hq/Codewhale",
+      "apiUrl": "https://api.github.com/repos/codewhale-hq/Codewhale",
       "loc": { "enabled": true }
     },
     {
@@ -1460,6 +1460,121 @@
       "apiUrl": "https://api.github.com/repos/tmate-io/tmate",
       "license": { "spdxId": "ISC", "name": "ISC-style per-file licenses", "sourceUrl": "https://github.com/tmate-io/tmate/blob/master/COPYING", "checkedAt": "2026-09-13" },
       "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "nezha", "name": "Nezha", "category": "code-editors", "owner": "hanshuaikang", "repo": "nezha",
+      "githubUrl": "https://github.com/hanshuaikang/nezha", "apiUrl": "https://api.github.com/repos/hanshuaikang/nezha",
+      "license": { "spdxId": "GPL-3.0", "name": "GNU General Public License v3.0", "sourceUrl": "https://github.com/hanshuaikang/nezha/blob/main/LICENSE", "checkedAt": "2026-10-08" },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "tuios", "name": "tuios", "category": "agent-workbenches", "owner": "Gaurav-Gosain", "repo": "tuios",
+      "githubUrl": "https://github.com/Gaurav-Gosain/tuios", "apiUrl": "https://api.github.com/repos/Gaurav-Gosain/tuios",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "orchestrator-inc", "name": "Orchestrator", "category": "agent-orchestrators", "owner": "OrchestratorInc", "repo": "agent-orchestrator",
+      "githubUrl": "https://github.com/OrchestratorInc/agent-orchestrator", "apiUrl": "https://api.github.com/repos/OrchestratorInc/agent-orchestrator",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "opcode", "name": "Opcode", "category": "agent-orchestrators", "owner": "winfunc", "repo": "opcode",
+      "githubUrl": "https://github.com/winfunc/opcode", "apiUrl": "https://api.github.com/repos/winfunc/opcode",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "pi-desktop", "name": "PI Desktop", "category": "agent-orchestrators", "owner": "vastsa", "repo": "PI-Desktop",
+      "githubUrl": "https://github.com/vastsa/PI-Desktop", "apiUrl": "https://api.github.com/repos/vastsa/PI-Desktop",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "tutti", "name": "Tutti", "category": "agent-orchestrators", "owner": "tutti-os", "repo": "tutti",
+      "githubUrl": "https://github.com/tutti-os/tutti", "apiUrl": "https://api.github.com/repos/tutti-os/tutti",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "proliferate", "name": "Proliferate", "category": "agent-orchestrators", "owner": "proliferate-ai", "repo": "proliferate",
+      "githubUrl": "https://github.com/proliferate-ai/proliferate", "apiUrl": "https://api.github.com/repos/proliferate-ai/proliferate",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "pane", "name": "Pane", "category": "agent-orchestrators", "owner": "greenfield-inc", "repo": "Pane",
+      "githubUrl": "https://github.com/greenfield-inc/Pane", "apiUrl": "https://api.github.com/repos/greenfield-inc/Pane",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "parallel-code", "name": "Parallel Code", "category": "agent-orchestrators", "owner": "johannesjo", "repo": "parallel-code",
+      "githubUrl": "https://github.com/johannesjo/parallel-code", "apiUrl": "https://api.github.com/repos/johannesjo/parallel-code",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "vicoa", "name": "Vicoa", "category": "agent-orchestrators", "owner": "vicoa-ai", "repo": "vicoa",
+      "githubUrl": "https://github.com/vicoa-ai/vicoa", "apiUrl": "https://api.github.com/repos/vicoa-ai/vicoa",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "minimax-code", "name": "MiniMax Code", "category": "coding-agent-harnesses", "owner": "MiniMax-AI", "repo": "minimax-code",
+      "githubUrl": "https://github.com/MiniMax-AI/minimax-code", "apiUrl": "https://api.github.com/repos/MiniMax-AI/minimax-code",
+      "license": { "summary": "MIT first-party source with an Apache-2.0 sandbox runtime and separately licensed third-party or vendored components", "checkedAt": "2026-10-08", "components": [{ "spdxId": "MIT", "name": "MIT License", "scope": "First-party MiniMax Code CLI/TUI source", "sourceUrl": "https://github.com/MiniMax-AI/minimax-code/blob/main/LICENSE-STATUS.md" }, { "spdxId": "Apache-2.0", "name": "Apache License 2.0", "scope": "Bundled sandbox runtime", "sourceUrl": "https://github.com/MiniMax-AI/minimax-code/blob/main/LICENSE-STATUS.md" }] },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "kimchi", "name": "Kimchi", "category": "coding-agent-harnesses", "owner": "getkimchi", "repo": "kimchi",
+      "githubUrl": "https://github.com/getkimchi/kimchi", "apiUrl": "https://api.github.com/repos/getkimchi/kimchi",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "nanocoder", "name": "nanocoder", "category": "coding-agent-harnesses", "owner": "Nano-Collective", "repo": "nanocoder",
+      "githubUrl": "https://github.com/Nano-Collective/nanocoder", "apiUrl": "https://api.github.com/repos/Nano-Collective/nanocoder",
+      "license": { "spdxId": "MIT", "name": "MIT License", "sourceUrl": "https://github.com/Nano-Collective/nanocoder/blob/main/LICENSE.md", "checkedAt": "2026-10-08" },
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "anus", "name": "ANUS", "category": "coding-agent-harnesses", "owner": "anus-dev", "repo": "ANUS",
+      "githubUrl": "https://github.com/anus-dev/ANUS", "apiUrl": "https://api.github.com/repos/anus-dev/ANUS",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "cyrus", "name": "Cyrus source tree", "category": "cloud-agents", "owner": "cyrusagents", "repo": "cyrus",
+      "githubUrl": "https://github.com/cyrusagents/cyrus", "apiUrl": "https://api.github.com/repos/cyrusagents/cyrus",
+      "metricScope": "Repository metrics cover the Apache-2.0 community deployment; vendor-hosted services are outside the repository.",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "token-telemetry", "name": "TokenTelemetry", "category": "agent-traces", "owner": "VasiHemanth", "repo": "tokentelemetry",
+      "githubUrl": "https://github.com/VasiHemanth/tokentelemetry", "apiUrl": "https://api.github.com/repos/VasiHemanth/tokentelemetry",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "tokscale", "name": "Tokscale", "category": "agent-traces", "owner": "junhoyeo", "repo": "tokscale",
+      "githubUrl": "https://github.com/junhoyeo/tokscale", "apiUrl": "https://api.github.com/repos/junhoyeo/tokscale",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "tracecrate", "name": "TraceCrate", "category": "agent-traces", "owner": "FankChen", "repo": "tracecrate",
+      "githubUrl": "https://github.com/FankChen/tracecrate", "apiUrl": "https://api.github.com/repos/FankChen/tracecrate",
+      "loc": { "enabled": true, "timeoutMinutes": 20 }
+    },
+    {
+      "id": "openlit", "name": "OpenLIT community source tree", "category": "agent-traces", "owner": "openlit", "repo": "openlit",
+      "githubUrl": "https://github.com/openlit/openlit", "apiUrl": "https://api.github.com/repos/openlit/openlit",
+      "metricScope": "Repository metrics cover the Apache-2.0 community edition; documented enterprise-only features live outside the public repository.",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "collie", "name": "ColliePWA", "category": "remote-companions", "owner": "AltanS", "repo": "collie",
+      "githubUrl": "https://github.com/AltanS/collie", "apiUrl": "https://api.github.com/repos/AltanS/collie",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "lucarne", "name": "Lucarne", "category": "remote-companions", "owner": "tuchg", "repo": "Lucarne",
+      "githubUrl": "https://github.com/tuchg/Lucarne", "apiUrl": "https://api.github.com/repos/tuchg/Lucarne",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
+    },
+    {
+      "id": "pi-agent-dashboard", "name": "PI Dashboard", "category": "remote-companions", "owner": "BlackBeltTechnology", "repo": "pi-agent-dashboard",
+      "githubUrl": "https://github.com/BlackBeltTechnology/pi-agent-dashboard", "apiUrl": "https://api.github.com/repos/BlackBeltTechnology/pi-agent-dashboard",
+      "loc": { "enabled": true, "timeoutMinutes": 30 }
     }
   ]
 }

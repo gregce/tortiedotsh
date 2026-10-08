@@ -17,14 +17,14 @@
     "platformRows": "Excluded from this ledger. Platform header facts and platform filter rows require a separate exact-SKU host audit; an omitted platform is not inferred to be unsupported."
   },
   "summary": {
-    "productsInScope": 31,
-    "productsWithUnknownCells": 23,
-    "currentUnknownCells": 61,
-    "agentTraceUnknownCells": 16,
-    "cloudAgentUnknownCells": 45,
+    "productsInScope": 37,
+    "productsWithUnknownCells": 28,
+    "currentUnknownCells": 69,
+    "agentTraceUnknownCells": 22,
+    "cloudAgentUnknownCells": 47,
     "suggestedClosures": 0,
     "implementedClosures": 27,
-    "remainUnknown": 61
+    "remainUnknown": 69
   },
   "categories": [
     {
@@ -130,6 +130,83 @@
             "https://github.com/git-ai-project/git-ai"
           ],
           "cells": []
+        },
+        {
+          "productId": "token-telemetry",
+          "sourcesChecked": [
+            "https://tokentelemetry.com/",
+            "https://github.com/VasiHemanth/tokentelemetry",
+            "https://tokentelemetry.com/docs/supported-agents/",
+            "https://tokentelemetry.com/docs/docker/",
+            "https://tokentelemetry.com/docs/features/projects/",
+            "https://tokentelemetry.com/docs/features/traces/",
+            "https://tokentelemetry.com/docs/features/artifacts/",
+            "https://tokentelemetry.com/docs/configuration/privacy/",
+            "https://github.com/VasiHemanth/tokentelemetry#readme"
+          ],
+          "cells": [
+            {
+              "rowId": "trace-export-api",
+              "result": "remain-unknown",
+              "rationale": "TokenTelemetry's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Export or ingestion API” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "tracecrate",
+          "sourcesChecked": [
+            "https://fankchen.github.io/tracecrate/",
+            "https://github.com/FankChen/tracecrate",
+            "https://github.com/FankChen/tracecrate#readme"
+          ],
+          "cells": [
+            {
+              "rowId": "trace-git-linkage",
+              "result": "remain-unknown",
+              "rationale": "TraceCrate's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Commit, branch, and worktree linkage” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "trace-artifact-coverage",
+              "result": "remain-unknown",
+              "rationale": "TraceCrate's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Artifacts, files, and diffs” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "openlit",
+          "sourcesChecked": [
+            "https://docs.openlit.io/",
+            "https://github.com/openlit/openlit",
+            "https://github.com/openlit/openlit#readme",
+            "https://github.com/openlit/openlit/blob/main/sdk/python/README.md",
+            "https://github.com/openlit/openlit/blob/main/AGENTS.md"
+          ],
+          "cells": []
+        },
+        {
+          "productId": "tokscale",
+          "sourcesChecked": [
+            "https://tokscale.ai",
+            "https://github.com/junhoyeo/tokscale",
+            "https://github.com/junhoyeo/tokscale#readme"
+          ],
+          "cells": [
+            {
+              "rowId": "trace-replay-resume",
+              "result": "remain-unknown",
+              "rationale": "Tokscale's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Replay or session reconstruction” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "trace-tool-call-coverage",
+              "result": "remain-unknown",
+              "rationale": "Tokscale's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Tool calls and results” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "trace-artifact-coverage",
+              "result": "remain-unknown",
+              "rationale": "Tokscale's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Artifacts, files, and diffs” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
         },
         {
           "productId": "langsmith",
@@ -428,6 +505,40 @@
               "rowId": "cloud-human-takeover",
               "result": "remain-unknown",
               "rationale": "Ona's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Human takeover or local handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "cyrus",
+          "sourcesChecked": [
+            "https://www.atcyrus.com/",
+            "https://github.com/cyrusagents/cyrus",
+            "https://github.com/cyrusagents/cyrus#readme",
+            "https://github.com/cyrusagents/cyrus/blob/main/docs/CONFIG_FILE.md",
+            "https://github.com/cyrusagents/cyrus/blob/main/docs/SELF_HOSTING.md"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-task-limit",
+              "result": "remain-unknown",
+              "rationale": "Cyrus's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Documented run limit” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            }
+          ]
+        },
+        {
+          "productId": "jira-coding-agent",
+          "sourcesChecked": [
+            "https://support.atlassian.com/jira-software-cloud/docs/what-is-the-jira-coding-agent/",
+            "https://support.atlassian.com/jira-software-cloud/docs/generate-code-from-a-work-item-in-jira/",
+            "https://support.atlassian.com/jira-software-cloud/docs/work-with-jira-coding-agent-in-automations/",
+            "https://support.atlassian.com/jira-software-cloud/docs/supported-repositories-for-jira-coding-agent/",
+            "https://support.atlassian.com/jira-software-cloud/docs/configure-a-jira-coding-agent-session/"
+          ],
+          "cells": [
+            {
+              "rowId": "cloud-network-policy",
+              "result": "remain-unknown",
+              "rationale": "Jira Coding Agent's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Agent network policy” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },

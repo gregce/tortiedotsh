@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-13",
+  "checkedAt": "2026-10-08",
   "products": {
     "visual-studio-code": {
       "name": "Visual Studio Code",
@@ -221,9 +221,9 @@
       "name": "CodeWhale",
       "alt": "CodeWhale logo",
       "src": "/compare/logos/codewhale.svg",
-      "sourceUrl": "https://github.com/Hmbown/CodeWhale/blob/HEAD/web/app/icon.svg",
+      "sourceUrl": "https://github.com/codewhale-hq/Codewhale/blob/HEAD/web/app/icon.svg",
       "sourceType": "official-repository-asset",
-      "checkedAt": "2026-08-23"
+      "checkedAt": "2026-10-08"
     },
     "antigravity-cli": {
       "name": "Antigravity CLI",
@@ -1566,6 +1566,238 @@
       "sourceUrl": "https://github.com/tmate-io/tmate",
       "sourceType": "official-project-organization-avatar",
       "checkedAt": "2026-09-13"
+    },
+    "nezha": {
+      "name": "Nezha",
+      "alt": "Nezha logo",
+      "src": "/compare/logos/nezha.jpg",
+      "sourceUrl": "https://github.com/hanshuaikang/nezha",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "tuios": {
+      "name": "tuios",
+      "alt": "tuios logo",
+      "src": "/compare/logos/tuios.jpg",
+      "sourceUrl": "https://github.com/Gaurav-Gosain/tuios",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "antigravity-2": {
+      "name": "Antigravity 2.0",
+      "alt": "Antigravity 2.0 logo",
+      "src": "/compare/logos/antigravity-2.png",
+      "sourceUrl": "https://github.com/google",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "orchestrator-inc": {
+      "name": "Orchestrator",
+      "alt": "Orchestrator logo",
+      "src": "/compare/logos/orchestrator-inc.png",
+      "sourceUrl": "https://github.com/OrchestratorInc",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "opcode": {
+      "name": "Opcode",
+      "alt": "Opcode logo",
+      "src": "/compare/logos/opcode.png",
+      "sourceUrl": "https://github.com/winfunc/opcode",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "pi-desktop": {
+      "name": "PI Desktop",
+      "alt": "PI Desktop logo",
+      "src": "/compare/logos/pi-desktop.png",
+      "sourceUrl": "https://github.com/vastsa/PI-Desktop",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "tutti": {
+      "name": "Tutti",
+      "alt": "Tutti logo",
+      "src": "/compare/logos/tutti.png",
+      "sourceUrl": "https://github.com/tutti-os",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "proliferate": {
+      "name": "Proliferate",
+      "alt": "Proliferate logo",
+      "src": "/compare/logos/proliferate.jpg",
+      "sourceUrl": "https://github.com/proliferate-ai",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "pane": {
+      "name": "Pane",
+      "alt": "Pane logo",
+      "src": "/compare/logos/pane.jpg",
+      "sourceUrl": "https://github.com/greenfield-inc",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "parallel-code": {
+      "name": "Parallel Code",
+      "alt": "Parallel Code logo",
+      "src": "/compare/logos/parallel-code.jpg",
+      "sourceUrl": "https://github.com/johannesjo/parallel-code",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "vicoa": {
+      "name": "Vicoa",
+      "alt": "Vicoa logo",
+      "src": "/compare/logos/vicoa.png",
+      "sourceUrl": "https://github.com/vicoa-ai",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "jetbrains-air-in-ides": {
+      "name": "JetBrains Air in IDEs",
+      "alt": "JetBrains Air in IDEs logo",
+      "src": "/compare/logos/jetbrains-air-in-ides.svg",
+      "sourceUrl": "https://github.com/JetBrains/logos/blob/HEAD/web/air/air.svg",
+      "sourceType": "official-vendor-brand-asset",
+      "checkedAt": "2026-10-08"
+    },
+    "cyrus": {
+      "name": "Cyrus",
+      "alt": "Cyrus logo",
+      "src": "/compare/logos/cyrus.png",
+      "sourceUrl": "https://github.com/cyrusagents",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "jira-coding-agent": {
+      "name": "Jira Coding Agent",
+      "alt": "Jira Coding Agent logo",
+      "src": "/compare/logos/jira-coding-agent.png",
+      "sourceUrl": "https://github.com/atlassian",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "openai-dots": {
+      "name": "OpenAI dots",
+      "alt": "OpenAI dots logo",
+      "src": "/compare/logos/openai-dots.png",
+      "sourceUrl": "https://github.com/openai",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "copilot-autopilot": {
+      "name": "Copilot Autopilot",
+      "alt": "Copilot Autopilot logo",
+      "src": "/compare/logos/copilot-autopilot.png",
+      "sourceUrl": "https://github.com/microsoft",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "meta-muse": {
+      "name": "Muse",
+      "alt": "Muse logo",
+      "src": "/compare/logos/meta-muse.png",
+      "sourceUrl": "https://github.com/facebook",
+      "sourceType": "official-vendor-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "token-telemetry": {
+      "name": "TokenTelemetry",
+      "alt": "TokenTelemetry logo",
+      "src": "/compare/logos/token-telemetry.png",
+      "sourceUrl": "https://github.com/VasiHemanth/tokentelemetry",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "tokscale": {
+      "name": "Tokscale",
+      "alt": "Tokscale logo",
+      "src": "/compare/logos/tokscale.jpg",
+      "sourceUrl": "https://github.com/junhoyeo/tokscale",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "tracecrate": {
+      "name": "TraceCrate",
+      "alt": "TraceCrate logo",
+      "src": "/compare/logos/tracecrate.png",
+      "sourceUrl": "https://github.com/FankChen/tracecrate",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "openlit": {
+      "name": "OpenLIT",
+      "alt": "OpenLIT logo",
+      "src": "/compare/logos/openlit.png",
+      "sourceUrl": "https://github.com/openlit",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "collie": {
+      "name": "ColliePWA",
+      "alt": "ColliePWA logo",
+      "src": "/compare/logos/collie.png",
+      "sourceUrl": "https://github.com/AltanS/collie",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "lucarne": {
+      "name": "Lucarne",
+      "alt": "Lucarne logo",
+      "src": "/compare/logos/lucarne.png",
+      "sourceUrl": "https://github.com/tuchg/Lucarne",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "pi-agent-dashboard": {
+      "name": "PI Dashboard",
+      "alt": "PI Dashboard logo",
+      "src": "/compare/logos/pi-agent-dashboard.png",
+      "sourceUrl": "https://github.com/BlackBeltTechnology",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "minimax-code": {
+      "name": "MiniMax Code",
+      "alt": "MiniMax Code logo",
+      "src": "/compare/logos/minimax-code.jpg",
+      "sourceUrl": "https://github.com/MiniMax-AI",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "kimchi": {
+      "name": "Kimchi",
+      "alt": "Kimchi logo",
+      "src": "/compare/logos/kimchi.png",
+      "sourceUrl": "https://github.com/getkimchi",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "fuxi": {
+      "name": "FuXi",
+      "alt": "FuXi logo",
+      "src": "/compare/logos/fuxi.png",
+      "sourceUrl": "https://github.com/fuxicodex/Fuxi",
+      "sourceType": "official-project-owner-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "nanocoder": {
+      "name": "nanocoder",
+      "alt": "nanocoder logo",
+      "src": "/compare/logos/nanocoder.png",
+      "sourceUrl": "https://github.com/Nano-Collective",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
+    },
+    "anus": {
+      "name": "ANUS",
+      "alt": "ANUS logo",
+      "src": "/compare/logos/anus.png",
+      "sourceUrl": "https://github.com/anus-dev",
+      "sourceType": "official-organization-avatar",
+      "checkedAt": "2026-10-08"
     }
   },
   "platforms": {
@@ -1607,7 +1839,7 @@
       "src": "/compare/platforms/ios.svg",
       "sourceUrl": "https://www.apple.com/ios/",
       "sourceType": "original-interface-glyph",
-      "checkedAt": "2026-09-13"
+      "checkedAt": "2026-10-08"
     },
     "web": {
       "name": "Web",
@@ -1615,7 +1847,7 @@
       "src": "/compare/platforms/web.svg",
       "sourceUrl": "https://www.w3.org/standards/",
       "sourceType": "original-interface-glyph",
-      "checkedAt": "2026-09-13"
+      "checkedAt": "2026-10-08"
     }
   }
 }

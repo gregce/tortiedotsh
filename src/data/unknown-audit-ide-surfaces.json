@@ -18,14 +18,14 @@
     "platformHeaders": "Platform-header support is outside this rendered-cell ledger. An omitted OS in a known platform list is not treated as Unknown."
   },
   "summary": {
-    "products": 59,
-    "currentUnknownCells": 326,
+    "products": 62,
+    "currentUnknownCells": 333,
     "codeEditorUnknownCells": 92,
     "ideExtensionUnknownCells": 121,
     "agentMultiplexerUnknownCells": 58,
     "appliedClosures": 14,
     "changedSourceCorrections": 14,
-    "remainUnknown": 326
+    "remainUnknown": 333
   },
   "categories": [
     {
@@ -163,6 +163,26 @@
               "rowId": "editor-browser-tools",
               "result": "remain-unknown",
               "rationale": "IntelliJ IDEA and JetBrains AI Assistant pages establish the unified IDE, terminal, Git worktrees, remote development, model access, and agent integrations without assigning every external-agent capability to IDEA itself. It does not establish an embedded browser or browser-control tool available to the editor agent; preview-only or adjacent web surfaces are not inherited."
+            }
+          ]
+        },
+        {
+          "productId": "nezha",
+          "sourcesChecked": [
+            "https://nezha.hanshutx.com/",
+            "https://github.com/hanshuaikang/nezha",
+            "https://github.com/hanshuaikang/nezha/blob/main/README_EN.md",
+            "https://github.com/hanshuaikang/nezha/blob/main/src/components/FileViewer.tsx",
+            "https://github.com/hanshuaikang/nezha/blob/main/src-tauri/src/pty.rs",
+            "https://github.com/hanshuaikang/nezha/blob/main/src-tauri/src/app_settings.rs",
+            "https://github.com/hanshuaikang/nezha/blob/main/src-tauri/src/config.rs",
+            "https://github.com/hanshuaikang/nezha/releases/latest"
+          ],
+          "cells": [
+            {
+              "rowId": "editor-mcp",
+              "result": "remain-unknown",
+              "rationale": "Nezha's exact first-party product page, repository, and cited capability sources were checked. They do not establish “MCP tools” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },
@@ -414,7 +434,8 @@
             "https://antigravity.google/docs/mcp",
             "https://antigravity.google/docs/ide/settings/",
             "https://antigravity.google/docs/ide/agent-side-panel",
-            "https://antigravity.google/download"
+            "https://antigravity.google/download",
+            "https://antigravity.google/docs/models?app=antigravity"
           ],
           "cells": [
             {
@@ -1016,6 +1037,18 @@
               "rationale": "Qodo IDE plugin's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Cloud or background session client” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
+        },
+        {
+          "productId": "jetbrains-air-in-ides",
+          "sourcesChecked": [
+            "https://www.jetbrains.com/air/ides/",
+            "https://www.jetbrains.com/help/air-ides/air-overview.html",
+            "https://www.jetbrains.com/ai-for-business/",
+            "https://www.jetbrains.com/help/air-ides/air-start-a-new-session.html",
+            "https://www.jetbrains.com/help/air-ides/air-manage-agents.html",
+            "https://www.jetbrains.com/help/air-ides/air-quickstart-guide.html"
+          ],
+          "cells": []
         },
         {
           "productId": "cline",
@@ -1826,6 +1859,45 @@
               "rowId": "workbench-worktrees",
               "result": "remain-unknown",
               "rationale": "Tortie's canonical repository and shipped acceptance documentation establish its tmux-owned sessions, recovery, cross-project attention, editor, file tree, SCM, review, and current macOS product boundary. It does not establish product-managed creation, isolation, review, and cleanup of Git worktrees."
+            }
+          ]
+        },
+        {
+          "productId": "tuios",
+          "sourcesChecked": [
+            "https://github.com/Gaurav-Gosain/tuios",
+            "https://github.com/Gaurav-Gosain/tuios#readme"
+          ],
+          "cells": [
+            {
+              "rowId": "workbench-agent-handoff",
+              "result": "remain-unknown",
+              "rationale": "tuios's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Cross-harness session handoff” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-scm",
+              "result": "remain-unknown",
+              "rationale": "tuios's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Source control workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-change-review",
+              "result": "remain-unknown",
+              "rationale": "tuios's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Visual change review” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-browser",
+              "result": "remain-unknown",
+              "rationale": "tuios's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Embedded browser” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-remote-host",
+              "result": "remain-unknown",
+              "rationale": "tuios's exact first-party product page, repository, and cited capability sources were checked. They do not establish “SSH or remote host” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
+            },
+            {
+              "rowId": "workbench-worktrees",
+              "result": "remain-unknown",
+              "rationale": "tuios's exact first-party product page, repository, and cited capability sources were checked. They do not establish “Git worktree workflow” for this exact product or SKU, so the cell remains Unknown rather than inferring a negative from documentation silence."
             }
           ]
         },

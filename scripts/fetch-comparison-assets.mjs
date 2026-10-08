@@ -3,7 +3,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
 
-const checkedAt = "2026-09-13";
+const checkedAt = "2026-10-08";
 const root = resolve(import.meta.dirname, "..");
 const publicRoot = resolve(root, "public/compare");
 const manifestPath = resolve(root, "src/data/comparison-assets.json");
@@ -35,6 +35,35 @@ const avatar = (owner) => `https://github.com/${owner}.png?size=512`;
 const appleArtwork = (id, expectedNameIncludes) => ({ appleId: id, expectedNameIncludes });
 
 const products = {
+  nezha: ["Nezha", avatar("hanshuaikang"), "https://github.com/hanshuaikang/nezha", "official-project-owner-avatar"],
+  tuios: ["tuios", avatar("Gaurav-Gosain"), "https://github.com/Gaurav-Gosain/tuios", "official-project-owner-avatar"],
+  "antigravity-2": ["Antigravity 2.0", avatar("google"), "https://github.com/google", "official-vendor-organization-avatar"],
+  "orchestrator-inc": ["Orchestrator", avatar("OrchestratorInc"), "https://github.com/OrchestratorInc", "official-organization-avatar"],
+  opcode: ["Opcode", avatar("winfunc"), "https://github.com/winfunc/opcode", "official-project-owner-avatar"],
+  "pi-desktop": ["PI Desktop", avatar("vastsa"), "https://github.com/vastsa/PI-Desktop", "official-project-owner-avatar"],
+  tutti: ["Tutti", avatar("tutti-os"), "https://github.com/tutti-os", "official-organization-avatar"],
+  proliferate: ["Proliferate", avatar("proliferate-ai"), "https://github.com/proliferate-ai", "official-organization-avatar"],
+  pane: ["Pane", avatar("greenfield-inc"), "https://github.com/greenfield-inc", "official-organization-avatar"],
+  "parallel-code": ["Parallel Code", avatar("johannesjo"), "https://github.com/johannesjo/parallel-code", "official-project-owner-avatar"],
+  vicoa: ["Vicoa", avatar("vicoa-ai"), "https://github.com/vicoa-ai", "official-organization-avatar"],
+  "jetbrains-air-in-ides": ["JetBrains Air in IDEs", raw("JetBrains/logos", "web/air/air.svg"), "https://github.com/JetBrains/logos/blob/HEAD/web/air/air.svg", "official-vendor-brand-asset"],
+  cyrus: ["Cyrus", avatar("cyrusagents"), "https://github.com/cyrusagents", "official-organization-avatar"],
+  "jira-coding-agent": ["Jira Coding Agent", avatar("atlassian"), "https://github.com/atlassian", "official-vendor-organization-avatar"],
+  "openai-dots": ["OpenAI dots", avatar("openai"), "https://github.com/openai", "official-vendor-organization-avatar"],
+  "copilot-autopilot": ["Copilot Autopilot", avatar("microsoft"), "https://github.com/microsoft", "official-vendor-organization-avatar"],
+  "meta-muse": ["Muse", avatar("facebook"), "https://github.com/facebook", "official-vendor-organization-avatar"],
+  "token-telemetry": ["TokenTelemetry", avatar("VasiHemanth"), "https://github.com/VasiHemanth/tokentelemetry", "official-project-owner-avatar"],
+  tokscale: ["Tokscale", avatar("junhoyeo"), "https://github.com/junhoyeo/tokscale", "official-project-owner-avatar"],
+  tracecrate: ["TraceCrate", avatar("FankChen"), "https://github.com/FankChen/tracecrate", "official-project-owner-avatar"],
+  openlit: ["OpenLIT", avatar("openlit"), "https://github.com/openlit", "official-organization-avatar"],
+  collie: ["ColliePWA", avatar("AltanS"), "https://github.com/AltanS/collie", "official-project-owner-avatar"],
+  lucarne: ["Lucarne", avatar("tuchg"), "https://github.com/tuchg/Lucarne", "official-project-owner-avatar"],
+  "pi-agent-dashboard": ["PI Dashboard", avatar("BlackBeltTechnology"), "https://github.com/BlackBeltTechnology", "official-organization-avatar"],
+  "minimax-code": ["MiniMax Code", avatar("MiniMax-AI"), "https://github.com/MiniMax-AI", "official-organization-avatar"],
+  kimchi: ["Kimchi", avatar("getkimchi"), "https://github.com/getkimchi", "official-organization-avatar"],
+  fuxi: ["FuXi", avatar("fuxicodex"), "https://github.com/fuxicodex/Fuxi", "official-project-owner-avatar"],
+  nanocoder: ["nanocoder", avatar("Nano-Collective"), "https://github.com/Nano-Collective", "official-organization-avatar"],
+  anus: ["ANUS", avatar("anus-dev"), "https://github.com/anus-dev", "official-organization-avatar"],
   "visual-studio-code": ["Visual Studio Code", "https://code.visualstudio.com/assets/apple-touch-icon.png", "https://code.visualstudio.com/", "official-site-icon"],
   "cursor-ide": ["Cursor IDE", "https://cursor.com/marketing-static/favicon-light.svg", "https://cursor.com/", "official-site-icon"],
   windsurf: ["Devin Desktop", "https://mintcdn.com/cognitionai/Hhrl_8XUBqA4VQ6v/logo/favicon.svg?fit=max&auto=format&n=Hhrl_8XUBqA4VQ6v&q=85&s=ab641f30c01bf5374b90b62209db569e", "https://docs.devin.ai/", "official-product-asset"],
@@ -94,7 +123,7 @@ const products = {
   "cursor-cli": ["Cursor CLI", "https://cursor.com/marketing-static/favicon-light.svg", "https://cursor.com/cli", "official-site-icon"],
   "gemini-cli": ["Gemini CLI", avatar("google-gemini"), "https://github.com/google-gemini", "official-organization-avatar"],
   "factory-droid-cli": ["Factory Droid CLI", "https://docs.factory.ai/favicon.svg", "https://docs.factory.ai/cli/getting-started/quickstart", "official-site-icon"],
-  codewhale: ["CodeWhale", raw("Hmbown/CodeWhale", "web/app/icon.svg"), "https://github.com/Hmbown/CodeWhale/blob/HEAD/web/app/icon.svg", "official-repository-asset"],
+  codewhale: ["CodeWhale", raw("codewhale-hq/Codewhale", "web/app/icon.svg"), "https://github.com/codewhale-hq/Codewhale/blob/HEAD/web/app/icon.svg", "official-repository-asset"],
   "antigravity-cli": ["Antigravity CLI", avatar("google"), "https://github.com/google", "official-organization-avatar"],
   "qwen-code": ["Qwen Code", raw("QwenLM/qwen-code", "packages/chrome-extension/public/icons/icon-source.png"), "https://github.com/QwenLM/qwen-code/blob/HEAD/packages/chrome-extension/public/icons/icon-source.png", "official-repository-asset"],
   "pi-coding-agent": ["Pi coding agent", "https://pi.dev/favicon.svg", "https://pi.dev/press-kit", "official-product-asset"],
