@@ -1,6 +1,6 @@
 ---
-// The footer. A small lockup and the three places a visitor may still
-// want to go.
+// The footer. A small lockup and the places a visitor may still want to go,
+// ending with the privacy and support pages Apple asks every app to link.
 import GitHubMark from "./GitHubMark.astro";
 import openSourceMetrics from "../data/open-source-metrics.json";
 import { TORTIE_REPOSITORY_URL } from "../data/site-links";
@@ -31,6 +31,8 @@ const githubAriaLabel = githubStars === null
       <a href="https://github.com/gregce/tortie/blob/main/LICENSE"
         >License</a
       >
+      <a href="/privacy/">Privacy</a>
+      <a href="/support/">Support</a>
     </nav>
   </div>
 </footer>

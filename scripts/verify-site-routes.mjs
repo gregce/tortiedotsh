@@ -25,6 +25,14 @@ const directDownloadUrl = "https://github.com/gregce/tortie/releases/latest/down
 const socialImageUrl = "https://tortie.sh/og/tortie-og.png";
 assert.ok(sitePages.length >= 20, `Expected the shared header on at least 20 pages; found ${sitePages.length}.`);
 
+// The privacy and support pages (Tortie Phase 333.5). The
+// privacy page says the site counts page views, both included, so they
+// carry Vercel Web Analytics like every other shared page.
+const plainPages = [
+  { route: "privacy", file: "privacy/index.html" },
+  { route: "support", file: "support/index.html" },
+];
+
 for (const { file, html } of sitePages) {
   assert.match(
     html,
@@ -216,4 +224,78 @@ assert.match(
   "Fullscreen and filter actions are not anchored to persistent comparison state.",
 );
 
-console.log(`Site routes verified: ${sitePages.length} shared headers with GitHub stars, direct downloads, and Vercel Analytics; 13 responsive Pixel Tortie illustrations; atomic navigation, canonical comparison redirects, hero copy, stable closing actions, and persistent comparison controls.`);
+// ── Privacy and support (Tortie Phase 333.5) ────────────────────────────
+// Both must be built, listed in the sitemap, reachable from every footer, and
+// collect nothing but page views. Apple requires the privacy and support links
+// for every app. The Tortie for iPhone page follows on release day.
+const footerPages = pages.filter(({ html }) => html.includes('aria-label="Footer"'));
+assert.ok(footerPages.length >= 20, `Expected the footer on at least 20 pages; found ${footerPages.length}.`);
+for (const { file, html } of footerPages) {
+  assert.match(html, /href="\/privacy\/"[^>]*>Privacy</, `${file} is missing the footer's Privacy link.`);
+  assert.match(html, /href="\/support\/"[^>]*>Support</, `${file} is missing the footer's Support link.`);
+}
+
+const sitemapFiles = (await readdir(dist)).filter((file) => /^sitemap-\d+\.xml$/.test(file));
+assert.ok(sitemapFiles.length > 0, "The build wrote no sitemap.");
+const sitemap = (await Promise.all(sitemapFiles.map((file) => readPage(file)))).join("\n");
+
+const builtPlain = {};
+for (const { route, file } of plainPages) {
+  const html = await readPage(file).catch(() => null);
+  assert.ok(html !== null, `/${route}/ was not built: ${file} is missing from dist.`);
+  builtPlain[route] = html;
+  assert.ok(sitemap.includes(`<loc>https://tortie.sh/${route}/</loc>`), `/${route}/ is missing from the sitemap.`);
+  assert.ok(
+    html.includes(`<link rel="canonical" href="https://tortie.sh/${route}/"`),
+    `/${route}/ is missing its canonical URL.`,
+  );
+  assert.match(html, /aria-label="Primary"/, `/${route}/ is missing the shared header.`);
+  assert.match(html, /aria-label="Footer"/, `/${route}/ is missing the shared footer.`);
+  assert.ok(html.includes("<vercel-analytics"), `/${route}/ is missing Vercel Web Analytics, which the privacy page says it counts with.`);
+  assert.doesNotMatch(html, /<(?:form|input|textarea|select)\b/i, `/${route}/ has a form or a field.`);
+  assert.doesNotMatch(html, /document\.cookie/, `/${route}/ sets a cookie.`);
+  const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+  assert.ok(main.length > 0, `/${route}/ has no main content.`);
+  assert.doesNotMatch(main, /[A-Za-z]<a /, `/${route}/ runs a word into a link: the build dropped the space before it.`);
+  const words = main.replace(/<[^>]+>/g, " ");
+  // What search results and link previews show: the title, and the content of
+  // the description, og: and twitter: meta tags.
+  const titleText = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? "";
+  assert.ok(titleText.length > 0, `/${route}/ has no <title>.`);
+  const metaText = [
+    ...html.matchAll(/<meta\s+(?:name|property)="(?:description|og:[^"]+|twitter:[^"]+)"\s+content="([^"]*)"/g),
+  ].map((match) => match[1]);
+  assert.ok(metaText.length >= 3, `/${route}/ has fewer than three description, og: or twitter: tags.`);
+  const shown = [titleText, ...metaText].join("\n");
+  for (const [pattern, name] of [
+    [/\bbeta\b/i, "beta"],
+    [/remote desktop/i, "remote desktop"],
+    [/\bmirror/i, "mirror"],
+    [/\bstream/i, "stream"],
+    [/\bSSH\b/i, "SSH"],
+  ]) {
+    assert.doesNotMatch(words, pattern, `/${route}/ says "${name}", which his ruling of 2026-10-07 refuses.`);
+    assert.doesNotMatch(
+      shown,
+      pattern,
+      `/${route}/ says "${name}" in its title or a description, og: or twitter: tag, which his ruling of 2026-10-07 refuses.`,
+    );
+  }
+}
+
+assert.ok(
+  builtPlain.privacy.includes('href="mailto:support@tortie.sh"'),
+  "The privacy page does not give the support mailbox.",
+);
+assert.match(builtPlain.privacy, /Last updated \d{1,2} [A-Z][a-z]+ \d{4}/, "The privacy page has no Last updated date.");
+assert.match(builtPlain.privacy, /Ita Vero, LLC/, "The privacy page does not name who makes Tortie.");
+assert.ok(
+  builtPlain.support.includes('href="mailto:support@tortie.sh"'),
+  "The support page does not lead with the support mailbox.",
+);
+assert.ok(
+  builtPlain.support.includes('href="https://github.com/gregce/tortie/issues"'),
+  "The support page does not link Tortie for Mac's issues.",
+);
+
+console.log(`Site routes verified: ${sitePages.length} shared headers with GitHub stars, direct downloads, and Vercel Analytics; 13 responsive Pixel Tortie illustrations; atomic navigation, canonical comparison redirects, hero copy, stable closing actions, and persistent comparison controls; privacy and support pages built, in the sitemap, in ${footerPages.length} footers, with no form, field or cookie.`);

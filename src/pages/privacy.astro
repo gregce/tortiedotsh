@@ -1,0 +1,134 @@
+---
+/**
+ * The privacy page for Tortie for iPhone and Tortie for Mac (Tortie Phase
+ * 333.5, research 136 §12.5 as revised by research 140 §10.4).
+ *
+ * EVERY SENTENCE HERE IS A CLAIM ABOUT WHAT LEAVES A PERSON'S PHONE, and each
+ * one is mapped to the Tortie source line that makes it true in the phase's
+ * re-derivation table. Change a sentence only with a line that proves it.
+ * The SpecStory paragraph is the one Mac exception, and it stands while
+ * WRAP_FLAGS in Tortie's src/main/specstory/wrap.ts omits
+ * --no-usage-analytics (research 37 §3.1).
+ * Words this page never uses: "beta", "remote desktop", "mirror", "stream"
+ * and "SSH" (his rulings of 2026-10-07).
+ *
+ * Keep an inline link on the same source line as the word before it: the
+ * build collapses a line break before a tag to nothing.
+ */
+import PlainPage from "../components/PlainPage.astro";
+---
+
+<PlainPage
+  title="Privacy · Tortie"
+  description="What Tortie for iPhone sends, where it goes and what it keeps. Ita Vero, LLC collects none of your data and runs no server the phone's data passes through."
+  heading="Privacy"
+  lead="What Tortie for iPhone sends, where it goes and what it keeps."
+  note="Last updated 7 October 2026"
+>
+  <section aria-label="Summary">
+    <p>
+      Tortie for iPhone and Tortie for Mac are made by Ita Vero, LLC. We do not collect your data.
+      Tortie for iPhone needs no account with us and has no analytics and no advertising, and no data passes
+      through a server we run.
+    </p>
+    <p>
+      On your Mac, SpecStory capture is off until you turn it on. When it is on, Tortie runs SpecStory, which
+      sends usage analytics to SpecStory, including the session’s folder and the command that started the
+      agent. If you are signed in to SpecStory, it also uploads the conversation to SpecStory Cloud.
+    </p>
+    <p>
+      While Tortie for iPhone is tested through Apple’s TestFlight, Apple sends us its crash reports,
+      and any feedback or screenshot you choose to send, under Apple’s terms.
+    </p>
+  </section>
+
+  <section id="what-leaves">
+    <h2>What leaves your iPhone</h2>
+    <p>
+      Tortie for iPhone talks only to the Mac you pair it with. To pair, it sends that Mac its public keys
+      and a generic name such as “iPhone”, sealed so only your Mac can read them. Then it sends signed
+      requests to read your sessions, to end one you choose, and to pass on what you type or tap. Your Mac
+      answers with your sessions: their names, projects, status, conversations and terminals.
+    </p>
+  </section>
+
+  <section id="terminal">
+    <h2>Your terminal</h2>
+    <p>
+      When you open a session’s terminal, your Mac sends your phone what it shows and what it printed
+      before. Every key you type there goes into that session, as if you typed it at your Mac. If the
+      session runs a coding agent, that agent may send what you type to the company that makes it, under
+      that company’s terms. Your phone keeps none of it: no file, no log and no picture, only text you
+      copy yourself.
+    </p>
+  </section>
+
+  <section id="connection">
+    <h2>How it gets there</h2>
+    <p>
+      Your phone reaches your Mac over the internet through Tailscale Funnel, which your Mac runs under your
+      own Tailscale account. The connection is encrypted from your phone to your Mac. Tailscale’s relay can
+      see your phone’s internet address, your Mac’s name, when you connect and how much is sent, but not
+      what is sent.
+    </p>
+  </section>
+
+  <section id="mac-name">
+    <h2>Your Mac’s name</h2>
+    <p>
+      While your Mac lets your phone reach it, anyone on the internet can look up its Tailscale name.
+      That name often holds your first name. You can <a href="/support/#rename">rename your Mac in Tailscale</a>.
+    </p>
+  </section>
+
+  <section id="alerts">
+    <h2>Alerts</h2>
+    <p>
+      Only Tortie’s publisher can send alerts for now. Your phone asks iOS for alerts only when its Mac says
+      it can send them, and then gives that Mac, sealed, the address Apple uses to reach it. Each alert goes through
+      Apple. It can say a session’s name, project, agent, machine and status, and never its question or its
+      terminal.
+    </p>
+  </section>
+
+  <section id="camera">
+    <h2>Camera, Face ID and Touch ID</h2>
+    <p>
+      Tortie uses the camera only to read the pairing code, and receives the code’s text, never a picture.
+      It asks for Face ID, Touch ID or your passcode only before you end a session. iOS checks it and tells
+      Tortie only whether you were confirmed.
+    </p>
+  </section>
+
+  <section id="kept">
+    <h2>What your phone keeps</h2>
+    <p>
+      Your phone keeps its pairing in this iPhone’s Keychain, never synced or restored to another phone. It
+      also keeps which sessions the Sessions tab shows, and how it groups and sorts them. Tortie stores
+      nothing your Mac sends. If you delete Tortie, the pairing can stay in the Keychain, but a new install
+      forgets it before reading anything, and you pair again.
+    </p>
+  </section>
+
+  <section id="cut-off">
+    <h2>Cutting off a phone</h2>
+    <p>
+      On your Mac, press Remove beside the phone in Settings then Phone, or switch off Let my phone reach
+      this Mac. Either cuts it off at once, without the phone. Unpair this iPhone, in the phone’s Settings,
+      makes the phone forget your Mac, and your Mac lists it until you press Remove.
+    </p>
+  </section>
+
+  <section id="website">
+    <h2>This website</h2>
+    <p>
+      tortie.sh counts page views with Vercel Web Analytics, this page included.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email <a href="mailto:support@tortie.sh">support@tortie.sh</a>.</p>
+    <p class="plain-fine">© 2026 Ita Vero, LLC</p>
+  </section>
+</PlainPage>

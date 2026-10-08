@@ -1,0 +1,96 @@
+---
+/**
+ * The support page for Tortie for iPhone and Tortie for Mac (Tortie Phase
+ * 333.5, research 136 §12.6 as revised by research 140 §10.4). Apple asks
+ * that a Support URL lead to real contact information, so the mailbox is the
+ * first thing on the page.
+ *
+ * Every sentence about what Tortie does is mapped to the Tortie source line
+ * that makes it true in the phase's re-derivation table. Words this page
+ * never uses: "beta", "remote desktop", "mirror", "stream" and "SSH" (his
+ * rulings of 2026-10-07).
+ */
+import PlainPage from "../components/PlainPage.astro";
+import { TORTIE_REPOSITORY_URL } from "../data/site-links";
+---
+
+<PlainPage
+  title="Support · Tortie"
+  description="Reach Tortie at support@tortie.sh, and what to check first when Tortie for iPhone cannot reach your Mac."
+  heading="Support"
+  lead="How to reach us, and what to check first."
+>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      Email <a href="mailto:support@tortie.sh">support@tortie.sh</a>, and say which version of Tortie for Mac
+      you run. You can also report a problem with Tortie for Mac
+      on <a href={`${TORTIE_REPOSITORY_URL}/issues`}>GitHub</a>.
+    </p>
+  </section>
+
+  <section id="needs">
+    <h2>What Tortie for iPhone needs</h2>
+    <ul>
+      <li>An Apple silicon Mac running Tortie for Mac 0.111 or later, awake with Tortie open.</li>
+      <li>Tailscale signed in on that Mac. There is nothing else to install on the phone.</li>
+      <li>An iPhone on iOS 18.1 or later.</li>
+    </ul>
+    <p>Tortie for Mac installs its updates when you quit it.</p>
+  </section>
+
+  <section id="setup">
+    <h2>Setting up</h2>
+    <p>
+      In Tortie on your Mac, open Settings then Phone. The first time, your Mac’s name can take several
+      minutes to reach the internet, and Settings then Phone shows how far it has got.
+    </p>
+    <p>
+      If you are not the admin of your Tailscale network, the admin may need to approve Funnel for your Mac.
+    </p>
+  </section>
+
+  <section id="cannot-reach">
+    <h2>If your phone cannot reach your Mac</h2>
+    <p>Check that your Mac is awake, Tortie is open and Tailscale is signed in.</p>
+    <p>
+      After Tortie for Mac updates, it may ask you once to allow your phone again. If your phone says Tortie
+      could not reach your Mac, open Settings then Phone on your Mac and press Allow.
+    </p>
+  </section>
+
+  <section id="rename">
+    <h2>Renaming your Mac in Tailscale</h2>
+    <p>
+      While your phone can reach your Mac, anyone can look up your Mac’s Tailscale name. To change it, open
+      the Machines page of Tailscale’s admin console, choose the menu beside your Mac, then Edit machine name
+      (<a href="https://tailscale.com/docs/concepts/machine-names">Tailscale’s guide</a>).
+    </p>
+    <p>
+      After a rename, your phone must pair again. Tap Unpair this iPhone in the phone’s Settings, and press
+      Remove beside that phone in Settings then Phone on your Mac. Then switch Let my phone reach this Mac off and on,
+      and pair as you did the first time.
+    </p>
+  </section>
+
+  <section id="cut-off">
+    <h2>Cutting off a phone</h2>
+    <p>
+      On your Mac, press Remove beside the phone in Settings then Phone, or switch off Let my phone reach
+      this Mac. Either works at once, without the phone.
+    </p>
+  </section>
+
+  <section id="alerts">
+    <h2>Alerts</h2>
+    <p>Alerts on your phone are not offered yet.</p>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy</h2>
+    <p>
+      What the phone sends and keeps is on the <a href="/privacy/">privacy page</a>.
+    </p>
+    <p class="plain-fine">© 2026 Ita Vero, LLC</p>
+  </section>
+</PlainPage>

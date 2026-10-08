@@ -1,0 +1,149 @@
+---
+/**
+ * STORY: A short page of plain facts a stranger reads in a minute: the
+ * privacy page, the support page and the Tortie for iPhone page.
+ * FIRST VIEWPORT: The shared site header, one heading, one lead line, then
+ * the first section. No media, no cards and no form.
+ *
+ * Like every page of the site they count page views with Vercel Web
+ * Analytics, which the privacy page says. They collect nothing else: no
+ * field, no form, no cookie.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "./Nav.astro";
+import Footer from "./Footer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  lead: string;
+  /** Shown under the lead, for example "Last updated 7 October 2026". */
+  note?: string;
+}
+
+const { title, description, heading, lead, note } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav />
+  <main class="plain-page">
+    <div class="container plain-inner">
+      <header class="plain-header">
+        <h1>{heading}</h1>
+        <p class="plain-lead">{lead}</p>
+        {note && <p class="plain-note">{note}</p>}
+      </header>
+      <div class="plain-body">
+        <slot />
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .plain-page {
+    min-height: calc(100svh - 190px);
+    padding-block: clamp(48px, 8vw, 96px);
+  }
+
+  .plain-inner {
+    max-width: 768px;
+  }
+
+  .plain-header {
+    padding-bottom: var(--space-9);
+    border-bottom: 1px solid var(--border);
+  }
+
+  h1 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: var(--weight-semibold);
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  .plain-lead {
+    max-width: 60ch;
+    margin: var(--space-6) 0 0;
+    color: var(--text-secondary);
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .plain-note {
+    margin: var(--space-5) 0 0;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .plain-body :global(section) {
+    padding-block: var(--space-9);
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 80px;
+  }
+
+  .plain-body :global(section:last-child) {
+    border-bottom: 0;
+  }
+
+  .plain-body :global(h2) {
+    margin: 0 0 var(--space-5);
+    color: var(--text-primary);
+    font-size: 20px;
+    font-weight: var(--weight-semibold);
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+  }
+
+  .plain-body :global(p),
+  .plain-body :global(li) {
+    max-width: 68ch;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .plain-body :global(p) {
+    margin: var(--space-5) 0 0;
+  }
+
+  .plain-body :global(h2 + p),
+  .plain-body :global(h2 + ul) {
+    margin-top: 0;
+  }
+
+  .plain-body :global(ul) {
+    margin: var(--space-5) 0 0;
+    padding-left: var(--space-8);
+  }
+
+  .plain-body :global(li + li) {
+    margin-top: var(--space-3);
+  }
+
+  .plain-body :global(strong) {
+    color: var(--text-primary);
+    font-weight: var(--weight-semibold);
+  }
+
+  .plain-body :global(.plain-fine) {
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  @media (max-width: 560px) {
+    .plain-page {
+      padding-block: var(--space-10);
+    }
+
+    .plain-body :global(p),
+    .plain-body :global(li) {
+      font-size: 15px;
+    }
+  }
+</style>
