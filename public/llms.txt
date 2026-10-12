@@ -24,7 +24,7 @@ Tortie is not a VS Code fork, a coding-agent harness, or an autonomous agent orc
 ## Product facts
 
 - Platform: macOS 15.7.9 or later on Apple silicon.
-- iPhone: Tortie for iPhone, a public beta on TestFlight for iOS 18.1 or later, pairs with Tortie 0.111 or later on an Apple silicon Mac through Tailscale on that Mac. It lists the Mac's sessions, opens their terminals, answers their questions, and ends them. It needs no account and collects nothing.
+- iPhone: Tortie for iPhone, a public beta on TestFlight for iOS 18.1 or later, pairs with Tortie 0.111.1 or later on an Apple silicon Mac through Tailscale on that Mac. It lists the Mac's sessions, opens their terminals, answers their questions, and ends them. It needs no account and collects nothing.
 - License: Apache License 2.0.
 - Session model: tmux owns session lifetime independently of Tortie's app window.
 - Agent model: provider-specific terminal agents remain distinct instead of being flattened into one inbox.

@@ -1295,7 +1295,7 @@ export const docsPages: DocPage[] = [
         title: "What you need",
         blocks: [
           { type: "list", items: [
-            "An Apple silicon Mac running Tortie 0.111 or later, awake with Tortie open.",
+            "An Apple silicon Mac running Tortie 0.111.1 or later, awake with Tortie open.",
             "<a href=\"https://tailscale.com\">Tailscale</a> signed in on that Mac. Nothing else is installed on the phone.",
             "An iPhone on iOS 18.1 or later.",
           ] },

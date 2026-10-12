@@ -363,7 +363,7 @@ assert.ok(
 );
 assert.ok(iphoneDoc.includes(`href="${iphoneUrl}"`), "/docs/your-iphone/ does not link the beta through tortie.sh/iphone.");
 assert.ok(iphoneDoc.includes('href="/privacy/"'), "/docs/your-iphone/ does not link the privacy page.");
-for (const words of ["Tortie 0.111 or later", "iOS 18.1 or later", "six groups match", "Allow"]) {
+for (const words of ["Tortie 0.111.1 or later", "iOS 18.1 or later", "six groups match", "Allow"]) {
   assert.ok(iphoneDoc.includes(words), `/docs/your-iphone/ does not say "${words}".`);
 }
 const remoteNav = docsHome.indexOf('href="/docs/remote-machines/"');

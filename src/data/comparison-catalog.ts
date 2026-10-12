@@ -981,7 +981,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
     id: "tortie", name: "Tortie", categoryId: "agent-workbenches", editorialOrder: 1, checkedAt: "2026-10-12", officialUrl: "https://github.com/gregce/tortie", repository: repo("gregce/tortie"), repoMetricId: "tortie",
     tags: ["terminal", "editor", "scm", "session-durability", "multi-project", "remote-ssh", "bundled-tmux", "context-inventory", "skills", "mcp", "specstory", "oss"],
     platform: ["macos", "ios"],
-    platformNote: "The desktop app requires macOS 15.7.9 or later on Apple silicon. Tortie for iPhone, a public TestFlight beta for iOS 18.1 or later, is a companion that pairs with Tortie 0.111 or later on a Mac. Remote-project hosts can be Macs or Ubuntu 22.04, Ubuntu 24.04, Debian 12, or Debian 13 machines; Tortie does not run on Linux as a desktop client.",
+    platformNote: "The desktop app requires macOS 15.7.9 or later on Apple silicon. Tortie for iPhone, a public TestFlight beta for iOS 18.1 or later, is a companion that pairs with Tortie 0.111.1 or later on a Mac. Remote-project hosts can be Macs or Ubuntu 22.04, Ubuntu 24.04, Debian 12, or Debian 13 machines; Tortie does not run on Linux as a desktop client.",
     platformSources: [
       { url: "https://github.com/gregce/tortie#install", title: "Tortie installation requirements" },
       { url: "https://github.com/gregce/tortie#on-your-iphone-beta", title: "Tortie for iPhone setup" },
