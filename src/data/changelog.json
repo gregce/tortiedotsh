@@ -2,6 +2,322 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.111.0",
+      "date": "2026-10-11",
+      "summary": "This release brings Tortie to your iPhone and to more of your machines. Tortie for iPhone, in public beta through TestFlight, lists your sessions with the ones waiting on you first, opens each one's terminal, answers its questions and ends it, through the Tailscale already on your Mac. Sessions on another machine now scroll back, save and commit as they do on your Mac, and Ubuntu and Debian machines can be added with the tmux they already have.",
+      "contributors": [
+        {
+          "login": "jakelevirne",
+          "name": "Jake Levirne",
+          "url": "https://github.com/jakelevirne",
+          "avatarUrl": "https://github.com/jakelevirne.png?size=64"
+        },
+        {
+          "login": "JnBrymn",
+          "name": "John Berryman",
+          "url": "https://github.com/JnBrymn",
+          "avatarUrl": "https://github.com/JnBrymn.png?size=64"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Catch Me Up now shows the choices themselves under a session that is waiting on one, in the agent's own words and with the agent's own numbers, and the question the agent asked appears above them and in the ⌘J list of sessions waiting on you, so you can see what is being asked without opening the session. They are there to read rather than to press, so you still answer in the session, and an agent that draws its menu without numbering the options, or numbers it in a way Tortie does not already recognise, shows nothing new",
+              "commits": [
+                {
+                  "hash": "e4746fdd",
+                  "url": "https://github.com/gregce/tortie/commit/e4746fdd"
+                }
+              ]
+            },
+            {
+              "text": "Tortie for iPhone, in public beta on TestFlight, reaches your Mac through the Tailscale already on it, with no account to make and nothing else to install on the phone: Settings then Phone sets it up in three steps, getting Tailscale, publishing this Mac and pairing your phone, each with the one button that comes next, and you scan the code and match what both screens show. Your Mac must be an Apple silicon Mac, awake with Tortie open, and the first code can take several minutes while your Mac's name reaches the internet, with Settings then Phone showing how far it has got",
+              "commits": [
+                {
+                  "hash": "38346773",
+                  "url": "https://github.com/gregce/tortie/commit/38346773"
+                },
+                {
+                  "hash": "8c7f0b2f",
+                  "url": "https://github.com/gregce/tortie/commit/8c7f0b2f"
+                },
+                {
+                  "hash": "d19a906a",
+                  "url": "https://github.com/gregce/tortie/commit/d19a906a"
+                },
+                {
+                  "hash": "eaef6ee4",
+                  "url": "https://github.com/gregce/tortie/commit/eaef6ee4"
+                },
+                {
+                  "hash": "9d1a3001",
+                  "url": "https://github.com/gregce/tortie/commit/9d1a3001"
+                },
+                {
+                  "hash": "a8e06fe7",
+                  "url": "https://github.com/gregce/tortie/commit/a8e06fe7"
+                },
+                {
+                  "hash": "333087da",
+                  "url": "https://github.com/gregce/tortie/commit/333087da"
+                },
+                {
+                  "hash": "24512964",
+                  "url": "https://github.com/gregce/tortie/commit/24512964"
+                },
+                {
+                  "hash": "ac9c1e45",
+                  "url": "https://github.com/gregce/tortie/commit/ac9c1e45"
+                },
+                {
+                  "hash": "700f54ed",
+                  "url": "https://github.com/gregce/tortie/commit/700f54ed"
+                }
+              ]
+            },
+            {
+              "text": "The iPhone app lists your sessions with the ones waiting on you first, in tabs for those waiting, every session and Settings, and the Sessions tab groups them by project, sorts them by recent activity, name or oldest first, narrows them to one agent or machine and remembers how you left it. There is no search yet, and unpairing in the app leaves the iPhone listed on your Mac until you press Remove in Settings then Phone",
+              "commits": [
+                {
+                  "hash": "b7cf94f3",
+                  "url": "https://github.com/gregce/tortie/commit/b7cf94f3"
+                },
+                {
+                  "hash": "851b3c4c",
+                  "url": "https://github.com/gregce/tortie/commit/851b3c4c"
+                }
+              ]
+            },
+            {
+              "text": "Tapping a session on the iPhone opens its terminal, the same rows and colours your Mac shows, filled with what it printed before, and you can scroll back through it, type into it with the keyboard, dictation and keys for Escape, Tab, the arrows, Control and Return, and turn the phone sideways to see the terminal alone. The phone never resizes the session, so you zoom or turn the phone to read a wide one, a full-screen program scrolls back nothing, and keys sent while a numbered question is showing are refused if a new question has appeared",
+              "commits": [
+                {
+                  "hash": "d3d59055",
+                  "url": "https://github.com/gregce/tortie/commit/d3d59055"
+                },
+                {
+                  "hash": "f5ff5183",
+                  "url": "https://github.com/gregce/tortie/commit/f5ff5183"
+                },
+                {
+                  "hash": "20453f2e",
+                  "url": "https://github.com/gregce/tortie/commit/20453f2e"
+                }
+              ]
+            },
+            {
+              "text": "From the iPhone you can answer a Claude Code or Codex session's numbered question with one tap, send an idle session a message as if you had pasted it at your Mac and pressed Return, read its conversation in Catch Me Up, and end a session, or select several and end them together, after Face ID, Touch ID or your passcode. Catch Me Up and End session are in the ⋯ menu at the top right, other agents' questions are answered by typing in the terminal, Restore and Remove stay on your Mac, and an iPhone with no passcode cannot end a session",
+              "commits": [
+                {
+                  "hash": "42becaeb",
+                  "url": "https://github.com/gregce/tortie/commit/42becaeb"
+                },
+                {
+                  "hash": "467b4e4a",
+                  "url": "https://github.com/gregce/tortie/commit/467b4e4a"
+                }
+              ]
+            },
+            {
+              "text": "Your iPhone can tell you when a session starts waiting on you, and tapping the alert opens that session; the alert names the session and its project and never what it asks, and it goes through Apple and not while your Mac sleeps. For now only Tortie's publisher can send alerts, because sending one takes the app's own Apple push key",
+              "commits": [
+                {
+                  "hash": "f90ff8cc",
+                  "url": "https://github.com/gregce/tortie/commit/f90ff8cc"
+                }
+              ]
+            },
+            {
+              "text": "Tortie now prepares a machine whose tmux is 3.6 or 3.6b, which is what Ubuntu 26.04 LTS and Debian 13's backports install, without asking you to accept its version first, even where you had accepted an older one, and keeps a live connection to it, so its sessions show up and change in Tortie as they happen rather than on a timer. A machine upgraded in place still reads as its older version until the tmux already running there is restarted, and a machine on Ubuntu 22.04 or 24.04, or on Debian 12 or 13 as released, could not be prepared until the item below",
+              "commits": [
+                {
+                  "hash": "7d356f63",
+                  "url": "https://github.com/gregce/tortie/commit/7d356f63"
+                }
+              ]
+            },
+            {
+              "text": "Ubuntu 22.04 and 24.04 and Debian 12 and 13 machines can now be added and used with the tmux they come with, prepared in one press with a live connection and scroll-back, and saving a changed file or making a folder now works on every Linux machine, where every save of an existing file used to fail and leave a copy beside it; a few key combinations reach a program on those machines in their older form. If a machine's tmux is updated while its sessions keep running, Tortie now says so, and that they open again after that machine restarts, instead of opening a terminal that closes at once",
+              "commits": [
+                {
+                  "hash": "5d3e3c99",
+                  "url": "https://github.com/gregce/tortie/commit/5d3e3c99"
+                }
+              ]
+            },
+            {
+              "text": "A session on another machine now scrolls back like one on your Mac, with the scrollbar, dragging, and your place held while the agent keeps writing, on machines running tmux 3.2a or newer that Tortie has measured; on any other tmux only full-screen programs that use the mouse scroll. If the connection to that machine fails to come back twice while you are scrolled back, what you type there can be lost until Tortie reconnects. Reported by Jake Levirne in #31",
+              "commits": [
+                {
+                  "hash": "62f832ae",
+                  "url": "https://github.com/gregce/tortie/commit/62f832ae"
+                }
+              ]
+            },
+            {
+              "text": "Saving, renaming, making folders, staging and committing now work in every project you open on another machine, as they do on your Mac, with nothing to turn on in Settings; Tortie still does not save in a project that is a home folder or holds one, or inside a .git or .ssh folder there, and a file too large to save on that machine opens read only",
+              "commits": [
+                {
+                  "hash": "c06175f6",
+                  "url": "https://github.com/gregce/tortie/commit/c06175f6"
+                },
+                {
+                  "hash": "47c3c79e",
+                  "url": "https://github.com/gregce/tortie/commit/47c3c79e"
+                }
+              ]
+            },
+            {
+              "text": "A link to a folder now shows in the Explorer as a folder marked as a link and opens to show what is inside, on your Mac and on another machine; a file you open from the Explorer through a link is read only, and a linked folder outside the project updates when you press Refresh. A folder three levels down in a project on another machine also opens to show its files now, where it opened empty. Reported by John Berryman in #36",
+              "commits": [
+                {
+                  "hash": "91d19bea",
+                  "url": "https://github.com/gregce/tortie/commit/91d19bea"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "A Claude Code session that is waiting on you now says what it is being asked — the tool and the one thing it is about to touch — on Sessions That Need Input and in Catch Me Up, instead of the last line of its screen, which was almost always the hint about which key cancels; Catch Me Up also stops saying such a session's answer is not in the record when it is only waiting. Sessions from the other agents still show their last line, and a row shortens a long question to fit one line — hover it to read the whole of it",
+              "commits": [
+                {
+                  "hash": "a6aec811",
+                  "url": "https://github.com/gregce/tortie/commit/a6aec811"
+                },
+                {
+                  "hash": "d27acd8e",
+                  "url": "https://github.com/gregce/tortie/commit/d27acd8e"
+                }
+              ]
+            },
+            {
+              "text": "Read Last Lines is no longer in the menu you get by right-clicking a session on another machine, because that session now scrolls back like one on your Mac; on a machine running any other tmux version, a plain shell or an agent that prints ordinary lines shows only its current screen",
+              "commits": [
+                {
+                  "hash": "18e7e6b6",
+                  "url": "https://github.com/gregce/tortie/commit/18e7e6b6"
+                }
+              ]
+            },
+            {
+              "text": "Adding a machine in Settings then Machines is now pick, check and add: choose it from your tailnet or type its address, Tortie signs in and finds tmux by itself, asks only what it must (to trust a machine it has not met, or your password once to set up its key), and one Add press confirms and prepares it. Each machine is now a name, a status and one button with the rest in a ⋯ menu, and when ssh cannot be started Tortie says so instead of saying this Mac has no ssh; a tmux somewhere unusual still needs its path typed under Advanced",
+              "commits": [
+                {
+                  "hash": "4ff8e7fa",
+                  "url": "https://github.com/gregce/tortie/commit/4ff8e7fa"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "The trackpad and mouse wheel scroll a Codex session again instead of bringing back your earlier prompts or moving the answer picked when Codex asks permission, and capturing the last lines of a Codex session, or of a Claude Code session that ran full screen, now holds its whole conversation rather than one screen. Tortie starts both in their scrollback view from now on, so Claude Code's own mouse scrolling, Focus view and diff panel are not available inside Tortie, a Claude Code on another machine keeps its full-screen view, a session already running keeps its view until it is next restored or restarted, and the Up and Down keys still bring back earlier prompts in Codex",
+              "commits": [
+                {
+                  "hash": "2751062d",
+                  "url": "https://github.com/gregce/tortie/commit/2751062d"
+                }
+              ]
+            },
+            {
+              "text": "Qwen Code's permission questions and Claude Code's question about trusting a new folder now turn a session amber and show among the sessions waiting on you; Cursor, OpenCode and Antigravity questions still do not, and on a busy Mac another agent's question can be noticed a second later than before",
+              "commits": [
+                {
+                  "hash": "a1ab7d09",
+                  "url": "https://github.com/gregce/tortie/commit/a1ab7d09"
+                }
+              ]
+            },
+            {
+              "text": "The trackpad and mouse wheel now scroll Claude Code and other full-screen programs that use the mouse in a session on another machine, the way they do on your Mac; a program like less that ignores the mouse still does not scroll there, and on a machine whose tmux Tortie has not measured neither does a plain shell or an agent that prints ordinary lines. Reported by Jake Levirne in #31",
+              "commits": [
+                {
+                  "hash": "b28d0eb4",
+                  "url": "https://github.com/gregce/tortie/commit/b28d0eb4"
+                }
+              ]
+            },
+            {
+              "text": "Ending a Gemini CLI session, or restarting one, now ends Gemini too, about ten seconds later; before, its two processes kept running in the background after the session was gone. A program an agent set running on its own, apart from the session, still keeps running after End, and so does Gemini if you quit Tortie within those ten seconds",
+              "commits": [
+                {
+                  "hash": "af5d2748",
+                  "url": "https://github.com/gregce/tortie/commit/af5d2748"
+                }
+              ]
+            },
+            {
+              "text": "The first session you start in a tab on another machine now shows its screen as soon as it has started, where it could open on \"This session no longer exists\" and stay blank while it was running; if that machine is slow to answer, the session offers Try again instead",
+              "commits": [
+                {
+                  "hash": "b0ff7ca7",
+                  "url": "https://github.com/gregce/tortie/commit/b0ff7ca7"
+                }
+              ]
+            },
+            {
+              "text": "A project tab you close for a folder on another machine now stays closed, whoever started the sessions in it, where it used to come back by itself, sometimes at once and sometimes the next time Tortie started; its sessions keep running, Manage Sessions still lists them under the folder's name, and Go to session, opening the folder again or starting a session in it brings the tab back while that machine is answering, though not when its path is typed with a trailing slash. A tab you closed before this update can come back once. Reported by Jake Levirne in #35",
+              "commits": [
+                {
+                  "hash": "6f194ddb",
+                  "url": "https://github.com/gregce/tortie/commit/6f194ddb"
+                },
+                {
+                  "hash": "f7d576bf",
+                  "url": "https://github.com/gregce/tortie/commit/f7d576bf"
+                }
+              ]
+            },
+            {
+              "text": "A file an agent changed now shows its new contents when you switch back to its tab, return to its project or click into the editor, even in a folder your repository ignores, where it used to keep the old text until a save refused because the file had changed on disk; a file in an ignored folder still does not update while you watch it without looking away and back",
+              "commits": [
+                {
+                  "hash": "b07c12f1",
+                  "url": "https://github.com/gregce/tortie/commit/b07c12f1"
+                }
+              ]
+            },
+            {
+              "text": "A Redline tab now opens where you left it, instead of at the top or at the place you had reached in another Redline tab; a tab you close and open again starts at the top",
+              "commits": [
+                {
+                  "hash": "b07c12f1",
+                  "url": "https://github.com/gregce/tortie/commit/b07c12f1"
+                }
+              ]
+            },
+            {
+              "text": "The list of machines on your tailnet, in Settings then Machines, now lists only your machines; once your Mac was reaching the iPhone app through Tailscale Funnel it also listed a row named funnel-ingress-node for each of Tailscale's relays and counted them among the machines it found",
+              "commits": [
+                {
+                  "hash": "c10a5892",
+                  "url": "https://github.com/gregce/tortie/commit/c10a5892"
+                }
+              ]
+            },
+            {
+              "text": "New Folder and New File in a project on another machine now make the folder or file under the name you type, however long you take to type it, as they do on your Mac; a name that took more than a few seconds used to come back with \"Tortie could not find untitled folder\" and leave an untitled row in the tree",
+              "commits": [
+                {
+                  "hash": "6e407148",
+                  "url": "https://github.com/gregce/tortie/commit/6e407148"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.110.0",
       "date": "2026-09-21",
       "summary": "This release is about the sign ins Tortie keeps for you and the sheet that lists your sessions. A Codex account you sign out of can be offered back for the first time, choosing one of your other sign ins can no longer destroy the one you were using, and the Manage Sessions sheet says whether a session is alive or over without opening anything and stops searching every project folder each time you open it. The first time you open the sheet after this release, each session is read again from the beginning, which takes a moment on a long one.",
