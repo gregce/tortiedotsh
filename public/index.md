@@ -11,6 +11,7 @@ Tortie is not a VS Code fork, a coding-agent harness, or an autonomous agent orc
 ## Resources
 
 - [Documentation](https://tortie.sh/docs/)
+- [Tortie for iPhone, public beta on TestFlight](https://tortie.sh/iphone)
 - [Agent multiplexer comparison](https://tortie.sh/compare/agent-multiplexers/)
 - [All comparison categories](https://tortie.sh/compare/)
 - [Changelog](https://tortie.sh/docs/changelog/)

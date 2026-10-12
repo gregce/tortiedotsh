@@ -12,6 +12,7 @@ Tortie is not a VS Code fork, a coding-agent harness, or an autonomous agent orc
 
 - [Homepage](https://tortie.sh/): Product overview, feature demonstrations, fit check, and direct macOS download.
 - [Documentation](https://tortie.sh/docs/): Installation, concepts, session durability, tools, shortcuts, and supported agents.
+- [Tortie for iPhone](https://tortie.sh/docs/your-iphone/): Pairing the iPhone app with Tortie on a Mac. The public TestFlight beta is at https://tortie.sh/iphone.
 - [Agent multiplexer comparison](https://tortie.sh/compare/agent-multiplexers/): Evidence-backed comparison of Tortie and related tools.
 - [All comparison categories](https://tortie.sh/compare/): Coding-agent tools grouped by product category and workflow.
 - [Changelog](https://tortie.sh/docs/changelog/): Current releases and product changes.
@@ -23,6 +24,7 @@ Tortie is not a VS Code fork, a coding-agent harness, or an autonomous agent orc
 ## Product facts
 
 - Platform: macOS 15.7.9 or later on Apple silicon.
+- iPhone: Tortie for iPhone, a public beta on TestFlight for iOS 18.1 or later, pairs with Tortie 0.111 or later on an Apple silicon Mac through Tailscale on that Mac. It lists the Mac's sessions, opens their terminals, answers their questions, and ends them. It needs no account and collects nothing.
 - License: Apache License 2.0.
 - Session model: tmux owns session lifetime independently of Tortie's app window.
 - Agent model: provider-specific terminal agents remain distinct instead of being flattened into one inbox.

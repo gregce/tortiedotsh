@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-12T09:08:40.296Z",
+  "generatedAt": "2026-10-12T14:48:46.291Z",
   "sources": [
     {
       "id": "a02b9db14c7c57f5ccdb",
@@ -17872,10 +17872,10 @@
         {
           "productId": "tortie",
           "field": "profile.primaryObject",
-          "checkedAt": "2026-08-24"
+          "checkedAt": "2026-10-12"
         }
       ],
-      "latestReviewAt": "2026-08-24",
+      "latestReviewAt": "2026-10-12",
       "status": "changed",
       "fetchUrl": "https://api.github.com/repos/gregce/tortie/readme",
       "resolvedUrl": "https://api.github.com/repos/gregce/tortie/readme",
@@ -17932,10 +17932,10 @@
         {
           "productId": "tortie",
           "field": "profile.source",
-          "checkedAt": "2026-08-24"
+          "checkedAt": "2026-10-12"
         }
       ],
-      "latestReviewAt": "2026-08-24",
+      "latestReviewAt": "2026-10-12",
       "status": "current",
       "fetchUrl": "https://raw.githubusercontent.com/gregce/tortie/main/LICENSE",
       "resolvedUrl": "https://raw.githubusercontent.com/gregce/tortie/main/LICENSE",
@@ -17962,10 +17962,10 @@
         {
           "productId": "tortie",
           "field": "profile.status",
-          "checkedAt": "2026-08-24"
+          "checkedAt": "2026-10-12"
         }
       ],
-      "latestReviewAt": "2026-08-24",
+      "latestReviewAt": "2026-10-12",
       "status": "changed",
       "fetchUrl": "https://github.com/gregce/tortie/releases/latest",
       "resolvedUrl": "https://github.com/gregce/tortie/releases/tag/v0.110.0",
@@ -17992,7 +17992,7 @@
         {
           "productId": "tortie",
           "field": "profile.execution",
-          "checkedAt": "2026-08-24"
+          "checkedAt": "2026-10-12"
         },
         {
           "productId": "tortie",
@@ -18015,7 +18015,7 @@
           "checkedAt": "2026-08-24"
         }
       ],
-      "latestReviewAt": "2026-08-24",
+      "latestReviewAt": "2026-10-12",
       "status": "changed",
       "fetchUrl": "https://api.github.com/repos/gregce/tortie/readme",
       "resolvedUrl": "https://api.github.com/repos/gregce/tortie/readme",
@@ -18092,10 +18092,10 @@
         {
           "productId": "tortie",
           "field": "profile.platform",
-          "checkedAt": "2026-08-24"
+          "checkedAt": "2026-10-12"
         }
       ],
-      "latestReviewAt": "2026-08-24",
+      "latestReviewAt": "2026-10-12",
       "status": "changed",
       "fetchUrl": "https://api.github.com/repos/gregce/tortie/readme",
       "resolvedUrl": "https://api.github.com/repos/gregce/tortie/readme",
@@ -18110,6 +18110,35 @@
       "reviews": [],
       "etag": "\"615de2796dba79348fa5d38cd31251fdfcce182b\"",
       "lastModified": "Tue, 15 Sep 2026 04:36:42 GMT",
+      "error": null
+    },
+    {
+      "id": "451b03a522a94458628c",
+      "url": "https://github.com/gregce/tortie#on-your-iphone-beta",
+      "bases": [
+        "repository-derived"
+      ],
+      "usedBy": [
+        {
+          "productId": "tortie",
+          "field": "profile.platform",
+          "checkedAt": "2026-10-12"
+        }
+      ],
+      "latestReviewAt": "2026-10-12",
+      "status": "awaiting-refresh",
+      "fetchUrl": "https://api.github.com/repos/gregce/tortie/readme",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {
@@ -18143,8 +18172,8 @@
       "error": null
     },
     {
-      "id": "639f04a3b08c5a16c78b",
-      "url": "https://github.com/gregce/tortie#remote-machines-early",
+      "id": "d0f0b66bead36b817d8d",
+      "url": "https://github.com/gregce/tortie#remote-machines",
       "bases": [
         "repository-derived"
       ],
@@ -18156,20 +18185,19 @@
         }
       ],
       "latestReviewAt": "2026-08-24",
-      "status": "changed",
+      "status": "awaiting-refresh",
       "fetchUrl": "https://api.github.com/repos/gregce/tortie/readme",
-      "resolvedUrl": "https://api.github.com/repos/gregce/tortie/readme",
-      "lastCheckedAt": "2026-10-12T09:08:02.134Z",
-      "firstObservedAt": "2026-08-25T01:17:18.607Z",
-      "changeDetectedAt": "2026-08-27T12:14:49.518Z",
-      "httpStatus": 304,
-      "contentType": "application/vnd.github.raw+json; charset=utf-8",
-      "contentLength": 13827,
-      "contentHash": "7c3bd9e332f5b0b1d171809edebaa4c4d39b80aa3382021a7b2c21aee6b4a73a",
-      "reviewedHash": "c637c0dcb8a599e0e48f2060b90f4507470c57d634913d1cd715d91ba6f36a8f",
-      "reviews": [],
-      "etag": "\"615de2796dba79348fa5d38cd31251fdfcce182b\"",
-      "lastModified": "Tue, 15 Sep 2026 04:36:42 GMT",
+      "resolvedUrl": null,
+      "lastCheckedAt": null,
+      "firstObservedAt": null,
+      "changeDetectedAt": null,
+      "httpStatus": null,
+      "contentType": null,
+      "contentLength": null,
+      "contentHash": null,
+      "reviewedHash": null,
+      "etag": null,
+      "lastModified": null,
       "error": null
     },
     {

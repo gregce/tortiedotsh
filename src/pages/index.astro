@@ -6,7 +6,7 @@
  * FIRST VIEWPORT: Compact navigation, a short left-aligned promise, one macOS action, and a broad product-film stage.
  * FORM: The user-selected Disposable Window concept, mock 04; wide film staging from seed a5903903.
  */
-import { TORTIE_MACOS_DOWNLOAD_URL, TORTIE_REPOSITORY_URL } from "../data/site-links";
+import { TORTIE_IPHONE_URL, TORTIE_MACOS_DOWNLOAD_URL, TORTIE_REPOSITORY_URL } from "../data/site-links";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
@@ -38,6 +38,27 @@ const softwareApplication = {
   },
   image: "https://tortie.sh/og/tortie-og.png",
 };
+// Tortie for iPhone, a public beta on TestFlight. Its download link is the
+// site's own /iphone redirect, so the TestFlight link changes in one place.
+const iphoneApplication = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: "Tortie for iPhone",
+  url: "https://tortie.sh/docs/your-iphone/",
+  description: "Check on the coding-agent sessions running in Tortie on your Mac, open their terminals, answer them, and end them from your iPhone.",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "iOS 18.1 or later",
+  softwareRequirements: "Tortie 0.111 or later on an Apple silicon Mac, with Tailscale signed in",
+  downloadUrl: TORTIE_IPHONE_URL,
+  sameAs: TORTIE_REPOSITORY_URL,
+  license: "https://www.apache.org/licenses/LICENSE-2.0",
+  isAccessibleForFree: true,
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
 const organizationData = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -52,6 +73,7 @@ const organizationData = {
 <BaseLayout title="Tortie | One window for every coding agent" description={description} canonicalPath="/">
     <Fragment slot="head">
       <script type="application/ld+json" set:html={JSON.stringify(softwareApplication)}></script>
+      <script type="application/ld+json" set:html={JSON.stringify(iphoneApplication)}></script>
       <script type="application/ld+json" set:html={JSON.stringify(organizationData)}></script>
     </Fragment>
     <Nav overlay />

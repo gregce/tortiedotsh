@@ -978,11 +978,14 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
 
   // 2. Agent workbenches
   product({
-    id: "tortie", name: "Tortie", categoryId: "agent-workbenches", editorialOrder: 1, officialUrl: "https://github.com/gregce/tortie", repository: repo("gregce/tortie"), repoMetricId: "tortie",
+    id: "tortie", name: "Tortie", categoryId: "agent-workbenches", editorialOrder: 1, checkedAt: "2026-10-12", officialUrl: "https://github.com/gregce/tortie", repository: repo("gregce/tortie"), repoMetricId: "tortie",
     tags: ["terminal", "editor", "scm", "session-durability", "multi-project", "remote-ssh", "bundled-tmux", "context-inventory", "skills", "mcp", "specstory", "oss"],
-    platform: ["macos"],
-    platformNote: "The current supported desktop build requires macOS 15.7.9 or later on Apple silicon. Early remote-project hosts have been tested on macOS; Linux hosts are not yet claimed as supported clients.",
-    platformSource: { url: "https://github.com/gregce/tortie#install", title: "Tortie installation requirements" },
+    platform: ["macos", "ios"],
+    platformNote: "The desktop app requires macOS 15.7.9 or later on Apple silicon. Tortie for iPhone, a public TestFlight beta for iOS 18.1 or later, is a companion that pairs with Tortie 0.111 or later on a Mac. Remote-project hosts can be Macs or Ubuntu 22.04, Ubuntu 24.04, Debian 12, or Debian 13 machines; Tortie does not run on Linux as a desktop client.",
+    platformSources: [
+      { url: "https://github.com/gregce/tortie#install", title: "Tortie installation requirements" },
+      { url: "https://github.com/gregce/tortie#on-your-iphone-beta", title: "Tortie for iPhone setup" },
+    ],
     source: "open-source",
     sourceSource: { url: "https://github.com/gregce/tortie/blob/main/LICENSE", title: "Tortie Apache 2.0 license", basis: "repository-derived" },
     execution: ["local-process", "local-daemon", "ssh-host"],
@@ -996,7 +999,7 @@ export const comparisonProducts: readonly ComparisonProduct[] = [
       ...builtInClaims("https://github.com/gregce/tortie#familiar-ide-features", "Tortie IDE features", ["workbench-editor", "workbench-file-tree", "workbench-scm", "workbench-change-review"], "Monaco editing and diffs, a decorated project tree, ripgrep search, staging, branches, history, commit graph, and GitHub Actions runs are integrated surfaces.", "repository-derived"),
       "workbench-attention-signals": capability("built-in", "https://github.com/gregce/tortie/blob/main/docs/DESIGN-SPEC.md", "Tortie operator interface specification", "Session and project state roll up working, needs-input, idle, ended, and failed states into project badges, an attention overlay, notifications, and a dock badge.", "source-inspected"),
       "workbench-browser": capability("limited", "https://github.com/gregce/tortie#familiar-ide-features", "Tortie IDE features", "Markdown and sandboxed HTML previews are built in with scripts and network disabled; Tortie does not document a general interactive web browser.", "repository-derived"),
-      "workbench-remote-host": capability("built-in", "https://github.com/gregce/tortie#remote-machines-early", "Tortie remote machines", "Remote Mac project tabs use SSH and the host's tmux for files, search, Git, Actions, agent launch, and recovery. The surface is explicitly early, with a configured write-root allowlist.", "repository-derived"),
+      "workbench-remote-host": capability("built-in", "https://github.com/gregce/tortie#remote-machines", "Tortie remote machines", "Project tabs on a remote Mac, Ubuntu, or Debian machine use SSH and that machine's own tmux for files, search, Git, Actions, agent launch, scrollback, and recovery. Saving, staging, and committing work there as they do locally, except in a home folder itself or inside .git or .ssh.", "repository-derived"),
     },
   }),
   product({

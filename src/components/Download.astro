@@ -1,6 +1,6 @@
 ---
 import AppleMark from "./AppleMark.astro";
-import { TORTIE_MACOS_DOWNLOAD_URL } from "../data/site-links";
+import { TORTIE_IPHONE_URL, TORTIE_MACOS_DOWNLOAD_URL } from "../data/site-links";
 ---
 
 <section class="download" id="download">
@@ -12,6 +12,7 @@ import { TORTIE_MACOS_DOWNLOAD_URL } from "../data/site-links";
     <div class="download-copy"><h2>Open source.<br />Built for real work.</h2><p>Free under the Apache 2.0 license and built in public.</p></div>
     <div class="download-actions">
       <div class="download-action"><a class="btn btn-primary" href={TORTIE_MACOS_DOWNLOAD_URL}><AppleMark /> Download for macOS</a><p>macOS 15.7.9 or later · Apple silicon</p></div>
+      <div class="download-action download-action-iphone"><a class="btn btn-outline" href={TORTIE_IPHONE_URL}>Tortie for iPhone · Join the beta</a><p>Needs Tortie on your Mac · iOS 18.1 or later</p></div>
     </div>
   </div>
 </section>
@@ -23,11 +24,15 @@ import { TORTIE_MACOS_DOWNLOAD_URL } from "../data/site-links";
   .download-art img { width: 100%; height: 100%; object-fit: cover; object-position: center 54%; filter: brightness(1.12) saturate(1.06); }
   .download-layout { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(36px, 5vw, 56px) 0; }
   .download-copy, .download-actions { grid-column: 3; padding-left: clamp(24px, 4vw, 48px); }
-  .download-actions { display: flex; align-items: flex-start; justify-content: flex-start; gap: var(--space-10); }
+  /* The macOS action stays first and blue, exactly where it was; the iPhone
+     action is the outline secondary under it, never a second blue one. */
+  .download-actions { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: var(--space-8); }
   .download h2 { margin: 0; font-size: clamp(28px, 3.5vw, 46px); line-height: 1.06; letter-spacing: -.025em; }
   .download p { max-width: 42ch; margin: var(--space-6) 0 0; color: var(--text-secondary); }
   .download-action { text-align: center; }
   .download-action .btn { gap: var(--space-5); }
   .download-action p { margin: var(--space-5) 0 0; color: var(--text-muted); font-size: 12px; }
+  .download-action-iphone { max-width: 100%; }
+  .download-action-iphone .btn { max-width: 100%; height: auto; min-height: 44px; padding-block: var(--space-3); white-space: normal; text-wrap: balance; }
   @media (max-width: 720px) { .download { padding-block: 56px 48px; } .download::after { opacity: .56; } .download-layout { grid-template-columns: minmax(0, 1fr); gap: var(--space-9); } .download-copy, .download-actions { grid-column: 1; padding-left: 0; } .download-actions { flex-direction: column; gap: var(--space-7); } .download-action, .download-action .btn { width: 100%; } }
 </style>

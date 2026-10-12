@@ -1,5 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/iphone",
+      "destination": "https://testflight.apple.com/join/HtMtBRFh",
+      "permanent": false
+    },
+    {
+      "source": "/iphone/",
+      "destination": "https://testflight.apple.com/join/HtMtBRFh",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/",

@@ -227,7 +227,7 @@ assert.match(
 // ── Privacy and support (Tortie Phase 333.5) ────────────────────────────
 // Both must be built, listed in the sitemap, reachable from every footer, and
 // collect nothing but page views. Apple requires the privacy and support links
-// for every app. The Tortie for iPhone page follows on release day.
+// for every app. Tortie for iPhone's own docs page and redirect are checked below.
 const footerPages = pages.filter(({ html }) => html.includes('aria-label="Footer"'));
 assert.ok(footerPages.length >= 20, `Expected the footer on at least 20 pages; found ${footerPages.length}.`);
 for (const { file, html } of footerPages) {
@@ -298,4 +298,76 @@ assert.ok(
   "The support page does not link Tortie for Mac's issues.",
 );
 
-console.log(`Site routes verified: ${sitePages.length} shared headers with GitHub stars, direct downloads, and Vercel Analytics; 13 responsive Pixel Tortie illustrations; atomic navigation, canonical comparison redirects, hero copy, stable closing actions, and persistent comparison controls; privacy and support pages built, in the sitemap, in ${footerPages.length} footers, with no form, field or cookie.`);
+// ── Tortie for iPhone (Tortie Phase 333.7) ──────────────────────────────
+// tortie.sh/iphone is a TEMPORARY redirect to the public TestFlight link, so
+// the link can move without a cached permanent redirect pointing at the old
+// one, and no page names TestFlight itself: every link goes through /iphone.
+const iphoneUrl = "https://tortie.sh/iphone";
+const testFlightUrl = "https://testflight.apple.com/join/HtMtBRFh";
+const vercelConfig = JSON.parse(await readFile(new URL("../vercel.json", import.meta.url), "utf8"));
+const iphoneRedirects = (vercelConfig.redirects ?? []).filter((rule) => /^\/iphone\/?$/.test(rule.source));
+assert.deepEqual(
+  iphoneRedirects.map((rule) => rule.source).sort(),
+  ["/iphone", "/iphone/"],
+  "vercel.json must redirect both /iphone and /iphone/.",
+);
+for (const rule of iphoneRedirects) {
+  assert.equal(rule.destination, testFlightUrl, `${rule.source} does not redirect to the public TestFlight link.`);
+  assert.equal(rule.permanent, false, `${rule.source} must be a temporary (307) redirect so the link can change.`);
+  assert.equal(rule.statusCode, undefined, `${rule.source} must not pin a status code; permanent: false answers 307.`);
+}
+for (const { file, html } of pages) {
+  assert.ok(!html.includes(testFlightUrl), `${file} links TestFlight directly instead of ${iphoneUrl}.`);
+}
+
+// The Download section and the hero each gain an iPhone action: never blue, no
+// Apple mark. The macOS action stays first and the one blue action in each,
+// and the navigation keeps its one macOS action alone.
+const downloadSection = home.slice(home.indexOf('id="download"'), home.indexOf("</section>", home.indexOf('id="download"')));
+const iphoneAction = downloadSection.match(/<a class="([^"]+)" href="https:\/\/tortie\.sh\/iphone"[^>]*>([\s\S]*?)<\/a>/);
+assert.ok(iphoneAction, "The Download section is missing the Tortie for iPhone action.");
+assert.ok(iphoneAction[1].split(/\s+/).includes("btn"), "The iPhone action is not a button.");
+assert.ok(!iphoneAction[1].split(/\s+/).includes("btn-primary"), "The iPhone action is blue; the One Blue Rule keeps blue for macOS.");
+assert.doesNotMatch(iphoneAction[2], /<svg/, "The iPhone action carries a logo.");
+assert.match(iphoneAction[2], /Tortie for iPhone · Join the beta/, "The iPhone action does not say what it is.");
+assert.match(downloadSection, /Needs Tortie on your Mac · iOS 18\.1 or later/, "The iPhone action is missing its requirement line.");
+assert.ok(
+  downloadSection.indexOf(directDownloadUrl) < downloadSection.indexOf(iphoneUrl),
+  "The macOS action must stay first in the Download section.",
+);
+assert.equal((downloadSection.match(/btn-primary/g) ?? []).length, 1, "The Download section must keep exactly one blue action.");
+const heroSection = home.slice(home.indexOf('<section class="hero'), home.indexOf("</section>", home.indexOf('<section class="hero')));
+assert.ok(heroSection.length > 0, "The homepage hero was not found.");
+const heroIphone = heroSection.match(/<a class="([^"]+)" href="https:\/\/tortie\.sh\/iphone"[^>]*>([\s\S]*?)<\/a>/);
+assert.ok(heroIphone, "The hero is missing the iPhone beta action.");
+assert.ok(heroIphone[1].split(/\s+/).includes("btn"), "The hero's iPhone action is not a button.");
+assert.ok(!heroIphone[1].split(/\s+/).includes("btn-primary"), "The hero's iPhone action is blue; the One Blue Rule keeps blue for macOS.");
+assert.doesNotMatch(heroIphone[2], /<svg/, "The hero's iPhone action carries a logo.");
+assert.equal((heroSection.match(/btn-primary/g) ?? []).length, 1, "The hero must keep exactly one blue action.");
+assert.ok(
+  heroSection.indexOf(directDownloadUrl) < heroSection.indexOf(iphoneUrl),
+  "The macOS action must stay first in the hero.",
+);
+const navHeader = home.slice(home.indexOf("<header"), home.indexOf("</header>"));
+assert.ok(navHeader.length > 0, "The homepage navigation was not found.");
+assert.ok(!navHeader.includes(iphoneUrl), "The navigation gained the iPhone action; it keeps its one macOS action.");
+assert.match(home, /"@type":"MobileApplication","name":"Tortie for iPhone"/, "The homepage structured data does not name Tortie for iPhone.");
+
+// The docs page, "Your iPhone", beside Remote machines.
+const iphoneDoc = await readPage("docs/your-iphone/index.html").catch(() => null);
+assert.ok(iphoneDoc !== null, "/docs/your-iphone/ was not built.");
+assert.ok(sitemap.includes("<loc>https://tortie.sh/docs/your-iphone/</loc>"), "/docs/your-iphone/ is missing from the sitemap.");
+assert.ok(
+  iphoneDoc.includes('<link rel="canonical" href="https://tortie.sh/docs/your-iphone/"'),
+  "/docs/your-iphone/ is missing its canonical URL.",
+);
+assert.ok(iphoneDoc.includes(`href="${iphoneUrl}"`), "/docs/your-iphone/ does not link the beta through tortie.sh/iphone.");
+assert.ok(iphoneDoc.includes('href="/privacy/"'), "/docs/your-iphone/ does not link the privacy page.");
+for (const words of ["Tortie 0.111 or later", "iOS 18.1 or later", "six groups match", "Allow"]) {
+  assert.ok(iphoneDoc.includes(words), `/docs/your-iphone/ does not say "${words}".`);
+}
+const remoteNav = docsHome.indexOf('href="/docs/remote-machines/"');
+const iphoneNav = docsHome.indexOf('href="/docs/your-iphone/"');
+assert.ok(remoteNav >= 0 && iphoneNav > remoteNav, "Your iPhone must sit beside Remote machines in the docs navigation.");
+
+console.log(`Site routes verified: ${sitePages.length} shared headers with GitHub stars, direct downloads, and Vercel Analytics; 13 responsive Pixel Tortie illustrations; atomic navigation, canonical comparison redirects, hero copy, stable closing actions, and persistent comparison controls; privacy and support pages built, in the sitemap, in ${footerPages.length} footers, with no form, field or cookie; /iphone a temporary redirect to TestFlight that no page bypasses, one blue action beside the iPhone one in the hero and Download, and the Your iPhone docs page.`);

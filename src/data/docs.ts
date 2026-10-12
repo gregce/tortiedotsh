@@ -1,4 +1,4 @@
-import { TORTIE_MACOS_DOWNLOAD_URL } from "./site-links";
+import { TORTIE_IPHONE_URL, TORTIE_MACOS_DOWNLOAD_URL } from "./site-links";
 
 export interface DocsNavItem {
   title: string;
@@ -136,8 +136,14 @@ export const docsNavGroups: DocsNavGroup[] = [
       {
         title: "Remote machines",
         href: "/docs/remote-machines/",
-        description: "Run sessions and review projects on another Mac with explicit write consent.",
-        searchTerms: "ssh tailscale key remote login edit commit",
+        description: "Run sessions and work on projects on another Mac or a Linux machine.",
+        searchTerms: "ssh tailscale key remote login edit save commit linux ubuntu debian tmux scrollback",
+      },
+      {
+        title: "Your iPhone",
+        href: "/docs/your-iphone/",
+        description: "Pair Tortie for iPhone with your Mac to check on sessions and answer them while you are away.",
+        searchTerms: "iphone ios phone mobile testflight beta pair pairing tailscale funnel allow face id",
       },
     ],
   },
@@ -256,7 +262,7 @@ export const docsPages: DocPage[] = [
             ["Durable sessions", "A private tmux server keeps agents and shells running when the Tortie window closes."],
             ["Work review", "Catch Me Up, attention signals, diffs, history, and saved output help you return without supervising every terminal."],
             ["Inspectable agent context", "The Context view shows the skills, MCP servers, hooks, plugins, and instruction files an agent will load."],
-            ["Remote projects", "Early support opens folders and runs agents on another Mac over SSH, with writes disabled until you approve a root."],
+            ["Remote projects", "Opens folders and runs agents on another Mac or a Linux machine over SSH, and saves and commits there as it does on your Mac."],
           ] },
         ],
       },
@@ -322,7 +328,7 @@ export const docsPages: DocPage[] = [
         title: "The daily loop",
         blocks: [
           { type: "steps", items: [
-            { title: "Open a project.", html: "Choose a local folder, clone a repository, or open an approved folder on another machine." },
+            { title: "Open a project.", html: "Choose a local folder, clone a repository, or open a folder on a machine you have added." },
             { title: "Start named sessions.", html: "Launch the agents or shells the project needs and arrange related sessions in splits." },
             { title: "Work in one place.", html: "Move between sessions, files, search, source control, and Context without changing project scope." },
             { title: "Leave when you need to.", html: "Quit Tortie without ending live local sessions." },
@@ -582,7 +588,6 @@ export const docsPages: DocPage[] = [
             ["Capture Screen", "Copies the visible terminal as an image and offers a save action."],
             ["Capture Selection", "Captures only the selected terminal region."],
             ["Capture Last 250 or 1,000 Lines", "Reads recent history from the local private tmux server."],
-            ["Read Last Lines", "Reads recent output from a session on another machine without writing there."],
             ["Clear", "Clears the visible screen and server-side history. The agent keeps running."],
           ] },
           { type: "paragraph", html: "When available, the menu also shows how much scrollback that one session currently holds. Tortie reads the figure only when you open the menu; it does not turn memory use into a dashboard." },
@@ -688,7 +693,7 @@ export const docsPages: DocPage[] = [
         blocks: [
           { type: "paragraph", html: "Right-click a file or folder for actions that belong to that selection. Local files can open in Tortie, the default macOS app, or another compatible app. You can also create entries, rename, duplicate, reveal in Finder, copy paths, or move local items to Trash." },
           { type: "paragraph", html: "Right-click an editor tab to close one or several tabs, keep a reusable preview open, copy its path, or reveal the file in Finder. A single click normally uses one reusable preview tab; double-clicking the tab or editing the file keeps it open." },
-          { type: "note", title: "Remote menus are narrower", html: "A remote file menu only shows actions that are true on that machine and inside its approved write root. It does not offer Reveal in Finder, Open With, duplicate, or Move to Trash for a remote path." },
+          { type: "note", title: "Remote menus are narrower", html: "A remote file menu only shows actions that are true on that machine. It does not offer Reveal in Finder, Open With, duplicate, or Move to Trash for a remote path." },
         ],
       },
       {
@@ -1105,7 +1110,8 @@ export const docsPages: DocPage[] = [
             ["Launch defaults", "Per-agent launch flags applied to each new session, and the shell variables your agents are given — named once for every agent, or per agent."],
             ["SpecStory", "Local conversation capture defaults and optional SpecStory Cloud sign-in."],
             ["Appearance", "Highlight colour, contrast, and the terminal and editor font, including a family of your own."],
-            ["Machines", "SSH connections, keys, remote capabilities, agent availability, and the one approved write root per machine."],
+            ["Machines", "Adding a machine from your tailnet or by its address, SSH keys, remote capabilities, and agent availability."],
+            ["Phone", "The three steps that pair <a href=\"/docs/your-iphone/\">Tortie for iPhone</a>, the switch that lets your phone reach this Mac, and the phones you have paired."],
             ["Catch Me Up", "The optional agent and model that write one-line project summaries."],
             ["Architecture", "The switch that shows Architecture at all, and the agent and model that fill in a contract."],
             ["Diagnostics", "Temporary debug logging and a readable support report."],
@@ -1208,8 +1214,8 @@ export const docsPages: DocPage[] = [
     path: "/docs/remote-machines/",
     slug: "remote-machines",
     title: "Remote machines",
-    description: "Run sessions and work with projects on another Mac through explicit SSH and write boundaries.",
-    lead: "Remote support is shipped and labelled Early. It has been verified between Macs, with every write kept behind explicit consent.",
+    description: "Run sessions and work with projects on another Mac or a Linux machine over SSH.",
+    lead: "A folder on another Mac, or on an Ubuntu or Debian machine, opens as an ordinary project tab. Its sessions run there.",
     hero: {
       asset: "machines",
       alt: "Tortie's remote-machine view for connecting to another Mac over SSH.",
@@ -1219,13 +1225,13 @@ export const docsPages: DocPage[] = [
     sections: [
       {
         id: "requirements",
-        title: "Prepare the remote Mac",
+        title: "Prepare the remote machine",
         blocks: [
           { type: "list", items: [
-            "Enable Remote Login and make the machine reachable over SSH.",
-            "Use a private network such as Tailscale when the Macs are not on the same trusted network.",
-            "Install tmux on the remote machine. Tortie's bundled local copy is not uploaded there.",
-            "Add and confirm the machine in Tortie Settings. Tortie can create a dedicated SSH key for you.",
+            "Make the machine reachable over SSH. On a Mac, turn on Remote Login.",
+            "Use a private network such as Tailscale when the machines are not on the same trusted network.",
+            "Use a Mac, Ubuntu 22.04 or 24.04, or Debian 12 or 13, with tmux 3.2a or newer. The tmux those Linux releases ship is new enough. Tortie's bundled local copy is not uploaded there.",
+            "In Settings, then Machines, pick the machine from your tailnet or type its address. Tortie signs in and finds tmux, and one Add sets it up. It can make and install an SSH key for you.",
           ] },
           { type: "note", title: "Nothing is installed remotely", html: "Tortie uses the machine's existing SSH, shell, Git, tmux, and agent tools. Agent availability is measured separately for each machine." },
         ],
@@ -1235,16 +1241,17 @@ export const docsPages: DocPage[] = [
         title: "Open projects and run sessions",
         blocks: [
           { type: "paragraph", html: "A remote folder becomes a normal project tab. You can start and restore sessions there, browse files, use Quick Open and content search, review diffs and history, and inspect GitHub Actions." },
-          { type: "paragraph", html: "Remote sessions live in that machine's own private tmux server. Tortie connects over SSH and attaches the session into your local window. The bundled local tmux binary is not copied to the remote machine, so the remote host must already have tmux installed." },
+          { type: "paragraph", html: "Remote sessions live in that machine's own private tmux server. Tortie connects over SSH and attaches the session into your local window. The bundled local tmux binary is not copied to the remote machine, so the remote host must already have tmux installed. These sessions scroll back like the ones on your Mac." },
           { type: "paragraph", html: "Remote conversation restoration runs only when Tortie has an exact recorded conversation identifier and resume command. Remote SpecStory capture is not supported." },
         ],
       },
       {
         id: "writes",
-        title: "Choose where Tortie may write",
+        title: "Edit, save, and commit",
         blocks: [
-          { type: "paragraph", html: "Remote projects stay read only until you choose one write root for that machine in Settings. Tortie then permits edits, saves, new folders, renames, staging, and commits only beneath that confirmed folder." },
+          { type: "paragraph", html: "Save, rename, make files and folders, stage, and commit in any project there, with nothing to switch on. Tortie never writes in a home folder itself, or inside a <code>.git</code> or <code>.ssh</code> folder." },
           { type: "list", items: [
+            "A file too large to save on that machine opens read only.",
             "Remote saves have no local undo.",
             "A disconnect can make the final result of a write uncertain.",
             "Remote hooks and signing run on the remote machine.",
@@ -1257,7 +1264,68 @@ export const docsPages: DocPage[] = [
         id: "limits",
         title: "Know the current limits",
         blocks: [
-          { type: "paragraph", html: "The remote implementation handles both BSD and GNU command shapes, but Linux hosts have not been fully tested. Remote processes may continue after the local app loses contact, so an unreachable session remains recorded instead of being guessed away." },
+          { type: "paragraph", html: "On a tmux Tortie has not measured, only full-screen programs that use the mouse scroll back. Remote processes may continue after the local app loses contact, so an unreachable session remains recorded instead of being guessed away." },
+        ],
+      },
+    ],
+  },
+  {
+    path: "/docs/your-iphone/",
+    slug: "your-iphone",
+    title: "Your iPhone",
+    description: "Pair Tortie for iPhone, a public beta on TestFlight, with Tortie on your Mac to check on sessions and answer them while you are away.",
+    lead: "Your sessions keep running on your Mac. Tortie for iPhone lets you check on them and answer them while you are away.",
+    sections: [
+      {
+        id: "what-it-does",
+        title: "What it does",
+        blocks: [
+          { type: "list", items: [
+            "Lists every session on your Mac, with the ones waiting on you first.",
+            "Opens a session's terminal. Scroll back, type, and use keys for Escape, Tab, the arrows, Control, and Return. Turn the phone sideways to see the terminal alone.",
+            "Answers a numbered question from Claude Code or Codex with one tap.",
+            "Sends an idle session a message, as if you had typed it at your Mac.",
+            "Opens Catch Me Up for a session.",
+            "Ends one or several sessions after Face ID, Touch ID, or your passcode.",
+          ] },
+        ],
+      },
+      {
+        id: "requirements",
+        title: "What you need",
+        blocks: [
+          { type: "list", items: [
+            "An Apple silicon Mac running Tortie 0.111 or later, awake with Tortie open.",
+            "<a href=\"https://tailscale.com\">Tailscale</a> signed in on that Mac. Nothing else is installed on the phone.",
+            "An iPhone on iOS 18.1 or later.",
+          ] },
+          { type: "paragraph", html: "No account and no server of ours: the app talks only to your Mac and collects nothing. Read the <a href=\"/privacy/\">privacy page</a>." },
+        ],
+      },
+      {
+        id: "pair",
+        title: "Pair your phone",
+        blocks: [
+          { type: "steps", items: [
+            { title: "Join the beta.", html: `Open <a href="${TORTIE_IPHONE_URL}">tortie.sh/iphone</a> on your iPhone and install Tortie for iPhone from TestFlight.` },
+            { title: "Open Settings, then Phone, on your Mac.", html: "Follow the three steps: get Tailscale, publish this Mac, and pair your phone." },
+            { title: "Wait for the first code.", html: "It can take a few minutes while your Mac's name reaches the internet." },
+            { title: "Scan and allow.", html: "Scan the code with the app, check that the six groups match on both screens, and press <strong>Allow</strong> on your Mac." },
+          ] },
+        ],
+      },
+      {
+        id: "unpair",
+        title: "Unpair a phone",
+        blocks: [
+          { type: "paragraph", html: "Tap <strong>Unpair this iPhone</strong> in the phone's Settings. Then press <strong>Remove</strong> beside it in Settings, then Phone, on your Mac. Remove works at once, even without the phone." },
+        ],
+      },
+      {
+        id: "help",
+        title: "If your phone cannot reach your Mac",
+        blocks: [
+          { type: "paragraph", html: "Check that your Mac is awake, Tortie is open, and Tailscale is signed in. <a href=\"/support/\">Support</a> has the rest." },
         ],
       },
     ],

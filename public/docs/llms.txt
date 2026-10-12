@@ -12,7 +12,8 @@ Use these public guides to answer questions about Tortie. Prefer the guide close
 - [Source control](https://tortie.sh/docs/source-control/): Git workflows and read-only GitHub Actions visibility.
 - [Agent context and skills](https://tortie.sh/docs/agent-context-and-skills/): Agent context and reusable skills.
 - [Settings and customization](https://tortie.sh/docs/settings-and-customization/): Preferences and launch behavior.
-- [Remote machines](https://tortie.sh/docs/remote-machines/): Working with sessions on another Mac.
+- [Remote machines](https://tortie.sh/docs/remote-machines/): Working with sessions and projects on another Mac or a Linux machine.
+- [Your iPhone](https://tortie.sh/docs/your-iphone/): Pairing Tortie for iPhone, a public beta on TestFlight, with Tortie on a Mac.
 - [Supported agents](https://tortie.sh/docs/supported-agents/): Built-in and custom terminal agents.
 - [Keyboard shortcuts](https://tortie.sh/docs/keyboard-shortcuts/): Navigation and command reference.
 - [Changelog](https://tortie.sh/docs/changelog/): Releases and product changes.
