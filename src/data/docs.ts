@@ -592,7 +592,7 @@ export const docsPages: DocPage[] = [
           ] },
           { type: "paragraph", html: "When available, the menu also shows how much scrollback that one session currently holds. Tortie reads the figure only when you open the menu; it does not turn memory use into a dashboard." },
           { type: "paragraph", html: "The terminal surface combines <a href=\"https://xtermjs.org/\">xterm.js</a> for terminal rendering with <a href=\"https://github.com/microsoft/node-pty\">node-pty</a> for a real pseudoterminal. Tortie's private tmux server owns the durable session, so closing the Electron window does not end the process." },
-          { type: "note", title: "Command C has two terminal meanings", html: "With text selected, <kbd>⌘C</kbd> copies. With no selection, it sends an interrupt to stop the foreground agent or command." },
+          { type: "note", title: "Copy and interrupt", html: "<kbd>⌘C</kbd> copies the selected text and does nothing when nothing is selected, so a draft at an agent’s prompt is never cleared. <kbd>⌃C</kbd> sends the interrupt that stops the foreground agent or command." },
         ],
       },
       {
@@ -1427,7 +1427,8 @@ export const docsPages: DocPage[] = [
         title: "Terminal and scrollback",
         blocks: [
           { type: "table", headers: ["Shortcut", "Action", "Where"], rows: [
-            ["<kbd>⌘C</kbd>", "Copy selected text, or interrupt when nothing is selected", "Terminal"],
+            ["<kbd>⌘C</kbd>", "Copy selected text", "Terminal"],
+            ["<kbd>⌃C</kbd>", "Interrupt the foreground agent or command", "Terminal"],
             ["<kbd>⌘A</kbd>", "Select all visible output", "Terminal"],
             ["<kbd>⌘K</kbd>", "Clear the screen and session history without ending the process", "Terminal"],
             ["<kbd>⇧PgUp</kbd> / <kbd>⇧PgDn</kbd>", "Move through scrollback one screen at a time", "Terminal"],
