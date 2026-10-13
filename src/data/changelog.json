@@ -2,6 +2,44 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.111.2",
+      "date": "2026-10-13",
+      "summary": "This release fixes two things John Berryman reported. ⌘C no longer clears what you typed at an agent's prompt, and a file open in an ignored folder now updates while you watch it.",
+      "contributors": [
+        {
+          "login": "JnBrymn",
+          "name": "John Berryman",
+          "url": "https://github.com/JnBrymn",
+          "avatarUrl": "https://github.com/JnBrymn.png?size=64"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "⌘C in a session now only copies: with nothing selected it does nothing, where it used to send the interrupt that Claude Code, Codex and pi read as clearing what you had typed at their prompt; ⌃C still interrupts, and Settings then Keyboard now lists it. Reported by John Berryman in #41",
+              "commits": [
+                {
+                  "hash": "1c00cbc0",
+                  "url": "https://github.com/gregce/tortie/commit/1c00cbc0"
+                }
+              ]
+            },
+            {
+              "text": "A file open in the editor now shows an agent's changes while you watch it, even in a folder your repository ignores, where it used to update only when you looked away and back; what you are typing is never replaced. Reported by John Berryman in #33",
+              "commits": [
+                {
+                  "hash": "1c00cbc0",
+                  "url": "https://github.com/gregce/tortie/commit/1c00cbc0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.111.1",
       "date": "2026-10-12",
       "summary": "This release fixes setting up the iPhone app from Tortie for Mac. Tortie opened from the Dock or Finder could not read Tailscale, so 0.111.0 could not publish your Mac for your phone, and Settings then Machines could not list your tailnet's machines.",
