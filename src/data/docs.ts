@@ -605,9 +605,10 @@ export const docsPages: DocPage[] = [
             "A path relative to the project, opened under the project that session is in.",
             "A bare filename such as <code>README.md</code> or <code>Makefile</code>, opened under the project that session is in. A name that matches no file there underlines nothing.",
             "A path with its line written the way tools write it, such as <code>path:12</code>, grep's <code>path:12:</code> or a compiler's <code>path(12,34)</code>. Only the path and its line are underlined, never the text after them.",
+            "A path an agent breaks across lines, when it starts with <code>/</code> or <code>~/</code>. Point at any of its lines to underline the whole path.",
           ] },
           { type: "note", title: "Nothing that could run is offered", html: "A file with the executable bit set, an application, a folder wearing a picture's name, and a file whose name says it holds a secret are never links. A relative name is never handed to your Mac, so a PDF named that way opens nothing." },
-          { type: "note", title: "Where a path stays plain", html: "A path wrapped onto a second row of the pane stays plain, because the pane cannot say where it began. A plain word, a version number and a dotfile are never links, and a session on another machine offers no file links at all." },
+          { type: "note", title: "Where a path stays plain", html: "A relative path broken across lines does not open as one link. A plain word, a version number and a dotfile are never links, and a session on another machine offers no file links at all." },
         ],
       },
       {
@@ -1282,11 +1283,14 @@ export const docsPages: DocPage[] = [
         blocks: [
           { type: "list", items: [
             "Lists every session on your Mac, with the ones waiting on you first.",
-            "Opens a session's terminal. Scroll back, type, and use keys for Escape, Tab, the arrows, Control, and Return. Turn the phone sideways to see the terminal alone.",
+            "Opens a session's terminal. Scroll back, type, and use keys for Escape, Tab, the arrows, Control, and Return. Touch and hold text to select and copy it. Turn the phone sideways to see the terminal alone.",
             "Answers a numbered question from Claude Code or Codex with one tap.",
             "Sends an idle session a message, as if you had typed it at your Mac.",
             "Opens Catch Me Up for a session.",
+            "Starts a session in a project open in Tortie, with a built-in agent installed there and your launch defaults, and opens its terminal. Your Mac asks you to allow this once, in Settings, then Phone.",
             "Ends one or several sessions after Face ID, Touch ID, or your passcode.",
+            "Pairs with up to four Macs, each with its own Needs input, Sessions, and Settings. A tab at the right of the bottom bar switches between them.",
+            "Shows a sample of made-up sessions you can try before you pair a Mac. Nothing in it leaves the phone.",
           ] },
         ],
       },
@@ -1295,11 +1299,11 @@ export const docsPages: DocPage[] = [
         title: "What you need",
         blocks: [
           { type: "list", items: [
-            "An Apple silicon Mac running Tortie 0.111.1 or later, awake with Tortie open.",
+            "An Apple silicon Mac running Tortie 0.111.1 or later, awake with Tortie open. Starting a session from your phone needs 0.112.0 or later.",
             "<a href=\"https://tailscale.com\">Tailscale</a> signed in on that Mac. Nothing else is installed on the phone.",
             "An iPhone on iOS 18.1 or later.",
           ] },
-          { type: "paragraph", html: "No account and no server of ours: the app talks only to your Mac and collects nothing. Read the <a href=\"/privacy/\">privacy page</a>." },
+          { type: "paragraph", html: "No account and no server of ours: the app talks only to the Macs you pair it with and collects nothing. Read the <a href=\"/privacy/\">privacy page</a>." },
         ],
       },
       {
@@ -1312,13 +1316,14 @@ export const docsPages: DocPage[] = [
             { title: "Wait for the first code.", html: "It can take a few minutes while your Mac's name reaches the internet." },
             { title: "Scan and allow.", html: "Scan the code with the app, check that the six groups match on both screens, and press <strong>Allow</strong> on your Mac." },
           ] },
+          { type: "paragraph", html: "To pair another Mac, open Settings, then Phone, on that Mac, and tap <strong>Pair another Mac</strong> in the phone's Settings. Your phone can pair with up to four Macs." },
         ],
       },
       {
         id: "unpair",
         title: "Unpair a phone",
         blocks: [
-          { type: "paragraph", html: "Tap <strong>Unpair this iPhone</strong> in the phone's Settings. Then press <strong>Remove</strong> beside it in Settings, then Phone, on your Mac. Remove works at once, even without the phone." },
+          { type: "paragraph", html: "Tap <strong>Unpair this iPhone</strong> in the phone's Settings. It forgets only the Mac on screen. Then press <strong>Remove</strong> beside the phone in Settings, then Phone, on that Mac. Remove works at once, even without the phone." },
         ],
       },
       {

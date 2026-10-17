@@ -32,7 +32,7 @@ import { TORTIE_REPOSITORY_URL } from "../data/site-links";
   <section id="needs">
     <h2>What Tortie for iPhone needs</h2>
     <ul>
-      <li>An Apple silicon Mac running Tortie for Mac 0.111.1 or later, awake with Tortie open.</li>
+      <li>An Apple silicon Mac running Tortie for Mac 0.111.1 or later, awake with Tortie open. Starting a session from your phone needs 0.112.0 or later.</li>
       <li>Tailscale signed in on that Mac. There is nothing else to install on the phone.</li>
       <li>An iPhone on iOS 18.1 or later.</li>
     </ul>
@@ -48,14 +48,23 @@ import { TORTIE_REPOSITORY_URL } from "../data/site-links";
     <p>
       If you are not the admin of your Tailscale network, the admin may need to approve Funnel for your Mac.
     </p>
+    <p>
+      To pair another Mac, open Settings then Phone on that Mac, and tap Pair another Mac in the phone’s Settings.
+      Your phone can pair with up to four Macs, and the tab at the right of the bottom bar switches between them.
+    </p>
   </section>
 
   <section id="cannot-reach">
     <h2>If your phone cannot reach your Mac</h2>
     <p>Check that your Mac is awake, Tortie is open and Tailscale is signed in.</p>
     <p>
-      After Tortie for Mac updates, it may ask you once to allow your phone again. If your phone says Tortie
-      could not reach your Mac, open Settings then Phone on your Mac and press Allow.
+      When Tortie for Mac updates, your phone keeps everything it could already do. Anything new shows in
+      Settings then Phone on your Mac, marked New, and waits until you press Allow beside it. Until you allow
+      starting sessions, your phone shows no + on the Sessions tab.
+    </p>
+    <p>
+      If your phone says Tortie could not reach your Mac, open Settings then Phone on your Mac and press Allow if
+      it asks you to.
     </p>
   </section>
 
@@ -67,9 +76,9 @@ import { TORTIE_REPOSITORY_URL } from "../data/site-links";
       (<a href="https://tailscale.com/docs/concepts/machine-names">Tailscale’s guide</a>).
     </p>
     <p>
-      After a rename, your phone must pair again. Tap Unpair this iPhone in the phone’s Settings, and press
-      Remove beside that phone in Settings then Phone on your Mac. Then switch Let my phone reach this Mac off and on,
-      and pair as you did the first time.
+      After a rename, your phone must pair again. With that Mac on screen, tap Unpair this iPhone in the phone’s
+      Settings. It forgets only that Mac. Press Remove beside that phone in Settings then Phone on your Mac. Then
+      switch Let my phone reach this Mac off and on, and pair again.
     </p>
   </section>
 
