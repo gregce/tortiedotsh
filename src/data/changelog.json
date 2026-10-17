@@ -2,6 +2,144 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.112.0",
+      "date": "2026-10-17",
+      "summary": "This release is mostly about your iPhone, which gets build 11 of Tortie for iPhone on TestFlight and can now start a session on your Mac. A Tortie update no longer switches your iPhone off: what you allowed keeps working, and starting a session waits for Allow in Settings then Phone. On your Mac, a full file path that an agent breaks across lines now opens as one link.",
+      "contributors": [
+        {
+          "login": "JnBrymn",
+          "name": "John Berryman",
+          "url": "https://github.com/JnBrymn",
+          "avatarUrl": "https://github.com/JnBrymn.png?size=64"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "Tortie for iPhone now has See a sample, on its first screen and in Settings: made-up Claude Code and Codex sessions you can open, scroll back, type into, answer and end before you pair a Mac, with every page marked Sample and nothing leaving the phone. What you type there only appears on the sample's own prompt, and Leave sample takes you back",
+              "commits": [
+                {
+                  "hash": "ad317f86",
+                  "url": "https://github.com/gregce/tortie/commit/ad317f86"
+                }
+              ]
+            },
+            {
+              "text": "Your iPhone can now pair with up to four Macs, from Pair another Mac in Settings, and each Mac is its own space with its own Needs input, Sessions and Settings: a tab at the right of the bottom bar, named after the Mac you are on, switches between them and, when you open the app, is marked if a session waits on another one. Unpair forgets only the Mac on screen, and alerts still come from the one Mac that sends them",
+              "commits": [
+                {
+                  "hash": "80daa9fd",
+                  "url": "https://github.com/gregce/tortie/commit/80daa9fd"
+                }
+              ]
+            },
+            {
+              "text": "On the iPhone you can now select text in a session's terminal the iPhone way: press on a word, drag the handles across rows and into earlier output, and Copy from the menu above it",
+              "commits": [
+                {
+                  "hash": "3b327475",
+                  "url": "https://github.com/gregce/tortie/commit/3b327475"
+                }
+              ]
+            },
+            {
+              "text": "Your iPhone can now start a session: tap + on the Sessions tab, pick a project open in Tortie on that Mac or on one of its machines and a built-in agent installed there, and its terminal opens, with your Mac's launch defaults and no Face ID. Your Mac asks you to allow it once, in Settings then Phone",
+              "commits": [
+                {
+                  "hash": "ca565e74",
+                  "url": "https://github.com/gregce/tortie/commit/ca565e74"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "Settings then Phone asks for Allow in a few short lines, with the full detail one click away",
+              "commits": [
+                {
+                  "hash": "2aff4e4a",
+                  "url": "https://github.com/gregce/tortie/commit/2aff4e4a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "A Tortie update that adds something your iPhone can do no longer switches the iPhone off: what you allowed keeps working, and only the new thing waits for Allow in Settings then Phone",
+              "commits": [
+                {
+                  "hash": "786ee1c6",
+                  "url": "https://github.com/gregce/tortie/commit/786ee1c6"
+                }
+              ]
+            },
+            {
+              "text": "Removing one phone in Settings then Phone no longer stops your other phones until you press Allow",
+              "commits": [
+                {
+                  "hash": "786ee1c6",
+                  "url": "https://github.com/gregce/tortie/commit/786ee1c6"
+                }
+              ]
+            },
+            {
+              "text": "Turning alerts off in Settings then Phone no longer stops your phones until you press Allow",
+              "commits": [
+                {
+                  "hash": "786ee1c6",
+                  "url": "https://github.com/gregce/tortie/commit/786ee1c6"
+                }
+              ]
+            },
+            {
+              "text": "A file path an agent breaks across lines in a session now opens as one link when it starts with / or ~/: point at any of its lines to underline the whole path, and a press opens the file at its line. Reported by John Berryman in #40",
+              "commits": [
+                {
+                  "hash": "9fc57248",
+                  "url": "https://github.com/gregce/tortie/commit/9fc57248"
+                }
+              ]
+            },
+            {
+              "text": "On an iPhone SE, turning a session's Terminal sideways and back no longer leaves the top of the app under the clock",
+              "commits": [
+                {
+                  "hash": "61b4708f",
+                  "url": "https://github.com/gregce/tortie/commit/61b4708f"
+                }
+              ]
+            },
+            {
+              "text": "A session's Terminal on an iPhone SE now fills the screen's width when it opens, and a sideways swipe on the Terminal stays on its rows instead of drifting up and down",
+              "commits": [
+                {
+                  "hash": "61b4708f",
+                  "url": "https://github.com/gregce/tortie/commit/61b4708f"
+                }
+              ]
+            },
+            {
+              "text": "The keys above the keyboard on a session's Terminal are no longer squeezed: they stay at the standard size whatever your text size, as the iPhone's own keyboard does, and on an iPhone SE return shows its symbol",
+              "commits": [
+                {
+                  "hash": "61b4708f",
+                  "url": "https://github.com/gregce/tortie/commit/61b4708f"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.111.2",
       "date": "2026-10-13",
       "summary": "This release fixes two things John Berryman reported. ⌘C no longer clears what you typed at an agent's prompt, and a file open in an ignored folder now updates while you watch it.",
