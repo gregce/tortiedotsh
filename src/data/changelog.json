@@ -2,6 +2,72 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.113.0",
+      "date": "2026-10-20",
+      "summary": "This release is about your iPhone, which gets build 12 of Tortie for iPhone on TestFlight. From your iPhone you can now remove a session you ended and paste into a session's terminal, and its title bars and Settings look like the iPhone's own. Your Mac asks you once, in Settings then Phone, to allow the two new things.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "After you pair your iPhone with a Mac, it opens on that Mac's Sessions. Each launch after that still opens on Needs input",
+              "commits": [
+                {
+                  "hash": "b944aa20",
+                  "url": "https://github.com/gregce/tortie/commit/b944aa20"
+                }
+              ]
+            },
+            {
+              "text": "Remove a session you ended from your iPhone, with the question your Mac asks, and it moves to Past Sessions on your Mac, where you can restore it. Your Mac asks you to allow this once, in Settings then Phone",
+              "commits": [
+                {
+                  "hash": "b944aa20",
+                  "url": "https://github.com/gregce/tortie/commit/b944aa20"
+                }
+              ]
+            },
+            {
+              "text": "Settings on your iPhone is grouped like the iPhone's own Settings, with the same rows in the same order",
+              "commits": [
+                {
+                  "hash": "b944aa20",
+                  "url": "https://github.com/gregce/tortie/commit/b944aa20"
+                }
+              ]
+            },
+            {
+              "text": "The iPhone's lists end with the time they were read, and no longer with a note about how waits are timed",
+              "commits": [
+                {
+                  "hash": "b944aa20",
+                  "url": "https://github.com/gregce/tortie/commit/b944aa20"
+                }
+              ]
+            },
+            {
+              "text": "The iPhone's tabs have the iPhone's own title bar, and New session is a \"+\" on its own at the top right, away from Select",
+              "commits": [
+                {
+                  "hash": "b944aa20",
+                  "url": "https://github.com/gregce/tortie/commit/b944aa20"
+                }
+              ]
+            },
+            {
+              "text": "Paste into the terminal of a session on your Mac from your iPhone with iOS's own Paste, a keyboard's Command-V or a pinch open with three fingers, and your Mac asks you to allow pasting once, in Settings then Phone. A line the terminal wrapped copies back as one line, except where it wrapped at a space",
+              "commits": [
+                {
+                  "hash": "b944aa20",
+                  "url": "https://github.com/gregce/tortie/commit/b944aa20"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.112.0",
       "date": "2026-10-17",
       "summary": "This release is mostly about your iPhone, which gets build 11 of Tortie for iPhone on TestFlight and can now start a session on your Mac. A Tortie update no longer switches your iPhone off: what you allowed keeps working, and starting a session waits for Allow in Settings then Phone. On your Mac, a full file path that an agent breaks across lines now opens as one link.",
