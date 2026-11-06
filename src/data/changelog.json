@@ -2,6 +2,27 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.114.1",
+      "date": "2026-11-05",
+      "summary": "This release fixes an error 0.114.0 could show again and again when Tortie's session list stopped reading correctly while it ran. Tortie now says so once and offers a restart, and your sessions keep running.",
+      "sections": [
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "If Tortie's session list stops reading correctly while it runs, Tortie says so once and offers a restart, instead of an error every few seconds and a crash when you quit; your sessions keep running either way",
+              "commits": [
+                {
+                  "hash": "5a6097ac",
+                  "url": "https://github.com/gregce/tortie/commit/5a6097ac"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.114.0",
       "date": "2026-11-05",
       "summary": "This release is about your iPhone, which gets build 13 of Tortie for iPhone on TestFlight. From your iPhone you can now rename a session or name a new one, scroll back through pi as you do Claude Code, and page through any agent that fills the screen. Your Mac asks you once, in Settings then Phone, to allow renaming.",
