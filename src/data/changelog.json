@@ -2,6 +2,161 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.115.0",
+      "date": "2026-11-17",
+      "summary": "This release is about the terminal, after Jack Shaw's report in issue 44. A long agent reply no longer draws over itself, copying gives you what you see, and links an agent prints open in your browser. Words you type no longer turn a session amber, and starting a session or quitting Tortie now holds up when its session list goes bad.",
+      "contributors": [
+        {
+          "login": "jackcshaw",
+          "name": "Jack Shaw",
+          "url": "https://github.com/jackcshaw",
+          "avatarUrl": "https://github.com/jackcshaw.png?size=64"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "text": "Scroll back to read while an agent on this Mac keeps printing, then scroll back down, and you now pass through everything it printed while you read instead of jumping past it to the bottom; getting back to the bottom takes as many lines as were printed, and typing still takes you there at once",
+              "commits": [
+                {
+                  "hash": "99e0d298",
+                  "url": "https://github.com/gregce/tortie/commit/99e0d298"
+                }
+              ]
+            },
+            {
+              "text": "Copying lines from the history of a busy session on this Mac, after dragging a selection past its edge, now puts exactly the lines you selected on the clipboard",
+              "commits": [
+                {
+                  "hash": "99e0d298",
+                  "url": "https://github.com/gregce/tortie/commit/99e0d298"
+                }
+              ]
+            },
+            {
+              "text": "A session you ended and then removed stays in Past Sessions, and no longer comes back to your sessions list with nothing behind it",
+              "commits": [
+                {
+                  "hash": "99e0d298",
+                  "url": "https://github.com/gregce/tortie/commit/99e0d298"
+                }
+              ]
+            },
+            {
+              "text": "Restarting a session while you remove it no longer deletes it for good: the new session starts and the removed one stays in Past Sessions",
+              "commits": [
+                {
+                  "hash": "99e0d298",
+                  "url": "https://github.com/gregce/tortie/commit/99e0d298"
+                }
+              ]
+            },
+            {
+              "text": "An Antigravity session no longer shows as running while it waits at its prompt; its questions still do not turn amber, and they now read as idle",
+              "commits": [
+                {
+                  "hash": "99e0d298",
+                  "url": "https://github.com/gregce/tortie/commit/99e0d298"
+                }
+              ]
+            },
+            {
+              "text": "A session in a folder whose name holds a # or ends in ; now starts in that folder, on this Mac and on another machine; a session started before this update and restored keeps the folder it ran in, so its conversation is found",
+              "commits": [
+                {
+                  "hash": "99e0d298",
+                  "url": "https://github.com/gregce/tortie/commit/99e0d298"
+                }
+              ]
+            },
+            {
+              "text": "Quitting Tortie no longer crashes when its session list went bad without showing an error, and Tortie now notices that trouble through its backup check too",
+              "commits": [
+                {
+                  "hash": "5895b12b",
+                  "url": "https://github.com/gregce/tortie/commit/5895b12b"
+                }
+              ]
+            },
+            {
+              "text": "Quitting Tortie with many busy sessions now finishes saving each session's history before it closes, instead of stopping after three seconds, and if Tortie ever crashes while it quits, the next launch says so",
+              "commits": [
+                {
+                  "hash": "d84bed31",
+                  "url": "https://github.com/gregce/tortie/commit/d84bed31"
+                }
+              ]
+            },
+            {
+              "text": "Watching folders for changes now runs in its own process, so a fault there no longer crashes Tortie",
+              "commits": [
+                {
+                  "hash": "ae8599ad",
+                  "url": "https://github.com/gregce/tortie/commit/ae8599ad"
+                }
+              ]
+            },
+            {
+              "text": "If Tortie's session list is damaged when you quit, the next launch now says it was rebuilt from a backup, instead of Tortie rebuilding it silently on its way out",
+              "commits": [
+                {
+                  "hash": "f5d9e8d7",
+                  "url": "https://github.com/gregce/tortie/commit/f5d9e8d7"
+                }
+              ]
+            },
+            {
+              "text": "A long agent reply no longer draws over itself when you switch to a session or start or restore one, and emoji in a session on this Mac take the same room in Tortie's terminal as in the session itself; a session started before Tortie has shown one, and resizing the window or a panel mid-reply, can still make the agent repaint. Reported by Jack Shaw in #44",
+              "commits": [
+                {
+                  "hash": "1018a17a",
+                  "url": "https://github.com/gregce/tortie/commit/1018a17a"
+                }
+              ]
+            },
+            {
+              "text": "Copying from a session now copies what you see: nothing from past the right edge after the session narrows, and no trailing spaces; a command the agent itself drew over several lines still copies as it was drawn. Reported by Jack Shaw in #44",
+              "commits": [
+                {
+                  "hash": "1018a17a",
+                  "url": "https://github.com/gregce/tortie/commit/1018a17a"
+                }
+              ]
+            },
+            {
+              "text": "Links an agent prints now open in your browser when you click them, and hovering one shows where it goes; when a link's words are an address or a file in the project, a click still opens that address or file. Reported by Jack Shaw in #44",
+              "commits": [
+                {
+                  "hash": "1018a17a",
+                  "url": "https://github.com/gregce/tortie/commit/1018a17a"
+                }
+              ]
+            },
+            {
+              "text": "Words you type or paste into a session, at the Mac or from your iPhone, no longer turn it amber as if the agent were asking, and neither does a question a restored session showed before it closed; a question the agent asks just after you type still shows at once, unless what you have typed starts with a copy of that same question",
+              "commits": [
+                {
+                  "hash": "2c9bd6f1",
+                  "url": "https://github.com/gregce/tortie/commit/2c9bd6f1"
+                }
+              ]
+            },
+            {
+              "text": "Starting a session no longer says it failed when the session did start, on this Mac or on another machine, so pressing Create again no longer starts a second one; if Tortie's session list stops reading during a start it can still ask you to restart, and the session is there when you do",
+              "commits": [
+                {
+                  "hash": "b3fa41ba",
+                  "url": "https://github.com/gregce/tortie/commit/b3fa41ba"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.114.1",
       "date": "2026-11-05",
       "summary": "This release fixes an error 0.114.0 could show again and again when Tortie's session list stopped reading correctly while it ran. Tortie now says so once and offers a restart, and your sessions keep running.",
