@@ -2,6 +2,41 @@
   "sourceUrl": "https://raw.githubusercontent.com/gregce/tortie/main/CHANGELOG.md",
   "releases": [
     {
+      "version": "0.118.0",
+      "date": "2026-11-25",
+      "summary": "This release makes the Antigravity usage card say whose plan it is and what its two groups are.",
+      "sections": [
+        {
+          "title": "Added",
+          "items": [
+            {
+              "text": "The Antigravity usage card, and its line in Settings then Agents, now name the account the Antigravity CLI is signed in to, as Claude's and Codex's do; you still switch that account in the Antigravity CLI",
+              "commits": [
+                {
+                  "hash": "efcf1b9c",
+                  "url": "https://github.com/gregce/tortie/commit/efcf1b9c"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Changed",
+          "items": [
+            {
+              "text": "The Antigravity usage card names its two groups, Gemini and Other models, so its Claude and GPT models no longer read like the Claude and Codex rows above it, and its line in Settings now reads like theirs",
+              "commits": [
+                {
+                  "hash": "c5f941d8",
+                  "url": "https://github.com/gregce/tortie/commit/c5f941d8"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "version": "0.117.0",
       "date": "2026-11-25",
       "summary": "This release makes Tortie lighter on git and on the Explorer while agents write files, and lets the usage meter show an Antigravity plan beside Claude and Codex.",
